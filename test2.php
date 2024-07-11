@@ -1,4 +1,4 @@
 <?php
-echo "<h2>NWL</h2>";
+echo "<h2>NWL 2024</h2>";
 ?>
 
