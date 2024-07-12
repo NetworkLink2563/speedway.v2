@@ -1,0 +1,13 @@
+<div style="A_CSS_ATTRIBUTE:all;position: absolute;bottom: 0px; right: 0px;left: 0px; top: 0px;  "><div style="margin-top:0px;width: 700px; height:400px; background: #E7C514;"><div>&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div style="text-align: center;"><span style="color:#ffffff;"><span style="font-size:36px;"><big>วันวิสาขบูชานี้ เดินทางปลอดภัย!</big></span></span></div>
+
+<div>
+<hr />
+<div>&nbsp;</div>
+</div>
+</div></div>
