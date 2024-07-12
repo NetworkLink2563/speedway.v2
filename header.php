@@ -285,10 +285,6 @@ echo ThDate(); // แสดงวันที่
 </head>
 <body class="kanit-light">
 
-<header>
-<?php include('navbar.php'); ?>
-</header
-
 <nav class="navbar navbar-expand-md navbar-dark bg-hightway fixed-top" style="margin-top: -10px">
     <div class="row">
         <div class="col-sm-4">
