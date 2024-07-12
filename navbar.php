@@ -128,9 +128,10 @@
         
         <h4>VMS : Variable Message Sign : PC1</h4>
         <div class="msg-right">
-        <p>(test3@test.com)<br>
+        <!-- <p>(test3@test.com)<br>
         วันพฤหัส ที่ 11 เดือน กรกฏาคม พ.ศ. 2567<br>
-        08:12:14</p>
+        08:12:14</p> -->
+        <p><?php echo $result['XVCstName'];?> (<?php echo $user;?>)<br><?php echo ThDate()." "; echo date("H:i:s"); ?></p>
         </div>
 </div>
 
