@@ -331,44 +331,116 @@ input[type='file'] { font-size: 0; }
   
 }
 
+table td{
+    font-size: 0.9rem;
+    transition: 0.5s;
+    font-weight: 300;
+}
+
+table th{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+table {
+    text-align: center;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.dt-search{
+        display: none;
+    }
+
+    body {
+        background: #e1f0fa;
+    }
+
+    .container{
+        background-color: white;
+    }
+
+    .flex-btn{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    }
+    
+.flex-header{
+    display: flex;
+
+}
+
+.flex-table{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .shadow{
+    box-shadow: 3px 3px 3px #aaaaaa!important;
+}
+
+.btn-hover:hover{
+        opacity: 0.8;
+        transition: 0.5s;
+    }
+
+    table th{
+        background-color: #e8f4ff!important;
+    }
+    
+    input.btnsearch{
+ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-repeat: no-repeat;
+ background-size: 15px;
+ background-position: left 12px top 10px;
+ text-indent: 20px;
+}
+
 </style>
-<div class="centered" style="margin-top: 60;margin-left: 10;">
-     
-    
-    <div class="box" style="margin-top: 30;" align="left">
-        <input type="hidden" id="XVMssCode">
-        <input type="hidden" id="XVMssType">
-        <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-            <img src="img/icon/setting.png" height="25" alt="Responsive image">&nbsp;สร้างข้อความสภาพการจราจรพื้นฐาน
-            <div style="margin-top:-5;">
-                <hr>
-            </div>
+
+
+<div class="container" style="position: relative; top: 75;">
+
+<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem;">
+            <img src="img/icon/setting.png" height="25" alt="Responsive image"> สร้างข้อความสภาพการจราจรพื้นฐาน
         </div>
-        
+
     
-        <div  id="message"  style="display: block; margin-left: 10px;margin-right: 10px;" id="container">
-            <div class="row">
-               
-                   
-                    <div class="col-sm-12" >
-                        <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                            <div class="btn-group">
-                               <button style="margin: 5px;border-radius: 5px;" type="button" id="btn_addtext" class="btn btn-primary btn-lg btn-open-modal">สร้างข้อความตัวอักษร<i style="margin-left: 10px;color:#09C703;font-size: 30px;" class="fa fa-file-text"></i></button>
-                               <button style="margin: 5px;border-radius: 5px;" type="button" id="btn_addpicture"  class="btn btn-primary btn-lg ">สร้างข้อความรูปภาพ<i style="margin-left: 10px;color:#FFCE33;font-size: 30px;" class="fa fa-image"></i></button>
-                               <button style="margin: 5px;border-radius: 5px;" type="button" id="btn_addvdo"  class="btn btn-primary btn-lg ">สร้างข้อความวีดีโอ<i style="margin-left: 10px;color:red;font-size: 30px;" class="fa fa-youtube"></i></button>
-                           
+        <div class="flex-header">
+       
 
 
+        <div class="flex-btn col-2" id="message" id="container" style="border-right: 3px double #cccc; background-color: #f8f7f7cc; padding: 0;">
+
+                                <div class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
+                               <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4; margin: 0;" type="button" id="btn_addtext" class="btn btn-primary btn-hover btn-open-modal shadow"><i style="width: 15%;" class="fa fa-file-text"></i> สร้างข้อความตัวอักษร</button>
+                               </div>
+                               <div class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
+                               <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_addpicture"  class="btn btn-success shadow btn-hover"><i style="width: 15%;" class="fa fa-image"></i> สร้างข้อความรูปภาพ</button>
+                               </div>
+                               <div class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
+                               <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_addvdo"  class="btn btn-primary shadow btn-hover"><img src="img/icon/vdo.png" width="20" alt=""> สร้างข้อความวีดีโอ</button>
                             </div>
+    
                         </div>
-                    </div>
-                
-            </div>
-            <div class="row">
+                    <!-- end div flex-btn -->
+
               
-                <div class="col-sm-12" style="">
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                        <table id="VMSTable" class="table" style="width:100%;">
+                    <div class="flex-table col" style="padding: 0;">
+
+                    <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px;">
+
+                    <!-- <img style="margin: 0 0.5rem; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s" width="15" alt=""> -->
+                    <input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" for="dt-search-0" aria-controls="VMSTable" value=""></input>
+                    </div>
+
+                    
+                        <div class="table-content col">
+                        <table id="VMSTable" class="table table-striped table-hover" style="width:100%;">
                             <thead>
                                 <tr style="font-size: 10pt">
                                     <th class="th-sm">รหัสข้อความ
@@ -382,8 +454,8 @@ input[type='file'] { font-size: 0; }
                                     <th class="th-sm" style="text-align: center">ประเภท
                                     </th>
                                     <th class="th-sm" style="text-align: center"></th>
-                                    <th class="th-sm" style="text-align: center"></th>
-                                    <th class="th-sm" style="text-align: center"></th>
+                                    <th class="th-sm" style="text-align: center">ลบ</th>
+                                    <th class="th-sm" style="text-align: center">แก้ไข</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -460,23 +532,21 @@ input[type='file'] { font-size: 0; }
                     <?php } ?>
                     </tbody>
                     </table>
+
+                    </div>
+                    <!-- end div flex-table -->
+
                 </div>
-            </div>
-            <div class="col-sm-3">
-            </div>
-        </div>
-    </div>
-    <br>
+<!-- end div flex-header -->
+
 </div>
-
-
-
+<!-- end div container -->
 
 <div class="modal modal-fullscreen" id="modal-addtext" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"><i style="margin-left: 10px;color:#09C703;font-size: 30px;" class="fa fa-file-text"></i>สร้างข้อความตัวอักษร</h5>
+        <h5 class="modal-title"><i style="color:#09C703;width: 20%;" class="fa fa-file-text"></i>สร้างข้อความตัวอักษร</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -546,7 +616,7 @@ input[type='file'] { font-size: 0; }
                  
                     <div class="col-sm-12 text-center" >
                     
-                        <button type="submit" style="background-color:#009933;color:white"  id= "btn_savetext" class="btn "  <?php echo $Disable;?>>บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
+                        <button type="submit" style="background-color:#009933;color:white"  id= "btn_savetext" class="btn "  <?php echo $Disable;?>>บันทึก<i style="color:white;width: 20%;" class="fa fa-save"></i></button>
                     </div>
                 </div>
                 <br>
@@ -566,7 +636,7 @@ input[type='file'] { font-size: 0; }
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"><i style="margin-left: 10px;color:#FFCE33;font-size: 30px;" class="fa fa-image"></i>สร้างข้อความรูปภาพ</h5>
+        <h5 class="modal-title"><i style="color:#FFCE33;width: 20%;" class="fa fa-image"></i>สร้างข้อความรูปภาพ</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -614,7 +684,7 @@ input[type='file'] { font-size: 0; }
                                 <input type="file" id="images" accept="image/*" required>
                                
                            
-                            <button type="button"  id= "btn_saveimage" class="btn " style="background-color:#009933;color:white">บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
+                            <button type="button"  id= "btn_saveimage" class="btn " style="background-color:#009933;color:white">บันทึก<i style="color:white;width: 20%;" class="fa fa-save"></i></button>
                         </label>
 
                     </div>
@@ -635,7 +705,7 @@ input[type='file'] { font-size: 0; }
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"><i style="margin-left: 10px;color:red;font-size: 30px;" class="fa fa-youtube"></i>สร้างข้อความวีดีโอ</h5>
+        <h5 class="modal-title"><i style="color:red;width: 20%;" class="fa fa-youtube"></i>สร้างข้อความวีดีโอ</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -680,7 +750,7 @@ input[type='file'] { font-size: 0; }
                             <span class="drop-title">คลิกเลือกไฟล์</span>
                                 <h6 id="vdofilename"></h6>
                                 <input type="file" id="vdos" accept="video/*" required>
-                                <button type="button"  id= "btn_savevdo" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
+                                <button type="button"  id= "btn_savevdo" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="color:white;width: 20%;" class="fa fa-save"></i></button>
                         </label>
 
                     </div>
@@ -733,7 +803,7 @@ input[type='file'] { font-size: 0; }
                         
                 </select>
                 <div style="margin-top:10px;">
-                    <button type="button"  id= "btn_next" class="btn btn-primary" >ถัดไป<i style="margin-left: 10px;color:#ffff00;font-size: 30px;" class="fa fa-forward"></i></button>
+                    <button type="button"  id= "btn_next" class="btn btn-primary" >ถัดไป<i style="color:#ffff00;width: 20%;" class="fa fa-forward"></i></button>
                   
                 </div>
       

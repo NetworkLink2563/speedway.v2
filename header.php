@@ -277,7 +277,7 @@ echo ThDate(); // แสดงวันที่
         
     </style>
     <link rel="stylesheet" href="dist/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="dist/css/jquery.datetimepicker.css"/ >
+    <link rel="stylesheet" type="text/css" href="dist/css/jquery.datetimepicker.css">
     <script src="sweetalert2/dist/sweetalert2.min.js"></script>
     <link href="sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="Jquery/jquery-3.6.0.js"></script>
@@ -285,7 +285,10 @@ echo ThDate(); // แสดงวันที่
 </head>
 <body class="kanit-light">
 
-<nav class="navbar navbar-expand-md navbar-dark bg-hightway fixed-top" style="margin-top: -10px">
+<?php include('navbar.php'); ?>
+
+
+<!-- <nav class="navbar navbar-expand-md navbar-dark bg-hightway fixed-top" style="margin-top: -10px">
     <div class="row">
         <div class="col-sm-4">
             <table width="100%" border="0">
@@ -328,9 +331,9 @@ echo ThDate(); // แสดงวันที่
                 <div class="dropdown-menu"  style="background: #FFFFFF"aria-labelledby="dropdown01">
                     <a class="dropdown-item f10pt"  href="mainMessage.php">จัดการข้อความหลัก</a>
                     <a class="dropdown-item f10pt"  href="Schedulemessage.php">จัดตารางข้อความประชาสัมพันธ์</a>
-                    <!--
+                    
                     <a class="dropdown-item f10pt"  href="Trafficmessage.php">ข้อความสภาพจราจร</a>
-    -->
+   
                 </div>
             </li>
             <li class="nav-item dropdown ">
@@ -366,5 +369,5 @@ echo ThDate(); // แสดงวันที่
             </li>
         </ul>
 
-    </div>
+    </div> -->
 </div>

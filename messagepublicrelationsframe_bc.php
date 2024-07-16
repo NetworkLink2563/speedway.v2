@@ -64,7 +64,11 @@ html {
 }
 
 body {
-    background: #e1f0fa;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-open-modal {
@@ -321,35 +325,23 @@ ol.menu {
 }
 input[type='file'] { font-size: 0; }
 ::file-selector-button { font-size: initial; }
-
-*{
-    box-sizing: border-box;
-}
-
-.container{
-    background-color: white;
-}
-
-
-
 </style>
+<div class="centered" style="margin-top: 60;margin-left: 10;">
 
-
-<div class="container" style="position: relative; top: 75;">
-
-
-<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> สร้างข้อความจราจรแสดงบนป้าย
+    <div class="box" style="margin-top: 30;" align="left">
+        <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
+            <img src="img/icon/setting.png" height="25" alt="Responsive image">&nbsp;สร้างข้อความประชาสัมพันธ์แสดงบนป้าย
+            <div style="margin-top:-5;">
+                <hr>
+            </div>
         </div>
-
+        
         <input type="hidden" id="framenumber" >
         <input type="hidden" id="framesmsid" >
         <input type="hidden" id="framewidth" >
         <input type="hidden" id="frameheight" >
         <input type="hidden" id="XVMssCode" >
-
-        
-    <div class="flex-header">
+        <div  id="message"  style="display: block; margin-left: 10px;margin-right: 10px;" id="container">
             
             <div class="row">
                 <div class="col-sm-4" >
@@ -365,7 +357,7 @@ input[type='file'] { font-size: 0; }
                 </div>
                 <div class="col-sm-8" style="">
                     <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                        <table id="VMSTable" class="table table-striped table-hover" style="width:100%;">
+                        <table id="VMSTable" class="table" style="width:100%;">
                             <thead>
                                 <tr style="font-size: 10pt">
                                     <th class="th-sm">รหัส
@@ -380,8 +372,8 @@ input[type='file'] { font-size: 0; }
                                     <th class="th-sm" style="text-align: center">ขนาด
                                     </th>
                                     
-                                    <th class="th-sm" style="text-align: center">ลบ</th>
-                                    <th class="th-sm" style="text-align: center">แก้ไข</th>
+                                    <th class="th-sm" style="text-align: center"></th>
+                                    <th class="th-sm" style="text-align: center"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -391,7 +383,7 @@ input[type='file'] { font-size: 0; }
                                                         dbo.TMstMMsgSize.XIMssWPixel, dbo.TMstMMsgSize.XIMssHPixel
                                 FROM            dbo.TMstMMessageFrame INNER JOIN
                                                         dbo.TMstMMsgSize ON dbo.TMstMMessageFrame.XVMssCode = dbo.TMstMMsgSize.XVMssCode
-                                WHERE        (dbo.TMstMMessageFrame.XVMsfType = N'2') 
+                                WHERE        (dbo.TMstMMessageFrame.XVMsfType = N'1') 
                                 ORDER BY dbo.TMstMMessageFrame.XVMsfCode DESC";
                         $query = sqlsrv_query($conn, $stmt);
                         while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
@@ -507,10 +499,8 @@ input[type='file'] { font-size: 0; }
       </div>
     </div>
   </div>
-
-
 </div>
-<!-- end div container -->
+
 
 
 <div class="modal modal-fullscreen" id="modal-frame2" tabindex="-1" role="dialog" aria-hidden="true">
@@ -645,7 +635,7 @@ input[type='file'] { font-size: 0; }
                         <div class="row">
                             <div class="col-sm-12 border">
                                     <div class="form-group form-inline">
-                                        <label style="margin-right: 5px;" for="XVMsfCodeF3">รหัสข้อความป้าย:</label>
+                                        <label style="margin-right: 5px;" for="XVMsfCodeF3">หรัสข้อความป้าย:</label>
                                         <input type="text" class="form-control" id="XVMsfCodeF3" readonly>
                                     </div>
                                     <div class="form-group form-inline">
@@ -967,7 +957,7 @@ function addsms(smsid){
     $('#ShowSel').empty();
     $.ajax({
         type: "POST",
-        url: "messagetrafficsframefunction.php",
+        url: "messagepublicrelationsframefunction.php",
         data: {
             'showsmssel': 'showsmssel'
         },
@@ -994,7 +984,7 @@ $("#btn_saveframe1").click(function(){
     }
     $.ajax({
         type: "POST",
-        url: "messagetrafficsframefunction.php",
+        url: "messagepublicrelationsframefunction.php",
         data: {
                     'saveframe1': 'saveframe1',
                     'XVMsfCode':XVMsfCode,
@@ -1020,7 +1010,7 @@ $("#btn_saveframe1").click(function(){
                     
                             if (result.isConfirmed) {
                             
-                                window.location.href = 'messagetrafficsframe.php';
+                                window.location.href = 'messagepublicrelationsframe.php';
                             }
                         });
                
@@ -1066,7 +1056,7 @@ $("#btn_saveframe2").click(function(){
     }
     $.ajax({
         type: "POST",
-        url: "messagetrafficsframefunction.php",
+        url: "messagepublicrelationsframefunction.php",
         data: {
                     'saveframe2': 'saveframe2',
                     'XVMsfCode':XVMsfCode,
@@ -1096,7 +1086,7 @@ $("#btn_saveframe2").click(function(){
                     
                             if (result.isConfirmed) {
                             
-                                window.location.href = 'messagetrafficsframe.php';
+                                window.location.href = 'messagepublicrelationsframe.php';
                             }
                         });
                
@@ -1139,7 +1129,7 @@ $("#btn_saveframe3").click(function(){
    
     $.ajax({
         type: "POST",
-        url: "messagetrafficsframefunction.php",
+        url: "messagepublicrelationsframefunction.php",
         data: {
                     'saveframe3': 'saveframe3',
                     'XVMsfCode':XVMsfCode,
@@ -1167,7 +1157,7 @@ $("#btn_saveframe3").click(function(){
                     
                             if (result.isConfirmed) {
                             
-                                window.location.href = 'messagetrafficsframe.php';
+                                window.location.href = 'messagepublicrelationsframe.php';
                             }
                         });
                
@@ -1196,7 +1186,7 @@ function deleteMSG(XVMsfCode) {
        if (result.isConfirmed) {
            $.ajax({
                type: "POST",
-               url: "messagetrafficsframefunction.php",
+               url: "messagepublicrelationsframefunction.php",
                data: {
                    'Delete': 'Delete',
                    'XVMsfCode': XVMsfCode
@@ -1220,7 +1210,7 @@ function deleteMSG(XVMsfCode) {
                             
                                     if (result.isConfirmed) {
                                     
-                                        window.location.href = 'messagetrafficsframe.php';
+                                        window.location.href = 'messagepublicrelationsframe.php';
                                     }
                                 });
                     

@@ -23,38 +23,160 @@ if(checkmenu($user,'006')==0){
 .modal-lg {
     max-width: 1024px;
 }
+
+.flex-container{
+    display: flex; 
+    justify-content: center;
+}
+
+.flex-container-btn{
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+}
+
+.flex-table{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+body {
+        background: #e1f0fa;
+    }
+
+.container{
+    background-color: white;
+    
+}
+
+table td{
+        transition: 0.5s;
+        font-size: 0.9rem;
+        transition: 0.5s;
+        font-weight: 300;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+
+    table th{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .table{
+        text-align: center;
+    }
+
+    .dt-search{
+        display: none;
+    }
+
+    input.btnsearch{
+ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-repeat: no-repeat;
+ background-size: 15px;
+ background-position: left 12px top 10px;
+ text-indent: 20px;
+}
+
+#dt-search-0{
+    opacity: 0.8;
+}
+
+.flex-header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.shadow{
+    box-shadow: 3px 3px 3px #aaaaaa!important;
+}
+
+table th{
+        background-color: #e8f4ff!important;
+    }
+    
+    .btn:hover{
+        opacity: 0.8;
+        transition: 0.5s;
+    }
 </style>
-<div class="centered" style="margin-top: 60;margin-left: 10;">
 
-    <div class="box" style="margin-top: 30;" align="left">
-        <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-            <img src="img/icon/setting.png" height="25" alt="Responsive image">&nbsp;จัดการข้อความหลัก
-            <div style="margin-top:-5;">
-                <hr>
-            </div>
+
+<div class="container" style="position: relative; top: 75;">
+
+
+<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> จัดการข้อความหลัก
         </div>
-        <div class="tab" style="margin-left: 10px;margin-right: 10px;">
 
-            <button class="tablinks active" onclick="openCity(event, 'message')">เพิ่มข้อความหลัก</button>
+
+
+
+        <div class="flex-header">
+
+        
+        <div class="col-12 shadow" style="margin-bottom: 1rem; border-radius: 5px; display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> เพิ่มข้อความหลัก</a>
+        </div>
 
         </div>
+        
+<div class="flex-container">
+
+
+ 
+<div class="col-2" style=" border-right: 3px double #cccc; padding: 0rem .4rem;">
+
+        
         <?php
                        $Disable='style="pointer-events: none"';
                        if($_SESSION["XBDmnIsAdd"]==1){
                           $Disable="";
                        }
                     ?>
-        <div  id="message" class="tabcontent" style="display: block; margin-left: 10px;margin-right: 10px;"
-            id="container">
-            <div style="text-align: right;font-size: 10pt;"><a <?php echo $Disable;?> href="#" class="btn btn-primary" style="color: white"
+        
+
+            <div class="col-12" style="">
+                <button <?php echo $Disable;?> href="#" class="btn btn-success shadow" style="width: 100%; padding: 1rem; background-color: #006eb4;"
                     data-toggle="modal" data-target="#myModal" ><i class=" fa fa-plus" aria-hidden="true"></i>
-                    เพิ่มข้อความ</a></div>
-            <div class="row">
-                <div class="col-sm-3">
+                    เพิ่มข้อความ</button>
                 </div>
-                <div class="col-sm-6" style="">
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                        <table id="VMSTable" class="table" style="width:100%;">
+
+
+                    </div>
+                <!-- flex-container-btn end -->
+
+
+
+                
+                <div class=""  id="message" class="tabcontent" style=""
+            id="container">
+            </div>
+
+            
+
+            <div class="flex-table container" style="padding: 0">
+
+           
+            <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px;">
+
+<!-- <img style="margin: 0 0.5rem; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s" width="15" alt=""> -->
+<input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" aria-controls="VMSTable"></input>
+</div>
+            
+
+
+                <div class="col-12" style="">
+
+
+                    <div>
+                        <table id="VMSTable" class="table table-striped table-hover" style="width:100%;">
                             <thead>
                                 <tr style="font-size: 10pt">
                                     <th class="th-sm">MSG Code
@@ -68,7 +190,7 @@ if(checkmenu($user,'006')==0){
                                     <th class="th-sm" style="text-align: center">ประเภท
                                     </th>
                                     <th class="th-sm" style="text-align: center"></th>
-                                    <th class="th-sm" style="text-align: center"></th>
+                                    <th class="th-sm" style="text-align: center">ลบ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -137,8 +259,15 @@ if(checkmenu($user,'006')==0){
                     </table>
                 </div>
             </div>
-            <div class="col-sm-3">
-            </div>
+
+
+                    </div>
+
+
+
+
+            <!-- <div class="col-sm-3">
+            </div> -->
         </div>
     </div>
     <br>

@@ -115,29 +115,78 @@ $resultCMDBrightness = sqlsrv_fetch_array($queryCMDBrightness, SQLSRV_FETCH_ASSO
         visibility: visible;
         border: 2px solid white;
     }
+
+    body {
+        background: #e1f0fa;
+        }
+
+        .container{
+            background: white;
+        }
+
+    .flex-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+table td{
+        transition: 0.5s;
+        font-size: 0.9rem;
+        transition: 0.5s;
+        font-weight: 300;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+
+    table th{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .table{
+        text-align: center;
+    }
+
+    table th{
+        background-color: #e8f4ff!important;
+    }
+    
+    .shadow{
+    box-shadow: 3px 3px 3px #aaaaaa !important;
+}
 </style>
-<div class="centered" style="margin-top: 50;margin-left: 10;">
 
-<div class="box" style="margin-top: 30;" align="left">
-    <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-        <div class="row">
-            <div class="col-sm-6">
-                <div style="margin-top: 10;"><img src="img/icon/setting.png" height="25" alt="Responsive image">&nbsp;ตารางการทำงานของป้าย</div>
-            </div>
+<div class="container" style="position: relative; top: 75;">
+
+
+
+<div style="margin: .4rem; text-align: center; border-bottom: 3px double #cccc; padding: 1rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ตารางการทำงานของป้าย
         </div>
-        <div style="margin-top:-5;"><hr></div>
 
-    </div>
-    <div class="tab" style="margin-left: 10px;margin-right: 10px;">
-        <button class="tablinks2 active" onclick="openCity2(event, '416160')">รายการ VMS</button>
-    </div>
-    <div id="416160" class="tabcontent2" style="display: block; margin-left: 10px;margin-right: 10px;" id="container">
+
+    <div class="flex-container" >
+
+    <div class="col-12 shadow" style="border-radius: 5px; display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายการVMS</a>
+        </div>
+
+    <!-- <div class="tab col-12" style="text-align: center;">
+        <span  style="width: 100%;" class="tablinks2 active " onclick="openCity2(event, '416160')">รายการ VMS</span>
+    </div> -->
+
+
+    <div id="416160" class="col-12" style="" id="container">
         <div class="row">
-            <div class="col-sm-3">
-            </div>
-            <div class="col-sm-6" >
-                <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                <table class="table" style="font-size: 10pt">
+           
+          
+                <div style="margin: 1rem 0rem;">
+                <table class="table table-striped table-hover" style="">
                     <thead>
                     <tr>
                         <th width="78" scope="col">รหัสป้าย</th>
@@ -181,10 +230,10 @@ $resultCMDBrightness = sqlsrv_fetch_array($queryCMDBrightness, SQLSRV_FETCH_ASSO
 
                     </tbody>
                 </table>
-                </div>
+     
             </div>
-            <div class="col-sm-3">
-            </div>
+            <!-- <div class="col-sm-3">
+            </div> -->
 
         </div>
     </div>

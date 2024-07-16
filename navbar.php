@@ -32,16 +32,17 @@
     }
 
     .navbar .logo p{
-        padding: 0 1rem;
+        padding: 0;
         font-size: 0.9rem;
         margin-bottom: 0;
     }
 
     .navbar h4{
         display: flex;
-        justify-content: center;
+        position: relative;
+        left: 120px;
         align-items: center;
-        width: 50%;
+        flex: 1;
         padding: 0.5rem;
         font-size: 1.5rem;
     }
@@ -68,9 +69,23 @@
 }
 
 .navbar-menu{
-    margin-top: 127px;
+    margin-top: 140px;
     background: #034672 !important;
     color: white;
+}
+
+.collapse ul li button{
+  font-weight: 300;
+  transition: 0.5s;
+}
+
+.dropdown-item{
+  font-weight: 200;
+  transition: 0.5s;
+}
+
+.dropdown-menu{
+  transition: 0.5s;
 }
 
 .navbar-menu{
@@ -120,7 +135,7 @@
     <!-- navbar  start-->
 <div class="navbar fixed-top">
 
-        <div class="logo"><img src="dist/img/logo.png" alt="">
+        <div class="logo"><img src="img/logo.png" alt="">
         <p>กองการทางพิเศษระหว่างเมือง กรมทางหลวง<br>
     City Motorway Division
     Department of Hightways</p>
@@ -131,11 +146,11 @@
         <!-- <p>(test3@test.com)<br>
         วันพฤหัส ที่ 11 เดือน กรกฏาคม พ.ศ. 2567<br>
         08:12:14</p> -->
-        <p><?php echo $result['XVCstName'].$user."<br>".ThDate()." "."<br>".date("H:i:s"); ?></p>
+        <p><?php echo "ผู้ใช้งาน: ".$result['XVCstName'].$user."<br>".ThDate()." "."<br>"."เวลา: ".date("H:i:s"); ?></p>
         </div>
 </div>
 
-<nav class="navbar navbar-menu navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-menu navbar-expand-lg navbar-dark bg-dark fixed-top" style="width: 100vw;">
   <div class="container-fluid">
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -149,8 +164,8 @@
           </button>
           <ul class="dropdown-menu dropdown-menu-dark">
             <li><a class="dropdown-item" href="dashboard.php">หน้าแรก</a></li>
-            <li><a class="dropdown-item" href="#">การตั้งค่า</a></li>
-            <li><a class="dropdown-item" href="#">ออกจากโปรแกรม</a></li>
+            <li><a class="dropdown-item" href="setting.php">การตั้งค่า</a></li>
+            <li><a class="dropdown-item" href="logout.php">ออกจากโปรแกรม</a></li>
             <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
           </ul>
         </li>
@@ -162,8 +177,8 @@
           การควบคุม
           </button>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">การควบคุมป้าย</a></li>
-            <li><a class="dropdown-item" href="#">ตารางการทำงานของป้าย</a></li>
+            <li><a class="dropdown-item" href="consolbanner.php">การควบคุมป้าย</a></li>
+            <li><a class="dropdown-item" href="LabelWorkSchedule.php">ตารางการทำงานของป้าย</a></li>
           </ul>
         </li>
       </ul>
@@ -174,8 +189,8 @@
           การแสดงข้อความ
           </button>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">จัดการข้อความหลัก</a></li>
-            <li><a class="dropdown-item" href="#">จัดตารางข้อความประชาสัมพันธ์</a></li>
+            <li><a class="dropdown-item" href="mainMessage.php">จัดการข้อความหลัก</a></li>
+            <li><a class="dropdown-item" href="Schedulemessage.php">จัดตารางข้อความประชาสัมพันธ์</a></li>
           </ul>
         </li>
       </ul>
@@ -186,10 +201,10 @@
           การแสดงข้อความประชาสัมพันธ์
           </button>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">สร้างข้อความประชาสัมพันธ์พื้นฐาน</a></li>
-            <li><a class="dropdown-item" href="/motorway/messagepublicrelationsframe.php">สร้างข้อความประชาสัมพันธ์แสดงบนป้าย</a></li>
-            <li><a class="dropdown-item" href="#">สร้างชุดการแสดงป้ายประชาสัมพันธ์</a></li>
-            <li><a class="dropdown-item" href="#">ข้อความป้ายประชาสัมพันธ์</a></li>
+            <li><a class="dropdown-item" href="messagepublicrelations.php">สร้างข้อความประชาสัมพันธ์พื้นฐาน</a></li>
+            <li><a class="dropdown-item" href="messagepublicrelationsframe.php">สร้างข้อความประชาสัมพันธ์แสดงบนป้าย</a></li>
+            <li><a class="dropdown-item" href="messagepublicrelationsframegroup.php">สร้างชุดการแสดงป้ายประชาสัมพันธ์</a></li>
+            <li><a class="dropdown-item" href="messagepublicrelationsplay.php">ข้อความป้ายประชาสัมพันธ์</a></li>
           </ul>
         </li>
       </ul>
@@ -200,10 +215,10 @@
           การแสดงข้อความสภาพจราจร
           </button>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">สร้างข้อความสภาพการจราจรพื้นฐาน</a></li>
-            <li><a class="dropdown-item" href="#">สร้างข้อความสภาพการจราจรแสดงบนป้าย</a></li>
-            <li><a class="dropdown-item" href="#">สร้างชุดการแสดงป้ายจราจร</a></li>
-            <li><a class="dropdown-item" href="#">ข้อความป้ายจราจร</a></li>
+            <li><a class="dropdown-item" href="messagetraffics.php">สร้างข้อความสภาพการจราจรพื้นฐาน</a></li>
+            <li><a class="dropdown-item" href="messagetrafficsframe.php">สร้างข้อความสภาพการจราจรแสดงบนป้าย</a></li>
+            <li><a class="dropdown-item" href="messagetrafficsframegroup.php">สร้างชุดการแสดงป้ายจราจร</a></li>
+            <li><a class="dropdown-item" href="messagetrafficsplay.php">ข้อความป้ายจราจร</a></li>
           </ul>
         </li>
       </ul>
@@ -214,10 +229,10 @@
             รายงาน
           </button>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">รายงานการปฏิบัติงาน</a></li>
-            <li><a class="dropdown-item" href="#">รายงานข้อความป้าย</a></li>
-            <li><a class="dropdown-item" href="#">รายงานสถานะป้าย</a></li>
-            <li><a class="dropdown-item" href="#">รายงานระดับความสว่าง</a></li>
+            <li><a class="dropdown-item" href="WorkReport.php">รายงานการปฏิบัติงาน</a></li>
+            <li><a class="dropdown-item" href="SchedulemessageReport.php">รายงานข้อความป้าย</a></li>
+            <li><a class="dropdown-item" href="VmsStatusReport.php">รายงานสถานะป้าย</a></li>
+            <li><a class="dropdown-item" href="LigthReport.php">รายงานระดับความสว่าง</a></li>
           </ul>
         </li>
       </ul>

@@ -5,24 +5,27 @@ session_start();
 
 include "lib/DatabaseManage.php";
 
-$data='<table width="99%" border="1" cellpadding="3" cellspacing="0" style="font-size: 11pt;">
-            <tr style="background: #eaeaea">
-                <td width="1%"><div align="center">สถานะ</div></td>
-             
-                <td width="10%"><div align="center">แบบป้าย</div></td>
-                <td width="10%"><div align="center">ป้าย</div></td>
-                <td width="2%"><div align="center">ไฟฟ้า</div></td>
-                <td width="2%"><div align="center">แสดง<br>ผล</div></td>
-                <td width="2%"><div align="center">ความสว่าง</div></td>
-                <td width="2%"><div align="center">อุณหภูมิตู้</div></td>
-                <td width="2%"><div align="center">อุณหภูมิป้าย</div></td>
-                <td width="2%"><div align="center">พัดลม<br>ตู้</div></td>
-                <td width="2%"><div align="center">ไฟกระพริบ</div></td>
-                <td width="6%"><div align="center">โมดูลเสีย</div></td>
-                <td width="1%"><div align="center">ประเภท</div></td>
-                <td width="10%"><div align="center">ข้อความ</div></td>
-                <td width="1%"><div align="center">Live</div></td>
-            </tr>';
+$data='<table class="table table-striped table-hover">
+            <thead>
+            <tr style="text-align: center;">
+                <th>สถานะ</th>
+                <th>แบบป้าย</th>
+                <th>ป้าย</th>
+                <th>ไฟฟ้า</th>
+                <th>แสดงผล</th>
+                <th>ความสว่าง</th>
+                <th>อุณหภูมิตู้</th>
+                <th>อุณหภูมิป้าย</th>
+                <th>พัดลมตู้</th>
+                <th>ไฟกระพริบ</th>
+                <th>โมดูลเสีย</th>
+                <th>ประเภท</th>
+                <th>ข้อความ</th>
+                <th>Live</th>
+            </tr>
+            </thead>
+            ';
+            
           
             $firstSQL="SELECT  vms.XVVmsCode, vms.XVVmsName, vms.XVSupCode, vms.XBVmsIsActive, vms.XIVmsPixelW, vms.XIVmsPixelH, vms.XIVmsSizeW, vms.XIVmsSizeH, vms.XVVmsSta, vms.XVVmsType, dbo.TMstMCustomer.XVCstCode, 
             dbo.TMstMMsgSize.XIMssWPixel, dbo.TMstMMsgSize.XIMssHPixel, dbo.TMstMUser.XVUsrCode
@@ -132,7 +135,7 @@ $data='<table width="99%" border="1" cellpadding="3" cellspacing="0" style="font
                 $queryVmsFlashIsActive= sqlsrv_query($conn, $sqlVmsFlashIsActive);
                 $resultVmsFlashIsActive = sqlsrv_fetch_array($queryVmsFlashIsActive, SQLSRV_FETCH_ASSOC);
                
-                $sqlXBVmsComIsActive = "SELECT        XISensorType, XTWhenEdit, DATEDIFF(minute, XTWhenEdit, GETDATE()) AS MinuteDiff, XBVmsComIsActive, XVVmsCode
+                $sqlXBVmsComIsActive = "SELECT        XISensorType, XTWhenEdit, DATEDIFF(minute, XTWhenEdit, GEthATE()) AS MinuteDiff, XBVmsComIsActive, XVVmsCode
                 FROM            dbo.TMstMItmVMS_Status
                 WHERE        (XISensorType = 8) AND (XVVmsCode = '".$resultSQL['XVVmsCode']."')";
                 $queryXBVmsComIsActive= sqlsrv_query($conn, $sqlXBVmsComIsActive);
@@ -164,10 +167,10 @@ $data='<table width="99%" border="1" cellpadding="3" cellspacing="0" style="font
                 $resultLive = sqlsrv_fetch_array($queryLive, SQLSRV_FETCH_ASSOC);
                 if($resultLive['XBLiveIsActive']==1){
                     $urlLive=$resultLive['XBLiveIsActive'];
-                    $tdTable='<td><div align="center" style="margin-left: 2;margin-right: 2"><a href="http://127.0.0.1/speedway/liveviews.php?livecode='.$urlLive.'" onclick="return show_modal(this);" style="color: #0a0a0a"><span style="color: #00CC00;"><i class="fa fa-video-camera" aria-hidden="true"></i></div></td>';
+                    $thTable='<th><div align="center""><a href="http://127.0.0.1/speedway/liveviews.php?livecode='.$urlLive.'" onclick="return show_modal(this);" style="color: #0a0a0a"><span style="color: #00CC00;"><i class="fa fa-video-camera" aria-hidden="true"></i></div></th>';
                 }else{
                     $urlLive='';
-                    $tdTable='<td><div align="center" style="margin-left: 2;margin-right: 2"><span style="color:#CCCCCC;"><i class="fa fa-video-camera" aria-hidden="true" ></i></span></div></td>';
+                    $thTable='<th><div align="center""><span style="color:#CCCCCC;"><i class="fa fa-video-camera" aria-hidden="true" ></i></span></div></th>';
                 }
              
 
@@ -198,21 +201,21 @@ $data='<table width="99%" border="1" cellpadding="3" cellspacing="0" style="font
               
                 
               
-                $data.='<tr style="background:'.$colorBannerBG.'">';
-                $data.='<td ><div align="center" style="margin-left: 2;margin-right: 2"><span ><i id="C0'.$XVVmsCode.'"  class="fa fa-cloud" aria-hidden="true"></i></span></div></td>';
-                $data.='<td><div id="C1'.$XVVmsCode.'" style="margin-left: 2;margin-right: 2">ป้าย '.$resultSQL['XIMssWPixel'].'x'.$resultSQL['XIMssHPixel'].' PX'.'</div></td>';
-                $data.='<td><div id="C2'.$XVVmsCode.'" align="center" style="margin-left: 2;margin-right: 2">'.$resultSQL['XVVmsName'].'</div></td>';
-                $data.='<td><div id="C3'.$XVVmsCode.'" align="center" style="margin-left: 2;margin-right: 2"></div></td>';
-                $data.='<td><div id="C4'.$XVVmsCode.'" align="center" style="margin-left: 2;margin-right: 2"></div></td>';
-                $data.='<td><div id="C5'.$XVVmsCode.'" align="center" style="margin-left: 2;margin-right: 2"></div></td>';
-                $data.='<td><div id="C6'.$XVVmsCode.'" align="center" style="margin-left: 2;margin-right: 2"></div></td>';
-                $data.='<td><div id="C7'.$XVVmsCode.'" align="center" style="margin-left: 2;margin-right: 2"></div></td>';
-                $data.='<td><div id="C8'.$XVVmsCode.'" align="center" style="margin-left: 2;margin-right: 2; "></div></td>';
-                $data.='<td><div id="C9'.$XVVmsCode.'" align="center" style="margin-left: 2;margin-right: 2; "></div></td>';
-                $data.='<td><div id="C10'.$XVVmsCode.'" style="margin-left: 2;margin-right: 2"></div></td>';
-                $data.='<td><div id="C11'.$XVVmsCode.'" align="center" style="margin-left: 2;margin-right: 2">'. $VmsType.'</div></td>';
-                $data.='<td ><div id="C12'.$XVVmsCode.'"  ></div></td>';
-                $data.='<td style="text-align: center;"><i style="cursor: pointer;font-size: 40px;cursor: pointer;" class="	fa fa-play-circle" onclick="ShowSample(\''.$XVVmsCode.'\',\''.$resultSQL['XVVmsName'].'\',\''.$XVMsgCode.'\',\''.$resultSQL['XIMssWPixel'].'\',\''.$resultSQL['XIMssHPixel'].'\')"></i></td>';
+                $data.='<tr style="text-align: center;">';
+                $data.='<td><i id="C0'.$XVVmsCode.'"class="fa fa-cloud"aria-hidden="true"></i></td>';
+                $data.='<td id="C1'.$XVVmsCode.'"">ป้าย '.$resultSQL['XIMssWPixel'].'x'.$resultSQL['XIMssHPixel'].' PX'.'</td>';
+                $data.='<td id="C2'.$XVVmsCode.'">'.$resultSQL['XVVmsName'].'</td>';
+                $data.='<td id="C3'.$XVVmsCode.'">test</td>';
+                $data.='<td id="C4'.$XVVmsCode.'">test</td>';
+                $data.='<td id="C5'.$XVVmsCode.'">test</td>';
+                $data.='<td id="C6'.$XVVmsCode.'">test</td>';
+                $data.='<td id="C7'.$XVVmsCode.'">test</td>';
+                $data.='<td id="C8'.$XVVmsCode.'">test</td>';
+                $data.='<td id="C9'.$XVVmsCode.'">test</td>';
+                $data.='<td id="C10'.$XVVmsCode.'">test</td>';
+                $data.='<td id="C11'.$XVVmsCode.'">'. $VmsType.'</th>';
+                $data.='<td id="C12'.$XVVmsCode.'">test</td>';
+                $data.='<td ><i style="cursor: pointer;font-size: 2rem;cursor: pointer; padding: 0rem;" class="fa fa-play-circle" onclick="ShowSample(\''.$XVVmsCode.'\',\''.$resultSQL['XVVmsName'].'\',\''.$XVMsgCode.'\',\''.$resultSQL['XIMssWPixel'].'\',\''.$resultSQL['XIMssHPixel'].'\')"></i></td>';
                 $data.='</tr>';
             }
             sqlsrv_close( $conn );

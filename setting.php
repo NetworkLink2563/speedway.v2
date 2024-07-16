@@ -15,29 +15,140 @@ if(checkmenu($user,'002')==0){
 }
 
 ?>
-<div class="centered" style="margin-top: 60;margin-left: 10;">
 
-    <div class="box" style="margin-top: 30;" align="left">
-        <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-            <img src="img/icon/setting.png" height="25" alt="Responsive image">&nbsp;ตั้งค่า
-            <div style="margin-top:-5;"><hr></div>
+<style>
+    table td{
+        transition: 0.5s;
+    }
+
+    body {
+    background: #e1f0fa;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.container{
+    background-color: white;
+}
+
+.flex-container-btn{
+
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+
+}
+
+.flex-container-table{
+display: flex;
+flex-wrap: wrap;
+justify-content: right;
+}
+
+.flex-head{
+display: flex;
+justify-content: center;
+
+
+}
+
+.dt-search{
+    display: none;
+}
+
+input.btnsearch{
+ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-repeat: no-repeat;
+ background-size: 15px;
+ background-position: left 12px top 10px;
+ text-indent: 20px;
+}
+
+input .btnsearch{
+ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-repeat: no-repeat;
+ background-size: 15px;
+ background-position: left 12px top 10px;
+ text-indent: 20px;
+}
+
+#dt-search-0{
+    opacity: 0.7;
+}
+
+
+table td{
+    font-size: 0.9rem;
+    transition: 0.5s;
+    font-weight: 300;
+}
+
+table th{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.shadow{
+    box-shadow: 3px 3px 3px #aaaaaa !important;
+}
+
+table th{
+        background-color: #e8f4ff!important;
+    }
+    
+    .btn:hover{
+        opacity: 0.8;
+        transition: 0.5s;
+    }
+</style>
+
+<div class="container" style="position: relative; top: 80; ">
+
+<div style=" text-align: center; margin-bottom: 1rem; border-bottom: 3px double #cccc; padding: 1rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image" style="margin-right: 0.5rem;">ตั้งค่า
         </div>
-        <div class="tab" style="margin-left: 10px;margin-right: 10px;">
 
-                <button class="tablinks active" onclick="openCity(event, 'User')">ผู้ใช้งาน</button>
-                <!--
-                <button class="tablinks " onclick="openCity(event, 'message')">เพิ่มข้อความหลัก</button>
--->
-
+        
+        <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; margin: 0rem 0rem 1rem 0rem;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><img style="margin-right: .4rem;" src="img/person.png" width="20" alt=""> ผู้ใช้งาน</a>
         </div>
 
-            <div id="User" class="tabcontent" style="display:block; margin-left: 10px;margin-right: 10px;" id="container">
-                <div style="text-align: right;font-size: 10pt;"><a href="adduser.php" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</a></div>
-                <div class="row">
-                    <div class="col-sm-3">
-                    </div>
-                    <div class="col-sm-6" >
-                        <table id="UserTable" class="table table-striped" style="width:100%">
+    <div class="flex-head">
+
+    
+       
+<div class="col-2 flex-container-btn container" style=" border-right: 3px double #cccc;">
+
+        <div class="col-12" id="User container" style="">
+                <button style="padding: 1rem; width: 100%; background-color: #006eb4;" class="btn btn-primary shadow" onclick="location.href='adduser.php'"><i class="fa fa-plus" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</button>
+           </div>
+
+
+           
+
+            
+
+                </div>   
+                <!-- end div flex-container-btn -->
+                
+                
+
+                <div class="flex-container-table container">
+         
+                    
+
+                    <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px;">
+
+<!-- <img style="margin: 0 0.5rem; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s" width="15" alt=""> -->
+<input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" aria-controls="VMSTable"></input>
+</div>
+
+<div class="col-12" >
+                        <table id="UserTable" class="table table-striped table-hover" style="width:100%">
                             <thead>
                             <tr style="font-size: 10pt">
                                 <th class="th-sm">Username
@@ -77,8 +188,8 @@ if(checkmenu($user,'002')==0){
                             <tr id="usercode<?php echo $result['XVUsrCode']; ?>" style="font-size: 10pt">
                                 <td><?php echo $result['XVUsrName']; ?></td>
                                 <td><?php echo $result['XVName']; ?></td>
-                                <td><div style="margin-top: 5px;text-align: center"><?php echo $result['XVCstPhone']; ?></div></td>
-                                <td><div style="margin-top: 5px;text-align: center"><?php echo $status; ?></div></td>
+                                <td><?php echo $result['XVCstPhone']; ?></div></td>
+                                <td><?php echo $status; ?></td>
                                 
                                 
                                 <td><div style="margin-top: 5px;text-align: center"><a href="usermenu.php?p=<?php echo base64_encode($result['XVUsrCode']);?>" ><i class="fa fa-folder" aria-hidden="true" title="กำหนดสิทธิ์"></i></a></div>
@@ -87,16 +198,28 @@ if(checkmenu($user,'002')==0){
                             <?php } ?>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="col-sm-3">
+                    
+
+                        </div>
+                        <!-- end div container-table -->
+
+                        </div>
+                        <!-- end div flex-head -->
+
+
+
+
+
+                    <div class="col3">
                     </div>
                 </div>
             </div>
         <div id="message" class="tabcontent" style="margin-left: 10px;margin-right: 10px;" id="container">
             <div style="text-align: right;font-size: 10pt;" ><a href="#" style="color: #8d9499" data-toggle="modal" data-target="#myModal""><i class="fa fa-plus" aria-hidden="true"></i> เพิ่มข้อความ</a></div>
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col3">
                 </div>
+                
                 <div class="col-sm-6" style="">
                     <table id="VMSTable" class="table" style="width:100%;">
                         <thead>
@@ -146,7 +269,7 @@ if(checkmenu($user,'002')==0){
                         </tbody>
                     </table>
                 </div>
-                <div class="col-sm-3">
+                <!-- <div class="col-sm-3"> -->
                 </div>
             </div>
         </div>

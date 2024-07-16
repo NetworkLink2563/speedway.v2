@@ -331,59 +331,132 @@ input[type='file'] { font-size: 0; }
   
 }
 
-</style>
-<div class="centered" style="margin-top: 60;margin-left: 10;">
-     
+.flex-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shadow{
+    box-shadow: 3px 3px 3px #aaaaaa!important;
+}
+
+.flex-header{
+    display: flex;
+    justify-content: center;
+}
+
+table td{
+    font-size: 0.9rem;
+    transition: 0.5s;
+    font-weight: 300;
+}
+
+table th{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+table {
+    text-align: center;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.dt-search{
+        display: none;
+    }
+
+    .flex-table{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    input.btnsearch{
+ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-repeat: no-repeat;
+ background-size: 15px;
+ background-position: left 12px top 10px;
+ text-indent: 20px;
+}
+
+table th{
+        background-color: #e8f4ff!important;
+    }
     
-    <div class="box" style="margin-top: 30;" align="left">
-        <input type="hidden" id="XVMssCode">
-        <input type="hidden" id="XVMssType">
-        <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-            <img src="img/icon/setting.png" height="25" alt="Responsive image">&nbsp;ข้อความประชาสัมพันธ์พื้นฐาน
-            <div style="margin-top:-5;">
-                <hr>
-            </div>
+    .btn-hover:hover{
+        opacity: 0.8;
+        transition: 0.5s;
+    }
+
+    body {
+        background: #e1f0fa;
+    }
+
+    .container{
+        background-color: white;
+    }
+</style>
+
+<div class="container" style="position: relative; top: 75;">
+
+<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem;">
+            <img src="img/icon/computer.png" height="25" alt="Responsive image"> ข้อความประชาสัมพันธ์พื้นฐาน
         </div>
         
     
-        <div  id="message"  style="display: block; margin-left: 10px;margin-right: 10px;" id="container">
-            <div class="row">
-               
+    <div class="flex-header">
+
+    
+            <div class="flex-btn col-2" id="message" id="container" style="border-right: 3px double #cccc; background-color: #f8f7f7cc; padding: 0;">
                    
-                    <div class="col-sm-12" >
-                        <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                            <div class="btn-group">
-                               <button style="margin: 5px;border-radius: 5px;" type="button" id="btn_addtext" class="btn btn-primary btn-lg btn-open-modal">สร้างข้อความตัวอักษร<i style="margin-left: 10px;color:#09C703;font-size: 30px;" class="fa fa-file-text"></i></button>
-                               <button style="margin: 5px;border-radius: 5px;" type="button" id="btn_addpicture"  class="btn btn-primary btn-lg ">สร้างข้อความรูปภาพ<i style="margin-left: 10px;color:#FFCE33;font-size: 30px;" class="fa fa-image"></i></button>
-                               <button style="margin: 5px;border-radius: 5px;" type="button" id="btn_addvdo"  class="btn btn-primary btn-lg ">สร้างข้อความวีดีโอ<i style="margin-left: 10px;color:red;font-size: 30px;" class="fa fa-youtube"></i></button>
-                           
+                                <div class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
+                               <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_addtext" class="btn-hover btn btn-primary shadow"><i style="width: 15%;" class="fa fa-file-text"></i> สร้างข้อความตัวอักษร</button>
+                               </div>
+
+                               <div  class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
+                               <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_addpicture"  class="btn-hover btn btn-primary shadow"><i style=" width: 15%;" class="fa fa-image"></i> สร้างข้อความรูปภาพ</button>
+                               </div>
+
+                               <div  class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
+                               <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_addvdo"  class="btn-hover btn btn-primary shadow"><img src="img/icon/vdo.png" width="20" alt=""> สร้างข้อความวีดีโอ</button>
+                               </div>
 
 
                             </div>
-                        </div>
+                            <!-- end div flex-btn -->
+
+                            
+                   
+                    <div class="flex-table col" style="padding: 0;">
+
+                    <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px;">
+
+                    <!-- <img style="margin: 0 0.5rem; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s" width="15" alt=""> -->
+                    <input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" for="dt-search-0" aria-controls="VMSTable" value=""></input>
                     </div>
-                
-            </div>
-            <div class="row">
-              
-                <div class="col-sm-12" style="">
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                        <table id="VMSTable" class="table" style="width:100%;">
+
+                    
+                        <div class="table-content col">
+                        <table id="VMSTable" class="table table-striped table-hover" style="width:100%;">
                             <thead>
-                                <tr style="font-size: 10pt">
-                                    <th class="th-sm">รหัสข้อความ
+                                <tr>
+                                    <th>รหัสข้อความ
                                     </th>
-                                    <th class="th-sm">ชื่อข้อความ
+                                    <th>ชื่อข้อความ
                                     </th>
-                                    <th class="th-sm" style="text-align: center">ตัวอย่าง
+                                    <th style="text-align: center">ตัวอย่าง
                                     </th>
-                                    <th class="th-sm" style="text-align: center">ขนาด
+                                    <th style="text-align: center">ขนาด
                                     </th>
-                                    <th class="th-sm" style="text-align: center">ประเภท
+                                    <th style="text-align: center">ประเภท
                                     </th>
-                                    <th class="th-sm" style="text-align: center"></th>
-                                    <th class="th-sm" style="text-align: center"></th>
-                                    <th class="th-sm" style="text-align: center"></th>
+                                    <th style="text-align: center"></th>
+                                    <th style="text-align: center">ลบ</th>
+                                    <th style="text-align: center">แก้ไข</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -431,7 +504,7 @@ input[type='file'] { font-size: 0; }
                                         <div style=" margin-top: 5px"><?php echo $XVMsgType; ?></div>
                                     </td>
                                     <td>
-                    </div>
+           
                     <td>
                     <?php
                        $Disable="pointer-events: none;";
@@ -461,15 +534,21 @@ input[type='file'] { font-size: 0; }
                     </tbody>
                     </table>
                 </div>
-            </div>
+            <!-- </div>
             <div class="col-sm-3">
+            </div> -->
             </div>
         </div>
     </div>
-    <br>
+
+
+
 </div>
+<!-- end div flex-header -->
 
 
+</div>
+<!-- div container end -->
 
 
 <div class="modal modal-fullscreen" id="modal-addtext" tabindex="-1" role="dialog" aria-hidden="true">
@@ -760,7 +839,7 @@ input[type='file'] { font-size: 0; }
 
             </div>
         </div>
-    </div>
+
 </div>
 <!-- Bootstrap core JavaScript
 ================================================== -->

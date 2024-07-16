@@ -26,6 +26,10 @@ $query = sqlsrv_query($conn, $sql);
 
 ?>
 <style>
+
+    *{
+        box-sizing: border-box;
+    }
     .slidecontainer {
         width: 100%;
     }
@@ -120,34 +124,82 @@ $query = sqlsrv_query($conn, $sql);
         from {opacity: 0;}
         to {opacity:1 ;}
     }
+
+    .flex-container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    body {
+        background: #e1f0fa;
+    }
+
+    .container{
+        background-color:  white;
+        
+    }
+
+    table td{
+        font-size: 0.9rem;
+        transition: 0.5s;
+        font-weight: 300;
+    }
+
+    table th{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    table th{
+        background-color: #e8f4ff!important;
+    }
+    
+    .shadow{
+    box-shadow: 3px 3px 3px #aaaaaa !important;
+}
+
 </style>
-<div class="centered" style="margin-top: 60;margin-left: 10;">
 
-    <div class="box" style="margin-top: 30;" align="left">
-        <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-            <img src="img/icon/setting.png" height="25" alt="Responsive image">&nbsp;การควบคุมป้าย
-            <div style="margin-top:-5;"><hr></div>
-        </div>
-        <div class="tab" style="margin-left: 10px;margin-right: 10px;">
-            <div class="tablinks2 active" > &nbsp;<i class="fa fa-list-alt" aria-hidden="true"></i> รายการคำสั่งในป้าย</div>
+<div class="container" style="position: relative; top: 75;">
+
+
+<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> การควบคุมป้าย
         </div>
 
-        <div class="row">
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-9" >
-                <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                <table class="table" style="font-size: 10pt">
+
+<div class="flex-container" style="">
+
+        <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายการคำสั่งในป้าย</a>
+        </div>
+
+
+            <div class="col-12" style="margin: 1rem 0rem;">
+                <table class="table table-striped table-hover" style="text-align: center;">
                     <thead>
                     <tr>
                         <th width="100" scope="col">รหัสป้าย</th>
                         <th width="120" scope="col">ชื่อป้าย</th>
                         <th width="320" scope="col">จุดติดตั้ง</th>
-                        <th width="50" scope="col"><div align="center">Op</div></th>
+                        <th width="50" scope="col">Option</th>
                         <th width="250" scope="col">คำสั่งที่ส่ง</th>
                     </tr>
                     </thead>
                     <tbody>
+                    </div>
+
+
+
+
+
+                </div>
+                <!-- end div container -->
+
+
+
+
                     <?php
                     $sql3 = "SELECT XVVmsCode,XVVmsName,XVSdtName,XVDstName,XVPvnName FROM TMstMItmVMS as vms
 INNER JOIN TMstMSetupPoint ON TMstMSetupPoint.XVSupCode=vms.XVSupCode
@@ -184,8 +236,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                     <?php } ?>
                     </tbody>
                 </table>
-                </div>
-            </div>
+          
             <div class="col-sm-1">
             </div>
 

@@ -15,20 +15,88 @@ if(checkmenu($user,'001')==0){
     max-width: 1000px;
   
 }
-</style>
-<div class="centered" style="margin-top: 60;margin-left: 10;">
 
-    <div class="box" style="margin-top: 30" align="center">
-        <div style="margin-top:10;margin-bottom: 10;" id="ShowData">
+body {
+    background: #e1f0fa;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+    background-color: white;
+}
+
+    table thead th{
+        font-size: 1rem;
+        font-weight: 450;
+    }
+
+    table  th{
+        background-color: #e8f4ff!important;
+        /* border: 1px solid #cccc; */
+    }
+
+    table td{
+        font-size: 0.9rem;
+        padding: 0.3rem;
+        transition: 0.5s;
+        /* border: 1px solid #cccc; */
+    }
+
+    .table>:not(caption)>*>*{
+    padding: 0.7rem;
+}
+
+table{
+    border: 1px solid #cccc;
+}
+
+table td{
+        font-size: 0.9rem;
+        transition: 0.5s;
+        font-weight: 300;
+    }
+
+    table th{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+</style>
+
+
+
+
+<div class="container" style="position: relative; top: 70;">
+
+
+<div style="margin: 1rem; text-align: center; margin-bottom: 1rem; border-bottom: 3px double #cccc; padding: 1rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image">&nbsp;หน้าแดชบอร์ด
+        </div>
+
+        <div style="" id="ShowData">
         
                     <?php
                        include "dashboardshow.php";
-                      
                     ?>
 
         </div>
-    </div>
+  
+
+
 </div>
+
+
+
+
+
+
+
+
+
 
 <div class="modal py-5" id="myModal" role="dialog" >
     <div class="modal-dialog modal-lg">

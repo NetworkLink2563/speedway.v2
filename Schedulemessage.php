@@ -124,7 +124,6 @@ a.activeUser-item:active {
     background-position: 14px 12px;
     background-repeat: no-repeat;
     font-size: 16px;
-    padding: 14px 20px 12px 45px;
     border: none;
     border-bottom: 1px solid #ddd;
 }
@@ -169,42 +168,148 @@ a.activeUser-item:active {
     max-width: 1000px;
   
 }
+
+body {
+        background: #e1f0fa;
+    }
+
+.container{
+    background: white;
+    height: 100vh;
+}
+
+.flex-search{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.flex-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+}
+
+.flex-btn-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table td{
+        font-size: 0.9rem;
+        transition: 0.5s;
+        font-weight: 300;
+    }
+
+    table td a:hover{
+        background-color: #cccc;
+        transition: 0.5s;
+        border-radius: 10px;
+        color: black;
+    }
+
+    table td a{
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.5s;
+        background-color: #edededcc;
+    }
+
+    table th{
+        font-size: .8rem;
+        font-weight: 500;
+    }
+
+.dt-search{
+    display: none;
+}
+
+#myInput{
+ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-repeat: no-repeat;
+ background-size: 15px;
+ background-position: left 24px top 12px;
+ text-indent: 14px;
+}
+
+.justify-content-between{
+    display: none;
+}
+
+.flex-search-content{
+    display: flex;  
+    justify-content: center;
+}
+
+input.btnsearch{
+ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-repeat: no-repeat;
+ background-size: 15px;
+ background-position: left 12px top 10px;
+ text-indent: 20px;
+}
+
+.shadow{
+    box-shadow: 3px 3px 3px #aaaaaa!important;
+}
+
+#dt-search-0{
+    opacity: 0.7;
+}
+
+table th{
+        background-color: #e8f4ff!important;
+    }
+    
+    .btn-hover:hover{
+        opacity: 0.8;
+        transition: 0.5s;
+    }
+
 </style>
-</style>
+
+<div class="container" >
 
 
-<div class="centered" style="margin-top: 60;margin-left: 10;">
+<div  style="position: relative; top: 75;">   
 
-    <div class="box" style="margin-top: 30;" align="left">
-        <div class="row">
-            <div class="col-sm-6">
-                <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-                    <img src="img/icon/computer.png" height="25"
-                        alt="Responsive image">&nbsp;จัดตารางข้อความประชาสัมพันธ์
-                    <div style="margin-top:-5;">
-                        <hr>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6" align="right">
-                <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-
-
-                </div>
-            </div>
+<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
+            <img src="img/icon/computer.png" height="25" alt="Responsive image"> จัดตารางข้อความประชาสัมพันธ์
         </div>
+
+            <!-- <div class="col-sm-6" align="right">
+                <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
+
+
+                </div>
+            </div>
+        </div> -->
+
+
+        
         <div id="VMSALL">
-            <div class="row">
-                <div class="col-sm-2">
+            <div class="flex-search col-12" style="margin-top: 1rem;">
 
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                        <div id="myDropdown" class="dropdown-content ">
-                            <label for="myInput">กรอกชื่อป้ายที่ต้องการค้นหา</label>
-                            <input type="text"
-                                style="border-radius: 5px;border: 1px solid  #ced4da; padding-top: 2px;  padding-bottom: 2px;width:100%"
+            <div class="flex-search-content col-3">
+                <div class="col-12" style="border-right: 3px double #cccc; text-align: center;">
+                    <div>
+                        <div id="myDropdown" class="dropdown-content" style="width: 100%;" >
+                            <!-- <label for="myInput">กรอกชื่อป้ายที่ต้องการค้นหา</label> -->
+                            
+                            <input class="input" placeholder="กรอกชื่อป้ายที่ต้องการค้นหา" type="text"
+                                style="width: 100%; font-size: 0.8rem; text-align: center; margin: 0rem 0rem .5rem 0rem;border: 1px solid #cccc;"
                                 placeholder="" id="myInput" onkeyup="filterFunction()">
+                             
 
-                            <table>
+
+                            <table class="table">
                                 <?php
                                             $stmt = "SELECT * FROM TMstMItmVMS ORDER BY XVVmsCode ASC";
                                             $query = sqlsrv_query($conn, $stmt);
@@ -212,7 +317,7 @@ a.activeUser-item:active {
                                             {
                                                 $url="Schedulemessage.php?vmc=".base64_encode($result['XVVmsCode']);
                                                 if($XVVmsCode==$result['XVVmsCode']){
-                                                    echo  '<tr><td><a style="background-color: #E0FFFF;" href="'.$url.'">'.$result['XVVmsName'].'</a> </td></tr>';
+                                                    echo  '<tr><td><a style="background-color: #006eb4; color: white; border-radius: 5px; box-shadow: 3px 3px 3px #aaaaaa;" href="'.$url.'">'.$result['XVVmsName'].'</a> </td></tr>';
                                                 }else{
                                                     echo  '<tr><td><a href="'.$url.'">'.$result['XVVmsName'].'</a></td> </tr>';
                                                 }
@@ -225,60 +330,79 @@ a.activeUser-item:active {
                     </div>
 
                 </div>
-                <div class="col-sm-10">
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
+
+                </div>
+                <!-- end div flex search content -->
+
+
+
+                <div class="col flex-btn">
+        <div class="flex-btn-content col-12" style="padding: 1rem; border-bottom: 3px double #cccc; margin-bottom: .2rem;">
+
+
+        <div class="flex-search-content"></div>
+
+                    <div class="col-4" style="border-right: 1px solid #cccc;">
                         <input type="hidden" value="<?php echo $XVVmsCode;?>" id="vmsID">
-                        <div class="row">
-                            <div class="col-sm-4 p-1" style="">
                             <?php
                                 $Disable='pointer-events: none;';
                                 if($_SESSION["XBDmnIsAdd"]==1){
                                     $Disable="";
                                 }
                             ?>
-                                <a href="#" class="btn btn-primary" style="font-size: 10pt;margin-left:20px; <?php echo $Disable;?>"
+                                <button href="#" class="btn-hover btn btn-primary shadow " style="<?php echo $Disable;?> width: 100%; padding: 1rem; background-color: #006eb4;"
                                     onclick="processListMessage2()" title="การแสดงข้อความ"><i class="fa fa-plus"
-                                        aria-hidden="true" ></i> เพิ่ม/แก้ไขรายการข้อความ</a>
+                                        aria-hidden="true" ></i> เพิ่ม/แก้ไขรายการข้อความ</button>
                             </div>
-                            <div class="col-sm-4 p-1">
-                                <button type="button" onclick="ShowEx()" class="btn btn-warning"><i class="fa fa-search"
+
+
+                            <div class="col-4" style="border-right: 1px solid #cccc;">
+                                <button type="button" onclick="ShowEx()" class="btn-hover btn btn-primary shadow" style="width: 100%; padding: 1rem; background-color: #006eb4;"><i class="fa fa-search"
                                         aria-hidden="true"></i>แสดงตัวอย่าง</button>
                             </div>
-                            <div class="col-sm-4 p-1">
+
+
+                            <div class="col-4" style="">
                             <?php
                                 $Disable='pointer-events: none;';
                                 if($_SESSION["XBDmnIsControl"]==1){
                                     $Disable="";
                                 }
                             ?>
-                                <a id="sendmessagevms" class="btn btn-success" style="font-size: 10pt; color: #FFFFFF;<?php echo $Disable;?>"
+                                <button id="sendmessagevms" class="btn-hover btn btn-primary shadow" style="<?php echo $Disable;?> width: 100%; padding: 1rem; background-color: #006eb4;"
                                     onclick="sendmessageToVMS()"><i class="fa fa-cloud-upload" aria-hidden="true"></i>
-                                    ส่งข้อความขึ้นป้าย</a>
-                            </div>
+                                    ส่งข้อความขึ้นป้าย</button>
+                            
                         </div>
+
+
                     </div>
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                       <div class="table-responsive">
+               
+
+                    <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px; margin: .5rem;">
+
+<!-- <img style="margin: 0 0.5rem; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s" width="15" alt=""> -->
+<input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" aria-controls="VMSTable"></input>
+</div>
+
+                    <div class="col" style="">
+                       <div class="table table-striped table-hover">
                         <table id="UserTable" class="table">
                             <thead>
                                 <tr>
-                                    <th width="150" >รหัสข้อความ</th>
-                                    <th width="20" >
-                                        <div style="text-align: center">ลำดับ</div>
-                                    </th>
-                                    <th width="20" >
-                                    </th>
-                                    <th width="300" style="text-left: center">ขื่อข้อความ</th>
-                                    <th width="100" style="text-left: center">ประเภท</th>
-                                    <th width="200" style="text-align: center">ขนาด</th>
-                                    <th width="100" style="text-align: center">ตั้งเวลา</th>
-                                    <th width="320" style="text-left: center">เริ่ม</th>
-                                    <th width="320" style="text-left: center">สิ้นสุด</th>
-                                    <th width="100"  style="text-align: center;">ระยะเวลา</th>
-                                    <th width="100"  style="text-align: center;">ดูข้อความ</th>
-
-                                    <th width="50" style="text-align: center;">ลบ</th>
-                                    <th width="50" style="text-align: center;">บันทึก</th>
+                                    <th >รหัสข้อความ</th>
+                                    <th >ลำดับ</th>
+                                    <th ></th>
+                                    <th >ขื่อข้อความ</th>
+                                    <th >ประเภท</th>
+                                    <th >ขนาด</th>
+                                    <th >ตั้งเวลา</th>
+                                    <th >เริ่ม</th>
+                                    <th >สิ้นสุด</th>
+                                    <th >ระยะเวลา</th>
+                                    <th >ดูข้อความ</th>
+                                    <th >ลบ</th>
+                                    <th >บันทึก</th>
 
                                 </tr>
                             </thead>
@@ -436,10 +560,27 @@ FROM            dbo.TMstMItmVMSMessage INNER JOIN
         </div>
 
     </div>
-    <br>
+
+
+    </div>
+                    </div>
+                    <!-- end div flex-btn -->
+    
+       
+
 
 </div>
 </div>
+
+
+                                    </div>
+                                    </div>
+                                       
+
+
+
+
+
 
 <div class="modal py-5" id="myModal" role="dialog">
     <div class="modal-dialog modal-dialog" >
@@ -686,17 +827,19 @@ FROM            dbo.TMstMItmVMSMessage INNER JOIN
                                     onclick="sendSubmitNextStep();">ส่งคำสั่ง</button>
                             </div>
                         </div>
+
+
+
                     </div>
                 </div>
-            </div>
-            <div>
-            </div>
-            <br>
-        </div>
-    </div>
-</div>
-</div>
 
+
+
+
+
+</div>
+</div>
+<!-- end div container -->
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
