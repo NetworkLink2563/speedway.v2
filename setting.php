@@ -60,14 +60,6 @@ justify-content: center;
     display: none;
 }
 
-input .btnsearch{
- background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
- background-repeat: no-repeat;
- background-size: 15px;
- background-position: left 12px top 10px;
- text-indent: 20px;
-}
-
 #dt-search-0{
     opacity: 0.7;
 }
@@ -96,6 +88,14 @@ table th{
         opacity: 0.8;
         transition: 0.5s;
     }
+
+input .btnsearch{
+ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-repeat: no-repeat;
+ background-size: 15px;
+ background-position: left 12px top 10px;
+ text-indent: 20px;
+}
 </style>
 
 <div class="container" style="position: relative; top: 80; ">
@@ -138,6 +138,8 @@ table th{
 <!-- <img style="margin: 0 0.5rem; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s" width="15" alt=""> -->
 <input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" aria-controls="VMSTable"></input>
 </div>
+
+
 
 <div class="col-12" >
                         <table id="UserTable" class="table table-striped table-hover" style="width:100%">
