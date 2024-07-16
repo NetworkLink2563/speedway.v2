@@ -220,7 +220,6 @@ $XVVmsCode=base64_decode($_REQUEST["vmc"]) ;
             <img src="http://43.229.151.103/speedway/img/icon/computer.png" height="25" alt="Responsive image"> รายงานการปฏิบัติงาน
         </div>
 
-<div class="container">
 
 <div class=" shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
             <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายงาน</a>
@@ -234,12 +233,12 @@ $XVVmsCode=base64_decode($_REQUEST["vmc"]) ;
                         <form class="form-inline " action=""> 
                         
                                 <div class="col-2" style="text-align: center; margin: 1rem;">
-                                <label style="display: inline-block;"  for="ds">วันที่เริ่ม:</label><i style="width: 25%; text-align: left; margin-left: .3rem;" class="fa">&#xf073;</i>
+                                <label style="display: inline-block; font-size: 1.2rem;"  for="ds">วันที่เริ่ม:</label><i style="width: 25%; text-align: left; margin-left: .3rem;" class="fa">&#xf073;</i>
                                 <input type="text" id="ds" class="datetimepicker form-control" placeholder="" style="width: 100%; text-align: center;"/>
                                 </div>
 
                                 <div class="col-2" style="text-align: center;">
-                                <label style="display: inline-block;" for="de">วันที่สิ้นสุด:</label><i style="width: 25%; text-align: left; margin-left: .3rem;" class="fa">&#xf073;</i>
+                                <label style="display: inline-block; font-size: 1.2rem;" for="de">วันที่สิ้นสุด:</label><i style="width: 25%; text-align: left; margin-left: .3rem;" class="fa">&#xf073;</i>
                                 <input type="text" id="de" class="datetimepicker form-control" placeholder="" style="width: 100%; text-align: center;"/>
                                 </div>
 
@@ -248,12 +247,12 @@ $XVVmsCode=base64_decode($_REQUEST["vmc"]) ;
                                 <div class="flex-btn">
 
                                 <div class="col-2">
-                                <button type="button"  onclick="ShowData()" class="btn btn-primary shadow" style="padding: .5rem; width: 100%; background-color: #006eb4;"><i style="width: 10%;" class="fa fa-search" aria-hidden="true"></i> ค้นหา</button>
+                                <button type="button"  onclick="ShowData()" class="btn btn-primary shadow" style="padding: .5rem; width: 100%; background-color: #006eb4;"><i style="width: 13%;" class="fa fa-search" aria-hidden="true"></i> ค้นหา</button>
                                 </div>
 
                                 <div class="col-2">
-                                <button  class="btn btn-warning shadow" style="padding: .5rem;  width: 100%;"
-                                onclick="PrintReport()"><i class="fa fa-print" aria-hidden="true"></i>พิมพ์รายงาน</button>
+                                <button  class="btn btn-success shadow" style="padding: .5rem;  width: 100%;"
+                                onclick="PrintReport()"><i style="width: 17%;" class="fa fa-print" aria-hidden="true"></i>พิมพ์รายงาน</button>
                                 </div>
 
                                 </div>
