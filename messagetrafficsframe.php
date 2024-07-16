@@ -330,8 +330,82 @@ input[type='file'] { font-size: 0; }
     background-color: white;
 }
 
+.flex-btn{
+    display: flex;
+    flex-direction: column;
+}
 
+.flex-header{
+    display: flex;
 
+}
+
+.flex-content{
+    display: flex;
+}
+
+.frame{
+transition: transform .2s;
+}
+
+.frame:hover{
+    transform: scale(1.3);
+}
+
+.box-color{
+    transition: 0.3s;
+}
+
+.box-color:hover{
+    background-color: #e4e4e4cc;
+}
+
+table td{
+        transition: 0.5s;
+    }
+
+.shadow{
+    box-shadow: 3px 3px 3px #aaaaaa!important;
+}
+
+table th{
+        background-color: #e8f4ff!important;
+    }
+
+.container{
+        height: 100vh;
+    }
+
+.dt-search{
+    display: none;
+}
+
+.flex-table{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+input .btnsearch{
+ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-repeat: no-repeat;
+ background-size: 15px;
+ background-position: left 12px top 10px;
+ text-indent: 20px;
+}
+
+table {
+    text-align: center;
+}
+
+.box-color img{
+    position: relative;
+    z-index: 9999;
+}
+
+.box-color p {
+    font-size: 1.3rem;
+}
 </style>
 
 
@@ -349,39 +423,57 @@ input[type='file'] { font-size: 0; }
         <input type="hidden" id="XVMssCode" >
 
         
-    <div class="flex-header">
+    <div class="flex-header" style="padding: 0rem;">
             
-            <div class="row">
-                <div class="col-sm-4" >
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;text-align: center;">
-                         <p style="maring:0px;padding:0px;">เลือกรูปแบบข้อความป้าย</p>
-                     </div>
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                        
-                       <div  onclick="showframe1()"   style="cursor: pointer;text-align: center;margin-top:5px;border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;"><p style="maring:0px;padding:0px;">แบบข้อความเดี่ยว</p><img src="img/f1.png" alt="Girl in a jacket" width="100%" height="100"></div>
-                       <div  onclick="showframe2()" style="cursor: pointer;text-align: center;margin-top:5px;border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;"><p style="maring:0px;padding:0px;">แบบ 2 ข้อความ 3 ช่อง</p><img src="img/f2.png" alt="Girl in a jacket" width="100%" height="100"></div>
-                       <div  onclick="showframe3()" style="cursor: pointer;text-align: center;margin-top:5px;border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;"><p style="maring:0px;padding:0px;">แบบ 1 ข้อความ 2 ช่อง</p><img src="img/f3.png" alt="Girl in a jacket" width="100%" height="100"></div>
+    <div class="flex-content col-3" style="padding: 0rem;">
+
+
+            <div class="flex-btn" style="border: 5px double #DCDCDC; padding: 0.5rem; top: 43;border-bottom: none; position: relative;">
+                    <!-- <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;text-align: center;">
+                         <p style="">เลือกรูปแบบข้อความป้าย</p>
+                     </div> -->
+                
+                       <div class="box-color col-12"  onclick="showframe1()"   style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;"><p style="">แบบข้อความเดี่ยว</p><img class=" frame hover shadow" src="img/f1.png"  width="100%" height="100"></div>
+
+                       <div  class="box-color col-12" onclick="showframe2()"   style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;"><p style="">แบบ 2 ข้อความ 3 ช่อง</p><img class=" frame hover shadow" src="img/f2.png"  width="100%" height="100"></div>
+
+                       <div class="box-color col-12"  onclick="showframe3()"  style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;"><p style="">แบบ 1 ข้อความ 2 ช่อง</p><img class=" frame hover shadow" src="img/f3.png"  width="100%" height="100"></div>
                     </div>
+
                 </div>
-                <div class="col-sm-8" style="">
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                        <table id="VMSTable" class="table table-striped table-hover" style="width:100%;">
+                <!-- end div flex-btn -->
+
+
+                
+
+                    <div class="flex-table col" style="padding: 0;">
+
+                    <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px;">
+
+<!-- <img style="margin: 0 0.5rem; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s" width="15" alt=""> -->
+<input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" aria-controls="VMSTable"></input>
+</div>
+
+
+
+                            <div class="col">
+                        <table id="VMSTable" class="table table-striped table-hover">
                             <thead>
-                                <tr style="font-size: 10pt">
+                                <tr>
                                     <th class="th-sm">รหัส
                                     </th>
                                     <th class="th-sm">ชื่อข้อความ
                                     </th>
                                     <!--
-                                    <th class="th-sm" style="text-align: center">ตัวอย่าง
+                                    <th>ตัวอย่าง
                                     </th>
 
 -->
-                                    <th class="th-sm" style="text-align: center">ขนาด
+                                    <th>ขนาด
                                     </th>
                                     
-                                    <th class="th-sm" style="text-align: center">ลบ</th>
-                                    <th class="th-sm" style="text-align: center">แก้ไข</th>
+                                    <th>ลบ</th>
+                                    <th>แก้ไข</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -411,39 +503,39 @@ input[type='file'] { font-size: 0; }
 
                                     </td>
                     -->
-                                    <td style="text-align: center"><?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel']; ?></td>
+                                    <td ><?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel']; ?></td>
+        
                                    
                                     <td>
-     
-                                        <div style="margin-top: 5px">
-                            
                                                 <i title="ลบ" style="cursor: -webkit-grab; cursor: grab;" class="fa fa-trash-o" aria-hidden="true" onclick="deleteMSG('<?php echo $result['XVMsfCode']; ?>');" <?php echo $Disable;?>></i>
-                                            
-                                        </div>
                                     </td>
                                     <td>
-                                        <div style="margin-top: 5px">
+                                
                                                  <i title="แก้ไข" style="cursor: -webkit-grab; cursor: grab;" class="fa fa-pencil-square-o"
                                                 aria-hidden="true"
                                                 onclick="SearchEdit('<?php echo $result['XVMsfCode'];?>','<?php echo $result['XIMssWPixel'];?>','<?php echo $result['XIMssHPixel'];?>');"></i>
-                                        </div>
+                            
                                     </td>
                 
                     </tr>
                     <?php } ?>
                     </tbody>
                     </table>
-                </div>
-            </div>
-            <div class="col-sm-3">
-            </div>
-        </div>
-    </div>
-    <br>
+           
 </div>
 
+</div>
+
+</div>
+<!-- end div flex table -->
 
 
+
+</div>
+<!-- end div flex content -->
+
+
+</div>
 
 
 <div class="modal modal-fullscreen" id="modal-frame1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -468,7 +560,7 @@ input[type='file'] { font-size: 0; }
                 </div>
                 <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
                             <div class="form-group form-inline">
-                                <label style="margin-right: 5px;" for="XVMsfCodeF1">หรัสข้อความป้าย:</label>
+                                <label style="margin-right: 5px;" for="XVMsfCodeF1">รหัสข้อความป้าย:</label>
                                 <input type="text" class="form-control" id="XVMsfCodeF1" readonly>
                             </div>
                             <div class="form-group form-inline">
@@ -490,6 +582,12 @@ input[type='file'] { font-size: 0; }
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+    
                 <div class="row">
                     <div class="col-sm-12 text-center pt-1" >
                        <button type="button"  id="btn_saveframe1" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
@@ -509,8 +607,7 @@ input[type='file'] { font-size: 0; }
   </div>
 
 
-</div>
-<!-- end div container -->
+
 
 
 <div class="modal modal-fullscreen" id="modal-frame2" tabindex="-1" role="dialog" aria-hidden="true">
@@ -703,6 +800,13 @@ input[type='file'] { font-size: 0; }
     </div>
   </div>
 </div>
+
+
+</div>
+<!-- end div container -->
+
+
+
   <!-- The Modal -->
 <div class="modal" id="myModal">
   <div class="modal-dialog">
@@ -791,6 +895,8 @@ input[type='file'] { font-size: 0; }
     </div>
   </div>
 </div>
+
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

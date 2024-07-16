@@ -64,6 +64,7 @@ html {
 }
 
 body {
+    background: #e1f0fa;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -73,6 +74,10 @@ body {
 
 .btn-open-modal {
   margin-bottom: 0.5em;
+}
+
+.dt-search{
+    display: ;
 }
 </style>
 <style>
@@ -326,14 +331,93 @@ ol.menu {
 input[type='file'] { font-size: 0; }
 ::file-selector-button { font-size: initial; }
 </style>
-<div class="centered" style="margin-top: 60;margin-left: 10;">
 
-    <div class="box" style="margin-top: 30;" align="left">
-        <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-            <img src="img/icon/setting.png" height="25" alt="Responsive image">&nbsp;สร้างข้อความประชาสัมพันธ์แสดงบนป้าย
-            <div style="margin-top:-5;">
-                <hr>
-            </div>
+<style>
+    .search {
+  border: solid 1px #9b9898cc;
+  border-radius: 4px;
+  color: #4a98ff;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+input.btnsearch{
+ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-repeat: no-repeat;
+ background-size: 15px;
+ background-position: left 12px top 10px;
+ text-indent: 20px;
+}
+
+input[type="text"] {
+  border: none;
+  outline: none;
+  font-size: 24px;
+}
+input[type="text"]::placeholder {
+  color: #9b9898cc;
+}
+i {
+  font-size: 24px;
+  margin: 0 15px;
+}
+
+.tb-down{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #034672;
+    border-color: #007bff;
+}
+
+.frame{
+transition: .2s;
+}
+
+.frame:hover{
+    transform: scale(1.3);
+}
+
+.box-color{
+    transition: 0.3s;
+}
+
+.box-color:hover{
+    background-color: #e4e4e4cc;
+}
+
+table td{
+        transition: 0.5s;
+    }
+
+    .shadow{
+    box-shadow: 3px 3px 3px #aaaaaa!important;
+}
+
+table th{
+        background-color: #e8f4ff!important;
+    }
+    
+    .container{
+        background-color: white;
+    }
+</style>
+
+    
+<div class="container" style="position: relative; top: 75;">
+
+
+        <div class="container" >
+
+
+        <div style=" text-align: center; margin-bottom: 0; border-bottom: 3px double #cccc; padding: 1rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> สร้างข้อความประชาสัมพันธ์แสดงบนป้าย
         </div>
         
         <input type="hidden" id="framenumber" >
@@ -341,24 +425,47 @@ input[type='file'] { font-size: 0; }
         <input type="hidden" id="framewidth" >
         <input type="hidden" id="frameheight" >
         <input type="hidden" id="XVMssCode" >
-        <div  id="message"  style="display: block; margin-left: 10px;margin-right: 10px;" id="container">
+        <div  id="message" id="container">
             
-            <div class="row">
-                <div class="col-sm-4" >
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;text-align: center;">
-                         <p style="maring:0px;padding:0px;">เลือกรูปแบบข้อความป้าย</p>
-                     </div>
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
+
+
+
+
+            <div class="container">
+                
+            <div class="row" style="padding: 0.5rem;">
+
+            
+                    
+
+                    <div class="col-3" style="border: 5px double #DCDCDC; padding: 0.5rem; top: 50; height: 927px; border-bottom: none;">
                         
-                       <div  onclick="showframe1()"   style="cursor: pointer;text-align: center;margin-top:5px;border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;"><p style="maring:0px;padding:0px;">แบบข้อความเดี่ยว</p><img src="img/f1.png" alt="Girl in a jacket" width="100%" height="100"></div>
-                       <div  onclick="showframe2()" style="cursor: pointer;text-align: center;margin-top:5px;border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;"><p style="maring:0px;padding:0px;">แบบ 2 ข้อความ 3 ช่อง</p><img src="img/f2.png" alt="Girl in a jacket" width="100%" height="100"></div>
-                       <div  onclick="showframe3()" style="cursor: pointer;text-align: center;margin-top:5px;border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;"><p style="maring:0px;padding:0px;">แบบ 1 ข้อความ 2 ช่อง</p><img src="img/f3.png" alt="Girl in a jacket" width="100%" height="100"></div>
+                        
+                        <!-- <div class="  " style="border-bottom: 1px solid #DCDCDC; text-align: center; font-size: 14px;">
+                            <p style="maring:0px;padding:0px;">เลือกรูปแบบข้อความป้าย</p>
+                        </div> -->
+
+                       <div class="box-color" onclick="showframe1()"   style="cursor: pointer;text-align: center;border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;"><p style="maring:0px;padding:0px; font-size: 18px;">เลือกแบบข้อความเดี่ยว</p><img style="position:relative; z-index: 99" class=" frame hover shadow" src="http://43.229.151.103/speedway/img/f1.png" alt="" width="100%" height="100"></div>
+                       
+                       <div class="box-color" onclick="showframe2()" style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;"><p style="maring:0px;padding:0px; font-size: 18px;">เลือกแบบ 2 ข้อความ 3 ช่อง</p><img style="position:relative; z-index: 99" class=" frame hover shadow" src="http://43.229.151.103/speedway/img/f2.png" alt="" width="100%" height="100"></div>
+
+                       <div class="box-color" onclick="showframe3()" style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;"><p style="maring:0px;padding:0px;font-size: 18px;">เลือกแบบ 1 ข้อความ 2 ช่อง</p><img style="position:relative; z-index: 99" class=" frame hover shadow" src="http://43.229.151.103/speedway/img/f3.png" alt="" width="100%" height="100"></div>
                     </div>
-                </div>
-                <div class="col-sm-8" style="">
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                        <table id="VMSTable" class="table" style="width:100%;">
-                            <thead>
+
+
+                    
+                    
+                    <div class="col">
+          
+                    <div  class="search" style="width: 230px; padding: 0; float: right; margin: 0.5rem 0rem;">
+
+                    <!-- <img style="margin: 0 0.5rem; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s" width="15" alt=""> -->
+                    <input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" aria-controls="VMSTable"></input>
+</div>
+
+
+                        <table id="VMSTable" class="table table-striped table-hover" style="width:100%;">
+                            <thead style="border-top: 1px solid #DCDCDC;">
                                 <tr style="font-size: 10pt">
                                     <th class="th-sm">รหัส
                                     </th>
@@ -371,12 +478,21 @@ input[type='file'] { font-size: 0; }
 -->
                                     <th class="th-sm" style="text-align: center">ขนาด
                                     </th>
+
+                                    <!-- <th class="th-sm" style="text-align: center"><i class="fa fa-trash-o"></i>ลบ
+                                    </th> -->
+                                    <th class="th-sm" style="text-align: center">ลบ
+                                    </th>
                                     
-                                    <th class="th-sm" style="text-align: center"></th>
-                                    <th class="th-sm" style="text-align: center"></th>
+                                    <!-- <th class="th-sm" style="text-align: center"><i class="fa fa-trash-o"></i>แก้ไข
+                                    </th> -->
+                                    <th class="th-sm" style="text-align: center">แก้ไข
+                                    </th>
+
                                 </tr>
                             </thead>
                             <tbody>
+                                
                                 <?php
                         $stmt = "SELECT   dbo.TMstMMessageFrame.XVMsfCode, dbo.TMstMMessageFrame.XVMsfName, dbo.TMstMMessageFrame.XVMssCode, dbo.TMstMMessageFrame.XVMsfFormat, dbo.TMstMMessageFrame.XVMsgCodeF1, 
                                                         dbo.TMstMMessageFrame.XVMsgCodeF2, dbo.TMstMMessageFrame.XVMsgCodeF3, dbo.TMstMMessageFrame.XVMsgCodeF4, dbo.TMstMMessageFrame.XVMsgCodeF5, dbo.TMstMMessageFrame.XVMsfType, 
@@ -407,6 +523,24 @@ input[type='file'] { font-size: 0; }
                                    
                                     <td>
      
+                                        <div style="margin-top: 5px ;text-align: center">
+                            
+                                             <img src="https://cdn-icons-png.freepik.com/256/14610/14610736.png?semt=ais_hybrid" width="20" alt="" aria-hidden="true" onclick="deleteMSG('<?php echo $result['XVMsfCode']; ?>'); <?php echo $Disable;?>">
+                                            
+                                        </div>
+                                    </td>
+
+                                    <td style="text-align: center">
+     
+                                        <div style="margin-top: 5px ">
+                            
+                                                <img src="https://icons.veryicon.com/png/o/miscellaneous/linear-small-icon/edit-246.png" width="20" alt="" aria-hidden="true" onclick="SearchEdit('<?php echo $result['XVMsfCode'];?>','<?php echo $result['XIMssWPixel'];?>','<?php echo $result['XIMssHPixel'];?>');">
+                                            
+                                        </div>
+                                    </td>
+
+                                    <!-- <td>
+     
                                         <div style="margin-top: 5px">
                             
                                                 <i title="ลบ" style="cursor: -webkit-grab; cursor: grab;" class="fa fa-trash-o" aria-hidden="true" onclick="deleteMSG('<?php echo $result['XVMsfCode']; ?>');" <?php echo $Disable;?>></i>
@@ -419,19 +553,33 @@ input[type='file'] { font-size: 0; }
                                                 aria-hidden="true"
                                                 onclick="SearchEdit('<?php echo $result['XVMsfCode'];?>','<?php echo $result['XIMssWPixel'];?>','<?php echo $result['XIMssHPixel'];?>');"></i>
                                         </div>
-                                    </td>
+                                    </td> -->
                 
                     </tr>
+
                     <?php } ?>
-                    </tbody>
                     </table>
                 </div>
+                
+                
+
+
+          
+            
+                <div class="tb-down">
+
+            <div style="font-size: 0.9rem;text-align: center; margin: 0.5rem;" class="dt-info" aria-live="polite" id="VMSTable_info" role="status">รายการ 1 ถึง 10 จาก 19 ข้อมูล</div>
+                <div class="dt-paging paging_full_numbers"><ul class="pagination"><li class="dt-paging-button page-item disabled"><a class="page-link first" aria-controls="VMSTable" aria-disabled="true" aria-label="First" data-dt-idx="first" tabindex="-1">«</a></li><li class="dt-paging-button page-item disabled"><a class="page-link previous" aria-controls="VMSTable" aria-disabled="true" aria-label="Previous" data-dt-idx="previous" tabindex="-1">‹</a></li><li class="dt-paging-button page-item active"><a href="#" class="page-link" aria-controls="VMSTable" aria-current="page" data-dt-idx="0" tabindex="0">1</a></li><li class="dt-paging-button page-item"><a href="#" class="page-link" aria-controls="VMSTable" data-dt-idx="1" tabindex="0">2</a></li><li class="dt-paging-button page-item"><a href="#" class="page-link next" aria-controls="VMSTable" aria-label="Next" data-dt-idx="next" tabindex="0">›</a></li><li class="dt-paging-button page-item"><a href="#" class="page-link last" aria-controls="VMSTable" aria-label="Last" data-dt-idx="last" tabindex="0">»</a></li></ul>
             </div>
-            <div class="col-sm-3">
+
             </div>
-        </div>
-    </div>
-    <br>
+         
+
+
+
+
+
+
 </div>
 
 
@@ -460,7 +608,7 @@ input[type='file'] { font-size: 0; }
                 </div>
                 <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
                             <div class="form-group form-inline">
-                                <label style="margin-right: 5px;" for="XVMsfCodeF1">หรัสข้อความป้าย:</label>
+                                <label style="margin-right: 5px;" for="XVMsfCodeF1">รหัสข้อความป้าย:</label>
                                 <input type="text" class="form-control" id="XVMsfCodeF1" readonly>
                             </div>
                             <div class="form-group form-inline">
@@ -532,7 +680,7 @@ input[type='file'] { font-size: 0; }
                     <div class="col-sm-12">
                        <div style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:5px;border-width: 2px;">
                             <div class="form-group form-inline">
-                                <label style="margin-right: 5px;" for="XVMsfCodeF2">หรัสข้อความป้าย:</label>
+                                <label style="margin-right: 5px;" for="XVMsfCodeF2">รหัสข้อความป้าย:</label>
                                 <input type="text" class="form-control" id="XVMsfCodeF2" readonly>
                             </div>
                             <div class="form-group form-inline">
@@ -611,6 +759,7 @@ input[type='file'] { font-size: 0; }
   </div>
 </div>
 
+
 <div class="modal modal-fullscreen" id="modal-frame3" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -635,7 +784,7 @@ input[type='file'] { font-size: 0; }
                         <div class="row">
                             <div class="col-sm-12 border">
                                     <div class="form-group form-inline">
-                                        <label style="margin-right: 5px;" for="XVMsfCodeF3">หรัสข้อความป้าย:</label>
+                                        <label style="margin-right: 5px;" for="XVMsfCodeF3">รหัสข้อความป้าย:</label>
                                         <input type="text" class="form-control" id="XVMsfCodeF3" readonly>
                                     </div>
                                     <div class="form-group form-inline">
@@ -693,6 +842,12 @@ input[type='file'] { font-size: 0; }
     </div>
   </div>
 </div>
+
+
+</div>
+<!-- end div container -->
+
+
   <!-- The Modal -->
 <div class="modal" id="myModal">
   <div class="modal-dialog">
@@ -781,6 +936,11 @@ input[type='file'] { font-size: 0; }
     </div>
   </div>
 </div>
+
+
+
+
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -792,6 +952,7 @@ input[type='file'] { font-size: 0; }
 <script src="dist/js/dataTables.bootstrap4.js"></script>
 <script type="text/javascript" src="Ckeditor/ckeditor/ckeditor.js"></script>
 <script>
+
 function showframe1(){
     $('#framenumber').val(1);
     $('#XVMsfCodeF1').val('MSFYYMM-####');
@@ -1341,7 +1502,7 @@ function SearchEdit(XVMsfCode,w,h){
          }
     });
 }
-// Basic example
+Basic example
 $(document).ready(function() {
 
     //  new DataTable('#UserTable');
@@ -1350,7 +1511,7 @@ $(document).ready(function() {
     new DataTable('#VMSTable', {
         ordering: false,
         "oLanguage": {
-            "sSearch": "กรอกข้อความที่ต้องการค้นหา"
+             "sSearch": "กรอกข้อความที่ต้องการค้นหา"
         }
     });
 });
