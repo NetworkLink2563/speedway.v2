@@ -325,53 +325,112 @@ ol.menu {
 }
 input[type='file'] { font-size: 0; }
 ::file-selector-button { font-size: initial; }
-</style>
-<div class="centered" style="margin-top: 60;margin-left: 10;">
 
-    <div class="box" style="margin-top: 30;" align="left">
-        <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-            <img src="img/icon/setting.png" height="25" alt="Responsive image">&nbsp;สร้างชุดการแสดงป้ายจราจร
-            <div style="margin-top:-5;">
-                <hr>
-            </div>
-        </div>
-        
+*{
+    box-sizing: border-box;
+}
+
+.shadow{
+    box-shadow: 3px 3px 3px #aaaaaa!important;
+}
+
+table th{
+        background-color: #e8f4ff!important;
+    }
     
-        <div  id="message"  style="display: block; margin-left: 10px;margin-right: 10px;" id="container">
-            <div class="row">
-               
-                   
-                    <div class="col-sm-12" >
-                        <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                            <div class="btn-group">
-                               <button style="margin: 5px;border-radius: 5px;" type="button" id="btn_add"  class="btn btn-primary btn-lg">สร้างชุดการแสดงป้าย<i style="margin-left: 10px;color:#09C703;font-size: 30px;" class="fa fa-file-text"></i></button>
-                             
-                           
+    .btn-hover:hover{
+        opacity: 0.8;
+        transition: 0.5s;
+    }
+
+    .container{
+    background-color: white;
+    
+}
+
+body {
+        background: #e1f0fa;
+    }
+
+.flex-head{
+    display: flex;
+    margin: 1rem;
+}
+
+.flex-table{
+    display: flex;
+}
+
+table th{
+        background-color: #e8f4ff!important;
+    }
+    
+    .btn-hover:hover{
+        opacity: 0.8;
+        transition: 0.5s;
+    }
+
+    table td{
+        transition: 0.5s;
+        font-size: 0.9rem;
+        transition: 0.5s;
+        font-weight: 300;
+    }
+
+    table th{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .table{
+        text-align: center;
+    }
+
+    .flex-btn{
+    display: flex;
+    flex-direction: column;
+    
+}
+</style>
 
 
+<div class="container" style="position: relative; top: 75;">
+
+<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> สร้างชุดการแสดงป้ายจราจร
+        </div>
+
+    <div class="flex-head">
+
+    <div class="col-2"  id="message" id="container" style="padding: 0; border-right: 3px double #cccc;">
+            <div class="flex-btn" style="background-color: #f8f7f7cc;">
+                            <div class="col-12" style="padding: .5rem .5rem;">
+                               <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_add"  class=" btn-hover btn btn-primary shadow" ><i style="width: 15%;" class="fa fa-file-text"></i>สร้างชุดการแสดงป้าย</button>
                             </div>
-                        </div>
-                    </div>
-                
             </div>
-            <div class="row">
-            
+            </div>
 
-                <div class="col-sm-12" style="">
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                        <table id="VMSTable" class="table" style="width:100%;">
+
+
+
+            <div class="col-10">
+
+            <div class="flex-table">
+                <div class="col-12" style="padding: 0;">
+                        <table id="VMSTable" class="table table-striped table-hover" style="width:100%;">
                             <thead>
                                 <tr style="font-size: 10pt">
-                                    <th class="th-sm">รหัสขุดป้าย
+                                    <th >รหัสชุดดป้าย
                                     </th>
-                                    <th class="th-sm">ชื่อชุดป้าย
-                                    </th>
-                                   
-                                    <th class="th-sm" style="text-align:left">ขนาด
+                                    <th >ชื่อชุดป้าย
                                     </th>
                                    
-                                    <th class="th-sm" style="text-align: center"></th>
-                                    <th class="th-sm" style="text-align: center"></th>
+                                    <th>ขนาด
+                                    </th>
+                                   
+                                    <th ></th>
+                                    <th >ลบ</th>
+                                    <th >แก้ไข</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -388,7 +447,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                             $XIMssWPixel=$result['XIMssWPixel'];
                             $XIMssHPixel=$result['XIMssHPixel'];
                         ?>
-                                <tr  style="font-size: 10pt">
+                                <tr>
                                     <td><?php echo $result['XVPltCode']; ?></td>
                                     <td><?php echo $result['XVPltName']; ?></td>
                                    
@@ -396,7 +455,6 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                                         <?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel']; ?></td>
                                     
                                     <td>
-                    </div>
                     <td>
                     <?php
                        $Disable="pointer-events: none;";
@@ -404,15 +462,13 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                           $Disable="";
                        }
                     ?>
-                        <div style="margin-top: 5px"><a href="#" class="del-item" style="color: #8d9499;<?php echo $Disable;?>"
+                                <a href="#" class="del-item" style="color: #8d9499;<?php echo $Disable;?>"
                                 onclick="deleteMSG('<?php echo $result['XVPltCode']; ?>');" ><i class="fa fa-trash-o"
-                                    aria-hidden="true"></i></a></div>
+                                    aria-hidden="true"></i></a>
                     </td>
                     <td>
-                            <div style="margin-top: 5px">
                                 <i title="แก้ไข" style="cursor: -webkit-grab; cursor: grab;" class="fa fa-pencil-square-o" aria-hidden="true"
                                 onclick="SearchEdit('<?php echo $result['XVPltCode'];?>','<?php echo $result['XVPltName'];?>','<?php echo $result['XVMssCode'];?>');"></i>
-                            </div>
                     </td>
                     </tr>
                     <?php } ?>
@@ -420,14 +476,15 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                     </table>
                 </div>
             </div>
-            <div class="col-sm-3">
             </div>
-        </div>
-    </div>
-    <br>
+
+
 </div>
 
+</div>
 
+</div>
+<!-- end div flex container -->
 
 <div class="modal modal-fullscreen" id="modal-add" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -466,16 +523,12 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                           <table id="VMSTable" class="table" style="width:100%;">
                             <thead>
                                 <tr style="font-size: 10pt">
-                                    <th class="th-sm">รหัสข้อความประชาสัมพันธ์
-                                    </th>
-                                    <th class="th-sm">ชื่อข้อความประชาสัมพันธ์
-                                    </th>
+                                    <th >รหัสข้อความประชาสัมพันธ์</th>
+                                    <th >ชื่อข้อความประชาสัมพันธ์</th>
+                                    <th>ขนาด</th>
                                    
-                                    <th class="th-sm" style="text-align: center">ขนาด
-                                    </th>
-                                   
-                                    <th class="th-sm" style="text-align: center"></th>
-                                    <th class="th-sm" style="text-align: center"></th>
+                                    <th></th>
+                                    <th></th>
                                   
                                 </tr>
                             </thead>
@@ -522,23 +575,23 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                            <table id="myTable" class="table" >
                            <thead>
                                 <tr style="font-size: 10pt">
-                                    <th class="th-sm">ลำดับที่
+                                    <th >ลำดับที่
                                     </th>
-                                    <th class="th-sm">รหัสชุดแสดงป้าย
+                                    <th >รหัสชุดแสดงป้าย
                                     </th>
-                                    <th class="th-sm">ชื่อชุดแสดงป้าย
+                                    <th >ชื่อชุดแสดงป้าย
                                     </th>
-                                    <th class="th-sm">ตั้งเวลา
+                                    <th >ตั้งเวลา
                                     </th>
-                                    <th class="th-sm">เริ่ม
+                                    <th >เริ่ม
                                     </th>
-                                    <th class="th-sm">สิ้นสุด
+                                    <th >สิ้นสุด
                                     </th>
-                                    <th class="th-sm">ระยะเวลา
+                                    <th >ระยะเวลา
                                     </th>
-                                    <th class="th-sm">เปลี่ยนลำดับ
+                                    <th >เปลี่ยนลำดับ
                                     </th>
-                                    <th class="th-sm">ลบ
+                                    <th >ลบ
                                     </th>
                                   
                                 </tr>

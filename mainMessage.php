@@ -183,14 +183,14 @@ table th{
                                     </th>
                                     <th class="th-sm">ชื่อข้อความ
                                     </th>
-                                    <th class="th-sm" style="text-align: center">ตัวอย่าง
+                                    <th>ตัวอย่าง
                                     </th>
-                                    <th class="th-sm" style="text-align: center">ขนาด
+                                    <th>ขนาด
                                     </th>
-                                    <th class="th-sm" style="text-align: center">ประเภท
+                                    <th>ประเภท
                                     </th>
-                                    <th class="th-sm" style="text-align: center"></th>
-                                    <th class="th-sm" style="text-align: center">ลบ</th>
+                                    <th></th>
+                                    <th>ลบ</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -417,6 +417,16 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+input.btnsearch{
+ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-repeat: no-repeat;
+ background-size: 15px;
+ background-position: left 12px top 10px;
+ text-indent: 20px;
+ opacity: 0.7;
+}
+
 </style>
 
 

@@ -333,13 +333,11 @@ body {
 .flex-content{
      display: flex;
      flex-direction: column;
-     border-right: 3px double #cccc;e
 
 }
 
 .container{
     background-color: white;
-    height: 100vh;
 }
 
 table {
@@ -362,6 +360,9 @@ table td{
 .flex-header{
     display: flex;
 }
+.shadow{
+    box-shadow: 3px 3px 3px #aaaaaa !important;
+}
 </style>
 
 
@@ -373,7 +374,7 @@ table td{
         </div>
 
 
-        <div class="" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
+        <div class="shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; margin-bottom: .5rem;">
             <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> เลือกป้ายประชาสัมพันธ์</a>
         </div>
 
@@ -383,9 +384,9 @@ table td{
         <div class="flex-content col-5" style="padding: 0;">
 
 
-        <div  id="message"  style="display: block; margin-left: 10px;margin-right: 10px;" id="container">
+        <div  id="message"  style="" id="container">
       
-            <div class="col-12" style=" margin-top: 1rem; padding: 0;">
+            <div class="col-12" style=" padding: 0; border-right: 3px double #cccc;e" >
                     <table id="VMSTable" class="table table-striped table-hover">
                             <thead>
                                 <tr >
@@ -438,7 +439,7 @@ table td{
 
 
                 </div>
-                <div class="col-7" style="margin-top: 1rem;">
+                <div class="col-7" style="">
                     <div id="smsdetail">
                            <input type="hidden" id="XVVmsCode">
                            <div id="vmsdetail" class="text-center"></div>

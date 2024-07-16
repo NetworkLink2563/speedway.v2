@@ -358,17 +358,13 @@ table td{
 .flex-btn{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+
 }
 
 .flex-header{
     display: flex;
     margin: 1rem;
 
-}
-
-*{
-    box-sizing: border-box;
 }
 
 .shadow{
@@ -403,7 +399,7 @@ table th{
         <div class="col-2"  id="message" id="container" style="padding: 0; border-right: 3px double #cccc;">
             <div class="flex-btn" style="background-color: #f8f7f7cc;">
             
-                    <div class="col-12"  style="padding: 1rem .5rem;">
+                    <div class="col-12"  style="padding: .5rem .5rem;">
                                <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_add"  class=" btn-hover btn btn-success shadow"><i class="fa fa-file-text" style="width: 15%;"></i>สร้างชุดการแสดงป้าย</button>
                     </div>
 
@@ -418,17 +414,17 @@ table th{
                         <table id="VMSTable" class="table table-striped table-hover" style="width:100%;">
                             <thead>
                                 <tr style="font-size: 10pt">
-                                    <th class="th-sm">รหัสชุดป้าย
+                                    <th>รหัสชุดป้าย
                                     </th>
-                                    <th class="th-sm">ชื่อชุดป้าย
-                                    </th>
-                                   
-                                    <th class="th-sm" style="text-align:left">ขนาด
+                                    <th>ชื่อชุดป้าย
                                     </th>
                                    
-                                    <th class="th-sm" style="text-align: center"></th>
-                                    <th class="th-sm" style="text-align: center">แก้ไข</th>
-                                    <th class="th-sm" style="text-align: center">ลบ</th>
+                                    <th>ขนาด
+                                    </th>
+                                   
+                                    <th ></th>
+                                    <th >แก้ไข</th>
+                                    <th >ลบ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -521,16 +517,16 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                           <table id="VMSTable" class="table" style="width:100%;">
                             <thead>
                                 <tr style="font-size: 10pt">
-                                    <th class="th-sm">รหัสข้อความประชาสัมพันธ์
+                                    <th>รหัสข้อความประชาสัมพันธ์
                                     </th>
-                                    <th class="th-sm">ชื่อข้อความประชาสัมพันธ์
-                                    </th>
-                                   
-                                    <th class="th-sm" style="text-align: center">ขนาด
+                                    <th>ชื่อข้อความประชาสัมพันธ์
                                     </th>
                                    
-                                    <th class="th-sm" style="text-align: center"></th>
-                                    <th class="th-sm" style="text-align: center"></th>
+                                    <th >ขนาด
+                                    </th>
+                                   
+                                    <th ></th>
+                                    <th ></th>
                                   
                                 </tr>
                             </thead>
@@ -552,7 +548,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                                             <td><?php echo $result['XVMsfCode']; ?></td>
                                             <td><?php echo $result['XVMsfName']; ?></td>
                                            
-                                            <td style="text-align: center"><?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel']; ?></td>
+                                            <td ><?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel']; ?></td>
                                            
                                             <td>
                                                 <div style="margin-top: 0px">
@@ -577,23 +573,23 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                            <table id="myTable" class="table" >
                            <thead>
                                 <tr style="font-size: 10pt">
-                                    <th class="th-sm">ลำดับที่
+                                    <th>ลำดับที่
                                     </th>
-                                    <th class="th-sm">รหัสชุดแสดงป้าย
+                                    <th>รหัสชุดแสดงป้าย
                                     </th>
-                                    <th class="th-sm">ชื่อชุดแสดงป้าย
+                                    <th>ชื่อชุดแสดงป้าย
                                     </th>
-                                    <th class="th-sm">ตั้งเวลา
+                                    <th>ตั้งเวลา
                                     </th>
-                                    <th class="th-sm">เริ่ม
+                                    <th>เริ่ม
                                     </th>
-                                    <th class="th-sm">สิ้นสุด
+                                    <th>สิ้นสุด
                                     </th>
-                                    <th class="th-sm">ระยะเวลา
+                                    <th>ระยะเวลา
                                     </th>
-                                    <th class="th-sm">เปลี่ยนลำดับ
+                                    <th>เปลี่ยนลำดับ
                                     </th>
-                                    <th class="th-sm">ลบ
+                                    <th>ลบ
                                     </th>
                                   
                                 </tr>

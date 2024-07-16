@@ -168,40 +168,112 @@ $XVVmsCode=base64_decode($_REQUEST["vmc"]) ;
                 }
             }
         }
+
+        body {
+        background: #e1f0fa;
+    }
+
+    .container{
+        background-color:  white;
+        
+    }
+
+    .shadow{
+    box-shadow: 3px 3px 3px #aaaaaa !important;
+}
+
+.flex-head{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.form-inline{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.flex-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.btn:hover{
+        opacity: 0.8;
+        transition: 0.5s;
+    }
     </style>
 
 
-    <div class="centered" style="margin-top: 60;margin-left: 10;">
+<div class="container" style="position: relative; top: 75;">
 
-        <div class="box" style="margin-top: 30;" align="left">
-            <div class="row">
-                <div class="col-sm-12">
-                     <div style="margin-top:10; margin-bottom: 10; margin-left: 30;  margin-right: 10;">
-                        <img src="img/icon/computer.png" height="25" alt="Responsive image">&nbsp;รายงานการปฏิบัติงาน
-                       
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 ">
-                    <div style="margin-top:10; margin-bottom: 10; margin-left: 30;  margin-right: 10;">
-                        <form class="form-inline" action=""> 
-                                <label for="ds">วันที่เริ่ม:</label>
-                                <input type="text" id="ds" class="datetimepicker form-control" style="width:180px"/><i style="font-size:26px;margin-right:10px" class="fa">&#xf073;</i>
-                            
-                                <label for="de">วันที่สิ้นสุด:</label>
-                                <input type="text" id="de" class="datetimepicker form-control" style="width:180px"/><i style="font-size:26px;margin-right:10px" class="fa">&#xf073;</i>
-                                <button type="button"  onclick="ShowData()" class="btn btn-primary btn-sm" style="margin:5px;"><i class="fa fa-search" aria-hidden="true"></i>ค้นหา</button>
-                                <a  class="btn btn-success btn-sm" style="font-size: 12pt; color: #FFFFFF; margin:5px;"
-                                onclick="PrintReport()"><i class="fa fa-print" aria-hidden="true"></i>พิมพ์รายงาน</a>
-                            
-                                
+
+<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/computer.png" height="25" alt="Responsive image"> รายงานการปฏิบัติงาน
+        </div>
+
+<div class="container">
+
+<div class=" shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายงาน</a>
+        </div>
+
+
+            <div class="flex-head" style="margin: 1rem;">
+
+                        <div class="col">
+                        
+                        <form class="form-inline " action=""> 
+                        
+                                <div class="col-2" style="text-align: center; margin: 1rem;">
+                                <label style="display: inline-block;"  for="ds">วันที่เริ่ม:</label><i style="width: 25%; text-align: left; margin-left: .3rem;" class="fa">&#xf073;</i>
+                                <input type="text" id="ds" class="datetimepicker form-control" placeholder="" style="width: 100%; text-align: center;"/>
+                                </div>
+
+                                <div class="col-2" style="text-align: center;">
+                                <label style="display: inline-block;" for="de">วันที่สิ้นสุด:</label><i style="width: 25%; text-align: left; margin-left: .3rem;" class="fa">&#xf073;</i>
+                                <input type="text" id="de" class="datetimepicker form-control" placeholder="" style="width: 100%; text-align: center;"/>
+                                </div>
+
+
+                                    <div class="col-12">
+                                <div class="flex-btn">
+
+                                <div class="col-2">
+                                <button type="button"  onclick="ShowData()" class="btn btn-primary shadow" style="padding: .5rem; width: 100%; background-color: #006eb4;"><i style="width: 10%;" class="fa fa-search" aria-hidden="true"></i> ค้นหา</button>
+                                </div>
+
+                                <div class="col-2">
+                                <button  class="btn btn-warning shadow" style="padding: .5rem;  width: 100%;"
+                                onclick="PrintReport()"><i class="fa fa-print" aria-hidden="true"></i>พิมพ์รายงาน</button>
+                                </div>
+
+                                </div>
+
+                                </div>
                         </form>
                     </div>
                 
                 </div>
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4 ">
+
+
+                </div>
+
+
+                </div>
+
+            <!-- end div container -->
+
+                <!-- <div class="col-sm-4"></div> -->
+                <!-- <div class="col-sm-4 ">
                     <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
                         <div id="ShowData" style="margin-top: 10;">
                         </div>
@@ -210,7 +282,7 @@ $XVVmsCode=base64_decode($_REQUEST["vmc"]) ;
                <div class="col-sm-4"></div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div id="myModalOpen" class="modal" id="myModal" role="dialog" a>
         <div class="modal-fullscreen">

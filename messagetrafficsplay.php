@@ -327,35 +327,72 @@ ol.menu {
 }
 input[type='file'] { font-size: 0; }
 ::file-selector-button { font-size: initial; }
-</style>
-<div class="centered" style="margin-top: 60;margin-left: 10;width:100%">
 
-    <div class="box" style="margin-top: 30;" align="left">
-        <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-            <img src="img/icon/setting.png" height="25" alt="Responsive image">&nbsp;ข้อความป้ายประชาสัมพันธ์
-            <div style="margin-top:-5;">
-                <hr>
-            </div>
+.shadow{
+    box-shadow: 3px 3px 3px #aaaaaa !important;
+}
+
+body {
+        background: #e1f0fa;
+    }
+
+.container{
+    background-color: white;
+}
+
+.flex-head{
+    display: flex;
+}
+
+table {
+    text-align: center;
+}
+
+table td{
+        transition: 0.5s;
+        font-size: 0.9rem;
+        transition: 0.5s;
+        font-weight: 300;
+    }
+
+    table th{
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: #e8f4ff!important;
+    }
+</style>
+
+
+<div class="container" style="position: relative; top: 75;">
+
+<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem;">
+            <img src="img/icon/computer.png" height="25" alt="Responsive image"> ข้อความป้ายประชาสัมพันธ์
         </div>
-       
-        <div  id="message"  style="display: block; margin-left: 10px;margin-right: 10px;" id="container">
+
+
+        <div class="shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; margin-bottom: .5rem;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> เลือกป้ายประชาสัมพันธ์</a>
+        </div>
       
-            <div class="row">
-                <div class="col-sm-4" >
-                    <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;text-align: center;">
-                    <p style="maring:0px;padding:0px;">เลือกป้ายประชาสัมพันธ์</p>
-                    <table id="VMSTable" class="table" style="width:100%;">
+
+            <div class="flex-head">
+
+
+            <div class="col-5" style="padding: 0;">
+            <div class="flex-table-left" style="border-right: 3px double #cccc;e">
+                <div class="col" style="padding: 0; " >
+                    <table id="VMSTable" class="table table-striped table-hover">
                             <thead>
-                                <tr style="font-size: 10pt">
-                                    <th class="th-sm">รหัสป้าย
+                                <tr>
+                                    <th>รหัสป้าย
                                     </th>
-                                    <th class="th-sm">ชื่อป้าย
+                                    <th>ชื่อป้าย
                                     </th>
                                   
-                                    <th class="th-sm" style="text-align: center">ขนาด
+                                    <th>ขนาด
                                     </th>
                                    
-                                    <th class="th-sm" style="text-align: center"></th>
+                                    <th></th>
                                    
                                 </tr>
                             </thead>
@@ -388,8 +425,10 @@ input[type='file'] { font-size: 0; }
                     </table>
                     </div>
                 </div>
-                <div class="col-sm-8" style="">
-                    <div id="smsdetail" style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
+                </div>
+
+                <div class="col-7" style="padding: 0;">
+                    <div id="smsdetail">
                            <input type="hidden" id="XVVmsCode">
                            <div id="vmsdetail" class="text-center"></div>
                            <div class="row">
@@ -405,14 +444,10 @@ input[type='file'] { font-size: 0; }
                        
                 </div>
             </div>
-            <div class="col-sm-3">
+
+
             </div>
-        </div>
-    </div>
-    <br>
-</div>
-
-
+            <!-- end div flex head -->
 
 
 

@@ -381,6 +381,7 @@ table {
  background-size: 15px;
  background-position: left 12px top 10px;
  text-indent: 20px;
+ opacity: 0.7;
 }
 
 table th{
