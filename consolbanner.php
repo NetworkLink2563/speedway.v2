@@ -309,15 +309,31 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                     <button id="tablinksFlashingLights" class="tablinks" onclick="openCity(event, 'FlashingLights')"><?php echo $resultCMDFlashing['XVCmdName'];?></button>
                     <button id="tablinksBrightness" class="tablinks" onclick="openCity(event, 'Brightness')"><?php echo $resultCMDBrightness['XVCmdName'];?></button>
                 </div>
+
+
                 <div id="Command" class="tabcontent" style="display: block; margin-left: 10px;margin-right: 55px;">
                     <div class="row"style="margin-top: 10px;margin-bottom:  10px">
                         <div class="col-sm-2">
                         </div>
                      <!--   <div class="col-sm-4"><input id="testConnectRadio" name="radiobutton" type="radio" value="1"/> ทดสอบการติดต่อป้าย
                         </div>-->
-                        <div class="col-sm-4"><input id="changeTimeRadio" name="radiobutton" type="radio" value="2" /> <?php echo $resultCMDTimeSet['XVCmdName'];?>
-                        </div>  <div class="col-sm-4"><input id="resetRadio" name="radiobutton" type="radio" value="3" /> <?php echo $resultCMDReset['XVCmdName'];?>
+
+                        <div class="col-sm-2">
+                            <button class="btn btn-success shadow" id="changeTimeRadio" name="radiobutton" type="radio" value="2"> <?php echo $resultCMDTimeSet['XVCmdName'];?></button>
+                        </div>  
+                        
+                        <div class="col-sm-2">
+                            <button class="btn btn-warning shadow" id="resetRadio" name="radiobutton" type="radio" value="3"> <?php echo $resultCMDReset['XVCmdName'];?></button>
                         </div>
+                        
+                        <div class="col-sm-2">
+                            <button class="btn btn-success shadow" id="changeTimeRadio" name="radiobutton" type="radio" value="5"> <?php echo $resultCMDTimeSet['XVCmdName'];?></button>
+                        </div>  
+                        
+                        <div class="col-sm-2">
+                            <button class="btn btn-warning shadow" id="resetRadio" name="radiobutton" type="radio" value="6"> <?php echo $resultCMDReset['XVCmdName'];?></button>
+                        </div>
+
                         <div class="col-sm-2">
                         </div>
                     </div>
@@ -400,7 +416,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                           $Disable="";
                        }
                     ?>
-                    <button type="button" class="btn btn-success"  id="btnRefresh" <?php echo $Disable;?>>ส่งคำสั่ง</button>
+                    <!-- <button type="button" class="btn btn-success"  id="btnRefresh" <?php echo $Disable;?>>ส่งคำสั่ง</button> -->
                 </div>
             </div>
         </div>
@@ -584,6 +600,10 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                 var myRadioTextChild = '  Restart เครื่องควบคุมป้าย';
             }if(myRadio==4){
                 var myRadioTextChild = ' สอบถามพื้นที่ของฮาร์ดดีส';
+            }if(myRadio==5){
+                var myRadioTextChild = ' เปิดคอมพิวเตอร์';
+            }if(myRadio==6){
+                var myRadioTextChild = ' ปิดคอมพิวเตอร์';
             }
             var myRadioText = 'ส่งคำสั่ง';
         }else if(myRadio==5){
