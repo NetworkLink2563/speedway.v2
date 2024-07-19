@@ -434,7 +434,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         </div>  
                         
                         <div class="col-5"style="text-align: center; padding-left: 0;">
-                            <button style="padding: 1rem; width: 100%; background-color: #f8970c; border: none;" class="btn btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value=""> <?php echo $resultCMDReset['XVCmdName'];?> </button>
+                            <button style="padding: 1rem; width: 100%; background-color: #4976BA; border: none;" class="btn btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value=""> <?php echo $resultCMDReset['XVCmdName'];?> </button>
                         </div>
 
                         <div class="col-5" style="text-align: center;border-right: 5px double #cccc;   ">
