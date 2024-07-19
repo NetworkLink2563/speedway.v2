@@ -213,6 +213,11 @@ $query = sqlsrv_query($conn, $sql);
     margin: 0;
     padding: 0;
 }
+
+table{
+    width: 100%;
+    text-align: center;
+}
 </style>
 
 <div class="container" style="position: relative; top: 75;">
@@ -303,9 +308,13 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
 <div class="modal py-5"  id="myModalList" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content" >
-            <div class="modal-header">
+            <div class="modal-header" style="justify-content: center; align-items: center;">
+                <div class="col" style="text-align: center;">
                 <h5 id="ShowList_Title" class="modal-title"></h5>
+                </div>
+                <div class="col2">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
             </div>
             <div class="modal-body text-center" id="ShowList">
                
@@ -397,7 +406,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         </div>
                         
                         <div class="col-5"style="text-align: center;   padding-left: 0;">
-                            <button style="padding: 1rem; width: 100%;" class="btn btn-danger shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value=""> ปิดคอมพิวเตอร์ </button>
+                            <button style="padding: 1rem; width: 100%; background-color: #C40C0C;" class="btn btn-danger shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value=""> ปิดคอมพิวเตอร์ </button>
                         </div>  
                         
                         <div class="col-5"style="text-align: center;">

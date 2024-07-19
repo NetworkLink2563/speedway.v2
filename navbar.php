@@ -245,7 +245,7 @@ p {
       
       <div class="time-duration navbar-nav" style="border: none; text-align: center;  margin-left: .5rem; opacity: .8">
         <span >เวลาเข้าทำงาน : </span>
-      <span id="demo" style="display: inline-block;padding: 0rem .5rem;width: 155px; text-align: left;"></span>
+      <span id="time" style="display: inline-block;padding: 0rem .5rem;width: 155px; text-align: left;"></span>
       </div>
 
 
@@ -274,16 +274,16 @@ var x = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  // Output the result in an element with id="time"
+  document.getElementById("time").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
     
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    document.getElementById("time").innerHTML = "EXPIRED";
   }
 }, 1000);
 </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
