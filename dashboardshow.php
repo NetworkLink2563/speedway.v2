@@ -26,7 +26,7 @@ $data='<table class="table table-striped table-hover">
                 <th>ประเภท</th>
                 <th>ข้อความ</th>
                 <th>Live</th>
-                <th>Hide</th>
+                <th>ซ่อน</th>
             </tr>
             </thead>
             ';
