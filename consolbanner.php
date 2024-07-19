@@ -513,9 +513,11 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         </select>
                         </div>
 
-                        <div class="lamp col-2" style="text-align: left;">
-                            <img style="width: 80%" class="bulb" id="bulb5" src="img/bulb.png" width="30" alt="">
+                        <div class="lamp col-2" style="text-align: center;">
+                            <img style="width: 100%" class="bulb" id="bulb5" src="img/bulb.png" width="30" alt="">
                         </div>
+
+                    
 
                             <!-- <div style="text-align: left;">
                             <input id="brightnessAutoRadio"  name="radiobutton" type="radio" value="11"/> Auto<br>

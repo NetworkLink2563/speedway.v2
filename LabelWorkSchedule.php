@@ -328,12 +328,19 @@ table td{
 <div class="modal py-5"  id="myModalBrightness" role="dialog">
     <div class="modal-dialog modal-lg"  >
         <div class="modal-content">
-            <div class="modal-header" >
-                <h5 class="modal-title">ความสว่างการแสดงผล</h5>
+            <div class="modal-header" style="display: flex; align-items: center; justify-content: center; background-color: #f5f5f5;">
+
+            <div class="col-11">
+                <h5 style="text-align: center;" class="modal-title">ความสว่างการแสดงผล</h5>
+                </div>
+
+                <div class="col">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-              
+                </div>
             </div>
-            <div class="modal-body" >
+
+
+            <div class="modal-body"  style="background-color: #f5f5f5;">
        
                 <input id="bannerIDBrightness" class="input" style="width: 40px;text-align: center;" type="hidden" name="bannerIDBrightness" value="">
                 <div class="row" style="">
