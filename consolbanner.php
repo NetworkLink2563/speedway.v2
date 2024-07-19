@@ -205,7 +205,7 @@ $query = sqlsrv_query($conn, $sql);
     transition: .5s;
 }
 #bulb100{
-    filter: brightness(115%);
+    filter: brightness(110%);
     transition: .5s;
 }
 
@@ -552,7 +552,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         </div>
                         
                         <div class="lamp col-2" style="text-align: center;">
-                            <img style="width: 100%" class="bulb" id="bulb5" src="img/bulb.png" width="30" alt="">
+                            <img style="width: 80%; position: relative; top: -13px;" class="bulb" id="bulb5" src="img/brightness_ico.png" width="30" alt="">
                         </div>
                         
                         </div>
