@@ -1,3 +1,4 @@
+
 <?php
 include 'header.php';
 include "lib/DatabaseManage.php";
@@ -404,6 +405,9 @@ table th{
 
 <div class="container" style="position: relative; top: 75;">
 
+        <input type="hidden" id="XVMssCode">
+        <input type="hidden" id="XVMssType">
+        
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem;">
             <img src="img/icon/computer.png" height="25" alt="Responsive image"> ข้อความประชาสัมพันธ์พื้นฐาน
         </div>
@@ -415,7 +419,7 @@ table th{
             <div class="flex-btn col-2" id="message" id="container" style="border-right: 3px double #cccc; background-color: #f8f7f7cc; padding: 0;">
                    
                                 <div class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
-                               <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_addtext" class="btn-hover btn btn-primary shadow"><i style="width: 15%;" class="fa fa-file-text"></i> สร้างข้อความตัวอักษร</button>
+                               <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_addtext" class="btn-hover btn btn-primary shadow"><i style="width: 10%;" class="fa fa-file-text" ></i> สร้างข้อความตัวอักษร</button>
                                </div>
 
                                <div  class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
@@ -461,7 +465,7 @@ table th{
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
+                            <?php
                         $stmt = "SELECT   dbo.TMstMMessage.XVMsgCode, dbo.TMstMMessage.XVMsgName, dbo.TMstMMessage.XVWhoCreate, dbo.TMstMMsgSize.XIMssWPixel, dbo.TMstMMsgSize.XIMssHPixel, 
                                                         dbo.TMstMMessage.XVMsgType, dbo.TMstMMessage.XVMsgInfoType
                                 FROM            dbo.TMstMMessage INNER JOIN
@@ -598,6 +602,7 @@ table th{
                     </div>
                 
                 </div>
+                
                 
             
                 <div class="row" style="margin-top: 10" >
@@ -842,6 +847,7 @@ table th{
         </div>
 
 </div>
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

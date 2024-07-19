@@ -406,11 +406,13 @@ table {
 
 <div class="container" style="position: relative; top: 75;">
 
+        <input type="hidden" id="XVMssCode">
+        <input type="hidden" id="XVMssType">
+
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem;">
             <img src="img/icon/setting.png" height="25" alt="Responsive image"> สร้างข้อความสภาพการจราจรพื้นฐาน
         </div>
 
-    
         <div class="flex-header">
        
 
