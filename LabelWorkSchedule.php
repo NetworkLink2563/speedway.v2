@@ -328,14 +328,14 @@ table td{
 <div class="modal py-5"  id="myModalBrightness" role="dialog">
     <div class="modal-dialog modal-lg"  >
         <div class="modal-content">
-            <div class="modal-header" style="display: flex; align-items: center; justify-content: center; background-color: #f5f5f5;">
+            <div class="modal-header" style="display: flex; align-items: center; justify-content: center; background-color: #ffffff;">
 
             <div class="col-11">
                 <h5 style="text-align: center;" class="modal-title">ความสว่างการแสดงผล</h5>
                 </div>
 
                 <div class="col">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" style="padding: 0;" class="close" data-dismiss="modal">&times;</button>
                 </div>
             </div>
 
@@ -415,12 +415,19 @@ table td{
 
 <div class="modal py-5"  id="myModalElectrical" role="dialog">
     <div class="modal-dialog modal-lg"  >
-        <div class="modal-content">
-            <div class="modal-header" >
-                <h5 class="modal-title">ระบบไฟฟ้าป้าย</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-content" >
+            <div class="modal-header" style="display: flex; align-items: center; justify-content: center; background-color: #ffffff;">
+
+            <div class="col-11">
+                <h5 style="text-align: center;" class="modal-title">ระบบไฟฟ้าป้าย</h5>
+                </div>
+
+                <div class="col">
+                <button type="button" style="padding: 0;" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
             </div>
-            <div class="modal-body" >
+            <div class="modal-body" style="background-color: #f5f5f5;">
                 <input id="bannerIDElectrical" class="input" style="width: 40px;text-align: center;" type="hidden" name="bannerIDElectrical" value="">
                 <div class="row" style="">
                     <div class="col-sm-3">
@@ -477,11 +484,17 @@ table td{
 <div class="modal py-5"  id="myModalMornitor" role="dialog">
     <div class="modal-dialog modal-lg"  >
         <div class="modal-content">
-            <div class="modal-header" >
-                <h5 class="modal-title">การแสดงผล</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-header" style="display: flex; align-items: center; justify-content: center; background-color: #ffffff;">
+
+                <div class="col-11">
+                <h5 style="text-align: center;">การแสดงผล</h5>
+                </div>
+
+                <div class="col">
+                <button type="button" style="padding: 0;" class="close" data-dismiss="modal">&times;</button>
+                </div>
             </div>
-            <div class="modal-body" >
+            <div class="modal-body" style="background-color: #f5f5f5;">
                 <input id="bannerIDMornitor" name="bannerIDMornitor" class="input" style="width: 40px;text-align: center;" type="hidden" value="">
                 <div class="row" style="">
                     <div class="col-sm-3">

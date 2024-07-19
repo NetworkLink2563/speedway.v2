@@ -433,20 +433,26 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                             <button style="padding: 1rem; width: 100%; background-color: #4976BA; color: white; border: none;" class="btn btn-info shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value="2"> <?php echo $resultCMDTimeSet['XVCmdName'];?></button>
                         </div>  
                         
-                        <div class="col-5"style="text-align: center;   padding-left: 0;">
-                            <button style="padding: 1rem; width: 100%; " class="btn btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value=""> เปิดคอมพิวเตอร์ </button>
+                        <div class="col-5"style="text-align: center; padding-left: 0;">
+                            <button style="padding: 1rem; width: 100%; background-color: #f8970c; border: none;" class="btn btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value=""> <?php echo $resultCMDReset['XVCmdName'];?> </button>
                         </div>
 
                         <div class="col-5" style="text-align: center;border-right: 5px double #cccc;   ">
-                            <button style="padding: 1rem; width: 100%; color: white; background-color: #f8970c;" class="btn btn-warning shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value="3"> <?php echo $resultCMDReset['XVCmdName'];?></button>
+                            <button style="padding: 1rem; width: 100%; color: white;" class="btn btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value="3"> เปิดคอมพิวเตอร์</button>
                         </div>
                         
                         <div class="col-5"style="text-align: center;   padding-left: 0;">
                             <button style="padding: 1rem; width: 100%; background-color: #C40C0C;" class="btn btn-danger shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value=""> ปิดคอมพิวเตอร์ </button>
                         </div>  
                         
-                        <div class="col-5"style="text-align: center;">
+                        <div class="col-5" style="text-align: center;border-right: 5px double #cccc;   ">
+                            <button style="padding: 1rem; width: 100%; color: white; " class="btn btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value="3"> เปิดแอร์คอมพิวเตอร์</button>
                         </div>
+                        
+                        <div class="col-5"style="text-align: center;   padding-left: 0;">
+                            <button style="padding: 1rem; width: 100%; background-color: #C40C0C;" class="btn btn-danger shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value=""> ปิดแอร์คอมพิวเตอร์ </button>
+                        </div>  
+                        
                     </div>
                     <div class="row" >
                         <div class="col-sm-2">
@@ -471,7 +477,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         </div>
 
                         <div class="col-3" style="margin: 1rem 0rem;">
-                            <button class="btn btn-danger shadow fs-5" style="width: 100%; padding: 1rem;" id="electricalOffRadio" name="radiobutton" type="radio" value="6" >ปิดไฟป้าย</button>
+                            <button class="btn btn-danger shadow fs-5" style="width: 100%; padding: 1rem; background-color: #C40C0C;" id="electricalOffRadio" name="radiobutton" type="radio" value="6" >ปิดไฟป้าย</button>
                         </div>
 
                     </div>
@@ -502,7 +508,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         </div>
 
                         <div class="gif-img col-4" style="text-align: center; padding: 0;">
-                        <img id="gifimg" style="display: none; width: 100%;" src="img/traffic-light_.gif" width="150">
+                        <img id="gifimg" style="display: none; width: 100%;" src="img/traffic-light2_.gif" width="150">
                         <img id="gifimg-close" style="display: ; width: 100%;" src="img/traffic-light-close.png" width="150">
                         </div>
 
@@ -540,8 +546,8 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         <option id="brightnessLevel10Radio" value="21">ระดับ 10</option>
                         </select> -->
                             
-                            <input style="width: 100%;" id="levels2" class="slider" type="range" min="0" max="10" value="0" step="1" oninput="this.nextElementSibling.value = this.value">
-                            <output><span>24</span></output>
+                            <input style="width: 100%;" id="levels2" class="slider" type="range" min="0" max="100" value="0" step="10" oninput="this.nextElementSibling.value = this.value">
+                            <output><span>0</span></output>
                             <h6>ระดับไฟ</h6>
                         </div>
                         
@@ -1173,25 +1179,25 @@ function showimg() {
 
 <script>
     $(document).on('input change', '#levels2', function() {
-    if($(this).val() == "1") {
+    if($(this).val() == "10") {
       $(".bulb").attr('id', 'bulb10'); 
-    } else if($(this).val() == "2") {
+    } else if($(this).val() == "20") {
         $(".bulb").attr('id', 'bulb20');
-    }else if($(this).val() == "3") {
+    }else if($(this).val() == "30") {
         $(".bulb").attr('id', 'bulb30');
-    }else if($(this).val() == "4") {
+    }else if($(this).val() == "40") {
         $(".bulb").attr('id', 'bulb40');
-    }else if($(this).val() == "5") {
+    }else if($(this).val() == "50") {
         $(".bulb").attr('id', 'bulb50');
-    }else if($(this).val() == "6") {
+    }else if($(this).val() == "60") {
         $(".bulb").attr('id', 'bulb60');
-    }else if($(this).val() == "7") {
+    }else if($(this).val() == "70") {
         $(".bulb").attr('id', 'bulb70');
-    }else if($(this).val() == "8") {
+    }else if($(this).val() == "80") {
         $(".bulb").attr('id', 'bulb80');
-    }else if($(this).val() == "9") {
+    }else if($(this).val() == "90") {
         $(".bulb").attr('id', 'bulb90');
-    }else if($(this).val() == "10") {
+    }else if($(this).val() == "100") {
         $(".bulb").attr('id', 'bulb100');
     }else{
         $(".bulb").attr('id', 'bulb5');

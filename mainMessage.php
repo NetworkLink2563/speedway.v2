@@ -276,11 +276,17 @@ table th{
 <div class="modal" id="myModal">
     <div class="modal-dialog " role="document">
         <div class="modal-content" style="background-color: rgb(3, 84, 138);color:white;">
-            <div class="modal-header">
-                <h5 class="modal-title">เลือกขนาดป้าย/ประเภทข้อความ</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-header" style="display: flex; align-items: center; justify-content: center; background-color: #ffffff;">
+
+                       <div class="col-11">
+                <h5 style="text-align: center; color: black;">เลือกขนาดป้าย/ประเภทข้อความ</h5>
+                </div>
+
+                <div class="col">
+                <button type="button" style="padding: 0;" class="close" data-dismiss="modal">&times;</button>
+                </div>
             </div>
-            <div class="modal-body text-center">
+            <div class="modal-body text-center"style="background-color: #f5f5f5;">
                 <div class="row">
                     <div class="col-sm-12">
                         <select name="MssCode" id="MssCode" class="input">
