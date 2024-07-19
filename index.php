@@ -1,3 +1,10 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+
+
+
+
+
 <?php
 session_start();
 if($_SESSION['userName']!=''){
@@ -262,15 +269,16 @@ echo ThDate(); // แสดงวันที่
                 </div>
                 <div class="col-sm-12" style="margin-top: 20px">
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-12" style="margin-bottom: .5rem;">
                             <input type="email" id="username" name="username" class="form-control" placeholder="Username" autocomplete="off" required autofocus>
                         </div>
-                        <div id="resultDiv" style="margin-left: 14px;"><p id="result" ></p></div>
-                        <div class="col-sm-12" style="margin-top: 5px;">
+                        <!-- <div id="resultDiv" style="margin-left: 14px;"><p id="result" ></p></div> -->
+                        <div class="col-sm-12" style="margin-bottom: .5rem;">
                             <label for="inputPassword" class="sr-only">Password</label>
                             <input type="password" id="inputPassword" name="inputPassword" class="form-control" autocomplete="off" placeholder="Password" required>
+                            <i style="display: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 305px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
                         </div>
-                        <div class="col-sm-12" style="margin-top: 5px;">
+                        <div class="col-sm-12" style="margin-bottom: .5rem;">
                           
                             <select id="XVShfCode" class="form-control">
                                 <?php
@@ -335,6 +343,7 @@ echo ThDate(); // แสดงวันที่
 <script src="dist/js/popper.min.js"></script>
 <script src="dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+    
     $("#inputPassword").keyup(function(event) {
         if (event.keyCode === 13) {
             $("#myButton").click();
@@ -395,5 +404,19 @@ echo ThDate(); // แสดงวันที่
 
     $('#username').on('input', validate);
 </script>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#inputPassword');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash'); 
+});
+</script>
+
 </body>
 </html>
