@@ -218,6 +218,14 @@ table{
     width: 100%;
     text-align: center;
 }
+
+.modal-body table td{
+    font-size: 1rem;
+}
+
+.modal-body table th{
+    font-size: 1.2rem;
+}
 </style>
 
 <div class="container" style="position: relative; top: 75;">
