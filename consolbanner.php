@@ -226,6 +226,34 @@ table{
 .modal-body table th{
     font-size: 1.2rem;
 }
+
+
+
+.slider {
+    appearance: none; /* removes browser-specific styling */
+     /* width of slider */
+     /* height of slider */
+     /* orange background */
+    outline: none; /* remove outline */
+    border-radius: 50px; /* round corners */
+    margin: 1rem;
+    transform: rotate(360deg); /* rotate the element */
+    background: rgb(74,61,0);
+    background: linear-gradient(90deg, rgba(74,61,0,1) 0%, rgba(255,171,25,1) 50%, rgba(255,223,4,1) 100%);
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none; /* removes browser-specific styling */
+  /* handle width */
+   /* handle height */
+  border-radius: 50%; /* make it circular */
+  background: #FFFFFF; /* white color */
+  cursor: pointer; /* cursor on hover */
+}
+
+.slider span{
+    font-size: 1rem;
+}
 </style>
 
 <div class="container" style="position: relative; top: 75;">
@@ -491,14 +519,14 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                 <div id="Brightness" class="tabcontent" style="display: none; background-color: rgb(248, 248, 248);">
                     <div class="row" style="justify-content: center; align-items: center; margin: 1rem; ">
                         
-                        <div class="col" style="text-align: center; border-right: 3px double #cccc;">
+                        <div class="col-3" style="text-align: center; border-right: 3px double #cccc;">
                         <button id="brightnessAutoRadio" class="btn btn-success fs-5 shadow" style="padding: .5rem; width: 80%;">Auto</button>
                         </div>
 
 
-                        <div class="col-6" style="text-align: center; ">
+                        <div class="col-6" style="text-align: center; display:flex; flex-direction: column; align-items: center; justify-content: center; flex: 1;">
                         <h5>Manual</h5>
-                        <select id="levels" class="form-select fs-6" aria-label="Default select example" style="text-align: ; ">
+                        <!-- <select id="levels" class="form-select fs-6" aria-label="Default select example" style="text-align: ; ">
                         <option selected>เลือกระดับความสว่าง</option>
                         <option id="brightnessLevel1Radio" value="12">ระดับ 1</option>
                         <option id="brightnessLevel2Radio" value="13">ระดับ 2</option>
@@ -510,12 +538,23 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         <option id="brightnessLevel8Radio" value="19">ระดับ 8</option>
                         <option id="brightnessLevel9Radio" value="20">ระดับ 9</option>
                         <option id="brightnessLevel10Radio" value="21">ระดับ 10</option>
-                        </select>
+                        </select> -->
+                            
+                            <input style="width: 100%;" id="levels2" class="slider" type="range" min="0" max="10" value="0" step="1" oninput="this.nextElementSibling.value = this.value">
+                            <output><span>24</span></output>
+                            <h6>ระดับไฟ</h6>
                         </div>
-
+                        
                         <div class="lamp col-2" style="text-align: center;">
                             <img style="width: 100%" class="bulb" id="bulb5" src="img/bulb.png" width="30" alt="">
                         </div>
+                        
+                        </div>
+
+                        
+
+
+                        
 
                     
 
@@ -1130,6 +1169,36 @@ function showimg() {
     }
     });
     </script>
+
+
+<script>
+    $(document).on('input change', '#levels2', function() {
+    if($(this).val() == "1") {
+      $(".bulb").attr('id', 'bulb10'); 
+    } else if($(this).val() == "2") {
+        $(".bulb").attr('id', 'bulb20');
+    }else if($(this).val() == "3") {
+        $(".bulb").attr('id', 'bulb30');
+    }else if($(this).val() == "4") {
+        $(".bulb").attr('id', 'bulb40');
+    }else if($(this).val() == "5") {
+        $(".bulb").attr('id', 'bulb50');
+    }else if($(this).val() == "6") {
+        $(".bulb").attr('id', 'bulb60');
+    }else if($(this).val() == "7") {
+        $(".bulb").attr('id', 'bulb70');
+    }else if($(this).val() == "8") {
+        $(".bulb").attr('id', 'bulb80');
+    }else if($(this).val() == "9") {
+        $(".bulb").attr('id', 'bulb90');
+    }else if($(this).val() == "10") {
+        $(".bulb").attr('id', 'bulb100');
+    }else{
+        $(".bulb").attr('id', 'bulb5');
+    }
+    });
+    </script>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>
