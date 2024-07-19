@@ -420,7 +420,7 @@ table {
         <div class="flex-btn col-2" id="message" id="container" style="border-right: 3px double #cccc; background-color: #f8f7f7cc; padding: 0;">
 
                                 <div class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
-                               <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4; margin: 0;" type="button" id="btn_addtext" class="btn btn-primary btn-hover btn-open-modal shadow"><i style="width: 15%;" class="fa fa-file-text"></i> สร้างข้อความตัวอักษร</button>
+                               <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4; margin: 0;" type="button" id="btn_addtext" class="btn btn-primary btn-hover btn-open-modal shadow"><i style="width: 10%;" class="fa fa-file-text"></i> สร้างข้อความตัวอักษร</button>
                                </div>
                                <div class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
                                <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_addpicture"  class="btn btn-success shadow btn-hover"><i style="width: 15%;" class="fa fa-image"></i> สร้างข้อความรูปภาพ</button>
