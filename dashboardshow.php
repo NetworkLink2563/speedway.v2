@@ -1,3 +1,7 @@
+
+ 
+
+
 <?php
 ob_start();
 session_start();
@@ -22,6 +26,7 @@ $data='<table class="table table-striped table-hover">
                 <th>ประเภท</th>
                 <th>ข้อความ</th>
                 <th>Live</th>
+                <th>Hide</th>
             </tr>
             </thead>
             ';
@@ -216,6 +221,10 @@ $data='<table class="table table-striped table-hover">
                 $data.='<td id="C11'.$XVVmsCode.'">'. $VmsType.'</th>';
                 $data.='<td id="C12'.$XVVmsCode.'">test</td>';
                 $data.='<td ><i style="cursor: pointer;font-size: 2rem;cursor: pointer; padding: 0rem;" class="fa fa-play-circle" onclick="ShowSample(\''.$XVVmsCode.'\',\''.$resultSQL['XVVmsName'].'\',\''.$XVMsgCode.'\',\''.$resultSQL['XIMssWPixel'].'\',\''.$resultSQL['XIMssHPixel'].'\')"></i></td>';
+                
+                $data.='<td id="C13">
+                <input  style="margin: -9px; margin-top: 8px" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                </td>';
                 $data.='</tr>';
             }
             sqlsrv_close( $conn );

@@ -249,7 +249,7 @@ body {
 
                 <div class="col-3" style="text-align: center;">
                     <label style="width: 100%; font-size: 1.5rem;" for="vms">เลือกป้าย</label>
-                    <select class="form-select form-select-md"  id="vms">
+                    <select class="form-select form-select-md"  id="vms" style="text-align: center;">
                            <?php
                               $sql='SELECT XVVmsCode, XVVmsName FROM TMstMItmVMS order by XVVmsCode';
                               $query = sqlsrv_query($conn, $sql);
@@ -279,12 +279,12 @@ body {
                     </div>
 
 
-                <div class="col-sm-12">
+                <!-- <div class="col-sm-12">
                     <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
                        <div id="ShowData">
                        </div>
                     </div>
-                </div>
+                </div> -->
                
     
 

@@ -220,10 +220,11 @@ p {
           การแสดงข้อความสภาพจราจร
           </button>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="messagetraffics.php">สร้างข้อความสภาพการจราจรพื้นฐาน</a></li>
-            <li><a class="dropdown-item" href="messagetrafficsframe.php">สร้างข้อความสภาพการจราจรแสดงบนป้าย</a></li>
-            <li><a class="dropdown-item" href="messagetrafficsframegroup.php">สร้างชุดการแสดงป้ายจราจร</a></li>
-            <li><a class="dropdown-item" href="messagetrafficsplay.php">ข้อความป้ายจราจร</a></li>
+          <li><a class="dropdown-item" href="traffic_wizard.php" style="text-decoration: underline;">>> คลิกดูตัวช่วยสร้างข้อความจราจร <<</a></li>
+            <li><a class="dropdown-item" href="messagetraffics.php">1.สร้างข้อความสภาพการจราจรพื้นฐาน</a></li>
+            <li><a class="dropdown-item" href="messagetrafficsframe.php">2.สร้างข้อความสภาพการจราจรแสดงบนป้าย</a></li>
+            <li><a class="dropdown-item" href="messagetrafficsframegroup.php">3.สร้างชุดการแสดงป้ายจราจร</a></li>
+            <li><a class="dropdown-item" href="messagetrafficsplay.php">4.ข้อความป้ายจราจร</a></li>
           </ul>
         </li>
       </ul>

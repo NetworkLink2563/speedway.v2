@@ -77,9 +77,9 @@ if(checkmenu($user,'010')==0){
             color: #595959 !important;
         }
         
-        .select2-container--default .select2-results>.select2-results__options {
+        /* .select2-container--default .select2-results>.select2-results__options {
             max-height: 400px;
-        }
+        } */
     </style>
     <style>
         .dropbtn {
@@ -165,27 +165,70 @@ if(checkmenu($user,'010')==0){
                 }
             }
         }
+
+        body {
+        background: #e1f0fa!important;
+    }
+
+    .container{
+        background-color:  white;
+    
+    }
+
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem;
+    }
+
+    .flex-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem;
+    }
+
+    .shadow{
+    box-shadow: 3px 3px 3px #aaaaaa !important;
+}
+
+/* .select2{
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+} */
+
+.btn:hover{
+        opacity: 0.8;
+        transition: 0.5s;
+    }
     </style>
 
 
-    <div class="centered" style="margin-top: 60;margin-left: 10;">
+<div class="container" style="position: relative; top: 75;">
 
-        <div class="box" style="margin-top: 30;" align="left">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div style="margin-top:10; margin-bottom: 10; margin-left: 30;  margin-right: 10;">
-                        <img src="img/icon/computer.png" height="25" alt="Responsive image">&nbsp;รายงานสถานะป้าย
-                        <div style="margin-top:-5;">
-                            <hr>
+
+<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> การควบคุมป้าย
+        </div>
+
+
+        <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายงานสถานะป้าย</a>
+        </div>
+
+
+            <div class="flex-container">
+                <div class="col-6" style="display: flex; align-items: center; justify-content: center;  flex-direction: column; font-size: 1.2rem;">
+
+                        <div class="col-6" style="text-align: center;">
+                        <label class="" style="font-size: 1.5rem;" for="vms">เลือกป้าย</label>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div style="margin-top:10; margin-bottom: 10; margin-left: 30;  margin-right: 10;">
-                        <label for="vms">ป้าย:</label>
-                        <select  id="vms">
+
+                        <div class="col-6 " style="text-align: center;">
+                        <select class="form-select form-select-md" id="vms" style="text-align: center;">
                            <?php
                               $sql='SELECT XVVmsCode, XVVmsName FROM TMstMItmVMS order by XVVmsCode';
                               $query = sqlsrv_query($conn, $sql);
@@ -197,19 +240,43 @@ if(checkmenu($user,'010')==0){
                            
                           
                         </select>
-                        <button type="button"  onclick="ShowData()" class="btn btn-primary btn-sm" style="margin:5px;"><i class="fa fa-search" aria-hidden="true"></i>ค้นหา</button>
-                        <a  class="btn btn-success btn-sm" style="font-size: 12pt; color: #FFFFFF;margin:5px;"
-                        onclick="PrintReport()"><i class="fa fa-print" aria-hidden="true"></i>พิมพ์รายงาน</a>
+                        </div>
+
+
+                        <!-- end div input btn -->
+                            </div>
+
+
+
+                        <div class="col " style="">
+
+                        <div class="flex-btn">
+                        <div class="col-2">
+                        <button type="button"  onclick="ShowData()" class="btn btn-primary" style="padding: .5rem; width: 100%; background-color: #006eb4; box-shadow: 3px 3px 3px #aaaaaa !important; font-size: 1rem;"><i style="width: 13%;" class="fa fa-search" aria-hidden="true"></i>ค้นหา</button>
+                        </div>
+
+                        <div class="col-2">
+                        <button  class="btn btn-success" style="padding: .5rem; width: 100%; box-shadow: 3px 3px 3px #aaaaaa !important; font-size: 1rem;"
+                        onclick="PrintReport()"><i  style="width: 17%;"class="fa fa-print" aria-hidden="true"></i>พิมพ์รายงาน</button>
+                        </div>
+
+                        </div>
                     </div> 
                 </div>
-                <div class="col-sm-12 ">
+
+
+                <!-- <div class="col-sm-12 ">
                      <div style="margin-top:10; margin-bottom: 10; margin-left: 30;  margin-right: 10;">
                        <div id="ShowData">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+
+
+
+
     </div>
 
     <div id="myModalOpen" class="modal" id="myModal" role="dialog" >
@@ -229,6 +296,13 @@ if(checkmenu($user,'010')==0){
     </div>
 
 
+
+
+    </div>
+    <!-- end div container -->
+
+
+
     <!-- Bootstrap core JavaScript
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -242,7 +316,7 @@ if(checkmenu($user,'010')==0){
     <script src="dist/js/jquery.datetimepicker.full.min.js"></script>
     <script src="dist/js/dataTables.js"></script>
     <script src="dist/js/dataTables.bootstrap4.js"></script>
-    <script src="Select2/js/select2.js"></script>
+    <!-- <script src="Select2/js/select2.js"></script> -->
 
 
     <script>

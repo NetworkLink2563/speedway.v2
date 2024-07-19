@@ -26,7 +26,7 @@ $query = sqlsrv_query($conn, $sql);
 
 ?>
 <style>
-
+ 
     *{
         box-sizing: border-box;
     }
@@ -159,6 +159,60 @@ $query = sqlsrv_query($conn, $sql);
     box-shadow: 3px 3px 3px #aaaaaa !important;
 }
 
+.btn:hover{
+        opacity: 0.8;
+        transition: 0.5s;
+    }
+
+    #bulb5{
+    filter: brightness(15%);
+    transition: .5s;
+}
+#bulb10{
+    filter: brightness(25%);
+    transition: .5s;
+}
+#bulb20{
+    filter: brightness(35%);
+    transition: .5s;
+}
+#bulb30{
+    filter: brightness(45%);
+    transition: .5s;
+}
+#bulb40{
+    filter: brightness(55%);
+    transition: .5s;
+}
+#bulb50{
+    filter: brightness(65%);
+    transition: .5s;
+}
+#bulb60{
+    filter: brightness(75%);
+    transition: .5s;
+}
+#bulb70{
+    filter: brightness(85%);
+    transition: .5s;
+}
+#bulb80{
+    filter: brightness(95%);
+    transition: .5s;
+}
+#bulb90{
+    filter: brightness(105%);
+    transition: .5s;
+}
+#bulb100{
+    filter: brightness(115%);
+    transition: .5s;
+}
+
+.modal-header .close {
+    margin: 0;
+    padding: 0;
+}
 </style>
 
 <div class="container" style="position: relative; top: 75;">
@@ -268,9 +322,12 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
     <div class="modal-dialog modal-lg"  >
         <div class="modal-content">
             <div class="modal-header" >
-                <h5 class="modal-title"></h5> <span style="font-size: 10pt; margin-top: 8;margin-left: 5px"><div id="nameVMS"></div></span>
+                <h5 class="modal-title"></h5> 
+                <span class="" style="text-align: center; font-size: 1.3rem;">
+                    <div id="nameVMS">
+                    </div></span>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span  aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" >
@@ -300,41 +357,50 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                 $queryCMDReset = sqlsrv_query($conn, $sqlCMDReset);
                 $resultCMDReset = sqlsrv_fetch_array($queryCMDReset, SQLSRV_FETCH_ASSOC);
                 ?>
-                <div class="tab" style="margin-left: 10px;margin-right: 55px;"> 
+                <div class="tab" style="text-align: center;display: flex;"> 
                  
-                    <button id="tablinksCommand" name="firstactive" class=" active" onclick="openCity(event, 'Command')">คำสั่ง</button>
-                  
-                    <button id="tablinksElectricalSystem" class="tablinks active" onclick="openCity(event, 'ElectricalSystem')"><?php echo $resultCMDElectrical['XVCmdName'];?></button>
-                    <button id="tablinksFlashingLights" class="tablinks" onclick="openCity(event, 'DisplaySystem')"><?php echo $resultCMDDisplay['XVCmdName'];?></button>
-                    <button id="tablinksFlashingLights" class="tablinks" onclick="openCity(event, 'FlashingLights')"><?php echo $resultCMDFlashing['XVCmdName'];?></button>
-                    <button id="tablinksBrightness" class="tablinks" onclick="openCity(event, 'Brightness')"><?php echo $resultCMDBrightness['XVCmdName'];?></button>
+                    <div class="col-3 " style="padding: 0;">
+                    <button style="width: 100%; padding: .5rem; font-size: .9rem;" id="tablinksCommand" name="firstactive" class=" active" onclick="openCity(event, 'Command')">คำสั่ง</button>
+                    </div>
+                    <div class="col-2 "  style="padding: 0;">
+                    <button style="width: 100%; padding: .5rem; font-size: .9rem;" id="tablinksElectricalSystem" class="tablinks active" onclick="openCity(event, 'ElectricalSystem')"><?php echo $resultCMDElectrical['XVCmdName'];?></button>
+                    </div>
+                    <div class="col-2 "  style="padding: 0;">
+                    <button style="width: 100%; padding: .5rem; font-size: .9rem;" id="tablinksFlashingLights" class="tablinks" onclick="openCity(event, 'DisplaySystem')"><?php echo $resultCMDDisplay['XVCmdName'];?></button>
+                    </div>
+                    <div class="col-3 "  style="padding: 0;">
+                    <button style="width: 100%; padding: .5rem; font-size: .9rem;" id="tablinksFlashingLights" class="tablinks" onclick="openCity(event, 'FlashingLights')"><?php echo $resultCMDFlashing['XVCmdName'];?></button>
+                    </div>
+                    <div class="col-2 "  style="padding: 0;">
+                    <button style="width: 100%; padding: .5rem; font-size: .9rem;" id="tablinksBrightness" class="tablinks" onclick="openCity(event, 'Brightness')"><?php echo $resultCMDBrightness['XVCmdName'];?></button>
+                    </div>
                 </div>
 
 
-                <div id="Command" class="tabcontent" style="display: block; margin-left: 10px;margin-right: 55px;">
-                    <div class="row"style="margin-top: 10px;margin-bottom:  10px">
-                        <div class="col-sm-2">
-                        </div>
+                <div id="Command" class="tabcontent" style="padding: 2rem; background-color: #f8f8f8; ">
+                    <div class="row"style="justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px;">
+                        <!-- <div class="col-sm-2">
+                        </div> -->
                      <!--   <div class="col-sm-4"><input id="testConnectRadio" name="radiobutton" type="radio" value="1"/> ทดสอบการติดต่อป้าย
                         </div>-->
 
-                        <div class="col-sm-2">
-                            <button class="btn btn-success shadow" id="changeTimeRadio" name="radiobutton" type="radio" value="2"> <?php echo $resultCMDTimeSet['XVCmdName'];?></button>
+                        <div class="col-5" style="text-align: center; border-right: 5px double #cccc; ">
+                            <button style="padding: 1rem; width: 100%; background-color: #4976BA; color: white; border: none;" class="btn btn-info shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value="2"> <?php echo $resultCMDTimeSet['XVCmdName'];?></button>
                         </div>  
                         
-                        <div class="col-sm-2">
-                            <button class="btn btn-warning shadow" id="resetRadio" name="radiobutton" type="radio" value="3"> <?php echo $resultCMDReset['XVCmdName'];?></button>
-                        </div>
-                        
-                        <div class="col-sm-2">
-                            <button class="btn btn-success shadow" id="changeTimeRadio" name="radiobutton" type="radio" value="5"> <?php echo $resultCMDTimeSet['XVCmdName'];?></button>
-                        </div>  
-                        
-                        <div class="col-sm-2">
-                            <button class="btn btn-warning shadow" id="resetRadio" name="radiobutton" type="radio" value="6"> <?php echo $resultCMDReset['XVCmdName'];?></button>
+                        <div class="col-5"style="text-align: center;   padding-left: 0;">
+                            <button style="padding: 1rem; width: 100%; " class="btn btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value=""> เปิดคอมพิวเตอร์ </button>
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-5" style="text-align: center;border-right: 5px double #cccc;   ">
+                            <button style="padding: 1rem; width: 100%; color: white; background-color: #f8970c;" class="btn btn-warning shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value="3"> <?php echo $resultCMDReset['XVCmdName'];?></button>
+                        </div>
+                        
+                        <div class="col-5"style="text-align: center;   padding-left: 0;">
+                            <button style="padding: 1rem; width: 100%;" class="btn btn-danger shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value=""> ปิดคอมพิวเตอร์ </button>
+                        </div>  
+                        
+                        <div class="col-5"style="text-align: center;">
                         </div>
                     </div>
                     <div class="row" >
@@ -349,48 +415,92 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                     </div>
                 </div>
 
-                <div id="ElectricalSystem" class="tabcontent" style="display: none; margin-left: 10px;margin-right: 55px;">
-                    <div class="row" style="margin-top: 10px;margin-bottom:  10px">
-                        <div class="col-sm-3">
+
+
+                    <!-- เซ็ตระบบป้ายไฟ -->
+                <div id="ElectricalSystem" class="tabcontent" style="display: flex; background-color: #f8f8f8;">
+                    <div class="row" style="justify-content: center; align-items: center; gap: 10px;">
+
+                        <div class="col-3" style="margin: 1rem 0rem;">
+                            <button class="btn btn-success shadow fs-5" style="width: 100%; padding: 1rem;" id="electricalOnRadio" name="radiobutton" type="radio" value="5">เปิดไฟป้าย</button>
                         </div>
-                        <div class="col-sm-3"><input id="electricalOnRadio" name="radiobutton" type="radio" value="5" /> เปิด
+
+                        <div class="col-3" style="margin: 1rem 0rem;">
+                            <button class="btn btn-danger shadow fs-5" style="width: 100%; padding: 1rem;" id="electricalOffRadio" name="radiobutton" type="radio" value="6" >ปิดไฟป้าย</button>
                         </div>
-                        <div class="col-sm-3"><input id="electricalOffRadio" name="radiobutton" type="radio" value="6" /> ปิด
-                        </div>
-                        <div class="col-sm-3">
-                        </div>
+
                     </div>
                 </div>
-                <div id="DisplaySystem" class="tabcontent" style="display: none; margin-left: 10px;margin-right: 55px;">
-                    <div class="row" style="margin-top: 10px;margin-bottom:  10px">
-                        <div class="col-sm-3">
-                        </div>
-                        <div class="col-sm-3"><input id="displayOnlineRadio" name="radiobutton" type="radio" value="7" /> Online
-                        </div>
-                        <div class="col-sm-3"><input id="displayOfflineRadio" name="radiobutton" type="radio" value="8" /> Offline
-                        </div>
-                        <div class="col-sm-3">
-                        </div>
-                    </div>
-                </div>
-                <div id="FlashingLights" class="tabcontent" style="display: none; margin-left: 10px;margin-right: 55px;">
-                    <div class="row" style="margin-top: 10px;margin-bottom:  10px">
-                        <div class="col-sm-3">
-                        </div>
-                        <div class="col-sm-3" ><input id="flashingOnRadio" name="radiobutton" type="radio" value="9" /> เปิด
-                        </div>
-                        <div class="col-sm-3"><input id="flashingOffRadio" name="radiobutton" type="radio" value="10" /> ปิด
-                        </div>
-                        <div class="col-sm-3">
-                        </div>
-                    </div>
-                </div>
-                <div id="Brightness" class="tabcontent" style="display: none; margin-left: 10px;margin-right: 55px;">
-                    <div class="row"style="margin-top: 10px;margin-bottom:  10px">
+            <!-- เซ็ตระบบป้ายไฟ -->
+
+
+                <div id="DisplaySystem" class="tabcontent" style="display: none;">
+                    <div class="row" style="justify-content: center; align-items: center; margin: 1rem;">
                         
-                        <div class="col-sm-5 text-center"></div>
-                        <div class="col-sm-4 text-center">
-                            <div style="text-align: left;">
+                        <div class="col fs-5 form-check form-switch" style="padding: 1rem; text-align: center; border-right: 5px double #cccc;"><input class="form-check-input" id="displayOnlineRadio" name="radiobutton" type="radio" value="7" /> Online
+                        </div>
+                        <div class="col fs-5 form-check form-switch" style="padding: 1rem; text-align: center;"><input class="form-check-input" id="displayOfflineRadio" name="radiobutton" type="radio" value="8" /> Offline
+                        </div>
+                        
+                    </div>
+                </div>
+                <div id="FlashingLights" class="tabcontent" style="display: none; background-color: rgb(248, 248, 248);">
+                    <div class="row" style="justify-content: center; align-items: center; margin: 1rem; ">
+                        
+
+                        <div class="col-5 fs-5 form-check form-switch" style="display: flex; align-items: center; justify-content: end;">
+                           <div class="col-5 fs-5" style="display: inline-block; text-align: center; margin-right: .7rem;">ปิด</div> 
+                           <div class="col-5">
+                        <input class="form-check-input" type="checkbox" id="flashingOnRadio" name="radiobutton" value="9" onclick="showimg()">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">เปิด</label>
+                        </div>
+                        </div>
+
+                        <div class="gif-img col-4" style="text-align: center; padding: 0;">
+                        <img id="gifimg" style="display: none; width: 100%;" src="img/traffic-light_.gif" width="150">
+                        <img id="gifimg-close" style="display: ; width: 100%;" src="img/traffic-light-close.png" width="150">
+                        </div>
+
+                        <!-- <div class="col-2 fs-5 form-check form-switch" style="padding: 1rem; text-align: center;"><input class="form-check-input" id="flashingOnRadio" name="radiobutton" type="radio" value="9" /> เปิด
+                        </div> -->
+                        <!-- <div class="col-2 fs-5 form-check form-switch" style="padding: 1rem; text-align: center;"><input class="form-check-input" id="flashingOffRadio" name="radiobutton" type="radio" value="10" /> ปิด
+                        
+                    </div> -->
+                </div>
+                </div>
+
+
+
+                <div id="Brightness" class="tabcontent" style="display: none; background-color: rgb(248, 248, 248);">
+                    <div class="row" style="justify-content: center; align-items: center; margin: 1rem; ">
+                        
+                        <div class="col" style="text-align: center; border-right: 3px double #cccc;">
+                        <button id="brightnessAutoRadio" class="btn btn-success fs-5 shadow" style="padding: .5rem; width: 80%;">Auto</button>
+                        </div>
+
+
+                        <div class="col-6" style="text-align: center; ">
+                        <h5>Manual</h5>
+                        <select id="levels" class="form-select fs-6" aria-label="Default select example" style="text-align: ; ">
+                        <option selected>เลือกระดับความสว่าง</option>
+                        <option id="brightnessLevel1Radio" value="12">ระดับ 1</option>
+                        <option id="brightnessLevel2Radio" value="13">ระดับ 2</option>
+                        <option id="brightnessLevel3Radio" value="14">ระดับ 3</option>
+                        <option id="brightnessLevel4Radio" value="15">ระดับ 4</option>
+                        <option id="brightnessLevel5Radio" value="16">ระดับ 5</option>
+                        <option id="brightnessLevel6Radio" value="17">ระดับ 6</option>
+                        <option id="brightnessLevel7Radio" value="18">ระดับ 7</option>
+                        <option id="brightnessLevel8Radio" value="19">ระดับ 8</option>
+                        <option id="brightnessLevel9Radio" value="20">ระดับ 9</option>
+                        <option id="brightnessLevel10Radio" value="21">ระดับ 10</option>
+                        </select>
+                        </div>
+
+                        <div class="lamp col-2" style="text-align: left;">
+                            <img style="width: 80%" class="bulb" id="bulb5" src="img/bulb.png" width="30" alt="">
+                        </div>
+
+                            <!-- <div style="text-align: left;">
                             <input id="brightnessAutoRadio"  name="radiobutton" type="radio" value="11"/> Auto<br>
                             <input id="brightnessLevel1Radio"  name="radiobutton" type="radio" value="12"/>ระดับ 1<br>
                             <input id="brightnessLevel2Radio"  name="radiobutton" type="radio" value="13"/>ระดับ 2<br>
@@ -402,13 +512,14 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                             <input id="brightnessLevel8Radio"  name="radiobutton" type="radio" value="19"/>ระดับ 8<br>
                             <input id="brightnessLevel9Radio"  name="radiobutton" type="radio" value="20"/>ระดับ 9<br>
                             <input id="brightnessLevel10Radio"  name="radiobutton" type="radio" value="21"/>ระดับ 10<br>
-                            </div>
+                            </div> -->
+
                         </div>
                         
                     </div>
                     
                 </div>
-                <br >
+             
                 <div align="center" >
                     <?php
                        $Disable="disabled";
@@ -600,10 +711,6 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                 var myRadioTextChild = '  Restart เครื่องควบคุมป้าย';
             }if(myRadio==4){
                 var myRadioTextChild = ' สอบถามพื้นที่ของฮาร์ดดีส';
-            }if(myRadio==5){
-                var myRadioTextChild = ' เปิดคอมพิวเตอร์';
-            }if(myRadio==6){
-                var myRadioTextChild = ' ปิดคอมพิวเตอร์';
             }
             var myRadioText = 'ส่งคำสั่ง';
         }else if(myRadio==5){
@@ -954,5 +1061,57 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
             $('#MyModalList').modal('show');
     }
 </script>
+
+<script>
+function showimg() {
+  var checkBox = document.getElementById("flashingOnRadio");
+
+  if (checkBox.checked == true){
+    // $("#div1").fadeIn();
+    $("#gifimg-close").hide();
+    $("#gifimg").show();
+    // $("#div3").fadeIn(3000);
+  } else {
+    
+    // $("#div1").fadeIn();
+    $("#gifimg").hide();
+    $("#gifimg-close").show();
+    // $("#div3").fadeIn(3000);
+
+  }
+}
+</script>
+
+
+<!-- bulb function -->
+<script>
+    $("#levels").change(function(){
+    if($(this).val() == "12") {
+      $(".bulb").attr('id', 'bulb10'); 
+    } else if($(this).val() == "13") {
+        $(".bulb").attr('id', 'bulb20');
+    }else if($(this).val() == "14") {
+        $(".bulb").attr('id', 'bulb30');
+    }else if($(this).val() == "15") {
+        $(".bulb").attr('id', 'bulb40');
+    }else if($(this).val() == "16") {
+        $(".bulb").attr('id', 'bulb50');
+    }else if($(this).val() == "17") {
+        $(".bulb").attr('id', 'bulb60');
+    }else if($(this).val() == "18") {
+        $(".bulb").attr('id', 'bulb70');
+    }else if($(this).val() == "19") {
+        $(".bulb").attr('id', 'bulb80');
+    }else if($(this).val() == "20") {
+        $(".bulb").attr('id', 'bulb90');
+    }else if($(this).val() == "21") {
+        $(".bulb").attr('id', 'bulb100');
+    }else{
+        $(".bulb").attr('id', 'bulb5');
+    }
+    });
+    </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>
 </html>

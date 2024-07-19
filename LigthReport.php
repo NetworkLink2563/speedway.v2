@@ -78,9 +78,9 @@ if(checkmenu($user,'011')==0){
             color: #595959 !important;
         }
         
-        .select2-container--default .select2-results>.select2-results__options {
+        /* .select2-container--default .select2-results>.select2-results__options {
             max-height: 400px;
-        }
+        } */
     </style>
     <style>
         .dropbtn {
@@ -166,32 +166,83 @@ if(checkmenu($user,'011')==0){
                 }
             }
         }
+
+        *{
+    box-sizing: border-box;
+}
+
+.form-inline{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.flex-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.btn:hover{
+        opacity: 0.8;
+        transition: 0.5s;
+    }
+
+    body {
+        background: #e1f0fa;
+    }
+
+    .container{
+        background-color:  white;
+        
+    }
+
+    .shadow{
+    box-shadow: 3px 3px 3px #aaaaaa !important;
+}
+
+.flex-head{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
     </style>
 
 
-    <div class="centered" style="margin-top: 60;margin-left: 10;">
+<div class="container" style="position: relative; top: 75;">
 
-        <div class="box" style="margin-top: 30;" align="left">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-                        <img src="img/icon/computer.png" height="25" alt="Responsive image">&nbsp;รายงานระดับความสว่าง
-                        <div style="margin-top:-5;">
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 " >
-                    <div style="margin-top:10; margin-bottom: 10; margin-left: 30;  margin-right: 10;">
+
+<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/computer.png" height="25" alt="Responsive image"> รายงาน
+        </div>
+
+
+<div class=" shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายงานระดับความสว่าง</a>
+        </div>
+
+
+        <div class="flex-head" style="margin: 1rem;">
+                <div class="col" >
                             <form class="form-inline" action=""> 
-                                <label for="">วันที่เริ่ม:</label>
-                                <input type="text" id="ds" class="datetimepicker form-control" style=" width: 180px"/><i style="font-size:26px;margin-right:10px" class="fa">&#xf073;</i>
-                                <label for="">วันที่สิ้นสุด:</label>
-                                <input type="text" id="de" class="datetimepicker form-control" style=" width: 180px;"/><i style="font-size:26px;margin-right:10px" class="fa">&#xf073;</i>
-                                <label for="">ป้าย:</label>
-                                <select  id="vms" class="form-control" style="padding:5px;">
+
+                                <div class="col-2" style="text-align: center; margin: .5rem;">
+                                <label style="display: inline-block; font-size: 1.2rem;" for="">วันที่เริ่ม:</label><i style="width: 25%; text-align: left; margin-left: .3rem;" class="fa">&#xf073;</i>
+                                <input type="text" id="ds" class="datetimepicker form-control" style=" width: 180px"/>
+                                </div>
+
+                                <div class="col-2" style="text-align: center; margin: .5rem;">
+                                <label style="display: inline-block; font-size: 1.2rem;" for="">วันที่สิ้นสุด:</label><i style="width: 25%; text-align: left; margin-left: .3rem;" class="fa">&#xf073;</i>
+                                <input type="text" id="de" class="datetimepicker form-control" style=" width: 180px;"/>
+                                </div>
+
+                                <div class="col-3" style="text-align: center; margin: .5rem;">
+                                <label style="display: inline-block; font-size: 1.2rem;" for="">ป้าย</label>
+                                
+                                <select  id="vms" class="form-select form-select-md" style="text-align: center;">
                                 <?php
                                     $sql='SELECT XVVmsCode, XVVmsName FROM TMstMItmVMS order by XVVmsCode';
                                     $query = sqlsrv_query($conn, $sql);
@@ -203,22 +254,41 @@ if(checkmenu($user,'011')==0){
                                 
                                 
                                 </select>
-                                <button type="button"  onclick="ShowData()" class="btn btn-primary btn-sm" style="margin:5px;"><i class="fa fa-search" aria-hidden="true"></i>ค้นหา</button>
-                                <a  class="btn btn-success btn-sm" style="font-size: 12pt; color: #FFFFFF; margin:5px;"
-                                onclick="PrintReport()"><i class="fa fa-print" aria-hidden="true"></i>พิมพ์รายงาน</a>
+                                </div>
+
+
+                                <div class="col" style="text-align: center;">
+
+                                <div class="flex-btn">
+                                <div class="col-2">
+                                <button type="button" onclick="ShowData()" class="btn btn-primary shadow" style="width: 100%; padding: .5rem; background-color: #006eb4;"><i style="width: 17%;" class="fa fa-search" aria-hidden="true"></i>ค้นหา</button>
+                                </div>
+
+                                <div class="col-2">
+                                <button  class="btn btn-success shadow" style="width: 100%; padding: .5rem;"
+                                onclick="PrintReport()"><i style="width: 13%;" class="fa fa-print" aria-hidden="true"></i>พิมพ์รายงาน</button>
+                                </div>
+
+
+                                </div>
                             
                             </form>
                     </div>
                 </div>
               
             </div>
-            <div class="col-sm-12 " >
+
+
+            <!-- <div class="col-sm-12 " >
                  <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;"">
                     <div id="ShowData" style="padding-top:5px;">
                     </div>
                  </div>
             </div>
-        </div>
+        </div> -->
+
+
+
     </div>
 
     <div id="myModalOpen" class="modal" id="myModal" role="dialog" >
@@ -251,7 +321,7 @@ if(checkmenu($user,'011')==0){
     <script src="dist/js/jquery.datetimepicker.full.min.js"></script>
     <script src="dist/js/dataTables.js"></script>
     <script src="dist/js/dataTables.bootstrap4.js"></script>
-    <script src="Select2/js/select2.js"></script>
+    <!-- <script src="Select2/js/select2.js"></script> -->
 
 
     <script>

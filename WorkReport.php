@@ -217,12 +217,12 @@ $XVVmsCode=base64_decode($_REQUEST["vmc"]) ;
 
 
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
-            <img src="http://43.229.151.103/speedway/img/icon/computer.png" height="25" alt="Responsive image"> รายงานการปฏิบัติงาน
+            <img src="http://43.229.151.103/speedway/img/icon/computer.png" height="25" alt="Responsive image">รายงาน
         </div>
 
 
 <div class=" shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายงาน</a>
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i>รายงานการปฏิบัติงาน</a>
         </div>
 
 

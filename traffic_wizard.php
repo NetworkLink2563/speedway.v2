@@ -77,11 +77,11 @@
 		<div class="row">
 			<div class="col-md-3">
 				<div class="text-center position-relative">
-					<div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #4976BA!important; box-shadow: 3px 3px 3px #aaaaaa !important;">
-						<a href="messagepublicrelations.php"><img src="img/create_white.png" width="50" alt=""></a>
+					<div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #fda300!important; box-shadow: 3px 3px 3px #aaaaaa !important;">
+						<a href="messagetraffics.php"><img src="img/create_white.png" width="50" alt=""></a>
 					</div>
-					<h4 class="mt-3 fs-6">1.สร้างข้อความ</h4>
-                    <button onclick="location.href='messagepublicrelations.php'" style="padding: .5rem; width: 60%; background-color: #084387; box-shadow: 3px 3px 3px #aaaaaa !important;"  class="btn btn-primary fs-6">
+					<h4 class="mt-3 fs-6">1.สร้างข้อความสภาพการจราจรพื้นฐาน</h4>
+                    <button onclick="location.href='messagetraffics.php'" style="padding: .5rem; width: 60%; background-color: #1f4762; box-shadow: 3px 3px 3px #aaaaaa !important; border-color: #d1d1d1;"  class="btn btn-primary fs-6">
 					กดสร้างข้อความ<br>(Message)
                     </button>
 					<div class="arrow-icon position-absolute d-none d-lg-block" style="top:50px; right:-25px">
@@ -92,11 +92,11 @@
 			</div> 
 			<div class="col-md-3">
 				<div class="text-center position-relative">
-					<div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #4976BA!important; box-shadow: 3px 3px 3px #aaaaaa !important;">
-						<a href="messagepublicrelationsframe.php"><img src="img/format.png" width="50" alt=""></a>
+					<div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #fda300!important; box-shadow: 3px 3px 3px #aaaaaa !important;">
+						<a href="messagetrafficsframe.php"><img src="img/format.png" width="50" alt=""></a>
 					</div>
-					<h4 class="mt-3 fs-6">2.จัดรูปแบบข้อความ</h4>
-                    <button onclick="location.href='messagepublicrelationsframe.php'" style="padding: .5rem; width: 60%; background-color: #084387; box-shadow: 3px 3px 3px #aaaaaa !important;"  class="btn btn-primary fs-6">
+					<h4 class="mt-3 fs-6">2.สร้างข้อความสภาพการจราจรแสดงบนป้าย</h4>
+                    <button onclick="location.href='messagetrafficsframe.php'" style="padding: .5rem; width: 60%; background-color: #1f4762; box-shadow: 3px 3px 3px #aaaaaa !important; border-color: #d1d1d1;"  class="btn btn-primary fs-6">
 					กดจัดรูปแบบข้อความ<br>(Format)
                     </button>
 					<div class="arrow-icon d-none d-lg-block position-absolute" style="top:50px; right:-25px">
@@ -107,11 +107,11 @@
 			</div>
 			<div class="col-md-3">
 				<div class="text-center position-relative">
-					<div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #4976BA!important; box-shadow: 3px 3px 3px #aaaaaa !important;">
-                    <a href="messagepublicrelationsframegroup.php"><img src="img/playlist.png" width="50" alt=""></a>
+					<div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #fda300!important; box-shadow: 3px 3px 3px #aaaaaa !important;">
+                    <a href="messagetrafficsframegroup.php"><img src="img/playlist.png" width="50" alt=""></a>
 					</div>
-					<h4 class="mt-3 fs-6">3.ชุดข้อความ</h4>
-					<button onclick="location.href='messagepublicrelationsframegroup.php'" style="padding: .5rem; width: 60%; background-color: #084387; box-shadow: 3px 3px 3px #aaaaaa !important;"  class="btn btn-primary fs-6">
+					<h4 class="mt-3 fs-6">3.สร้างชุดการแสดงป้ายจราจร</h4>
+					<button onclick="location.href='messagetrafficsframegroup.php'" style="padding: .5rem; width: 60%; background-color: #1f4762; box-shadow: 3px 3px 3px #aaaaaa !important; border-color: #d1d1d1;"  class="btn btn-primary fs-6">
 					กดจัดชุดข้อความ<br>(Playlist)
                     </button> 
 					<div class="arrow-icon d-none d-lg-block position-absolute" style="top:50px; right:-25px">
@@ -122,11 +122,11 @@
 			</div>
 			<div class="col-md-3">
 				<div class="text-center position-relative">
-                <div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #4976BA !important; box-shadow: 3px 3px 3px #aaaaaa !important;">
-                <a href="messagepublicrelationsplay.php"><img src="img/sent.png" width="50" alt=""></a>
+                <div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #fda300 !important; box-shadow: 3px 3px 3px #aaaaaa !important;">
+                <a href="messagetrafficsplay.php"><img src="img/sent.png" width="50" alt=""></a>
 					</div>
-					<h4 class="mt-3 fs-6">ส่งชุดข้อความ</h4>
-					<button onclick="location.href='messagepublicrelationsplay.php'" style="padding: .5rem; width: 60%; background-color: #084387 ; box-shadow: 3px 3px 3px #aaaaaa !important;"  class="btn btn-primary fs-6">
+					<h4 class="mt-3 fs-6">4.ข้อความป้ายจราจร</h4>
+					<button onclick="location.href='messagetrafficsplay.php'" style="padding: .5rem; width: 60%; background-color: #1f4762 ; box-shadow: 3px 3px 3px #aaaaaa !important; border-color: #d1d1d1;"  class="btn btn-primary fs-6">
 					กดส่งชุดข้อความ<br>(Publisher)
                     </button> 
 				</div>
