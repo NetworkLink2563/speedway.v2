@@ -207,6 +207,41 @@ echo ThDate(); // แสดงวันที่
             border-radius: 8px;
             background-color: white;
         }
+
+        .btn:hover{
+        opacity: 1!important;
+        transition: 0.5s;
+    }
+
+    .button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.shadow{
+    box-shadow: 3px 3px 3px #aaaaaa !important;
+}
+
     </style>
 </head>
 
@@ -264,8 +299,9 @@ echo ThDate(); // แสดงวันที่
     <div class="centered">
         <div class="box" align="center">
             <div class="row" style="margin-top: 20px; margin-bottom: 30px; width: 350px;">
-                <div class="col-sm-12" align="center">
-                    <span >CITY MOTORWAY DIVISION</span>
+                <div class="col-sm-12" style="font-size: 1rem; font-weight: 500;">
+                    <span >CITY MOTORWAY DIVISION</span><br>
+                    <span >กองการทางพิเศษระหว่างเมือง กรมทางหลวง</span>
                 </div>
                 <div class="col-sm-12" style="margin-top: 20px">
                     <div class="row">
@@ -306,7 +342,7 @@ echo ThDate(); // แสดงวันที่
                             </select>
                         </div>
                         <div class="col-sm-12" style="margin-top: 20px;">
-                            <button id="myButton" class="btn btn-lg btn-primary btn-block" style="font-size: 12pt" type="submit" onclick="loginSystem()">เข้าสู่โปรแกรม   </button>
+                            <button id="myButton" class="btn btn-primary btn button shadow" style="font-size: 1rem; background-color: #4976BA; opacity: .8; width: 100%;" type="submit" onclick="loginSystem()"><span>เข้าสู่ระบบ  </span></button>
                         </div>
                     </div>
 
