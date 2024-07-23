@@ -145,12 +145,11 @@ input .btnsearch{
                         <table id="UserTable" class="table table-striped table-hover" style="width:100%">
                             <thead>
                             <tr style="font-size: 10pt">
-                                <th class="th-sm">Username
+                                <th class="th-sm">ผู้ใช้
                                 </th>
-                                <th class="th-sm">ชื่อ-สกุล
+                                <th class="th-sm" >กะ
                                 </th>
-                                <th class="th-sm" style="text-align: center">เบอร์ติดต่อ
-                                </th>
+                              
                                 <th class="th-sm" style="text-align: center">สถานะ
                                 </th>
                                 <th class="th-sm text-center">สิทธิ์
@@ -162,10 +161,12 @@ input .btnsearch{
                             </thead>
                             <tbody>
                             <?php
-                            $stmt = "SELECT        dbo.TMstMCustomer.XVCstCode, dbo.TMstMCustomer.XVCstName, dbo.TMstMCustomer.XVCstPhone, dbo.TMstMUser.XVUsrName, dbo.TMstMUser.XBUsrIsActive, dbo.TMstMUser.XVUsrCode, dbo.TMstMUser.XVName
-                            FROM            dbo.TMstMCustomer INNER JOIN
-                                                     dbo.TMstMUser ON dbo.TMstMCustomer.XVCstCode = dbo.TMstMUser.XVCstCode
-";
+                            $stmt = "SELECT  dbo.TMstMCustomer.XVCstCode, dbo.TMstMCustomer.XVCstName, dbo.TMstMCustomer.XVCstPhone, dbo.TMstMUser.XVUsrName, dbo.TMstMUser.XBUsrIsActive, dbo.TMstMUser.XVUsrCode, dbo.TMstMShift.XVShfName, 
+                                     dbo.TMstMShift.XIShfStartHour, dbo.TMstMShift.XIShfStartMin, dbo.TMstMShift.XIShfEndHour, dbo.TMstMShift.XIShfEndMin
+                                     FROM dbo.TMstMCustomer INNER JOIN
+                                     dbo.TMstMUser ON dbo.TMstMCustomer.XVCstCode = dbo.TMstMUser.XVCstCode INNER JOIN
+                                     dbo.TMstMShift ON dbo.TMstMUser.XVShfCode = dbo.TMstMShift.XVShfCode
+                            ";
                             $query = sqlsrv_query($conn, $stmt);
                             while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
                             {
@@ -177,13 +178,15 @@ input .btnsearch{
                                     $icon="fa fa-check";
                                     $status="ยกเลิก";
                                 }
+                                $shift= $result['XVShfName'].' '.$result['XIShfStartHour'].':'.$result['XIShfStartMin'].'-'.$result['XIShfEndHour'].':'.$result['XIShfEndMin'].' น.'; 
                                 
                             ?>
+                            
                             <tr id="usercode<?php echo $result['XVUsrCode']; ?>" style="font-size: 10pt">
                                 <td><?php echo $result['XVUsrName']; ?></td>
-                                <td><?php echo $result['XVName']; ?></td>
-                                <td><?php echo $result['XVCstPhone']; ?></div></td>
-                                <td><?php echo $status; ?></td>
+                           
+                                <td ><?php echo  $shift; ?></td>
+                                <td class="text-center"><?php echo $status; ?></td>
                                 
                                 
                                 <td><div style="margin-top: 5px;text-align: center"><a href="usermenu.php?p=<?php echo base64_encode($result['XVUsrCode']);?>" ><i class="fa fa-folder" aria-hidden="true" title="กำหนดสิทธิ์"></i></a></div>
