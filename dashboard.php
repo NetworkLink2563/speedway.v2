@@ -66,6 +66,11 @@ table td{
         font-weight: 500;
     }
 
+.input-config{
+    background-color: #f2fff0!important;
+    font-weight: 300;
+    font-size: .8rem;
+}
 </style>
 
 
@@ -76,6 +81,32 @@ table td{
 
 <div style="margin: 1rem; text-align: center; margin-bottom: 1rem; border-bottom: 3px double #cccc; padding: 1rem;">
             <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image">&nbsp;หน้าแดชบอร์ด
+        </div>
+
+
+        <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> การแสดงผล</a>
+        </div>
+
+
+        <div id="config" class="config" style="text-align: center; margin-top: 1rem;">
+            <table class="table table-striped table hover">
+            <tr style="text-align: center;">
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>สถานะ</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>แบบป้าย</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>ป้าย</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>ไฟฟ้า</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>แสดงผล</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>ความสว่าง</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>อุณหภูมิตู้</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>อุณหภูมิป้าย</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>พัดลมตู้</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>ไฟกระพริบ</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>โมดูลเสีย</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>ประเภท</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>ข้อความ</th>
+                <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>Live</th>
+            </tr>
         </div>
 
         <div style="" id="ShowData">

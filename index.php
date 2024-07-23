@@ -62,6 +62,10 @@ echo ThDate(); // แสดงวันที่
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="dist/js/jquery-3.7.1.js"></script>
+    <script src="dist/js/popper.min.js"></script>
+    <script src="dist/js/main_speed.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="dist/css/starter-template.css" rel="stylesheet">

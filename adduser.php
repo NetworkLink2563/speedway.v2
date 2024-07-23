@@ -81,42 +81,54 @@ if(checkmenu($user,'002')==0){
     -moz-transition: all 0.2s;
     transition: all 0.2s;
 }
+
+body {
+        background: #e1f0fa;
+    }
+
+    .container{
+        background-color:  white;
+        
+    }
+
 </style>
-<div class="centered" style="margin-top: 60;margin-left: 10;">
 
-    <div class="box" style="margin-top: 30;" align="left">
-        <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image">&nbsp;เพิ่มผู้ใช้งาน
-            <div style="margin-top:-5;">
-                <hr>
+<div class="container" style="position: relative; top: 75;">
+
+
+<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> 
+        </div>
+
+
+<div class="flex-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+        <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</a>
+        </div>
+
+        <div class="row col-12" style="margin-top: 2rem;">
+            <div class="col-6" style="margin-top: 5px; text-align: right;">
+                <span>ชื่อผู้ใช้</span>
+            </div>
+            <div class="col-6"><input type="email" id="emailaddress" name="emailaddress" class="form-control input"
+                    style="width: 100%;" placeholder=" Username" autocomplete="off" required autofocus>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-4">
+        <div class="row col-12" style="padding-top:10px">
+            <div class="col-6" style="margin-top: 5px; text-align: right;">
+                <span>รหัสผ่าน</span>
             </div>
-            <div class="col-sm-1" style="margin-top: 5px">ชื่อผู้ใช้
-            </div>
-            <div class="col-sm-2"><input type="email" id="emailaddress" name="emailaddress" class="form-control input"
-                    style="width: 200px; placeholder=" Username" autocomplete="off" required autofocus>
-
-            </div>
-        </div>
-        <div class="row" style="padding-top:10px">
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-1" style="margin-top: 5px">รหัสผ่าน
-            </div>
-            <div class="col-sm-2"><input id="passwordInput" name="passwordInput" style="width: 200px;" type="password"
+            <div class="col-6"><input id="passwordInput" name="passwordInput" style="width: 100%;" type="password"
                     name="textfield" class="input" />
             </div>
         </div>
-        <div class="row" style="padding-top:10px">
-            <div class="col-sm-4">
+        <div class="row col-12" style="padding-top:10px; justify-content: center; align-items: center;">
+            <div class="col-6" style="margin-top: 5px; text-align: right;">
+                <span>เวลาเข้าทำงาน</span>
             </div>
-            <div class="col-sm-1" style="margin-top: 5px">กะ
-            </div>
-            <div class="col-sm-2">
-                <select  id="SelXVShfCode" class="input">
+            <div class="col-6">
+                <select  id="SelXVShfCode" class="input" style="width: 100%;">
                 <?php include "lib/DatabaseManage.php";?>
                 <?php
                         $sql="SELECT  XVShfCode, XVShfName, XIShfStartHour, XIShfStartMin, XIShfEndHour, XIShfEndMin
@@ -133,13 +145,9 @@ if(checkmenu($user,'002')==0){
             </div>
         </div>
 
-        <div class="row" style="padding-top:10px">
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-1" style="margin-top: 5px">
-            </div>
-            <div class="col-sm-1">
-                <button type="button" class="btn btn-success" onclick="addUser();">บันทึก</button>
+        <div class="row col-12" style="padding-top:10px; justify-content: center; align-items: center;">
+            <div class="col-2" style="margin: 2rem; display: flex; justify-content: center; align-items: center;">
+                <button style="width: 70%;" type="button" class="btn btn-success" onclick="addUser();">บันทึก</button>
             </div>
         </div>
     </div>
