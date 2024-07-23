@@ -1,3 +1,5 @@
+
+
 <?php
 include 'header.php';
 include "lib/DatabaseManage.php";
@@ -22,6 +24,7 @@ if(checkmenu($user,'006')==0){
 }
     */
 ?>
+
 <style>
 @mixin modal-fullscreen() {
   padding: 0 !important; // override inline padding-right added from js
@@ -851,11 +854,17 @@ input.btnsearch{
 <div class="modal " id="modal-MsgSize" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style="text-align: center; justify-content: center;">
+        <div class="col-11">
         <h5 class="modal-title">เลือกขนาดป้าย</h5>
+        </div>
+
+        <div calss="col">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        </div>
+
       </div>
       <div class="modal-body text-center">
          
