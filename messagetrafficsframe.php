@@ -862,7 +862,7 @@ input.btnsearch{
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">เลือกขนาดป้าย</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button id="closemodal" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -899,7 +899,7 @@ input.btnsearch{
          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button id="hidemodal" type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       
       </div>
     </div>
@@ -1480,14 +1480,18 @@ $(document).ready(function() {
         }
     });
 });
+</script>
 
+<script>
+    $("#closemodal").click(function(){
+    $("#modal-MsgSize").modal("hide")
+    })
+</script>
 
-
-
-
-
-
-
+<script>
+    $("#hidemodal").click(function(){
+    $("#modal-MsgSize").modal("hide")
+    })
 </script>
 </body>
 

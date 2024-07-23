@@ -776,7 +776,7 @@ table {
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">เลือกขนาดป้าย</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" id="closemodal" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -813,7 +813,7 @@ table {
          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hidemodal" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       
       </div>
     </div>
@@ -1269,6 +1269,18 @@ function deleteMSG(MSGCode) {
         $(".cke_wysiwyg_frame").contents().find(".cke_editable").css("background-color",bgrealcolor);
         document.getElementById('msgBG').value=bgrealcolor;
     }
+</script>
+
+<script>
+    $("#closemodal").click(function(){
+    $("#modal-MsgSize").modal("hide")
+    })
+</script>
+
+<script>
+    $("#hidemodal").click(function(){
+    $("#modal-MsgSize").modal("hide")
+    })
 </script>
 </body>
 

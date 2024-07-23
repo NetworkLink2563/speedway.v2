@@ -628,7 +628,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">เลือกขนาดป้าย</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button id="closemodal" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -666,7 +666,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hidemodal" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       
       </div>
     </div>
@@ -1021,38 +1021,27 @@ $("#btn_next").click(function(){
       $("#modal-MsgSize").modal("hide");
       $("#modal-add").modal("show");
   });
-
    
-   
-
- 
-
-
-
-  
-      
 $(document).ready(function() {
     jQuery('.datetimepicker').datetimepicker({
          format:'Y-m-d H:i'
     });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
+
+<script>
+    $("#closemodal").click(function(){
+    $("#modal-MsgSize").modal("hide")
+    })
+</script>
+
+<script>
+    $("#hidemodal").click(function(){
+    $("#modal-MsgSize").modal("hide")
+    })
+</script>
+
 </body>
 
 </html>

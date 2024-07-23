@@ -454,7 +454,7 @@ input[type='file'] { font-size: 0; }
         <div class="modal-content" style="background-color: rgb(3, 84, 138);color:white;">
             <div class="modal-header">
                 <h5 class="modal-title">เลือกขนาดป้าย/ประเภทข้อความ</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button id="closemodal" type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body text-center">
                 <div class="row">
@@ -572,7 +572,7 @@ input[type='file'] { font-size: 0; }
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hidemodal" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
         <button type="button" class="btn btn-primary">บันทึก</button>
       </div>
     </div>
@@ -1043,6 +1043,18 @@ function deleteMSG(MSGCode) {
         }
     });
 }*/
+</script>
+
+<script>
+    $("#closemodal").click(function(){
+    $("#myModal").modal("hide");
+    });
+</script>
+
+<script>
+    $("#hidemodal").click(function(){
+    $("#myModal").modal("hide");
+    });
 </script>
 </body>
 

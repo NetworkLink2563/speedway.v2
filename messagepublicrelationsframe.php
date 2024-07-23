@@ -860,7 +860,7 @@ input.btnsearch{
         </div>
 
         <div calss="col">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" id="hidemodal" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
         </div>
@@ -899,7 +899,7 @@ input.btnsearch{
          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="closemodal" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       
       </div>
     </div>
@@ -1478,15 +1478,20 @@ $(document).ready(function() {
         }
     });
 });
-
-
-
-
-
-
-
-
 </script>
+
+<script>
+    $("#closemodal").click(function(){
+    $("#modal-MsgSize").modal("hide");
+    });
+</script>
+
+<script>
+    $("#hidemodal").click(function(){
+    $("#modal-MsgSize").modal("hide");
+    });
+</script>
+
 </body>
 
 </html>
