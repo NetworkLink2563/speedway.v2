@@ -783,7 +783,8 @@ table th{
 </div>
   
 
-<div class="modal " id="modal-MsgSize" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="modal" id="modal-MsgSize" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -791,7 +792,7 @@ table th{
         <h5 class="modal-title">เลือกขนาดป้าย</h5>
         </div>
         <div class="">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button id="hidemodal" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
         </div>
@@ -830,11 +831,13 @@ table th{
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="closemodal" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       </div>
     </div>
   </div>
 </div>
+
+
 
 <div class="modal py-5" id="ModalExample" role="dialog">
     <div class="modal-dialog modal-lg">
@@ -1287,6 +1290,19 @@ function deleteMSG(MSGCode) {
         document.getElementById('msgBG').value=bgrealcolor;
     }
 </script>
+
+<script>
+    $("#hidemodal").click(function(){
+    $("#modal-MsgSize").modal("hide");
+  });
+</script>
+
+<script>
+    $("#closemodal").click(function(){
+    $("#modal-MsgSize").modal("hide");
+  });
+</script>
+
 </body>
 
 </html>
