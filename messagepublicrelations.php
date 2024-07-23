@@ -787,10 +787,14 @@ table th{
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
+        <div class="col-11" style="text-align: center;">
         <h5 class="modal-title">เลือกขนาดป้าย</h5>
+        </div>
+        <div class="">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        </div>
       </div>
       <div class="modal-body text-center">
          
@@ -824,9 +828,9 @@ table th{
       
          
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-      
       </div>
     </div>
   </div>
