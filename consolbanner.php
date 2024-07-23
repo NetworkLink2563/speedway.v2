@@ -562,7 +562,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                             <output><span>0</span></output>
                             <h6>ระดับไฟ</h6>
 
-                            <div class="col-6" style="text-align: center;">
+                            <div class="col-4" style="text-align: center;">
                             <button class="btn btn-primary shadow" style="margin: 1rem 0rem;width: 100%;">บันทีก</button>
                         </div>
 
