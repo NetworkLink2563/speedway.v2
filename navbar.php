@@ -187,7 +187,7 @@ p {
         </li>
       </ul>
 
-      <ul class="navbar-nav">
+      <!-- <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           การแสดงข้อความ
@@ -197,7 +197,7 @@ p {
             <li><a class="dropdown-item" href="Schedulemessage.php">จัดตารางข้อความประชาสัมพันธ์</a></li>
           </ul>
         </li>
-      </ul>
+      </ul> -->
       
       <ul class="navbar-nav">
         <li class="nav-item dropdown">

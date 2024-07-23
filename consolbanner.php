@@ -525,13 +525,25 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                 <div id="Brightness" class="tabcontent" style="display: none; background-color: rgb(248, 248, 248);">
                     <div class="row" style="justify-content: center; align-items: center; margin: 1rem; ">
                         
-                        <div class="col-3" style="text-align: center; border-right: 3px double #cccc;">
+                        <div class="col-3" style="text-align: center;">
                         <button id="brightnessAutoRadio" class="btn btn-success fs-5 shadow" style="padding: .5rem; width: 80%;">Auto</button>
                         </div>
 
 
-                        <div class="col-6" style="text-align: center; display:flex; flex-direction: column; align-items: center; justify-content: center; flex: 1;">
+                        
+                        <div class="col-6" style="text-align: center; display:flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; border-left: 3px double #cccc;">
+                            
+                        <div style="display: flex; justify-content:center; align-items: center;">
+
+                        <div class="col-2">
                         <h5>Manual</h5>
+                        </div>
+
+                        <div class="col-1" style="text-align: center; padding: 0;">
+                            <img style="width: 61%; position: relative; top: -3px;" class="bulb" id="bulb5" src="img/brightness_ico.png" width="30" alt="">
+                        </div>
+
+                        </div>
                         <!-- <select id="levels" class="form-select fs-6" aria-label="Default select example" style="text-align: ; ">
                         <option selected>เลือกระดับความสว่าง</option>
                         <option id="brightnessLevel1Radio" value="12">ระดับ 1</option>
@@ -549,12 +561,19 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                             <input style="width: 100%;" id="levels2" class="slider" type="range" min="0" max="100" value="0" step="10" oninput="this.nextElementSibling.value = this.value">
                             <output><span>0</span></output>
                             <h6>ระดับไฟ</h6>
+
+                            <div class="col-6" style="text-align: center;">
+                            <button class="btn btn-primary shadow" style="margin: 1rem 0rem;width: 100%;">บันทีก</button>
                         </div>
+
+                        </div>
+
                         
-                        <div class="lamp col-2" style="text-align: center;">
+                        
+                        <!-- <div class="lamp col-2" style="text-align: center;">
                             <img style="width: 80%; position: relative; top: -13px;" class="bulb" id="bulb5" src="img/brightness_ico.png" width="30" alt="">
                         </div>
-                        
+                         -->
                         </div>
 
                         
