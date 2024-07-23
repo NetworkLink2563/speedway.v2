@@ -1300,7 +1300,7 @@ function deleteMSG(MSGCode) {
 <script>
     $("#closemodal").click(function(){
     $("#modal-MsgSize").modal("hide");
-  });
+    });
 </script>
 
 </body>
