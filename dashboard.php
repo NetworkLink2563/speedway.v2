@@ -10,6 +10,7 @@ if(checkmenu($user,'001')==0){
     exit(0);
 }
 ?>
+
 <style>
     .modal-dialog {
     max-width: 1000px;
