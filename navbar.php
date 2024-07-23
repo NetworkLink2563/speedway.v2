@@ -243,9 +243,9 @@ p {
         </li>
       </ul>
       
-      <div class="time-duration navbar-nav" style="border: none; text-align: center;  margin-left: .5rem; opacity: .8">
-        <span >เวลาเข้าทำงาน : </span>
-      <span id="time" style="display: inline-block;padding: 0rem .5rem;width: 155px; text-align: left;"></span>
+      <div class="time-duration navbar-nav" style="border: none; text-align: center;  margin-left: .5rem; opacity: .8;font-size: 14px;">
+        <span>เวลาเลิกงาน : </span>
+      <span id="time" style="display: inline-block;padding: 0rem .5rem;width: 155px; text-align: left;font-size: 14px;"></span>
       </div>
 
 
@@ -255,14 +255,13 @@ p {
 </nav>
      <!-- navbar end-->
 
-     <script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2030 15:37:25").getTime();
+<script>
+  var endtime = '<?php echo $_SESSION['XIShfEndHour'].':'.$_SESSION['XIShfEndMin'].':00';?>';
+  const date = new Date();
+  const formattedDate = date.toISOString().split('T')[0].replace(/-/g, '-') + ' '+endtime;
 
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
+  var countDownDate = new Date(formattedDate).getTime();
+  var x = setInterval(function() {
   var now = new Date().getTime();
     
   // Find the distance between now and the count down date
@@ -274,14 +273,16 @@ var x = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-  // Output the result in an element with id="time"
-  document.getElementById("time").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  // Output the result in an element with id="demo"
+  document.getElementById("time").innerHTML =  hours + "ชั่วโมง "
+  + minutes + "นาที " + seconds + "วินาที ";
     
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("time").innerHTML = "EXPIRED";
+
+      document.getElementById("time").innerHTML = "EXPIRED";
+      window.location.href = "logout.php";
   }
 }, 1000);
 </script>

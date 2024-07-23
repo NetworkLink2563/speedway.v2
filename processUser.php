@@ -10,14 +10,9 @@ if($Type==1){
    
     $emailer=$_POST["emailer"];
     $password=$_POST["password"];
-    $phone=$_POST["phone"];
-    $nameThai=$_POST["nameThai"];
-
+    $XVShfCode=$_POST["XVShfCode"];
     $usercreate=$_SESSION['user'];
-    
     $sql="select XVCstCode from TMstMUser where XVUsrCode='$usercreate'";
-  
-  
     $querySQL = sqlsrv_query($conn, $sql);
     while($resultSQL = sqlsrv_fetch_array($querySQL, SQLSRV_FETCH_ASSOC))
     {
@@ -28,30 +23,28 @@ if($Type==1){
                                 XVUsrCode,
                                 XVUsrPwd,
                                 XVUsrPwdDef,
-                                XVName,
                                 XVUsrName,
-                                XVUsrPhone,
                                 XVCstCode,
+                                XVShfCode,
                                 XBUsrIsActive2,
                                 XBUsrIsActive,
                                 XVWhoCreate,
                                 XTWhenCreate
                                  )values(
                                  '$emailer',
-                                 dbo.FN_GETtEncoding($password,$password),
-                                 dbo.FN_GETtEncoding($password,$password),
-                                 '$nameThai',
+                                 dbo.FN_GETtEncoding('$password','$password'),
+                                 dbo.FN_GETtEncoding('$password','$password'),
                                  '$emailer',
-                                 '$phone',
                                  '$XVCstCode',
+                                 '$XVShfCode',
                                  '1',
                                  '1',
                                  '$usercreate',
                                  GETDATE()
                                  )";
-
+    echo    $stmtInsert;
     sqlsrv_query($conn, $stmtInsert);
-    
+    sqlsrv_close( $conn );
 }
     
 
