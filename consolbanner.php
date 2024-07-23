@@ -438,19 +438,19 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         </div>
 
                         <div class="col-5" style="text-align: center;border-right: 5px double #cccc;   ">
-                            <button style="padding: 1rem; width: 100%; color: white;" class="btn btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value="3"> เปิดคอมพิวเตอร์</button>
+                            <button style="padding: 1rem; width: 100%; color: white;" class="btn btn-success shadow fs-5" id="btn_pcon" > เปิดคอมพิวเตอร์</button>
                         </div>
                         
                         <div class="col-5"style="text-align: center;   padding-left: 0;">
-                            <button style="padding: 1rem; width: 100%; background-color: #C40C0C;" class="btn btn-danger shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value=""> ปิดคอมพิวเตอร์ </button>
+                            <button style="padding: 1rem; width: 100%; background-color: #C40C0C;" class="btn btn-danger shadow fs-5" id="btn_pcoff">ปิดคอมพิวเตอร์ </button>
                         </div>  
                         
                         <div class="col-5" style="text-align: center;border-right: 5px double #cccc;   ">
-                            <button style="padding: 1rem; width: 100%; color: white; " class="btn btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value="3"> เปิดแอร์คอมพิวเตอร์</button>
+                            <button style="padding: 1rem; width: 100%; color: white; " class="btn btn-success shadow fs-5" id="btn_fanon" > เปิดพัดลมตู้ควบคุม</button>
                         </div>
                         
                         <div class="col-5"style="text-align: center;   padding-left: 0;">
-                            <button style="padding: 1rem; width: 100%; background-color: #C40C0C;" class="btn btn-danger shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value=""> ปิดแอร์คอมพิวเตอร์ </button>
+                            <button style="padding: 1rem; width: 100%; background-color: #C40C0C;" class="btn btn-danger shadow fs-5" id="btn_fanoff" > ปิดพัดลมตู้ควบคุม </button>
                         </div>  
                         
                     </div>
@@ -777,7 +777,21 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
             
 */
     }
-
+    
+    
+    $("#btn_pcon").click(function() {
+        alert("On");
+    });   
+    $("#btn_pcoff").click(function() {
+        alert("Off");
+    }); 
+    $("#btn_fanon").click(function() {
+        alert("FanOn");
+    });   
+    $("#btn_fanoff").click(function() {
+        alert("FanOff");
+    }); 
+ 
     $("#btnRefresh").click(function() {
        
         var mybannerID = document.getElementById("bannerID").value;
