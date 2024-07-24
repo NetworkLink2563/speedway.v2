@@ -439,19 +439,11 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         </div>-->
 
                         <div class="col-5" style="text-align: center; border-right: 5px double #cccc; ">
-<<<<<<< HEAD
                             <button style="padding: 1rem; width: 100%; background-color: #4976BA; color: white; border: none;" class="btn btn-info shadow fs-5" id="btn_settimepc" >ปรับเวลาเครื่องคอมพิวเตอร์</button>
                         </div>  
                         
                         <div class="col-5"style="text-align: center; padding-left: 0;">
                             <button style="padding: 1rem; width: 100%; background-color: #4976BA; border: none;" class="btn btn-success shadow fs-5" id="btn_pcrestartpc" >รีสตาทเครื่องคอมพิวเตอร์</button>
-=======
-                            <button style="padding: 1rem; width: 100%; background-color: #4976BA; color: white; border: none; border-radius: 10px;" class="btnh btn-info shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value="2"> <?php echo $resultCMDTimeSet['XVCmdName'];?></button>
-                        </div>  
-                        
-                        <div class="col-5"style="text-align: center; padding-left: 0;">
-                            <button style="padding: 1rem; width: 100%; background-color: #4976BA; border: none; border-radius: 10px;" class="btnh btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value=""> <?php echo $resultCMDReset['XVCmdName'];?> </button>
->>>>>>> origin/main
                         </div>
 
                         <div class="col-5" style="text-align: center; margin-top: .5rem; border-right: 5px double #cccc;">
@@ -500,15 +492,6 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                 <div id="ElectricalSystem" class="tabcontent" style="display: flex; background-color: #f8f8f8;">
                     <div class="row" style="justify-content: center; align-items: center; gap: 10px;">
 
-<<<<<<< HEAD
-                        <div class="col-3" style="margin: 1rem 0rem;">
-                            <button class="btn btn-success shadow fs-5" style="width: 100%; padding: 1rem;" id="btn_vmspoweron" >เปิดไฟป้าย</button>
-                        </div>
-
-                        <div class="col-3" style="margin: 1rem 0rem;">
-                            <button class="btn btn-danger shadow fs-5" style="width: 100%; padding: 1rem; background-color: #C40C0C;" id="btn_vmspoweroff">ปิดไฟป้าย</button>
-                        </div>
-=======
 
                     <div class="col-5" style="text-align: center; margin: 1rem;">
                             <h5>เปิด-ปิด ไฟป้าย</h5>
@@ -523,7 +506,6 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         <div class="col-3" style="margin: 1rem 0rem;">
                             <button class="btn btn-danger shadow fs-5" style="width: 100%; padding: 1rem; background-color: #C40C0C;" id="electricalOffRadio" name="radiobutton" type="radio" value="6" >ปิดไฟป้าย</button>
                         </div> -->
->>>>>>> origin/main
 
                     </div>
                 </div>
