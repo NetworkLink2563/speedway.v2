@@ -1,10 +1,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
-
-
-
-
-
 <?php
 session_start();
 if($_SESSION['userName']!=''){
@@ -261,7 +256,7 @@ echo ThDate(); // แสดงวันที่
                 </tr>
             </table>
         </div>
-        <div class="col-sm-5 hide575 center" ><div align="center"><span style="font-size: 25px; color: #FFF;  #position: relative; #top: -50%;">VMS : Variable Message Sign : PC1</span></div></div>
+        <!-- <div class="col-sm-5 hide575 center" ><div align="center"><span style="font-size: 25px; color: #FFF;  #position: relative; #top: -50%;">VMS : Variable Message Sign : PC1</span></div></div> -->
         <div class="col-sm-3 hide575 center_ho">
         </div>
     </div>

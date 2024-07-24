@@ -71,6 +71,10 @@ table td{
     font-weight: 300;
     font-size: .8rem;
 }
+
+.config{
+    transform: 5sec;
+}
 </style>
 
 
@@ -84,13 +88,25 @@ table td{
         </div>
 
 
-        <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> การแสดงผล</a>
+        <div class="col-12 shadow" style="display: flex; flex-direction: row; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; justify-content: center;">
+
+
+            <div class="col-4">
+
+            </div>
+
+            <div class="col-4" style="text-align: center;">
+            <h5 class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> การแสดงผล</h5> 
+            </div>
+
+            <div class="col-4 fs-6 form-check form-switch" style="padding: 1rem; text-align: center; text-align: right;"><input onclick="hideConfig()" class="form-check-input" id="hideconfig" name="radiobutton" type="checkbox" /> ปิด-เปิด การตั้งค่าการแสดงผล
+            </div>
+
         </div>
 
 
-        <div id="config" class="config" style="text-align: center; margin-top: 1rem;">
-            <table class="table table-striped table hover">
+        <div  class="config" style="text-align: center; margin-top: 1rem;">
+            <table class="table table-striped table hover" id="config" style="margin-bottom: .5rem;">
             <tr style="text-align: center;">
                 <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>สถานะ</th>
                 <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>แบบป้าย</th>
@@ -107,6 +123,11 @@ table td{
                 <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>ข้อความ</th>
                 <th class="input-config"><div><input type="checkbox" aria-label="Checkbox for following text input"></div>Live</th>
             </tr>
+            </table>
+            <div id="btnconfig">
+            <button style=" margin: 0rem 0rem 0rem 0rem; box-shadow: 3px 3px 3px #aaaaaa !important;"  type="button" class="btn btn-success btn-md">กดบันทึก</button>
+            <hr>
+            </div>
         </div>
 
         <div style="" id="ShowData">
@@ -156,6 +177,23 @@ table td{
 <script src="dist/js/popper.min.js"></script>
 <script src="dist/js/main_speed.js"></script>
 <script src="dist/js/bootstrap.min.js"></script>
+
+
+<script>
+var hidebtn = document.getElementById("hideconfig");
+$("#config").hide()
+$("#btnconfig").hide()
+
+function hideConfig(){
+    if(hidebtn.checked == true){
+        $("#config").show()
+        $("#btnconfig").show()
+    }else{
+        $("#config").hide()
+        $("#btnconfig").hide()
+    }
+}
+</script>
 
 
 <script>
@@ -238,6 +276,10 @@ table td{
 
 
 </script>
+
+
+
+
 
 </body>
 </html>

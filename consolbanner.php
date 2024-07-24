@@ -1,3 +1,7 @@
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+
 <?php
 include 'header.php';
 include "lib/DatabaseManage.php";
@@ -488,8 +492,9 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                 <div id="DisplaySystem" class="tabcontent" style="display: none;">
                     <div class="row" style="justify-content: center; align-items: center; margin: 1rem;">
                         
-                        <div class="col fs-5 form-check form-switch" style="padding: 1rem; text-align: center; border-right: 5px double #cccc;"><input class="form-check-input" id="displayOnlineRadio" name="radiobutton" type="radio" value="7" /> Online
+                        <div class="col fs-5 form-check form-switch toggle " style="padding: 1rem; text-align: center; border-right: 5px double #cccc;"><input class="form-check-input " id="displayOnlineRadio" name="radiobutton" type="radio" value="7" checked data-toggle = "toggle" data-onlabel = "Ready" data-offlabel = "Not Ready" data-onstyle = "success" data-offstyle = "danger"> Online
                         </div>
+                        
                         <div class="col fs-5 form-check form-switch" style="padding: 1rem; text-align: center;"><input class="form-check-input" id="displayOfflineRadio" name="radiobutton" type="radio" value="8" /> Offline
                         </div>
                         
@@ -558,8 +563,8 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         <option id="brightnessLevel10Radio" value="21">ระดับ 10</option>
                         </select> -->
                             
-                            <input style="width: 100%;" id="levels2" class="slider" type="range" min="0" max="100" value="0" step="10" oninput="this.nextElementSibling.value = this.value">
-                            <output><span>0</span></output>
+                            <input style="width: 100%;" id="levels2" class="slider" type="range" min="1" max="10" value="1" step="1" oninput="this.nextElementSibling.value = this.value">
+                            <output><span>1</span></output>
                             <h6>ระดับไฟ</h6>
 
                             <div class="col-4" style="text-align: center;">
@@ -1226,5 +1231,7 @@ function showimg() {
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
 </body>
 </html>
