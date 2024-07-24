@@ -5,7 +5,8 @@ function mqttsend($topic,$data){
   
     $ret="";
        $server = '10.12.12.205';   
-       //$server = 'www.networklink.co.th';   
+       $server = '43.229.151.105';   
+
        $port = 1883;                     
        $username = 'user';                  
        $password = '!NWLmqttuser';                  
@@ -16,9 +17,9 @@ function mqttsend($topic,$data){
            
            $mqtt->publish($topic , $data , 0, false);
            $mqtt->close();
-           $ret="Success";
+           $ret='{"Return":"Success"}';
        }else{
-           $ret="Fail";
+           $ret='{"Return":"Fail"}';
        }
       
        return $ret; 

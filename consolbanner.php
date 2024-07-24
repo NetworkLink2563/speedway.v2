@@ -414,7 +414,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                 <div class="tab" style="text-align: center;display: flex;"> 
                  
                     <div class="col-3 " style="padding: 0;">
-                    <button style="width: 100%; padding: .5rem; font-size: .9rem;" id="tablinksCommand" name="firstactive" class=" active" onclick="openCity(event, 'Command')">คำสั่ง</button>
+                    <button style="width: 100%; padding: .5rem; font-size: .9rem;" id="tablinksCommand" name="firstactive" class=" active" onclick="openCity(event, 'Command')">ตู้ควบคุม</button>
                     </div>
                     <div class="col-2 "  style="padding: 0;">
                     <button style="width: 100%; padding: .5rem; font-size: .9rem;" id="tablinksElectricalSystem" class="tablinks active" onclick="openCity(event, 'ElectricalSystem')"><?php echo $resultCMDElectrical['XVCmdName'];?></button>
@@ -439,11 +439,19 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         </div>-->
 
                         <div class="col-5" style="text-align: center; border-right: 5px double #cccc; ">
+<<<<<<< HEAD
+                            <button style="padding: 1rem; width: 100%; background-color: #4976BA; color: white; border: none;" class="btn btn-info shadow fs-5" id="btn_settimepc" >ปรับเวลาเครื่องคอมพิวเตอร์</button>
+                        </div>  
+                        
+                        <div class="col-5"style="text-align: center; padding-left: 0;">
+                            <button style="padding: 1rem; width: 100%; background-color: #4976BA; border: none;" class="btn btn-success shadow fs-5" id="btn_pcrestartpc" >รีสตาทเครื่องคอมพิวเตอร์</button>
+=======
                             <button style="padding: 1rem; width: 100%; background-color: #4976BA; color: white; border: none; border-radius: 10px;" class="btnh btn-info shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value="2"> <?php echo $resultCMDTimeSet['XVCmdName'];?></button>
                         </div>  
                         
                         <div class="col-5"style="text-align: center; padding-left: 0;">
                             <button style="padding: 1rem; width: 100%; background-color: #4976BA; border: none; border-radius: 10px;" class="btnh btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value=""> <?php echo $resultCMDReset['XVCmdName'];?> </button>
+>>>>>>> origin/main
                         </div>
 
                         <div class="col-5" style="text-align: center; margin-top: .5rem; border-right: 5px double #cccc;">
@@ -492,6 +500,15 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                 <div id="ElectricalSystem" class="tabcontent" style="display: flex; background-color: #f8f8f8;">
                     <div class="row" style="justify-content: center; align-items: center; gap: 10px;">
 
+<<<<<<< HEAD
+                        <div class="col-3" style="margin: 1rem 0rem;">
+                            <button class="btn btn-success shadow fs-5" style="width: 100%; padding: 1rem;" id="btn_vmspoweron" >เปิดไฟป้าย</button>
+                        </div>
+
+                        <div class="col-3" style="margin: 1rem 0rem;">
+                            <button class="btn btn-danger shadow fs-5" style="width: 100%; padding: 1rem; background-color: #C40C0C;" id="btn_vmspoweroff">ปิดไฟป้าย</button>
+                        </div>
+=======
 
                     <div class="col-5" style="text-align: center; margin: 1rem;">
                             <h5>เปิด-ปิด ไฟป้าย</h5>
@@ -506,6 +523,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         <div class="col-3" style="margin: 1rem 0rem;">
                             <button class="btn btn-danger shadow fs-5" style="width: 100%; padding: 1rem; background-color: #C40C0C;" id="electricalOffRadio" name="radiobutton" type="radio" value="6" >ปิดไฟป้าย</button>
                         </div> -->
+>>>>>>> origin/main
 
                     </div>
                 </div>
@@ -681,6 +699,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
         var nameVMS='ชื่อป้าย: ';
         var nameSetPoint='  จุดติดตั้ง: ';
         document.getElementById("nameVMS").innerHTML = nameVMS.bold()+VMSName+nameSetPoint.bold()+setPoint;
+        
         document.getElementById("Command").style.display = "block";
         document.getElementById("bannerID").value=b;
         $('#tablinksElectricalSystem').removeClass('active');
@@ -816,7 +835,55 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
 */
     }
     
-    
+    $("#btn_settimepc").click(function() {
+            var vmscode = document.getElementById("bannerID").value;
+      
+            $.ajax({
+                type: "POST",
+                url: "consolbannerfunction.php",
+                data: {'vmscode': vmscode, 'settimepc':'settimepc'},
+                success: function (result) {
+                    alert(result);
+                    const obj = JSON.parse(result);
+                    alert(obj.Return);
+                    /*
+                    if(result=="Success"){
+                        Swal.fire({
+                            title: "",
+                            text: "ส่งคำสั่งสำเร็จ",
+                            icon: "success",
+                            confirmButtonText: "ตกลง",
+                        
+                            }).then((result) => {
+                        
+                            if (result.isConfirmed) {
+                            
+                                window.location.href = 'consolbanner.php';
+                            }
+                        });
+                    }else{
+                        Swal.fire({
+                            title: "",
+                            icon: "warning",
+                            text: "ไม่สามารถส่งคำสั่งได้",
+                            confirmButtonText: "ตกลง",
+                        
+                            }).then((result) => {
+                        
+                            if (result.isConfirmed) {
+                            
+                                window.location.href = 'consolbanner.php';
+                            }
+                        });
+                    }
+                      */  
+                }
+            });
+    });   
+    $("#btn_pcrestartpc").click(function() {
+        var mybannerID = document.getElementById("bannerID").value;
+        alert(mybannerID);
+    }); 
     $("#btn_pcon").click(function() {
         alert("On");
     });   

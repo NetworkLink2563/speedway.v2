@@ -267,6 +267,7 @@ p {
 
 <script>
   var endtime = '<?php echo $_SESSION['XIShfEndHour'].':'.$_SESSION['XIShfEndMin'].':00';?>';
+
   const date = new Date();
   const formattedDate = date.toISOString().split('T')[0].replace(/-/g, '-') + ' '+endtime;
 
