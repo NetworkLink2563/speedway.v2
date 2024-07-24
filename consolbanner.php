@@ -547,7 +547,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
 
                         <div class="gif-img col-4" style="text-align: center; padding: 0;">
                         <img id="gifimg" style="display: none; width: 100%;" src="img/traffic-light2_.gif" width="150">
-                        <img id="gifimg-close" style="display: ; width: 100%;" src="img/traffic-light-close.png" width="150">
+                        <img id="gifimg-close" style=" width: 100%;" src="img/traffic-light-close.png" width="150">
                         </div>
 
                         <!-- <div class="col-2 fs-5 form-check form-switch" style="padding: 1rem; text-align: center;"><input class="form-check-input" id="flashingOnRadio" name="radiobutton" type="radio" value="9" /> เปิด
