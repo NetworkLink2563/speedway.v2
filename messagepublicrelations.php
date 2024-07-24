@@ -592,7 +592,7 @@ table th{
                                 //กำหนดโค้ดสีที่ต้องการลงใน array
                                 $color= array("#0a0a0a", "maroon", "#F60310", "#E76E14", "#E7C514", "#1DDC12", "#148CE7", "#6C1CEA");
                                 for ($i = 0; $i < count($color); $i++) {
-                                    echo "<li><span id=\"color$i\" title=\"$color[$i]\" class=\"button\"><font class=\"btncolor\" style=\"background-color:$color[$i];color:$color[$i]; \" >Yy</font></span></li>";
+                                    echo "<li><span id=\"color$i\" title=\"$color[$i]\" class=\"button\"><font class=\"btncolor\" style=\"background-color:$color[$i];color:$color[$i]; \" ></font></span></li>";
                                 }
                                 ?>
                             </div>
