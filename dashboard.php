@@ -9,6 +9,7 @@ if(checkmenu($user,'001')==0){
     header( "location: index.php" );
     exit(0);
 }
+    
 ?>
 
 <style>

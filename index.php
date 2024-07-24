@@ -410,7 +410,7 @@ echo ThDate(); // แสดงวันที่
                  
                     window.location.href = 'dashboard.php';
                 }else if(result=='False'){
-                    document.getElementById( 'resultDiv').style.display = 'none';
+                    document.getElementById('resultDiv').style.display = 'none';
                     document.getElementById("username").value='';
                     document.getElementById("inputPassword").value='';
                     
