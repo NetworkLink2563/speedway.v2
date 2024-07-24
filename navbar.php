@@ -168,7 +168,7 @@ p {
           </button>
           <ul class="dropdown-menu dropdown-menu-dark">
             <li><a class="dropdown-item" href="dashboard.php">หน้าแรก</a></li>
-            <li><a class="dropdown-item" href="setting.php">การตั้งค่า</a></li>
+            <!-- <li><a class="dropdown-item" href="setting.php">การตั้งค่า</a></li> -->
             <li><a class="dropdown-item" href="logout.php">ออกจากโปรแกรม</a></li>
             <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
           </ul>
@@ -243,6 +243,16 @@ p {
         </li>
       </ul>
       
+      <ul class="navbar-nav" style="margin: 0;">
+        <li class="nav-item dropdown">
+          <button onclick="location.href='setting.php'" class="btn"  aria-expanded="false">การตั้งค่า</button>
+          <!-- <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="setting.php">การตั้งค่า</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul> -->
+        </li>
+      </ul>
+
       <div class="time-duration navbar-nav" style="border: none; text-align: center;  margin-left: .5rem; opacity: .8;font-size: 14px;">
         <span>เวลาเลิกงาน : </span>
       <span id="time" style="display: inline-block;padding: 0rem .5rem;width: 155px; text-align: left;font-size: 14px;"></span>

@@ -147,7 +147,7 @@ body {
 
         <div class="row col-12" style="padding-top:10px; justify-content: center; align-items: center;">
             <div class="col-2" style="margin: 2rem; display: flex; justify-content: center; align-items: center;">
-                <button style="width: 70%;" type="button" class="btn btn-success" onclick="addUser();">บันทึก</button>
+                <button style="width: 70%; box-shadow: 3px 3px 3px #aaaaaa !important;" type="button" class="btn btn-success" onclick="addUser();">บันทึก</button>
             </div>
         </div>
     </div>
