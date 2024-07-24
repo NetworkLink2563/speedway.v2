@@ -122,6 +122,224 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
     exit(0);
 }
 ?>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+body {
+        background: #e1f0fa;
+    }
+
+    .container{
+        background-color:  white;
+        
+    }
+
+
+</style>
+
+<div class="container" style="position: relative; top: 75;">
+
+
+<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ผู้ใช้งาน
+        </div>
+
+
+<div class="flex-container" style="">
+
+        <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; margin-bottom: 1rem; box-shadow: 3px 3px 3px #aaaaaa !important;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายการคำสั่งผู้ใช้งาน</a>
+        </div>
+
+        
+        <table class="table table-striped table-hover">
+    <tr>
+        <th style="text-align: center;" >ทั้งหมด</th>
+        <th >รายละเอียด</th>
+        <th style="text-align: center;" >อ่าน</td>
+        <th style="text-align: center;" >เขียน</td>
+        <th style="text-align: center;" >ลบ</td>
+        <th style="text-align: center;" >ควบคุม</td>
+    </tr>
+    <tr>
+        <td class="active1" style="text-align: center;">
+            <input type="checkbox" class="select-all1 checkbox select-item1" name="select-all" />
+        </td>
+        <td >การควบคุมป้าย</th>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox select-all1" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox select-all1" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox select-all1" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox select-all1" name="select-item" value="" /></td>
+    </tr>
+    <tr>
+        <td class="active2" style="text-align: center;">
+            <input type="checkbox" class="select-all2 checkbox select-item2" name="select-item" value="" />
+        </td>
+        <td >ตารางการทำงานของป้าย</th>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item2 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item2 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item2 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item2 checkbox" name="select-item" value="" /></td>
+    </tr>
+    <tr>
+        <td class="active3" style="text-align: center;">
+            <input type="checkbox" class="select-all3 checkbox select-item3" name="select-item" value="" />
+        </td>
+        <td >จัดการข้อความหลัก</th>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item3 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item3 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item3 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item3 checkbox" name="select-item" value="" /></td>
+    </tr>
+    <tr>
+        <td class="active4" style="text-align: center;">
+            <input type="checkbox" class="select-all4 checkbox select-item4" name="select-item" value="" />
+        </td>
+        <td >จัดตารางข้อความประชาสัมพันธ์</th>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item4 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item4 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item4 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item4 checkbox" name="select-item" value="" /></td>
+    </tr>
+</table>
+
+<button id="select-all" class="btn button-default">เลือกทั้งหมด / ยกเลิกทั้งหมด</button>
+<!-- <button id="select-invert" class="btn button-default">สลับ</button> -->
+<!-- <button id="select-all" class="btn button-default">SelectAll/Cancel</button> -->
+<!-- <button id="select-invert" class="btn button-default">Invert</button> -->
+<!-- <button id="selected" class="btn button-default">GetSelected</button> -->
+
+<script>
+    $(function(){
+
+        //button select all or cancel
+        $("#select-all").click(function () {
+            var all = $("input.select-all1")[0];
+            all.checked = !all.checked
+            var checked = all.checked;
+            $("input.select-item").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+        
+        $("#select-all").click(function () {
+            var all = $("input.select-all2")[0];
+            all.checked = !all.checked
+            var checked = all.checked;
+            $("input.select-item").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+        
+        $("#select-all").click(function () {
+            var all = $("input.select-all3")[0];
+            all.checked = !all.checked
+            var checked = all.checked;
+            $("input.select-item").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+
+        $("#select-all").click(function () {
+            var all = $("input.select-all4")[0];
+            all.checked = !all.checked
+            var checked = all.checked;
+            $("input.select-item").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+
+        $("#select-all").click(function () {
+            var all = $("input.select-all")[0];
+            all.checked = !all.checked
+            var checked = all.checked;
+            $("input.select-item").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+
+        //button select invert
+        $("#select-invert").click(function () {
+            $("input.select-item").each(function (index,item) {
+                item.checked = !item.checked;
+            });
+            checkSelected();
+        });
+
+        //button get selected info
+        $("#selected").click(function () {
+            var items=[];
+            $("input.select-item:checked:checked").each(function (index,item) {
+                items[index] = item.value;
+            });
+            if (items.length < 1) {
+                alert("no selected items!!!");
+            }else {
+                var values = items.join(',');
+                console.log(values);
+                var html = $("<div></div>");
+                html.html("selected:"+values);
+                html.appendTo("body");
+            }
+        });
+
+        //column checkbox select all or cancel
+        $("input.select-all1").click(function () {
+            var checked = this.checked;
+            $("input.select-item1").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+
+        $("input.select-all2").click(function () {
+            var checked = this.checked;
+            $("input.select-item2").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+
+        $("input.select-all3").click(function () {
+            var checked = this.checked;
+            $("input.select-item3").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+
+        $("input.select-all4").click(function () {
+            var checked = this.checked;
+            $("input.select-item4").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+
+        //check selected items
+        $("input.select-item").click(function () {
+            var checked = this.checked;
+            console.log(checked);
+            checkSelected();
+        });
+
+        //check is all selected
+        function checkSelected() {
+            var all = $("input.select-all")[0];
+            var total = $("input.select-item").length;
+            var len = $("input.select-item:checked:checked").length;
+            console.log("total:"+total);
+            console.log("len:"+len);
+            all.checked = len===total;
+        }
+    });
+</script>
+
+
+
+
+<!-- original -->
 <div class="container" style="margin-top:100px;">
     <div class="row">
         <div class="col-md-12">
@@ -282,3 +500,9 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
 
     </div>
 </div>
+
+
+
+
+</div>
+<!-- end div comtainer -->

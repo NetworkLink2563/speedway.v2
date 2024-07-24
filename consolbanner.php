@@ -1,5 +1,6 @@
-<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+<link rel="stylesheet" href="/speedway/dist/css/bootstrap5-toggle.css">
+<link rel="stylesheet" href="/speedway/dist/css/bootstrap5-toggle.min.css">
+
 
 
 <?php
@@ -163,7 +164,7 @@ $query = sqlsrv_query($conn, $sql);
     box-shadow: 3px 3px 3px #aaaaaa !important;
 }
 
-.btn:hover{
+.btnh:hover{
         opacity: 0.8;
         transition: 0.5s;
     }
@@ -257,6 +258,10 @@ table{
 
 .slider span{
     font-size: 1rem;
+}
+
+.toggle{
+    box-shadow: 3px 3px 3px #aaaaaa
 }
 </style>
 
@@ -434,14 +439,25 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         </div>-->
 
                         <div class="col-5" style="text-align: center; border-right: 5px double #cccc; ">
-                            <button style="padding: 1rem; width: 100%; background-color: #4976BA; color: white; border: none;" class="btn btn-info shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value="2"> <?php echo $resultCMDTimeSet['XVCmdName'];?></button>
+                            <button style="padding: 1rem; width: 100%; background-color: #4976BA; color: white; border: none; border-radius: 10px;" class="btnh btn-info shadow fs-5" id="changeTimeRadio" name="radiobutton" type="radio" value="2"> <?php echo $resultCMDTimeSet['XVCmdName'];?></button>
                         </div>  
                         
                         <div class="col-5"style="text-align: center; padding-left: 0;">
-                            <button style="padding: 1rem; width: 100%; background-color: #4976BA; border: none;" class="btn btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value=""> <?php echo $resultCMDReset['XVCmdName'];?> </button>
+                            <button style="padding: 1rem; width: 100%; background-color: #4976BA; border: none; border-radius: 10px;" class="btnh btn-success shadow fs-5" id="resetRadio" name="radiobutton" type="radio" value=""> <?php echo $resultCMDReset['XVCmdName'];?> </button>
                         </div>
 
-                        <div class="col-5" style="text-align: center;border-right: 5px double #cccc;   ">
+                        <div class="col-5" style="text-align: center; margin-top: .5rem; border-right: 5px double #cccc;">
+                            <h5>เปิด-ปิด คอมพิวเตอร์</h5>
+                            <input style="" type="checkbox" checked data-toggle="toggle" data-onlabel="เปิด" data-offlabel="ปิด" data-onstyle="success" data-offstyle="danger" data-width="120" data-height="40">
+                        </div>
+
+                        <div class="col-5" style="text-align: center; margin-top: .5rem;">
+                            <h5>เปิด-ปิด แอร์คอมพิวเตอร์</h5>
+                            <input type="checkbox" checked data-toggle="toggle" data-onlabel="เปิด" data-offlabel="ปิด" data-onstyle="success" data-offstyle="danger" data-width="120" data-height="40">
+                        </div>
+
+
+                        <!-- <div class="col-5" style="text-align: center;border-right: 5px double #cccc;   ">
                             <button style="padding: 1rem; width: 100%; color: white;" class="btn btn-success shadow fs-5" id="btn_pcon" > เปิดคอมพิวเตอร์</button>
                         </div>
                         
@@ -455,7 +471,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         
                         <div class="col-5"style="text-align: center;   padding-left: 0;">
                             <button style="padding: 1rem; width: 100%; background-color: #C40C0C;" class="btn btn-danger shadow fs-5" id="btn_fanoff" > ปิดพัดลมตู้ควบคุม </button>
-                        </div>  
+                        </div>   -->
                         
                     </div>
                     <div class="row" >
@@ -476,13 +492,20 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                 <div id="ElectricalSystem" class="tabcontent" style="display: flex; background-color: #f8f8f8;">
                     <div class="row" style="justify-content: center; align-items: center; gap: 10px;">
 
-                        <div class="col-3" style="margin: 1rem 0rem;">
+
+                    <div class="col-5" style="text-align: center; margin: 1rem;">
+                            <h5>เปิด-ปิด ไฟป้าย</h5>
+                            <input type="checkbox" checked data-toggle="toggle" data-onlabel="เปิด" data-offlabel="ปิด" data-onstyle="success" data-offstyle="danger" data-width="120" data-height="40">
+                        </div>
+
+
+                        <!-- <div class="col-3" style="margin: 1rem 0rem;">
                             <button class="btn btn-success shadow fs-5" style="width: 100%; padding: 1rem;" id="electricalOnRadio" name="radiobutton" type="radio" value="5">เปิดไฟป้าย</button>
                         </div>
 
                         <div class="col-3" style="margin: 1rem 0rem;">
                             <button class="btn btn-danger shadow fs-5" style="width: 100%; padding: 1rem; background-color: #C40C0C;" id="electricalOffRadio" name="radiobutton" type="radio" value="6" >ปิดไฟป้าย</button>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -492,11 +515,17 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                 <div id="DisplaySystem" class="tabcontent" style="display: none;">
                     <div class="row" style="justify-content: center; align-items: center; margin: 1rem;">
                         
-                        <div class="col fs-5 form-check form-switch toggle " style="padding: 1rem; text-align: center; border-right: 5px double #cccc;"><input class="form-check-input " id="displayOnlineRadio" name="radiobutton" type="radio" value="7" checked data-toggle = "toggle" data-onlabel = "Ready" data-offlabel = "Not Ready" data-onstyle = "success" data-offstyle = "danger"> Online
+
+                    <div class="col-5" style="text-align: center; margin: 1rem;">
+                            <input type="checkbox" checked data-toggle="toggle" data-onlabel="ออนไลน์" data-offlabel="ออฟไลน์" data-onstyle="success" data-offstyle="danger" data-width="120" data-height="40">
+                        </div>
+
+
+                        <!-- <div class="col fs-5 form-check form-switch toggle " style="padding: 1rem; text-align: center; border-right: 5px double #cccc;"><input class="form-check-input " id="displayOnlineRadio" name="radiobutton" type="radio" value="7" checked data-toggle = "toggle" data-onlabel = "Ready" data-offlabel = "Not Ready" data-onstyle = "success" data-offstyle = "danger"> Online
                         </div>
                         
                         <div class="col fs-5 form-check form-switch" style="padding: 1rem; text-align: center;"><input class="form-check-input" id="displayOfflineRadio" name="radiobutton" type="radio" value="8" /> Offline
-                        </div>
+                        </div> -->
                         
                     </div>
                 </div>
@@ -507,7 +536,10 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         <div class="col-5 fs-5 form-check form-switch" style="display: flex; align-items: center; justify-content: end;">
                            <div class="col-5 fs-5" style="display: inline-block; text-align: center; margin-right: .7rem;">ปิด</div> 
                            <div class="col-5">
-                        <input class="form-check-input" type="checkbox" id="flashingOnRadio" name="radiobutton" value="9" onclick="showimg()">
+
+                           <!-- <input type="checkbox" checked data-toggle="toggle" data-onlabel="ออนไลน์" data-offlabel="ออฟไลน์" data-onstyle="success" data-offstyle="danger" data-width="120" data-height="40" id="flashingOnRadio" name="enabled" value="9"> -->
+
+                        <input class="form-check-input" type="checkbox" id="flashingOnRadio" name="radiobutton" value="9" >
                         <label class="form-check-label" for="flexSwitchCheckDefault">เปิด</label>
                         </div>
                         </div>
@@ -1165,9 +1197,10 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
 </script>
 
 <script>
-function showimg() {
+
   var checkBox = document.getElementById("flashingOnRadio");
 
+  $("#flashingOnRadio").click(function(){
   if (checkBox.checked == true){
     // $("#div1").fadeIn();
     $("#gifimg-close").hide();
@@ -1179,9 +1212,9 @@ function showimg() {
     $("#gifimg").hide();
     $("#gifimg-close").show();
     // $("#div3").fadeIn(3000);
-
   }
-}
+})
+
 </script>
 
 
@@ -1243,6 +1276,16 @@ function showimg() {
     });
     </script>
 
+
+
+
+<script src="/speedway/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/speedway/dist/js/bootstrap5-toggle.jquery.min.js"></script>
+<script src="/speedway/dist/js/bootstrap5-toggle.jquery.js"></script>
+<script src="/speedway/dist/js/bootstrap5-toggle.ecmas.min.js">
+<script>
+    $('input[data-toggle="toggle"]').bootstrapToggle();
+</script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 

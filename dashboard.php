@@ -96,10 +96,10 @@ table td{
             </div>
 
             <div class="col-4" style="text-align: center;">
-            <h5 class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> การแสดงผล</h5> 
+            <h5 class="tablinks2 active " style="cursor: context-menu; padding: .5rem; margin: 0;"><i class="fa fa-list-alt" aria-hidden="true"></i> การแสดงผล</h5> 
             </div>
 
-            <div class="col-4 fs-6 form-check form-switch" style="padding: 1rem; text-align: center; text-align: right;"><input onclick="hideConfig()" class="form-check-input" id="hideconfig" name="radiobutton" type="checkbox" /> ปิด-เปิด การตั้งค่าการแสดงผล
+            <div class="col-4 fs-6 form-check form-switch" style="padding: .5rem; text-align: center; text-align: right;"><input onclick="hideConfig()" class="form-check-input" id="hideconfig" name="radiobutton" type="checkbox" /> ปิด-เปิด การตั้งค่าการแสดงผล
             </div>
 
         </div>
