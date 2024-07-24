@@ -533,14 +533,15 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                     <div class="row" style="justify-content: center; align-items: center; margin: 1rem; ">
                         
 
-                        <div class="col-5 fs-5 form-check form-switch" style="display: flex; align-items: center; justify-content: end;">
-                           <div class="col-5 fs-5" style="display: inline-block; text-align: center; margin-right: .7rem;">ปิด</div> 
-                           <div class="col-5">
+                        <div class="col-5 form-check form-switch" style="display: flex; align-items: center; justify-content: end; flex-direction: column;">
+                           <div class="col" style="display: inline-block; text-align: center; margin: .7rem; font-size: 1rem;">เปิด-ปิด ระบบไฟกระพริบ</div> 
+                           <div class="col-8">
 
-                           <!-- <input type="checkbox" checked data-toggle="toggle" data-onlabel="ออนไลน์" data-offlabel="ออฟไลน์" data-onstyle="success" data-offstyle="danger" data-width="120" data-height="40" id="flashingOnRadio" name="enabled" value="9"> -->
+                           <input type="checkbox" data-toggle="toggle" data-onlabel="เปิด" data-offlabel="ปิด" data-onstyle="success" data-offstyle="danger" data-width="120" data-height="40" id="flashingOnRadio">
 
-                        <input class="form-check-input" type="checkbox" id="flashingOnRadio" name="radiobutton" value="9" >
-                        <label class="form-check-label" for="flexSwitchCheckDefault">เปิด</label>
+                        <!-- <input class="form-check-input" type="checkbox" id="flashingOnRadio" name="radiobutton" value="9" > -->
+
+                        <!-- <label class="form-check-label" for="flexSwitchCheckDefault">เปิด</label> -->
                         </div>
                         </div>
 
@@ -1196,7 +1197,37 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
     }
 </script>
 
+
 <script>
+    $(function () {
+        $('#toggle-event').change(function () {
+            log('Toggle: ' + $(this).prop('checked'))
+        })
+    })
+</script>
+
+<!-- open btn -->
+<script>
+
+  $("#flashingOnRadio").change(function(){
+
+  if ($(this).prop('checked') == true){
+    // $("#div1").fadeIn();
+    $("#gifimg-close").hide();
+    $("#gifimg").show();
+    // $("#div3").fadeIn(3000);
+  } else {
+    
+    // $("#div1").fadeIn();
+    $("#gifimg").hide();
+    $("#gifimg-close").show();
+    // $("#div3").fadeIn(3000);
+  }
+})
+
+</script>
+
+<!-- <script>
 
   var checkBox = document.getElementById("flashingOnRadio");
 
@@ -1215,7 +1246,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
   }
 })
 
-</script>
+</script> -->
 
 
 <!-- bulb function -->
