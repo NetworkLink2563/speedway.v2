@@ -1310,7 +1310,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
 
 
 
-<script src="/speedway/dist/js/bootstrap.bundle.min.js"></script>
+
 <script src="/speedway/dist/js/bootstrap5-toggle.jquery.min.js"></script>
 <script src="/speedway/dist/js/bootstrap5-toggle.jquery.js"></script>
 <script src="/speedway/dist/js/bootstrap5-toggle.ecmas.min.js">
