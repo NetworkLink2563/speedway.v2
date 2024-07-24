@@ -171,10 +171,10 @@ body {
             <input type="checkbox" class="select-all1 checkbox select-item1" name="select-all" />
         </td>
         <td >การควบคุมป้าย</th>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox select-all1" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox select-all1" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox select-all1" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox select-all1" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox " name="select-item" value="" /></td>
     </tr>
     <tr>
         <td class="active2" style="text-align: center;">
