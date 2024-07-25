@@ -596,7 +596,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         <option id="brightnessLevel10Radio" value="21">ระดับ 10</option>
                         </select> -->
                             
-                            <input style="width: 100%;" id="levels2" class="slider" type="range" min="1" max="10" value="1" step="1" oninput="this.nextElementSibling.value = this.value">
+                            <input style="width: 100%;" id="levels2" class="slider" type="range" min="1" max="12" value="1" step="1" oninput="this.nextElementSibling.value = this.value">
                             <output><span>1</span></output>
                             <h6>ระดับไฟ</h6>
 
@@ -1299,7 +1299,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
 
 
 <!-- bulb function -->
-<script>
+<!-- <script>
     $("#levels").change(function(){
     if($(this).val() == "12") {
       $(".bulb").attr('id', 'bulb10'); 
@@ -1325,30 +1325,34 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
         $(".bulb").attr('id', 'bulb5');
     }
     });
-    </script>
+    </script> -->
 
 
 <script>
     $(document).on('input change', '#levels2', function() {
-    if($(this).val() == "10") {
+    if($(this).val() == "1") {
       $(".bulb").attr('id', 'bulb10'); 
-    } else if($(this).val() == "20") {
+    } else if($(this).val() == "2") {
         $(".bulb").attr('id', 'bulb20');
-    }else if($(this).val() == "30") {
+    }else if($(this).val() == "3") {
         $(".bulb").attr('id', 'bulb30');
-    }else if($(this).val() == "40") {
+    }else if($(this).val() == "4") {
         $(".bulb").attr('id', 'bulb40');
-    }else if($(this).val() == "50") {
+    }else if($(this).val() == "5") {
         $(".bulb").attr('id', 'bulb50');
-    }else if($(this).val() == "60") {
+    }else if($(this).val() == "6") {
         $(".bulb").attr('id', 'bulb60');
-    }else if($(this).val() == "70") {
+    }else if($(this).val() == "7") {
         $(".bulb").attr('id', 'bulb70');
-    }else if($(this).val() == "80") {
+    }else if($(this).val() == "8") {
         $(".bulb").attr('id', 'bulb80');
-    }else if($(this).val() == "90") {
+    }else if($(this).val() == "9") {
         $(".bulb").attr('id', 'bulb90');
-    }else if($(this).val() == "100") {
+    }else if($(this).val() == "10") {
+        $(".bulb").attr('id', 'bulb100');
+    }else if($(this).val() == "11") {
+        $(".bulb").attr('id', 'bulb100');
+    }else if($(this).val() == "12") {
         $(".bulb").attr('id', 'bulb100');
     }else{
         $(".bulb").attr('id', 'bulb5');
@@ -1360,13 +1364,9 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
 
 
 
-<script src="/speedway/dist/js/bootstrap5-toggle.jquery.min.js"></script>
-<script src="/speedway/dist/js/bootstrap5-toggle.jquery.js"></script>
+<!-- <script src="/speedway/dist/js/bootstrap5-toggle.jquery.min.js"></script>
+<script src="/speedway/dist/js/bootstrap5-toggle.jquery.js"></script> -->
 <script src="/speedway/dist/js/bootstrap5-toggle.ecmas.min.js">
-<script>
-    $('input[data-toggle="toggle"]').bootstrapToggle();
-</script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 
