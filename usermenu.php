@@ -139,10 +139,14 @@ body {
         
     }
 
-
+    .flex-content{
+        margin: 1rem;
+    }
 </style>
 
-<div class="container" style="position: relative; top: 75;">
+<div class="container" style="position: relative; top: 75; ">
+
+ <div class="flex-content">
 
 
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
@@ -159,117 +163,127 @@ body {
         
         <table class="table table-striped table-hover">
     <tr>
-        <th style="text-align: center;" >ทั้งหมด</th>
+        <th style="text-align: center;" ><input style="margin: .2rem;" type="checkbox" id="select-all"/>ทั้งหมด</th>
         <th >รายละเอียด</th>
-        <th style="text-align: center;" >อ่าน</td>
-        <th style="text-align: center;" >เขียน</td>
-        <th style="text-align: center;" >ลบ</td>
-        <th style="text-align: center;" >ควบคุม</td>
+        <th style="text-align: center;" ><input style="margin: .2rem;" type="checkbox" class="select-all-col1 checkbox" name="select-all"/>อ่าน</td>
+        <th style="text-align: center;" ><input style="margin: .2rem;" type="checkbox" class="select-all-col2 checkbox" name="select-all"/>เขียน</td>
+        <th style="text-align: center;" ><input style="margin: .2rem;" type="checkbox" class="select-all-col3 checkbox" name="select-all"/>ลบ</td>
+        <th style="text-align: center;" ><input style="margin: .2rem;" type="checkbox" class="select-all-col4 checkbox" name="select-all"/>ควบคุม</td>
     </tr>
     <tr>
         <td class="active1" style="text-align: center;">
-            <input type="checkbox" class="select-all1 checkbox select-item1" name="select-all" />
+            <!-- * -->
+            <input type="checkbox" class="select-all1 checkbox select-item1" name="select-all"/>
         </td>
         <td >การควบคุมป้าย</th>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox " name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox " name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox " name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item1 checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col1 select-item1 checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col2 select-item1 checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col3 select-item1 checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col4 select-item1 checkbox " name="select-item" value="" /></td>
     </tr>
     <tr>
         <td class="active2" style="text-align: center;">
             <input type="checkbox" class="select-all2 checkbox select-item2" name="select-item" value="" />
         </td>
         <td >ตารางการทำงานของป้าย</th>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item2 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item2 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item2 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item2 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col1 select-item2 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col2 select-item2 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col3 select-item2 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col4 select-item2 checkbox" name="select-item" value="" /></td>
     </tr>
     <tr>
         <td class="active3" style="text-align: center;">
             <input type="checkbox" class="select-all3 checkbox select-item3" name="select-item" value="" />
         </td>
         <td >จัดการข้อความหลัก</th>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item3 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item3 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item3 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item3 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col1 select-item3 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col2 select-item3 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col3 select-item3 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col4 select-item3 checkbox" name="select-item" value="" /></td>
     </tr>
     <tr>
         <td class="active4" style="text-align: center;">
             <input type="checkbox" class="select-all4 checkbox select-item4" name="select-item" value="" />
         </td>
         <td >จัดตารางข้อความประชาสัมพันธ์</th>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item4 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item4 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item4 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-item4 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col1 select-item4 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col2 select-item4 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col3 select-item4 checkbox" name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input type="checkbox" class="select-col4 select-item4 checkbox" name="select-item" value="" /></td>
     </tr>
 </table>
 
-<button id="select-all" class="btn button-default">เลือกทั้งหมด / ยกเลิกทั้งหมด</button>
+<button style="display: none;" id="select-all" class="btn button-default">เลือกทั้งหมด / ยกเลิกทั้งหมด</button>
 <!-- <button id="select-invert" class="btn button-default">สลับ</button> -->
 <!-- <button id="select-all" class="btn button-default">SelectAll/Cancel</button> -->
 <!-- <button id="select-invert" class="btn button-default">Invert</button> -->
 <!-- <button id="selected" class="btn button-default">GetSelected</button> -->
 
+<br>
+
 <script>
     $(function(){
 
         //button select all or cancel
-        $("#select-all").click(function () {
-            var all = $("input.select-all1")[0];
-            all.checked = !all.checked
-            var checked = all.checked;
-            $("input.select-item").each(function (index,item) {
-                item.checked = checked;
-            });
-        });
+
+        // $("#select-all").click(function () {
+        //     var all = $("input.select-all1")[0];
+        //     all.checked = !all.checked
+        //     var checked = all.checked;
+        //     $("input.select-item1").each(function (index,item) {
+        //         item.checked = all.checked;
+        //     });
+        // });
         
         $("#select-all").click(function () {
-            var all = $("input.select-all2")[0];
-            all.checked = !all.checked
-            var checked = all.checked;
-            $("input.select-item").each(function (index,item) {
+            var checked = this.checked;
+            $("input.select-item2").each(function (index,item) {
+                item.checked = checked;  
+            });
+            $("input.select-item3").each(function (index,item) {
                 item.checked = checked;
             });
-        });
-        
-        $("#select-all").click(function () {
-            var all = $("input.select-all3")[0];
-            all.checked = !all.checked
-            var checked = all.checked;
-            $("input.select-item").each(function (index,item) {
+            $("input.select-item4").each(function (index,item) {
+                item.checked = checked;
+            });
+            $("input.select-all1").each(function (index,item) {
+                item.checked = checked;
+            });
+            $("input.select-all2").each(function (index,item) {
+                item.checked = checked;
+            });
+            $("input.select-all3").each(function (index,item) {
+                item.checked = checked;
+            });
+            $("input.select-all4").each(function (index,item) {
+                item.checked = checked;
+            });
+            $("input.select-all-col1").each(function (index,item) {
+                item.checked = checked;
+            });
+            $("input.select-all-col2").each(function (index,item) {
+                item.checked = checked;
+            });
+            $("input.select-all-col3").each(function (index,item) {
+                item.checked = checked;
+            });
+            $("input.select-all-col4").each(function (index,item) {
+                item.checked = checked;
+            });
+            $("input.select-col1").each(function (index,item) {
+                item.checked = checked;
+            });
+            $("input.select-col2").each(function (index,item) {
+                item.checked = checked;
+            });
+            $("input.select-col3").each(function (index,item) {
+                item.checked = checked;
+            });
+            $("input.select-col4").each(function (index,item) {
                 item.checked = checked;
             });
         });
 
-        $("#select-all").click(function () {
-            var all = $("input.select-all4")[0];
-            all.checked = !all.checked
-            var checked = all.checked;
-            $("input.select-item").each(function (index,item) {
-                item.checked = checked;
-            });
-        });
-
-        $("#select-all").click(function () {
-            var all = $("input.select-all")[0];
-            all.checked = !all.checked
-            var checked = all.checked;
-            $("input.select-item").each(function (index,item) {
-                item.checked = checked;
-            });
-        });
-
-        //button select invert
-        $("#select-invert").click(function () {
-            $("input.select-item").each(function (index,item) {
-                item.checked = !item.checked;
-            });
-            checkSelected();
-        });
 
         //button get selected info
         $("#selected").click(function () {
@@ -317,6 +331,35 @@ body {
             });
         });
 
+        //select all col
+        $("input.select-all-col1").click(function () {
+            var checked = this.checked;
+            $("input.select-col1").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+
+        $("input.select-all-col2").click(function () {
+            var checked = this.checked;
+            $("input.select-col2").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+
+        $("input.select-all-col3").click(function () {
+            var checked = this.checked;
+            $("input.select-col3").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+
+        $("input.select-all-col4").click(function () {
+            var checked = this.checked;
+            $("input.select-col4").each(function (index,item) {
+                item.checked = checked;
+            });
+        });
+        
         //check selected items
         $("input.select-item").click(function () {
             var checked = this.checked;
@@ -340,7 +383,7 @@ body {
 
 
 <!-- original -->
-<div class="container" style="margin-top:100px;">
+<!-- <div class="container" style="margin-top:100px;">
     <div class="row">
         <div class="col-md-12">
             <form action="" method="post">
@@ -348,153 +391,156 @@ body {
 
                     <li>หน้าหลัก
 
-                        <ul>
+                        <ul> -->
                             <?php
-                  $sql = "SELECT  XVMnuCode, XVMnuName, XVMnuType
-                           FROM            dbo.TSysSMenu
-                  WHERE        (XVMnuType = N'1')
-                  ORDER BY XVMnuCode";
-                  $query = sqlsrv_query($conn, $sql);
-                  while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
-                  {
-                        $XVMnuCode=$row['XVMnuCode'];
-                        $sql="SELECT XBDmnIsRead ,XBDmnIsAdd, XBDmnIsDelete, XBDmnIsControl FROM TMnyMUserMenu where XVUsrCode='$XVUsrCode' and XVMnuCode='$XVMnuCode'";
-                        $querys = sqlsrv_query($conn, $sql);
-                        $XBDmnIsRead="";
-                        while($rows = sqlsrv_fetch_array($querys, SQLSRV_FETCH_ASSOC))
-                        { 
-                            if($rows['XBDmnIsRead']==1){
-                                $XBDmnIsRead="checked";
-                            }
-                        }
+                //   $sql = "SELECT  XVMnuCode, XVMnuName, XVMnuType
+                //            FROM            dbo.TSysSMenu
+                //   WHERE        (XVMnuType = N'1')
+                //   ORDER BY XVMnuCode";
+                //   $query = sqlsrv_query($conn, $sql);
+                //   while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
+                //   {
+                //         $XVMnuCode=$row['XVMnuCode'];
+                //         $sql="SELECT XBDmnIsRead ,XBDmnIsAdd, XBDmnIsDelete, XBDmnIsControl FROM TMnyMUserMenu where XVUsrCode='$XVUsrCode' and XVMnuCode='$XVMnuCode'";
+                //         $querys = sqlsrv_query($conn, $sql);
+                //         $XBDmnIsRead="";
+                //         while($rows = sqlsrv_fetch_array($querys, SQLSRV_FETCH_ASSOC))
+                //         { 
+                //             if($rows['XBDmnIsRead']==1){
+                //                 $XBDmnIsRead="checked";
+                //             }
+                //         }
 
-                          echo '<label style="margin-right: 20px;"><li><input type="checkbox"  name="M1[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsRead.' >'.$row['XVMnuName'].'</label></li>';
-                  }
+                //           echo '<label style="margin-right: 20px;"><li><input type="checkbox"  name="M1[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsRead.' >'.$row['XVMnuName'].'</label></li>';
+                //   }
               ?>
-                        </ul>
+                        <!-- </ul>
                     </li>
                     <li>การควบคุม
                         <ul>
-                            <ul>
+                            <ul> -->
                                 <?php
-                  $sql = "SELECT  XVMnuCode, XVMnuName, XVMnuType
-                           FROM            dbo.TSysSMenu
-                  WHERE        (XVMnuType = N'2')
-                  ORDER BY XVMnuCode";
-                  $query = sqlsrv_query($conn, $sql);
-                  while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
-                  {
-                          $XVMnuCode=$row['XVMnuCode'];
-                          $sql="SELECT XBDmnIsRead ,XBDmnIsAdd, XBDmnIsDelete, XBDmnIsControl FROM TMnyMUserMenu where XVUsrCode='$XVUsrCode' and XVMnuCode='$XVMnuCode'";
+                //   $sql = "SELECT  XVMnuCode, XVMnuName, XVMnuType
+                //            FROM            dbo.TSysSMenu
+                //   WHERE        (XVMnuType = N'2')
+                //   ORDER BY XVMnuCode";
+                //   $query = sqlsrv_query($conn, $sql);
+                //   while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
+                //   {
+                //           $XVMnuCode=$row['XVMnuCode'];
+                //           $sql="SELECT XBDmnIsRead ,XBDmnIsAdd, XBDmnIsDelete, XBDmnIsControl FROM TMnyMUserMenu where XVUsrCode='$XVUsrCode' and XVMnuCode='$XVMnuCode'";
                          
-                          $querys = sqlsrv_query($conn, $sql);
-                          $XBDmnIsRead="";
-                          $XBDmnIsAdd="";
-                          $XBDmnIsDelete="";
-                          $XBDmnIsControl="";
-                          while($rows = sqlsrv_fetch_array($querys, SQLSRV_FETCH_ASSOC))
-                          { 
-                              if($rows['XBDmnIsRead']==1){
-                                $XBDmnIsRead="checked";
-                              }
-                              if($rows['XBDmnIsAdd']==1){
-                                $XBDmnIsAdd="checked";
-                              }
-                              if($rows['XBDmnIsDelete']==1){
-                                $XBDmnIsDelete="checked";
-                              }
-                              if($rows['XBDmnIsControl']==1){
-                                $XBDmnIsControl="checked";
-                              }
-                          }  
+                //           $querys = sqlsrv_query($conn, $sql);
+                //           $XBDmnIsRead="";
+                //           $XBDmnIsAdd="";
+                //           $XBDmnIsDelete="";
+                //           $XBDmnIsControl="";
+                //           while($rows = sqlsrv_fetch_array($querys, SQLSRV_FETCH_ASSOC))
+                //           { 
+                //               if($rows['XBDmnIsRead']==1){
+                //                 $XBDmnIsRead="checked";
+                //               }
+                //               if($rows['XBDmnIsAdd']==1){
+                //                 $XBDmnIsAdd="checked";
+                //               }
+                //               if($rows['XBDmnIsDelete']==1){
+                //                 $XBDmnIsDelete="checked";
+                //               }
+                //               if($rows['XBDmnIsControl']==1){
+                //                 $XBDmnIsControl="checked";
+                //               }
+                //           }  
                          
-                          echo '<li>'.$row['XVMnuName'].
-                          '<label style="margin-left: 20px;"><input type="checkbox"  name="M1[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsRead.'>อ่าน</label>'.
-                          '<label style="margin-left: 20px;"><input type="checkbox"  name="M2[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsAdd.'>เขียน</label>'.
-                          '<label style="margin-left: 20px;"><input type="checkbox"  name="M3[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsDelete.'>ลบ</label>'.
-                          '<label style="margin-left: 20px;"><input type="checkbox"  name="M4[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsControl.'>ควบคุม</label></li></li>';
-                  }
+                //           echo '<li>'.$row['XVMnuName'].
+                //           '<label style="margin-left: 20px;"><input type="checkbox"  name="M1[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsRead.'>อ่าน</label>'.
+                //           '<label style="margin-left: 20px;"><input type="checkbox"  name="M2[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsAdd.'>เขียน</label>'.
+                //           '<label style="margin-left: 20px;"><input type="checkbox"  name="M3[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsDelete.'>ลบ</label>'.
+                //           '<label style="margin-left: 20px;"><input type="checkbox"  name="M4[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsControl.'>ควบคุม</label></li></li>';
+                //   }
               ?>
-                            </ul>
+                            <!-- </ul>
                         </ul>
                     </li>
                     <li>การแสดงข้อความ
                         <ul>
-                            <ul>
+                            <ul> -->
                                 <?php
-                  $sql = "SELECT  XVMnuCode, XVMnuName, XVMnuType
-                           FROM            dbo.TSysSMenu
-                  WHERE        (XVMnuType = N'3')
-                  ORDER BY XVMnuCode";
-                  $query = sqlsrv_query($conn, $sql);
-                  while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
-                  {
+            //       $sql = "SELECT  XVMnuCode, XVMnuName, XVMnuType
+            //                FROM            dbo.TSysSMenu
+            //       WHERE        (XVMnuType = N'3')
+            //       ORDER BY XVMnuCode";
+            //       $query = sqlsrv_query($conn, $sql);
+            //       while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
+            //       {
                           
-                          $XVMnuCode=$row['XVMnuCode'];
+            //               $XVMnuCode=$row['XVMnuCode'];
                        
-                          $sql="SELECT XBDmnIsRead ,XBDmnIsAdd, XBDmnIsDelete, XBDmnIsControl FROM TMnyMUserMenu where XVUsrCode='$XVUsrCode' and XVMnuCode='$XVMnuCode'";
+            //               $sql="SELECT XBDmnIsRead ,XBDmnIsAdd, XBDmnIsDelete, XBDmnIsControl FROM TMnyMUserMenu where XVUsrCode='$XVUsrCode' and XVMnuCode='$XVMnuCode'";
                      
-                          $querys = sqlsrv_query($conn, $sql);
-                          $XBDmnIsRead="";
-                          $XBDmnIsAdd="";
-                          $XBDmnIsDelete="";
-                          $XBDmnIsControl="";
-                          while($rows = sqlsrv_fetch_array($querys, SQLSRV_FETCH_ASSOC))
-                          { 
-                              if($rows['XBDmnIsRead']==1){
-                                $XBDmnIsRead="checked";
-                              }
-                              if($rows['XBDmnIsAdd']==1){
-                                $XBDmnIsAdd="checked";
-                              }
-                              if($rows['XBDmnIsDelete']==1){
-                                $XBDmnIsDelete="checked";
-                              }
-                              if($rows['XBDmnIsControl']==1){
-                                $XBDmnIsControl="checked";
-                              }
-                          }       
+            //               $querys = sqlsrv_query($conn, $sql);
+            //               $XBDmnIsRead="";
+            //               $XBDmnIsAdd="";
+            //               $XBDmnIsDelete="";
+            //               $XBDmnIsControl="";
+            //               while($rows = sqlsrv_fetch_array($querys, SQLSRV_FETCH_ASSOC))
+            //               { 
+            //                   if($rows['XBDmnIsRead']==1){
+            //                     $XBDmnIsRead="checked";
+            //                   }
+            //                   if($rows['XBDmnIsAdd']==1){
+            //                     $XBDmnIsAdd="checked";
+            //                   }
+            //                   if($rows['XBDmnIsDelete']==1){
+            //                     $XBDmnIsDelete="checked";
+            //                   }
+            //                   if($rows['XBDmnIsControl']==1){
+            //                     $XBDmnIsControl="checked";
+            //                   }
+            //               }       
                            
-                    echo '<li>'.$row['XVMnuName'].
-                    '<label style="margin-left: 20px;"><input type="checkbox"  name="M1[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsRead.'>อ่าน</label>'.
-                    '<label style="margin-left: 20px;"><input type="checkbox"  name="M2[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsAdd.'>เขียน</label>'.
-                    '<label style="margin-left: 20px;"><input type="checkbox"  name="M3[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsDelete.'>ลบ</label>'.
-                    '<label style="margin-left: 20px;"><input type="checkbox"  name="M4[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsControl.'>ควบคุม</label>
-                    </li></li>';
-                  }
-              ?>
-                            </ul>
+            //         echo '<li>'.$row['XVMnuName'].
+            //         '<label style="margin-left: 20px;"><input type="checkbox"  name="M1[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsRead.'>อ่าน</label>'.
+            //         '<label style="margin-left: 20px;"><input type="checkbox"  name="M2[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsAdd.'>เขียน</label>'.
+            //         '<label style="margin-left: 20px;"><input type="checkbox"  name="M3[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsDelete.'>ลบ</label>'.
+            //         '<label style="margin-left: 20px;"><input type="checkbox"  name="M4[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsControl.'>ควบคุม</label>
+            //         </li></li>';
+            //       }
+            //   ?>
+                            <!-- </ul>
                         </ul>
                     </li>
                     <li>รายงาน
                         <ul>
-                            <ul>
+                            <ul> -->
                                 <?php
-                  $sql = "SELECT  XVMnuCode, XVMnuName, XVMnuType
-                           FROM            dbo.TSysSMenu
-                  WHERE        (XVMnuType = N'4')
-                  ORDER BY XVMnuCode";
-                  $query = sqlsrv_query($conn, $sql);
-                  while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
-                  {
-                        $XVMnuCode=$row['XVMnuCode'];
-                        $sql="SELECT XBDmnIsRead ,XBDmnIsAdd, XBDmnIsDelete, XBDmnIsControl FROM TMnyMUserMenu where XVUsrCode='$XVUsrCode' and XVMnuCode='$XVMnuCode'";
-                        $querys = sqlsrv_query($conn, $sql);
-                        $XBDmnIsRead="";
-                        while($rows = sqlsrv_fetch_array($querys, SQLSRV_FETCH_ASSOC))
-                        { 
-                            if($rows['XBDmnIsRead']==1){
-                                $XBDmnIsRead="checked";
-                            }
-                        }
-                        echo '<li><label style="margin-right: 20px;"><input type="checkbox"  name="M1[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsRead.'>'.$row['XVMnuName'].'</label></li>';
-                  }
+                //   $sql = "SELECT  XVMnuCode, XVMnuName, XVMnuType
+                //            FROM            dbo.TSysSMenu
+                //   WHERE        (XVMnuType = N'4')
+                //   ORDER BY XVMnuCode";
+                //   $query = sqlsrv_query($conn, $sql);
+                //   while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
+                //   {
+                //         $XVMnuCode=$row['XVMnuCode'];
+                //         $sql="SELECT XBDmnIsRead ,XBDmnIsAdd, XBDmnIsDelete, XBDmnIsControl FROM TMnyMUserMenu where XVUsrCode='$XVUsrCode' and XVMnuCode='$XVMnuCode'";
+                //         $querys = sqlsrv_query($conn, $sql);
+                //         $XBDmnIsRead="";
+                //         while($rows = sqlsrv_fetch_array($querys, SQLSRV_FETCH_ASSOC))
+                //         { 
+                //             if($rows['XBDmnIsRead']==1){
+                //                 $XBDmnIsRead="checked";
+                //             }
+                //         }
+                //         echo '<li><label style="margin-right: 20px;"><input type="checkbox"  name="M1[]"  value="'.$row['XVMnuCode'].',1" '.$XBDmnIsRead.'>'.$row['XVMnuName'].'</label></li>';
+                //   }
               ?>
                             </ul>
                         </ul>
                     </li>
                 </ul>
-                <div style="padding-left: 250px;"><button type="submit" class="btn btn-primary">บันทึก</button></div>
+
+
+                
+                <div style="padding-left: 250px; display: none;"><button type="submit" class="btn btn-primary">บันทึก</button></div>
             </form>
         </div>
 
@@ -502,7 +548,7 @@ body {
 </div>
 
 
-
-
 </div>
-<!-- end div comtainer -->
+<!-- end div flex-content -->
+</div>
+<!-- end div container -->
