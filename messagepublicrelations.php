@@ -408,9 +408,19 @@ table th{
         <input type="hidden" id="XVMssCode">
         <input type="hidden" id="XVMssType">
         
-<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image"> ข้อความประชาสัมพันธ์พื้นฐาน
+<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex; ">
+
+            <div class="col-7" style="text-align: right;">
+            <img src="img/icon/computer.png" height="25" alt="Responsive image"> Step 1 ข้อความพื้นฐาน
+            </div>
+
+            <div class="next-btn col"  style="text-align: right; padding: 0; ">
+            <button onclick="location.href='/speedway/messagepublicrelationsframe.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">>> Step2 จัดรูปแบบข้อความ</button>
+            </div>
+
         </div>
+
+        
         
     
     <div class="flex-header">
