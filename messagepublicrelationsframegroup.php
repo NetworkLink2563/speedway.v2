@@ -388,8 +388,20 @@ table th{
 <div class="container" style="position: relative; top: 75;">
 
 
-<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ชุดการแสดงป้ายประชาสัมพันธ์
+<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex;">
+
+            <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
+            <button onclick="location.href='/speedway/messagepublicrelationsframe.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step2 จัดรูปแบบข้อความ <<</button>
+            </div>
+
+            <div class="col-4" style="text-align: center;">
+            <img src="img/icon/computer.png" height="25" alt="Responsive image"> step3 ชุดข้อความ
+            </div>
+
+            <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
+            <button onclick="location.href='/speedway/messagepublicrelationsplay.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">>> Step4 ข้อความป้ายประชาสัมพันธ์</button>
+            </div>
+
         </div>
 
         

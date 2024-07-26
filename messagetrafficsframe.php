@@ -400,7 +400,7 @@ table {
 
 .box-color img{
     position: relative;
-    z-index: 9999;
+    z-index: 99;
 }
 
 .box-color p {
@@ -560,10 +560,10 @@ input.btnsearch{
 
            <input type="hidden" id="frame1_section3_XVMsgCode" >
           
-           <div class="box" style="margin-top: 30;padding-left: 20%;padding-right: 20%;" align="left">
+           <div class="" style="margin-top: 30;padding-left: 20%;padding-right: 20%;" align="left">
                 <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-                    <img src="img/icon/computer.png" height="25" alt="Responsive image">&nbsp;สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/รูปแบบข้อความเดี่ยว
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="img/icon/computer.png" height="25" alt="Responsive image">สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/รูปแบบข้อความเดี่ยว
+                    <button id="close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                     <div style="margin-top:-5;"><hr></div>
@@ -610,7 +610,7 @@ input.btnsearch{
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hide-modal" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
    
       </div>
     </div>
@@ -818,14 +818,14 @@ input.btnsearch{
 
 
   <!-- The Modal -->
-<div class="modal" id="myModal">
+<div class="modal modal-fullscreen" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
 
       <!-- Modal Header -->
       <div class="modal-header">
         <h4 class="modal-title">เลือกข้อความ</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button id="closemymodal" type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
       <!-- Modal body -->
@@ -835,7 +835,7 @@ input.btnsearch{
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button id="hidemymodal" type="button" class="btn btn-danger" data-dismiss="modal">ปิด</button>
       </div>
 
     </div>
@@ -1491,6 +1491,30 @@ $(document).ready(function() {
 <script>
     $("#hidemodal").click(function(){
     $("#modal-MsgSize").modal("hide")
+    })
+</script>
+
+<script>
+    $("#close-modal").click(function(){
+    $("#modal-frame1").modal("hide")
+    })
+</script>
+
+<script>
+    $("#hide-modal").click(function(){
+    $("#modal-frame1").modal("hide")
+    })
+</script>
+
+<script>
+    $("#closemymodal").click(function(){
+    $("#myModal").modal("hide")
+    })
+</script>
+
+<script>
+    $("#hidemymodal").click(function(){
+    $("#myModal").modal("hide")
     })
 </script>
 </body>

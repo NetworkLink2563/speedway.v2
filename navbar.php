@@ -206,9 +206,9 @@ p {
           </button>
           <ul class="dropdown-menu dropdown-menu-dark">
             <li><a class="dropdown-item" href="message_wizard.php" style="text-decoration: underline;">>> คลิกดูตัวช่วยสร้างข้อความ <<</a></li>
-            <li><a class="dropdown-item" href="messagepublicrelations.php">1.สร้างข้อความประชาสัมพันธ์พื้นฐาน</a></li>
-            <li><a class="dropdown-item" href="messagepublicrelationsframe.php">2.สร้างข้อความประชาสัมพันธ์แสดงบนป้าย</a></li>
-            <li><a class="dropdown-item" href="messagepublicrelationsframegroup.php">3.สร้างชุดการแสดงป้ายประชาสัมพันธ์</a></li>
+            <li><a class="dropdown-item" href="messagepublicrelations.php">1.สร้างข้อความพื้นฐาน</a></li>
+            <li><a class="dropdown-item" href="messagepublicrelationsframe.php">2.จัดรูปแบบข้อความ</a></li>
+            <li><a class="dropdown-item" href="messagepublicrelationsframegroup.php">3.ชุดข้อความ</a></li>
             <li><a class="dropdown-item" href="messagepublicrelationsplay.php">4.ข้อความป้ายประชาสัมพันธ์</a></li>
           </ul>
         </li>
