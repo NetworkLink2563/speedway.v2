@@ -494,11 +494,13 @@ text-align: center;
 <div class="modal " id="modal-ShowSms" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">เลือกข้อความป้าย</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <div class="modal-header" style="display: flex;">
+        <div class="col-11" style="text-align: center;">
+        <h4 class="modal-title">เลือกข้อความป้าย</h4>
+        </div>
+        <div class="col-1">
+        <button type="button" id="close-sms" class="close" data-dismiss="modal">&times;</button>
+        </div>
       </div>
       <div class="modal-body text-center">
          
@@ -507,7 +509,7 @@ text-align: center;
          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hide-sms" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       
       </div>
     </div>
@@ -666,6 +668,17 @@ function sendmessageToVMS() {
     
 }
 
+
+</script>
+
+<script>
+ 
+    $("#close-sms").click(function(){
+    $("#modal-ShowSms").modal("hide")
+    })
+    $("#hide-sms").click(function(){
+    $("#modal-ShowSms").modal("hide")
+    })
 
 </script>
 </body>
