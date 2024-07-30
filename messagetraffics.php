@@ -558,8 +558,8 @@ li{
 </div>
 <!-- end div container -->
 
-<div class="modal modal-fullscreen" id="modal-addtext" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal" id="modal-addtext" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content">
       
     <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
@@ -586,7 +586,7 @@ li{
                 <div class="row" style="align-items: center; justify-content:center;">
                     
                     
-                    <div class="col-6" style="display: flex; flex-direction: column;">
+                    
 
                             <div class="form-inline col-8">
                                 <label for="TxtXVMsgCode" style="padding-right:12px;">รหัสข้อความ:</label>
@@ -598,8 +598,8 @@ li{
                                 <input type="text" id="msgName" name="msgName" class="form-control w-75" value="" >
                             </div>
 
-                            <div class="form-inline col-8" style="width:100%">
-                                <p style="font-size: 1rem; margin-right: 5px;">สีพื้นหลัง:</p>
+                            <div class="form-inline col-8" style="">
+                                <p style="font-size: 1rem; margin-right: 33px;">สีพื้นหลัง:</p><br><br>
                                 <?php
                                 //กำหนดโค้ดสีที่ต้องการลงใน array
                                 $color= array("#0a0a0a", "maroon", "#F60310", "#E76E14", "#E7C514", "#1DDC12", "#148CE7", "#6C1CEA");
@@ -607,7 +607,7 @@ li{
                                     echo "<li><span id=\"color$i\" title=\"$color[$i]\" class=\"button\"><font class=\"btncolor\" style=\"background-color:$color[$i];color:$color[$i]; \" >Yy</font></span></li>";
                                 }
                                 ?>
-                            </div>
+                          
                             
 
                     
@@ -633,7 +633,7 @@ li{
                 <div class="row" style="margin-top: 10;">
                     
                        
-                    <div class="col-sm-12 text-center" style="margin-top: 5px;padding-left: 25%;">
+                    <div class="col-sm-12 text-center" style="margin-top: 5px;">
                        
                         <div id="ShowCkeditor" style="text-align: center;"></div>
                     </div>
@@ -658,8 +658,8 @@ li{
   </div>
 </div>
 
-<div class="modal modal-fullscreen" id="modal-addimage" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal " id="modal-addimage" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content">
       
     <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
@@ -675,19 +675,21 @@ li{
       
       <div class="modal-body">
          
-      <div class="row">
-                <div class="col-sm-12 text-center" style="padding-left: 50px;">
-                        <ol class="menu" style="width:1000px">
-                           <div class="form-inline">
-                                <label for="ImgXVMsgCode" style="padding-right:12px;">รหัสรูปภาพ:</label>
+      <div class="row" style="justify-content: center;">
+
+                
+                        
+                           <div class=" col-4">
+                                <label for="ImgXVMsgCode" style="">รหัสรูปภาพ:</label>
                                 <input type="text" id="ImgXVMsgCode"  class="form-control" value="" readonly>
                             </div>
-                            <div class="form-inline" style="padding-top:5px;">
-                                <label for="imageName" style="padding-right:20px;">ชื่อรูปภาพ:</label>
-                                <input type="text" id="imageName"  class="form-control w-75" value="">
+
+                            <div class="  col-5" style="">
+                                <label for="imageName" style="">ชื่อรูปภาพ:</label>
+                                <input type="text" id="imageName"  class="form-control" value="">
                             </div>
-                        </ol>
-                </div>
+                        
+                
             <!--
             <div class="col-sm-4">
             </div>
@@ -702,10 +704,9 @@ li{
                             -->
         </div>
 
-        <div class="row" style="margin-top: 10;">
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-8" style="margin-top: 5px">
+        <div class="row" style="margin-top: 10; justify-content: center;">
+          
+            <div class="col-10" style="">
                 <div class="container">
                     <div class="card">
                         <label for="images" class="drop-container" id="dropcontainer">
@@ -733,8 +734,8 @@ li{
   </div>
 </div>
 
-<div class="modal modal-fullscreen" id="modal-addvdo" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal" id="modal-addvdo" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content">
       
     
@@ -752,19 +753,20 @@ li{
 
       <div class="modal-body">
          
-         <div class="row">
-                <div class="col-sm-12 text-center" style="padding-left: 50px;">
-                        <ol class="menu" style="width:1000px">
-                           <div class="form-inline">
-                                <label for="VdoXVMsgCode" style="padding-right:12px;">รหัสวิดีโอ:</label>
-                                <input type="text" id="VdoXVMsgCode"  class="form-control" value="" readonly>
-                            </div>
-                            <div class="form-inline" style="padding-top:5px;">
-                                <label for="vdoName" style="padding-right:20px;">ชื่อวิดีโอ:</label>
-                                <input type="text" id="vdoName"  class="form-control w-75" value="">
-                            </div>
-                        </ol>
+      <div class="row" style="justify-content: center;">
+
+                
+                        
+                <div class=" col-4">
+                    <label for="ImgXVMsgCode" style="">รหัสวิดีโอ:</label>
+                    <input type="text" id="VdoXVMsgCode"  class="form-control" value="" readonly>
                 </div>
+
+                <div class="  col-5" style="">
+                    <label for="imageName" style="">ชื่อวิดีโอ:</label>
+                    <input type="text" id="vdoName"  class="form-control" value="">
+                </div>
+
             <!--
             <div class="col-sm-4">
             </div>
@@ -779,10 +781,9 @@ li{
                             -->
         </div>
 
-        <div class="row" style="margin-top: 10;">
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-8" style="margin-top: 5px">
+        <div class="row" style="justify-content: center;">
+           
+            <div class="col-10" style="margin-top: 5px">
                 <div class="container">
                     <div class="card">
                         <label for="vdos" class="drop-container" id="dropcontainer">
