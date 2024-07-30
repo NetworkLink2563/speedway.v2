@@ -569,12 +569,21 @@ table th{
 <div class="modal modal-fullscreen" id="modal-addtext" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i style="margin-left: 10px;color:#09C703;font-size: 30px;" class="fa fa-file-text"></i>สร้างข้อความตัวอักษร</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+
+    <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
+    <div class="col-11" style="text-align: center; padding: 0;">
+        <h5 class="modal-title"><i style="margin-left: 10px;color:#09C703;font-size: 30px;" class="fa fa-file-text"></i> สร้างข้อความตัวอักษร</h5>
+                        </div>
+         
+                        <div class="col-1" style="">
+        <button type="button" id="close-addtext" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        </div>
       </div>
+
+
       <div class="modal-body">
           
 
@@ -596,13 +605,15 @@ table th{
                                 <label for="msgName" style="padding-right:20px;" >ชื่อข้อความ:</label>
                                 <input type="text" id="msgName" name="msgName" class="form-control w-75" value="" >
                             </div>
+                           
+                            
                             <div class="form-inline pt-1" style="width:100%">
-                                <p>สีพื้นหลัง:</p>
+                                <p style="font-size: 1.2rem; margin: 10px 20px 10px 0px">สีพื้นหลัง: </p>
                                 <?php
                                 //กำหนดโค้ดสีที่ต้องการลงใน array
                                 $color= array("#0a0a0a", "maroon", "#F60310", "#E76E14", "#E7C514", "#1DDC12", "#148CE7", "#6C1CEA");
                                 for ($i = 0; $i < count($color); $i++) {
-                                    echo "<li><span id=\"color$i\" title=\"$color[$i]\" class=\"button\"><font class=\"btncolor\" style=\"background-color:$color[$i];color:$color[$i]; \" ></font></span></li>";
+                                    echo "<li><span id=\"color$i\" title=\"$color[$i]\" class=\"button\"><font class=\"btncolor\" style=\"background-color:$color[$i];color:$color[$i]; \" >Yy</font></span></li>";
                                 }
                                 ?>
                             </div>
@@ -650,7 +661,7 @@ table th{
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hide-addtext" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       
       </div>
     </div>
@@ -660,12 +671,19 @@ table th{
 <div class="modal modal-fullscreen" id="modal-addimage" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i style="margin-left: 10px;color:#FFCE33;font-size: 30px;" class="fa fa-image"></i>สร้างข้อความรูปภาพ</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      
+    <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
+    <div class="col-11" style="text-align: center; padding: 0;">
+        <h5 class="modal-title"><i style="margin-left: 10px;color:#FFCE33;font-size: 30px;" class="fa fa-image"></i> สร้างข้อความรูปภาพ</h5>
+                        </div>
+         
+                        <div class="col-1" style="">
+        <button type="button" id="close-addimage" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        </div>
       </div>
+
       <div class="modal-body">
          
          <div class="row">
@@ -676,7 +694,7 @@ table th{
                                 <input type="text" id="ImgXVMsgCode"  class="form-control" value="" readonly>
                             </div>
                             <div class="form-inline" style="padding-top:5px;">
-                                <label for="imageName" style="padding-right:26px;">ชื่อรูปภาพ:</label>
+                                <label for="imageName" style="padding-right:20px;">ชื่อรูปภาพ:</label>
                                 <input type="text" id="imageName"  class="form-control w-75" value="">
                             </div>
                         </ol>
@@ -719,7 +737,7 @@ table th{
          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hide-addimage" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
        
       </div>
     </div>
@@ -729,12 +747,21 @@ table th{
 <div class="modal modal-fullscreen" id="modal-addvdo" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i style="margin-left: 10px;color:red;font-size: 30px;" class="fa fa-youtube"></i>สร้างข้อความวีดีโอ</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      
+    
+    <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
+    <div class="col-11" style="text-align: center; padding: 0;">
+        <h5 class="modal-title"><i style="margin-left: 10px;font-size: 30px; color:red;" class="fa fa-youtube"></i> สร้างข้อความวีดีโอ</h5>
+                        </div>
+         
+                        <div class="col-1" style="">
+        <button type="button" id="close-addvdo" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        </div>
       </div>
+
+
       <div class="modal-body">
          
          <div class="row">
@@ -745,7 +772,7 @@ table th{
                                 <input type="text" id="VdoXVMsgCode"  class="form-control" value="" readonly>
                             </div>
                             <div class="form-inline" style="padding-top:5px;">
-                                <label for="vdoName" style="padding-right:40px;">ชื่อวีดีโอ:</label>
+                                <label for="vdoName" style="padding-right:20px;">ชื่อวีดีโอ:</label>
                                 <input type="text" id="vdoName"  class="form-control w-75" value="">
                             </div>
                         </ol>
@@ -785,7 +812,7 @@ table th{
          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hide-addvdo" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
      
       </div>
     </div>
@@ -1305,13 +1332,29 @@ function deleteMSG(MSGCode) {
     $("#hidemodal").click(function(){
     $("#modal-MsgSize").modal("hide");
   });
-</script>
-
-<script>
-    $("#closemodal").click(function(){
+  $("#closemodal").click(function(){
     $("#modal-MsgSize").modal("hide");
     });
+  $("#close-addtext").click(function(){
+    $("#modal-addtext").modal("hide")
+    })
+    $("#hide-addtext").click(function(){
+    $("#modal-addtext").modal("hide")
+    })
+    $("#close-addimage").click(function(){
+    $("#modal-addimage").modal("hide")
+    })
+    $("#hide-addimage").click(function(){
+    $("#modal-addimage").modal("hide")
+    })
+    $("#close-addvdo").click(function(){
+    $("#modal-addvdo").modal("hide")
+    })
+    $("#hide-addvdo").click(function(){
+    $("#modal-addvdo").modal("hide")
+    })
 </script>
+
 
 </body>
 

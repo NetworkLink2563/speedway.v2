@@ -548,12 +548,19 @@ table {
 <div class="modal modal-fullscreen" id="modal-addtext" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i style="color:#09C703;width: 20%;" class="fa fa-file-text"></i>สร้างข้อความตัวอักษร</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      
+    <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
+    <div class="col-11" style="text-align: center; padding: 0;">
+        <h5 class="modal-title"><i style="margin-left: 10px;color:#09C703;font-size: 30px;" class="fa fa-file-text"></i> สร้างข้อความตัวอักษร</h5>
+                        </div>
+         
+                        <div class="col-1" style="">
+        <button type="button" id="close-addtext" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        </div>
       </div>
+
       <div class="modal-body">
           
 
@@ -576,7 +583,7 @@ table {
                                 <input type="text" id="msgName" name="msgName" class="form-control w-75" value="" >
                             </div>
                             <div class="form-inline pt-1" style="width:100%">
-                                <p>สีพื้นหลัง:</p>
+                            <p style="font-size: 1.2rem; margin: 10px 20px 10px 0px">สีพื้นหลัง: </p>
                                 <?php
                                 //กำหนดโค้ดสีที่ต้องการลงใน array
                                 $color= array("#0a0a0a", "maroon", "#F60310", "#E76E14", "#E7C514", "#1DDC12", "#148CE7", "#6C1CEA");
@@ -628,7 +635,7 @@ table {
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hide-addtext" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       
       </div>
     </div>
@@ -1275,13 +1282,17 @@ function deleteMSG(MSGCode) {
     $("#closemodal").click(function(){
     $("#modal-MsgSize").modal("hide")
     })
-</script>
-
-<script>
     $("#hidemodal").click(function(){
     $("#modal-MsgSize").modal("hide")
     })
+    $("#close-addtext").click(function(){
+    $("#modal-addtext").modal("hide")
+    })
+    $("#hide-addtext").click(function(){
+    $("#modal-addtext").modal("hide")
+    })
 </script>
+
 </body>
 
 </html>
