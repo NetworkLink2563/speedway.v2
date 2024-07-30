@@ -1084,7 +1084,7 @@ $("#btn_next").click(function(){
 
         document.getElementById("frame3_section1").style.width = w+"px";
         document.getElementById("frame3_section1").style.height = "100px";
-        document.getElementById("frame3_section1_show").style.width = w+"px";
+        document.getElementById("frame3_section1_show").style.width = (w-4)+"px";
         document.getElementById("frame3_section1_show").style.height = "100px";
 
 
