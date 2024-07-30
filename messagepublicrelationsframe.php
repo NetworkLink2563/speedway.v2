@@ -569,80 +569,87 @@ input.btnsearch{
 
 
 
-<div class="modal modal-fullscreen" id="modal-frame1" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
-       
-      <div class="col-12" style="display: flex; justify-content: center; text-align: center; padding: .5rem;" >
-                    <div class="col-11 ">
-                    <img src="img/icon/computer.png" height="25" alt="Responsive image"> <span style="font-size: 1.2rem;" >สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/รูปแบบข้อความเดี่ยว</span>
-                    </div>
-                    <div class="col-1">
-                    <button id="closef1" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-      </div>
-      </div>
-
-
-      <div class="modal-body">
-
-           <input type="hidden" id="frame1_section3_XVMsgCode" >
-          
-           <div class="box col-12" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-<!-- fm1 -->
-                    
-             
-                <div class="col-6" style="">
-                            <div class="form-group form-inline" style="">
-                                <label style="margin-right: 5px;" for="XVMsfCodeF1">รหัสข้อความป้าย:</label>
-                                <input type="text" class="form-control" id="XVMsfCodeF1" readonly>
-                            </div>
-                            <div class="form-group form-inline">
-                                <label style="margin-right: 15px;" for="XVMsfNameF1">ชื่อข้อความป้าย:</label>
-                                <input style="width:50%" type="text" class="form-control" id="XVMsfNameF1">
-                            </div>
-                </div>
-
-                
-                    <div class="col-6" style="">
-                       
-                       <div id="frame1_section3" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
+            <div class="modal " id="modal-frame1" tabindex="-1" role="dialog" aria-hidden="true">
+  
+  <div class="modal-dialog  modal-xl" role="document">
+      <div class="modal-content">
+  
+        <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
+         
+        <div class="col-12" style="display: flex; justify-content: center; text-align: center; padding: .5rem;" >
+                      <div class="col-11 ">
+                      <img src="img/icon/computer.png" height="25" alt="Responsive image"> <span style="font-size: 1.2rem;" >สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/รูปแบบข้อความเดี่ยว</span>
+                      </div>
+                      <div class="col-1">
+                      <button id="closef1" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                      </div>
+        </div>
+        </div>
+  
+  
+        <div class="modal-body">
+  
+             <input type="hidden" id="frame1_section3_XVMsgCode" >
+            
+             <div class="box col-12" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+  <!-- fm1 -->
+                      
+               
+  <div class="row" style="justify-content: center;">
+  
+                  
                           
-                                   <button  style="position: absolute;left: 20px;top:5px;z-index:1000;" onclick="addsms(1)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
-                                  
-                                   <iframe id="frame1_section3_show" src="" style="border:none;"></iframe>
-                                  
-                                  
-                                  
-                        </div>
-                    </div>
-                
-                
-                    <div class="col-6 text-center pt-1" style="margin-top: 1rem;">
-                       <button type="button"  id="btn_saveframe1" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
-                       
-                    </div>
-                </div>
-          
-           
-
-      </div>
-      <div class="modal-footer" >
-        <button type="button" id="hidef1" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-   
+                             <div class=" col-4">
+                                  <label for="XVMsfCodeF1" style="">รหัสรูปภาพ:</label>
+                                  <input type="text" id="XVMsfCodeF1"  class="form-control" value="" readonly>
+                              </div>
+  
+                              <div class="  col-5" style="">
+                                  <label for="XVMsfNameF1" style="">ชื่อรูปภาพ:</label>
+                                  <input type="text" id="XVMsfNameF1"  class="form-control" value="">
+                              </div>
+  
+      
+                  
+                      <div class="col-12" style="margin: 10px; display: flex; justify-content: center;">
+                         
+                         <div class="col-12" id="frame1_section3" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
+                            
+                                     <button  style="position: absolute;left: 20px;top:5px;z-index:1000;" onclick="addsms(1)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                                    
+                                     <iframe id="frame1_section3_show" src="" style="border:none;"></iframe>
+                                    
+                                    
+                                    
+                          </div>
+                      </div>
+                  
+                  
+                      <div class="col-12 text-center" style="margin: 1rem;">
+                         <button type="button"  id="btn_saveframe1" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
+                         
+                      </div>
+                  </div>
+            
+             
+  
+        </div>
+        <div class="modal-footer" >
+          <button type="button" id="hidef1" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+     
+        </div>
       </div>
     </div>
   </div>
-</div>
+  </div>
 
 
 
-<div class="modal modal-fullscreen" id="modal-frame2" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+  <div class="modal" id="modal-frame2" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog  modal-xl" role="document">
+<div class="modal-content">
       <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
        
       <div class="col-12" style="display: flex; justify-content: center; text-align: center;  padding: .5rem;" >
@@ -660,9 +667,9 @@ input.btnsearch{
       </div>
 
       
-      <div class="modal-body" style="">
+      <div  class="modal-body" style="">
           
-
+            
            <input type="hidden" id="frame2_section1_XVMsgCode" >
            <input type="hidden" id="frame2_section2_XVMsgCode" >
            <input type="hidden" id="frame2_section3_XVMsgCode" >
@@ -670,29 +677,36 @@ input.btnsearch{
            <input type="hidden" id="frame2_section5_XVMsgCode" >
 
            <!-- fm2 -->
-           <div class="box" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding-left: 20%;">
+           
 
 
     
                
-                <div class="row col-8">
-                    <div class="col-sm-12">
-                       <div style="">
-                            <div class="form-group form-inline">
-                                <label style="margin-right: 5px;" for="XVMsfCodeF2">รหัสข้อความป้าย:</label>
-                                <input type="text" class="form-control" id="XVMsfCodeF2" readonly>
-                            </div>
-                            <div class="form-group form-inline">
-                                <label style="margin-right: 15px;" for="XVMsfNameF2">ชื่อข้อความป้าย:</label>
-                                <input style="width:50%" type="text" class="form-control" id="XVMsfNameF2">
-                            </div>
-                        </div>
+           <div class="row" style="justify-content: center;">
+
+                
+                        
+                    <div class=" col-4">
+                        <label for="XVMsfCodeF2" style="">รหัสข้อความป้าย:</label>
+                        <input type="text" id="XVMsfCodeF2"  class="form-control" value="" readonly>
                     </div>
+
+                    <div class="  col-5" style="">
+                        <label for="XVMsfNameF2" style="">ชื่อข้อความป้าย:</label>
+                        <input type="text" id="XVMsfNameF2"  class="form-control" value="">
+                    </div>
+
+                    
+
                 </div>
 
-                <div class="row col" style="box-sizing: border-box;  flex-direction: column;" >
+                        <div style="display: flex; justify-content: center; padding-left: 3%;"> 
 
-                    <div class="col" style="padding: 0;">
+                <div class="box" style="display: flex; flex-direction: column; justify-content: center;  padding-left: 0%;">
+                    
+                <div class="row col" style="box-sizing: border-box;  flex-direction: column; margin: 1rem; justify-content: center; align-items:center;" >
+
+                    <div class="col" style="">
                         <div id="frame2_section1" style="border-style: solid;border-color:#DCDCDC;">
                                 <button  style="position: absolute; z-index:1000;" onclick="addsms(1)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                                 <iframe id="frame2_section1_show" src="" style="border:none;"></iframe>  
@@ -701,7 +715,7 @@ input.btnsearch{
 
                     <div class="row">
 
-                        <div id="frame2_section3" class="" style="border-style: solid;border-color:#DCDCDC; padding: 0; margin-top: .2rem;">
+                        <div id="frame2_section3" class="" style="border-style: solid;border-color:#DCDCDC;  margin-top: .2rem;">
                     
                             <button style="position: absolute; z-index:1000;" onclick="addsms(3)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame2_section3_show" src="" style="border:none;"></iframe>
@@ -710,7 +724,7 @@ input.btnsearch{
                        
 
                        
-                        <div id="frame2_section4" class="float-left" style="border-style: solid;border-color:#DCDCDC; padding: 0; margin-top: .2rem; height: 249px!important;">
+                        <div id="frame2_section4" class="float-left" style="border-style: solid;border-color:#DCDCDC;  margin-top: .2rem; height: 249px!important;">
                     
                             <button style="position: absolute; z-index:1000;"  onclick="addsms(4)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame2_section4_show" src="" style="border:none;"></iframe>
@@ -719,7 +733,7 @@ input.btnsearch{
                        
 
                         
-                        <div id="frame2_section5" class="float-left" style="border-style: solid;border-color:#DCDCDC; padding: 0; margin-top: .2rem; height: 249px!important;">
+                        <div id="frame2_section5" class="float-left" style="border-style: solid;border-color:#DCDCDC; margin-top: .2rem; height: 249px!important;">
                             <button style="position: absolute; z-index:1000;" onclick="addsms(5)"  class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe  id="frame2_section5_show" src="" style="border:none;"></iframe>
                         </div>
@@ -727,7 +741,7 @@ input.btnsearch{
                    
 
                     
-                        <div id="frame2_section2" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px; margin-top: .2rem;">
+                        <div id="frame2_section2" style="border-style: solid;border-color:#DCDCDC;margin:0px; margin-top: .2rem;">
                    
                     
                                 <button  style="position: absolute; z-index:1000;"  onclick="addsms(2)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
@@ -740,7 +754,7 @@ input.btnsearch{
                         </div>
                 
         
-                        <div class="row col-10" style="margin: 1rem;">
+                <div class="row col-10" style="margin: 1rem;">
                    
                     <div class="col-sm-12 text-center pt-1" >
                       <button type="button"  id="btn_saveframe2" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
@@ -750,6 +764,11 @@ input.btnsearch{
                 <br>
             </div>
            
+
+      </div>
+
+
+
 
       </div>
       <div class="modal-footer">
@@ -762,8 +781,11 @@ input.btnsearch{
 </div>
 </div>
 
-<div class="modal modal-fullscreen" id="modal-frame3" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+
+
+
+<div class="modal " id="modal-frame3" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
 
@@ -776,7 +798,6 @@ input.btnsearch{
                     <span aria-hidden="true">&times;</span>
                     </button>
                     </div>
-
                     </div>
       
 
@@ -794,16 +815,23 @@ input.btnsearch{
                 
                             <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                      
-                            <div class="col-12" style="">
-                                    <div class="form-group form-inline">
-                                        <label style="margin-right: 5px;" for="XVMsfCodeF3">รหัสข้อความป้าย:</label>
-                                        <input type="text" class="form-control" id="XVMsfCodeF3" readonly>
-                                    </div>
+                            <div class="row col-12" style="justify-content: center; margin: 1rem;">
 
-                                    <div class="form-group form-inline">
-                                        <label style="margin-right: 15px;" for="XVMsfNameF3">ชื่อข้อความป้าย:</label>
-                                        <input style="width:50%" type="text" class="form-control" id="XVMsfNameF3">
-                                    </div>
+                
+                        
+                    <div class=" col-4">
+                        <label for="XVMsfCodeF3" style="">รหัสข้อความป้าย:</label>
+                        <input type="text" id="XVMsfCodeF3"  class="form-control" value="" readonly>
+                    </div>
+
+                    <div class="  col-5" style="">
+                        <label for="XVMsfNameF3" style="">ชื่อข้อความป้าย:</label>
+                        <input type="text" id="XVMsfNameF3"  class="form-control" value="">
+                    </div>
+
+                    
+
+                </div>
 
                                     <div class="col-12" style="padding: 0;">
                         <div id="frame3_section1" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
