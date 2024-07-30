@@ -422,10 +422,22 @@ input.btnsearch{
 <div class="container" style="position: relative; top: 75;">
 
 
-<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> สร้างข้อความจราจรแสดงบนป้าย
+<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem; display: flex;">
+
+            <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
+            <button onclick="location.href='/speedway/messagetraffics.php'" class="btn btn-warning btn-hover shadow" style="">กลับ Step1 สร้างข้อความจราจรพื้นฐาน <<</button>
+            </div>
+
+        <div class="col-4" style="text-align: center;">
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> step 2 สร้างข้อความจราจรแสดงบนป้าย
         </div>
 
+        <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
+            <button onclick="location.href='/speedway/messagetrafficsframegroup.php'" class="btn btn-success btn-hover shadow" style="">>> Step3 สร้างชุดป้ายจราจร</button>
+            </div>
+
+
+        </div>
         <input type="hidden" id="framenumber" >
         <input type="hidden" id="framesmsid" >
         <input type="hidden" id="framewidth" >
@@ -551,25 +563,31 @@ input.btnsearch{
 <div class="modal modal-fullscreen" id="modal-frame1" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
        
-      
+      <div class="col-12" style="display: flex; justify-content: center; text-align: center; padding: .5rem;" >
+                    <div class="col-11 ">
+                    <img src="img/icon/computer.png" height="25" alt="Responsive image"> <span style="font-size: 1.2rem;" >สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/รูปแบบข้อความเดี่ยว</span>
+                    </div>
+                    <div class="col-1">
+                    <button id="closef1" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
       </div>
-      <div class="modal-body" style="background-color:rgb(225, 240, 250)!important;">
-          
+      </div>
+
+
+      <div class="modal-body">
 
            <input type="hidden" id="frame1_section3_XVMsgCode" >
           
-           <div class="" style="margin-top: 30;padding-left: 20%;padding-right: 20%;" align="left">
-                <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-                    <img src="img/icon/computer.png" height="25" alt="Responsive image">สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/รูปแบบข้อความเดี่ยว
-                    <button id="close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                    <div style="margin-top:-5;"><hr></div>
-                </div>
-                <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                            <div class="form-group form-inline">
+           <div class="box col-12" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+<!-- fm1 -->
+                    
+             
+                <div class="col-6" style="">
+                            <div class="form-group form-inline" style="">
                                 <label style="margin-right: 5px;" for="XVMsfCodeF1">รหัสข้อความป้าย:</label>
                                 <input type="text" class="form-control" id="XVMsfCodeF1" readonly>
                             </div>
@@ -578,8 +596,9 @@ input.btnsearch{
                                 <input style="width:50%" type="text" class="form-control" id="XVMsfNameF1">
                             </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12" style="">
+
+                
+                    <div class="col-6" style="">
                        
                        <div id="frame1_section3" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
                           
@@ -591,43 +610,48 @@ input.btnsearch{
                                   
                         </div>
                     </div>
-                </div>
-
-
-
-
-
-    
-                <div class="row">
-                    <div class="col-sm-12 text-center pt-1" >
+                
+                
+                    <div class="col-6 text-center pt-1" style="margin-top: 1rem;">
                        <button type="button"  id="btn_saveframe1" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
                        
                     </div>
                 </div>
-                <br>
-            </div>
+          
            
 
       </div>
-      <div class="modal-footer">
-        <button type="button" id="hide-modal" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+      <div class="modal-footer" >
+        <button type="button" id="hidef1" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
    
       </div>
     </div>
   </div>
-
-
+</div>
 
 
 
 <div class="modal modal-fullscreen" id="modal-frame2" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
        
-      
+      <div class="col-12" style="display: flex; justify-content: center; text-align: center;  padding: .5rem;" >
+                    <div class="col-11 ">
+                    <img src="img/icon/computer.png" height="25" alt="Responsive image"> <span style="font-size: 1.2rem;" >สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/แบบ 2 ข้อความ 3 ช่อง</span>
+                    </div>
+                    <div class="col-1">
+                    <button id="closef2" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    
+                </div>
+
       </div>
-      <div class="modal-body" style="background-color:rgb(225, 240, 250)!important;">
+
+      
+      <div class="modal-body" style="">
           
 
            <input type="hidden" id="frame2_section1_XVMsgCode" >
@@ -635,21 +659,18 @@ input.btnsearch{
            <input type="hidden" id="frame2_section3_XVMsgCode" >
            <input type="hidden" id="frame2_section4_XVMsgCode" >
            <input type="hidden" id="frame2_section5_XVMsgCode" >
-           <div class="box" style="margin-top: 30;padding-left: 20%;padding-right: 20%;" align="left">
-                <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;margin-buttom: 10;">
-                    <img src="img/icon/computer.png" height="25" alt="Responsive image">&nbsp;สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/แบบ 2 ข้อความ 3 ช่อง
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                    <div style="margin-top:-5;"><hr></div>
-                </div>
-              
+
+           <!-- fm2 -->
+           <div class="box" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding-left: 20%;">
+
+
+    
                
-                <div class="row">
+                <div class="row col-8">
                     <div class="col-sm-12">
-                       <div style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:5px;border-width: 2px;">
+                       <div style="">
                             <div class="form-group form-inline">
-                                <label style="margin-right: 5px;" for="XVMsfCodeF2">หรัสข้อความป้าย:</label>
+                                <label style="margin-right: 5px;" for="XVMsfCodeF2">รหัสข้อความป้าย:</label>
                                 <input type="text" class="form-control" id="XVMsfCodeF2" readonly>
                             </div>
                             <div class="form-group form-inline">
@@ -660,55 +681,57 @@ input.btnsearch{
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div id="frame2_section1" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
-                   
-                    
-                                <button  style="position: absolute;left: 20px;top:5px;z-index:1000;" onclick="addsms(1)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
-                                  
-                                <iframe id="frame2_section1_show" src="" style="border:none;"></iframe>
-                                
+                <div class="row col" style="box-sizing: border-box;  flex-direction: column;" >
+
+                    <div class="col" style="padding: 0;">
+                        <div id="frame2_section1" style="border-style: solid;border-color:#DCDCDC;">
+                                <button  style="position: absolute; z-index:1000;" onclick="addsms(1)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                                <iframe id="frame2_section1_show" src="" style="border:none;"></iframe>  
                         </div>
                     </div>
-                    <div class="col-sm-12">
-                        <div id="frame2_section3" class="float-left" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
+
+                    <div class="row">
+
+                        <div id="frame2_section3" class="" style="border-style: solid;border-color:#DCDCDC; padding: 0; margin-top: .2rem;">
                     
-                            <button  onclick="addsms(3)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                            <button style="position: absolute; z-index:1000;" onclick="addsms(3)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame2_section3_show" src="" style="border:none;"></iframe>
                             
                        </div>
-                        <div id="frame2_section4" class="float-left" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
+                       
+
+                       
+                        <div id="frame2_section4" class="float-left" style="border-style: solid;border-color:#DCDCDC; padding: 0; margin-top: .2rem; height: 249px!important;">
                     
-                            <button   onclick="addsms(4)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                            <button style="position: absolute; z-index:1000;"  onclick="addsms(4)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame2_section4_show" src="" style="border:none;"></iframe>
                             
                         </div>
-                        <div id="frame2_section5" class="float-left" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
-                            
-                            <button onclick="addsms(5)"  class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                       
+
+                        
+                        <div id="frame2_section5" class="float-left" style="border-style: solid;border-color:#DCDCDC; padding: 0; margin-top: .2rem; height: 249px!important;">
+                            <button style="position: absolute; z-index:1000;" onclick="addsms(5)"  class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe  id="frame2_section5_show" src="" style="border:none;"></iframe>
-                            
-                            
-                            
                         </div>
-                    </div>
                    
-                    <div class="col-sm-12" style="">
-                        <div id="frame2_section2" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
+                   
+
+                    
+                        <div id="frame2_section2" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px; margin-top: .2rem;">
                    
                     
-                                <button  style="position: absolute;left: 20px;top:5px;z-index:1000;" onclick="addsms(2)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                                <button  style="position: absolute; z-index:1000;"  onclick="addsms(2)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                                   
                                 <iframe id="frame2_section2_show" src="" style="border:none;"></iframe>
                              
                         </div>
-                    </div>
+                    
                 
-                </div>
+                        </div>
                 
         
-                <div class="row">
+                <div class="row col-10" style="margin: 1rem;">
                    
                     <div class="col-sm-12 text-center pt-1" >
                       <button type="button"  id="btn_saveframe2" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
@@ -721,51 +744,58 @@ input.btnsearch{
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hidef2" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       
       </div>
     </div>
   </div>
 </div>
+</div>
+</div>
 
 <div class="modal modal-fullscreen" id="modal-frame3" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-       
+      <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
+
+                    <div class="col-11" style="text-align: center;">
+                    <img src="img/icon/computer.png" height="25" alt="Responsive image"><span style="font-size: 1.2rem;" > สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/แบบ 1 ข้อความ 2 ช่อง</span>
+                    </div>
+
+                    <div class="col-1">
+                    <button id="close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    </div>
       
-      </div>
-      <div class="modal-body" style="background-color:rgb(225, 240, 250)!important;">
+
+
+      <div class="modal-body" style="">
            <input type="hidden" id="frame3_section1_XVMsgCode" >
            <input type="hidden" id="frame3_section3_XVMsgCode" >
            <input type="hidden" id="frame3_section4_XVMsgCode" >
-           <div class="box" style="margin-top: 30;padding-left: 20%;padding-right: 20%;" align="left">
-                <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-                    <img src="img/icon/computer.png" height="25" alt="Responsive image">&nbsp;สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/แบบ 1 ข้อความ 2 ช่อง
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                    <div style="margin-top:-5;"><hr></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="row">
-                            <div class="col-sm-12 border">
+
+
+           <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center ; background-color: white;">
+
+                    
+
+                
+                            <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                     
+                            <div class="col-12" style="">
                                     <div class="form-group form-inline">
                                         <label style="margin-right: 5px;" for="XVMsfCodeF3">รหัสข้อความป้าย:</label>
                                         <input type="text" class="form-control" id="XVMsfCodeF3" readonly>
                                     </div>
+
                                     <div class="form-group form-inline">
                                         <label style="margin-right: 15px;" for="XVMsfNameF3">ชื่อข้อความป้าย:</label>
                                         <input style="width:50%" type="text" class="form-control" id="XVMsfNameF3">
                                     </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
+
+                                    <div class="col-12" style="padding: 0;">
                         <div id="frame3_section1" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
                             
                                     <button onclick="addsms(1)"  style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
@@ -773,49 +803,50 @@ input.btnsearch{
                                    
                             </div>
                         </div>
-                </div>
-                <div class="row">
-                   <div class="col-sm-12">
-                        <div id="frame3_section3" class="float-left"  style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
-                            <button  onclick="addsms(3)" style="margin:5px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+ 
+                   <div class="col-12" style="padding: 0;">
+                        <div id="frame3_section3" class="float-left"  style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px; ">
+
+                            <button  onclick="addsms(3)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame3_section3_show" src="" style="border:none;"></iframe>
                            
                         </div>
                     
-                        <div id="frame3_section4"  class="float-left" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
-                            <button  onclick="addsms(4)" style="margin:5px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                        <div id="frame3_section4"  class="float-left col-12" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
+
+                            <button  onclick="addsms(4)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame3_section4_show" src="" style="border:none;"></iframe>
                            
                         </div>
                     </div>
-                </div>
-             
-        
-                <div class="row">
-                   
-                    <div class="col-sm-12 text-center pt-1" >
-                      <button type="button"  id="btn_saveframe3" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
-                       
                     </div>
-                </div>
-                <br>
-            </div>
-           
+                    
+                   
 
+                    <div class="col-8 text-center" style="margin: 1rem;">
+                      <button type="button"  id="btn_saveframe3" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 5px;color:white;font-size: 15px;" class="fa fa-save"></i></button>
+                      <!-- <button type="button"  id="btn_saveframe3" class="btn btn-danger" style="color:white" >ล้าง<i style="margin-left: 5px;color:white;font-size: 15px;" class="fa fa-delete"></i></button> -->
+                    </div>
+
+                    </div>
+
+      <div class="modal-footer col-12">
+        <button type="button" class="btn btn-secondary" id="hide-modal" data-dismiss="modal">ปิด</button>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+
+
+
+
+
       
-      </div>
-    </div>
-  </div>
-</div>
-
-
-</div>
-<!-- end div container -->
-
-
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                            
+            
+                    
 
   <!-- The Modal -->
 <div class="modal modal-fullscreen" id="myModal">
@@ -823,9 +854,13 @@ input.btnsearch{
     <div class="modal-content">
 
       <!-- Modal Header -->
-      <div class="modal-header">
+      <div class="modal-header" style="display: flex;">
+        <div class="col-11" style="text-align: center;">
         <h4 class="modal-title">เลือกข้อความ</h4>
-        <button id="closemymodal" type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="col-1">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
       </div>
 
       <!-- Modal body -->
@@ -835,7 +870,7 @@ input.btnsearch{
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button id="hidemymodal" type="button" class="btn btn-danger" data-dismiss="modal">ปิด</button>
+        <button type="button" id="closel" class="btn btn-danger" data-dismiss="modal">ปิด</button>
       </div>
 
     </div>
@@ -860,11 +895,17 @@ input.btnsearch{
 <div class="modal " id="modal-MsgSize" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style="text-align: center; justify-content: center;">
+        <div class="col-11">
         <h5 class="modal-title">เลือกขนาดป้าย</h5>
-        <button id="closemodal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </div>
+<!-- ** -->
+        <div calss="col">
+        <button type="button" id="hidemodal" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        </div>
+
       </div>
       <div class="modal-body text-center">
          
@@ -899,7 +940,7 @@ input.btnsearch{
          
       </div>
       <div class="modal-footer">
-        <button id="hidemodal" type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="closemodal" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       
       </div>
     </div>
@@ -1486,37 +1527,41 @@ $(document).ready(function() {
     $("#closemodal").click(function(){
     $("#modal-MsgSize").modal("hide")
     })
-</script>
-
-<script>
     $("#hidemodal").click(function(){
     $("#modal-MsgSize").modal("hide")
     })
-</script>
-
-<script>
     $("#close-modal").click(function(){
     $("#modal-frame1").modal("hide")
     })
-</script>
-
-<script>
     $("#hide-modal").click(function(){
     $("#modal-frame1").modal("hide")
     })
-</script>
-
-<script>
     $("#closemymodal").click(function(){
     $("#myModal").modal("hide")
     })
-</script>
-
-<script>
     $("#hidemymodal").click(function(){
     $("#myModal").modal("hide")
     })
+    $("#closef1").click(function(){
+        $("#modal-frame1").modal("hide")
+    })
+    $("#hidef1").click(function(){
+        $("#modal-frame1").modal("hide")
+    })
+    $("#hidef2").click(function(){
+        $("#modal-frame2").modal("hide")
+    })
+    $("#closef2").click(function(){
+        $("#modal-frame2").modal("hide")
+    })
+    $("#close-modal").click(function(){
+    $("#modal-frame3").modal("hide")
+    })
+    $("#hide-modal").click(function(){
+    $("#modal-frame3").modal("hide")
+    })
 </script>
+
 </body>
 
 </html>
