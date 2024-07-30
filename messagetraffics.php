@@ -588,30 +588,30 @@ li{
                     
                     
 
-                            <div class="form-inline col-8">
-                                <label for="TxtXVMsgCode" style="padding-right:12px;">รหัสข้อความ:</label>
-                                <input type="text" id="TxtXVMsgCode"  class="form-control" value="" readonly>
-                            </div>
+                <div class="form-inline col-8">
+                               <label for="TxtXVMsgCode" style="padding-right:12px;">รหัสข้อความ:</label>
+                               <input type="text" id="TxtXVMsgCode"  class="form-control" value="" readonly>
+                           </div>
 
-                            <div class="form-inline col-8" style="padding-top:5px;">
-                                <label for="msgName" style="padding-right:20px;" >ชื่อข้อความ:</label>
-                                <input type="text" id="msgName" name="msgName" class="form-control w-75" value="" >
-                            </div>
+                           <div class="form-inline col-8" style="padding-top:5px;">
+                               <label for="msgName" style="padding-right:20px;" >ชื่อข้อความ:</label>
+                               <input type="text" id="msgName" name="msgName" class="form-control w-75" value="" >
+                           </div>
 
-                            <div class="form-inline col-8" style="">
-                                <p style="font-size: 1rem; margin-right: 33px;">สีพื้นหลัง:</p><br><br>
-                                <?php
-                                //กำหนดโค้ดสีที่ต้องการลงใน array
-                                $color= array("#0a0a0a", "maroon", "#F60310", "#E76E14", "#E7C514", "#1DDC12", "#148CE7", "#6C1CEA");
-                                for ($i = 0; $i < count($color); $i++) {
-                                    echo "<li><span id=\"color$i\" title=\"$color[$i]\" class=\"button\"><font class=\"btncolor\" style=\"background-color:$color[$i];color:$color[$i]; \" >Yy</font></span></li>";
-                                }
-                                ?>
-                          
-                            
+                           <div class="form-inline col-8" style="">
+                               <p style="font-size: 1rem; margin-right: 33px;">สีพื้นหลัง:</p><br><br>
+                               <?php
+                               //กำหนดโค้ดสีที่ต้องการลงใน array
+                               $color= array("#0a0a0a", "maroon", "#F60310", "#E76E14", "#E7C514", "#1DDC12", "#148CE7", "#6C1CEA");
+                               for ($i = 0; $i < count($color); $i++) {
+                                   echo "<li><span id=\"color$i\" title=\"$color[$i]\" class=\"button\"><font class=\"btncolor\" style=\"background-color:$color[$i];color:$color[$i]; \" >Yy</font></span></li>";
+                               }
+                               ?>
+                         
+                           
 
-                    
-                    </div>
+                   
+                   </div>
                 
                 </div>
                 
