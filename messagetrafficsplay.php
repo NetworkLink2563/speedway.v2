@@ -450,7 +450,7 @@ text-align: center;
                            
                            <div class="row">
                            <h5 style="text-align: center;">รหัสป้าย</h5>
-                           <div id="vmsdetail" class="text-center" style="padding-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid #cccc; margin-bottom: .5rem; font-weight: 300;"></div>
+                           <div id="vmsdetail" class="text-center" style=" font-size: 1.2rem; border-bottom: 1px solid #cccc; margin-bottom: .5rem; font-weight: 300; background-color: #efefefcc;"></div>
 
                               <div class="col-12" style="display: flex;">
 

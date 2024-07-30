@@ -462,7 +462,7 @@ text-align: center;
                            
                            <div class="row">
                             <h5 style="text-align: center;">รหัสป้าย</h5>
-                           <div id="vmsdetail" class="text-center" style="padding-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid #cccc; margin-bottom: .5rem; font-weight: 300;"></div>
+                           <div id="vmsdetail" class="text-center" style="background-color: #efefefcc; font-size: 1.2rem; border-bottom: 1px solid #cccc; margin-bottom: .5rem; font-weight: 300;"></div>
                            
                               <div class="col-6" >
                                 <button type="button" onclick="ShowSms()" style=" float: left;" class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
