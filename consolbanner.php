@@ -375,7 +375,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
 <div class="modal py-5"  id="myModal" role="dialog">
     <div class="modal-dialog modal-lg"  >
         <div class="modal-content">
-            <div class="modal-header" >
+            <div class="modal-header" style="background-color: #e8f4ff!important;">
                 <h5 class="modal-title"></h5> 
                 <span class="" style="text-align: center; font-size: 1.3rem;">
                     <div id="nameVMS">
@@ -447,12 +447,12 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                         </div>
 
                         <div class="col-5" style="text-align: center; margin-top: .5rem; border-right: 5px double #cccc;">
-                            <h5>เปิด-ปิด คอมพิวเตอร์</h5>
+                            <h5 style="font-weight: 300;" >เปิด-ปิด คอมพิวเตอร์</h5>
                             <input style="" type="checkbox" checked data-toggle="toggle" data-onlabel="เปิด" data-offlabel="ปิด" data-onstyle="success" data-offstyle="danger" data-width="120" data-height="40">
                         </div>
 
                         <div class="col-5" style="text-align: center; margin-top: .5rem;">
-                            <h5>เปิด-ปิด แอร์คอมพิวเตอร์</h5>
+                            <h5 style="font-weight: 300;">เปิด-ปิด แอร์คอมพิวเตอร์</h5>
                             <input type="checkbox" checked data-toggle="toggle" data-onlabel="เปิด" data-offlabel="ปิด" data-onstyle="success" data-offstyle="danger" data-width="120" data-height="40">
                         </div>
 
