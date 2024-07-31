@@ -391,7 +391,7 @@ table th{
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex;">
 
             <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-            <button onclick="location.href='/speedway/messagepublicrelationsframe.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step2 จัดรูปแบบข้อความ <<</button>
+            <button onclick="location.href='/speedway/messagepublicrelationsframe.php'" class="btn btn-warning btn-hover shadow" style=""> กลับ Step2 จัดรูปแบบข้อความ <<</button>
             </div>
 
             <div class="col-4" style="text-align: center;">
@@ -399,7 +399,7 @@ table th{
             </div>
 
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
-            <button onclick="location.href='/speedway/messagepublicrelationsplay.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">>> Step4 ข้อความป้ายประชาสัมพันธ์</button>
+            <button onclick="location.href='/speedway/messagepublicrelationsplay.php'" class="btn btn-success btn-hover shadow" style="">>> Step4 ข้อความป้ายประชาสัมพันธ์</button>
             </div>
 
         </div>
@@ -495,38 +495,47 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
 <div class="modal modal-fullscreen" id="modal-add" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-       
+      <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
+
+      <div class="col-11" style="text-align: center; padding: 0;">
+                    <img src="img/icon/computer.png" height="25" alt="Responsive image"><span style="font-size: 1.2rem;"> ชุดการแสดงป้าย/สร้างชุดการแสดงป้าย</span>
+                    </div>
+
+                    <div class="col-1" style="">
+                    <button type="button" class="close" id="close-add" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
       
       </div>
-      <div class="modal-body" style="background-color:rgb(225, 240, 250)!important;">
+      <div class="modal-body" style="">
           
            <input type="hidden" id="XVMssCode" >
      
-           <div class="box" style="margin-top: 30;padding-left: 0%;padding-right: 0%;" align="left">
-                <div style="margin-top:10; margin-bottom: 10; margin-left: 10;  margin-right: 10;">
-                    <img src="img/icon/computer.png" height="25" alt="Responsive image">&nbsp;ชุดการแสดงป้าย/สร้างชุดการแสดงป้าย
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                    <div style="margin-top:-5;"><hr></div>
-                </div>
-                <div style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;">
-                    <div class="form-group form-inline">
-                        <label style="margin-right: 5px;" for="XVPltCode">หรัสชุดแสดงป้าย:</label>
+           <div class="row" style="text-align: center; ">
+                
+               
+                    <div class="form-group form-inline col-5" style="justify-content: end;">
+                        <label style="margin-right: 5px;" for="XVPltCode">รหัสชุดแสดงป้าย:</label>
                         <input type="text" class="form-control" id="XVPltCode" readonly value="PLTYYMM-####">
                     </div>
-                    <div class="form-group form-inline">
+
+                    <div class="form-group form-inline col-5" style="justify-content: start;">
                         <label style="margin-right: 15px;" for="XVPltName">ชื่อชุดแสดงป้าย:</label>
                         <input style="width:50%" type="text" class="form-control" id="XVPltName">
                     </div>
+
+                    <div class="col-2 text-center" >
+                        <button type="button" id="btn_save" class="btn" style="background-color:#009933;color:white">บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>  
+                    </div>
+
                 </div>
                 <div class="row">
-                    <div class="col-sm-4" style="">
+                    <div class="col-4" style="padding: 0;">
                        
                        <div  style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;text-align: right;">
                        <div class="table-responsive">
-                          <table id="VMSTable" class="table" style="width:100%;">
+                          <table id="VMSTable" class="table table-striped table-hover" style="width:100%;">
                             <thead>
                                 <tr style="font-size: 10pt">
                                     <th>รหัสข้อความประชาสัมพันธ์
@@ -537,7 +546,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                                     <th >ขนาด
                                     </th>
                                    
-                                    <th ></th>
+                                 
                                     <th ></th>
                                   
                                 </tr>
@@ -578,7 +587,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                         </div>
                         </div>
                     </div>
-                    <div class="col-sm-8" style="">
+                    <div class="col-8" style="padding: 0;">
                        
                        <div  style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;text-align: right;">
                        <div class="table-responsive">
@@ -613,11 +622,12 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                         </div>
                     </div>
                 </div>
+                </div>
                 <div class="row">
-                    <div class="col-sm-12 text-center" >
+                    <!-- <div class="col-sm-12 text-center" >
                         <button type="button" id="btn_save" class="btn" style="background-color:#009933;color:white">บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
                         
-                    </div>
+                    </div> -->
                 </div>
                 <br>
             </div>
@@ -625,7 +635,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hide-add" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
    
       </div>
     </div>
@@ -684,8 +694,6 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
 </div>
 
 
-</div>
-<!-- end div container -->
 
 
 
@@ -1046,13 +1054,17 @@ $(document).ready(function() {
     $("#hidemodal").click(function(){
     $("#modal-MsgSize").modal("hide");
     });
-</script>
-
-<script>
     $("#closemodal").click(function(){
     $("#modal-MsgSize").modal("hide");
     });
+    $("#close-add").click(function(){
+    $("#modal-add").modal("hide")
+    })
+    $("#hide-add").click(function(){
+    $("#modal-add").modal("hide")
+    })
 </script>
+
 </body>
 
 </html>

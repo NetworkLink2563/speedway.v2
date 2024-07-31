@@ -360,21 +360,38 @@ table td{
         font-weight: 500;
         background-color: #e8f4ff!important;
     }
+
+    #ShowPlayList p{
+font-size: 1rem;
+text-align: center;
+}
 </style>
 
 
 <div class="container" style="position: relative; top: 75;">
 
-<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image"> ข้อความป้ายประชาสัมพันธ์
+<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex;">
+
+
+<div class="next-btn col-4"  style="text-align: left; padding: 0; ">
+            <button onclick="location.href='/speedway/messagetrafficsframegroup.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 สร้างชุดป้ายจราจร <<</button>
+            </div>
+
+
+    <div class="col-4" style="text-align: center;">
+            <img src="img/icon/computer.png" height="25" alt="Responsive image">Step 4 ข้อความป้ายจราจร
         </div>
 
 
-        <div class="shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; margin-bottom: .5rem;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> เลือกป้ายประชาสัมพันธ์</a>
-        </div>
+        <!-- <div class="shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; margin-bottom: .5rem;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> Step 4 ข้อความป้ายจราจร</a>
+        </div> -->
       
 
+
+
+
+        </div>
             <div class="flex-head">
 
 
@@ -427,20 +444,29 @@ table td{
                 </div>
                 </div>
 
-                <div class="col-7" style="padding: 0;">
+                <div class="col-7" style="">
                     <div id="smsdetail">
                            <input type="hidden" id="XVVmsCode">
-                           <div id="vmsdetail" class="text-center"></div>
+                           
                            <div class="row">
-                              <div class="col-sm-6" >
-                                <button type="button" onclick="ShowSms()" style=" float: left;margin-right: 10px" class="btn btn-primary btn-sm">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
-                                <button type="button" onclick="CancelSms()" style=" float: left;margin-right: 10px" class="btn btn-primary btn-sm">ยกเลิกข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                           <h5 style="text-align: center;">รหัสป้าย</h5>
+                           <div id="vmsdetail" class="text-center" style=" font-size: 1.2rem; border-bottom: 1px solid #cccc; margin-bottom: .5rem; font-weight: 300; background-color: #efefefcc;"></div>
+
+                              <div class="col-12" style="display: flex;">
+
+                              <div class="col-4">
+                                <button type="button" onclick="ShowSms()" style=" float: left;margin-right: 10px" class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                                </div>
+                                <div class="col-4">
+                                <button type="button" onclick="CancelSms()" style=" float: left;margin-right: 10px" class="btn btn-danger shadow">ยกเลิกข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                                </div>
+                                <div class="col-4">
+                                  <button type="button" onclick="sendmessageToVMS()"  class="btn btn-success shadow">ส่งข้อความขึ้นป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;color:white" class="fa fa-cloud-upload"></i></button>
                               </div>
-                              <div class="col-sm-6 text-right" >
-                                  <button type="button" onclick="sendmessageToVMS()"  class="btn btn-primary btn-sm">ส่งข้อความขึ้นป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;color:white" class="fa fa-cloud-upload"></i></button>
                               </div>
+                              
                            </div>
-                           <div id="ShowPlayList"></div>
+                           <div id="ShowPlayList" style="padding: 1rem; margin-top: .5rem;"></div>
                        
                 </div>
             </div>
@@ -455,17 +481,23 @@ table td{
 
 
 
-
+            
 
 <div class="modal " id="modal-ShowSms" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">เลือกข้อความป้าย</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      
+    
+    <div class="modal-header" style="display: flex;">
+        <div class="col-11" style="text-align: center;">
+        <h4 class="modal-title">เลือกข้อความป้าย</h4>
+        </div>
+        <div class="col-1">
+        <button type="button" id="close-sms" class="close" data-dismiss="modal">&times;</button>
+        </div>
       </div>
+
+
       <div class="modal-body text-center">
          
                <div id="ShowSms"></div>
@@ -473,7 +505,7 @@ table td{
          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button"  id="hide-sms" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       
       </div>
     </div>
@@ -668,6 +700,16 @@ function sendmessageToVMS() {
 
 
 </script>
+
+<script>
+    $("#close-sms").click(function(){
+    $("#modal-ShowSms").modal("hide")
+    })
+    $("#hide-sms").click(function(){
+    $("#modal-ShowSms").modal("hide")
+    })
+</script>
+
 </body>
 
 </html>

@@ -147,14 +147,14 @@ input .btnsearch{
                             <tr style="font-size: 10pt">
                                 <th class="th-sm">ผู้ใช้
                                 </th>
-                                <th class="th-sm" >กะ
+                                <th class="th-sm" >กะเวลาทำงาน
                                 </th>
                               
                                 <th class="th-sm" style="text-align: center">สถานะ
                                 </th>
-                                <th class="th-sm text-center">สิทธิ์
+                                <th class="th-sm text-center">สิทธิ์การใช้งาน
                                 </th>
-                                <th class="th-sm text-center">เปลี่ยนสถานะ
+                                <th class="th-sm text-center">เครื่องมือ
                                 </th>
                               
                             </tr>

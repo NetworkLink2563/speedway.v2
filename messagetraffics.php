@@ -401,6 +401,9 @@ table {
  opacity: 0.7;
 }
 
+li{
+        list-style: none;
+    }
 </style>
 
 
@@ -409,9 +412,19 @@ table {
         <input type="hidden" id="XVMssCode">
         <input type="hidden" id="XVMssType">
 
-<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem;">
-            <img src="img/icon/setting.png" height="25" alt="Responsive image"> สร้างข้อความสภาพการจราจรพื้นฐาน
+<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex;">
+
+
+            <div class="col-7" style="text-align: right;">
+            <img src="img/icon/setting.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความจราจรพื้นฐาน
+            </div>
+
+            <div class="next-btn col"  style="text-align: right; padding: 0; ">
+            <button onclick="location.href='/speedway/messagetrafficsframe.php'" class="btn btn-success btn-hover shadow" style="">>> Step2 สร้างข้อความจราจรแสดงบนป้าย</button>
+            </div>
+
         </div>
+
 
         <div class="flex-header">
        
@@ -545,15 +558,23 @@ table {
 </div>
 <!-- end div container -->
 
-<div class="modal modal-fullscreen" id="modal-addtext" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal" id="modal-addtext" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i style="color:#09C703;width: 20%;" class="fa fa-file-text"></i>สร้างข้อความตัวอักษร</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      
+    <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
+
+      <div class="col-11">
+        <h5 class="modal-title" style="text-align: center;"><i style="margin-left: 10px;color:#034672 ;font-size: 30px;" class="fa fa-file-text"></i> สร้างข้อความตัวอักษร</h5>
+        </div>
+
+        <div class="col-1">
+        <button id="close-addtext" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      </div>
+
       <div class="modal-body">
           
 
@@ -562,33 +583,35 @@ table {
                
                 <input type="hidden" id="idmsgSize" value="<?php echo $result_row['XVMssCode'];?>">
                 
-                <div class="row">
+                <div class="row" style="align-items: center; justify-content:center;">
                     
                     
-                    <div class="col-sm-12 text-center" style="padding-left: 50px;">
-                        <ol class="menu" style="width:1000px">
-                            <div class="form-inline">
-                                <label for="TxtXVMsgCode" style="padding-right:12px;">รหัสข้อความ:</label>
-                                <input type="text" id="TxtXVMsgCode"  class="form-control" value="" readonly>
-                            </div>
-                            <div class="form-inline" style="padding-top:5px;">
-                                <label for="msgName" style="padding-right:20px;" >ชื่อข้อความ:</label>
-                                <input type="text" id="msgName" name="msgName" class="form-control w-75" value="" >
-                            </div>
-                            <div class="form-inline pt-1" style="width:100%">
-                                <p>สีพื้นหลัง:</p>
-                                <?php
-                                //กำหนดโค้ดสีที่ต้องการลงใน array
-                                $color= array("#0a0a0a", "maroon", "#F60310", "#E76E14", "#E7C514", "#1DDC12", "#148CE7", "#6C1CEA");
-                                for ($i = 0; $i < count($color); $i++) {
-                                    echo "<li><span id=\"color$i\" title=\"$color[$i]\" class=\"button\"><font class=\"btncolor\" style=\"background-color:$color[$i];color:$color[$i]; \" >Yy</font></span></li>";
-                                }
-                                ?>
-                            </div>
-                            
+                    
 
-                        </ol>
-                    </div>
+                <div class="form-inline col-8">
+                               <label for="TxtXVMsgCode" style="padding-right:12px;">รหัสข้อความ:</label>
+                               <input type="text" id="TxtXVMsgCode"  class="form-control" value="" readonly>
+                           </div>
+
+                           <div class="form-inline col-8" style="padding-top:5px;">
+                               <label for="msgName" style="padding-right:20px;" >ชื่อข้อความ:</label>
+                               <input type="text" id="msgName" name="msgName" class="form-control w-75" value="" >
+                           </div>
+
+                           <div class="form-inline col-8" style="">
+                               <p style="font-size: 1rem; margin-right: 33px;">สีพื้นหลัง:</p><br><br>
+                               <?php
+                               //กำหนดโค้ดสีที่ต้องการลงใน array
+                               $color= array("#0a0a0a", "maroon", "#F60310", "#E76E14", "#E7C514", "#1DDC12", "#148CE7", "#6C1CEA");
+                               for ($i = 0; $i < count($color); $i++) {
+                                   echo "<li><span id=\"color$i\" title=\"$color[$i]\" class=\"button\"><font class=\"btncolor\" style=\"background-color:$color[$i];color:$color[$i]; \" >Yy</font></span></li>";
+                               }
+                               ?>
+                         
+                           
+
+                   
+                   </div>
                 
                 </div>
                 
@@ -610,7 +633,7 @@ table {
                 <div class="row" style="margin-top: 10;">
                     
                        
-                    <div class="col-sm-12 text-center" style="margin-top: 5px;padding-left: 25%;">
+                    <div class="col-sm-12 text-center" style="margin-top: 5px;">
                        
                         <div id="ShowCkeditor" style="text-align: center;"></div>
                     </div>
@@ -628,37 +651,45 @@ table {
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hide-addtext" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal modal-fullscreen" id="modal-addimage" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal " id="modal-addimage" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i style="color:#FFCE33;width: 20%;" class="fa fa-image"></i>สร้างข้อความรูปภาพ</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      
+    <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
+        <div class="col-11" style="text-align: center;">
+        <h5 class="modal-title"><i style="margin-left: 10px;color:#034672;font-size: 30px; " class="fa fa-image"></i> สร้างข้อความรูปภาพ</h5>
+        </div>
+        <div class="col-1">
+        <button type="button" id="close-addimage" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        </div>
       </div>
+      
       <div class="modal-body">
          
-         <div class="row">
-                <div class="col-sm-12 text-center" style="padding-left: 50px;">
-                        <ol class="menu" style="width:1000px">
-                           <div class="form-inline">
-                                <label for="ImgXVMsgCode" style="padding-right:12px;">รหัสรูปภาพ:</label>
+      <div class="row" style="justify-content: center;">
+
+                
+                        
+                           <div class=" col-4">
+                                <label for="ImgXVMsgCode" style="">รหัสรูปภาพ:</label>
                                 <input type="text" id="ImgXVMsgCode"  class="form-control" value="" readonly>
                             </div>
-                            <div class="form-inline" style="padding-top:5px;">
-                                <label for="imageName" style="padding-right:26px;">ชื่อรูปภาพ:</label>
-                                <input type="text" id="imageName"  class="form-control w-75" value="">
+
+                            <div class="  col-5" style="">
+                                <label for="imageName" style="">ชื่อรูปภาพ:</label>
+                                <input type="text" id="imageName"  class="form-control" value="">
                             </div>
-                        </ol>
-                </div>
+                        
+                
             <!--
             <div class="col-sm-4">
             </div>
@@ -673,10 +704,9 @@ table {
                             -->
         </div>
 
-        <div class="row" style="margin-top: 10;">
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-8" style="margin-top: 5px">
+        <div class="row" style="margin-top: 10; justify-content: center;">
+          
+            <div class="col-10" style="">
                 <div class="container">
                     <div class="card">
                         <label for="images" class="drop-container" id="dropcontainer">
@@ -697,37 +727,46 @@ table {
          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hide-addimage" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
        
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal modal-fullscreen" id="modal-addvdo" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal" id="modal-addvdo" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i style="color:red;width: 20%;" class="fa fa-youtube"></i>สร้างข้อความวีดีโอ</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      
+    
+    <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
+        <div class="col-11" style="text-align: center;">
+        <h5 class="modal-title"><i style="margin-left: 10px;color:red;font-size: 30px;" class="fa fa-youtube"></i> สร้างข้อความวีดีโอ</h5>
+        </div>
+        <div class="col-1">
+        <button id="close-addvdo" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        </div>
       </div>
+
+
       <div class="modal-body">
          
-         <div class="row">
-                <div class="col-sm-12 text-center" style="padding-left: 50px;">
-                        <ol class="menu" style="width:1000px">
-                           <div class="form-inline">
-                                <label for="VdoXVMsgCode" style="padding-right:12px;">รหัสวีดีโอ:</label>
-                                <input type="text" id="VdoXVMsgCode"  class="form-control" value="" readonly>
-                            </div>
-                            <div class="form-inline" style="padding-top:5px;">
-                                <label for="vdoName" style="padding-right:40px;">ชื่อวีดีโอ:</label>
-                                <input type="text" id="vdoName"  class="form-control w-75" value="">
-                            </div>
-                        </ol>
+      <div class="row" style="justify-content: center;">
+
+                
+                        
+                <div class=" col-4">
+                    <label for="ImgXVMsgCode" style="">รหัสวิดีโอ:</label>
+                    <input type="text" id="VdoXVMsgCode"  class="form-control" value="" readonly>
                 </div>
+
+                <div class="  col-5" style="">
+                    <label for="imageName" style="">ชื่อวิดีโอ:</label>
+                    <input type="text" id="vdoName"  class="form-control" value="">
+                </div>
+
             <!--
             <div class="col-sm-4">
             </div>
@@ -742,10 +781,9 @@ table {
                             -->
         </div>
 
-        <div class="row" style="margin-top: 10;">
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-8" style="margin-top: 5px">
+        <div class="row" style="justify-content: center;">
+           
+            <div class="col-10" style="margin-top: 5px">
                 <div class="container">
                     <div class="card">
                         <label for="vdos" class="drop-container" id="dropcontainer">
@@ -763,7 +801,7 @@ table {
          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hide-addvdo" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
      
       </div>
     </div>
@@ -1275,12 +1313,31 @@ function deleteMSG(MSGCode) {
     $("#closemodal").click(function(){
     $("#modal-MsgSize").modal("hide")
     })
-</script>
-
-<script>
     $("#hidemodal").click(function(){
     $("#modal-MsgSize").modal("hide")
     })
+    $("#close-addtext").click(function(){
+    $("#modal-addtext").modal("hide")
+    })
+    $("#hide-addtext").click(function(){
+    $("#modal-addtext").modal("hide")
+    })
+    $("#close-addimage").click(function(){
+    $("#modal-addimage").modal("hide")
+    })
+    $("#hide-addimage").click(function(){
+    $("#modal-addimage").modal("hide")
+    })
+    $("#close-addvdo").click(function(){
+    $("#modal-addvdo").modal("hide")
+    })
+    $("#hide-addvdo").click(function(){
+    $("#modal-addvdo").modal("hide")
+    })
+</script>
+
+<script>
+    
 </script>
 </body>
 

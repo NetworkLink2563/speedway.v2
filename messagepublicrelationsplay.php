@@ -363,6 +363,11 @@ table td{
 .shadow{
     box-shadow: 3px 3px 3px #aaaaaa !important;
 }
+
+#ShowPlayList p{
+font-size: 1rem;
+text-align: center;
+}
 </style>
 
 
@@ -454,16 +459,20 @@ table td{
                 <div class="col-7" style="">
                     <div id="smsdetail">
                            <input type="hidden" id="XVVmsCode">
-                           <div id="vmsdetail" class="text-center"></div>
+                           
                            <div class="row">
-                              <div class="col-sm-6" >
-                                <button type="button" onclick="ShowSms()" style=" float: left;" class="btn btn-primary btn-sm">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                            <h5 style="text-align: center;">รหัสป้าย</h5>
+                           <div id="vmsdetail" class="text-center" style="background-color: #efefefcc; font-size: 1.2rem; border-bottom: 1px solid #cccc; margin-bottom: .5rem; font-weight: 300;"></div>
+                           
+                              <div class="col-6" >
+                                <button type="button" onclick="ShowSms()" style=" float: left;" class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
                               </div>
-                              <div class="col-sm-6 text-right" >
-                                  <button type="button" onclick="sendmessageToVMS()"  class="btn btn-primary btn-sm">ส่งข้อความขึ้นป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;color:white" class="fa fa-cloud-upload"></i></button>
+                              <div class="col-6 text-right" >
+                                  <button type="button" onclick="sendmessageToVMS()"  class="btn btn-success shadow">ส่งข้อความขึ้นป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;color:white" class="fa fa-cloud-upload"></i></button>
                               </div>
                            </div>
-                           <div id="ShowPlayList"></div>
+
+                           <div id="ShowPlayList" style="padding: 1rem; margin-top: .5rem;"></div>
                        
                 </div>
          
@@ -485,11 +494,13 @@ table td{
 <div class="modal " id="modal-ShowSms" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">เลือกข้อความป้าย</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <div class="modal-header" style="display: flex;">
+        <div class="col-11" style="text-align: center;">
+        <h4 class="modal-title">เลือกข้อความป้าย</h4>
+        </div>
+        <div class="col-1">
+        <button type="button" id="close-sms" class="close" data-dismiss="modal">&times;</button>
+        </div>
       </div>
       <div class="modal-body text-center">
          
@@ -498,7 +509,7 @@ table td{
          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hide-sms" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
       
       </div>
     </div>
@@ -657,6 +668,17 @@ function sendmessageToVMS() {
     
 }
 
+
+</script>
+
+<script>
+ 
+    $("#close-sms").click(function(){
+    $("#modal-ShowSms").modal("hide")
+    })
+    $("#hide-sms").click(function(){
+    $("#modal-ShowSms").modal("hide")
+    })
 
 </script>
 </body>
