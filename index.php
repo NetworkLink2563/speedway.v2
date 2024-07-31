@@ -152,10 +152,8 @@ echo ThDate(); // แสดงวันที่
     $('#username').on('input', validate);
 </script>
 
-<script>
-    const togglePassword = document.querySelector('#togglePassword');
-    const password = document.querySelector('#inputPassword');
 
+<<<<<<< HEAD
     togglePassword.addEventListener('click', function (e) {
     // toggle the type attribute
     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -166,6 +164,8 @@ echo ThDate(); // แสดงวันที่
 
 
 </script>
+=======
+>>>>>>> origin/main
 
 
 
@@ -418,7 +418,7 @@ echo ThDate(); // แสดงวันที่
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                             <label for="inputPassword" class="sr-only">Password</label>
                             <input type="password" id="inputPassword" name="inputPassword" class="form-control" autocomplete="off" placeholder="Password" required>
-                            <i style="display: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 305px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
+                            <i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 305px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
                         </div>
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                           
@@ -478,6 +478,18 @@ echo ThDate(); // แสดงวันที่
     </div>
 </div>
 
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#inputPassword');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash'); 
+});
+</script>
 
 </body>
 </html>

@@ -4,6 +4,7 @@ session_start();
 include 'header.php';
 include "permission.php";
 
+<<<<<<< HEAD
 include "service/privilege.php";
 $menucode="001";
 $pri=pri_($_SESSION['user'],$menucode);  
@@ -12,6 +13,8 @@ $pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
 $pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
 
 
+=======
+>>>>>>> origin/main
 
 if(checkmenu($user,'001')==0){
     session_destroy();
@@ -93,6 +96,19 @@ table td{
 .config{
     transform: 5sec;
 }
+
+.modal-title{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .modal-xl {
+    width: 90%;
+   max-width:1200px;
+  }
+}
+
 </style>
 
 
@@ -401,7 +417,163 @@ if($pri_w!=0){
 
 
 
+<!-- Modal -->
+<div class="modal fade " id="modaliframe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header" style="display: flex; background-color: #f7f7f7;">
+        <div class="col-11">
+        <h5 class="modal-title" id="exampleModalLabel">Live view</h5>
+        </div>
+        <div class="col-1">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="modal-body" style="padding: 1rem 0rem 1rem 0rem;">
 
+      <!-- frame 1 -->
+      <div class="frame-1" style="display: none;">
+      <div class="col-12" style=" display: flex; justify-content: center;">
+                         
+                         <div class="col-12" id="frame1_section3" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 384px;">
+                            
+                                     <!-- <button style="position: absolute;left: 20px;top:5px;z-index:1000;" onclick="addsms(1)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                                    
+                                     <iframe id="frame1_section3_show" src="" style="border: none; width: 960px; height: 384px;"></iframe>
+                                    
+                                    
+                                    
+                          </div>
+                      </div>
+        </div>
+        <!-- frame 1 end -->
+
+         <!-- frame 2 -->
+          <div style="display: none;">
+        <div class="box" style="display: flex; flex-direction: column; justify-content: center;  padding-left: 0%;">
+                    
+                <div class="row col" style="box-sizing: border-box;  flex-direction: column; margin: 1rem; justify-content: center; align-items:center; padding: 0;">
+
+                    <div class="col" style="padding: 0;">
+                        <div id="frame2_section1" style="border-style: solid; border-color: rgb(220, 220, 220); width: 965px;">
+                                <!-- <button style="position: absolute; z-index:1000;" onclick="addsms(1)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                                <iframe id="frame2_section1_show" src="" style="border: none; width: 960px;"></iframe>  
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding: 0; box-sizing: border-box;">
+
+                        <div id="frame2_section3" class="" style="border-style: solid; border-color: rgb(220, 220, 220); margin-top: 0.2rem; padding: 0px; width: 322px; height: 249px;">
+                    
+                            <!-- <button style="position: absolute; z-index:1000;" onclick="addsms(3)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                            <iframe id="frame2_section3_show" src="" style="border: none; width: 315px; height: 244px;"></iframe>
+                            
+                       </div>
+                       
+
+                       
+                        <div id="frame2_section4" class="float-left" style="border-style: solid; border-color: rgb(220, 220, 220); margin-top: 0.2rem; padding: 0px; height: 249px; width: 322px;">
+                    
+                            <!-- <button style="position: absolute; z-index:1000;" onclick="addsms(4)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                            <iframe id="frame2_section4_show" src="" style="border: none; width: 315px; height: 244px;"></iframe>
+                            
+                        </div>
+                       
+
+                        
+                        <div id="frame2_section5" class="float-left" style="border-style: solid; border-color: rgb(220, 220, 220); margin-top: 0.2rem; padding: 0px; height: 249px; width: 322px;">
+                            <!-- <button style="position: absolute; z-index:1000;" onclick="addsms(5)" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                            <iframe id="frame2_section5_show" src="" style="border: none; width: 315px; height: 244px;"></iframe>
+                        </div>
+                   
+                   
+
+                    
+                        <div id="frame2_section2" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0.2rem 0px 0px; padding: 0px; width: 965px;">
+                   
+                    
+                                <!-- <button style="position: absolute; z-index:1000;" onclick="addsms(2)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                                  
+                                <iframe id="frame2_section2_show" src="" style="border: none; width: 960px; height: 100px;"></iframe>
+                             
+                        </div>
+                    
+                
+                        </div>
+                
+            </div>
+           
+
+      </div>
+
+      </div>
+                  
+           <!-- frame 2 end -->
+
+
+           <!-- frame 3 -->
+
+           <div style="display_: none;">
+           <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center ; background-color: white;">
+
+                    
+
+                
+                            <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                     
+                            <div class="row col-12" style="justify-content: center; margin: 1rem;">
+
+                
+                    
+
+                    
+
+                </div>
+
+                        <div class="col-12" style="padding: 0;">
+                        <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 100px;">
+                            
+                                    <!-- <button onclick="addsms(1)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                                    <iframe id="frame3_section1_show" src="" style="border: none; width: 956px; height: 100px;"></iframe>
+                                   
+                            </div>
+                        </div>
+ 
+                   <div class="col-12" style="padding: 0;">
+                        <div id="frame3_section3" class="float-left" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 480px; height: 249px;">
+
+                            <!-- <button onclick="addsms(3)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                            <iframe id="frame3_section3_show" src="" style="border: none; width: 475px; height: 244px;"></iframe>
+                           
+                        </div>
+                    
+                        <div id="frame3_section4" class="float-left col-12" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 480px; height: 249px;">
+
+                            <!-- <button onclick="addsms(4)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                            <iframe id="frame3_section4_show" src="" style="border: none; width: 475px; height: 244px;"></iframe>
+                           
+                        </div>
+                    </div>
+                    </div>
+                    
+                   
+
+                    <div class="col-8 text-center" style="margin: 1rem;">
+                      <!-- <button type="button" id="btn_saveframe3" class="btn" style="background-color:#009933;color:white">บันทึก<i style="margin-left: 5px;color:white;font-size: 15px;" class="fa fa-save"></i></button> -->
+                      <!-- <button type="button"  id="btn_saveframe3" class="btn btn-danger" style="color:white" >ล้าง<i style="margin-left: 5px;color:white;font-size: 15px;" class="fa fa-delete"></i></button> -->
+                    </div>
+
+                    </div>
+             </div>
+             </div>
+             <!-- frame 3 end -->
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
 
 
 
@@ -534,9 +706,22 @@ function hideConfig(){
 
 </script>
 
-
-
-
-
+<script>
+    $("#chkl1").click(function(){
+    $("#modaliframe").modal("show")
+    })
+    $("#chkl2").click(function(){
+    $("#modaliframe").modal("show")
+    })
+    $("#chkl3").click(function(){
+    $("#modaliframe").modal("show")
+    })
+    $("#chkl4").click(function(){
+    $("#modaliframe").modal("show")
+    })
+    $("#chkl5").click(function(){
+    $("#modaliframe").modal("show")
+    })
+</script>
 </body>
 </html>
