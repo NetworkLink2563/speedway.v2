@@ -447,8 +447,8 @@ table {
                         <div class="col-12" style="text-align: center; margin: 1rem;">
                         <div id="btnhideM" style="display: inline-block;">
                                         <input type="checkbox" id="hideManaul" data-toggle="toggle"
-                                            data-onlabel="เปิด" data-offlabel="ปิด" data-onstyle="success"
-                                            data-offstyle="danger" data-width="120" data-height="40">
+                                            data-onlabel="Auto" data-offlabel="Manual" data-onstyle="success"
+                                            data-offstyle="warning" data-width="120" data-height="40">
                                     </div>
                                     </div>
                             <!-- <div class="col-3" style="text-align: center;">
@@ -1881,8 +1881,10 @@ function hideManaul(){
 <script>
 $("#btnhideM").click(function(){
     if($("#hideManaul").prop('checked') == true){
-        $("#closeManaul").show()
+    $('#hideManaul').bootstrapToggle('Auto')
+    $("#closeManaul").show()
     }else{
+        $('#hideManaul').bootstrapToggle('Manual')
         $("#closeManaul").hide()
     }
 })
