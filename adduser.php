@@ -121,7 +121,7 @@ body {
                 <span>รหัสผ่าน</span>
             </div>
             <div class="col-6">
-                     <input class="input" style="width: 100%;" name="passwordInput" id="passwordInput" type="password" onkeyup='check();' /><i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 203px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
+                     <input placeholder="Password" class="input" style="width: 100%;" name="passwordInput" id="passwordInput" type="password" onkeyup='check();' /><i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 203px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
             </div>
         </div>
 
@@ -130,7 +130,7 @@ body {
                 <span>รหัสผ่านอีกครั้ง</span>
             </div>
             <div class="col-6">
-                     <input class="input" style="width: 100%;" name="confirm_password" id="confirm_password" type="password" onkeyup='check();' /><i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 203px;" class="far fa-eye fa-eye-slash" id="togglePassword2"></i> <span id="message"></span>
+                     <input placeholder="Confirm Password" class="input" style="width: 100%;" name="confirm_password" id="confirm_password" type="password" onkeyup='check();' /><i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 203px;" class="far fa-eye fa-eye-slash" id="togglePassword2"></i> <span id="message"></span>
             </div>
         </div>
 
@@ -162,8 +162,13 @@ var check = function() {
                               ORDER BY XVShfCode";
                         $query= sqlsrv_query($conn, $sql);
                         while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)){
-                           $t=$row["XIShfStartHour"].':'.$row["XIShfStartMin"].'-'.$row["XIShfEndHour"].':'.$row["XIShfEndMin"].' น';
-                           echo '<option value="'.$row["XVShfCode"].'">'.$row["XVShfName"].' '. $t.'</option>';
+                            $timeshift='[&nbsp;'.str_pad($row['XIShfStartHour'],2,"0",STR_PAD_LEFT).':'
+                            .str_pad($row['XIShfStartMin'],2,"0",STR_PAD_LEFT).'&nbsp;-&nbsp;'.str_pad($row['XIShfEndHour'],2,"0",STR_PAD_LEFT)
+                            .':'.Str_pad($row['XIShfEndMin'],2,"0",STR_PAD_LEFT).'&nbsp;]';
+
+                           //$t=$row["XIShfStartHour"].':'.$row["XIShfStartMin"].'-'.$row["XIShfEndHour"].':'.$row["XIShfEndMin"].' น';
+                           echo '<option value="'.$row["XVShfCode"].'">'.$row["XVShfName"].' '. $timeshift.'</option>';
+                           
                         }
                         sqlsrv_close( $conn );
                 ?>
