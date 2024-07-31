@@ -4,7 +4,6 @@ session_start();
 include 'header.php';
 include "permission.php";
 
-<<<<<<< HEAD
 include "service/privilege.php";
 $menucode="001";
 $pri=pri_($_SESSION['user'],$menucode);  
@@ -13,8 +12,6 @@ $pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
 $pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
 
 
-=======
->>>>>>> origin/main
 
 if(checkmenu($user,'001')==0){
     session_destroy();
