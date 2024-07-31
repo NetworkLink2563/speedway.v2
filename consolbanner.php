@@ -289,6 +289,7 @@ table {
 .toggle {
     box-shadow: 3px 3px 3px #aaaaaa
 }
+
 </style>
 
 <div class="container" style="position: relative; top: 75;">
@@ -484,8 +485,8 @@ table {
 
                                 <input style="width: 100%;" id="levels2" class="slider" type="range" min="1" max="12"
                                     value="1" step="1" oninput="this.nextElementSibling.value = this.value">
-                                <output><span>1</span></output>
-                                <h6>ระดับไฟ</h6>
+                                <output ><span id="rangeout">1</span></output>
+                                <h6>ระดับความสว่าง</h6>
 
                                 <div class="col-4" style="text-align: center;">
                                     <button id="btnbrightnessManual" class="btn btn-success shadow"
@@ -649,6 +650,8 @@ window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim
 
 
 <script>
+  
+
 function CloseModal() {
     $('#myModal').modal('hide');
 }
@@ -663,8 +666,37 @@ function GetSensorStatus(vmscode) {
             'GetSensorStatus': 'GetSensorStatus'
         },
         success: function(result) {
-
+          
             const obj = JSON.parse(result);
+          
+            if (obj.ST1 == 1) {
+                $('#CheckboxPowervms').bootstrapToggle('on');
+            }else{
+                $('#CheckboxPowervms').bootstrapToggle('off');
+            }
+            if (obj.ST2 == 1) {
+                $('#CheckboxOnlineOfflinevms').bootstrapToggle('on');
+            }else{
+                $('#CheckboxOnlineOfflinevms').bootstrapToggle('off');
+            }
+            if (obj.ST3 == 0) {
+            
+                $('#hideManaul').bootstrapToggle('on');
+                $("#closeManaul").hide();
+            } else {
+            
+                $('#hideManaul').bootstrapToggle('off');
+            
+                $('#levels2').val(obj.ST3);
+                $('#rangeout').text(obj.ST3);
+            
+                $("#closeManaul").show();
+            }
+            if (obj.ST7 == 1) {
+                $('#CheckboxOnOffFlashvms').bootstrapToggle('on');
+            }else{
+                $('#CheckboxOnOffFlashvms').bootstrapToggle('off');
+            }
             if (obj.ST8 == 1) {
                 $('#Checkboxpc').bootstrapToggle('on');
             } else {
@@ -675,13 +707,15 @@ function GetSensorStatus(vmscode) {
             } else {
                 $('#Checkboxfan').bootstrapToggle('off');
             }
+        
+         
            
             $('#myModal').modal('show');
         }
 
     });
 }
-
+//$('#hideManaul').bootstrapToggle('off');
 function inputValueId(b, VMSName, setPoint) {
 
 
@@ -1287,6 +1321,10 @@ function toggleCheckboxOnOffFlashvms() {
 
 
 }
+$('#hideManaul').bootstrapToggle({
+      on: 'Auto',
+      off: 'Manual'
+});
 
 function bright(value) {
     var sms = "";
@@ -1361,384 +1399,13 @@ function bright(value) {
         }
     });
 }
-$("#btnbrightnessAuto").click(function() {
 
-    bright(0);
-
-});
 $("#btnbrightnessManual").click(function() {
     var level = document.getElementById("levels2").value;
     bright(level);
 });
 
 
-$("#btnRefresh").click(function() {
-
-    var mybannerID = document.getElementById("bannerID").value;
-
-    var myRadio = $("input[type='radio'][name='radiobutton']:checked").val();
-
-    if (myRadio >= 1 && myRadio <= 4) {
-        if (myRadio == 1) {
-            var myRadioTextChild = ' ทดสอบการติดต่อป้าย';
-        }
-        if (myRadio == 2) {
-            var myRadioTextChild = ' ปรับเวลาจากศูนย์ควบคุม';
-        }
-        if (myRadio == 3) {
-            var myRadioTextChild = '  Restart เครื่องควบคุมป้าย';
-        }
-        if (myRadio == 4) {
-            var myRadioTextChild = ' สอบถามพื้นที่ของฮาร์ดดีส';
-        }
-        var myRadioText = 'ส่งคำสั่ง';
-    } else if (myRadio == 5) {
-        var myRadioText = 'เปิดระบบไฟฟ้า';
-        var myRadioTextChild = '';
-    } else if (myRadio == 6) {
-        var myRadioText = 'ปิดระบบไฟฟ้า';
-        var myRadioTextChild = '';
-    } else if (myRadio == 7) {
-        var myRadioText = 'เปิดพัดลมตู้ควบคุม';
-        var myRadioTextChild = '';
-    } else if (myRadio == 8) {
-        var myRadioText = 'ปิดพัดลมตู้ควบคุม';
-        var myRadioTextChild = '';
-    } else if (myRadio == 9) {
-        var myRadioText = 'เปิดไฟกระพริบ';
-        var myRadioTextChild = '';
-    } else if (myRadio == 10) {
-        var myRadioText = 'ปิดไฟกระพริบ';
-        var myRadioTextChild = '';
-    } else if (myRadio == 11 || myRadio == 12 || myRadio == 13 || myRadio == 14 || myRadio == 15 || myRadio ==
-        16 || myRadio == 17 || myRadio == 18 || myRadio == 19 || myRadio == 20 || myRadio == 21) {
-        if (myRadio == 11) {
-            var myRadioText = 'ความสว่างอัตโนมัติ';
-        } else {
-            var myRadioText = myRadio;
-        }
-        var myRadioTextChild = '';
-
-    } else {
-        var myRadioText = '';
-        var myRadioTextChild = '';
-    }
-
-    // document.getElementById('valueSetting'+mybannerID).innerHTML = myRadioText+myRadioTextChild;
-
-    $("input[type=radio][name=radiobutton]").prop('checked', false);
-    document.getElementById("tablinksCommand").className = "tablinks active";
-    document.getElementById("Command").style.display = "block";
-    $('#tablinksElectricalSystem').removeClass('tablinks active');
-    $('#tablinksFlashingLights').removeClass('tablinks active');
-    $('#tablinksBrightness').removeClass('tablinks active');
-    Swal.showLoading();
-    if (myRadio == 2) {
-
-        var vmscode = mybannerID;
-        var option = myRadio;
-        $.ajax({
-            type: "POST",
-            url: "lib/commandVMS.php",
-            data: {
-                'vmscode': vmscode,
-                'option': option,
-                'value': myRadio
-            },
-            success: function(result) {
-
-                if (result == "Success") {
-                    Swal.fire({
-                        title: "",
-                        text: "ส่งคำสั่งสำเร็จ",
-                        icon: "success",
-                        confirmButtonText: "ตกลง",
-
-                    }).then((result) => {
-
-                        if (result.isConfirmed) {
-
-                            window.location.href = 'consolbanner.php';
-                        }
-                    });
-                } else {
-                    Swal.fire({
-                        title: "",
-                        icon: "warning",
-                        text: "ไม่สามารถส่งคำสั่งได้",
-                        confirmButtonText: "ตกลง",
-
-                    }).then((result) => {
-
-                        if (result.isConfirmed) {
-
-                            window.location.href = 'consolbanner.php';
-                        }
-                    });
-                }
-            }
-        });
-    }
-
-    if (myRadio == 3) {
-        var vmscode = mybannerID;
-        var option = myRadio;
-        $.ajax({
-            type: "POST",
-            url: "lib/commandVMS.php",
-            data: {
-                'vmscode': vmscode,
-                'option': option,
-                'value': myRadio
-            },
-            success: function(result) {
-                if (result == "Success") {
-                    Swal.fire({
-                        title: "",
-                        text: "ส่งคำสั่งสำเร็จ",
-                        icon: "success",
-                        confirmButtonText: "ตกลง",
-
-                    }).then((result) => {
-
-                        if (result.isConfirmed) {
-
-                            window.location.href = 'consolbanner.php';
-                        }
-                    });
-                } else {
-                    Swal.fire({
-                        title: "",
-                        icon: "warning",
-                        text: "ไม่สามารถส่งคำสั่งได้",
-                        confirmButtonText: "ตกลง",
-
-                    }).then((result) => {
-
-                        if (result.isConfirmed) {
-
-                            window.location.href = 'consolbanner.php';
-                        }
-                    });
-                }
-            }
-        });
-    }
-
-
-    if (myRadio == 5 || myRadio == 6) { //เซ็ตระบบไฟป้าย
-        var vmscode = mybannerID;
-        var option = myRadio;
-        $.ajax({
-            type: "POST",
-            url: "lib/commandVMS.php",
-            data: {
-                'vmscode': vmscode,
-                'option': option,
-                'value': myRadio
-            },
-            success: function(result) {
-
-
-                if (result == "Success") {
-                    Swal.fire({
-                        title: "",
-                        text: "ส่งคำสั่งสำเร็จ",
-                        icon: "success",
-                        confirmButtonText: "ตกลง",
-
-                    }).then((result) => {
-
-                        if (result.isConfirmed) {
-
-                            window.location.href = 'consolbanner.php';
-                        }
-                    });
-                } else {
-                    Swal.fire({
-                        title: "",
-                        icon: "warning",
-                        text: "ไม่สามารถส่งคำสั่งได้",
-                        confirmButtonText: "ตกลง",
-
-                    }).then((result) => {
-
-                        if (result.isConfirmed) {
-
-                            window.location.href = 'consolbanner.php';
-                        }
-                    });
-                }
-
-
-            }
-        });
-    }
-
-    if (myRadio == 7 || myRadio == 8) {
-        var vmscode = mybannerID;
-        var option = myRadio;
-        $.ajax({
-            type: "POST",
-            url: "lib/commandVMS.php",
-            data: {
-                'vmscode': vmscode,
-                'option': option,
-                'value': myRadio
-            },
-            success: function(result) {
-                if (result == "Success") {
-                    Swal.fire({
-                        title: "",
-                        text: "ส่งคำสั่งสำเร็จ",
-                        icon: "success",
-                        confirmButtonText: "ตกลง",
-
-                    }).then((result) => {
-
-                        if (result.isConfirmed) {
-
-                            window.location.href = 'consolbanner.php';
-                        }
-                    });
-                } else {
-                    Swal.fire({
-                        title: "",
-                        icon: "warning",
-                        text: "ไม่สามารถส่งคำสั่งได้",
-                        confirmButtonText: "ตกลง",
-
-                    }).then((result) => {
-
-                        if (result.isConfirmed) {
-
-                            window.location.href = 'consolbanner.php';
-                        }
-                    });
-                }
-            }
-        });
-    }
-
-
-    if (myRadio == 9 || myRadio == 10) {
-        var vmscode = mybannerID;
-        var option = myRadio;
-        $.ajax({
-            type: "POST",
-            url: "lib/commandVMS.php",
-            data: {
-                'vmscode': vmscode,
-                'option': option,
-                'value': myRadio
-            },
-            success: function(result) {
-                if (result == "Success") {
-                    Swal.fire({
-                        title: "",
-                        text: "ส่งคำสั่งสำเร็จ",
-                        icon: "success",
-                        confirmButtonText: "ตกลง",
-
-                    }).then((result) => {
-
-                        if (result.isConfirmed) {
-
-                            window.location.href = 'consolbanner.php';
-                        }
-                    });
-                } else {
-                    Swal.fire({
-                        title: "",
-                        icon: "warning",
-                        text: "ไม่สามารถส่งคำสั่งได้",
-                        confirmButtonText: "ตกลง",
-
-                    }).then((result) => {
-
-                        if (result.isConfirmed) {
-
-                            window.location.href = 'consolbanner.php';
-                        }
-                    });
-                }
-            }
-        });
-    }
-    if (myRadio >= 11 && myRadio <= 21) {
-
-        var valueBrightness = 0;
-        if (myRadio == 11) {
-            valueBrightness = 0;
-        } else if (myRadio == 12) {
-            valueBrightness = 10;
-        } else if (myRadio == 13) {
-            valueBrightness = 20;
-        } else if (myRadio == 14) {
-            valueBrightness = 30;
-        } else if (myRadio == 15) {
-            valueBrightness = 40;
-        } else if (myRadio == 16) {
-            valueBrightness = 50;
-        } else if (myRadio == 17) {
-            valueBrightness = 60;
-        } else if (myRadio == 18) {
-            valueBrightness = 70;
-        } else if (myRadio == 19) {
-            valueBrightness = 80;
-        } else if (myRadio == 20) {
-            valueBrightness = 90;
-        } else if (myRadio == 21) {
-            valueBrightness = 100;
-        }
-
-        var vmscode = mybannerID;
-        var option = myRadio;
-        $.ajax({
-            type: "POST",
-            url: "lib/commandVMS.php",
-            data: {
-                'vmscode': vmscode,
-                'option': option,
-                'valueBrightness': valueBrightness
-            },
-            success: function(result) {
-                console.log(result);
-
-                if (result == "Success") {
-
-                    Swal.fire({
-                        title: "",
-                        text: "ส่งคำสั่งสำเร็จ",
-                        icon: "success",
-                        confirmButtonText: "ตกลง",
-
-                    }).then((result) => {
-
-                        if (result.isConfirmed) {
-
-                            window.location.href = 'consolbanner.php';
-                        }
-                    });
-                } else {
-                    Swal.fire({
-                        title: "",
-                        icon: "warning",
-                        text: "ไม่สามารถส่งคำสั่งได้",
-                        confirmButtonText: "ตกลง",
-
-                    }).then((result) => {
-
-                        if (result.isConfirmed) {
-
-                            window.location.href = 'consolbanner.php';
-                        }
-                    });
-                }
-            }
-        });
-    }
-});
 
 
 
@@ -1782,121 +1449,24 @@ $("#CheckboxOnOffFlashvms").change(function() {
 })
 </script>
 
-<!-- <script>
-
-  var checkBox = document.getElementById("flashingOnRadio");
-
-  $("#flashingOnRadio").click(function(){
-  if (checkBox.checked == true){
-    // $("#div1").fadeIn();
-    $("#gifimg-close").hide();
-    $("#gifimg").show();
-    // $("#div3").fadeIn(3000);
-  } else {
-    
-    // $("#div1").fadeIn();
-    $("#gifimg").hide();
-    $("#gifimg-close").show();
-    // $("#div3").fadeIn(3000);
-  }
-})
-
-</script> -->
 
 
-<!-- bulb function -->
-<!-- <script>
-    $("#levels").change(function(){
-    if($(this).val() == "12") {
-      $(".bulb").attr('id', 'bulb10'); 
-    } else if($(this).val() == "13") {
-        $(".bulb").attr('id', 'bulb20');
-    }else if($(this).val() == "14") {
-        $(".bulb").attr('id', 'bulb30');
-    }else if($(this).val() == "15") {
-        $(".bulb").attr('id', 'bulb40');
-    }else if($(this).val() == "16") {
-        $(".bulb").attr('id', 'bulb50');
-    }else if($(this).val() == "17") {
-        $(".bulb").attr('id', 'bulb60');
-    }else if($(this).val() == "18") {
-        $(".bulb").attr('id', 'bulb70');
-    }else if($(this).val() == "19") {
-        $(".bulb").attr('id', 'bulb80');
-    }else if($(this).val() == "20") {
-        $(".bulb").attr('id', 'bulb90');
-    }else if($(this).val() == "21") {
-        $(".bulb").attr('id', 'bulb100');
-    }else{
-        $(".bulb").attr('id', 'bulb5');
-    }
-    });
-    </script> -->
-
-
-<script>
-$(document).on('input change', '#levels2', function() {
-    /*
-    if ($(this).val() == "1") {
-        $(".bulb").attr('id', 'bulb10');
-    } else if ($(this).val() == "2") {
-        $(".bulb").attr('id', 'bulb20');
-    } else if ($(this).val() == "3") {
-        $(".bulb").attr('id', 'bulb30');
-    } else if ($(this).val() == "4") {
-        $(".bulb").attr('id', 'bulb40');
-    } else if ($(this).val() == "5") {
-        $(".bulb").attr('id', 'bulb50');
-    } else if ($(this).val() == "6") {
-        $(".bulb").attr('id', 'bulb60');
-    } else if ($(this).val() == "7") {
-        $(".bulb").attr('id', 'bulb70');
-    } else if ($(this).val() == "8") {
-        $(".bulb").attr('id', 'bulb80');
-    } else if ($(this).val() == "9") {
-        $(".bulb").attr('id', 'bulb90');
-    } else if ($(this).val() == "10") {
-        $(".bulb").attr('id', 'bulb100');
-    } else if ($(this).val() == "11") {
-        $(".bulb").attr('id', 'bulb100');
-    } else if ($(this).val() == "12") {
-        $(".bulb").attr('id', 'bulb100');
-    } else {
-        $(".bulb").attr('id', 'bulb5');
-    }*/
-});
-</script>
-
-<!-- <script>
-
-function hideManaul(){
-    if($("#hideManaul").prop('checked') == true){
-        $("#closeManaul").show()
-    }else{
-        $("#closeManaul").hide()
-    }
-}
-</script> -->
 
 <script>
 $("#btnhideM").click(function(){
     if($("#hideManaul").prop('checked') == true){
-    $('#hideManaul').bootstrapToggle('Auto')
+    //$('#hideManaul').bootstrapToggle('Auto')
+ 
     $("#closeManaul").show()
     }else{
-        $('#hideManaul').bootstrapToggle('Manual')
+        //$('#hideManaul').bootstrapToggle('Manual')
+        bright(0);
         $("#closeManaul").hide()
     }
 })
 </script>
 
 
-<!-- <script src="/speedway/dist/js/bootstrap5-toggle.jquery.min.js"></script>
-<script src="/speedway/dist/js/bootstrap5-toggle.jquery.js"></script> -->
-<!--
-<script src="/speedway/dist/js/bootstrap5-toggle.ecmas.min.js">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
--->
 
 </body>
 

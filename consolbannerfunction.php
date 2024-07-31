@@ -232,9 +232,10 @@ function GetSensorStatus($vmscode){
        $ST8=0;
        $ST9=0;
        $sql = "SELECT XVVmsCode, XISensorType, XIValue
-               FROM dbo.TMstMItmVMSStatus
+               FROM dbo.TMstMItmVMS_Status
                WHERE (XVVmsCode = '$vmscode')
               ORDER BY XISensorType";
+     
        $query =sqlsrv_query($conn, $sql);
        while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
        {
