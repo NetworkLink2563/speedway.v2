@@ -4,6 +4,15 @@ session_start();
 include 'header.php';
 include "permission.php";
 
+include "service/privilege.php";
+$menucode="001";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+
+
+
 if(checkmenu($user,'001')==0){
     session_destroy();
     header( "location: index.php" );
@@ -85,6 +94,11 @@ table td{
     transform: 5sec;
 }
 </style>
+
+
+
+
+
 <script>
      
 
@@ -312,11 +326,12 @@ table td{
         }
 </script>
 <div class="container" style="position: relative; top: 70;">
+    <?php    if($pri_r!=0){ ?>
 <div style="margin: 1rem; text-align: center; margin-bottom: 1rem; border-bottom: 3px double #cccc; padding: 1rem;">
             <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image">&nbsp;หน้าแดชบอร์ด
         </div>
-
-
+       
+  
         <div class="col-12 shadow" style="display: flex; flex-direction: row; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; justify-content: center;">
 
 
@@ -333,7 +348,11 @@ table td{
 
         </div>
 
+<?php
+if($pri_w!=0){
+   
 
+?>
         <div  class="config" style="text-align: center; margin-top: 1rem;">
             <table class="table table-striped table hover" id="config" style="margin-bottom: .5rem;">
             <tr style="text-align: center;">
@@ -355,21 +374,27 @@ table td{
             </tr>
             </table>
             <div id="btnconfig">
-            <button hidden style=" margin: 0rem 0rem 0rem 0rem; box-shadow: 3px 3px 3px #aaaaaa !important;"  type="button" class="btn btn-success btn-md">กดบันทึก</button>
+            <button hidden style="  margin: 0rem 0rem 0rem 0rem; box-shadow: 3px 3px 3px #aaaaaa !important;"  type="button" class="btn btn-success btn-md">กดบันทึก</button>
             <hr>
             </div>
         </div>
-
+   <?php } ?>
         <div style="" id="ShowData">
         
                     <?php
+                 
+                       
+               
                        include "dashboardshow.php";
+                  
                     ?>
 
         </div>
-  
+    
 
-
+ <?php }else{
+        echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';
+ } ?>
 </div>
 
 

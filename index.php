@@ -78,13 +78,15 @@ echo ThDate(); // แสดงวันที่
     $(document).ready(function() {
        $('#inputPassword').change(function() {
            var val = $(this).val();
+           var optionx = document.getElementById("XVShfCode").value;
            var userName = document.getElementById("username").value; //alert(userName);
            var datastring='load=0001'+ '&userName=' +userName;
-
            $.ajax({type:"POST", url:"service/login.php",
             data: datastring,cache:false,
             success:function(html){
-                 console.log(html);
+               // alert(html);
+                 var lcode=html.trim()
+                document.getElementById("XVShfCode").value = lcode;
             }
            })      
            })
@@ -154,7 +156,7 @@ echo ThDate(); // แสดงวันที่
     const togglePassword = document.querySelector('#togglePassword');
     const password = document.querySelector('#inputPassword');
 
-  togglePassword.addEventListener('click', function (e) {
+    togglePassword.addEventListener('click', function (e) {
     // toggle the type attribute
     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
     password.setAttribute('type', type);
@@ -421,6 +423,7 @@ echo ThDate(); // แสดงวันที่
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                           
                             <select id="XVShfCode" class="form-control">
+                                <option value="">เลือกกะทำงาน</option>
                                 <?php
                                         function twodigit($number){
             
@@ -439,7 +442,7 @@ echo ThDate(); // แสดงวันที่
                                      while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
                                      {
                                         $s=twodigit($result["XIShfStartHour"]).':'.twodigit($result["XIShfStartMin"]).'-'.twodigit($result["XIShfEndHour"]).':'.twodigit($result["XIShfEndMin"]);
-                                        echo  '<option value="'.$result["XVShfCode"].'">'.$result["XVShfName"].' เวลา '.$s.' น.</option>';
+                                        echo  '<option value="'.$result["XVShfCode"].'" >'.$result["XVShfName"].' เวลา '.$s.' น.</option>';
                                      }
                                 ?>
                            

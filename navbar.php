@@ -1,4 +1,5 @@
-        <link rel="icon" type="image/png" href="http://www.centrecities.com/speedway/img/favicon.png" />
+   
+   <link rel="icon" type="image/png" href="http://www.centrecities.com/speedway/img/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
 
 
 <style>
-
+ 
     .navbar{
         display: flex;
         background-color: #006eb4;
@@ -150,7 +151,8 @@ p {
         <!-- <p>(test3@test.com)<br>
         วันพฤหัส ที่ 11 เดือน กรกฏาคม พ.ศ. 2567<br>
         08:12:14</p> -->
-        <p><?php echo "ผู้ใช้งาน: ".$result['XVCstName'].$user."<br>".ThDate()." "."<br>"."เวลา: ".date("H:i:s"); ?></p>
+        <p><?php echo "ผู้ใช้งาน: ".$result['XVCstName'].$user."<br>".ThDate()." "."<br>"."เวลา: ".date("H:i:s"); ?>
+        <br><br><a style="color:white;" href="logout.php">ออกจากโปรแกรม</a></p>
         </div>
 </div>
 
@@ -161,103 +163,39 @@ p {
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-center align-item-center" id="navbarNavDarkDropdown">
+      <?php
+      $menu="SELECT * FROM  [NWL_SpeedWayTest2].[dbo].[TSysSMenu] WHERE  XVMnuheader ='item' ORDER BY XCMnuPriority";
+      $Qmenu=sqlsrv_query($conn, $menu);
+      while($q1=sqlsrv_fetch_array($Qmenu ,SQLSRV_FETCH_ASSOC)){ ?>
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
-          <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            หน้าหลัก
+        <button  class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <?php echo $q1['XVMnuName']; ?> 
           </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="dashboard.php">หน้าแรก</a></li>
-            <!-- <li><a class="dropdown-item" href="setting.php">การตั้งค่า</a></li> -->
-            <li><a class="dropdown-item" href="logout.php">ออกจากโปรแกรม</a></li>
-            <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+          <ul class="dropdown-menu dropdown-menu-dark"> 
+             <?php  if($q1['XVMnuLink']!=""){ ?>
+            <li><a class="dropdown-item" href="<?php echo $q1['XVMnuLink']; ?>"><?php echo $q1['XVMnuName']; ?></a></li> 
+            <?php }
+            $sub="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TSysSMenu] WHERE  XVMnuheader ='subitem' AND XVMnuGroup='".$q1['XVMnuCode']."' ORDER BY XCMnuPriority" ;
+            $qsub=sqlsrv_query($conn, $sub);
+            while($q2=sqlsrv_fetch_array($qsub ,SQLSRV_FETCH_ASSOC)){ ?>
+            <li><a class="dropdown-item" href="<?php echo $q2['XVMnuLink']; ?>"><?php echo $q2['XVMnuName']; ?></a></li>
+            <?php } ?>
           </ul>
+        
         </li>
-      </ul>
+      </ul> 
 
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          การควบคุม
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="consolbanner.php">การควบคุมป้าย</a></li>
-            <li><a class="dropdown-item" href="LabelWorkSchedule.php">ตารางการทำงานของป้าย</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <!-- <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          การแสดงข้อความ
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="mainMessage.php">จัดการข้อความหลัก</a></li>
-            <li><a class="dropdown-item" href="Schedulemessage.php">จัดตารางข้อความประชาสัมพันธ์</a></li>
-          </ul>
-        </li>
-      </ul> -->
-      
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          การแสดงข้อความประชาสัมพันธ์
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="message_wizard.php" style="text-decoration: underline;">>> คลิกดูตัวช่วยสร้างข้อความ <<</a></li>
-            <li><a class="dropdown-item" href="messagepublicrelations.php">1.สร้างข้อความพื้นฐาน</a></li>
-            <li><a class="dropdown-item" href="messagepublicrelationsframe.php">2.จัดรูปแบบข้อความ</a></li>
-            <li><a class="dropdown-item" href="messagepublicrelationsframegroup.php">3.ชุดข้อความ</a></li>
-            <li><a class="dropdown-item" href="messagepublicrelationsplay.php">4.ข้อความป้ายประชาสัมพันธ์</a></li>
-          </ul>
-        </li>
-      </ul>
-      
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          การแสดงข้อความสภาพจราจร
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-          <li><a class="dropdown-item" href="traffic_wizard.php" style="text-decoration: underline;">>> คลิกดูตัวช่วยสร้างข้อความจราจร <<</a></li>
-            <li><a class="dropdown-item" href="messagetraffics.php">1.สร้างข้อความสภาพการจราจรพื้นฐาน</a></li>
-            <li><a class="dropdown-item" href="messagetrafficsframe.php">2.สร้างข้อความสภาพการจราจรแสดงบนป้าย</a></li>
-            <li><a class="dropdown-item" href="messagetrafficsframegroup.php">3.สร้างชุดการแสดงป้ายจราจร</a></li>
-            <li><a class="dropdown-item" href="messagetrafficsplay.php">4.ข้อความป้ายจราจร</a></li>
-          </ul>
-        </li>
-      </ul>
-      
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            รายงาน
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="WorkReport.php">รายงานการปฏิบัติงาน</a></li>
-            <li><a class="dropdown-item" href="SchedulemessageReport.php">รายงานข้อความป้าย</a></li>
-            <li><a class="dropdown-item" href="VmsStatusReport.php">รายงานสถานะป้าย</a></li>
-    
-          </ul>
-        </li>
-      </ul>
-      
-      <ul class="navbar-nav" style="margin: 0;">
-        <li class="nav-item dropdown">
-          <button onclick="location.href='setting.php'" class="btn"  aria-expanded="false">การตั้งค่า</button>
-          <!-- <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="setting.php">การตั้งค่า</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul> -->
-        </li>
-      </ul>
-
+     <?php  }  ?>
       <div class="time-duration navbar-nav" style="border: none; text-align: center;  margin-left: .5rem; opacity: .8;font-size: 14px;">
         <span>เวลาเลิกงาน : </span>
       <span id="time" style="display: inline-block;padding: 0rem .5rem;width: 155px; text-align: left;font-size: 14px;"></span>
-      </div>
-
+    
+    
+  
+    
+    </div>
+      
 
     </div>
   </div>
