@@ -416,7 +416,7 @@ echo ThDate(); // แสดงวันที่
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                             <label for="inputPassword" class="sr-only">Password</label>
                             <input type="password" id="inputPassword" name="inputPassword" class="form-control" autocomplete="off" placeholder="Password" required>
-                            <i style="display: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 305px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
+                            <i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 305px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
                         </div>
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                           
