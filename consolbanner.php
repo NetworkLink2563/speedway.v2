@@ -354,7 +354,7 @@ table {
                             <div class="col-5" style="text-align: center; padding-left: 0;">
                                 <button style="padding: 1rem; width: 100%; background-color: #4976BA; border: none;"
                                     class="btn btn-success shadow fs-5"
-                                    id="btn_pcrestartpc">รีสตาทเครื่องคอมพิวเตอร์</button>
+                                    id="btn_pcrestartpc">รีสตาร์ทเครื่องคอมพิวเตอร์</button>
                             </div>
 
 
@@ -442,35 +442,61 @@ table {
 
                     <div id="Brightness" class="tabcontent"
                         style="display: none; background-color: rgb(248, 248, 248);">
-                        <div class="row" style="justify-content: center; align-items: center; margin: 1rem; ">
-                            <div class="col-3" style="text-align: center;">
+                        <div class="row" style="justify-content: center; align-items: center; margin: 1.5rem; ">
+
+                        <div class="col-12" style="text-align: center; margin: 1rem;">
+                        <div id="btnhideM" style="display: inline-block;">
+                                        <input type="checkbox" id="hideManaul" data-toggle="toggle"
+                                            data-onlabel="เปิด" data-offlabel="ปิด" data-onstyle="success"
+                                            data-offstyle="danger" data-width="120" data-height="40">
+                                    </div>
+                                    </div>
+                            <!-- <div class="col-3" style="text-align: center;">
                                 <button id="btnbrightnessAuto" class="btn btn-success fs-5 shadow"
                                     style="padding: .5rem; width: 80%;">Auto</button>
-                            </div>
-                            <div class="col-6"
-                                style="text-align: center; display:flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; border-left: 3px double #cccc;">
+                            </div> -->
 
-                                <div style="display: flex; justify-content:center; align-items: center;">
 
-                                    <div class="col-2">
+
+                            <div class="col-10" id="closeManaul" style="border-top: 2px double #cccc;">   <!-- ** -->
+                                    
+                            <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                                <div style="text-align: center; display:flex; flex-direction: column; align-items: center; justify-content: center; flex: 1">
+
+                                    
+
+                                <div class="col-3" style="margin-top: 1rem;">
+                                    <div style="display: flex;">
+
+                                        <div>
                                         <h5>Manual</h5>
-                                    </div>
+                                        </div>
 
-                                    <div class="col-1" style="text-align: center; padding: 0;">
-                                        <img style="width: 61%; position: relative; top: -3px;" class="bulb" id="bulb5"
-                                            src="img/brightness_ico.png" width="30" alt="">
-                                    </div>
+                                        <div>
+                                        <img style="width: 64%;" class="bulb" id="bulb5"
+                                        src="img/brightness_ico.png" width="30" alt="">
+                                        </div>
 
+                                        </div>
                                 </div>
+
+
+
                                 <input style="width: 100%;" id="levels2" class="slider" type="range" min="1" max="12"
                                     value="1" step="1" oninput="this.nextElementSibling.value = this.value">
                                 <output><span>1</span></output>
                                 <h6>ระดับไฟ</h6>
 
                                 <div class="col-4" style="text-align: center;">
-                                    <button id="btnbrightnessManual" class="btn btn-primary shadow"
+                                    <button id="btnbrightnessManual" class="btn btn-success shadow"
                                         style="margin: 1rem 0rem;width: 100%;">บันทีก</button>
                                 </div>
+
+                                </div>
+
+
+
+
 
                             </div>
 
@@ -1841,8 +1867,26 @@ $(document).on('input change', '#levels2', function() {
 });
 </script>
 
+<!-- <script>
 
+function hideManaul(){
+    if($("#hideManaul").prop('checked') == true){
+        $("#closeManaul").show()
+    }else{
+        $("#closeManaul").hide()
+    }
+}
+</script> -->
 
+<script>
+$("#btnhideM").click(function(){
+    if($("#hideManaul").prop('checked') == true){
+        $("#closeManaul").show()
+    }else{
+        $("#closeManaul").hide()
+    }
+})
+</script>
 
 
 <!-- <script src="/speedway/dist/js/bootstrap5-toggle.jquery.min.js"></script>
