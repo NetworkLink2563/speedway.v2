@@ -1466,7 +1466,37 @@ $("#btnhideM").click(function(){
 })
 </script>
 
-
+<script>
+    $(document).on('input change', '#levels2', function() {
+    if($(this).val() == "1") {
+      $(".bulb").attr('id', 'bulb10'); 
+    } else if($(this).val() == "2") {
+        $(".bulb").attr('id', 'bulb20');
+    }else if($(this).val() == "3") {
+        $(".bulb").attr('id', 'bulb30');
+    }else if($(this).val() == "4") {
+        $(".bulb").attr('id', 'bulb40');
+    }else if($(this).val() == "5") {
+        $(".bulb").attr('id', 'bulb50');
+    }else if($(this).val() == "6") {
+        $(".bulb").attr('id', 'bulb60');
+    }else if($(this).val() == "7") {
+        $(".bulb").attr('id', 'bulb70');
+    }else if($(this).val() == "8") {
+        $(".bulb").attr('id', 'bulb80');
+    }else if($(this).val() == "9") {
+        $(".bulb").attr('id', 'bulb90');
+    }else if($(this).val() == "10") {
+        $(".bulb").attr('id', 'bulb100');
+    }else if($(this).val() == "11") {
+        $(".bulb").attr('id', 'bulb100');
+    }else if($(this).val() == "12") {
+        $(".bulb").attr('id', 'bulb100');
+    }else{
+        $(".bulb").attr('id', 'bulb5');
+    }
+    });
+    </script>
 
 </body>
 
