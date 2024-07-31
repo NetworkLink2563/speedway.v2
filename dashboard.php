@@ -178,6 +178,12 @@ table td{
            $.ajax({type:"POST", url:"lib/insert_dashboard.php",
            data: datastring,cache:false,
            success:function(html){ }})  
+        }else if(val ==15){
+           showCellsById(['th_status15','C15VMS2403-0001','C15VMS2403-0002','C15VMS2403-0003','C15VMS2403-0004','C15VMS2403-0005']);
+           var datastring='load=0001'+ '&val=' +val + '&check='+check;
+           $.ajax({type:"POST", url:"lib/insert_dashboard.php",
+           data: datastring,cache:false,
+           success:function(html){ }})  
         }
 
     }else{
@@ -265,6 +271,12 @@ table td{
            $.ajax({type:"POST", url:"lib/insert_dashboard.php",
            data: datastring,cache:false,
            success:function(html){ }})  
+        }else if(val ==15){
+            hideCellsById(['th_status15','C15VMS2403-0001','C15VMS2403-0002','C15VMS2403-0003','C15VMS2403-0004','C15VMS2403-0005']);
+           var datastring='load=0001'+ '&val=' +val + '&check='+check;
+           $.ajax({type:"POST", url:"lib/insert_dashboard.php",
+           data: datastring,cache:false,
+           success:function(html){ }})  
         }
       
       
@@ -336,6 +348,7 @@ table td{
                 <th class="input-config"><div><input class="chkbox" value="9" type="checkbox" <?php $val9= row('9',$_SESSION['user']); if($val9==9){ echo 'checked'; } ?> aria-label="Checkbox for following text input"></div>พัดลมตู้</th>
                 <th class="input-config"><div><input class="chkbox" value="10" type="checkbox" <?php $val10= row('10',$_SESSION['user']); if($val10==10){ echo 'checked'; } ?> aria-label="Checkbox for following text input"></div>ไฟกระพริบ</th>
                 <th class="input-config"><div><input class="chkbox" value="11" type="checkbox" <?php $val11= row('11',$_SESSION['user']); if($val11==11){ echo 'checked'; } ?> aria-label="Checkbox for following text input"></div>โมดูลเสีย</th>
+                <th class="input-config"><div><input class="chkbox" value="15" type="checkbox" <?php $val11= row('15',$_SESSION['user']); if($val11==15){ echo 'checked'; } ?> aria-label="Checkbox for following text input"></div>ไฟฟ้าคอมพิวเตอร์</th>
                 <th class="input-config"><div><input class="chkbox" value="12" type="checkbox" <?php $val12= row('12',$_SESSION['user']); if($val12==12){ echo 'checked'; } ?> aria-label="Checkbox for following text input"></div>ประเภท</th>
                 <th class="input-config"><div><input class="chkbox" value="13" type="checkbox" <?php $val13= row('13',$_SESSION['user']); if($val13==13){ echo 'checked'; } ?> aria-label="Checkbox for following text input"></div>ข้อความ</th>
                 <th class="input-config"><div><input class="chkbox " value="14" type="checkbox" <?php $val14= row('14',$_SESSION['user']); if($val14==14){ echo 'checked'; } ?> aria-label="Checkbox for following text input"></div>Live</th>
@@ -451,7 +464,9 @@ function hideConfig(){
                $('#C7'+obj.XVVmsCode).text(obj.XIVmsBoardTemperature); 
                $('#C8'+obj.XVVmsCode).text(obj.XBVmsFanIsActive); 
                $('#C9'+obj.XVVmsCode).text(obj.XBVmsFanIsActive); 
-              // $('#C10'+obj.XVVmsCode).text(obj.XVVdtModuleNo); 
+               $('#C15'+obj.XVVmsCode).text(obj.XBVmscompIsActive); 
+               $('#C10'+obj.XVVmsCode).text(obj.XVVdtModuleNo); 
+               $('#C12'+obj.XVVmsCode).text(obj.XVMsgName); 
              
                if(obj.XVVmsCode==$("#XVVmsCode").val()){
                     if(obj.XVMsgCode!=""&&obj.XVMsgCode!=$("#XVMsgCode").val()){

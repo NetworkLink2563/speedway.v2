@@ -3,14 +3,9 @@ include 'header.php';
 include "lib/DatabaseManage.php";
 include "permission.php";
 
-if(checkmenu($user,'002')==0){
-    session_destroy();
-    header( "location: index.php" );
-    exit(0);
-}
-
-$XVUsrCode=base64_decode($_GET['p']);
-$usercode=$_GET['user'];
+if(checkmenu($user,'002')==0){ session_destroy();header( "location: index.php" );exit(0);};
+if (isset($_GET['p']) && $_GET['p'] !== ""){$XVUsrCode=base64_decode($_GET['p']);}else{ exit;}
+if (isset($_GET['user']) && $_GET['user'] !== ""){$usercode=$_GET['user'];}else{ exit;}
 function countrecord($XVUsrCode,$XVMnuCode){
     include "lib/DatabaseManage.php";
    

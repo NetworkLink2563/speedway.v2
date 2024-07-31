@@ -78,6 +78,12 @@ $l14="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCo
 $l14q= sqlsrv_query($conn, $l14);
 $l14qr = sqlsrv_fetch_array($l14q, SQLSRV_FETCH_ASSOC);
 if($l14qr['XIShowColumn']==14){ $tx14= 'style="display:"';}else{ $tx14='style="display:none"';}
+
+$l15="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '15'";
+$l15q= sqlsrv_query($conn, $l15);
+$l15qr = sqlsrv_fetch_array($l15q, SQLSRV_FETCH_ASSOC);
+if($l15qr['XIShowColumn']==14){ $tx15= 'style="display:"';}else{ $tx15='style="display:none"';}
+
 $data='<table class="table table-striped table-hover">
             <thead>
             <tr style="text-align: center;">
@@ -92,6 +98,7 @@ $data='<table class="table table-striped table-hover">
                 <th id="th_status9" '.$tx9.'  >พัดลมตู้</th>
                 <th id="th_status10" '.$tx10.'  >ไฟกระพริบ</th>
                 <th id="th_status11" '.$tx11.'  >โมดูลเสีย</th>
+                <th id="th_status15" '.$tx15.'  >ไฟฟ้าคอมพิวเตอร์</th>
                 <th id="th_status12" '.$tx12.'  >ประเภท</th>
                 <th id="th_status13" '.$tx13.' >ข้อความ</th>
                 <th id="th_status14" '.$tx14.'  >Live</th>
@@ -286,8 +293,9 @@ $data='<table class="table table-striped table-hover">
                 $data.='<td '.$tx9.'  id="C8'.$XVVmsCode.'"></td>';
                 $data.='<td '.$tx10.' id="C9'.$XVVmsCode.'"></td>';
                 $data.='<td '.$tx11.' id="C10'.$XVVmsCode.'"></td>';
+                $data.='<td '.$tx15.' id="C15'.$XVVmsCode.'"></td>';
                 $data.='<td '.$tx12.' id="C11'.$XVVmsCode.'">'. $VmsType.'</th>';
-                $data.='<td '.$tx13.' id="C12'.$XVVmsCode.'">test</td>';
+                $data.='<td '.$tx13.' id="C12'.$XVVmsCode.'"></td>';
                 $data.='<td '.$tx14.' id="chkl'.$i.'" ><i style="cursor: pointer;font-size: 2rem;cursor: pointer; padding: 0rem;" class="fa fa-play-circle" onclick="ShowSample(\''.$XVVmsCode.'\',\''.$resultSQL['XVVmsName'].'\',\''.$XVMsgCode.'\',\''.$resultSQL['XIMssWPixel'].'\',\''.$resultSQL['XIMssHPixel'].'\')"></i></td>';
                 $data.='</tr>';
                 $i++;  }
