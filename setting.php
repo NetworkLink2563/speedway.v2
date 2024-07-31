@@ -189,7 +189,7 @@ input .btnsearch{
                                 <td class="text-center"><?php echo $status; ?></td>
                                 
                                 
-                                <td><div style="margin-top: 5px;text-align: center"><a href="usermenu.php?p=<?php echo base64_encode($result['XVUsrCode']);?>" ><i class="fa fa-folder" aria-hidden="true" title="กำหนดสิทธิ์"></i></a></div>
+                                <td><div style="margin-top: 5px;text-align: center"><a href="usermenu.php?p=<?php echo base64_encode($result['XVUsrCode']);?>&user=<?php echo $result['XVUsrCode']; ?>" ><i class="fa fa-folder" aria-hidden="true" title="กำหนดสิทธิ์"></i></a></div>
                                 <td><div style="margin-top: 5px;text-align: center;"><a href="#" onclick="isactive('<?php echo $result['XVUsrCode']; ?>')"><i class="<?php echo $icon;?>" aria-hidden="true" title="เปลี่ยนสถานะ"></i></a></div>
                             </tr>
                             <?php } ?>

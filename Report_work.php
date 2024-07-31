@@ -4,12 +4,42 @@ date_default_timezone_set("Asia/Bangkok");
 include "lib/DatabaseManage.php";
 
 
-if(!isset($_GET['dtpc'])){$dptm='ALL';}else{$dptm=$_GET['dtpc'];}
-if(!isset($_GET['shift'])){$shift='ALL';}else{$shift=$_GET['shift'];}
-if(!isset($_GET['customer'])){$customer='ALL';}else{$customer=$_GET['customer'];}
+if(!isset($_GET['userid'])){$userid='ALL';}else{$userid=$_GET['userid'];}
 if(!isset($_GET['enddate'])){$enddate=date('Y-m-d');}else{$enddate=$_GET['enddate'];}
 if(!isset($_GET['strdate'])){$strdate=date('Y-m-01');}else{$strdate=$_GET['strdate'];}
+if(isset($_GET['page'])){$page=$_GET['page'];}else{$page=1;}
+if(isset($_GET['pagechk'])){$pagechk=$_GET['page'];}else{$pagechk=1;}
+/// timelogin table [NWL_SpeedWayTest2].[dbo].[TLogLogIn] : check range datetime   
+                  
 
+  $data=array();
+  $dstr = date('Y-m-d',strtotime($strdate));
+  $dend = date('Y-m-d', strtotime($enddate));
+ 
+  $x="SELECT count(*) as cp FROM [NWL_SpeedWayTest2].[dbo].[TLogLogIn] WHERE XVUsrCode ='$userid'AND
+  XTLogInTime   between CONVERT(datetime,'$dstr') AND CONVERT(datetime,'$dend 23:59:59:998') "; 
+  $xq=sqlsrv_query($conn,$x);
+  $xa=sqlsrv_fetch_array($xq, SQLSRV_FETCH_ASSOC);
+
+
+ 
+  
+
+  $countdata = $xa['cp'];
+  $perpage= 40 ;
+  $start_p = ($page-1)* $perpage;
+  $total_p = ceil($countdata/ $perpage);
+  $d=$perpage*1;
+  $s=$start_p*1;
+ // echo $d.'-'.$s; 
+
+  $tstm="SELECT  * FROM [NWL_SpeedWayTest2].[dbo].[TLogLogIn] WHERE XVUsrCode ='$userid'AND
+  XTLogInTime   between CONVERT(datetime,'$dstr') AND CONVERT(datetime,'$dend 23:59:59:998') ORDER BY XVUsrCode,XTLogInTime OFFSET $s ROWS FETCH NEXT  $d ROWS ONLY;"; 
+
+  $tstmq=sqlsrv_query($conn,$tstm);
+  while($tm=sqlsrv_fetch_array($tstmq, SQLSRV_FETCH_ASSOC)){
+    $data[]= date_format($tm['XTLogInTime'],"Y/m/d H:i:s");
+  }
 ?>
 
 <style>
@@ -36,9 +66,9 @@ page[size="A4"] {
   }
 }
 table, td, th {  
-  border: 1px solid #ddd;
+  border: 1px solid black;
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 table {
@@ -47,25 +77,62 @@ table {
 }
 
 th, td {
-  padding: 15px;
+  padding: 4px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+/* Links inside pagination */
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Add a background color on mouse-over */
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+/* Style for the active/current page */
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+/* Add a gray background color to the previous/next buttons 
+.pagination a:first-child, .pagination a:last-child {
+    background-color: #f1f1f1;
+    color: black;
+    border: 1px solid #ddd;
+}*/
+
+/* Add some space between the pagination container and content */
+.pagination + .content {
+    margin-top: 20px;
 }
 </style>
 
 <page size="A4">
 
-
-
 <table id="tableuser" class="table table-striped" style="width:100%">
         <thead>
+          <tr colspan="2">
+          <th>ชื่อผู้ใช้งาน : <b style="color:blue;"><?php echo $userid; ?></b>
+        </th>
+          </tr>
             <tr>
-                <th>No.</th>
-                <th>Username | ชื่อผูัใช้</th>
-                <th>Division | แผนก</th>
-                <th>Customer | ลูกค้า </th>
-                <th width="20%">Shift | กะเวลาทำงาน</th>
+            
                 <th width="30%">ประวัติเข้าใช้งานระบบ</th>
-   
-               
             </tr>
         </thead>
         <tbody>
@@ -74,14 +141,7 @@ th, td {
             $conditions = [];
             $params = [];
             $WHERE="";
-         if($dptm!='ALL'){ 
-            $conditions[] = "XVDptCode = '$dptm'";
-            $params['XVDptCode'] = $dptm;
-         }  // departmentid
-         if($shift!='ALL'){
-            $conditions[] = "XVShfCode = '$shift'";
-            $params['XVShfCode'] = $shift;
-           } // shiftid
+        
          if($customer!='ALL'){
             $conditions[] = "XVCstCode ='$customer'";
             $params['XVCstCode'] = $customer;
@@ -91,8 +151,8 @@ th, td {
             }
            
             $i=1;
-            $quser="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUser]  $WHERE";
-          //  echo $quser;
+            $quser="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUser] WHERE  XVUsrCode ='$userid'";
+          // echo $quser;
             $quser_=sqlsrv_query($conn,$quser);
            // echo sqlsrv_num_rows($quser_);
             while($arru=sqlsrv_fetch_array($quser_, SQLSRV_FETCH_ASSOC)){
@@ -119,48 +179,31 @@ th, td {
                     .str_pad($shf['XIShfEndHour'],2,"0",STR_PAD_LEFT).':'
                     .Str_pad($shf['XIShfEndMin'],2,"0",STR_PAD_LEFT).'&nbsp;]';
                     ?>
-            <tr>
-                <td><?php echo $i; ?></td>
-                <td><?php echo $arru['XVUsrName']; ?></td>
-                <td><?php echo $dpf['XVDptName']?:"-"; ?></td>
-                <td><?php echo $csf['XVCstName']?:"-"; ?></td>
-                <td><?php echo $shf['XVShfName'].'&nbsp;|&nbsp;'.$timeshf; ?>
-                  
-            </td>
+        
           <td>
-               <?php $tmc=Logtime($UCode,$strdate,$enddate); // function Logtime 
-               if(count($tmc)!=0){
-               foreach($tmc as $k){
-                  echo '<li>'.$k.'</li>';
-                 }  // end foreach
+               <?php  // function Logtime 
+               $io=1;
+               if(count($data)!=0){
+               foreach($data as $k){
+                  echo '<li style="padding:4px;">'.$k.'</li>';
+                
+                  $io++;}  // end foreach
                }else{
                 echo '<div style="color:red">ไม่พบประวัติเข้าใช้งานระบบ</div>';
                } // if check null array function
                ?>
 
             </td>
-         
-           
+          
             </tr>
           <?php $i++;} ?>
         </tfoot>
         
     </table>
   
-
-    <?php  /// timelogin table [NWL_SpeedWayTest2].[dbo].[TLogLogIn] : check range datetime   
-                  
-                  function Logtime($UCode,$strdate,$enddate){
-                  $data=array();
-                  $dstr = date('Y-m-d',strtotime($strdate));
-                  $dend = date('Y-m-d', strtotime($enddate));
-                  include "lib/DatabaseManage.php";
-                  $tstm="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TLogLogIn] WHERE XVUsrCode ='$UCode'AND
-                   XTLogInTime   between CONVERT(datetime,'$dstr') AND CONVERT(datetime,'$dend 23:59:59:998') "; 
-                  $tstmq=sqlsrv_query($conn,$tstm);
-                  while($tm=sqlsrv_fetch_array($tstmq, SQLSRV_FETCH_ASSOC)){
-                    $data[]= date_format($tm['XTLogInTime'],"Y/m/d H:i:s");
-                  }
-                      return $data;
-                  }
-  ?>
+    
+    <div class="pagination">
+  <?php for($p=1; $p<=$total_p;$p++){ ?>
+   <a href="Report_work.php?userid=<?php echo $userid; ?>&strdate=<?php echo $strdate; ?>&enddate=<?php echo $enddate;  ?>&page=<?php echo $p; ?>&pagechk=<?php echo $pagechk; ?>"><?php echo $p; ?></a>
+ <?php } ?>
+ </div>

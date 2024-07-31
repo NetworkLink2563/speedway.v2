@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Bangkok');
 include 'header.php';
 include "lib/DatabaseManage.php";
 include "permission.php";
@@ -17,6 +18,8 @@ if(!isset($_GET['vmschk'])){$vms='ALL';}else{$vms=$_GET['vmschk'];}
 if(!isset($_GET['enddate'])){$enddate=date('Y/m/d');}else{$enddate=$_GET['enddate'];}
 if(!isset($_GET['strdate'])){$strdate=date('Y-m-01');}else{$strdate=$_GET['strdate'];}
 if(!isset($_GET['TSysSCommand'])){$TSysSCommand='ALL';}else{$TSysSCommand=$_GET['TSysSCommand'];}
+if(isset($_GET['page'])){$page=$_GET['page'];}else{$page=1;}
+if(isset($_GET['pagechk'])){$pagechk=$_GET['page'];}else{$pagechk=1;}
 
 ?>
 
@@ -359,61 +362,11 @@ while($arr=sqlsrv_fetch_array($uq, SQLSRV_FETCH_ASSOC)){ ?>
             <div class="flex-container">
                 <div class="col-6" style="display: flex; align-items: center; justify-content: center;  flex-direction: column; font-size: 1.2rem;">
 
-                       <!--- <div class="col-6" style="text-align: center;">
-                        <label class="" style="font-size: 1.5rem;" for="vms">เลือกป้าย</label>
-                        </div>
-
-                        <div class="col-6 " style="text-align: center;">
-                        <select class="form-select form-select-md" id="vms" style="text-align: center;">
-                           <?php
-                            //  $sql='SELECT XVVmsCode, XVVmsName FROM TMstMItmVMS order by XVVmsCode';
-                           //   $query = sqlsrv_query($conn, $sql);
-                            //  echo '<option value="0" selected>ทั้งหมด</option>';
-                             // while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)){
-                              //    echo '<option value="'.$row['XVVmsCode'].'">'.$row['XVVmsName'].'</option>';
-                             // }
-                           ?>
-                           
-                          
-                        </select>
-                        </div>
-
-                            </div>
-
-
-
-                        <div class="col " style="">
-
-                        <div class="flex-btn">
-                        <div class="col-2">
-                        <button type="button"  onclick="ShowData()" class="btn btn-primary" style="padding: .5rem; width: 100%; background-color: #006eb4; box-shadow: 3px 3px 3px #aaaaaa !important; font-size: 1rem;"><i style="width: 13%;" class="fa fa-search" aria-hidden="true"></i>ค้นหา</button>
-                        </div>
-
-                        <div class="col-2">
-                        <button  class="btn btn-success" style="padding: .5rem; width: 100%; box-shadow: 3px 3px 3px #aaaaaa !important; font-size: 1rem;"
-                        onclick="PrintReport()"><i  style="width: 17%;"class="fa fa-print" aria-hidden="true"></i>พิมพ์รายงาน</button>
-                        </div>
-
-                        </div>
-                    </div> 
-                </div>-->
+              
     </div>
-    
-   <!-- <div id="myModalOpen" class="modal" id="myModal" role="dialog" >
-        <div class="modal-fullscreen">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 id="Example_Title" class="modal-title">รายงานระดับความสว่าง</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body text-center">
-                    <div class="iframe-container">
-                        <iframe id="iframe_modal" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  -->
+    <br>
+    <div style="padding-left:76%"><a href="Report_status.php?vmschk=<?php echo $vms; ?>&strdate=<?php echo $strdate; ?>&enddate=<?php echo $enddate;  ?>&TSysSCommand=<?php echo $TSysSCommand; ?>" target="_blank" title="พิมพ์รายงาน"><i style="width: 17%; color:black" class="fa fa-print" aria-hidden="true"></i></a>
+    </div>
 
     </div>
     
@@ -439,31 +392,30 @@ $dend = date('Y-m-d', strtotime($enddate));
 }
              $i=1;
              $data = array();
-             $dtcomm="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TLogLVmsAction] WHERE  XVLctTime  between CONVERT(datetime,'$dstr') AND CONVERT(datetime,'$dend 23:59:59:998')  $WHERE1";
-           //  echo  $dtcomm;
+
+             $dtcomm="SELECT XVVmsCode,XVLctTime,XVLctType,XVLctValue2 FROM [NWL_SpeedWayTest2].[dbo].[TLogLVmsAction] WHERE  XVLctTime  between CONVERT(datetime,'$dstr') AND CONVERT(datetime,'$dend 23:59:59:998')  $WHERE1  ";
              $dtqcom=sqlsrv_query($conn,$dtcomm);
           
              while($dtarr=sqlsrv_fetch_array($dtqcom,SQLSRV_FETCH_ASSOC)){
-                
-                if ( empty($data[$dtarr['XVVmsCode'] ]) ) { $data[$dtar['XVVmsCode'] ] = array();}
+                $j= $dtarr['XVLctValue2'].' /  '.$dtarr['XVLctTime']->format('Y-m-d H:i:s');
+                if ( empty($data[$dtarr['XVVmsCode'] ]) ) { 
+                    $data[$dtar['XVVmsCode'] ] = array();
+                }
                 if ( empty( $data[$dtarr['XVVmsCode'] ][$dtarr['XVLctType'] ] ) ) 
                 {
                     $data[$dtarr['XVVmsCode'] ][$dtarr['XVLctType'] ] = array();
                 }
-                $data[$dtarr['XVVmsCode'] ][$dtarr['XVLctType'] ][] = $dtarr['XVLctValue2'];
-                    
-             }   
-             //else{
+             
+                $data[$dtarr['XVVmsCode'] ][$dtarr['XVLctType'] ][] = $j;
+ 
 
-             //   echo '<div style="padding-left:4%" >ชื่อป้าย &nbsp;<b style="color:blue">ไม่พบข้อมูล</b></div><br/>';
-              //  echo '<div style="padding-left:5%" >คำสั่ง &nbsp;<b style="color:blue">ไม่พบข้อมูล</b></div><br/>';
-               // echo '<div style="padding-left:10%" ><li>ไม่พบข้อมูล</li></div><br/><hr><br>';
-        
-             //   exit;
-           //  } ?>
+             }   
+             ?>
   <?php  
      $totalSum = 0;
+     $r = 0;
      foreach ( $data as $XVVmsCode => $v ) { 
+
      $r ="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMItmVMS] WHERE XVVmsCode='$XVVmsCode' ";
      $dr=sqlsrv_query($conn,$r);
      $dt_=sqlsrv_fetch_array($dr,SQLSRV_FETCH_ASSOC);
@@ -472,21 +424,25 @@ $dend = date('Y-m-d', strtotime($enddate));
      echo '<div style="padding-left:4%" >ชื่อป้าย &nbsp;<b style="color:blue">' .$dt_['XVVmsName'] . '</b></div><br/>';
      }
      $totalSum++;
-     $totalCountry = 0;
+    
     foreach ( $v as $k => $t ) {
+   
+        $count=count($t);
         $sum = array_sum($t);
-
         $y ="SELECT *  FROM [NWL_SpeedWayTest2].[dbo].[TSysSCommand] WHERE XVCmdCode='$k' ";
         $y1=sqlsrv_query($conn,$y);
         $y1_=sqlsrv_fetch_array($y1,SQLSRV_FETCH_ASSOC);
         echo '<div style="padding-left:5%" >คำสั่ง &nbsp;<b style="color:blue">' . $y1_['XVCmdName'] . '</b></div><br/>';
         echo '<div style="padding-left:10%">';
-        $dt= implode('<li>', $t);
+        $array = array_slice($t, 0, 5);
+        $dt= implode('<li>', $array);
         echo  '<li>'.$dt;
         echo '</div><hr><br>';
-
-        $totalCountry += $sum;
-  } }
+        echo $h;
+        $count++;
+        $r += $sum;
+  } 
+}
 
 
   ?>

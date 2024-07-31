@@ -238,7 +238,7 @@ p {
             <li><a class="dropdown-item" href="WorkReport.php">รายงานการปฏิบัติงาน</a></li>
             <li><a class="dropdown-item" href="SchedulemessageReport.php">รายงานข้อความป้าย</a></li>
             <li><a class="dropdown-item" href="VmsStatusReport.php">รายงานสถานะป้าย</a></li>
-            <li><a class="dropdown-item" href="LigthReport.php">รายงานระดับความสว่าง</a></li>
+    
           </ul>
         </li>
       </ul>

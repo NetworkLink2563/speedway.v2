@@ -45,7 +45,7 @@ if(!isset($_GET['strdate'])){$strdate=date('Y-m-01');}else{$strdate=$_GET['strda
     <script>
 
 $(document).ready(function() {
-new DataTable('#tableuser', {
+new DataTable('#tabuser', {
                 ordering: false,
                 "oLanguage": {
                     "sSearch": "กรอกข้อความที่ต้องการค้นหา"
@@ -348,15 +348,18 @@ new DataTable('#tableuser', {
         opacity: 0.8;
         transition: 0.5s;
     }
-    </style>
+    th{
+   font-size: 14px;;
+}
 
+    </style>
 
 <div class="container" style="position: relative; top: 75;">
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
 
         </div>
 <div class=" shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
-            <a class="tablinks2 active " style="cursor: context-menu;"> <img src="http://43.229.151.103/speedway/img/icon/computer.png" height="25" alt="Responsive image">ายงานการปฏิบัติงาน</a>
+            <a class="tablinks2 active " style="cursor: context-menu;"> <img src="http://43.229.151.103/speedway/img/icon/computer.png" height="25" alt="Responsive image">รายงานการปฏิบัติงาน</a>
         </div>
 
 
@@ -365,7 +368,7 @@ new DataTable('#tableuser', {
                         <form class="form-inline " action=""> 
                         <form method="get" encrypted="multipart/form-data">
 <div class="input-group mb-3">
-<span class="input-group-text" id="basic-addon3">ช่วงเวลาทำงาน <i style="width: 25%; text-align: left; margin-left: .3rem;" class="fa"></i></span>
+<span class="input-group-text" id="basic-addon3">ช่วงเวลาเข้าใช้งานระบบ <i style="width: 25%; text-align: left; margin-left: .3rem;" class="fa"></i></span>
 <input width="5%" type="text" class="datetimepicker form-control" value="<?php echo $strdate;?>" placeholder="วันที่เริ่ม" id="strdate" name="strdate" aria-describedby="basic-addon3">
 <input width="5%" type="text" class="datetimepicker form-control" value="<?php echo $enddate;?>"  placeholder="วันที่จบ" id="enddate"  name="enddate" aria-describedby="basic-addon3">&nbsp;
 
@@ -412,9 +415,9 @@ new DataTable('#tableuser', {
                         </form>
                     </div>
                 </div>
-                <div style="text-align:right";><a href="Report_work.php?shift=<?php echo $shift; ?>&customer=<?php echo $customer; ?>&dtpc=<?php echo $dptm; ?>&strdate=<?php echo $strdate; ?>&enddate=<?php echo $enddate;  ?>&creat_user=<?php echo $creat_user; ?>" target="_blank" title="พิมพ์รายงาน"><i style="width: 17%; color:black" class="fa fa-print" aria-hidden="true"></i></a>
+                <div hidden style="text-align:right";><a href="Report_work.php?shift=<?php echo $shift; ?>&customer=<?php echo $customer; ?>&dtpc=<?php echo $dptm; ?>&strdate=<?php echo $strdate; ?>&enddate=<?php echo $enddate;  ?>&creat_user=<?php echo $creat_user; ?>" target="_blank" title="พิมพ์รายงาน"><i style="width: 17%; color:black" class="fa fa-print" aria-hidden="true"></i></a>
                 </div>
-              <table id="tableuser" class="table table-striped" style="width:100%">
+              <table id="tabuser" class="table table-bordered" style="width:100%">
         <thead>
             <tr>
                 <th>No.</th>
@@ -422,8 +425,8 @@ new DataTable('#tableuser', {
                 <th>Division | แผนก</th>
                 <th>Customer | ลูกค้า </th>
                 <th width="20%">Shift | กะเวลาทำงาน</th>
-                <th width="30%">ประวัติเข้าใช้งานระบบ</th>
-   
+                <th width="30%" style="text-align: center;">ประวัติเข้าใช้งานระบบ</th>
+                <th  style="text-align: center;">เครื่องมือ</th>
                
             </tr>
         </thead>
@@ -483,22 +486,36 @@ new DataTable('#tableuser', {
                 <td><?php echo $arru['XVUsrName']; ?></td>
                 <td><?php echo $dpf['XVDptName']?:"-"; ?></td>
                 <td><?php echo $csf['XVCstName']?:"-"; ?></td>
-                <td><?php echo $shf['XVShfName'].'&nbsp;|&nbsp;'.$timeshf; ?>
-                  
-            </td>
-          <td>
-               <?php $tmc=Logtime($UCode,$strdate,$enddate); // function Logtime 
+                <td ><?php echo $shf['XVShfName'].'&nbsp;|&nbsp;'.$timeshf; ?> </td>
+          <td  style="text-align: center;">  
+
+          <?php $tmc=Logtime($UCode,$strdate,$enddate); // function Logtime 
                if(count($tmc)!=0){
                foreach($tmc as $k){
-                  echo '<li>'.$k.'</li>';
+                  echo '<code>'.$k.'</code><br>';
                  }  // end foreach
                }else{
-                echo '<div style="color:red">ไม่พบประวัติเข้าใช้งานระบบ</div>';
+                echo "<div style='color:red;'>ไม่พบประวัติเข้าใช้งานระบบ<div>";
+            
                } // if check null array function
                ?>
-
+          </td>
+            
+          <td  style="text-align: center;">
+            <div>
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle bi bi-three-dots-vertical" 
+        href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        
+          </a>
+           <ul style="background-color: white;" class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+               <li><a class="dropdown-item" href="Report_work.php?userid=<?php echo $UCode; ?>&strdate=<?php echo $strdate; ?>&enddate=<?php echo $enddate;  ?>&creat_user=<?php echo $creat_user; ?>" target="_blank" title="พิมพ์รายงาน">เรียกดูรายงาน</a></li>
+               <li><hr class="dropdown-divider"></li>
+              
+            </ul>
+         </li>
+         </div>
             </td>
-         
            
             </tr>
           <?php $i++;} ?>
@@ -548,7 +565,7 @@ new DataTable('#tableuser', {
                   $dstr = date('Y-m-d',strtotime($strdate));
                   $dend = date('Y-m-d', strtotime($enddate));
                   include "lib/DatabaseManage.php";
-                  $tstm="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TLogLogIn] WHERE XVUsrCode ='$UCode'AND
+                  $tstm="SELECT  * FROM [NWL_SpeedWayTest2].[dbo].[TLogLogIn] WHERE XVUsrCode ='$UCode'AND
                    XTLogInTime   between CONVERT(datetime,'$dstr') AND CONVERT(datetime,'$dend 23:59:59:998') "; 
                   $tstmq=sqlsrv_query($conn,$tstm);
                   while($tm=sqlsrv_fetch_array($tstmq, SQLSRV_FETCH_ASSOC)){

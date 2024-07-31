@@ -64,6 +64,111 @@ echo ThDate(); // แสดงวันที่
 
     <!-- Custom styles for this template -->
     <link href="dist/css/starter-template.css" rel="stylesheet">
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="dist/js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+       $('#inputPassword').change(function() {
+           var val = $(this).val();
+           var userName = document.getElementById("username").value; //alert(userName);
+           var datastring='load=0001'+ '&userName=' +userName;
+
+           $.ajax({type:"POST", url:"service/login.php",
+            data: datastring,cache:false,
+            success:function(html){
+                 console.log(html);
+            }
+           })      
+           })
+        });
+
+    $("#inputPassword").keyup(function(event) {
+        if (event.keyCode === 13) {
+            $("#myButton").click();
+        }
+    });
+    $("#username").keyup(function(event) {
+        if (event.keyCode === 13) {
+            $("#myButton").click();
+        }
+    });
+
+    function loginSystem() {
+        var userName = document.getElementById("username").value;
+        var passWord = document.getElementById("inputPassword").value;
+        var hashEncode= 'd56b699830e77ba53855679cb1d252da';
+        var XVShfCode=document.getElementById("XVShfCode").value;
+        $.ajax({
+            type: "POST",
+            url: "lib/processLogin.php",
+            data: {'XVShfCode':XVShfCode,'username': userName,'password':passWord,'encode':hashEncode},
+            success: function(result) {
+              
+                if(result=='True'){
+                    window.location.href = 'dashboard.php';
+                }else if(result=='False'){
+                    document.getElementById('resultDiv').style.display = 'none';
+                    document.getElementById("username").value='';
+                    document.getElementById("inputPassword").value='';
+                    
+                }
+                   
+            }
+        });
+    }
+
+
+    const validateEmail = (email) => {
+        return email.match(
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    };
+
+    const validate = () => {
+        const $result = $('#result');
+        const email = $('#username').val();
+        $result.text('');
+
+        if(validateEmail(email)){
+            $result.text(email + ' is valid.');
+            $result.css('color', 'green');
+        } else{
+            $result.text(email + ' is invalid.');
+            $result.css('color', 'red');
+        }
+        return false;
+    }
+
+    $('#username').on('input', validate);
+</script>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#inputPassword');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash'); 
+});
+
+
+</script>
+
+
+
+
+
     <style>
         body {
             background: #e1f0fa;
@@ -370,88 +475,6 @@ echo ThDate(); // แสดงวันที่
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="dist/js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="dist/js/popper.min.js"></script>
-<script src="dist/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-    
-    $("#inputPassword").keyup(function(event) {
-        if (event.keyCode === 13) {
-            $("#myButton").click();
-        }
-    });
-    $("#username").keyup(function(event) {
-        if (event.keyCode === 13) {
-            $("#myButton").click();
-        }
-    });
-
-    function loginSystem() {
-        var userName = document.getElementById("username").value;
-        var passWord = document.getElementById("inputPassword").value;
-        var hashEncode= 'd56b699830e77ba53855679cb1d252da';
-        var XVShfCode=document.getElementById("XVShfCode").value;
-        $.ajax({
-            type: "POST",
-            url: "lib/processLogin.php",
-            data: {'XVShfCode':XVShfCode,'username': userName,'password':passWord,'encode':hashEncode},
-            success: function(result) {
-              
-                if(result=='True'){
-                 
-                    window.location.href = 'dashboard.php';
-                }else if(result=='False'){
-                    document.getElementById('resultDiv').style.display = 'none';
-                    document.getElementById("username").value='';
-                    document.getElementById("inputPassword").value='';
-                    
-                }
-                   
-            }
-        });
-    }
-
-
-    const validateEmail = (email) => {
-        return email.match(
-            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        );
-    };
-
-    const validate = () => {
-        const $result = $('#result');
-        const email = $('#username').val();
-        $result.text('');
-
-        if(validateEmail(email)){
-            $result.text(email + ' is valid.');
-            $result.css('color', 'green');
-        } else{
-            $result.text(email + ' is invalid.');
-            $result.css('color', 'red');
-        }
-        return false;
-    }
-
-    $('#username').on('input', validate);
-</script>
-
-<script>
-    const togglePassword = document.querySelector('#togglePassword');
-  const password = document.querySelector('#inputPassword');
-
-  togglePassword.addEventListener('click', function (e) {
-    // toggle the type attribute
-    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-    password.setAttribute('type', type);
-    // toggle the eye slash icon
-    this.classList.toggle('fa-eye-slash'); 
-});
-</script>
 
 </body>
 </html>

@@ -8,24 +8,93 @@ session_start();
 
 
 include "lib/DatabaseManage.php";
+$hidtr="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '1'";
+$lh= sqlsrv_query($conn, $hidtr);
+$dt = sqlsrv_fetch_array($lh, SQLSRV_FETCH_ASSOC);
+if($dt['XIShowColumn']==1){ $tx1= 'style="display:"';}else{ $tx1= 'style="display:none"';}
 
+$l1="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '2'";
+$l1q= sqlsrv_query($conn, $l1);
+$l2qr = sqlsrv_fetch_array($l1q, SQLSRV_FETCH_ASSOC);
+if($l2qr['XIShowColumn']==2){ $tx2= 'style="display:"';}else{ $tx2= 'style="display:none"';}
+
+
+$l3="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '3'";
+$l3q= sqlsrv_query($conn, $l3);
+$l3qr = sqlsrv_fetch_array($l3q, SQLSRV_FETCH_ASSOC);
+if($l3qr['XIShowColumn']==3){ $tx3= 'style="display:"';}else{ $tx3= 'style="display:none"';}
+
+$l4="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '4'";
+$l4q= sqlsrv_query($conn, $l4);
+$l4qr = sqlsrv_fetch_array($l4q, SQLSRV_FETCH_ASSOC);
+if($l4qr['XIShowColumn']==4){ $tx4= 'style="display:"';}else{ $tx4='style="display:none"';}
+
+$l5="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '5'";
+$l5q= sqlsrv_query($conn, $l5);
+$l5qr = sqlsrv_fetch_array($l5q, SQLSRV_FETCH_ASSOC);
+if($l5qr['XIShowColumn']==5){ $tx5= 'style="display:"';}else{ $tx5='style="display:none"';}
+
+$l6="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '6'";
+$l6q= sqlsrv_query($conn, $l6);
+$l6qr = sqlsrv_fetch_array($l6q, SQLSRV_FETCH_ASSOC);
+if($l6qr['XIShowColumn']==6){ $tx6= 'style="display:"';}else{ $tx6='style="display:none"';}
+
+$l7="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '7'";
+$l7q= sqlsrv_query($conn, $l7);
+$l7qr = sqlsrv_fetch_array($l7q, SQLSRV_FETCH_ASSOC);
+if($l7qr['XIShowColumn']==7){ $tx7= 'style="display:"';}else{ $tx7= 'style="display:none"';}
+
+$l8="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '8'";
+$l8q= sqlsrv_query($conn, $l8);
+$l8qr = sqlsrv_fetch_array($l8q, SQLSRV_FETCH_ASSOC);
+if($l8qr['XIShowColumn']==8){ $tx8= 'style="display:"';}else{ $tx8='style="display:none"';}
+
+$l9="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '9'";
+$l9q= sqlsrv_query($conn, $l9);
+$l9qr = sqlsrv_fetch_array($l9q, SQLSRV_FETCH_ASSOC);
+if($l9qr['XIShowColumn']==9){ $tx9= 'style="display:"';}else{ $tx9='style="display:none"';}
+
+$l10="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '10'";
+$l10q= sqlsrv_query($conn, $l10);
+$l10qr = sqlsrv_fetch_array($l10q, SQLSRV_FETCH_ASSOC);
+if($l10qr['XIShowColumn']==10){ $tx10= 'style="display:"';}else{ $tx10='style="display:none"';}
+
+$l11="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '11'";
+$l11q= sqlsrv_query($conn, $l11);
+$l11qr = sqlsrv_fetch_array($l11q, SQLSRV_FETCH_ASSOC);
+if($l11qr['XIShowColumn']==11){ $tx11= 'style="display:"';}else{ $tx11='style="display:none"';}
+
+$l12="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '12'";
+$l12q= sqlsrv_query($conn, $l12);
+$l12qr = sqlsrv_fetch_array($l12q, SQLSRV_FETCH_ASSOC);
+if($l12qr['XIShowColumn']==12){ $tx12= 'style="display:"';}else{ $tx12='style="display:none"';}
+
+$l13="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '13'";
+$l13q= sqlsrv_query($conn, $l13);
+$l13qr = sqlsrv_fetch_array($l13q, SQLSRV_FETCH_ASSOC);
+if($l13qr['XIShowColumn']==13){ $tx13= 'style="display:"';}else{ $tx13='style="display:none"';}
+
+$l14="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUserDashboard] WHERE XVUsrCode='".$_SESSION['user']."' AND XIShowColumn = '14'";
+$l14q= sqlsrv_query($conn, $l14);
+$l14qr = sqlsrv_fetch_array($l14q, SQLSRV_FETCH_ASSOC);
+if($l14qr['XIShowColumn']==14){ $tx14= 'style="display:"';}else{ $tx14='style="display:none"';}
 $data='<table class="table table-striped table-hover">
             <thead>
             <tr style="text-align: center;">
-                <th>สถานะ</th>
-                <th>แบบป้าย</th>
-                <th>ป้าย</th>
-                <th>ไฟฟ้า</th>
-                <th>แสดงผล</th>
-                <th>ความสว่าง</th>
-                <th>อุณหภูมิตู้</th>
-                <th>อุณหภูมิป้าย</th>
-                <th>พัดลมตู้</th>
-                <th>ไฟกระพริบ</th>
-                <th>โมดูลเสีย</th>
-                <th>ประเภท</th>
-                <th>ข้อความ</th>
-                <th>Live</th>
+                <th id="th_status1" '.$tx1.' >สถานะ</th>
+                <th id="th_status2"  '.$tx2.' >แบบป้าย</th>
+                <th id="th_status3" '.$tx3.'  >ป้าย</th>
+                <th id="th_status4" '.$tx4.'   >ไฟฟ้า</th>
+                <th id="th_status5" '.$tx5.'  >แสดงผล</th>
+                <th id="th_status6" '.$tx6.'  >ความสว่าง</th>
+                <th id="th_status7" '.$tx7.'  >อุณหภูมิตู้</th>
+                <th id="th_status8" '.$tx8.'  >อุณหภูมิป้าย</th>
+                <th id="th_status9" '.$tx9.'  >พัดลมตู้</th>
+                <th id="th_status10" '.$tx10.'  >ไฟกระพริบ</th>
+                <th id="th_status11" '.$tx11.'  >โมดูลเสีย</th>
+                <th id="th_status12" '.$tx12.'  >ประเภท</th>
+                <th id="th_status13" '.$tx13.' >ข้อความ</th>
+                <th id="th_status14" '.$tx14.'  >Live</th>
             </tr>
             </thead>
             ';
@@ -43,6 +112,7 @@ $data='<table class="table table-striped table-hover">
             WHERE        (dbo.TMstMUser.XVUsrCode = '".$_SESSION['user']."')";
             $querySQL = sqlsrv_query($conn, $firstSQL);
             $vmscodearray="";
+            $i=1;
             while($resultSQL = sqlsrv_fetch_array($querySQL, SQLSRV_FETCH_ASSOC))
             {
                 
@@ -197,31 +267,30 @@ $data='<table class="table table-striped table-hover">
                 }
 
                 if($isActive!='False'){
-                    $falseModuleShow=$falseModule;
+                    $falseModuleShow=$falseModule; 
                 }
                 if($isActive!='False'){
                     $VmsType=$resultSQL['XVVmsType'];
                 }
               
-                
-              
+             
                 $data.='<tr style="text-align: center;">';
-                $data.='<td><i id="C0'.$XVVmsCode.'"class="fa fa-cloud"aria-hidden="true"></i></td>';
-                $data.='<td id="C1'.$XVVmsCode.'"">ป้าย '.$resultSQL['XIMssWPixel'].'x'.$resultSQL['XIMssHPixel'].' PX'.'</td>';
-                $data.='<td id="C2'.$XVVmsCode.'">'.$resultSQL['XVVmsName'].'</td>';
-                $data.='<td id="C3'.$XVVmsCode.'">test</td>';
-                $data.='<td id="C4'.$XVVmsCode.'">test</td>';
-                $data.='<td id="C5'.$XVVmsCode.'">test</td>';
-                $data.='<td id="C6'.$XVVmsCode.'">test</td>';
-                $data.='<td id="C7'.$XVVmsCode.'">test</td>';
-                $data.='<td id="C8'.$XVVmsCode.'">test</td>';
-                $data.='<td id="C9'.$XVVmsCode.'">test</td>';
-                $data.='<td id="C10'.$XVVmsCode.'">test</td>';
-                $data.='<td id="C11'.$XVVmsCode.'">'. $VmsType.'</th>';
-                $data.='<td id="C12'.$XVVmsCode.'">test</td>';
-                $data.='<td ><i style="cursor: pointer;font-size: 2rem;cursor: pointer; padding: 0rem;" class="fa fa-play-circle" onclick="ShowSample(\''.$XVVmsCode.'\',\''.$resultSQL['XVVmsName'].'\',\''.$XVMsgCode.'\',\''.$resultSQL['XIMssWPixel'].'\',\''.$resultSQL['XIMssHPixel'].'\')"></i></td>';
+                $data.='<td  '.$tx1.' id="chk'.$i.'"  ><i id="C0'.$XVVmsCode.'"class="fa fa-cloud"aria-hidden="true"></i></td>';
+                $data.='<td '.$tx2.'  id="C1'.$XVVmsCode.'"">ป้าย '.$resultSQL['XIMssWPixel'].'x'.$resultSQL['XIMssHPixel'].' PX'.'</td>';
+                $data.='<td '.$tx3.'  id="C2'.$XVVmsCode.'">'.$resultSQL['XVVmsName'].'</td>';
+                $data.='<td '.$tx4.'  id="C3'.$XVVmsCode.'"></td>';
+                $data.='<td '.$tx5.'  id="C4'.$XVVmsCode.'"></td>';
+                $data.='<td '.$tx6.'  id="C5'.$XVVmsCode.'"></td>';
+                $data.='<td '.$tx7.'  id="C6'.$XVVmsCode.'"></td>';
+                $data.='<td '.$tx8.'  id="C7'.$XVVmsCode.'"></td>';
+                $data.='<td '.$tx9.'  id="C8'.$XVVmsCode.'"></td>';
+                $data.='<td '.$tx10.' id="C9'.$XVVmsCode.'"></td>';
+                $data.='<td '.$tx11.' id="C10'.$XVVmsCode.'"></td>';
+                $data.='<td '.$tx12.' id="C11'.$XVVmsCode.'">'. $VmsType.'</th>';
+                $data.='<td '.$tx13.' id="C12'.$XVVmsCode.'">test</td>';
+                $data.='<td '.$tx14.' id="chkl'.$i.'" ><i style="cursor: pointer;font-size: 2rem;cursor: pointer; padding: 0rem;" class="fa fa-play-circle" onclick="ShowSample(\''.$XVVmsCode.'\',\''.$resultSQL['XVVmsName'].'\',\''.$XVMsgCode.'\',\''.$resultSQL['XIMssWPixel'].'\',\''.$resultSQL['XIMssHPixel'].'\')"></i></td>';
                 $data.='</tr>';
-            }
+                $i++;  }
             sqlsrv_close( $conn );
             $data.='</table>  <input type="hidden" id="vmscode" value="'.$vmscodearray.'"><input type="hidden" id="XVVmsCode" ><input type="hidden" id="XVMsgCode" >';
     echo $data;

@@ -10,6 +10,7 @@ if(checkmenu($user,'002')==0){
 }
 
 $XVUsrCode=base64_decode($_GET['p']);
+$usercode=$_GET['user'];
 function countrecord($XVUsrCode,$XVMnuCode){
     include "lib/DatabaseManage.php";
    
@@ -123,106 +124,9 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
 }
 ?>
 
-<style>
-    *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-body {
-        background: #e1f0fa;
-    }
-
-    .container{
-        background-color:  white;
-        
-    }
-
-    .flex-content{
-        margin: 1rem;
-    }
-</style>
-
-<div class="container" style="position: relative; top: 75; ">
-
- <div class="flex-content">
-
-
-<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ผู้ใช้งาน
-        </div>
-
-
-<div class="flex-container" style="">
-
-        <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; margin-bottom: 1rem; box-shadow: 3px 3px 3px #aaaaaa !important;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายการคำสั่งผู้ใช้งาน</a>
-        </div>
-
-        
-        <table class="table table-striped table-hover">
-    <tr>
-        <th style="text-align: center;" ><input style="margin: .2rem;" type="checkbox" id="select-all"/>ทั้งหมด</th>
-        <th >รายละเอียด</th>
-        <th style="text-align: center;" ><input style="margin: .2rem;" type="checkbox" class="select-all-col1 checkbox" name="select-all"/>อ่าน</td>
-        <th style="text-align: center;" ><input style="margin: .2rem;" type="checkbox" class="select-all-col2 checkbox" name="select-all"/>เขียน</td>
-        <th style="text-align: center;" ><input style="margin: .2rem;" type="checkbox" class="select-all-col3 checkbox" name="select-all"/>ลบ</td>
-        <th style="text-align: center;" ><input style="margin: .2rem;" type="checkbox" class="select-all-col4 checkbox" name="select-all"/>ควบคุม</td>
-    </tr>
-    <tr>
-        <td class="active1" style="text-align: center;">
-            <!-- * -->
-            <input type="checkbox" class="select-all1 checkbox select-item1" name="select-all"/>
-        </td>
-        <td >การควบคุมป้าย</th>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col1 select-item1 checkbox " name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col2 select-item1 checkbox " name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col3 select-item1 checkbox " name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col4 select-item1 checkbox " name="select-item" value="" /></td>
-    </tr>
-    <tr>
-        <td class="active2" style="text-align: center;">
-            <input type="checkbox" class="select-all2 checkbox select-item2" name="select-item" value="" />
-        </td>
-        <td >ตารางการทำงานของป้าย</th>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col1 select-item2 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col2 select-item2 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col3 select-item2 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col4 select-item2 checkbox" name="select-item" value="" /></td>
-    </tr>
-    <tr>
-        <td class="active3" style="text-align: center;">
-            <input type="checkbox" class="select-all3 checkbox select-item3" name="select-item" value="" />
-        </td>
-        <td >จัดการข้อความหลัก</th>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col1 select-item3 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col2 select-item3 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col3 select-item3 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col4 select-item3 checkbox" name="select-item" value="" /></td>
-    </tr>
-    <tr>
-        <td class="active4" style="text-align: center;">
-            <input type="checkbox" class="select-all4 checkbox select-item4" name="select-item" value="" />
-        </td>
-        <td >จัดตารางข้อความประชาสัมพันธ์</th>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col1 select-item4 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col2 select-item4 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col3 select-item4 checkbox" name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input type="checkbox" class="select-col4 select-item4 checkbox" name="select-item" value="" /></td>
-    </tr>
-</table>
-
-<button style="display: none;" id="select-all" class="btn button-default">เลือกทั้งหมด / ยกเลิกทั้งหมด</button>
-<!-- <button id="select-invert" class="btn button-default">สลับ</button> -->
-<!-- <button id="select-all" class="btn button-default">SelectAll/Cancel</button> -->
-<!-- <button id="select-invert" class="btn button-default">Invert</button> -->
-<!-- <button id="selected" class="btn button-default">GetSelected</button> -->
-
-<br>
-
 <script>
     $(function(){
+
 
         //button select all or cancel
 
@@ -377,8 +281,197 @@ body {
             all.checked = len===total;
         }
     });
+  function chkitem(idvms){
+    var checked = document.getElementById("allitem"+idvms).checked;
+    var valall=idvms;
+    var use_c ='<?php echo $usercode; ?>';
+     var datastring='load=0002'+ '&val=' +valall + '&check='+checked + '&use_c='+use_c;
+     $.ajax({type:"POST", url:"service/update_UserMenu.php",
+     data: datastring,cache:false,
+      success:function(html){
+      console.log(html);
+ }
+}) 
+    
+    for (let item = 1; item < 4; item++) {
+        $("input.select-item"+idvms).each(function (index,item) {
+                item.checked = checked;
+        });
+    }
+  }
+
+  function pri(val){
+    var chk =document.getElementById("select-all").checked;
+     var valall=val;
+     var use_c ='<?php echo $usercode; ?>';
+     var datastring='load=0001'+ '&val=' +valall + '&check='+chk+'&use_c='+use_c;
+     $.ajax({type:"POST", url:"service/update_UserMenu.php",
+     data: datastring,cache:false,
+      success:function(html){
+      console.log(html);
+ }
+});
+
+  }
+  function chkpri_(key,v){
+ 
+    var keychk=key;
+    var vmscodechk=v;
+    var use_c ='<?php echo $usercode; ?>';
+    var chk =document.getElementById(key+v).checked;
+     var datastring='load=0003'+ '&keychk=' +keychk + '&vmscodechk='+vmscodechk+'&check='+chk +'&use_c='+use_c;
+     $.ajax({type:"POST", url:"service/update_UserMenu.php",
+     data: datastring,cache:false,
+      success:function(html){
+      console.log(html);
+ }
+}); 
+  }
+
+  function chkprix(key,us,k){
+    var keychk=key;// alert(keychk);
+    var user=us;
+    var use_c ='<?php echo $usercode; ?>';
+    var chk =document.getElementById(k).checked;
+    var datastring='load=0004'+ '&keychk=' +keychk + '&user='+user+'&check='+chk +'&use_c='+use_c;
+     $.ajax({type:"POST", url:"service/update_UserMenu.php",
+     data: datastring,cache:false,
+      success:function(html){
+      console.log(html);
+ }
+}); 
+    
+}
 </script>
 
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+body {
+        background: #e1f0fa;
+    }
+
+    .container{
+        background-color:  white;
+        
+    }
+
+    .flex-content{
+        margin: 1rem;
+    }
+</style>
+
+<div class="container" style="position: relative; top: 75; ">
+
+ <div class="flex-content">
+
+
+<div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ผู้ใช้งาน
+        </div>
+
+
+<div class="flex-container" style="">
+
+        <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; margin-bottom: 1rem; box-shadow: 3px 3px 3px #aaaaaa !important;">
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายการคำสั่งผู้ใช้งาน</a>
+        </div>
+
+        <?php 
+        $arrall=array();
+        $a=array();
+        $al=array();
+        $alld=array();
+        $alll=array();
+        $Menu="SELECT XBDmnIsRead,XBDmnIsAdd,XBDmnIsDelete,XBDmnIsControl,XBDmnIsDrummy1,XBDmnIsDrummy2 FROM [NWL_SpeedWayTest2].[dbo].[TMnyMUserMenu]  WHERE  XVUsrCode ='".$usercode."'";
+        $qme=sqlsrv_query($conn, $Menu ,array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET));
+        while($all=sqlsrv_fetch_array($qme, SQLSRV_FETCH_ASSOC)){
+            $arrall[]=$all['XBDmnIsRead'];
+            $arrall[]=$all['XBDmnIsAdd'];
+            $arrall[]=$all['XBDmnIsDelete'];
+            $arrall[]=$all['XBDmnIsControl'];
+            $arrall[]=$all['XBDmnIsDrummy1'];
+            $arrall[]=$all['XBDmnIsDrummy2'];
+
+            $a[]=$all['XBDmnIsRead'];
+            $al[]=$all['XBDmnIsAdd'];
+            $alld[]=$all['XBDmnIsDelete'];
+            $alll[]=$all['XBDmnIsControl'];
+
+
+        }
+        $allc=count($arrall); // echo $allc;
+        $a1=count($a);
+        $a2=count($al);
+        $a3=count($alld);
+        $a4=count($alll);
+        ?>
+        <table class="table table-striped table-hover">
+        <tr>
+        <th style="text-align: center;" ><input style="margin: .2rem;" onclick="pri('<?php echo $_SESSION['user']; ?>')" <?php if($allc==66){ echo 'checked';} ?> 
+        class="chkall" type="checkbox" id="select-all"/>ทั้งหมด</th>
+        <th >รายละเอียด</th>
+        <th style="text-align: center;" ><input <?php if($allc==66  && $a1 == 11){ echo 'checked';} ?> id="XBDmnIsRead1"    onclick="chkprix('XBDmnIsRead','<?php echo $_SESSION['user']; ?>','XBDmnIsRead1')" style="margin: .2rem;" type="checkbox" class="select-all-col1 checkbox" name="select-all"/>อ่าน</td>
+        <th style="text-align: center;" ><input <?php if($allc==66  && $a2 == 11){ echo 'checked';} ?> id="XBDmnIsAdd2"     onclick="chkprix('XBDmnIsAdd','<?php echo $_SESSION['user']; ?>','XBDmnIsAdd2')" style="margin: .2rem;" type="checkbox" class="select-all-col2 checkbox" name="select-all"/>เขียน</td>
+        <th style="text-align: center;" ><input <?php if($allc==66  && $a3 == 11){ echo 'checked';} ?> id="XBDmnIsDelete3"  onclick="chkprix('XBDmnIsDelete','<?php echo $_SESSION['user']; ?>','XBDmnIsDelete3')" style="margin: .2rem;" type="checkbox" class="select-all-col3 checkbox" name="select-all"/>ลบ</td>
+        <th style="text-align: center;" ><input <?php if($allc==66  && $a4 == 11){ echo 'checked';} ?> id="XBDmnIsControl4" onclick="chkprix('XBDmnIsControl','<?php echo $_SESSION['user']; ?>','XBDmnIsControl4')"  style="margin: .2rem;" type="checkbox" class="select-all-col4 checkbox" name="select-all"/>ควบคุม</td>
+    </tr>
+        <?php 
+
+      function ckpri($XVMnuCode){
+        include "lib/DatabaseManage.php";
+        $io=array();
+        $j="SELECT XBDmnIsRead
+        FROM [NWL_SpeedWayTest2].[dbo].[TMnyMUserMenu] WHERE XVUsrCode ='".$_SESSION['user']."' AND XVMnuCode  ='$XVMnuCode' ";
+        echo $j;
+        $jqc=sqlsrv_query($conn, $j ,array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET));
+        $jd=sqlsrv_fetch_array($jqc, SQLSRV_FETCH_ASSOC);
+
+        if($jd['XBDmnIsRead']=='1'){ $ks=1;}
+
+        $io[]=$ks;
+        
+        return $io;
+      }
+
+        $i=1;
+       $arr=array();
+        $Menu="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TSysSMenu]"; 
+        $qme=sqlsrv_query($conn, $Menu);
+        while($hk=sqlsrv_fetch_array($qme, SQLSRV_FETCH_ASSOC)){
+            $XVMnuCode=$hk['XVMnuCode'];
+            $array=array();
+            $array[]=$hk['XVMnuCode'];
+            //$j="SELECT $keyu FROM [NWL_SpeedWayTest2].[dbo].[TMnyMUserMenu]  WHERE  XVUsrCode ='".$_SESSION['user']."' AND XVMnuCode ='$XVMnuCode'";
+        ?>
+    <tr>
+        <td class="active1" style="text-align: center;">
+            <?php    
+            //print_r(ckpri($XVMnuCode));
+            ?>
+       <input <?php if($allc==66){ echo 'checked';} ?> onclick="chkitem('<?php echo $XVMnuCode; ?>')" type="checkbox" id="allitem<?php echo $XVMnuCode; ?>" class="select-all1 checkbox select-item<?php echo $XVMnuCode; ?>" name="select-all"/>
+        </td>
+        <td ><?php echo $hk['XVMnuName']; ?></td>
+        <td style="text-align: center;" ><input <?php if($allc==66){ echo 'checked';} ?> id="XBDmnIsRead<?php echo $XVMnuCode; ?>" type="checkbox" onclick="chkpri_('XBDmnIsRead','<?php echo $XVMnuCode; ?>')"     class="select-col1 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input <?php if($allc==66){ echo 'checked';} ?> id="XBDmnIsAdd<?php echo $XVMnuCode; ?>"  type="checkbox"  onclick="chkpri_('XBDmnIsAdd','<?php echo $XVMnuCode; ?>')"     class="select-col2 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input <?php if($allc==66){ echo 'checked';} ?> id="XBDmnIsDelete<?php echo $XVMnuCode; ?>" type="checkbox" onclick="chkpri_('XBDmnIsDelete','<?php echo $XVMnuCode; ?>')"   class="select-col3 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input <?php if($allc==66){ echo 'checked';} ?> id="XBDmnIsControl<?php echo $XVMnuCode; ?>"  type="checkbox"onclick="chkpri_('XBDmnIsControl','<?php echo $XVMnuCode; ?>')"  class="select-col4 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
+    </tr>
+    <?php  $i++;} ?>
+</table>
+
+<button style="display: none;" id="select-all" class="btn button-default">เลือกทั้งหมด / ยกเลิกทั้งหมด</button>
+<!-- <button id="select-invert" class="btn button-default">สลับ</button> -->
+<!-- <button id="select-all" class="btn button-default">SelectAll/Cancel</button> -->
+<!-- <button id="select-invert" class="btn button-default">Invert</button> -->
+<!-- <button id="selected" class="btn button-default">GetSelected</button> -->
+
+<br>
 
 
 
