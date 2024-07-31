@@ -115,14 +115,40 @@ body {
                     style="width: 100%;" placeholder=" Username" autocomplete="off" required autofocus>
             </div>
         </div>
+
         <div class="row col-12" style="padding-top:10px">
             <div class="col-6" style="margin-top: 5px; text-align: right;">
                 <span>รหัสผ่าน</span>
             </div>
-            <div class="col-6"><input id="passwordInput" name="passwordInput" style="width: 100%;" type="password"
-                    name="textfield" class="input" />
+            <div class="col-6">
+                     <input class="input" style="width: 100%;" name="passwordInput" id="passwordInput" type="password" onkeyup='check();' /><i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 203px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
             </div>
         </div>
+
+        <div class="row col-12" style="padding-top:10px">
+            <div class="col-6" style="margin-top: 5px; text-align: right;">
+                <span>รหัสผ่านอีกครั้ง</span>
+            </div>
+            <div class="col-6">
+                     <input class="input" style="width: 100%;" name="confirm_password" id="confirm_password" type="password" onkeyup='check();' /><i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 203px;" class="far fa-eye fa-eye-slash" id="togglePassword2"></i> <span id="message"></span>
+            </div>
+        </div>
+
+
+<script>
+var check = function() {
+  if (document.getElementById('passwordInput').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'รหัสตรงกัน';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'รหัสไม่ตรงกัน';
+  }
+}
+</script>
+
+
         <div class="row col-12" style="padding-top:10px; justify-content: center; align-items: center;">
             <div class="col-6" style="margin-top: 5px; text-align: right;">
                 <span>เวลาเข้าทำงาน</span>
@@ -191,7 +217,7 @@ body {
 <script src="dist/js/popper.min.js"></script>
 <script src="dist/js/main_speed.js"></script>
 <script src="dist/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
 <script type="text/javascript">
 function addUser() {
@@ -216,6 +242,32 @@ function addUser() {
     });
     
 }
+</script>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#passwordInput');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash'); 
+});
+</script>
+
+<script>
+    const togglePassword2 = document.querySelector('#togglePassword2');
+    const password2 = document.querySelector('#confirm_password');
+
+  togglePassword2.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+    password2.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash'); 
+});
 </script>
 
 </body>
