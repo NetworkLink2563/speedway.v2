@@ -419,7 +419,7 @@ table th{
             </div>
 
             <div class="next-btn col"  style="text-align: right; padding: 0; ">
-            <button onclick="location.href='/speedway/messagepublicrelationsframe.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">>> Step2 จัดรูปแบบข้อความ</button>
+            <button onclick="location.href='/speedway/messagepublicrelationsframe.php'" class="btn btn-success btn-hover shadow" style="">>> Step2 จัดรูปแบบข้อความ</button>
             </div>
 
         </div>

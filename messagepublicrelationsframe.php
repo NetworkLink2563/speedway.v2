@@ -715,7 +715,7 @@ input.btnsearch{
 
                     <div class="row">
 
-                        <div id="frame2_section3" class="" style="border-style: solid;border-color:#DCDCDC;  margin-top: .2rem;">
+                        <div id="frame2_section3" class="" style="border-style: solid;border-color:#DCDCDC;  margin-top: .2rem;  padding: 0px;">
                     
                             <button style="position: absolute; z-index:1000;" onclick="addsms(3)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame2_section3_show" src="" style="border:none;"></iframe>
@@ -724,7 +724,7 @@ input.btnsearch{
                        
 
                        
-                        <div id="frame2_section4" class="float-left" style="border-style: solid;border-color:#DCDCDC;  margin-top: .2rem; height: 249px!important;">
+                        <div id="frame2_section4" class="float-left" style="border-style: solid;border-color:#DCDCDC;  margin-top: .2rem; height: 249px!important;  padding: 0px;">
                     
                             <button style="position: absolute; z-index:1000;"  onclick="addsms(4)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame2_section4_show" src="" style="border:none;"></iframe>
@@ -733,7 +733,7 @@ input.btnsearch{
                        
 
                         
-                        <div id="frame2_section5" class="float-left" style="border-style: solid;border-color:#DCDCDC; margin-top: .2rem; height: 249px!important;">
+                        <div id="frame2_section5" class="float-left" style="border-style: solid;border-color:#DCDCDC; margin-top: .2rem; height: 249px!important;  padding: 0px;">
                             <button style="position: absolute; z-index:1000;" onclick="addsms(5)"  class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe  id="frame2_section5_show" src="" style="border:none;"></iframe>
                         </div>
@@ -741,7 +741,7 @@ input.btnsearch{
                    
 
                     
-                        <div id="frame2_section2" style="border-style: solid;border-color:#DCDCDC;margin:0px; margin-top: .2rem;">
+                        <div id="frame2_section2" style="border-style: solid;border-color:#DCDCDC;margin:0px; margin-top: .2rem; padding: 0px;">
                    
                     
                                 <button  style="position: absolute; z-index:1000;"  onclick="addsms(2)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
@@ -887,8 +887,8 @@ input.btnsearch{
                     
 
   <!-- The Modal -->
-<div class="modal modal-fullscreen" id="myModal">
-  <div class="modal-dialog">
+<div class="modal " id="myModal">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
 
       <!-- Modal Header -->
@@ -897,7 +897,7 @@ input.btnsearch{
         <h4 class="modal-title">เลือกข้อความ</h4>
         </div>
         <div class="col-1">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" id="closemymodal" class="close" data-dismiss="modal">&times;</button>
         </div>
       </div>
 
@@ -908,7 +908,7 @@ input.btnsearch{
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" id="closel" class="btn btn-danger" data-dismiss="modal">ปิด</button>
+        <button type="button" id="hidemymodal" class="btn btn-danger" data-dismiss="modal">ปิด</button>
       </div>
 
     </div>
@@ -1084,18 +1084,18 @@ $("#btn_next").click(function(){
 
         document.getElementById("frame3_section1").style.width = w+"px";
         document.getElementById("frame3_section1").style.height = "100px";
-        document.getElementById("frame3_section1_show").style.width = w+"px";
+        document.getElementById("frame3_section1_show").style.width = (w-4)+"px";
         document.getElementById("frame3_section1_show").style.height = "100px";
 
 
         document.getElementById("frame3_section3").style.width = (w/2)+"px";
-        document.getElementById("frame3_section3").style.height = (h-100)+"px";
+        document.getElementById("frame3_section3").style.height = (h-135)+"px";
      
         document.getElementById("frame3_section3_show").style.width =  ((w/2)-5)+"px";
         document.getElementById("frame3_section3_show").style.height = ((h-110)-30)+"px";
 
         document.getElementById("frame3_section4").style.width = (w/2)+"px";
-        document.getElementById("frame3_section4").style.height = (h-100)+"px";
+        document.getElementById("frame3_section4").style.height = (h-135)+"px";
      
         document.getElementById("frame3_section4_show").style.width =  ((w/2)-5)+"px";
         document.getElementById("frame3_section4_show").style.height = ((h-110)-30)+"px";
@@ -1577,7 +1577,10 @@ $(document).ready(function() {
     $("#hide-modal").click(function(){
     $("#modal-frame3").modal("hide")
     })
-    $("#closel").click(function(){
+    $("#closemymodal").click(function(){
+        $("#myModal").modal("hide")
+    })
+    $("#hidemymodal").click(function(){
         $("#myModal").modal("hide")
     })
     $("#closef1").click(function(){
