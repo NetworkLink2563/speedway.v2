@@ -76,7 +76,7 @@ echo ThDate(); // แสดงวันที่
 <script type="text/javascript">
     
     $(document).ready(function() {
-       $('#inputPassword').change(function() {
+       $('#username').change(function() {
            var val = $(this).val();
            var optionx = document.getElementById("XVShfCode").value;
            var userName = document.getElementById("username").value; //alert(userName);
@@ -153,7 +153,6 @@ echo ThDate(); // แสดงวันที่
 </script>
 
 
-<<<<<<< HEAD
     togglePassword.addEventListener('click', function (e) {
     // toggle the type attribute
     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -164,8 +163,6 @@ echo ThDate(); // แสดงวันที่
 
 
 </script>
-=======
->>>>>>> origin/main
 
 
 
