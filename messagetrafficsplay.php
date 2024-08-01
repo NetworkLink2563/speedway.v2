@@ -593,29 +593,41 @@ function ShowSms(){
 } 
 function CancelSms(){
   
-  
-    var XVVmsCode=$('#XVVmsCode').val();
-    $.ajax({
-        type: "POST",
-        url: "messagetrafficsplayfunction.php",
-        data: {
-            'cancelsms': 'cancelsms',
-             XVVmsCode:XVVmsCode
-        },
-        success: function(result) {   
-          
-            const obj = JSON.parse(result); 
-            $Return=obj.Return;
-         
-            if($Return=='CancelSuccess'){
-            
-              
-                $('#ShowPlayList').empty();
-            }
-           
+    Swal.fire({
+        title: "",
+        text: "ยกเลิกข้อความป้ายใช่หรือไม่?",
+        icon: "question",
+        confirmButtonText: "ใช่",
+        showCancelButton: false,
+        showDenyButton: true,
+        denyButtonText: 'ไม่'
+
+    }).then((result) => {
+        
+        if (result.isConfirmed) {
+            var XVVmsCode=$('#XVVmsCode').val();
+            $.ajax({
+                type: "POST",
+                url: "messagetrafficsplayfunction.php",
+                data: {
+                    'cancelsms': 'cancelsms',
+                    XVVmsCode:XVVmsCode
+                },
+                success: function(result) {   
+                
+                    const obj = JSON.parse(result); 
+                    $Return=obj.Return;
+                
+                    if($Return=='CancelSuccess'){
+                    
+                    
+                        $('#ShowPlayList').empty();
+                    }
+                
+                }
+            });
         }
-    });
-    
+    });    
    
 } 
 
@@ -672,49 +684,64 @@ function ShowPlayListDetail(XVVmsCode){
         }
     });
 }
-
 function sendmessageToVMS() {
-       var vmsID =  $('#XVVmsCode').val();
+    Swal.fire({
+        title: "",
+        text: "ต้องการส่งข้อความขึ้นป้ายใช่หรือไม่?",
+        icon: "question",
+        confirmButtonText: "ใช่",
+        showCancelButton: false,
+        showDenyButton: true,
+        denyButtonText: 'ไม่'
 
-  
-        Swal.showLoading();
-        $.ajax({
-            type: "POST",
-            url: "messagetrafficsplayfunction.php",
-            data: {
-                'vmsID': vmsID,
-                'SendMqtt':'SendMqtt'
-            },
-            success: function(result) {
-             
-                if (result == "Success") {
-                    Swal.fire({
-                        title: "",
-                        text: "ส่งคำสั่ง ส่งข้อความขึ้นป้ายสำเร็จ",
-                        icon: "success"
-                    });
-                }
-
-                if (result == "shiferror"){
-                    Swal.fire({
-                        title: "",
-                        text: "ส่งคำสั่งไม่ได้ กะทำงานไม่ถูกต้อง กรุณาเปลี่ยนกะ",
-                        icon: "warning"
-                    });
-                }
-                if (result == "Fail") {
-                    Swal.fire({
-                        title: "",
-                        text: "ส่งคำสั่งไม่ได้ ลองใหม่อีกครั้ง",
-                        icon: "warning"
-                    });
-                }
-
-
-            }
-        });
-    
+    }).then((result) => {
+        
+        if (result.isConfirmed) {
+        
+               var vmsID =  $('#XVVmsCode').val();
+                Swal.showLoading();
+            
+            
+                $.ajax({
+                    type: "POST",
+                    url: "messagetrafficsplayfunction.php",
+                    data: {
+                        'vmsID': vmsID,
+                        'SendMqtt':'SendMqtt'
+                    },
+                    success: function(result) {
+                        
+                        const obj = JSON.parse(result);
+                        if (obj.Return == "Success") {
+                            Swal.fire({
+                                title: "",
+                                text: "ส่งคำสั่ง ส่งข้อความขึ้นป้ายสำเร็จ",
+                                icon: "success"
+                            });
+                        }
+                        if (obj.Return == "Nodata") {
+                            Swal.fire({
+                                title: "",
+                                text: "ส่งคำสั่งไม่ได้ กรุณาเลือกข้อความป้าย",
+                                icon: "warning"
+                            });
+                        }
+                    
+                        if (obj.Return == "Fail") {
+                            Swal.fire({
+                                title: "",
+                                text: "ส่งคำสั่งไม่ได้ ลองใหม่อีกครั้ง",
+                                icon: "warning"
+                            });
+                        }
+                         
+                    }
+                });
+                
+        }
+    });
 }
+
 
 
 </script>
