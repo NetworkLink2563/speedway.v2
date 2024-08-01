@@ -464,10 +464,13 @@ text-align: center;
                             <h5 style="text-align: center;">รหัสป้าย</h5>
                            <div id="vmsdetail" class="text-center" style="background-color: #efefefcc; font-size: 1.2rem; border-bottom: 1px solid #cccc; margin-bottom: .5rem; font-weight: 300;"></div>
                            
-                              <div class="col-6" >
+                              <div class="col-4" >
                                 <button type="button" onclick="ShowSms()" style=" float: left;" class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
                               </div>
-                              <div class="col-6 text-right" >
+                              <div class="col-4">
+                                <button type="button" onclick="CancelSms()" style=" float: left;margin-right: 10px" class="btn btn-danger shadow">ยกเลิกข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                            </div>
+                              <div class="col-4 text-right" >
                                   <button type="button" onclick="sendmessageToVMS()"  class="btn btn-success shadow">ส่งข้อความขึ้นป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;color:white" class="fa fa-cloud-upload"></i></button>
                               </div>
                            </div>
@@ -527,6 +530,45 @@ text-align: center;
 <script type="text/javascript" src="Ckeditor/ckeditor/ckeditor.js"></script>
 <script>
  $('#smsdetail').hide();  
+ function CancelSms(){
+    Swal.fire({
+        title: "",
+        text: "ยกเลิกข้อความป้ายใช่หรือไม่?",
+        icon: "question",
+        confirmButtonText: "ใช่",
+        showCancelButton: false,
+        showDenyButton: true,
+        denyButtonText: 'ไม่'
+
+    }).then((result) => {
+        
+        if (result.isConfirmed) {
+  
+            var XVVmsCode=$('#XVVmsCode').val();
+            $.ajax({
+                type: "POST",
+                url: "messagepublicrelationsplayfunction.php",
+                data: {
+                    'cancelsms': 'cancelsms',
+                    XVVmsCode:XVVmsCode
+                },
+                success: function(result) {   
+                    
+                    const obj = JSON.parse(result); 
+                    $Return=obj.Return;
+                
+                    if($Return=='CancelSuccess'){
+                    
+                        
+                        $('#ShowPlayList').empty();
+                    }
+                    
+                }
+            });
+        }
+    });
+ 
+} 
 function deleteMSG(XVPltCode){
     const obj = JSON.parse(result); 
             $Return=obj.Return;
@@ -632,40 +674,55 @@ function ShowPlayListDetail(XVVmsCode){
 }
 
 function sendmessageToVMS() {
-       var vmsID =  $('#XVVmsCode').val();
+    Swal.fire({
+        title: "",
+        text: "ต้องการส่งข้อความขึ้นป้ายใช่หรือไม่?",
+        icon: "question",
+        confirmButtonText: "ใช่",
+        showCancelButton: false,
+        showDenyButton: true,
+        denyButtonText: 'ไม่'
 
-  
-        Swal.showLoading();
-        $.ajax({
-            type: "POST",
-            url: "messagepublicrelationsplayfunction.php",
-            data: {
-                'vmsID': vmsID,
-                'SendMqtt':'SendMqtt'
-            },
-            success: function(result) {
-             
-                if (result == "Success") {
-                    Swal.fire({
-                        title: "",
-                        text: "ส่งคำสั่ง ส่งข้อความขึ้นป้ายสำเร็จ",
-                        icon: "success"
-                    });
-                }
+    }).then((result) => {
+        
+        if (result.isConfirmed) {
+        
+               var vmsID =  $('#XVVmsCode').val();
+                Swal.showLoading();
+            
+            
+                $.ajax({
+                    type: "POST",
+                    url: "messagepublicrelationsplayfunction.php",
+                    data: {
+                        'vmsID': vmsID,
+                        'SendMqtt':'SendMqtt'
+                    },
+                    success: function(result) {
+                        
+                        const obj = JSON.parse(result);
+                        if (obj.Return == "Success") {
+                            Swal.fire({
+                                title: "",
+                                text: "ส่งคำสั่ง ส่งข้อความขึ้นป้ายสำเร็จ",
+                                icon: "success"
+                            });
+                        }
 
-             
-                if (result == "Fail") {
-                    Swal.fire({
-                        title: "",
-                        text: "ส่งคำสั่งไม่ได้ ลองใหม่อีกครั้ง",
-                        icon: "warning"
-                    });
-                }
-
-
-            }
-        });
-    
+                    
+                        if (obj.Return == "Fail") {
+                            Swal.fire({
+                                title: "",
+                                text: "ส่งคำสั่งไม่ได้ ลองใหม่อีกครั้ง",
+                                icon: "warning"
+                            });
+                        }
+                         
+                    }
+                });
+                
+        }
+    });
 }
 
 

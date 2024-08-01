@@ -197,140 +197,117 @@ function twodigit($number){
     return $ret;
 }
 function SendMqtt($vmscode){
-        date_default_timezone_set("Asia/Bangkok");
-        include "Lib/MqttSend.php";
-        $XVUsrCode=$_SESSION['userName'];
-        $H=date("H");
-        $i=date("i");
-        $timenow=$H.$i;
-        $timestart= twodigit($_SESSION['XIShfStartHour']). twodigit($_SESSION['XIShfStartMin']);
-        $timeend= twodigit($_SESSION['XIShfEndHour']). twodigit($_SESSION['XIShfEndMin']);
+    date_default_timezone_set("Asia/Bangkok");
+    include "Lib/MqttSend.php";
+    include "lib/DatabaseManage.php";
+    $XVUsrCode=$_SESSION['userName'];
 
-        
-              
 
-            if(intval($timenow)>=intval($timestart)&&intval($timeend)<=intval($timeend)){
 
-                $nowdate=date("Y-m-d");
-                $s= $nowdate.' '. twodigit($_SESSION['XIShfStartHour']).':'.twodigit($_SESSION['XIShfStartMin']);
-                $e= $nowdate.' '. twodigit($_SESSION['XIShfEndHour']).':'.twodigit($_SESSION['XIShfEndMin']);
-
-              
-                include "lib/DatabaseManage.php";
-                $sql="update dbo.TMstMItmVMSPlayList set XTWhenEdit=GETDATE(),XTVmpStart='$s',XTVmpEnd='$e' where XVPltType=2 and XVVmsCode='$vmscode'";
-                
-                $query = sqlsrv_query($conn, $sql);
-              
-                $timerecord=date("Y-m-d H:i:s").'.000'; 
-                $sql="SELECT dbo.TMstMItmVMSPlayList.XVVmsCode, dbo.TMstMPlaylist.XVPltCode, dbo.TMstMPlaylist.XVPltName, dbo.TMstMPlaylist.XVMssCode, dbo.TMstMPlaylist.XVPltType
-                      FROM dbo.TMstMPlaylist INNER JOIN
-                         dbo.TMstMItmVMSPlayList ON dbo.TMstMPlaylist.XVPltType = dbo.TMstMItmVMSPlayList.XVPltType
-                      WHERE        (dbo.TMstMPlaylist.XVPltType = N'2') AND (dbo.TMstMItmVMSPlayList.XVVmsCode = '$vmscode')";
-                
-                $query = sqlsrv_query($conn, $sql);
-                $XVPltCode="";
-                while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
-                {
-                    $XVPltCode=$result["XVPltCode"];
-                    $XVPltName=$result["XVPltName"];
-                    $XVMssCode=$result["XVMssCode"];
-                    $XVPltType=$result["XVPltType"];
-                    $sql="insert into TMstMPlaylistReport (XVUsrCode
-                                                          ,XTSendPlaylist
-                                                          ,XVPltCode
-                                                          ,XVPltName
-                                                          ,XVMssCode
-                                                          ,XVPltType)VaLUES(
-                                                          '$XVUsrCode'
-                                                          ,'$timerecord'
-                                                          ,'$XVPltCode'
-                                                          ,'$XVPltName'
-                                                          ,'$XVMssCode'
-                                                          ,'$XVPltType'
-                                                          )
-                                                          ";
-                   
-                    sqlsrv_query($conn, $sql);
-                }
-                if($XVPltCode!=""){
-                        $sql="SELECT  XVPltCode, XIPltSeqNo, XIPltOrder, XVMsfCode, XIPltDuration, XBPltHasExpiration, XTPltStart, XTPltEnd
-                            FROM   dbo.TMstMPlaylistDT
-                            WHERE  (XVPltCode = '$XVPltCode')
-                            ORDER BY XIPltSeqNo";
-                        $data="";
-                        $query = sqlsrv_query($conn, $sql);
-                        $sql="insert into TMstMPlaylistDTReport (
-                            XVUsrCode
-                           ,XTSendPlaylist
-                           ,XVPltCode
-                           ,XIPltSeqNo
-                           ,XIPltOrder
-                           ,XVMsfCode
-                           ,XIPltDuration
-                           ,XBPltHasExpiration
-                           ,XTPltStart
-                           ,XTPltEnd)VALUES";
-                        $CountRecord=0;   
-                        while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
-                        {
-                            $XVPltCode=$result["XVPltCode"];
-                            $XIPltSeqNo=$result["XIPltSeqNo"];
-                            $XIPltOrder=$result["XIPltOrder"];
-                            $XVMsfCode=$result["XVMsfCode"];
-                            $XIPltDuration=$result["XIPltDuration"];
-                            $XBPltHasExpiration=$result["XBPltHasExpiration"];
-                            $XTPltStart=$result["XTPltStart"];
-                            $XTPltEnd=$result["XTPltEnd"];
-                            if($XBPltHasExpiration==1){
-                                $sql.="(
-                                        '$XVUsrCode'
-                                        ,'$timerecord'
-                                        ,'$XVPltCode'
-                                        ,$XIPltSeqNo
-                                        ,$XIPltOrder
-                                        ,'$XVMsfCode'
-                                        ,$XIPltDuration
-                                        ,'$XBPltHasExpiration'
-                                        ,'$XTPltStart'
-                                        ,'$XTPltEnd'     
-                                        ),";
-                            }else{
-                                $sql.="(
-                                    '$XVUsrCode'
-                                    ,'$timerecord'
-                                    ,'$XVPltCode'
-                                    ,$XIPltSeqNo
-                                    ,$XIPltOrder
-                                    ,'$XVMsfCode'
-                                    ,$XIPltDuration
-                                    ,'$XBPltHasExpiration'
-                                    ,GETDATE()
-                                    ,GETDATE()   
-                                    ),";
-                            }
-                                    $CountRecord++;
-                        
-                        }
-                        if($CountRecord>0){
-
-                            $sql=substr($sql,0,strlen($sql)-1);
-                          
-                            sqlsrv_query($conn, $sql);
-                        }
-                }
-                sqlsrv_close( $conn );
-                $topic=$vmscode.'_Display'; 
-                $data='{"cmd":"01"}';
-                return   mqttsend($topic,$data);
-           
-            }else{
-                return 'shiferror';
-            }
-        
-
-        
-       
-      
+    $sql="SELECT  dbo.TMstMItmVMSPlayList.XVVmsCode, dbo.TMstMPlaylist.XVPltCode, dbo.TMstMPlaylist.XVPltName, dbo.TMstMPlaylist.XVMssCode, dbo.TMstMPlaylist.XVPltType
+          FROM  dbo.TMstMPlaylist INNER JOIN
+                 dbo.TMstMItmVMSPlayList ON dbo.TMstMPlaylist.XVPltCode = dbo.TMstMItmVMSPlayList.XVPltCode
+          WHERE (dbo.TMstMItmVMSPlayList.XVVmsCode = '$vmscode') AND (dbo.TMstMPlaylist.XVPltType = N'2')";
    
-}
+    $query = sqlsrv_query($conn, $sql);
+    $XVPltCode="";
+    $result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC);
+    
+    $XVPltCode=$result["XVPltCode"];
+    $XVPltName=$result["XVPltName"];
+    $XVMssCode=$result["XVMssCode"];
+    $XVPltType=$result["XVPltType"];
+    $sql="insert into TMstMPlaylistReport (XVUsrCode
+                                              ,XTSendPlaylist
+                                              ,XVPltCode
+                                              ,XVPltName
+                                              ,XVMssCode
+                                              ,XVPltType)VaLUES(
+                                              '$XVUsrCode'
+                                              ,'$timerecord'
+                                              ,'$XVPltCode'
+                                              ,'$XVPltName'
+                                              ,'$XVMssCode'
+                                              ,'$XVPltType'
+                                              )
+                                              ";
+                                   
+      
+    
+    sqlsrv_query($conn, $sql);
+    $sql1="SELECT  XVPltCode, XIPltSeqNo, XIPltOrder, XVMsfCode, XIPltDuration, XBPltHasExpiration, XTPltStart, XTPltEnd
+                FROM   dbo.TMstMPlaylistDT
+                WHERE  (XVPltCode = '$XVPltCode')
+                ORDER BY XIPltSeqNo";
+
+            $data="";
+   
+    $sql2="insert into TMstMPlaylistDTReport (
+                XVVmsCode
+               ,XVUsrCode
+               ,XTSendPlaylist
+               ,XVPltCode
+               ,XIPltSeqNo
+               ,XIPltOrder
+               ,XVMsfCode
+               ,XIPltDuration
+               ,XBPltHasExpiration
+               ,XTPltStart
+               ,XTPltEnd)VALUES";
+    $CountRecord=0;   
+    $query = sqlsrv_query($conn, $sql1);
+    while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
+    {
+                $XVPltCode=$result["XVPltCode"];
+                $XIPltSeqNo=$result["XIPltSeqNo"];
+                $XIPltOrder=$result["XIPltOrder"];
+                $XVMsfCode=$result["XVMsfCode"];
+                $XIPltDuration=$result["XIPltDuration"];
+                $XBPltHasExpiration=$result["XBPltHasExpiration"];
+                $XTPltStart=$result["XTPltStart"];
+                $XTPltEnd=$result["XTPltEnd"];
+                if($XBPltHasExpiration==1){
+                    $sql2.="(
+                            '$vmscode'
+                            ,'$XVUsrCode'
+                            ,'$timerecord'
+                            ,'$XVPltCode'
+                            ,$XIPltSeqNo
+                            ,$XIPltOrder
+                            ,'$XVMsfCode'
+                            ,$XIPltDuration
+                            ,'$XBPltHasExpiration'
+                            ,'$XTPltStart'
+                            ,'$XTPltEnd'     
+                            ),";
+                }else{
+                    $sql2.="(
+                        '$vmscode'
+                        ,'$XVUsrCode'
+                        ,'$timerecord'
+                        ,'$XVPltCode'
+                        ,$XIPltSeqNo
+                        ,$XIPltOrder
+                        ,'$XVMsfCode'
+                        ,$XIPltDuration
+                        ,'$XBPltHasExpiration'
+                        ,GETDATE()
+                        ,GETDATE()   
+                        ),";
+                }
+
+                $CountRecord++;
+            
+    }
+    if($CountRecord>0){
+
+                $sql2=substr($sql2,0,strlen($sql2)-1);
+                sqlsrv_query($conn, $sql2);
+    }
+    
+    sqlsrv_close( $conn );
+    $topic=$vmscode.'_Display'; 
+    $data='{"cmd":"01"}';
+    return   mqttsend($topic,$data);
+}       
 ?>
