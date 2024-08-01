@@ -319,11 +319,91 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
      data: datastring,cache:false,
       success:function(html){
       console.log(html);
+      var XBDmnIsRead="XBDmnIsRead"+v;
+      var XBDmnIsAdd="XBDmnIsAdd"+v;
+      var XBDmnIsDelete="XBDmnIsDelete"+v;
+      var XBDmnIsControl="XBDmnIsControl"+v;
+
+      var allitem="allitem"+v;
+      
+      var XBDmnIsReadcheckBox = document.getElementById(XBDmnIsRead);
+      var XBDmnIsAddcheckBox = document.getElementById(XBDmnIsAdd);
+      var XBDmnIsDeletecheckBox= document.getElementById(XBDmnIsDelete);
+      var XBDmnIsControlcheckBox= document.getElementById(XBDmnIsControl);
+
+      if ( XBDmnIsReadcheckBox.checked == true && XBDmnIsAddcheckBox.checked==true && XBDmnIsDeletecheckBox.checked==true &&  XBDmnIsControlcheckBox.checked==true){
+          document.getElementById(allitem).checked = true;
+      } else {
+          document.getElementById(allitem).checked = false;
+      }
+         
+      var totalmenu=document.getElementById('totalmenu').value;
+      var listmenu=totalmenu.split(",");
+
+      var cr=0;
+      var ca=0;
+      var cd=0;
+      var cc=0;
+
+      var totm=listmenu.length-1;
+      for (let i = 0; i < totm ; i++) {
+           var r = "XBDmnIsRead"+listmenu[i];
+           var a = "XBDmnIsAdd"+listmenu[i];
+           var d = "XBDmnIsDelete"+listmenu[i];
+           var c = "XBDmnIsControl"+listmenu[i];
+          
+           var ckXBDmnIsRead= document.getElementById(r);
+           if (ckXBDmnIsRead.checked==true){
+              cr=cr+1;
+           } 
+           var ckXBDmnIsAdd= document.getElementById(a);
+           if (ckXBDmnIsAdd.checked==true){
+               ca=ca+1;
+           } 
+           var ckXBDmnIsDelete= document.getElementById(d);
+           if (ckXBDmnIsDelete.checked==true){
+               cd=cd+1;
+           } 
+           var ckXBDmnIsControl= document.getElementById(c);
+           if (ckXBDmnIsControl.checked==true){
+              cc=cc+1;
+           } 
+              
+      }
+     
+      if(cr==totm){
+          document.getElementById("XBDmnIsRead1").checked = true;
+      }else{
+          document.getElementById("XBDmnIsRead1").checked = false;
+      }
+      if(ca==totm){
+        document.getElementById("XBDmnIsAdd2").checked = true;
+      }else{
+        document.getElementById("XBDmnIsAdd2").checked = false;
+      }
+      if(cd==totm){
+        document.getElementById("XBDmnIsDelete3").checked = true;
+      }else{
+        document.getElementById("XBDmnIsDelete3").checked = false;
+      
+      }
+      if(cc==totm){
+        document.getElementById("XBDmnIsControl4").checked = true;
+       
+      }else{
+        document.getElementById("XBDmnIsControl4").checked = false;
+      }
+      if(cr==totm&&ca==totm&&cd==totm&&cc==totm){
+        document.getElementById("select-all").checked = true;
+      }else{
+        document.getElementById("select-all").checked = false;
+      }
  }
 }); 
   }
 
   function chkprix(key,us,k){
+    
     var keychk=key;// alert(keychk);
     var user=us;
     var use_c ='<?php echo $usercode; ?>';
@@ -332,9 +412,10 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
      $.ajax({type:"POST", url:"service/update_UserMenu.php",
      data: datastring,cache:false,
       success:function(html){
-      console.log(html);
- }
-}); 
+         // console.log(html);
+      }
+    
+    }); 
     
 }
 </script>
@@ -383,82 +464,136 @@ body {
         $al=array();
         $alld=array();
         $alll=array();
-        $Menu="SELECT XBDmnIsRead,XBDmnIsAdd,XBDmnIsDelete,XBDmnIsControl,XBDmnIsDrummy1,XBDmnIsDrummy2 FROM [NWL_SpeedWayTest2].[dbo].[TMnyMUserMenu]  WHERE  XVUsrCode ='".$usercode."'";
+        $Menu="SELECT XBDmnIsRead,XBDmnIsAdd,XBDmnIsDelete,XBDmnIsControl,XBDmnIsDrummy1,XBDmnIsDrummy2 FROM TMnyMUserMenu  WHERE  XVUsrCode ='".$usercode."'";
         $qme=sqlsrv_query($conn, $Menu ,array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET));
-        while($all=sqlsrv_fetch_array($qme, SQLSRV_FETCH_ASSOC)){
-            $arrall[]=$all['XBDmnIsRead'];
-            $arrall[]=$all['XBDmnIsAdd'];
-            $arrall[]=$all['XBDmnIsDelete'];
-            $arrall[]=$all['XBDmnIsControl'];
-            $arrall[]=$all['XBDmnIsDrummy1'];
-            $arrall[]=$all['XBDmnIsDrummy2'];
-
-            $a[]=$all['XBDmnIsRead'];
-            $al[]=$all['XBDmnIsAdd'];
-            $alld[]=$all['XBDmnIsDelete'];
-            $alll[]=$all['XBDmnIsControl'];
-
+        $c1=0;
+        $c2=0;
+        $c3=0;
+        $c4=0;
+        $call=0;
+        $i=0;
+        $cked1="";
+        $cked2="";
+        $cked3="";
+        $cked4="";
+        $ckall="";
+        while($row=sqlsrv_fetch_array($qme, SQLSRV_FETCH_ASSOC)){
+            $i++;
+            $ca=0;
+            if($row["XBDmnIsRead"]==1){
+                $c1++;
+                $ca++;
+            }
+            
+            if($row["XBDmnIsAdd"]==1){
+                $c2++;
+                $ca++;
+            }
+            if($row["XBDmnIsDelete"]==1){
+                $c3++;
+                $ca++;
+            }
+            if($row["XBDmnIsControl"]==1){
+                $c4++;
+                $ca++;
+            }
+            if($ca==4){
+                $call++;
+            }
+           
 
         }
-        $allc=count($arrall); // echo $allc;
-        $a1=count($a);
-        $a2=count($al);
-        $a3=count($alld);
-        $a4=count($alll);
+        if($c1==$i){
+            $cked1="checked";
+        }
+        if($c2==$i){
+            $cked2="checked";
+        }
+        if($c3==$i){
+            $cked3="checked";
+        }
+        if($c4==$i){
+            $cked4="checked";
+        }
+        if($call==$i){
+            $ckall="checked";
+        }
+      
         ?>
+       
         <table class="table table-striped table-hover">
         <tr>
-        <th style="text-align: center;" ><input style="margin: .2rem;" onclick="pri('<?php echo $_SESSION['user']; ?>')" <?php if($allc==66){ echo 'checked';} ?> 
+        <th style="text-align: center;" ><input style="margin: .2rem;" onclick="pri('<?php echo $_SESSION['user']; ?>')" <?php echo  $ckall; ?> 
         class="chkall" type="checkbox" id="select-all"/>ทั้งหมด</th>
         <th >รายละเอียด</th>
-        <th style="text-align: center;" ><input <?php if($allc==66  && $a1 == 11){ echo 'checked';} ?> id="XBDmnIsRead1"    onclick="chkprix('XBDmnIsRead','<?php echo $_SESSION['user']; ?>','XBDmnIsRead1')" style="margin: .2rem;" type="checkbox" class="select-all-col1 checkbox" name="select-all"/>อ่าน</td>
-        <th style="text-align: center;" ><input <?php if($allc==66  && $a2 == 11){ echo 'checked';} ?> id="XBDmnIsAdd2"     onclick="chkprix('XBDmnIsAdd','<?php echo $_SESSION['user']; ?>','XBDmnIsAdd2')" style="margin: .2rem;" type="checkbox" class="select-all-col2 checkbox" name="select-all"/>เขียน</td>
-        <th style="text-align: center;" ><input <?php if($allc==66  && $a3 == 11){ echo 'checked';} ?> id="XBDmnIsDelete3"  onclick="chkprix('XBDmnIsDelete','<?php echo $_SESSION['user']; ?>','XBDmnIsDelete3')" style="margin: .2rem;" type="checkbox" class="select-all-col3 checkbox" name="select-all"/>ลบ</td>
-        <th style="text-align: center;" ><input <?php if($allc==66  && $a4 == 11){ echo 'checked';} ?> id="XBDmnIsControl4" onclick="chkprix('XBDmnIsControl','<?php echo $_SESSION['user']; ?>','XBDmnIsControl4')"  style="margin: .2rem;" type="checkbox" class="select-all-col4 checkbox" name="select-all"/>ควบคุม</td>
+        <th style="text-align: center;" ><input <?php echo  $cked1;?> id="XBDmnIsRead1"    onclick="chkprix('XBDmnIsRead','<?php echo $_SESSION['user']; ?>','XBDmnIsRead1')" style="margin: .2rem;" type="checkbox" class="select-all-col1 checkbox" name="select-all"/>อ่าน</td>
+        <th style="text-align: center;" ><input <?php echo  $cked2;?> id="XBDmnIsAdd2"     onclick="chkprix('XBDmnIsAdd','<?php echo $_SESSION['user']; ?>','XBDmnIsAdd2')" style="margin: .2rem;" type="checkbox" class="select-all-col2 checkbox" name="select-all"/>เขียน</td>
+        <th style="text-align: center;" ><input <?php echo  $cked3;?> id="XBDmnIsDelete3"  onclick="chkprix('XBDmnIsDelete','<?php echo $_SESSION['user']; ?>','XBDmnIsDelete3')" style="margin: .2rem;" type="checkbox" class="select-all-col3 checkbox" name="select-all"/>ลบ</td>
+        <th style="text-align: center;" ><input <?php echo  $cked4;?> id="XBDmnIsControl4" onclick="chkprix('XBDmnIsControl','<?php echo $_SESSION['user']; ?>','XBDmnIsControl4')"  style="margin: .2rem;" type="checkbox" class="select-all-col4 checkbox" name="select-all"/>ควบคุม</td>
     </tr>
         <?php 
-
-      function ckpri($XVMnuCode){
-        include "lib/DatabaseManage.php";
-        $io=array();
-        $j="SELECT XBDmnIsRead
-        FROM [NWL_SpeedWayTest2].[dbo].[TMnyMUserMenu] WHERE XVUsrCode ='".$_SESSION['user']."' AND XVMnuCode  ='$XVMnuCode' ";
-        echo $j;
-        $jqc=sqlsrv_query($conn, $j ,array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET));
-        $jd=sqlsrv_fetch_array($jqc, SQLSRV_FETCH_ASSOC);
-
-        if($jd['XBDmnIsRead']=='1'){ $ks=1;}
-
-        $io[]=$ks;
-        
-        return $io;
-      }
-
+    
         $i=1;
        $arr=array();
-        $Menu="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TSysSMenu]"; 
+        $Menu="SELECT * FROM TSysSMenu"; 
         $qme=sqlsrv_query($conn, $Menu);
+      
         while($hk=sqlsrv_fetch_array($qme, SQLSRV_FETCH_ASSOC)){
             $XVMnuCode=$hk['XVMnuCode'];
             $array=array();
             $array[]=$hk['XVMnuCode'];
-            //$j="SELECT $keyu FROM [NWL_SpeedWayTest2].[dbo].[TMnyMUserMenu]  WHERE  XVUsrCode ='".$_SESSION['user']."' AND XVMnuCode ='$XVMnuCode'";
+         
+            
+            $sql="SELECT XVUsrCode
+                       ,XVMnuCode
+                       ,XBDmnIsRead
+                       ,XBDmnIsAdd
+                       ,XBDmnIsDelete
+                       ,XBDmnIsControl FROM TMnyMUserMenu where XVMnuCode='$XVMnuCode' and XVUsrCode='$usercode'";
+        
+            $query=sqlsrv_query($conn, $sql);
+            $checked1="";
+            $checked2="";
+            $checked3="";
+            $checked4="";
+            $checkedrowall="";
+            $row=sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC);
+            $cr=0;
+            if($row["XBDmnIsRead"]==1){
+                $checked1="checked";
+                $cr++;
+            }
+            if($row["XBDmnIsAdd"]==1){
+                $checked2="checked";
+                $cr++;
+            }
+            if($row["XBDmnIsDelete"]==1){
+                $checked3="checked";
+                $cr++;
+            }
+            if($row["XBDmnIsControl"]==1){
+                $checked4="checked";
+                $cr++;
+            }
+            if($cr==4){
+               $checkedrowall="checked";
+            }
+            $strXVMnuCode.=$row["XVMnuCode"].',';
+         
         ?>
     <tr>
         <td class="active1" style="text-align: center;">
-            <?php    
-            //print_r(ckpri($XVMnuCode));
-            ?>
-       <input <?php if($allc==66){ echo 'checked';} ?> onclick="chkitem('<?php echo $XVMnuCode; ?>')" type="checkbox" id="allitem<?php echo $XVMnuCode; ?>" class="select-all1 checkbox select-item<?php echo $XVMnuCode; ?>" name="select-all"/>
+           
+            <input <?php echo $checkedrowall;?> onclick="chkitem('<?php echo $XVMnuCode; ?>')" type="checkbox" id="allitem<?php echo $XVMnuCode; ?>" class="select-all1 checkbox select-item<?php echo $XVMnuCode; ?>" name="select-all"/>
         </td>
         <td ><?php echo $hk['XVMnuName']; ?></td>
-        <td style="text-align: center;" ><input <?php if($allc==66){ echo 'checked';} ?> id="XBDmnIsRead<?php echo $XVMnuCode; ?>" type="checkbox" onclick="chkpri_('XBDmnIsRead','<?php echo $XVMnuCode; ?>')"     class="select-col1 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input <?php if($allc==66){ echo 'checked';} ?> id="XBDmnIsAdd<?php echo $XVMnuCode; ?>"  type="checkbox"  onclick="chkpri_('XBDmnIsAdd','<?php echo $XVMnuCode; ?>')"     class="select-col2 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input <?php if($allc==66){ echo 'checked';} ?> id="XBDmnIsDelete<?php echo $XVMnuCode; ?>" type="checkbox" onclick="chkpri_('XBDmnIsDelete','<?php echo $XVMnuCode; ?>')"   class="select-col3 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
-        <td style="text-align: center;" ><input <?php if($allc==66){ echo 'checked';} ?> id="XBDmnIsControl<?php echo $XVMnuCode; ?>"  type="checkbox"onclick="chkpri_('XBDmnIsControl','<?php echo $XVMnuCode; ?>')"  class="select-col4 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input  <?php echo $checked1;?> id="XBDmnIsRead<?php echo $XVMnuCode; ?>" type="checkbox" onclick="chkpri_('XBDmnIsRead','<?php echo $XVMnuCode; ?>')"     class="select-col1 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input  <?php echo $checked2;?> id="XBDmnIsAdd<?php echo $XVMnuCode; ?>"  type="checkbox"  onclick="chkpri_('XBDmnIsAdd','<?php echo $XVMnuCode; ?>')"     class="select-col2 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input  <?php echo $checked3;?>  id="XBDmnIsDelete<?php echo $XVMnuCode; ?>" type="checkbox" onclick="chkpri_('XBDmnIsDelete','<?php echo $XVMnuCode; ?>')"   class="select-col3 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
+        <td style="text-align: center;" ><input  <?php echo $checked4;?> id="XBDmnIsControl<?php echo $XVMnuCode; ?>"  type="checkbox"onclick="chkpri_('XBDmnIsControl','<?php echo $XVMnuCode; ?>')"  class="select-col4 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
     </tr>
     <?php  $i++;} ?>
-</table>
+</table> <input type="text" id="totalmenu" value="<?php echo $strXVMnuCode;?>">
 
 <button style="display: none;" id="select-all" class="btn button-default">เลือกทั้งหมด / ยกเลิกทั้งหมด</button>
 <!-- <button id="select-invert" class="btn button-default">สลับ</button> -->
