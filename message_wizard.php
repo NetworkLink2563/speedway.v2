@@ -6,15 +6,6 @@
     <link rel="icon" type="image/png" href="http://www.centrecities.com/speedway/img/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <title>City Motorway Division</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="dist/css/css.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
-
 <!-- bootstrap wizard -->
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/1.35.0/iconfont/tabler-icons.min.css'>
@@ -22,6 +13,24 @@
 
     <title>ตัวช่วยสร้างข้อความ</title>
 </head>
+
+<?php 
+include('header.php');
+include "service/privilege.php"; 
+
+
+$menucode="009";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+
+
+?>
+
+
+
+
 
 <style>
      body {
@@ -43,14 +52,13 @@
 </style>
 
 <body>
-<header>
-    <?php include('header.php'); ?>
-</header>
+
 
 
 <div class="container" id="container" style="padding-bottom: .6rem;">
 
 
+<?php if($pri_r != 0){ ?>
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
             <!-- <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ตัวช่วย -->
         </div>
@@ -78,12 +86,14 @@
 			<div class="col-md-3">
 				<div class="text-center position-relative">
 					<div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #4976BA!important; box-shadow: 3px 3px 3px #aaaaaa !important;">
-						<a href="messagepublicrelations.php"><img src="img/create_white.png" width="50" alt=""></a>
+						<a href="#"><img src="img/create_white.png" width="50" alt=""></a>
 					</div>
 					<h4 class="mt-3 fs-6">1.สร้างข้อความ</h4>
+					<?php if($pri_w != 0){?>
                     <button onclick="location.href='messagepublicrelations.php'" style="padding: .5rem; width: 60%; background-color: #084387; box-shadow: 3px 3px 3px #aaaaaa !important;"  class="btn btn-primary fs-6">
 					กดสร้างข้อความ<br>(Message)
                     </button>
+					<?php } ?>
 					<div class="arrow-icon position-absolute d-none d-lg-block" style="top:50px; right:-25px">
 						<svg class="bi bi-arrow-right" fill="currentColor" height="30" viewbox="0 0 16 16" width="30" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" fill-rule="evenodd"></path></svg>
@@ -93,12 +103,16 @@
 			<div class="col-md-3">
 				<div class="text-center position-relative">
 					<div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #4976BA!important; box-shadow: 3px 3px 3px #aaaaaa !important;">
-						<a href="messagepublicrelationsframe.php"><img src="img/format.png" width="50" alt=""></a>
+						<a href="#"><img src="img/format.png" width="50" alt=""></a>
 					</div>
 					<h4 class="mt-3 fs-6">2.จัดรูปแบบข้อความ</h4>
+
+					<?php if($pri_w != 0){ ?>
                     <button onclick="location.href='messagepublicrelationsframe.php'" style="padding: .5rem; width: 60%; background-color: #084387; box-shadow: 3px 3px 3px #aaaaaa !important;"  class="btn btn-primary fs-6">
 					กดจัดรูปแบบข้อความ<br>(Format)
                     </button>
+					<?php } ?>
+
 					<div class="arrow-icon d-none d-lg-block position-absolute" style="top:50px; right:-25px">
 						<svg class="bi bi-arrow-right" fill="currentColor" height="30" viewbox="0 0 16 16" width="30" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" fill-rule="evenodd"></path></svg>
@@ -108,12 +122,16 @@
 			<div class="col-md-3">
 				<div class="text-center position-relative">
 					<div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #4976BA!important; box-shadow: 3px 3px 3px #aaaaaa !important;">
-                    <a href="messagepublicrelationsframegroup.php"><img src="img/playlist.png" width="50" alt=""></a>
+                    <a href="#"><img src="img/playlist.png" width="50" alt=""></a>
 					</div>
 					<h4 class="mt-3 fs-6">3.ชุดข้อความ</h4>
+					
+					<?php if($pri_w != 0){ ?>
 					<button onclick="location.href='messagepublicrelationsframegroup.php'" style="padding: .5rem; width: 60%; background-color: #084387; box-shadow: 3px 3px 3px #aaaaaa !important;"  class="btn btn-primary fs-6">
 					กดจัดชุดข้อความ<br>(Playlist)
                     </button> 
+					<?php } ?>
+
 					<div class="arrow-icon d-none d-lg-block position-absolute" style="top:50px; right:-25px">
 						<svg class="bi bi-arrow-right" fill="currentColor" height="30" viewbox="0 0 16 16" width="30" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" fill-rule="evenodd"></path></svg>
@@ -123,18 +141,24 @@
 			<div class="col-md-3">
 				<div class="text-center position-relative">
                 <div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #4976BA !important; box-shadow: 3px 3px 3px #aaaaaa !important;">
-                <a href="messagepublicrelationsplay.php"><img src="img/sent.png" width="50" alt=""></a>
+                <a href="#"><img src="img/sent.png" width="50" alt=""></a>
 					</div>
 					<h4 class="mt-3 fs-6">ส่งชุดข้อความ</h4>
+					
+					<?php if($pri_w != 0){ ?>
 					<button onclick="location.href='messagepublicrelationsplay.php'" style="padding: .5rem; width: 60%; background-color: #084387 ; box-shadow: 3px 3px 3px #aaaaaa !important;"  class="btn btn-primary fs-6">
 					กดส่งชุดข้อความ<br>(Publisher)
                     </button> 
+					<?php } ?>
+					
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
+<?php }else{
+echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';
+} ?>
 </div>
 <!-- end div container-->
 

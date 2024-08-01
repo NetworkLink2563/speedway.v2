@@ -8,7 +8,7 @@
     $Qpri="SELECT *  FROM TMnyMUserMenu WHERE XVUsrCode='$user' AND XVMnuCode='$menucode'"; 
     $Qpri1=sqlsrv_query($conn,$Qpri);
     $Qpri2=sqlsrv_fetch_array($Qpri1, SQLSRV_FETCH_ASSOC);
-    $pri_[]=array("pri_w"=>$Qpri2['XBDmnIsAdd'],"pri_r"=>$Qpri2['XBDmnIsRead'],"pri_del"=>$Qpri2['XBDmnIsDelete']);
+    $pri_[]=array("pri_w"=>$Qpri2['XBDmnIsAdd'],"pri_r"=>$Qpri2['XBDmnIsRead'],"pri_del"=>$Qpri2['XBDmnIsDelete'],"pri_contr"=>$Qpri2['XBDmnIsControl']);
     return $pri_;
   }
 
