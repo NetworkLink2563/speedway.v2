@@ -173,13 +173,13 @@ table td{
 
 <div class="container" style="position: relative; top: 75;">
 
-<?php if($pri_r != 0){ ?>
+
 
 <div style="margin: .4rem; text-align: center; border-bottom: 3px double #cccc; padding: 1rem;">
             <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ตารางการทำงานของป้าย
         </div>
 
-
+        <?php if($pri_r != 0){ ?>
     <div class="flex-container" >
 
     <div class="col-12 shadow" style="border-radius: 5px; display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem;">
@@ -227,10 +227,13 @@ table td{
                                }
                             ?>
                             <div align="center" class="menu">
+                                <?php if($pri_w != 0){ ?>
                                 <a href="#" class="main-nav-item" data-toggle="modal" data-target="#myModalBrightness" style=" height: 35; color: #595959;<?php echo $Disable;?>" onclick="inputBrightnessValue('<?php echo $result['XVVmsCode'];?>')" title="ความสว่างการแสดงผล"><i class="fa fa-yelp fa-lg" aria-hidden="true" style="margin-top:5;"></i></a>&nbsp;&nbsp;&nbsp;
+
                                 <a href="#" class="main-nav-item" data-toggle="modal" data-target="#myModalElectrical" style=" height: 35; color: #595959;<?php echo $Disable;?>" onclick="inputElectricalValue('<?php echo $result['XVVmsCode'];?>')" title="ระบบไฟฟ้าป้าย"><i class="fa fa-lightbulb-o fa-lg" aria-hidden="true" style="margin-top:5;"></i></a>&nbsp;&nbsp;&nbsp;
+
                                 <a href="#" class="main-nav-item" data-toggle="modal" data-target="#myModalMornitor" style=" height: 35; color: #595959;<?php echo $Disable;?>" onclick="inputMornitorValue('<?php echo $result['XVVmsCode'];?>')" title="การแสดงผล"><i class="fa fa-object-group fa-lg" aria-hidden="true" style="margin-top:5;"></i></a>&nbsp;&nbsp;&nbsp;
-                                
+                                <?php } ?>
                             </div></td>
 
                            

@@ -2,6 +2,16 @@
 <?php
 include 'header.php';
 include "lib/DatabaseManage.php";
+include "service/privilege.php";
+
+$menucode="010";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+$pri_contrl=$pri[0]['pri_contr'];  // สิทธิ์การควบคุม
+
+
 /*
 include "permission.php";
 
@@ -409,6 +419,7 @@ table th{
 
 <div class="container" style="position: relative; top: 75;">
 
+
         <input type="hidden" id="XVMssCode">
         <input type="hidden" id="XVMssType">
         
@@ -424,7 +435,7 @@ table th{
 
         </div>
 
-        
+        <?php if($pri_r  != 0){  ?>
         
     
     <div class="flex-header">
@@ -432,6 +443,7 @@ table th{
     
             <div class="flex-btn col-2" id="message" id="container" style="border-right: 3px double #cccc; background-color: #f8f7f7cc; padding: 0;">
                    
+                                <?php if($pri_w != 0){ ?>
                                 <div class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
                                <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_addtext" class="btn-hover btn btn-primary shadow"><i style="width: 10%;" class="fa fa-file-text" ></i> สร้างข้อความตัวอักษร</button>
                                </div>
@@ -444,8 +456,10 @@ table th{
                                <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_addvdo"  class="btn-hover btn btn-primary shadow"><img src="img/icon/vdo.png" width="20" alt=""> สร้างข้อความวีดีโอ</button>
                                </div>
 
-
+                               <?php } ?>
                             </div>
+
+                           
                             <!-- end div flex-btn -->
 
                             
@@ -532,19 +546,22 @@ table th{
                        }
                     ?>
                         <div style="margin-top: 5px">
-                           
+                                <?php if($pri_del != 0){ ?>
                                 <i title="ลบ" style="cursor: -webkit-grab; cursor: grab;" class="fa fa-trash-o" aria-hidden="true" onclick="deleteMSG('<?php echo $result['XVMsgCode']; ?>');" <?php echo $Disable;?>></i>
-                            
+                                <?php } ?>
                         </div>
                     </td>
                     <td>
                         <?php
                            if($result['XVMsgType']==1){ 
+                            if($pri_w != 0){
                         ?>
+
                          <i title="แก้ไข" style="cursor: -webkit-grab; cursor: grab;margin-top:5px;" class="fa fa-pencil-square-o"
                                             aria-hidden="true"
                                             onclick="SearchEdit('<?php echo $result['XVMsgCode'];?>','<?php echo $result['XIMssWPixel'];?>','<?php echo $result['XIMssHPixel'];?>');"></i>
                          <?php
+                            }
                            }
                         ?>
                     </td>
@@ -565,6 +582,7 @@ table th{
 </div>
 <!-- end div flex-header -->
 
+<?php }else{ echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';} ?>
 
 </div>
 <!-- div container end -->
