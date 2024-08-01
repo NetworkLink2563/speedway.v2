@@ -3,17 +3,27 @@ date_default_timezone_set('Asia/Bangkok');
 include 'header.php';
 include "lib/DatabaseManage.php";
 include "permission.php";
-if(checkmenu($user,'001')==0)
-{
-    session_destroy();
-    header( "location: index.php" );
-    exit(0);
-}
-if(checkmenu($user,'010')==0){
+include "service/privilege.php";
+
+
+$menucode="020";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+$pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
+
+// if(checkmenu($user,'001')==0)
+// {
+//     session_destroy();
+//     header( "location: index.php" );
+//     exit(0);
+// }
+// if(checkmenu($user,'010')==0){
    
-    header( "location: dashboard.php" );
-    exit(0);
-}
+//     header( "location: dashboard.php" );
+//     exit(0);
+// }
 if(!isset($_GET['vmschk'])){$vms='ALL';}else{$vms=$_GET['vmschk'];}
 if(!isset($_GET['enddate'])){$enddate=date('Y/m/d');}else{$enddate=$_GET['enddate'];}
 if(!isset($_GET['strdate'])){$strdate=date('Y-m-01');}else{$strdate=$_GET['strdate'];}
@@ -318,6 +328,8 @@ hr {
     <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
             <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายงานสถานะป้าย</a>
     </div>
+
+    <?php if($pri_r != 0){?>
 <div class="flex-head" style="margin: 1rem;">
 
 <div class="col">
@@ -368,6 +380,8 @@ while($arr=sqlsrv_fetch_array($uq, SQLSRV_FETCH_ASSOC)){ ?>
     <div style="padding-left:76%"><a href="Report_status.php?vmschk=<?php echo $vms; ?>&strdate=<?php echo $strdate; ?>&enddate=<?php echo $enddate;  ?>&TSysSCommand=<?php echo $TSysSCommand; ?>" target="_blank" title="พิมพ์รายงาน"><i style="width: 17%; color:black" class="fa fa-print" aria-hidden="true"></i></a>
     </div>
 
+
+    <?php }else{echo'<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';} ?>
     </div>
     
 <?php

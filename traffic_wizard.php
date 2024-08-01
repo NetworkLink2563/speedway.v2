@@ -20,8 +20,25 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/1.35.0/iconfont/tabler-icons.min.css'>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-    <title>ตัวช่วยสร้างข้อความ</title>
+    <title>ตัวช่วยสร้างข้อความจราจร</title>
 </head>
+
+<?php
+include('header.php');
+include "service/privilege.php";
+
+$menucode="014";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+$pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
+
+
+?>
+
+
+
 
 <style>
      body {
@@ -43,13 +60,12 @@
 </style>
 
 <body>
-<header>
-    <?php include('header.php'); ?>
-</header>
+
 
 
 <div class="container" id="container" style="padding-bottom: .6rem;">
 
+<?php if($pri_r != 0){ ?>
 
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
             <!-- <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ตัวช่วย -->
@@ -135,6 +151,7 @@
 	</div>
 </section>
 
+<?php }else{ echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';} ?>
 </div>
 <!-- end div container-->
 

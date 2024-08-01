@@ -1,6 +1,15 @@
 <?php
 include 'header.php';
 include "lib/DatabaseManage.php";
+include "service/privilege.php";
+
+$menucode="013";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+$pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
+
 /*
 include "permission.php";
 
@@ -396,6 +405,7 @@ text-align: center;
 
         </div>
 
+        <?php if($pri_r != 0){ ?>
         <div class="flex-header">
        
         <div class="flex-content col-5" style="padding: 0;">
@@ -464,11 +474,16 @@ text-align: center;
                             <h5 style="text-align: center;">รหัสป้าย</h5>
                            <div id="vmsdetail" class="text-center" style="background-color: #efefefcc; font-size: 1.2rem; border-bottom: 1px solid #cccc; margin-bottom: .5rem; font-weight: 300;"></div>
                            
+
                               <div class="col-6" >
+                                <?php if($pri_w != 0){?>
                                 <button type="button" onclick="ShowSms()" style=" float: left;" class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                                <?php } ?>
                               </div>
                               <div class="col-6 text-right" >
+                              <?php if($pri_w != 0){?>
                                   <button type="button" onclick="sendmessageToVMS()"  class="btn btn-success shadow">ส่งข้อความขึ้นป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;color:white" class="fa fa-cloud-upload"></i></button>
+                                  <?php } ?>
                               </div>
                            </div>
 
@@ -483,7 +498,7 @@ text-align: center;
                 </div>
 <!-- end div flex-header -->
 
-
+ <?php }else{ echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';} ?>
 </div>
 <!-- end div container -->
 

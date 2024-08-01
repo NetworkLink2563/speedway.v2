@@ -1,12 +1,24 @@
 <?php
 include 'header.php';
 include "permission.php";
+include 'header.php';
+include "lib/DatabaseManage.php";
+include "permission.php";
+include "service/privilege.php";
 
-if(checkmenu($user,'002')==0){
-    session_destroy();
-    header( "location: index.php" );
-    exit(0);
-}
+
+$menucode="006";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+$pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
+
+// if(checkmenu($user,'002')==0){
+//     session_destroy();
+//     header( "location: index.php" );
+//     exit(0);
+// }
 ?>
 <style>
 .Neon {

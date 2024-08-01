@@ -1,6 +1,15 @@
 <?php
 include 'header.php';
 include "lib/DatabaseManage.php";
+include "service/privilege.php";
+
+$menucode="017";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+$pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
+
 /*
 include "permission.php";
 
@@ -416,12 +425,15 @@ table th{
         </div>
 
 
+        <?php if($pri_r != 0){ ?>
     <div class="flex-head">
 
     <div class="col-2"  id="message" id="container" style="padding: 0; border-right: 3px double #cccc;">
-            <div class="flex-btn" style="background-color: #f8f7f7cc;">
+            <div class="flex-btn" style="">
                             <div class="col-12" style="padding: .5rem .5rem;">
+                                <?php if($pri_w != 0){ ?>
                                <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_add"  class=" btn-hover btn btn-primary shadow" ><i style="width: 15%;" class="fa fa-file-text"></i>สร้างชุดการแสดงป้าย</button>
+                               <?php } ?>
                             </div>
             </div>
             </div>
@@ -477,17 +489,21 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                        if($_SESSION["XBDmnIsDelete"]==1){
                           $Disable="";
                        }
+
+                       if($pri_del != 0){
                     ?>
                                 <a href="#" class="del-item" style="color: #8d9499;<?php echo $Disable;?>"
                                 onclick="deleteMSG('<?php echo $result['XVPltCode']; ?>');" ><i class="fa fa-trash-o"
                                     aria-hidden="true"></i></a>
+                                    <?php } ?>
                     </td>
                     <td>
+                        <?php if($pri_w != 0){ ?>
                                 <i title="แก้ไข" style="cursor: -webkit-grab; cursor: grab;" class="fa fa-pencil-square-o" aria-hidden="true"
                                 onclick="SearchEdit('<?php echo $result['XVPltCode'];?>','<?php echo $result['XVPltName'];?>','<?php echo $result['XVMssCode'];?>');"></i>
                     </td>
                     </tr>
-                    <?php } ?>
+                    <?php }} ?>
                     </tbody>
                     </table>
                 </div>
@@ -500,6 +516,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
 </div>
 </div>
 
+<?php }else{ echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';} ?>
 </div>
 <!-- end div flex container -->
 

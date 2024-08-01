@@ -2,17 +2,27 @@
 include 'header.php';
 include "lib/DatabaseManage.php";
 include "permission.php";
-if(checkmenu($user,'001')==0)
-{
-    session_destroy();
-    header( "location: index.php" );
-    exit(0);
-}
-if(checkmenu($user,'002')==0){
+include "service/privilege.php";
+
+
+$menucode="006";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+$pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
+
+// if(checkmenu($user,'001')==0)
+// {
+//     session_destroy();
+//     header( "location: index.php" );
+//     exit(0);
+// }
+// if(checkmenu($user,'002')==0){
   
-    header( "location: dashboard.php" );
-    exit(0);
-}
+//     header( "location: dashboard.php" );
+//     exit(0);
+// }
 
 ?>
 
@@ -109,6 +119,8 @@ input .btnsearch{
             <a class="tablinks2 active " style="cursor: context-menu;"><img style="margin-right: .4rem;" src="img/person.png" width="20" alt=""> ผู้ใช้งาน</a>
         </div>
 
+
+        <?php if($pri_r != 0){ ?>
     <div class="flex-head">
 
     
@@ -116,7 +128,9 @@ input .btnsearch{
 <div class="col-2 flex-container-btn container" style=" border-right: 3px double #cccc;">
 
         <div class="col-12" id="User container" style="">
+            <?php if($pri_w != 0){ ?>
                 <button style="padding: 1rem; width: 100%; background-color: #006eb4;" class="btn btn-primary shadow" onclick="location.href='adduser.php'"><i class="fa fa-plus" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</button>
+            <?php } ?>
            </div>
 
 
@@ -272,6 +286,10 @@ input .btnsearch{
         </div>
         <br >
     </div>
+
+    <?php }else{echo'<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';} ?>
+
+
 </div>
 <div class="modal" id="myModal" tabindex="-1" role="dialog"style="width: 1200" >
     <div class="modal-dialog" role="document" >

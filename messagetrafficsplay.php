@@ -3,6 +3,14 @@ ob_start();
 session_start();
 include 'header.php';
 include "lib/DatabaseManage.php";
+include "service/privilege.php";
+
+$menucode="021";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+$pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
 /*
 include "permission.php";
 
@@ -392,6 +400,8 @@ text-align: center;
 
 
         </div>
+
+        <?php if($pri_r != 0){ ?>
             <div class="flex-head">
 
 
@@ -455,13 +465,19 @@ text-align: center;
                               <div class="col-12" style="display: flex;">
 
                               <div class="col-4">
+                                <?php if($pri_w != 0){ ?>
                                 <button type="button" onclick="ShowSms()" style=" float: left;margin-right: 10px" class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                                <?php } ?>
                                 </div>
                                 <div class="col-4">
+                                <?php if($pri_w != 0){ ?>
                                 <button type="button" onclick="CancelSms()" style=" float: left;margin-right: 10px" class="btn btn-danger shadow">ยกเลิกข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                                <?php } ?>
                                 </div>
                                 <div class="col-4">
+                                    <?php if($pri_w != 0){ ?>
                                   <button type="button" onclick="sendmessageToVMS()"  class="btn btn-success shadow">ส่งข้อความขึ้นป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;color:white" class="fa fa-cloud-upload"></i></button>
+                                  <?php } ?>
                               </div>
                               </div>
                               
@@ -473,6 +489,8 @@ text-align: center;
 
 
             </div>
+
+            <?php }else{echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';} ?>
             <!-- end div flex head -->
 
 

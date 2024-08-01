@@ -1,6 +1,16 @@
 <?php
 include 'header.php';
 include "lib/DatabaseManage.php";
+include "service/privilege.php";
+
+$menucode="015";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+$pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
+
+
 /*
 include "permission.php";
 
@@ -420,18 +430,20 @@ li{
             </div>
 
             <div class="next-btn col"  style="text-align: right; padding: 0; ">
-            <button onclick="location.href='/speedway/messagetrafficsframe.php'" class="btn btn-success btn-hover shadow" style="">>> Step2 สร้างข้อความจราจรแสดงบนป้าย</button>
+            <button onclick="location.href='/speedway/messagetrafficsframe.php'" class="btn btn-success btn-hover shadow" style="">>> Step2 จัดรูปแบบข้อความจราจร</button>
             </div>
 
         </div>
-
+        <?php if($pri_r != 0){ ?>
 
         <div class="flex-header">
        
-
+       
 
         <div class="flex-btn col-2" id="message" id="container" style="border-right: 3px double #cccc; background-color: #f8f7f7cc; padding: 0;">
 
+
+                                <?php if($pri_w != 0){ ?>
                                 <div class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
                                <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4; margin: 0;" type="button" id="btn_addtext" class="btn btn-primary btn-hover btn-open-modal shadow"><i style="width: 10%;" class="fa fa-file-text"></i> สร้างข้อความตัวอักษร</button>
                                </div>
@@ -441,7 +453,9 @@ li{
                                <div class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
                                <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_addvdo"  class="btn btn-primary shadow btn-hover"><img src="img/icon/vdo.png" width="20" alt=""> สร้างข้อความวีดีโอ</button>
                             </div>
-    
+                            <?php } ?>
+
+                            
                         </div>
                     <!-- end div flex-btn -->
 
@@ -528,20 +542,23 @@ li{
                        }
                     ?>
                         <div style="margin-top: 5px">
-                           
+                                <?php if($pri_del != 0){ ?>
                                 <i title="ลบ" style="cursor: -webkit-grab; cursor: grab;" class="fa fa-trash-o" aria-hidden="true" onclick="deleteMSG('<?php echo $result['XVMsgCode']; ?>');" <?php echo $Disable;?>></i>
-                            
+                                <?php } ?>
                         </div>
                     </td>
                     <td>
                         <?php
                            if($result['XVMsgType']==1){ 
+                            if($pri_w != 0){
                         ?>
+
+                        
                          <i title="แก้ไข" style="cursor: -webkit-grab; cursor: grab;margin-top:5px;" class="fa fa-pencil-square-o"
                                             aria-hidden="true"
                                             onclick="SearchEdit('<?php echo $result['XVMsgCode'];?>','<?php echo $result['XIMssWPixel'];?>','<?php echo $result['XIMssHPixel'];?>');"></i>
                          <?php
-                           }
+                           }}
                         ?>
                     </td>
                     </tr>
@@ -552,10 +569,21 @@ li{
                     </div>
                     <!-- end div flex-table -->
 
+                    
                 </div>
+                
+                </div>
+               
 <!-- end div flex-header -->
 
+
+
 </div>
+</div>
+</div>
+</div>
+
+<?php }else{ echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';}   ?>
 <!-- end div container -->
 
 <div class="modal" id="modal-addtext" tabindex="-1" role="dialog" aria-hidden="true">

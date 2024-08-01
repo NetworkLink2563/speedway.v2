@@ -3,6 +3,16 @@
 <?php
 include 'header.php';
 include "lib/DatabaseManage.php";
+include "service/privilege.php";
+
+$menucode="012";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+$pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
+
+
 /*
 include "permission.php";
 
@@ -434,7 +444,7 @@ input.btnsearch{
 
 
 
-<div class="container" style="position: relative; top: 75;">
+<div class="container" style="position: relative; top: 75; height: auto;">
 
 
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem; display: flex;">
@@ -454,6 +464,7 @@ input.btnsearch{
 
         </div>
 
+        <?php if($pri_r != 0){?>
         
         <input type="hidden" id="framenumber" >
         <input type="hidden" id="framesmsid" >
@@ -462,20 +473,45 @@ input.btnsearch{
         <input type="hidden" id="XVMssCode" >
             
 
-<div class="flex-header" style="padding: 0;">
+<div class="flex-header" style="">
 
 
             <div class="col-3" style="padding: 0;">
-            <div class="flex-btn" style="border: 5px double #DCDCDC; padding: 0.5rem; top: 43;border-bottom: none; position: relative;">
+            <div class="flex-btn" style="border: 5px double #DCDCDC; ">
 
-                       <div class="box-color col-12" onclick="showframe1()"   style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;" ><p style="maring:0px;padding:0px;">แบบข้อความเดี่ยว</p><img class=" frame hover shadow"  src="img/f1.png" alt="" width="100%" height="100"></div>
+                        
+                       <div class="box-color col-12" style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;" ><p style="maring:0px;padding:0px;">แบบข้อความเดี่ยว</p><img class=" frame shadow"  src="img/f1.png" alt="" width="100%" height="100">
+                        
+                       <?php if($pri_w != 0){ ?>
+                       <div style="margin : 1rem;">
+                       <button class="btn shadow btn-success" onclick="showframe1()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างเฟรม</button>
+                       </div>
+                       <?php } ?>
+                        </div>
 
-                       <div class="box-color col-12" onclick="showframe2()" style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;" ><p style="maring:0px;padding:0px;">แบบ 2 ข้อความ 3 ช่อง</p><img class=" frame hover shadow"  src="img/f2.png" alt="" width="100%" height="100"></div>
+                       <div class="box-color col-12"  style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;" ><p style="maring:0px;padding:0px;">แบบ 2 ข้อความ 3 ช่อง</p><img class=" frame hover shadow"  src="img/f2.png" alt="" width="100%" height="100">
+                    
+                       <?php if($pri_w != 0){ ?>
+                        <div style="margin : 1rem;">
+                       <button class="btn shadow btn-success" onclick="showframe2()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างเฟรม</button>
+                       </div>
+                       <?php } ?>
+                        </div>
                        
-                       <div class="box-color col-12" onclick="showframe3()" style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;" ><p style="maring:0px;padding:0px;">แบบ 1 ข้อความ 2 ช่อง</p><img class=" frame hover shadow"  src="img/f3.png" alt="" width="100%" height="100"></div>
+                       <div class="box-color col-12"  style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;" ><p style="maring:0px;padding:0px;">แบบ 1 ข้อความ 2 ช่อง</p><img class=" frame hover shadow"  src="img/f3.png" alt="" width="100%" height="100">
+                    
+                       <?php if($pri_w != 0){ ?>
+                       <div style="margin : 1rem;">
+                       <button class="btn shadow btn-success" onclick="showframe3()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างเฟรม</button>
+                       </div>
+                       <?php } ?>
+
+                       
+                </div>
 
                 </div>
                 </div>
+             
 
 
 
@@ -492,7 +528,7 @@ input.btnsearch{
 </div>
 </div>
 
-                        <div class="col">
+                        <div class="col" style="">
                         <table id="VMSTable" class="table table-striped table-hover">
                             <thead>
                                 <tr>
@@ -542,14 +578,16 @@ input.btnsearch{
                                     <td style="text-align: center"><?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel']; ?></td>
                                    
                                     <td>
- 
+                                                <?php if($pri_del != 0){ ?>
                                                 <i title="ลบ" style="cursor: -webkit-grab; cursor: grab;" class="fa fa-trash-o" aria-hidden="true" onclick="deleteMSG('<?php echo $result['XVMsfCode']; ?>');" <?php echo $Disable;?>></i>
-                                            
+                                                <?php } ?>
                                     </td>
                                     <td>
+                                                <?php if($pri_w != 0){ ?>
                                                  <i title="แก้ไข" style="cursor: -webkit-grab; cursor: grab;" class="fa fa-pencil-square-o"
                                                 aria-hidden="true"
                                                 onclick="SearchEdit('<?php echo $result['XVMsfCode'];?>','<?php echo $result['XIMssWPixel'];?>','<?php echo $result['XIMssHPixel'];?>');"></i>
+                                                <?php } ?>
                                     </td>
                 
                     </tr>
@@ -562,6 +600,8 @@ input.btnsearch{
                     </div>
                     </div>
 
+                    <?php }else{echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';} ?>
+                </div>
                 </div>
             <!-- div flex header -->
 

@@ -1,6 +1,15 @@
 <?php
 include 'header.php';
 include "lib/DatabaseManage.php";
+include "service/privilege.php";
+
+$menucode="011";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+$pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
+
 /*
 include "permission.php";
 
@@ -405,14 +414,17 @@ table th{
         </div>
 
         
+        <?php if($pri_r != 0){ ?>
     <div class="flex-header">
 
 
         <div class="col-2"  id="message" id="container" style="padding: 0; border-right: 3px double #cccc;">
-            <div class="flex-btn" style="background-color: #f8f7f7cc;">
+            <div class="flex-btn" style="">
             
                     <div class="col-12"  style="padding: .5rem .5rem;">
+                        <?php if($pri_w != 0){ ?>
                                <button style="width: 100%; padding: 1rem 0rem; background-color: #006eb4;" type="button" id="btn_add"  class=" btn-hover btn btn-success shadow"><i class="fa fa-file-text" style="width: 15%;"></i>สร้างชุดการแสดงป้าย</button>
+                               <?php } ?>
                     </div>
 
                     </div>
@@ -435,8 +447,9 @@ table th{
                                     </th>
                                    
                                     <th ></th>
-                                    <th >แก้ไข</th>
                                     <th >ลบ</th>
+                                    <th >แก้ไข</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -457,7 +470,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                                     <td><?php echo $result['XVPltCode']; ?></td>
                                     <td><?php echo $result['XVPltName']; ?></td>
                                    
-                                    <td style="text-align: left">
+                                    <td style="">
                                         <?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel']; ?></td>
                                     
                                     <td></td>
@@ -470,15 +483,23 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                           $Disable="";
                        }
                     ?>
-                        <div style="margin-top: 5px"><a href="#" class="del-item" style="color: #8d9499;<?php echo $Disable;?>"
+                        <div style="margin-top: 5px">
+                            
+                        <?php if($pri_del != 0){ ?>
+                                <a href="#" class="del-item" style="color: #8d9499;<?php echo $Disable;?>"
                                 onclick="deleteMSG('<?php echo $result['XVPltCode']; ?>');" ><i class="fa fa-trash-o"
-                                    aria-hidden="true"></i></a></div>
+                                    aria-hidden="true"></i></a>
+                                <?php } ?>
+
+                                </div>
                     </td>
                     
                     <td>
                             <div style="margin-top: 5px">
+                                <?php if($pri_w != 0){ ?>
                                 <i title="แก้ไข" style="cursor: -webkit-grab; cursor: grab;" class="fa fa-pencil-square-o" aria-hidden="true"
                                 onclick="SearchEdit('<?php echo $result['XVPltCode'];?>','<?php echo $result['XVPltName'];?>','<?php echo $result['XVMssCode'];?>');"></i>
+                                <?php } ?>
                             </div>
                     </td>
                     </tr>
@@ -491,6 +512,8 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
 
 </div>
 <!-- end div flex-header -->
+
+<?php }else{ echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>'; } ?>
 
 <div class="modal modal-fullscreen" id="modal-add" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
