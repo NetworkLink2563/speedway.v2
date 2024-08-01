@@ -701,7 +701,13 @@ function sendmessageToVMS() {
                                 icon: "success"
                             });
                         }
-
+                        if (obj.Return == "Nodata") {
+                            Swal.fire({
+                                title: "",
+                                text: "ส่งคำสั่งไม่ได้ กรุณาเลือกข้อความป้าย",
+                                icon: "warning"
+                            });
+                        }
                     
                         if (obj.Return == "Fail") {
                             Swal.fire({

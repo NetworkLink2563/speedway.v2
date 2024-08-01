@@ -210,9 +210,13 @@ function SendMqtt($vmscode){
           WHERE (dbo.TMstMItmVMSPlayList.XVVmsCode = '$vmscode') AND (dbo.TMstMPlaylist.XVPltType = N'2')";
    
     $query = sqlsrv_query($conn, $sql);
+    $row_count = sqlsrv_num_rows(  $query );
+    if ($row_count === false)
+        $ret='{"Return":"Nodata"}';
+        return $ret; 
     $XVPltCode="";
     $result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC);
-    
+  
     $XVPltCode=$result["XVPltCode"];
     $XVPltName=$result["XVPltName"];
     $XVMssCode=$result["XVMssCode"];
@@ -224,7 +228,7 @@ function SendMqtt($vmscode){
                                               ,XVMssCode
                                               ,XVPltType)VaLUES(
                                               '$XVUsrCode'
-                                              ,'$timerecord'
+                                              ,GETDATE()
                                               ,'$XVPltCode'
                                               ,'$XVPltName'
                                               ,'$XVMssCode'
