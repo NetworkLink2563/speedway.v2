@@ -474,25 +474,14 @@ text-align: center;
                             <h5 style="text-align: center;">รหัสป้าย</h5>
                            <div id="vmsdetail" class="text-center" style="background-color: #efefefcc; font-size: 1.2rem; border-bottom: 1px solid #cccc; margin-bottom: .5rem; font-weight: 300;"></div>
                            
-<<<<<<< HEAD
 
                               <div class="col-6" >
                                 <?php if($pri_w != 0){?>
-=======
-                              <div class="col-4" >
->>>>>>> origin/main
                                 <button type="button" onclick="ShowSms()" style=" float: left;" class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
                                 <?php } ?>
                               </div>
-<<<<<<< HEAD
                               <div class="col-6 text-right" >
                               <?php if($pri_w != 0){?>
-=======
-                              <div class="col-4">
-                                <button type="button" onclick="CancelSms()" style=" float: left;margin-right: 10px" class="btn btn-danger shadow">ยกเลิกข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
-                            </div>
-                              <div class="col-4 text-right" >
->>>>>>> origin/main
                                   <button type="button" onclick="sendmessageToVMS()"  class="btn btn-success shadow">ส่งข้อความขึ้นป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;color:white" class="fa fa-cloud-upload"></i></button>
                                   <?php } ?>
                               </div>
