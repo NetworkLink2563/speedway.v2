@@ -271,7 +271,7 @@ function SendMqtt($vmscode){
                     $sql2.="(
                             '$vmscode'
                             ,'$XVUsrCode'
-                            ,'$timerecord'
+                            ,GETDATE()
                             ,'$XVPltCode'
                             ,$XIPltSeqNo
                             ,$XIPltOrder
@@ -285,7 +285,7 @@ function SendMqtt($vmscode){
                     $sql2.="(
                         '$vmscode'
                         ,'$XVUsrCode'
-                        ,'$timerecord'
+                        ,GETDATE()
                         ,'$XVPltCode'
                         ,$XIPltSeqNo
                         ,$XIPltOrder
