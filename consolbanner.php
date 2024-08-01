@@ -5,22 +5,33 @@ include 'header.php';
 include "lib/DatabaseManage.php";
 include "lib/function_consol.php";
 include "permission.php";
-if(checkmenu($user,'001')==0)
-{
-    session_destroy();
-    header( "location: index.php" );
-    exit(0);
-}
-if(checkmenu($user,'004')==0){
+include "service/privilege.php";
+
+$menucode="007";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+
+
+
+// if(checkmenu($user,'001')==0)
+// {
+//     session_destroy();
+//     header( "location: index.php" );
+//     exit(0);
+// }
+// if(checkmenu($user,'004')==0){
     
-    header( "location: dashboard.php" );
-    exit(0);
-}else{
-    if($_SESSION["XBDmnIsRead"]==0){
-        header( "location: dashboard.php" );
-        exit(0);
-    }
-}
+//     header( "location: dashboard.php" );
+//     exit(0);
+// }else{
+//     if($_SESSION["XBDmnIsRead"]==0){
+//         header( "location: dashboard.php" );
+//         exit(0);
+//     }
+// }
+
 $sql = "SELECT XIMssWPixel, XIMssHPixel,XVMssCode FROM TMstMMsgSize ORDER BY XVMssCode ASC";
 
 $query = sqlsrv_query($conn, $sql);
@@ -292,7 +303,14 @@ table {
 
 </style>
 
+
 <div class="container" style="position: relative; top: 75;">
+
+<?php
+
+if($pri_r == 0){
+    echo '<div style="text-align:center;padding: 10%;">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';
+ }else{ ?>
 
 
     <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
@@ -521,6 +539,8 @@ table {
     </div>
 </div>
 
+
+
 <div class="flex-container" style="">
 
 
@@ -544,6 +564,7 @@ table {
             </thead>
             <tbody>
     </div>
+
 
 
 
@@ -586,9 +607,17 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
         <?php echo $result_banner['XVPvnName'];?></td>
     <td>
         <div align="center" style="margin-top: 0">
+
+            <?php if($pri_w != 0){ 
+                
+                ?>
+
             <a href="#" style="height: 35; color: #333"
                 onclick="inputValueId('<?php echo $result_banner['XVVmsCode'];?>','<?php echo $result_banner['XVVmsName'];?>','<?php echo $result_banner['XVSdtName'];?> <?php echo $result_banner['XVDstName'];?> <?php echo $result_banner['XVPvnName'];?>')"><i
                     class="fa fa-cog" aria-hidden="true"></i></a>&nbsp;&nbsp;
+
+                <?php } ?>
+
             <a href="#" data-toggle="modal" data-target="#MyModalList" style="height: 35; color: #333"
                 onclick="ShowList('<?php echo $result_banner['XVVmsCode'];?>','<?php echo $result_banner['XVVmsName'];?>')"><i
                     class="fa fa-list" aria-hidden="true"></i></a>&nbsp;
@@ -629,7 +658,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
         </div>
     </div>
 </div>
-
+<?php } ?>
 
 
 <!-- Bootstrap core JavaScript

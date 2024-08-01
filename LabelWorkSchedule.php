@@ -2,22 +2,32 @@
 include 'header.php';
 include "lib/DatabaseManage.php";
 include "permission.php";
-if(checkmenu($user,'001')==0)
-{
-    session_destroy();
-    header( "location: index.php" );
-    exit(0);
-}
-if(checkmenu($user,'005')==0){
+include "service/privilege.php";
+
+$menucode="008";
+$pri=pri_($_SESSION['user'],$menucode);  
+$pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
+$pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
+$pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+
+// if(checkmenu($user,'001')==0)
+// {
+//     session_destroy();
+//     header( "location: index.php" );
+//     exit(0);
+// }
+// if(checkmenu($user,'005')==0){
   
-    header( "location: dashboard.php" );
-    exit(0);
-}else{
-    if($_SESSION["XBDmnIsRead"]==0){
-        header( "location: dashboard.php" );
-        exit(0);
-    }
-}
+//     header( "location: dashboard.php" );
+//     exit(0);
+// }else{
+//     if($_SESSION["XBDmnIsRead"]==0){
+//         header( "location: dashboard.php" );
+//         exit(0);
+//     }
+// }
+
+
 $sqlCMDBrightness="SELECT * FROM TSysSCommand WHERE XVCmdCode='001'";
 $queryCMDBrightness = sqlsrv_query($conn, $sqlCMDBrightness);
 $resultCMDBrightness = sqlsrv_fetch_array($queryCMDBrightness, SQLSRV_FETCH_ASSOC);
@@ -163,7 +173,7 @@ table td{
 
 <div class="container" style="position: relative; top: 75;">
 
-
+<?php if($pri_r != 0){ ?>
 
 <div style="margin: .4rem; text-align: center; border-bottom: 3px double #cccc; padding: 1rem;">
             <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ตารางการทำงานของป้าย
@@ -230,13 +240,18 @@ table td{
 
                     </tbody>
                 </table>
-     
+                
             </div>
             <!-- <div class="col-sm-3">
             </div> -->
 
         </div>
     </div>
+
+    <?php } else{
+    echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';
+} ?>
+
     <!--
     <br >
     <div class="tab" style="margin-left: 10px;margin-right: 10px;">
@@ -546,6 +561,7 @@ table td{
         </div>
     </div>
 </div>
+
 
 
 <div class="modal py-5"  id="myModalShowData" >
