@@ -1,9 +1,7 @@
 <?php
 include 'header.php';
 include "permission.php";
-include 'header.php';
 include "lib/DatabaseManage.php";
-include "permission.php";
 include "service/privilege.php";
 
 
@@ -133,7 +131,7 @@ body {
                 <span>รหัสผ่าน</span>
             </div>
             <div class="col-6">
-                     <input placeholder="Password" class="input" style="width: 100%;" name="passwordInput" id="passwordInput" type="password" onkeyup='check();' /><i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 203px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
+                     <input placeholder=" Password" class="form-control input" style="width: 100%;" name="passwordInput" id="passwordInput" type="password" onkeyup='check();' /><i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 203px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
             </div>
         </div>
 
@@ -142,7 +140,8 @@ body {
                 <span>รหัสผ่านอีกครั้ง</span>
             </div>
             <div class="col-6">
-                     <input placeholder="Confirm Password" class="input" style="width: 100%;" name="confirm_password" id="confirm_password" type="password" onkeyup='check();' /><i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 203px;" class="far fa-eye fa-eye-slash" id="togglePassword2"></i> <span id="message"></span>
+                     <!-- <input placeholder="Confirm Password" class="input" style="width: 100%;" name="confirm_password" id="confirm_password" type="password" onkeyup='check();' /><i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 203px;" class="far fa-eye fa-eye-slash" id="togglePassword2"></i> <span id="message"></span> -->
+                     <input placeholder=" Confirm Password" class="form-control input" style="width: 100%;" name="passwordInput" id="confirm_password" type="password" onkeyup='check();' />
             </div>
         </div>
 
@@ -166,7 +165,7 @@ var check = function() {
                 <span>เวลาเข้าทำงาน</span>
             </div>
             <div class="col-6">
-                <select  id="SelXVShfCode" class="input" style="width: 100%;">
+                <select  id="SelXVShfCode" class="form-control input dropdown-toggle" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"style="">
                 <?php include "lib/DatabaseManage.php";?>
                 <?php
                         $sql="SELECT  XVShfCode, XVShfName, XIShfStartHour, XIShfStartMin, XIShfEndHour, XIShfEndMin
@@ -264,17 +263,19 @@ function addUser() {
 <script>
     const togglePassword = document.querySelector('#togglePassword');
     const password = document.querySelector('#passwordInput');
+    const confirm = document.querySelector('#confirm_password');
 
   togglePassword.addEventListener('click', function (e) {
     // toggle the type attribute
     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
     password.setAttribute('type', type);
+    confirm.setAttribute('type', type);
     // toggle the eye slash icon
     this.classList.toggle('fa-eye-slash'); 
 });
 </script>
 
-<script>
+<!-- <script>
     const togglePassword2 = document.querySelector('#togglePassword2');
     const password2 = document.querySelector('#confirm_password');
 
@@ -285,7 +286,7 @@ function addUser() {
     // toggle the eye slash icon
     this.classList.toggle('fa-eye-slash'); 
 });
-</script>
+</script> -->
 
 </body>
 
