@@ -419,7 +419,7 @@ echo ThDate(); // แสดงวันที่
                         </div>
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                           
-                            <select id="XVShfCode" class="form-control">
+                            <select id="XVShfCode" class="form-control" style="background-color: #e6f5ff;">
                                 <option value="">เลือกกะทำงาน</option>
                                 <?php
                                         function twodigit($number){
