@@ -76,7 +76,7 @@ echo ThDate(); // แสดงวันที่
 <script type="text/javascript">
     
     $(document).ready(function() {
-       $('#username').change(function() {
+       $('#inputPassword').change(function() {
            var val = $(this).val();
            var optionx = document.getElementById("XVShfCode").value;
            var userName = document.getElementById("username").value; //alert(userName);
@@ -153,6 +153,7 @@ echo ThDate(); // แสดงวันที่
 </script>
 
 
+<<<<<<< HEAD
     togglePassword.addEventListener('click', function (e) {
     // toggle the type attribute
     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -163,6 +164,8 @@ echo ThDate(); // แสดงวันที่
 
 
 </script>
+=======
+>>>>>>> origin/main
 
 
 
@@ -419,7 +422,7 @@ echo ThDate(); // แสดงวันที่
                         </div>
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                           
-                            <select id="XVShfCode" class="form-control" style="background-color: #e6f5ff;">
+                            <select id="XVShfCode" class="form-control">
                                 <option value="">เลือกกะทำงาน</option>
                                 <?php
                                         function twodigit($number){
