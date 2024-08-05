@@ -152,8 +152,7 @@ echo ThDate(); // แสดงวันที่
     $('#username').on('input', validate);
 </script>
 
-
-<<<<<<< HEAD
+<script>
     togglePassword.addEventListener('click', function (e) {
     // toggle the type attribute
     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -164,8 +163,6 @@ echo ThDate(); // แสดงวันที่
 
 
 </script>
-=======
->>>>>>> origin/main
 
 
 
