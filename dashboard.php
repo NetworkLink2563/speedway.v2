@@ -341,7 +341,7 @@ table td{
 <div class="container" style="position: relative; top: 70;">
     <?php    if($pri_r!=0){ ?>
 <div style="margin: 1rem; text-align: center; margin-bottom: 1rem; border-bottom: 3px double #cccc; padding: 1rem;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image">&nbsp;หน้าแดชบอร์ด
+            <img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image">&nbsp;หน้าแดชบอร์ด
         </div>
        
   
