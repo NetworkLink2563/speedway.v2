@@ -106,6 +106,13 @@ table td{
   }
 }
 
+table td {
+    border: 1px solid #cccc;
+}
+
+table  th {
+    border: 1px solid #cccc;
+}
 </style>
 
 
@@ -341,11 +348,11 @@ table td{
 <div class="container" style="position: relative; top: 70;">
     <?php    if($pri_r!=0){ ?>
 <div style="margin: 1rem; text-align: center; margin-bottom: 1rem; border-bottom: 3px double #cccc; padding: 1rem;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image">&nbsp;หน้าแดชบอร์ด
+            <img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image">&nbsp;หน้าแดชบอร์ด
         </div>
        
   
-        <div class="col-12 shadow" style="display: flex; flex-direction: row; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; justify-content: center;">
+        <div class="col-12 " style="display: flex; flex-direction: row; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; justify-content: center;">
 
 
             <div class="col-4">
@@ -366,8 +373,8 @@ if($pri_w!=0){
    
 
 ?>
-        <div  class="config" style="text-align: center; margin-top: 1rem;">
-            <table class="table table-striped table hover" id="config" style="margin-bottom: .5rem;">
+        <div  class="config" style="text-align: center; ">
+            <table class="table hover" id="config" style="margin-bottom: .5rem;">
             <tr style="text-align: center;">
                 <th class="input-config"><div><input class="chkbox" value="1" type="checkbox" <?php $val=  row('1',$_SESSION['user']); if($val==1){ echo 'checked'; } ?> aria-label="Checkbox for following text input"></div>สถานะ</th>
                 <th class="input-config"><div><input class="chkbox" value="2" type="checkbox" <?php $val2= row('2',$_SESSION['user']); if($val2==2){ echo 'checked'; } ?> aria-label="Checkbox for following text input"></div>แบบป้าย</th>

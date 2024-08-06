@@ -75,7 +75,7 @@ $pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
 <div class="flex-container" style="">
 
         <div class="col-12" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; box-shadow: 3px 3px 3px #aaaaaa !important;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> ตัวช่วยสร้างข้อความ</a>
+            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> ตัวช่วยสร้างข้อความสภาพจราจร</a>
         </div>
 
 
@@ -96,7 +96,7 @@ $pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
 					<div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #fda300!important; box-shadow: 3px 3px 3px #aaaaaa !important;">
 						<a href="messagetraffics.php"><img src="img/create_white.png" width="50" alt=""></a>
 					</div>
-					<h4 class="mt-3 fs-6">1.สร้างข้อความสภาพการจราจรพื้นฐาน</h4>
+					<h4 class="mt-3 fs-6">1.สร้างข้อความ</h4>
                     <button onclick="location.href='messagetraffics.php'" style="padding: .5rem; width: 60%; background-color: #1f4762; box-shadow: 3px 3px 3px #aaaaaa !important; border-color: #d1d1d1;"  class="btn btn-primary fs-6">
 					กดสร้างข้อความ<br>(Message)
                     </button>
@@ -111,7 +111,7 @@ $pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
 					<div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #fda300!important; box-shadow: 3px 3px 3px #aaaaaa !important;">
 						<a href="messagetrafficsframe.php"><img src="img/format.png" width="50" alt=""></a>
 					</div>
-					<h4 class="mt-3 fs-6">2.สร้างข้อความสภาพการจราจรแสดงบนป้าย</h4>
+					<h4 class="mt-3 fs-6">2.จัดรูปแบบข้อความ</h4>
                     <button onclick="location.href='messagetrafficsframe.php'" style="padding: .5rem; width: 60%; background-color: #1f4762; box-shadow: 3px 3px 3px #aaaaaa !important; border-color: #d1d1d1;"  class="btn btn-primary fs-6">
 					กดจัดรูปแบบข้อความ<br>(Format)
                     </button>
@@ -126,7 +126,7 @@ $pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
 					<div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #fda300!important; box-shadow: 3px 3px 3px #aaaaaa !important;">
                     <a href="messagetrafficsframegroup.php"><img src="img/playlist.png" width="50" alt=""></a>
 					</div>
-					<h4 class="mt-3 fs-6">3.สร้างชุดการแสดงป้ายจราจร</h4>
+					<h4 class="mt-3 fs-6">3.จัดชุดข้อความ</h4>
 					<button onclick="location.href='messagetrafficsframegroup.php'" style="padding: .5rem; width: 60%; background-color: #1f4762; box-shadow: 3px 3px 3px #aaaaaa !important; border-color: #d1d1d1;"  class="btn btn-primary fs-6">
 					กดจัดชุดข้อความ<br>(Playlist)
                     </button> 
@@ -141,9 +141,9 @@ $pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
                 <div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #fda300 !important; box-shadow: 3px 3px 3px #aaaaaa !important;">
                 <a href="messagetrafficsplay.php"><img src="img/sent.png" width="50" alt=""></a>
 					</div>
-					<h4 class="mt-3 fs-6">4.ข้อความป้ายจราจร</h4>
+					<h4 class="mt-3 fs-6">4.ส่งข้อความป้ายจราจร</h4>
 					<button onclick="location.href='messagetrafficsplay.php'" style="padding: .5rem; width: 60%; background-color: #1f4762 ; box-shadow: 3px 3px 3px #aaaaaa !important; border-color: #d1d1d1;"  class="btn btn-primary fs-6">
-					กดส่งชุดข้อความ<br>(Publisher)
+					กดส่งข้อความป้ายจราจร<br>(Publisher)
                     </button> 
 				</div>
 			</div>

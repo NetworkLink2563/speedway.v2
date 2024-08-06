@@ -484,7 +484,7 @@ input.btnsearch{
                         
                        <?php if($pri_w != 0){ ?>
                        <div style="margin : 1rem;">
-                       <button class="btn shadow btn-success" onclick="showframe1()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างเฟรม</button>
+                       <button class="btn shadow btn-success" onclick="showframe1()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างรูปแบบข้อความ</button>
                        </div>
                        <?php } ?>
                         </div>
@@ -493,7 +493,7 @@ input.btnsearch{
                     
                        <?php if($pri_w != 0){ ?>
                         <div style="margin : 1rem;">
-                       <button class="btn shadow btn-success" onclick="showframe2()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างเฟรม</button>
+                       <button class="btn shadow btn-success" onclick="showframe2()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างรูปแบบข้อความ</button>
                        </div>
                        <?php } ?>
                         </div>
@@ -502,7 +502,7 @@ input.btnsearch{
                     
                        <?php if($pri_w != 0){ ?>
                        <div style="margin : 1rem;">
-                       <button class="btn shadow btn-success" onclick="showframe3()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างเฟรม</button>
+                       <button class="btn shadow btn-success" onclick="showframe3()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างรูปแบบข้อความ</button>
                        </div>
                        <?php } ?>
 
@@ -647,7 +647,7 @@ input.btnsearch{
                               </div>
   
                               <div class="  col-5" style="">
-                                  <label for="XVMsfNameF1" style="">ชื่อรูปภาพ:</label>
+                                  <label for="XVMsfNameF1" style="">ชื่อข้อความประชาสัมพันธ์:</label>
                                   <input type="text" id="XVMsfNameF1"  class="form-control" value="">
                               </div>
   

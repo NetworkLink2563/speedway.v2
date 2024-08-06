@@ -1,5 +1,5 @@
 <?php
-$serverName = "43.229.151.106";
+$serverName = "192.168.55.14";
 $userName = 'DevNwl';
 $userPassword = 'Nwl!2563';
 $dbName = "NWL_SpeedWayTest2";

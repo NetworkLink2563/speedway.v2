@@ -169,6 +169,14 @@ table td{
     .shadow{
     box-shadow: 3px 3px 3px #aaaaaa !important;
 }
+
+table td {
+    border: 1px solid #cccc;
+}
+
+table  th {
+    border: 1px solid #cccc;
+}
 </style>
 
 <div class="container" style="position: relative; top: 75;">
@@ -182,7 +190,7 @@ table td{
         <?php if($pri_r != 0){ ?>
     <div class="flex-container" >
 
-    <div class="col-12 shadow" style="border-radius: 5px; display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem;">
+    <div class="col-12 " style="border-radius: 5px; display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem;">
             <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายการVMS</a>
         </div>
 
@@ -191,11 +199,11 @@ table td{
     </div> -->
 
 
-    <div id="416160" class="col-12" style="" id="container">
+    <div id="416160" class="col-12" style="padding:0" id="container">
         <div class="row">
            
           
-                <div style="margin: 1rem 0rem;">
+                <div style="">
                 <table class="table table-striped table-hover" style="">
                     <thead>
                     <tr>

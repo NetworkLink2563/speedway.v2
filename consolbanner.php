@@ -301,6 +301,15 @@ table {
     box-shadow: 3px 3px 3px #aaaaaa
 }
 
+
+    
+table  td {
+    border: 1px solid #cccc;
+}
+
+table  th {
+    border: 1px solid #cccc;
+}
 </style>
 
 

@@ -143,11 +143,11 @@ $pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
                 <div class="btn step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center" style="width:120px;height:120px; background-color: #4976BA !important; box-shadow: 3px 3px 3px #aaaaaa !important;">
                 <a href="#"><img src="img/sent.png" width="50" alt=""></a>
 					</div>
-					<h4 class="mt-3 fs-6">ส่งชุดข้อความ</h4>
+					<h4 class="mt-3 fs-6">4.ส่งข้อความ</h4>
 					
 					<?php if($pri_w != 0){ ?>
 					<button onclick="location.href='messagepublicrelationsplay.php'" style="padding: .5rem; width: 60%; background-color: #084387 ; box-shadow: 3px 3px 3px #aaaaaa !important;"  class="btn btn-primary fs-6">
-					กดส่งชุดข้อความ<br>(Publisher)
+					กดส่งข้อความ<br>(Publisher)
                     </button> 
 					<?php } ?>
 					

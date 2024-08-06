@@ -439,7 +439,7 @@ input.btnsearch{
             </div>
 
         <div class="col-4" style="text-align: center;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> step 2 จัดรูปแบบข้อความจราจร
+            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> step 2 จัดรูปแบบข้อความสภาพจราจร
         </div>
 
         <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
@@ -471,21 +471,21 @@ input.btnsearch{
                     
                        <?php if($pri_w != 0){ ?>
                        <div style="margin : 1rem;">
-                       <button class="btn shadow btn-success" onclick="showframe1()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างเฟรม</button>
+                       <button class="btn shadow btn-success" onclick="showframe1()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างรูปแบบข้อความ</button>
                        </div>
                        <?php } ?></div>
 
                        <div  class="box-color col-12" onclick="showframe2()"   style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;"><p style="">แบบ 2 ข้อความ 3 ช่อง</p><img class=" frame hover shadow" src="img/f2.png"  width="100%" height="100">
                        <?php if($pri_w != 0){ ?>
                        <div style="margin : 1rem;">
-                       <button class="btn shadow btn-success" onclick="showframe2()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างเฟรม</button>
+                       <button class="btn shadow btn-success" onclick="showframe2()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างรูปแบบข้อความ</button>
                        </div>
                        <?php } ?></div>
 
                        <div class="box-color col-12"  onclick="showframe3()"  style="cursor: pointer;text-align: center; border-bottom: 5px double #cccc;cursor: pointer;text-align: center;padding: 1rem 0.5rem;"><p style="">แบบ 1 ข้อความ 2 ช่อง</p><img class=" frame hover shadow" src="img/f3.png"  width="100%" height="100">
                        <?php if($pri_w != 0){ ?>
                        <div style="margin : 1rem;">
-                       <button class="btn shadow btn-success" onclick="showframe3()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างเฟรม</button>
+                       <button class="btn shadow btn-success" onclick="showframe3()"><i class="fa fa-plus" aria-hidden="true"></i> กดสร้างรูปแบบข้อความ</button>
                        </div>
                        <?php } ?></div>
                     </div>

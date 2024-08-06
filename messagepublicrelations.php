@@ -667,7 +667,7 @@ table th{
                       
                    <div class="col-sm-12 text-center" style="margin-top: 5px;">
                       
-                       <div id="ShowCkeditor" style="text-align: center;"></div>
+                       <div id="ShowCkeditor" style="text-align: center;"></div>  <!-- ** -->
                    </div>
                </div><br>
                <div class="row">
@@ -958,12 +958,12 @@ table th{
     }
     $("#btn_addtext").click(function(){
       
-        $("#XVMssType").val(1);
-       
+        //var ty= $("#XVMssType").val();
         $("#TxtXVMsgCode").val('MSGXXXX-XXXX');
         $("#msgName").val('');
-  
-        $("#modal-MsgSize").modal("show");
+        $("#modal-addtext").modal("show");
+        checktx('001');
+        // $("#modal-MsgSize").modal("show");
     });
     $("#btn_addpicture").click(function(){
         let $el = $('#images');
@@ -974,7 +974,8 @@ table th{
         $("#XVMssType").val(2);
         $("#ImgXVMsgCode").val('MSGXXXX-XXXX');
         $("#imageName").val('');
-        $("#modal-MsgSize").modal("show");
+        $("#modal-addimage").modal("show");
+        // $("#modal-MsgSize").modal("show");
       
     });
     $("#btn_addvdo").click(function(){
@@ -988,42 +989,10 @@ table th{
         $("#vdoName").val('');
         
 
-        $("#modal-MsgSize").modal("show");
+        $("#modal-addvdo").modal("show");
+        // $("#modal-MsgSize").modal("show");
     });
 
-    $("#btn_next").click(function(){
-        var optionSelected = $("#SelMsgSize").val();
-        const SizeArray =optionSelected.split(",");
-        var XVMssCode=SizeArray[0];
-        var w=SizeArray[1];
-        var h=SizeArray[2];
-        $("#XVMssCode").val(XVMssCode);
-        var XVMssType=$("#XVMssType").val();
-        if(XVMssType==1){
-            $.ajax({
-                type: "POST",
-                url: "messagepublicrelationsfunction.php",
-                data: {
-                    'ckeditorsize': 'ckeditorsize',
-                    'w':w,
-                    'h':h
-                },
-                success: function(result) {     
-                    $("#ShowCkeditor").html(result);
-                }
-            });
-            $("#modal-MsgSize").modal("hide");
-            $("#modal-addtext").modal("show");
-        }
-        if(XVMssType==2){
-            $("#modal-MsgSize").modal("hide");
-            $("#modal-addimage").modal("show");
-        }
-        if(XVMssType==3){
-            $("#modal-MsgSize").modal("hide");
-            $("#modal-addvdo").modal("show");
-        }
-    });
     
     $("#btn_savetext").click(function(){
       
@@ -1258,7 +1227,41 @@ function examplesms(url, h, w, vmsmame) {
 }
 
 
-
+function checktx(val){
+        //var optionSelected = $("#SelMsgSize").val();
+     //   const SizeArray =optionSelected.split(",");
+       // var XVMssCode=SizeArray[0];
+        //var w=SizeArray[1];
+      //  var h=SizeArray[2];
+       // $("#XVMssCode").val(XVMssCode);
+       var vmst= val;
+        var XVMssType=vmst;
+        if(XVMssType==1){
+            $.ajax({
+                type: "POST",
+                url: "messagepublicrelationsfunction.php",
+                data: {
+                    'ckeditorsize': 'ckeditorsize',
+                    'w':'960',
+                    'h': '384'
+                },
+                success: function(result) {     
+                    $("#ShowCkeditor").html(result);
+                }
+            });
+            $("#modal-MsgSize").modal("hide");
+            $("#modal-addtext").modal("show");
+        }
+        if(XVMssType==2){
+            $("#modal-MsgSize").modal("hide");
+            $("#modal-addimage").modal("show");
+        }
+        if(XVMssType==3){
+            $("#modal-MsgSize").modal("hide");
+            $("#modal-addvdo").modal("show");
+        }
+    
+     }
 
 
 
@@ -1377,6 +1380,7 @@ function deleteMSG(MSGCode) {
     $("#modal-addvdo").modal("hide")
     })
 </script>
+
 
 
 </body>

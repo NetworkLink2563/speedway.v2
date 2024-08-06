@@ -282,7 +282,7 @@ $data='<table class="table table-striped table-hover">
               
              
                 $data.='<tr style="text-align: center;">';
-                $data.='<td  '.$tx1.' id="chk'.$i.'"  ><i id="C0'.$XVVmsCode.'"class="fa fa-cloud"aria-hidden="true"></i></td>';
+                $data.='<td  '.$tx1.' id="chk'.$i.'" ><i style="font-size: 1.4rem;" id="C0'.$XVVmsCode.'"class="fa fa-cloud"aria-hidden="true"></i></td>';
                 $data.='<td '.$tx2.'  id="C1'.$XVVmsCode.'"">ป้าย '.$resultSQL['XIMssWPixel'].'x'.$resultSQL['XIMssHPixel'].' PX'.'</td>';
                 $data.='<td '.$tx3.'  id="C2'.$XVVmsCode.'">'.$resultSQL['XVVmsName'].'</td>';
                 $data.='<td '.$tx4.'  id="C3'.$XVVmsCode.'"></td>';
