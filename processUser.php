@@ -3,23 +3,29 @@ ob_start();
 session_start();
 include "lib/DatabaseManage.php";
 
-$Type=$_POST["Type"];
+$Type = $_POST["Type"];
 
 //add user
-if($Type==1){
-   
-    $emailer=$_POST["emailer"];
-    $password=$_POST["password"];
-    $XVShfCode=$_POST["XVShfCode"];
-    $usercreate=$_SESSION['user'];
-    $sql="select XVCstCode from TMstMUser where XVUsrCode='$usercreate'";
-    $querySQL = sqlsrv_query($conn, $sql);
-    while($resultSQL = sqlsrv_fetch_array($querySQL, SQLSRV_FETCH_ASSOC))
-    {
-        $XVCstCode=$resultSQL['XVCstCode'];
-    }
-    
-    $stmtInsert = "INSERT INTO TMstMUser (
+if ($Type == 1) {
+
+    $emailer = $_POST["emailer"];
+    $password = $_POST["password"];
+    $pwd = md5(base64_encode(md5(base64_encode($password))));
+    $XVShfCode = $_POST["XVShfCode"];
+    $usercreate = $_SESSION['user'];
+
+    $qchk = "SELECT * FROM  [NWL_SpeedWayTest2].[dbo].[TMstMUser] WHERE XVUsrCode ='$emailer'";
+    $qd = sqlsrv_query($conn, $qchk);
+    $qfu = sqlsrv_fetch_array($qd, SQLSRV_FETCH_ASSOC);
+    if ($qfu) {
+        echo '2';
+    } else {
+        $sql = "select XVCstCode from TMstMUser where XVUsrCode='$usercreate'";
+        $querySQL = sqlsrv_query($conn, $sql);
+        while ($resultSQL = sqlsrv_fetch_array($querySQL, SQLSRV_FETCH_ASSOC)) {
+            $XVCstCode = $resultSQL['XVCstCode'];
+        }
+        $stmtInsert = "INSERT INTO TMstMUser (
                                 XVUsrCode,
                                 XVUsrPwd,
                                 XVUsrPwdDef,
@@ -32,8 +38,8 @@ if($Type==1){
                                 XTWhenCreate
                                  )values(
                                  '$emailer',
-                                 dbo.FN_GETtEncoding('$password','$password'),
-                                 dbo.FN_GETtEncoding('$password','$password'),
+                                 '$pwd',
+                                 '$pwd',
                                  '$emailer',
                                  '$XVCstCode',
                                  '$XVShfCode',
@@ -42,13 +48,40 @@ if($Type==1){
                                  '$usercreate',
                                  GETDATE()
                                  )";
-    echo    $stmtInsert;
-    sqlsrv_query($conn, $stmtInsert);
-    sqlsrv_close( $conn );
+        //echo    $stmtInsert;
+        $qchk=sqlsrv_query($conn, $stmtInsert);
+        if($qchk==true){ echo '1';}else{ echo 'error';}
+        sqlsrv_close($conn);
+    }
+}  ///  End Type
+
+
+// Change Password Create By Sivadol.J
+if ($Type == 2) {
+    $uname = $_POST['uname'];
+    $pwdnow = md5(base64_encode(md5(base64_encode($_POST['password']))));
+
+    $qpwd="SELECT * FROM TMstMUser WHERE XVUsrName='$uname'";
+    $qc=sqlsrv_query($conn, $qpwd);
+    $resultSQL = sqlsrv_fetch_array($qc, SQLSRV_FETCH_ASSOC);
+    if($pwdnow==$resultSQL['XVUsrPwdDef']){
+        echo '2';
+    }else{
+
+    $uppwd = "UPDATE TMstMUser SET  
+    XVUsrPwd='" . $pwdnow . "', 
+    XVUsrPwdDef='" . $pwdnow . "'
+    WHERE XVUsrName='$uname' ";
+    $d=sqlsrv_query($conn, $uppwd);
+    if($d==true){
+         echo '1';
+         $_SESSION['chgPwd']='0';
+        }else{ 
+         echo 'error';
+        }
+    sqlsrv_close($conn);
+    }
 }
-    
-
-
 /*
 if($Type==2){
     $stmt = "UPDATE TMstMUser SET XBUsrIsActive = '0', XBUsrIsActive2 = '0',XVWhoEdit='".$usercode."',XTWhenEdit='".date('Y-m-d H:i:s')."' WHERE XVUsrCode='".$usercode."';";
@@ -85,6 +118,4 @@ if($Type==3){
     $query = sqlsrv_query($conn, $stmt);
 }
 */
-sqlsrv_close( $conn );
-?>
-
+sqlsrv_close($conn);

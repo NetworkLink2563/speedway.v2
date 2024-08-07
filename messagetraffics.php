@@ -422,11 +422,11 @@ li{
         <input type="hidden" id="XVMssCode">
         <input type="hidden" id="XVMssType">
 
-<div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex;">
+       <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex;">
 
 
             <div class="col-7" style="text-align: right;">
-            <img src="img/icon/setting.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความจราจรพื้นฐาน
+            <img src="img/icon/setting.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
             </div>
 
             <div class="next-btn col"  style="text-align: right; padding: 0; ">
@@ -475,7 +475,7 @@ li{
                                 <tr style="font-size: 10pt">
                                     <th class="th-sm">รหัสข้อความ
                                     </th>
-                                    <th class="th-sm">ชื่อข้อความ
+                                    <th class="th-sm" style="text-align: left;">ชื่อข้อความ
                                     </th>
                                     <th class="th-sm" style="text-align: center">ตัวอย่าง
                                     </th>
@@ -509,7 +509,7 @@ li{
                         ?>
                                 <tr id="MSGcode<?php echo $result['XVMsgCode']; ?>" style="font-size: 10pt">
                                     <td><?php echo $result['XVMsgCode']; ?></td>
-                                    <td><?php echo $result['XVMsgName']; ?></td>
+                                    <td style="text-align: left;" ><?php echo $result['XVMsgName']; ?></td>
                                     <td style="text-align: center;">
                                         <?php
                                       $XIMssWPixel=$result['XIMssWPixel'];
@@ -891,7 +891,7 @@ li{
         <div class="modal-content" style="  height: 500px;">
             <div class="modal-header">
                 <h5 id="Example_Title" class="modal-title"></h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
 
@@ -943,13 +943,13 @@ li{
             });
     }
     $("#btn_addtext").click(function(){
-      
-        $("#XVMssType").val(1);
-       
+     //   alert('test');
+      // $("#XVMssType").val();
         $("#TxtXVMsgCode").val('MSGXXXX-XXXX');
         $("#msgName").val('');
-  
-        $("#modal-MsgSize").modal("show");
+        $("#modal-addtext").modal("show");
+    
+       checkttf(1);
     });
     $("#btn_addpicture").click(function(){
         let $el = $('#images');
@@ -960,7 +960,8 @@ li{
         $("#XVMssType").val(2);
         $("#ImgXVMsgCode").val('MSGXXXX-XXXX');
         $("#imageName").val('');
-        $("#modal-MsgSize").modal("show");
+       // $("#modal-MsgSize").modal("show");
+       $("#modal-addimage").modal("show")
       
     });
     $("#btn_addvdo").click(function(){
@@ -972,27 +973,21 @@ li{
         $("#XVMssType").val(3);
         $("#VdoXVMsgCode").val('MSGXXXX-XXXX');
         $("#vdoName").val('');
-        
+        $("#modal-addvdo").modal("show")
 
-        $("#modal-MsgSize").modal("show");
+        //$("#modal-MsgSize").modal("show");
     });
 
-    $("#btn_next").click(function(){
-        var optionSelected = $("#SelMsgSize").val();
-        const SizeArray =optionSelected.split(",");
-        var XVMssCode=SizeArray[0];
-        var w=SizeArray[1];
-        var h=SizeArray[2];
-        $("#XVMssCode").val(XVMssCode);
-        var XVMssType=$("#XVMssType").val();
+    function checkttf(val){
+    var XVMssType=val;
         if(XVMssType==1){
             $.ajax({
                 type: "POST",
                 url: "messagepublicrelationsfunction.php",
                 data: {
                     'ckeditorsize': 'ckeditorsize',
-                    'w':w,
-                    'h':h
+                    'w':'960',
+                    'h':'384'
                 },
                 success: function(result) {     
                     $("#ShowCkeditor").html(result);
@@ -1001,21 +996,14 @@ li{
             $("#modal-MsgSize").modal("hide");
             $("#modal-addtext").modal("show");
         }
-        if(XVMssType==2){
-            $("#modal-MsgSize").modal("hide");
-            $("#modal-addimage").modal("show");
-        }
-        if(XVMssType==3){
-            $("#modal-MsgSize").modal("hide");
-            $("#modal-addvdo").modal("show");
-        }
-    });
+        
+    };
     
     $("#btn_savetext").click(function(){
       
        
         
-        var optionSelected = $("#SelMsgSize").val();
+        var optionSelected = '006';
       
         const SizeArray =optionSelected.split(",");
         var XVMssCode=SizeArray[0];
@@ -1048,7 +1036,13 @@ li{
         $.ajax({
             type: "POST",
             url: "addMessage_libery.php",
-            data: {'XVMsgInfoType':'2','XVMsgCode':XVMsgCode,'data': q,'XVMsgName':XVMsgName,'XVMsgStatus':XVMsgStatus,'idmsgSize':XVMssCode,'msgBG':bgcolor},
+            data: {'XVMsgInfoType':'2',
+                'XVMsgCode':XVMsgCode,
+                'data': q,
+                'XVMsgName':XVMsgName,
+                'XVMsgStatus':XVMsgStatus,
+                'idmsgSize':XVMssCode,
+                'msgBG':bgcolor},
             success: function(result) {
                  
                

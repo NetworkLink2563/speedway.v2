@@ -113,10 +113,15 @@ echo ThDate(); // แสดงวันที่
             url: "lib/processLogin.php",
             data: {'XVShfCode':XVShfCode,'username': userName,'password':passWord,'encode':hashEncode},
             success: function(result) {
-              
-                if(result=='True'){
-                    window.location.href = 'dashboard.php';
-                }else if(result=='False'){
+                var chklogin =JSON.parse(result);
+             //   console.log(chklogin.result);
+                if(chklogin.result=='True'){
+                if(chklogin.chgPwd=='1'){
+                window.location.href = 'change_pwd.php'; 
+                }else if(chklogin.chgPwd=='0'){
+                 window.location.href = 'dashboard.php'; 
+                }
+                }else if(chklogin.result=='False'){
                     document.getElementById('resultDiv').style.display = 'none';
                     document.getElementById("username").value='';
                     document.getElementById("inputPassword").value='';

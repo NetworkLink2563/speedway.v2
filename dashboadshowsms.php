@@ -17,11 +17,11 @@ while($rowd = sqlsrv_fetch_array($queryd, SQLSRV_FETCH_ASSOC)){
     $XIMssHPixel=$rowd['XIMssHPixel'];
     $XVVmsName=$rowd['XVVmsName'];
 }
-$sqlx ="SELECT        dbo.TLogTItmVMSMessage.XVVmsCode, dbo.TLogTItmVMSMessage.XTWhenEdit, DATEDIFF(Second, dbo.TLogTItmVMSMessage.XTWhenEdit, GETDATE()) AS XiSecDiff, dbo.TLogTItmVMSMessage.XVMsfCode, 
-                         dbo.TMstMMessageFrame.XVMsfFormat, dbo.TMstMMessageFrame.XVMsgCodeF1, dbo.TMstMMessageFrame.XVMsgCodeF2, dbo.TMstMMessageFrame.XVMsgCodeF3, dbo.TMstMMessageFrame.XVMsgCodeF4, 
-                         dbo.TMstMMessageFrame.XVMsgCodeF5
-FROM            dbo.TLogTItmVMSMessage INNER JOIN
-                         dbo.TMstMMessageFrame ON dbo.TLogTItmVMSMessage.XVMsfCode = dbo.TMstMMessageFrame.XVMsfCode WHERE (dbo.TLogTItmVMSMessage.XVVmsCode = '$vmscode')";
+$sqlx ="SELECT  dbo.TLogTItmVMSMessage.XVVmsCode, dbo.TLogTItmVMSMessage.XTWhenEdit, DATEDIFF(Second, dbo.TLogTItmVMSMessage.XTWhenEdit, GETDATE()) AS XiSecDiff, dbo.TLogTItmVMSMessage.XVMsfCode, 
+dbo.TMstMMessageFrame.XVMsfFormat, dbo.TMstMMessageFrame.XVMsgCodeF1, dbo.TMstMMessageFrame.XVMsgCodeF2, dbo.TMstMMessageFrame.XVMsgCodeF3, dbo.TMstMMessageFrame.XVMsgCodeF4, 
+dbo.TMstMMessageFrame.XVMsgCodeF5,  dbo.TMstMMessageFrame.XVMsfType
+FROM  dbo.TLogTItmVMSMessage INNER JOIN
+ dbo.TMstMMessageFrame ON dbo.TLogTItmVMSMessage.XVMsfCode = dbo.TMstMMessageFrame.XVMsfCode WHERE (dbo.TLogTItmVMSMessage.XVVmsCode = '$vmscode')";
      
 //$sql="SELECT  dbo.TLogTItmVMSMessage.XVVmsCode, dbo.TLogTItmVMSMessage.XVMsgCode, dbo.TMstMMessage.XVMsgName, dbo.TLogTItmVMSMessage.XTWhenEdit, DATEDIFF(Second, dbo.TLogTItmVMSMessage.XTWhenEdit, 
 //GETDATE()) AS XiSecDiff
@@ -35,6 +35,7 @@ $XVMsgName="";
 $XiSecDiff="";
 $XVMsfCode="";
 $msq_txt="";
+$ms_ty="";
 $queryi= sqlsrv_query($conn, $sqlx);
 $rowk = sqlsrv_fetch_array($queryi, SQLSRV_FETCH_ASSOC);
     $XVVmsCode=$rowk['XVVmsCode'];      
@@ -42,12 +43,18 @@ $rowk = sqlsrv_fetch_array($queryi, SQLSRV_FETCH_ASSOC);
     $XVMsgName.=$rowk['XVMsgName'];  
     $XiSecDiff=$rowk['XiSecDiff'];  
     $XVMsfCode=$rowk['XVMsfCode'];  
+    if($rowk['XVMsfType']==1){
+      $mstype='ประชาสัมพันธ์';
+    }else if($rowk['XVMsfType'] == 2){
+    $mstype='สภาพจราจร';
+    }
+//$se=" SELECT   DATEDIFF(Second, dbo.TMstMItmVMS_Status.XTWhenUpdate, GETDATE()) AS XiSecDiff  FROM TMstMItmVMS_Status ";
+
 
 $msqcode="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMMessageFrame] where XVMsfCode='".$XVMsfCode."'";
 $qcode=sqlsrv_query($conn,$msqcode);   
 $rowcode = sqlsrv_fetch_array($qcode, SQLSRV_FETCH_ASSOC);
 $msq_txt=$rowcode['XVMsfName'];
-
 
 $sqlModule = "SELECT XIVdtModuleNo FROM TMstMItmVMS_ModuleStatus WHERE XVVmsCode='".$vmscode."' AND XBVdtIsGood='False'";
 //echo $sqlModule;
@@ -59,7 +66,7 @@ while($resultModule = sqlsrv_fetch_array($queryModule, SQLSRV_FETCH_ASSOC))
 }
 $XVVdtModuleNo = substr($XVVdtModuleNo, 0, -2);
 
-$sqlt="SELECT  *  FROM   dbo.TMstMItmVMS_Status
+$sqlt="SELECT XISensorType,XIValue, DATEDIFF(Second, dbo.TMstMItmVMS_Status.XTWhenUpdate, GETDATE()) AS XiSecDiff  FROM   dbo.TMstMItmVMS_Status
 WHERE   (XVVmsCode = '$vmscode')
 ORDER BY XISensorType";
 
@@ -67,6 +74,8 @@ $XIVmsBrightness="";
 $XIVmsRackTemperature="";
 $XIVmsBoardTemperature="";
 $XBVmsFanIsActive="";
+$XiSecDiffl="";
+$ji=0;
 $query= sqlsrv_query($conn, $sqlt);
 while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)){
     if($row['XISensorType']==1){
@@ -106,6 +115,13 @@ while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)){
       }else{
         $XBVmscompsActive="Off";
       }
+    }elseif($row['XISensorType']==10){
+      $XiSecDiffl=$row['XiSecDiff'];
+      if($XiSecDiffl>60){
+          $ji=1; // off
+      }elseif($XiSecDiffl<60){
+          $ji=2; // on
+      }
     }
 }
 sqlsrv_close( $conn );
@@ -117,7 +133,8 @@ $dataj.='"XIMssHPixel":"'.$XIMssHPixel.'",';
 $dataj.='"XVMsgCode":"'.$XVMsgCode.'",';
 $dataj.='"XBVmsIsOn":"'.$XBVmsIsOn.'",';
 $dataj.='"XBVmsIsDisplay":"'.$XBVmsIsDisplay.'",';
-$dataj.='"XiSecDiff":"'.$XiSecDiff.'",';
+$dataj.='"XiSecDiff":"'.$XiSecDiffl.'",';
+$dataj.='"statusXiSecDiff":"'.$ji.'",';
 $dataj.='"XIVmsBrightness":"'.$XIVmsBrightness.'",';
 $dataj.='"XIVmsRackTemperature":"'.$XIVmsRackTemperature.'",';
 $dataj.='"XIVmsBoardTemperature":"'.$XIVmsBoardTemperature.'",';
@@ -125,7 +142,8 @@ $dataj.='"XBVmsFlashIsActive":"'.$XBVmsFlashIsActive.'",';
 $dataj.='"XVVdtModuleNo":"'.$XVVdtModuleNo.'",';
 $dataj.='"XBVmsFanIsActive":"'.$XBVmsFanIsActive.'",';
 $dataj.='"XBVmscompIsActive":"'.$XBVmscompsActive.'",';
-$dataj.='"XVMsgName":"'.$msq_txt.'"';
+$dataj.='"XVMsgName":"'.$msq_txt.'",';
+$dataj.='"XVMsfType":"'.$mstype.'"';
 $dataj.='}';
 echo $dataj;
 ?>

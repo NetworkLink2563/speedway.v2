@@ -51,7 +51,7 @@ function showsms(){
                     <tr style="font-size: 10pt">
                         <th class="th-sm">รหัสชุดการแสดงป้าย
                         </th>
-                        <th class="th-sm">ชื่อชุดการแสดงป้าย
+                        <th  style="text-align:left;" class="th-sm"  >ชื่อชุดการแสดงป้าย
                         </th>
                         <th class="th-sm">ขนาด
                         </th>
@@ -68,7 +68,7 @@ function showsms(){
                     {
                        $data.='<tr>';
                        $data.='<td>'.$result["XVPltCode"].'</td>';
-                       $data.='<td>'.$result["XVPltName"].'</td>';
+                       $data.='<td style="text-align:left;" >'.$result["XVPltName"].'</td>';
                        $data.='<td>'.$result["XIMssWPixel"].'x'.$result["XIMssHPixel"].'px</td>';
                        $data.='<td>'.$result["XIMssWPixel"].'x'.$result["XIMssHPixel"].'px</td>';
                        $data.='<td><button type="button"  onclick="SelectSms(\''.$result["XVPltCode"].'\')"   class="btn btn-primary btn-sm">ใช้ชุดข้อความนี้<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;" class="fa fa-file-text"></i></button>';
@@ -145,7 +145,7 @@ function ShowPlayList($XVVmsCode){
                     <tr style="font-size: 10pt">
                         <th class="th-sm">รหัสชุดการแสดงป้าย
                         </th>
-                        <th class="th-sm">ชื่อชุดการแสดงป้าย
+                        <th style="text-align:left;" class="th-sm">ชื่อชุดการแสดงป้าย
                         </th>
                         <th class="th-sm">ขนาด
                         </th>
@@ -165,8 +165,8 @@ function ShowPlayList($XVVmsCode){
                     while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
                     {
                        $data.='<tr it="'.$result["XVPltCode"].$result["XIPltSeqNo"].'">';
-                       $data.='<td>'.$result["XVMsfCode"].'</td>';
-                       $data.='<td>'.$result["XVMsfName"].'</td>';
+                       $data.='<td >'.$result["XVMsfCode"].'</td>';
+                       $data.='<td style="text-align:left;">'.$result["XVMsfName"].'</td>';
                        $data.='<td>'.$result["XIMssWPixel"].'x'.$result["XIMssHPixel"].'px</td>';
                        $data.='</tr>';
 

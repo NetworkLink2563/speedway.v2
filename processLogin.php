@@ -6,7 +6,7 @@ $username=$_POST["username"];
 $password=$_POST["password"];
 $md5Hash=$_POST["encode"];
 $XVShfCode=$_POST["XVShfCode"];
-    if ($md5Hash == 'd56b699830e77ba53855679cb1d252da') {
+if ($md5Hash == 'd56b699830e77ba53855679cb1d252da') { 
         /*
         $sql="SELECT XVShfCode, XIShfStartHour, XIShfStartMin, XIShfEndHour, XIShfEndMin
               FROM   dbo.TMstMShift
@@ -22,7 +22,12 @@ $XVShfCode=$_POST["XVShfCode"];
         }
        
 */
-        $stmt = "DECLARE @tUser nvarchar(100)
+        
+  
+   // echo $password ;
+    
+
+    $stmt = "DECLARE @tUser nvarchar(100)
     DECLARE @tPassword nvarchar(100)
     SET @tUser = '" . $username . "'
     SET @tPassword = '" . $password . "'
@@ -36,9 +41,16 @@ $XVShfCode=$_POST["XVShfCode"];
         $realUser = $result["XVCstCode"];
         $realUserName = $result["XVUsrName"];
         
+
+      // echo $realPass.'11' ;
+
+
+
+
         if ($realPass != '') {
             $_SESSION['user'] = $username;
             $_SESSION['userName'] = $realUserName;
+            $_SESSION['pwd'] =  $realPass;
             $result = "True";
 
             $REMOTE_ADDR=$_SERVER['REMOTE_ADDR'];
@@ -51,6 +63,6 @@ $XVShfCode=$_POST["XVShfCode"];
             $_SESSION['user'] = '';
             $result = "False";
         }
-        echo $result;
+        echo $result ;
     }
 ?>

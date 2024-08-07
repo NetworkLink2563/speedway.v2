@@ -208,7 +208,7 @@ table  th {
                     <thead>
                     <tr>
                         <th width="78" scope="col">รหัสป้าย</th>
-                        <th width="80" scope="col">ชื่อป้าย</th>
+                        <th style="text-align:left;" width="80" scope="col">ชื่อป้าย</th>
                         <th width="150" scope="col"><div align="center">คำสั่งที่ส่ง</div></th>
                         <th width="50" scope="col"><div align="center">รายการ</div></th>
                     </tr>
@@ -225,7 +225,7 @@ table  th {
                     ?>
                     <tr>
                         <td><?php echo $result['XVVmsCode'];?></td>
-                        <td><?php echo $result['XVVmsName'];?></td>
+                        <td style="text-align:left;" ><?php echo $result['XVVmsName'];?></td>
                         <td>
 
                             <?php

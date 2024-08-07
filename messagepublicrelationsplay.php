@@ -419,8 +419,7 @@ text-align: center;
                                 <tr >
                                     <th class="th-sm">รหัสป้าย
                                     </th>
-                                    <th class="th-sm">ชื่อป้าย
-                                    </th>
+                                    <th style="text-align:left;"  class="th-sm">ชื่อป้าย</th>
                                   
                                     <th class="th-sm" style="text-align: center">ขนาด
                                     </th>
@@ -442,7 +441,7 @@ text-align: center;
                         ?>
                                 <tr>
                                     <td><?php echo $result['XVVmsCode']; ?></td>
-                                    <td><?php echo $result['XVVmsName']; ?></td>
+                                    <td style="text-align: left;" ><?php echo $result['XVVmsName']; ?></td>
                                    
                                     <td style="text-align: center"><?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel'];?>PX</td>
                                    

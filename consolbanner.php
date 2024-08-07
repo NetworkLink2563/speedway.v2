@@ -565,8 +565,8 @@ if($pri_r == 0){
             <thead>
                 <tr>
                     <th width="100" scope="col">รหัสป้าย</th>
-                    <th width="120" scope="col">ชื่อป้าย</th>
-                    <th width="320" scope="col">จุดติดตั้ง</th>
+                    <th style="text-align:left;" width="120" scope="col">ชื่อป้าย</th>
+                    <th style="text-align:left;" width="320" scope="col">จุดติดตั้ง</th>
                     <th width="50" scope="col">Option</th>
                     <th width="250" scope="col">คำสั่งที่ส่ง</th>
                 </tr>
@@ -611,8 +611,8 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
     <td>
         <div style="font-size: 10p"><?php echo $result_banner['XVVmsCode'];?></div>
     </td>
-    <td><?php echo $result_banner['XVVmsName'];?></td>
-    <td><?php echo $result_banner['XVSdtName'];?> <?php echo $result_banner['XVDstName'];?>
+    <td style="text-align:left;" ><?php echo $result_banner['XVVmsName'];?></td>
+    <td style="text-align:left;" > <?php echo $result_banner['XVSdtName'];?> <?php echo $result_banner['XVDstName'];?>
         <?php echo $result_banner['XVPvnName'];?></td>
     <td>
         <div align="center" style="margin-top: 0">

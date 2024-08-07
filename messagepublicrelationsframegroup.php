@@ -440,7 +440,7 @@ table th{
                                 <tr style="font-size: 10pt">
                                     <th>รหัสชุดป้าย
                                     </th>
-                                    <th>ชื่อชุดป้าย
+                                    <th style="text-align:left;">ชื่อชุดป้าย
                                     </th>
                                    
                                     <th>ขนาด
@@ -468,7 +468,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                         ?>
                                 <tr  style="font-size: 10pt">
                                     <td><?php echo $result['XVPltCode']; ?></td>
-                                    <td><?php echo $result['XVPltName']; ?></td>
+                                    <td style="text-align:left;"><?php echo $result['XVPltName']; ?></td>
                                    
                                     <td style="">
                                         <?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel']; ?></td>
@@ -563,7 +563,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                                 <tr style="font-size: 10pt">
                                     <th>รหัสข้อความประชาสัมพันธ์
                                     </th>
-                                    <th>ชื่อข้อความประชาสัมพันธ์
+                                    <th style="text-align: left;">ชื่อข้อความประชาสัมพันธ์
                                     </th>
                                    
                                     <th >ขนาด
@@ -590,7 +590,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                                 ?>
                                         <tr style="font-size: 10pt">
                                             <td><?php echo $result['XVMsfCode']; ?></td>
-                                            <td><?php echo $result['XVMsfName']; ?></td>
+                                            <td style="text-align: left;" > <?php echo $result['XVMsfName']; ?></td>
                                            
                                             <td ><?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel']; ?></td>
                                            

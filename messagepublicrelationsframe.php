@@ -534,7 +534,7 @@ input.btnsearch{
                                 <tr>
                                     <th class="th-sm">รหัส
                                     </th>
-                                    <th class="th-sm">ชื่อข้อความ
+                                    <th style="text-align:left;" class="th-sm">ชื่อข้อความ
                                     </th>
                                     <!--
                                     <th>ตัวอย่าง
@@ -564,7 +564,7 @@ input.btnsearch{
                         ?>
                                 <tr id="XVMsfCode<?php echo $result['XVMsfCode']; ?>" style="font-size: 10pt">
                                     <td><?php echo $result['XVMsfCode']; ?></td>
-                                    <td><?php echo $result['XVMsfName']; ?></td>
+                                    <td style="text-align:left;"><?php echo $result['XVMsfName']; ?></td>
                                     <!--
                                     <td style="text-align: center;">
                                       

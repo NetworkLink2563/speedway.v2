@@ -1,4 +1,7 @@
    
+   <?php
+   session_start();
+   ?>
    <link rel="icon" type="image/png" href="http://www.centrecities.com/speedway/img/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -140,13 +143,12 @@ p {
     <!-- navbar  start-->
 <div class="navbar fixed-top">
 
-        <div class="logo"><img src="img/logo.png" alt="">
-        <p>กองการทางพิเศษระหว่างเมือง กรมทางหลวง<br>
-    City Motorway Division
-    Department of Hightways</p>
+<div class="logo"><img src="img/logo.png" alt="">
+<p>กองการทางพิเศษระหว่างเมือง กรมทางหลวง<br>
+City Motorway Division
+Department of Hightways <?php //echo $_SESSION['chgPwd']; ?></p>
 </div>
-        
-        <h4></h4>
+ <h4></h4>
         <div class="msg-right">
         <!-- <p>(test3@test.com)<br>
         วันพฤหัส ที่ 11 เดือน กรกฏาคม พ.ศ. 2567<br>
@@ -162,8 +164,10 @@ p {
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+     
     <div class="collapse navbar-collapse justify-content-center align-item-center" id="navbarNavDarkDropdown">
-      <?php
+    <?php if($_SESSION['chgPwd'] =='0'){ 
       $menu="SELECT * FROM  [NWL_SpeedWayTest2].[dbo].[TSysSMenu] WHERE  XVMnuheader ='item' ORDER BY XCMnuPriority";
       $Qmenu=sqlsrv_query($conn, $menu);
       while($q1=sqlsrv_fetch_array($Qmenu ,SQLSRV_FETCH_ASSOC)){ ?>
@@ -187,16 +191,39 @@ p {
       </ul> 
 
      <?php  }  ?>
+     <?php  }else{ ?>
+
+<div class="collapse navbar-collapse justify-content-center align-item-center" id="navbarNavDarkDropdown">
+<?php
+$menux="SELECT * FROM  [NWL_SpeedWayTest2].[dbo].[TSysSMenu] WHERE  XVMnuheader ='item' ORDER BY XCMnuPriority";
+$Qmenux=sqlsrv_query($conn, $menux);
+while($q1x=sqlsrv_fetch_array($Qmenux ,SQLSRV_FETCH_ASSOC)){ ?>
+<ul class="navbar-nav">
+  <li class="nav-item dropdown">
+  <button  class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <?php echo $q1x['XVMnuName']; ?> 
+    </button>
+    <!--<ul class="dropdown-menu dropdown-menu-dark"> 
+       <?php  //if($q1['XVMnuLink']!=""){ ?>
+      <li><a class="dropdown-item" href="<?php// echo $q1['XVMnuLink']; ?>"><?php //echo $q1['XVMnuName']; ?></a></li> 
+      <?php //}
+    //  $sub="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TSysSMenu] WHERE  XVMnuheader ='subitem' AND XVMnuGroup='".$q1['XVMnuCode']."' ORDER BY XCMnuPriority" ;
+      //$qsub=sqlsrv_query($conn, $sub);
+     // while($q2=sqlsrv_fetch_array($qsub ,SQLSRV_FETCH_ASSOC)){ ?>
+      <li><a class="dropdown-item" href="<?php //echo $q2['XVMnuLink']; ?>"><?php //echo $q2['XVMnuName']; ?></a></li>
+    
+    </ul> -->
+  
+  </li>
+  </ul> 
+  <?php } ?>
+
+
+     <?php }?>
       <div class="time-duration navbar-nav" style="border: none; text-align: center;  margin-left: .5rem; opacity: .8;font-size: 14px;">
         <span>เวลาเลิกงาน : </span>
       <span id="time" style="display: inline-block;padding: 0rem .5rem;width: 155px; text-align: left;font-size: 14px;"></span>
-    
-    
-  
-    
     </div>
-      
-
     </div>
   </div>
 </nav>

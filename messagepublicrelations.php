@@ -416,7 +416,13 @@ table th{
         list-style: none;
     }
 </style>
-
+<script src="dist/js/jquery-3.7.1.js"></script>
+<script src="dist/js/popper.min.js"></script>
+<script src="dist/js/main_speed.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script src="dist/js/dataTables.js"></script>
+<script src="dist/js/dataTables.bootstrap4.js"></script>
+<script type="text/javascript" src="Ckeditor/ckeditor/ckeditor.js"></script>
 <div class="container" style="position: relative; top: 75;">
 
 
@@ -426,7 +432,7 @@ table th{
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex; ">
 
             <div class="col-7" style="text-align: right;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image"> Step 1 ข้อความพื้นฐาน
+            <img src="img/icon/computer.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
             </div>
 
             <div class="next-btn col"  style="text-align: right; padding: 0; ">
@@ -479,7 +485,7 @@ table th{
                                 <tr>
                                     <th>รหัสข้อความ
                                     </th>
-                                    <th>ชื่อข้อความ
+                                    <th style="text-align:left;" >ชื่อข้อความ
                                     </th>
                                     <th style="text-align: center">ตัวอย่าง
                                     </th>
@@ -512,8 +518,8 @@ table th{
                         }
                         ?>
                                 <tr id="MSGcode<?php echo $result['XVMsgCode']; ?>" style="font-size: 10pt">
-                                    <td><?php echo $result['XVMsgCode']; ?></td>
-                                    <td><?php echo $result['XVMsgName']; ?></td>
+                                    <td ><?php echo $result['XVMsgCode']; ?></td>
+                                    <td style="text-align:left;"><?php echo $result['XVMsgName']; ?></td>
                                     <td style="text-align: center;">
                                         <?php
                                       $XIMssWPixel=$result['XIMssWPixel'];
@@ -904,7 +910,7 @@ table th{
         <div class="modal-content" style="  height: 500px;">
             <div class="modal-header">
                 <h5 id="Example_Title" class="modal-title"></h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
             </div>
             <div class="modal-body text-center">
 
@@ -914,17 +920,13 @@ table th{
         </div>
 
 </div>
+</div>
+
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="dist/js/jquery-3.7.1.js"></script>
-<script src="dist/js/popper.min.js"></script>
-<script src="dist/js/main_speed.js"></script>
-<script src="dist/js/bootstrap.min.js"></script>
-<script src="dist/js/dataTables.js"></script>
-<script src="dist/js/dataTables.bootstrap4.js"></script>
-<script type="text/javascript" src="Ckeditor/ckeditor/ckeditor.js"></script>
+
 <script>
     function SearchEdit(XVMsgCode,w,h){
         
@@ -962,7 +964,7 @@ table th{
         $("#TxtXVMsgCode").val('MSGXXXX-XXXX');
         $("#msgName").val('');
         $("#modal-addtext").modal("show");
-        checktx('001');
+        checktx(1);
         // $("#modal-MsgSize").modal("show");
     });
     $("#btn_addpicture").click(function(){
@@ -998,8 +1000,7 @@ table th{
       
        
         
-        var optionSelected = $("#SelMsgSize").val();
-      
+        var optionSelected = '006';
         const SizeArray =optionSelected.split(",");
         var XVMssCode=SizeArray[0];
         var w=SizeArray[1];
@@ -1031,7 +1032,9 @@ table th{
         $.ajax({
             type: "POST",
             url: "addMessage_libery.php",
-            data: {'XVMsgInfoType':'1','XVMsgCode':XVMsgCode,'data': q,'XVMsgName':XVMsgName,'XVMsgStatus':XVMsgStatus,'idmsgSize':XVMssCode,'msgBG':bgcolor},
+            data: {'XVMsgInfoType':'1',
+                'XVMsgCode':XVMsgCode,
+                'data': q,'XVMsgName':XVMsgName,'XVMsgStatus':XVMsgStatus,'idmsgSize':XVMssCode,'msgBG':bgcolor},
             success: function(result) {
                  
                
@@ -1228,12 +1231,6 @@ function examplesms(url, h, w, vmsmame) {
 
 
 function checktx(val){
-        //var optionSelected = $("#SelMsgSize").val();
-     //   const SizeArray =optionSelected.split(",");
-       // var XVMssCode=SizeArray[0];
-        //var w=SizeArray[1];
-      //  var h=SizeArray[2];
-       // $("#XVMssCode").val(XVMssCode);
        var vmst= val;
         var XVMssType=vmst;
         if(XVMssType==1){
@@ -1243,7 +1240,7 @@ function checktx(val){
                 data: {
                     'ckeditorsize': 'ckeditorsize',
                     'w':'960',
-                    'h': '384'
+                    'h':'384'
                 },
                 success: function(result) {     
                     $("#ShowCkeditor").html(result);
