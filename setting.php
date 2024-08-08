@@ -110,8 +110,8 @@ input .btnsearch{
 
 <div class="container" style="position: relative; top: 80; ">
 
-<div style=" text-align: center; margin-bottom: 1rem; border-bottom: 3px double #cccc; padding: 1rem;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image" style="margin-right: 0.5rem;">ตั้งค่า
+<div style=" text-align: center; margin-bottom: 1rem; border-bottom: 3px double #cccc; padding: 1rem; font-size: 1.3rem;">
+            <img src="/speedway/img/icon/setting2.png" height="25" alt="Responsive image" style="">ตั้งค่า
         </div>
 
         
