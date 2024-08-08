@@ -412,7 +412,7 @@ table th{
             </div>
 
 <div class="col-4" style="text-align: center;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> Step 3 ชุดข้อความสภาพจราจร
+<img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image"> Step 3 ชุดข้อความสภาพจราจร
         </div>
 
 

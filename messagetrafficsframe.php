@@ -439,7 +439,7 @@ input.btnsearch{
             </div>
 
         <div class="col-4" style="text-align: center;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> step 2 จัดรูปแบบข้อความสภาพจราจร
+        <img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image"> step 2 จัดรูปแบบข้อความสภาพจราจร
         </div>
 
         <div class="next-btn col-4"  style="text-align: right; padding: 0; ">

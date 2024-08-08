@@ -387,7 +387,7 @@ text-align: center;
 
 
     <div class="col-4" style="text-align: center;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image">Step 4 ข้อความป้ายจราจร
+    <img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image">Step 4 ข้อความป้ายจราจร
         </div>
 
 
