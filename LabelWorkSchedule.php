@@ -184,7 +184,7 @@ table  th {
 
 
 <div style="margin: .4rem; text-align: center; border-bottom: 3px double #cccc; padding: 1rem;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ตารางการทำงานของป้าย
+            <img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ตารางการทำงานของป้าย
         </div>
 
         <?php if($pri_r != 0){ ?>
