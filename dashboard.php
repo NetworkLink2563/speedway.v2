@@ -608,6 +608,99 @@ function row($idrow, $user)
 
 
 <!-- Modal -->
+<!--<div class="modal fade " id="modaliframe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header" style="display: flex; background-color: #f7f7f7;">
+                <div class="col-11">
+                    <h5 class="modal-title" id="exampleModalLabel">Live view</h5>
+                </div>
+                <div class="col-1">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body" style="padding: 1rem 0rem 1rem 0rem;">
+
+
+
+
+                <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center ; background-color: white;">
+
+
+                    <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+
+                        <div class="row">
+                            <div class="col-md-12" style="padding: 0;">
+                                <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 100px;">
+
+                                   <button onclick="addsms(1)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                                  <!--   <iframe id="frame1_section1_show" src="" style="border: none; width: 956px; height: 100px;"></iframe>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div id="frame3_section3" class="float-left" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px;  height: 249px;">
+
+                                   <button onclick="addsms(3)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                                   <!--  <iframe id="frame3_section3_show" src="" ></iframe>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div id="frame3_section4" class="float-left col-12" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px;  height: 249px;">
+
+                                  <button onclick="addsms(4)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                                    <!--<iframe id="frame4_section4_show" src="" ></iframe>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div id="frame3_section4" class="float-left col-12" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; height: 249px;">
+
+                                    <button onclick="addsms(4)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                                 <!--   <iframe id="frame5_section5_show" src="" ></iframe>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12" style="padding: 0;">
+                            <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 100px;">
+
+                               <button onclick="addsms(1)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                               <!-- <iframe id="frame2_section2_show" src="" style="border: none; width: 956px; height: 100px;"></iframe>
+
+                            </div>
+                        </div>
+
+                        <video src="http://192.168.55.13/vdo1/"></video>
+                        
+                    </div>
+
+
+
+                    <div class="col-8 text-center" style="margin: 1rem;">
+                        <button type="button" id="btn_saveframe3" class="btn" style="background-color:#009933;color:white">บันทึก<i style="margin-left: 5px;color:white;font-size: 15px;" class="fa fa-save"></i></button> -->
+                        <!-- <button type="button"  id="btn_saveframe3" class="btn btn-danger" style="color:white" >ล้าง<i style="margin-left: 5px;color:white;font-size: 15px;" class="fa fa-delete"></i></button> -->
+                    <!--</div>
+
+
+                </div>
+            </div>
+             frame 3 end -->
+
+           <!--  <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button> 
+            </div>
+        </div>
+    </div>
+</div> -->
+
 <div class="modal fade " id="modaliframe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog ">
         <div class="modal-content">
@@ -634,69 +727,19 @@ function row($idrow, $user)
                             <div class="col-md-12" style="padding: 0;">
                                 <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 100px;">
 
-                                    <!-- <button onclick="addsms(1)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
-                                    <iframe id="frame1_section1_show" src="" style="border: none; width: 956px; height: 100px;"></iframe>
+                                    <!--<button onclick="addsms(1)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                                  <iframe id="live" src="" style="border: none; width: 956px; height: 100px;"></iframe>
 
                                 </div>
                             </div>
+                        </div> 
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div id="frame3_section3" class="float-left" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px;  height: 249px;">
-
-                                    <!-- <button onclick="addsms(3)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
-                                    <iframe id="frame3_section3_show" src="" ></iframe>
-
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div id="frame3_section4" class="float-left col-12" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px;  height: 249px;">
-
-                                    <!-- <button onclick="addsms(4)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
-                                    <iframe id="frame4_section4_show" src="" ></iframe>
-
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div id="frame3_section4" class="float-left col-12" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; height: 249px;">
-
-                                    <!-- <button onclick="addsms(4)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
-                                    <iframe id="frame5_section5_show" src="" ></iframe>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12" style="padding: 0;">
-                            <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 100px;">
-
-                                <!-- <button onclick="addsms(1)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
-                                <iframe id="frame2_section2_show" src="" style="border: none; width: 956px; height: 100px;"></iframe>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="col-8 text-center" style="margin: 1rem;">
-                        <!-- <button type="button" id="btn_saveframe3" class="btn" style="background-color:#009933;color:white">บันทึก<i style="margin-left: 5px;color:white;font-size: 15px;" class="fa fa-save"></i></button> -->
-                        <!-- <button type="button"  id="btn_saveframe3" class="btn btn-danger" style="color:white" >ล้าง<i style="margin-left: 5px;color:white;font-size: 15px;" class="fa fa-delete"></i></button> -->
-                    </div>
-
-
-                </div>
-            </div>
-            <!-- frame 3 end -->
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
@@ -778,8 +821,8 @@ function row($idrow, $user)
                     $('#C0' + obj.XVVmsCode).css("color", "red");
                 }else if(obj.statusXiSecDiff == 2){  // on
                     $('#C0' + obj.XVVmsCode).css("color", "green");
-                }else if(obj.statusXiSecDiff == 0){ // not working or null data
-                    $('#C0' + obj.XVVmsCode).css();
+                }else if(obj.statusXiSecDiff == 0){ // not working or null data / sensor off
+                    $('#C0' + obj.XVVmsCode).css(); 
                 }
 
 

@@ -490,7 +490,7 @@ li{
                             </thead>
                             <tbody>
                                 <?php
-                        $stmt = "SELECT   dbo.TMstMMessage.XVMsgCode, dbo.TMstMMessage.XVMsgName, dbo.TMstMMessage.XVWhoCreate, dbo.TMstMMsgSize.XIMssWPixel, dbo.TMstMMsgSize.XIMssHPixel, 
+                        $stmt = "SELECT   dbo.TMstMMessage.XVMsgFileName,dbo.TMstMMessage.XVMsgCode, dbo.TMstMMessage.XVMsgName, dbo.TMstMMessage.XVWhoCreate, dbo.TMstMMsgSize.XIMssWPixel, dbo.TMstMMsgSize.XIMssHPixel, 
                                                         dbo.TMstMMessage.XVMsgType, dbo.TMstMMessage.XVMsgInfoType
                                 FROM            dbo.TMstMMessage INNER JOIN
                                                         dbo.TMstMMsgSize ON dbo.TMstMMsgSize.XVMssCode = dbo.TMstMMessage.XVMssCode
@@ -499,6 +499,9 @@ li{
                         $query = sqlsrv_query($conn, $stmt);
                         while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
                         {
+                            $id=$result['XVMsgCode'];
+                            $XVMsgFileName =$result['XVMsgFileName'];
+                            $t=$result['XVMsgType'];
                         if($result['XVMsgType']==1){
                             $XVMsgType='<i class="fa fa-text-width" aria-hidden="true" title="ข้อความ"></i>';
                         }elseif($result['XVMsgType']==2){
@@ -514,9 +517,17 @@ li{
                                         <?php
                                       $XIMssWPixel=$result['XIMssWPixel'];
                                       $XIMssHPixel=$result['XIMssHPixel'];
-                                      $url="ifarme.php?msg=".base64_encode($result['XVMsgCode']);
-                                      $url."&wp=".base64_encode($result['XIMssWPixel']);
-                                      $url."&hp=".base64_encode($result['XIMssHPixel']);
+                                      //$url="ifarme.php?msg=".base64_encode($result['XVMsgCode']);
+                                      //$url."&wp=".base64_encode($result['XIMssWPixel']);
+                                     // $url."&hp=".base64_encode($result['XIMssHPixel']);
+                                     if($result['XVMsgType']==1){
+                                        $url="ifarmeimg.php?msg=$id&type=$t";
+                                    }elseif($result['XVMsgType']==2){
+                                        $url="ifarmeimg.php?msg=$XVMsgFileName&type=$t";
+                             }elseif($result['XVMsgType']==3){
+                                         $url="ifarmeimg.php?msg=$XVMsgFileName&type=$t";
+                                    }
+
                                       $XVMsgName=$result['XVMsgName'];
 
                                      
@@ -1075,7 +1086,7 @@ li{
         
     });
     $("#btn_saveimage").click(function(){
-                var XVMssCode = document.getElementById('XVMssCode').value;
+                var XVMssCode = '006';
                 var XVMsgName = document.getElementById('imageName').value;
                 if (XVMsgName == '') {   
                     Swal.fire("กรุณาใส่ชื่อรูปภาพ", "", "info");
@@ -1139,7 +1150,7 @@ li{
 
     
     $("#btn_savevdo").click(function(){
-                var XVMssCode = document.getElementById('XVMssCode').value;
+                var XVMssCode ='006';
                 var XVMsgName = document.getElementById('vdoName').value;
                 if (XVMsgName == '') {   
                     Swal.fire("กรุณาใส่ชื่อรูปภาพ", "", "info");
