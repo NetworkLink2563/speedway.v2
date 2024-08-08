@@ -404,7 +404,7 @@ table th{
             </div>
 
             <div class="col-4" style="text-align: center;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image"> step3 ชุดข้อความ
+            <img src="img/icon/edit.png" height="25" alt="Responsive image"> step3 ชุดข้อความ
             </div>
 
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">

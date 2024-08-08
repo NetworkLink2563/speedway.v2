@@ -412,7 +412,7 @@ table th{
             </div>
 
 <div class="col-4" style="text-align: center;">
-<img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image"> Step 3 ชุดข้อความสภาพจราจร
+<img src="/speedway/img/icon/edit.png" height="25" alt="Responsive image"> Step 3 ชุดข้อความสภาพจราจร
         </div>
 
 
@@ -526,7 +526,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
       <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
 
       <div class="col-11" style="text-align: center; padding: 0;">
-                    <img src="img/icon/computer.png" height="25" alt="Responsive image"><span style="font-size: 1.2rem;"> ชุดการแสดงป้าย/สร้างชุดการแสดงป้าย</span>
+                    <img src="img/icon/edit.png" height="25" alt="Responsive image"><span style="font-size: 1.2rem;"> ชุดการแสดงป้าย/สร้างชุดการแสดงป้าย</span>
                     </div>
 
                     <div class="col-1" style="">

@@ -385,7 +385,7 @@ function SaveFrame3( $XVMsfCode){
         
         while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
         {
-              
+              $id=$result['XVMsgCode'];
                 if($result['XVMsgType']==1){
                     $XVMsgType='<i class="fa fa-text-width" aria-hidden="true" title="ข้อความ"></i>';
                 }elseif($result['XVMsgType']==2){
@@ -396,7 +396,7 @@ function SaveFrame3( $XVMsfCode){
                 
                 $XIMssWPixel=$result['XIMssWPixel'];
                 $XIMssHPixel=$result['XIMssHPixel'];
-                $url="ifarme.php?msg=".base64_encode($result['XVMsgCode']);
+                $url="ifarmeimg.php?msg=$id&type=2";
                 $url."&wp=".base64_encode($result['XIMssWPixel']);
                 $url."&hp=".base64_encode($result['XIMssHPixel']);
                 $XVMsgName=$result['XVMsgName'];

@@ -415,6 +415,7 @@ table th{
     li{
         list-style: none;
     }
+    
 </style>
 <script src="dist/js/jquery-3.7.1.js"></script>
 <script src="dist/js/popper.min.js"></script>
@@ -432,7 +433,7 @@ table th{
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex; ">
 
             <div class="col-7" style="text-align: right;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
+            <img src="img/icon/edit.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
             </div>
 
             <div class="next-btn col"  style="text-align: right; padding: 0; ">
@@ -531,7 +532,7 @@ table th{
                                         $url="ifarmeimg.php?msg=$id&type=$t";
                                     }elseif($result['XVMsgType']==2){
                                         $url="ifarmeimg.php?msg=$XVMsgFileName&type=$t";
-                             }elseif($result['XVMsgType']==3){
+                                     }elseif($result['XVMsgType']==3){
                                          $url="ifarmeimg.php?msg=$XVMsgFileName&type=$t";
                                     }
                                      // $url="ifarmeimg.php?msg=$XVMsgFileName&type=$t";
@@ -916,16 +917,16 @@ table th{
 
 
 <div class="modal py-5" id="ModalExample" role="dialog">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content" style="  height: 500px;">
             <div class="modal-header">
                 <h5 id="Example_Title" class="modal-title"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
             </div>
             <div class="modal-body text-center">
-
+<div style="text-align: center;">
                 <iframe id="iframe" style="border: 0;" src=""></iframe>
-
+                </div>
             </div>
         </div>
 
