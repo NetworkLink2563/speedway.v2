@@ -618,7 +618,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
     <td>
         <div align="center" style="margin-top: 0">
 
-            <?php if($pri_contr != 0 && $pri_w != 0){ 
+            <?php if($pri_contr != 0){ 
                 
                 ?>
 
