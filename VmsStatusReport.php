@@ -326,7 +326,7 @@ hr {
 
 
     <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายงานสถานะป้าย</a>
+            <a class="tablinks2 active " style="cursor: context-menu;"><img src="/speedway/img/icon/report.png" height="25" alt="Responsive image"> รายงานสถานะป้าย</a>
     </div>
 
     <?php if($pri_r != 0){?>

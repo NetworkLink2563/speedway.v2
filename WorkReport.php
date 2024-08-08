@@ -371,7 +371,7 @@ new DataTable('#tabuser', {
 
         </div>
 <div class=" shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
-            <a class="tablinks2 active " style="cursor: context-menu;"> <img src="http://43.229.151.103/speedway/img/icon/computer.png" height="25" alt="Responsive image">รายงานการปฏิบัติงาน</a>
+            <a class="tablinks2 active " style="cursor: context-menu;"> <img src="/speedway/img/icon/report.png" height="25" alt="Responsive image">รายงานการปฏิบัติงาน</a>
         </div>
 
 
