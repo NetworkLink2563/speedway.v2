@@ -67,7 +67,7 @@ $pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
 <div class="flex-container" style="">
 
         <div class="col-12" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; box-shadow: 3px 3px 3px #aaaaaa !important;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> ตัวช่วยสร้างข้อความ</a>
+            <a class="tablinks2 active " style="cursor: context-menu;"><img src="/speedway/img/icon/help.png" height="25" alt="Responsive image"> ตัวช่วยสร้างข้อความ</a>
         </div>
 
 
