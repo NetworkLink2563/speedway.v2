@@ -12,6 +12,7 @@ $pri=pri_($_SESSION['user'],$menucode);
 $pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
 $pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
 $pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
+$pri_contr=$pri[0]['pri_contr'];  // สิทธิ์การควบคุม
 
 
 
@@ -617,7 +618,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
     <td>
         <div align="center" style="margin-top: 0">
 
-            <?php if($pri_w != 0){ 
+            <?php if($pri_contr != 0 && $pri_w != 0){ 
                 
                 ?>
 
