@@ -448,7 +448,7 @@ body {
 
 
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ผู้ใช้งาน
+            <img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ผู้ใช้งาน
         </div>
 
 
