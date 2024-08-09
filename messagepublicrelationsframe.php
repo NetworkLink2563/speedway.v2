@@ -1702,10 +1702,10 @@ layout: {
         $("#modal-frame2").modal("hide")
     })
     $("#hidemodalex").click(function(){
-    $("#ModalExample").hide()
+    $("#ModalExample").modal("hide")
     })
     $("#closemodalex").click(function(){
-    $("#ModalExample").hide()
+    $("#ModalExample").modal("hide")
     })
 </script>
  
