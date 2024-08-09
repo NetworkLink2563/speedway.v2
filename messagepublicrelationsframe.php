@@ -1702,11 +1702,9 @@ layout: {
         $("#modal-frame2").modal("hide")
     })
     $("#hidemodalex").click(function(){
-        $('.modal-backdrop').remove();
     $("#ModalExample").hide()
     })
     $("#closemodalex").click(function(){
-        $('.modal-backdrop').remove();
     $("#ModalExample").hide()
     })
 </script>
