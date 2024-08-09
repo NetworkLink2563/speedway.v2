@@ -365,7 +365,7 @@ function SaveFrame3( $XVMsfCode){
                  </th>
                  <th class="th-sm">ชื่อข้อความ
                  </th>
-                 <th class="th-sm" style="text-align: left">ตัวอย่าง
+                 <th class="th-sm" style="text-align: center">ตัวอย่าง
                  </th>
                  <th class="th-sm" style="text-align: center">ขนาด
                  </th>
