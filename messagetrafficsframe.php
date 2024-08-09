@@ -963,7 +963,9 @@ background-image: url('img/icon/mag.png');
 
       <!-- Modal Header -->
       <div class="modal-header" style="display: flex;">
+        <div class="col-11" style="text-align: center;">
       <h5 id="Example_Title" class="modal-title"></h5>
+      </div>
         <div class="col-1">
         <button type="button" id="hidemodalex" class="close" data-dismiss="modal">&times;</button>
         </div>
