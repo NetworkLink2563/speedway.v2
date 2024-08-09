@@ -791,14 +791,16 @@ $(document).ready(function() {
 // });
 
 new DataTable('#VMSTable', {
-layout: {
-    topEnd: {
-        search: {
-            placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
-        }
-    }
-}
-
+    order: [[0, 'desc']],
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+        
+     }
+             
 });
 
 });

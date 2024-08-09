@@ -409,7 +409,7 @@ background-image: url('img/icon/mag.png');
             </div>
 
             <div class="col-4" style="text-align: center;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image"> step4 ข้อความป้ายประชาสัมพันธ์
+            <img src="img/icon/edit.png" height="25" alt="Responsive image"> step4 ข้อความป้ายประชาสัมพันธ์
             </div>
 
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
@@ -791,14 +791,16 @@ $(document).ready(function() {
 // });
 
 new DataTable('#VMSTable', {
-layout: {
-    topEnd: {
-        search: {
-            placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
-        }
-    }
-}
-
+    order: [[0, 'desc']],
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+        
+     }
+             
 });
 
 });

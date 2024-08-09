@@ -1326,15 +1326,30 @@ $(document).ready(function() {
         
     // });
 
-    new DataTable('#VMSTable', {
-    layout: {
-        topEnd: {
-            search: {
-                placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
-            }
-        }
-    }
+//     new DataTable('#VMSTable', {
+//     layout: {
+//         topEnd: {
+//             search: {
+//                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+//             }
+//         }
+        
+//     }
+    
+// });
 
+
+new DataTable('#VMSTable', {
+    order: [[0, 'desc']],
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+        
+     }
+             
 });
 
 });
@@ -1345,39 +1360,89 @@ $(document).ready(function() {
 function deleteMSG(MSGCode) {
    
     Swal.fire({
-        title: "",
-        text: "ต้องการลบ " + MSGCode + " ใช่หรือไม่?",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "ใช่",
-        cancelButtonText: "ไม่",
-    }).then((result) => {
-        if (result.isConfirmed) {
-            $.ajax({
-                type: "POST",
-                url: "lib/delMessage.php",
-                data: {
-                    'msgCODE': MSGCode
-                },
-                success: function(result) {
-                 
-                    const obj = JSON.parse(result);
-                   
-                    if (obj.RETURN != "True") {
-                        Swal.fire("ไม่สามรถลบได้ มีการใช้ข้อความที่ข้อความประชาสัมพันธ์แสดงบนป้าย "+obj.XVVmsName, "", "warnning");
+                            title: "คุณต้องการลบข้อมูลหรือไม่?<br>",
+                            text: MSGCode,
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#198754",
+                            cancelButtonColor: "#d33",
+                            cancelButtonText:"ยกเลิก",
+                            confirmButtonText: "ใช่"
+                            }).then((result) => {
+                            if (result.isConfirmed) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "lib/delMessage.php",
+                                    data: {
+                                        'msgCODE': MSGCode
+                                    },
+                                    success: function(result) {
+                                    
+                                        const obj = JSON.parse(result);
+                                    
+                                        if (obj.RETURN == "True") {
+                                Swal.fire({
+                                title: "ลบสำเร็จ!",
+                                text: "ข้อความของคุณถูกลบแล้ว",
+                                icon: "success",
+                                confirmButtonText: "ตกลง"
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        window.location.href = 'messagepublicrelations.php';
+                                    }
+                                })
+                            }else{
+                                Swal.fire({
+                                icon: "error",
+                                title: "ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย<br>" +obj.XVVmsName,
+                                confirmButtonText: "ตกลง"
+                                // text: "Something went wrong!",
+                                // footer: '<a href="#">Why do I have this issue?</a>'
+                                });
+                            //  Swal.fire("ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย "+Return, "", "warning");
+                            }
+                            }
+                            });
                         
-                        //window.location.href = 'mainMessage.php';
-                    } else {
+            
+                        }
+                                                    
+             });
 
-                        window.location.href = 'messagepublicrelations.php';
-                    }
+    // Swal.fire({
+    //     title: "",
+    //     text: "ต้องการลบ " + MSGCode + " ใช่หรือไม่?",
+    //     icon: "warning",
+    //     showCancelButton: true,
+    //     confirmButtonColor: "#3085d6",
+    //     cancelButtonColor: "#d33",
+    //     confirmButtonText: "ใช่",
+    //     cancelButtonText: "ไม่",
+    // }).then((result) => {
+    //     if (result.isConfirmed) {
+    //         $.ajax({
+    //             type: "POST",
+    //             url: "lib/delMessage.php",
+    //             data: {
+    //                 'msgCODE': MSGCode
+    //             },
+    //             success: function(result) {
+                 
+    //                 const obj = JSON.parse(result);
+                   
+    //                 if (obj.RETURN != "True") {
+    //                     Swal.fire("ไม่สามรถลบได้ มีการใช้ข้อความที่ข้อความประชาสัมพันธ์แสดงบนป้าย "+obj.XVVmsName, "", "warnning");
+                        
+    //                     //window.location.href = 'mainMessage.php';
+    //                 } else {
 
-                }
-            });
-        }
-    });
+    //                     window.location.href = 'messagepublicrelations.php';
+    //                 }
+
+    //             }
+    //         });
+    //     }
+    // });
     
 }
 

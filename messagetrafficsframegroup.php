@@ -762,45 +762,99 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
 <script type="text/javascript">
 function deleteMSG(XVPltCode) {
   
- 
-            $.ajax({
-                type: "POST",
-                url: "messagepublicrelationsframegroupfunction.php",
-                data: {
-                    'deletesms':'deletesms',
-                    'XVPltCode': XVPltCode
-                },
-                success: function(result) {
-                   
-                    const obj = JSON.parse(result);
-                    var Return=obj.Return;
-                    if(Return=='DeleteSuccess'){
-                        
-                        Swal.fire({
-                            icon: "success",
-                            title: "",
-
-                            text: "ลบสำเร็จ",
-                            showDenyButton: false,
-                            showCancelButton: false,
-                            confirmButtonText: "Save",
-                            denyButtonText: `Don't save`
+    Swal.fire({
+                            title: "คุณต้องการลบข้อมูลหรือไม่?",
+                            text: XVPltCode,
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#198754",
+                            cancelButtonColor: "#d33",
+                            cancelButtonText:"ยกเลิก",
+                            confirmButtonText: "ใช่"
                             }).then((result) => {
-                        
-                                if (result.isConfirmed) {
-                                
-                                    window.location.href = 'messagepublicrelationsframegroup.php';
-                                }
+                            if (result.isConfirmed) {
+
+                                $.ajax({
+                                type: "POST",
+                                url: "messagepublicrelationsframegroupfunction.php",
+                                data: {
+                                    'deletesms':'deletesms',
+                                    'XVPltCode': XVPltCode
+                                },
+                                success: function(result) {
+                                    
+                                const obj = JSON.parse(result);
+                                var Return=obj.Return;
+        
+                                 if(Return =='DeleteSuccess'){
+                                Swal.fire({
+                                title: "ลบสำเร็จ!",
+                                text: "ข้อความของคุณถูกลบแล้ว",
+                                icon: "success",
+                                confirmButtonText: "ตกลง"
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        window.location.href = 'messagetrafficsframegroup.php';
+                                    }
+                                })
+                            }else{
+                                Swal.fire({
+                                icon: "error",
+                                title: "ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย<br>" +Return,
+                                confirmButtonText: "ตกลง"
+                                // text: "Something went wrong!",
+                                // footer: '<a href="#">Why do I have this issue?</a>'
+                                });
+                            //  Swal.fire("ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย "+Return, "", "warning");
+                            }
+                            }
                             });
-                    }else{
-                             Swal.fire("ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย "+Return, "", "warning");
-                    }
+            
+                        }
+                                                    
+             });
+       
+
+                            
+            // $.ajax({
+            //     type: "POST",
+            //     url: "messagepublicrelationsframegroupfunction.php",
+            //     data: {
+            //         'deletesms':'deletesms',
+            //         'XVPltCode': XVPltCode
+            //     },
+            //     success: function(result) {
+                   
+            //         const obj = JSON.parse(result);
+            //         var Return=obj.Return;
+            //         if(Return=='DeleteSuccess'){
+                        
+            //             Swal.fire({
+            //                 icon: "success",
+            //                 title: "",
+
+            //                 text: "ลบสำเร็จ",
+            //                 showDenyButton: false,
+            //                 showCancelButton: false,
+            //                 confirmButtonText: "Save",
+            //                 denyButtonText: `Don't save`
+            //                 }).then((result) => {
+                        
+            //                     if (result.isConfirmed) {
+                                
+            //                         window.location.href = 'messagepublicrelationsframegroup.php';
+            //                     }
+            //                 });
+            //         }else{
+            //                  Swal.fire("ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย "+Return, "", "warning");
+            //         }
                     
-                }
-            });
+            //     }
+            // });
        
     
 }
+
 function AutoId(){
         let input = document.getElementsByName('idarray[]');
         let inputbtnup= document.getElementsByName('btnup[]');
@@ -1129,14 +1183,16 @@ $(document).ready(function() {
 // });
 
 new DataTable('#VMSTable', {
-layout: {
-    topEnd: {
-        search: {
-            placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
-        }
-    }
-}
-
+    order: [[0, 'desc']],
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+        
+     }
+             
 });
 
 });
