@@ -408,16 +408,16 @@ table th{
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem; display: flex;">
 
 <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-            <button onclick="location.href='/speedway/messagetrafficsframe.php'" class="btn btn-warning btn-hover shadow" style=""> กลับ Step2 สร้างข้อความจราจรแสดงบนป้าย <<</button>
+            <a href='http://192.168.55.11/speedway.v2/messagetrafficsframe.php'" class="btn btn-warning btn-hover shadow" style=""> กลับ Step2 สร้างข้อความจราจรแสดงบนป้าย <<</a>
             </div>
 
 <div class="col-4" style="text-align: center;">
-<img src="/speedway/img/icon/edit.png" height="25" alt="Responsive image"> Step 3 ชุดข้อความสภาพจราจร
+<img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image"> Step 3 ชุดข้อความสภาพจราจร
         </div>
 
 
         <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
-            <button onclick="location.href='/speedway/messagetrafficsplay.php'" class="btn btn-success btn-hover shadow" style="">>> Step4 ข้อความป้ายประชาสัมพันธ์</button>
+            <a href='http://192.168.55.11/speedway.v2/messagetrafficsplay.php'" class="btn btn-success btn-hover shadow" style="">>> Step4 ข้อความป้ายประชาสัมพันธ์</a>
             </div>
 
 
@@ -526,7 +526,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
       <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
 
       <div class="col-11" style="text-align: center; padding: 0;">
-                    <img src="img/icon/edit.png" height="25" alt="Responsive image"><span style="font-size: 1.2rem;"> ชุดการแสดงป้าย/สร้างชุดการแสดงป้าย</span>
+                    <img src="img/icon/computer.png" height="25" alt="Responsive image"><span style="font-size: 1.2rem;"> ชุดการแสดงป้าย/สร้างชุดการแสดงป้าย</span>
                     </div>
 
                     <div class="col-1" style="">

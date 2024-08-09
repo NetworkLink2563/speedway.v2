@@ -107,7 +107,10 @@ function row($idrow, $user)
     }
 </style>
 
-
+<script src="dist/js/jquery-3.7.1.js"></script>
+<script src="dist/js/popper.min.js"></script>
+<script src="dist/js/main_speed.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
 
 
 
@@ -706,7 +709,7 @@ function row($idrow, $user)
         <div class="modal-content">
             <div class="modal-header" style="display: flex; background-color: #f7f7f7;">
                 <div class="col-11">
-                    <h5 class="modal-title" id="exampleModalLabel">Live view</h5>
+                    <h5 class="modal-title" style="padding-left: 13%;" id="exampleModalLabel">Live view</h5>
                 </div>
                 <div class="col-1">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -723,12 +726,12 @@ function row($idrow, $user)
                     <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
 
 
-                        <div class="row">
+                        <div class="row" style="text-align:center;">
                             <div class="col-md-12" style="padding: 0;">
-                                <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 100px;">
+                                <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 415px;">
 
                                     <!--<button onclick="addsms(1)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
-                                  <iframe id="live" src="" style="border: none; width: 956px; height: 100px;"></iframe>
+                                  <iframe id="live" src="http://192.168.55.11/stream/Vdo1/" style="border: none; width:1200px; height:400px;"></iframe>
 
                                 </div>
                             </div>
@@ -737,9 +740,48 @@ function row($idrow, $user)
                         </div>
                         </div>
                         </div>
-                        </div>
-                        </div>
+          </div>
+       </div>
 
+
+<div class="modal fade " id="modaliframe2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header" style="display: flex; background-color: #f7f7f7;">
+                <div class="col-11">
+                    <h5 class="modal-title" style="padding-left: 13%;" id="exampleModalLabel">Live view</h5>
+                </div>
+                <div class="col-1">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body" style="padding: 1rem 0rem 1rem 0rem;">
+
+
+
+
+                <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center ; background-color: white;">
+
+
+                    <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+
+                        <div class="row" style="text-align:center;">
+                            <div class="col-md-12" style="padding: 0;">
+                                <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 415px;">
+
+                                    <!--<button onclick="addsms(1)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                                  <iframe id="live" src="http://192.168.55.11/stream/Vdo2/" style="border: none; width:1200px; height:400px;"></iframe>
+
+                                </div>
+                            </div>
+                        </div> 
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+          </div>
+       </div>
 
 
 
@@ -765,10 +807,7 @@ function row($idrow, $user)
 
 
 
-<script src="dist/js/jquery-3.7.1.js"></script>
-<script src="dist/js/popper.min.js"></script>
-<script src="dist/js/main_speed.js"></script>
-<script src="dist/js/bootstrap.min.js"></script>
+
 
 <script>
     var hidebtn = document.getElementById("hideconfig");
@@ -858,21 +897,13 @@ function row($idrow, $user)
         ShowSms();
 
     }
-
-    function ShowSample(XVVmsCode, XVVmsName, w, h) {
-        var t1 = 1;
-        var t2 = 2;
-        var t3 = 3;
-        var t4 = 4;
-        var t5 = 5;
-        $("#XVVmsCode").val(XVVmsCode);
-        $("#Example_Title").text(XVVmsName);
-        $("#frame1_section1_show").attr("src", 'ifarme.php?v=1&msg=' + btoa(XVVmsCode));
-        $("#frame2_section2_show").attr("src", 'ifarme.php?v=2&msg=' + btoa(XVVmsCode));
-        $("#frame3_section3_show").attr("src", 'ifarme.php?v=3&msg=' + btoa(XVVmsCode));
-        $("#frame4_section4_show").attr("src", 'ifarme.php?v=5&msg=' + btoa(XVVmsCode));
-        $("#frame5_section5_show").attr("src", 'ifarme.php?v=5&msg=' + btoa(XVVmsCode));
+   function ShowSample(XVVmsCode, XVVmsName, w, h) {
+        var id = XVVmsCode;
+        if(id=='VMS2403-0001'){
         $('#modaliframe').modal('show');
+        }else if(id=='VMS2403-0002'){
+            $('#modaliframe2').modal('show');   
+        }
     }
     $(document).ready(async function() {
         ShowSms();

@@ -400,15 +400,15 @@ table th{
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex;">
 
             <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-            <button onclick="location.href='/speedway/messagepublicrelationsframe.php'" class="btn btn-warning btn-hover shadow" style=""> กลับ Step2 จัดรูปแบบข้อความ <<</button>
+            <a href="http://192.168.55.11/speedway.v2/messagepublicrelationsframe.php" class="btn btn-warning btn-hover shadow" style=""> กลับ Step2 จัดรูปแบบข้อความ <<</a>
             </div>
 
             <div class="col-4" style="text-align: center;">
-            <img src="img/icon/edit.png" height="25" alt="Responsive image"> step3 ชุดข้อความ
+            <img src="img/icon/computer.png" height="25" alt="Responsive image"> step3 ชุดข้อความ
             </div>
 
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
-            <button onclick="location.href='/speedway/messagepublicrelationsplay.php'" class="btn btn-success btn-hover shadow" style="">>> Step4 ข้อความป้ายประชาสัมพันธ์</button>
+            <a href="http://192.168.55.11/speedway.v2/messagepublicrelationsplay.php" class="btn btn-success btn-hover shadow" style="">>> Step4 ข้อความป้ายประชาสัมพันธ์</a>
             </div>
 
         </div>

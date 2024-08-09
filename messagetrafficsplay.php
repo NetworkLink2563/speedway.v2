@@ -382,12 +382,12 @@ text-align: center;
 
 
 <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-            <button onclick="location.href='/speedway/messagetrafficsframegroup.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 สร้างชุดป้ายจราจร <<</button>
+            <a href='http://192.168.55.11/speedway.v2/messagetrafficsframegroup.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 สร้างชุดป้ายจราจร <<</a>
             </div>
 
 
     <div class="col-4" style="text-align: center;">
-    <img src="/speedway/img/icon/edit.png" height="25" alt="Responsive image">Step 4 ข้อความป้ายจราจร
+    <img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image">Step 4 ข้อความป้ายจราจร
         </div>
 
 

@@ -387,11 +387,11 @@ text-align: center;
 
 
             <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-            <button onclick="location.href='/speedway/messagepublicrelationsframegroup.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 ชุดข้อความ <<</button>
+            <a href="http://192.168.55.11/speedway.v2/messagepublicrelationsframegroup.php" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 ชุดข้อความ <<</a>
             </div>
 
             <div class="col-4" style="text-align: center;">
-            <img src="img/icon/edit.png" height="25" alt="Responsive image"> step4 ข้อความป้ายประชาสัมพันธ์
+            <img src="img/icon/computer.png" height="25" alt="Responsive image"> step4 ข้อความป้ายประชาสัมพันธ์
             </div>
 
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">

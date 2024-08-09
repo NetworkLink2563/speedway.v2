@@ -426,9 +426,6 @@ input.btnsearch{
  opacity: 0.7;
 }
 
-#iframe{
-    height: 550px!important;
-}
 </style>
 
 
@@ -438,15 +435,15 @@ input.btnsearch{
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem; display: flex;">
 
             <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-            <button onclick="location.href='/speedway/messagetraffics.php'" class="btn btn-warning btn-hover shadow" style="">กลับ Step1 สร้างข้อความจราจรพื้นฐาน <<</button>
+           <a href='http://192.168.55.11/speedway.v2/messagetraffics.php'" class="btn btn-warning btn-hover shadow" style="">กลับ Step1 สร้างข้อความจราจรพื้นฐาน <<</a>
             </div>
 
         <div class="col-4" style="text-align: center;">
-        <img src="/speedway/img/icon/edit.png" height="25" alt="Responsive image"> step 2 จัดรูปแบบข้อความสภาพจราจร
+        <img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image"> step 2 จัดรูปแบบข้อความสภาพจราจร
         </div>
 
         <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
-            <button onclick="location.href='/speedway/messagetrafficsframegroup.php'" class="btn btn-success btn-hover shadow" style="">>> Step3 สร้างชุดป้ายจราจร</button>
+           <a href='http://192.168.55.11/speedway.v2/messagetrafficsframegroup.php'" class="btn btn-success btn-hover shadow" style="">>> Step3 สร้างชุดป้ายจราจร</a>
             </div>
 
 
@@ -941,36 +938,7 @@ input.btnsearch{
     </div>
   </div>
 </div>
-
-<div class="modal " id="ModalExample">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header" style="display: flex;">
-      <h5 id="Example_Title" class="modal-title"></h5>
-        <div class="col-1">
-        <button type="button" id="hidemodalex" class="close" data-dismiss="modal">&times;</button>
-        </div>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-      <div style="text-align: center;">                                    
-                <iframe id="iframe" style="border: 0;" src=""></iframe>
-                </div>  
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" id="closemodalex" class="btn btn-danger" data-dismiss="modal">ปิด</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- <div class="modal py-5" id="ModalExample" role="dialog">
+<div class="modal py-5" id="ModalExample" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content" style="background-color: rgb(3, 84, 138);color:white;">
             <div class="modal-header">
@@ -984,7 +952,7 @@ input.btnsearch{
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <div class="modal " id="modal-MsgSize" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -1653,12 +1621,6 @@ $(document).ready(function() {
     })
     $("#hide-modal").click(function(){
     $("#modal-frame3").modal("hide")
-    })
-    $("#hidemodalex").click(function(){
-    $("#ModalExample").hide()
-    })
-    $("#closemodalex").click(function(){
-    $("#ModalExample").hide()
     })
 </script>
 

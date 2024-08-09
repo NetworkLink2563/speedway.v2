@@ -426,11 +426,11 @@ li{
 
 
             <div class="col-7" style="text-align: right;">
-            <img src="img/icon/edit.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
+            <img src="img/icon/setting.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
             </div>
 
             <div class="next-btn col"  style="text-align: right; padding: 0; ">
-            <button onclick="location.href='/speedway/messagetrafficsframe.php'" class="btn btn-success btn-hover shadow" style="">>> Step2 จัดรูปแบบข้อความจราจร</button>
+           <a href='http://192.168.55.11/speedway.v2/messagetrafficsframe.php'" class="btn btn-success btn-hover shadow" style="">>> Step2 จัดรูปแบบข้อความจราจร</a>
             </div>
 
         </div>
