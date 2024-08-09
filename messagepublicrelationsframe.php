@@ -436,6 +436,10 @@ input.btnsearch{
  opacity: 0.7;
 }
 
+#iframe{
+    height: 550px!important;
+}
+
 .dt-search input{
 background-image: url('img/icon/mag.png');
  background-repeat: no-repeat;
@@ -446,20 +450,17 @@ background-image: url('img/icon/mag.png');
  margin: 0rem 0rem 0.3rem 0rem;
     }
 
-    .dt-search input::after{
-       content: "asdadsa";
-    
-    }
-
-
     #dt-search-0{
         width: 255px;
         font-size: .9rem;
     }
+     .search{
+        display: none;
+     }
 
-    .search{
-        display:none;
-    }
+     /* #myModal .modal-backdrop{
+        display: none;
+     } */
 </style>
 
 
@@ -470,7 +471,7 @@ background-image: url('img/icon/mag.png');
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem; display: flex;">
 
             <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-           <a href='http://192.168.55.11/speedway.v2/messagepublicrelations.php'" class="btn btn-warning btn-hover shadow" style="">กลับ Step1 ข้อความพื้นฐาน <<</a>
+            <button onclick="location.href='/speedway/messagepublicrelations.php'" class="btn btn-warning btn-hover shadow" style="">กลับ Step1 ข้อความพื้นฐาน <<</button>
             </div>
             
             <div class="col-4" style="text-align: center;">
@@ -479,7 +480,7 @@ background-image: url('img/icon/mag.png');
 
             
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
-            <a href='http://192.168.55.11/speedway.v2/messagepublicrelationsframegroup.php'" class="btn btn-success btn-hover shadow" style="">>> Step3 ชุดข้อความ</a>
+            <button onclick="location.href='/speedway/messagepublicrelationsframegroup.php'" class="btn btn-success btn-hover shadow" style="">>> Step3 ชุดข้อความ</button>
             </div>
 
         </div>
@@ -638,7 +639,7 @@ background-image: url('img/icon/mag.png');
          
         <div class="col-12" style="display: flex; justify-content: center; text-align: center; padding: .5rem;" >
                       <div class="col-11 ">
-                      <img src="img/icon/computer.png" height="25" alt="Responsive image"> <span style="font-size: 1.2rem;" >สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/รูปแบบข้อความเดี่ยว</span>
+                      <img src="img/icon/edit.png" height="25" alt="Responsive image"> <span style="font-size: 1.2rem;" >สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/รูปแบบข้อความเดี่ยว</span>
                       </div>
                       <div class="col-1">
                       <button id="closef1" type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -974,21 +975,50 @@ background-image: url('img/icon/mag.png');
     </div>
   </div>
 </div>
-<div class="modal py-5" id="ModalExample" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="background-color: rgb(3, 84, 138);color:white;">
+
+<div class="modal " id="ModalExample">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style="display: flex;">
+      <h5 id="Example_Title" class="modal-title"></h5>
+        <div class="col-1">
+        <button type="button" id="hidemodalex" class="close" data-dismiss="modal">&times;</button>
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <div style="text-align: center;">                                  
+                <iframe id="iframe" style="border: 0;" src=""></iframe>
+                </div>  
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" id="closemodalex" class="btn btn-danger" data-dismiss="modal">ปิด</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal py-5" id="ModalExample" role="dialog">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="">
             <div class="modal-header">
                 <h5 id="Example_Title" class="modal-title"></h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" id="hidemodalex" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body text-center">
-
+                 <div>                                    
                 <iframe id="iframe" style="border: 0;" src=""></iframe>
-
+                </div>       
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="modal " id="modal-MsgSize" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -1609,7 +1639,9 @@ function SearchEdit(XVMsfCode,w,h){
          }
     });
 }
-// Basic example
+
+
+
 $(document).ready(function() {
 
 //  new DataTable('#UserTable');
@@ -1669,7 +1701,14 @@ layout: {
     $("#closef2").click(function(){
         $("#modal-frame2").modal("hide")
     })
+    $("#hidemodalex").click(function(){
+    $("#ModalExample").hide()
+    })
+    $("#closemodalex").click(function(){
+    $("#ModalExample").hide()
+    })
 </script>
+
 
 </body>
 

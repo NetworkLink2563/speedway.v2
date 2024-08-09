@@ -386,10 +386,6 @@ table th{
         height: 100vh;
     }
 
-.search{
-    display: none;
-}
-
 .flex-table{
     display: flex;
     flex-direction: column;
@@ -397,7 +393,7 @@ table th{
 }
 
 input .btnsearch{
- background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-image: url('img/icon/mag.png');
  background-repeat: no-repeat;
  background-size: 15px;
  background-position: left 12px top 10px;
@@ -418,12 +414,16 @@ table {
 }
 
 input.btnsearch{
- background-image: url('/img/icon/mag.png');
+ background-image: url('img/icon/mag.png');
  background-repeat: no-repeat;
  background-size: 15px;
  background-position: left 12px top 10px;
  text-indent: 20px;
  opacity: 0.7;
+}
+
+#iframe{
+    height: 550px!important;
 }
 
 .dt-search input{
@@ -436,13 +436,14 @@ background-image: url('img/icon/mag.png');
  margin: 0rem 0rem 0.3rem 0rem;
     }
 
-
-
-
     #dt-search-0{
         width: 255px;
         font-size: .9rem;
     }
+    
+     .search{
+        display:none;
+     }
 </style>
 
 
@@ -452,7 +453,7 @@ background-image: url('img/icon/mag.png');
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem; display: flex;">
 
             <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-           <a href='http://192.168.55.11/speedway.v2/messagetraffics.php'" class="btn btn-warning btn-hover shadow" style="">กลับ Step1 สร้างข้อความจราจรพื้นฐาน <<</a>
+            <button onclick="location.href='/speedway/messagetraffics.php'" class="btn btn-warning btn-hover shadow" style="">กลับ Step1 สร้างข้อความจราจรพื้นฐาน <<</button>
             </div>
 
         <div class="col-4" style="text-align: center;">
@@ -460,7 +461,7 @@ background-image: url('img/icon/mag.png');
         </div>
 
         <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
-           <a href='http://192.168.55.11/speedway.v2/messagetrafficsframegroup.php'" class="btn btn-success btn-hover shadow" style="">>> Step3 สร้างชุดป้ายจราจร</a>
+            <button onclick="location.href='/speedway/messagetrafficsframegroup.php'" class="btn btn-success btn-hover shadow" style="">>> Step3 สร้างชุดป้ายจราจร</button>
             </div>
 
 
@@ -955,7 +956,36 @@ background-image: url('img/icon/mag.png');
     </div>
   </div>
 </div>
-<div class="modal py-5" id="ModalExample" role="dialog">
+
+<div class="modal " id="ModalExample">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style="display: flex;">
+      <h5 id="Example_Title" class="modal-title"></h5>
+        <div class="col-1">
+        <button type="button" id="hidemodalex" class="close" data-dismiss="modal">&times;</button>
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <div style="text-align: center;">                                    
+                <iframe id="iframe" style="border: 0;" src=""></iframe>
+                </div>  
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" id="closemodalex" class="btn btn-danger" data-dismiss="modal">ปิด</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal py-5" id="ModalExample" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content" style="background-color: rgb(3, 84, 138);color:white;">
             <div class="modal-header">
@@ -969,7 +999,7 @@ background-image: url('img/icon/mag.png');
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="modal " id="modal-MsgSize" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -1588,6 +1618,7 @@ function SearchEdit(XVMsfCode,w,h){
     });
 }
 
+
 $(document).ready(function() {
 
 //  new DataTable('#UserTable');
@@ -1654,8 +1685,13 @@ layout: {
     $("#hide-modal").click(function(){
     $("#modal-frame3").modal("hide")
     })
+    $("#hidemodalex").click(function(){
+    $("#ModalExample").hide()
+    })
+    $("#closemodalex").click(function(){
+    $("#ModalExample").hide()
+    })
 </script>
-
 
 </body>
 

@@ -396,7 +396,7 @@ function SaveFrame3( $XVMsfCode){
                 
                 $XIMssWPixel=$result['XIMssWPixel'];
                 $XIMssHPixel=$result['XIMssHPixel'];
-                $url="ifarme.php?msg=".base64_encode($result['XVMsgCode']);
+                $url="ifarmeimg.php?msg=$id&type=2";
                 $url."&wp=".base64_encode($result['XIMssWPixel']);
                 $url."&hp=".base64_encode($result['XIMssHPixel']);
                 $XVMsgName=$result['XVMsgName'];
