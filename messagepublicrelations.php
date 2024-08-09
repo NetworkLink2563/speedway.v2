@@ -376,9 +376,45 @@ table {
     box-sizing: border-box;
 }
 
-.dt-search{
-        display: none;
+.dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0rem 0.3rem 0rem;
     }
+
+    .dt-search input::after{
+       content: "asdadsa";
+    
+    }
+
+
+    #dt-search-0{
+        width: 255px;
+        font-size: .9rem;
+    }
+
+    /* .dt-search input:focus{
+        background-image: none;
+
+    } */
+
+    
+
+    /* .dt-search input::after{
+        content: "dasdasdas";
+        z-index: 99;
+    } */
+
+     /* .dt-search label{
+        position: relative;
+        top: 35;
+        left: 35;
+        z-index: 99;
+    } */
 
     .flex-table{
         display: flex;
@@ -432,7 +468,7 @@ table th{
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex; ">
 
             <div class="col-7" style="text-align: right;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
+            <img src="img/icon/edit.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
             </div>
 
             <div class="next-btn col"  style="text-align: right; padding: 0; ">
@@ -472,11 +508,11 @@ table th{
                    
                     <div class="flex-table col" style="padding: 0;">
 
-                    <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px;">
+                    <!-- <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px;"> -->
 
                     <!-- <img style="margin: 0 0.5rem; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s" width="15" alt=""> -->
-                    <input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" for="dt-search-0" aria-controls="VMSTable" value=""></input>
-                    </div>
+                    <!-- <input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" for="dt-search-0" aria-controls="VMSTable" value=""></input>
+                    </div> -->
 
                     
                         <div class="table-content col">
@@ -1281,16 +1317,27 @@ $(document).ready(function() {
     //  new DataTable('#UserTable');
     // new DataTable('#VMSTable');
 
+    // new DataTable('#VMSTable', {
+    //     ordering: false,
+    //     "search": {
+    //             "placeholder": 'Search here'
+            
+    //     }
+        
+    // });
+
     new DataTable('#VMSTable', {
-        ordering: false,
-        "oLanguage": {
-            "sSearch": "กรอกข้อความที่ต้องการค้นหา"
+    layout: {
+        topEnd: {
+            search: {
+                placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+            }
         }
-    });
+    }
+
 });
 
-
-
+});
 
 
 
@@ -1387,7 +1434,6 @@ function deleteMSG(MSGCode) {
     $("#modal-addvdo").modal("hide")
     })
 </script>
-
 
 
 </body>

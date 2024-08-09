@@ -377,6 +377,24 @@ table td{
 font-size: 1rem;
 text-align: center;
 }
+
+.dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0.1rem 0.3rem 0rem;
+    }
+
+
+
+
+    #dt-search-0{
+        width: 255px;
+        font-size: .9rem;
+    }
 </style>
 
 
@@ -755,6 +773,37 @@ function sendmessageToVMS() {
     })
 
 </script>
+
+<script>
+
+$(document).ready(function() {
+
+//  new DataTable('#UserTable');
+// new DataTable('#VMSTable');
+
+// new DataTable('#VMSTable', {
+//     ordering: false,
+//     "search": {
+//             "placeholder": 'Search here'
+        
+//     }
+    
+// });
+
+new DataTable('#VMSTable', {
+layout: {
+    topEnd: {
+        search: {
+            placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+        }
+    }
+}
+
+});
+
+});
+    </script>
+
 </body>
 
 </html>

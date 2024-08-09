@@ -389,6 +389,21 @@ table th{
         transition: 0.5s;
     }
 
+    .dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0rem 0.3rem 0rem;
+    }
+
+
+    #dt-search-0{
+        width: 255px;
+        font-size: .9rem;
+    }
 </style>
 
 
@@ -404,7 +419,7 @@ table th{
             </div>
 
             <div class="col-4" style="text-align: center;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image"> step3 ชุดข้อความ
+            <img src="img/icon/edit.png" height="25" alt="Responsive image"> step3 ชุดข้อความ
             </div>
 
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
@@ -613,7 +628,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                     <div class="col-8" style="padding: 0;">
                        
                        <div  style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;text-align: right;">
-                       <div class="table-responsive">
+                       <div class="table table-responsive">
                            <table id="myTable" class="table" >
                            <thead>
                                 <tr style="font-size: 10pt">
@@ -1087,6 +1102,36 @@ $(document).ready(function() {
     $("#modal-add").modal("hide")
     })
 </script>
+
+<script>
+
+$(document).ready(function() {
+
+//  new DataTable('#UserTable');
+// new DataTable('#VMSTable');
+
+// new DataTable('#VMSTable', {
+//     ordering: false,
+//     "search": {
+//             "placeholder": 'Search here'
+        
+//     }
+    
+// });
+
+new DataTable('#VMSTable', {
+layout: {
+    topEnd: {
+        search: {
+            placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+        }
+    }
+}
+
+});
+
+});
+    </script>
 
 </body>
 

@@ -360,10 +360,6 @@ table {
     box-sizing: border-box;
 }
 
-.dt-search{
-        display: none;
-    }
-
     body {
         background: #e1f0fa;
     }
@@ -403,7 +399,7 @@ table {
     }
     
     input.btnsearch{
- background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-image: url('img/icon/mag.png');
  background-repeat: no-repeat;
  background-size: 15px;
  background-position: left 12px top 10px;
@@ -413,6 +409,25 @@ table {
 
 li{
         list-style: none;
+    }
+
+    .search{
+        display: none;
+    }
+
+    .dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0rem 0.3rem 0rem;
+    }
+
+    #dt-search-0{
+        width: 255px;
+        font-size: .9rem;
     }
 </style>
 
@@ -426,7 +441,7 @@ li{
 
 
             <div class="col-7" style="text-align: right;">
-            <img src="img/icon/setting.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
+            <img src="img/icon/edit.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
             </div>
 
             <div class="next-btn col"  style="text-align: right; padding: 0; ">
@@ -1256,19 +1271,35 @@ function examplesms(url, h, w, vmsmame) {
 
 
 
-// Basic example
+
+
 $(document).ready(function() {
 
-    //  new DataTable('#UserTable');
-    // new DataTable('#VMSTable');
+//  new DataTable('#UserTable');
+// new DataTable('#VMSTable');
 
-    new DataTable('#VMSTable', {
-        ordering: false,
-        "oLanguage": {
-            "sSearch": "กรอกข้อความที่ต้องการค้นหา"
+// new DataTable('#VMSTable', {
+//     ordering: false,
+//     "search": {
+//             "placeholder": 'Search here'
+        
+//     }
+    
+// });
+
+new DataTable('#VMSTable', {
+layout: {
+    topEnd: {
+        search: {
+            placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
         }
-    });
+    }
+}
+
 });
+
+});
+
 
 
 
@@ -1369,9 +1400,7 @@ function deleteMSG(MSGCode) {
     })
 </script>
 
-<script>
-    
-</script>
+
 </body>
 
 </html>

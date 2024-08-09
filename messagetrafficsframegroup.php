@@ -400,6 +400,25 @@ table th{
     flex-direction: column;
     
 }
+
+.dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0rem 0.3rem 0rem;
+    }
+
+
+
+
+    #dt-search-0{
+        width: 255px;
+        font-size: .9rem;
+    }
+
 </style>
 
 
@@ -412,7 +431,7 @@ table th{
             </div>
 
 <div class="col-4" style="text-align: center;">
-<img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image"> Step 3 ชุดข้อความสภาพจราจร
+<img src="/speedway/img/icon/edit.png" height="25" alt="Responsive image"> Step 3 ชุดข้อความสภาพจราจร
         </div>
 
 
@@ -1093,7 +1112,35 @@ $(document).ready(function() {
     })
 </script>
 
+<script>
 
+$(document).ready(function() {
+
+//  new DataTable('#UserTable');
+// new DataTable('#VMSTable');
+
+// new DataTable('#VMSTable', {
+//     ordering: false,
+//     "search": {
+//             "placeholder": 'Search here'
+        
+//     }
+    
+// });
+
+new DataTable('#VMSTable', {
+layout: {
+    topEnd: {
+        search: {
+            placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+        }
+    }
+}
+
+});
+
+});
+    </script>
 </body>
 
 </html>

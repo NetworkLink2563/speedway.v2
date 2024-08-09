@@ -386,7 +386,7 @@ table th{
         height: 100vh;
     }
 
-.dt-search{
+.search{
     display: none;
 }
 
@@ -418,7 +418,7 @@ table {
 }
 
 input.btnsearch{
- background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-image: url('/img/icon/mag.png');
  background-repeat: no-repeat;
  background-size: 15px;
  background-position: left 12px top 10px;
@@ -426,6 +426,23 @@ input.btnsearch{
  opacity: 0.7;
 }
 
+.dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0rem 0.3rem 0rem;
+    }
+
+
+
+
+    #dt-search-0{
+        width: 255px;
+        font-size: .9rem;
+    }
 </style>
 
 
@@ -439,7 +456,7 @@ input.btnsearch{
             </div>
 
         <div class="col-4" style="text-align: center;">
-        <img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image"> step 2 จัดรูปแบบข้อความสภาพจราจร
+        <img src="/speedway/img/icon/edit.png" height="25" alt="Responsive image"> step 2 จัดรูปแบบข้อความสภาพจราจร
         </div>
 
         <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
@@ -1570,19 +1587,34 @@ function SearchEdit(XVMsfCode,w,h){
          }
     });
 }
-// Basic example
+
 $(document).ready(function() {
 
-    //  new DataTable('#UserTable');
-    // new DataTable('#VMSTable');
+//  new DataTable('#UserTable');
+// new DataTable('#VMSTable');
 
-    new DataTable('#VMSTable', {
-        ordering: false,
-        "oLanguage": {
-            "sSearch": "กรอกข้อความที่ต้องการค้นหา"
+// new DataTable('#VMSTable', {
+//     ordering: false,
+//     "search": {
+//             "placeholder": 'Search here'
+        
+//     }
+    
+// });
+
+new DataTable('#VMSTable', {
+layout: {
+    topEnd: {
+        search: {
+            placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
         }
-    });
+    }
+}
+
 });
+
+});
+
 </script>
 
 <script>
@@ -1623,6 +1655,7 @@ $(document).ready(function() {
     $("#modal-frame3").modal("hide")
     })
 </script>
+
 
 </body>
 
