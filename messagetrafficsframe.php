@@ -929,7 +929,7 @@ background-image: url('img/icon/mag.png');
                     
 
   <!-- The Modal -->
-<div class="modal " id="myModal">
+<div class="modal modal-fullscreen " id="myModal">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
 
@@ -1674,32 +1674,24 @@ function SearchEdit(XVMsfCode,w,h){
 
 
 $(document).ready(function() {
-
-//  new DataTable('#UserTable');
-// new DataTable('#VMSTable');
-
-// new DataTable('#VMSTable', {
-//     ordering: false,
-//     "search": {
-//             "placeholder": 'Search here'
-        
-//     }
-    
-// });
-
 new DataTable('#VMSTable', {
     order: [[0, 'desc']],
+    
     layout: {
          topEnd: {
              search: {
                  placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
              }
          }
-        
-     }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
              
 });
-
 });
 
 </script>

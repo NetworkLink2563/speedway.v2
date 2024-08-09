@@ -1,7 +1,11 @@
 <?php
+
+
 $msg = $_GET['msg'];
 $type = $_GET['type'];
 include "lib/DatabaseManage.php";
+
+
 if ($type == 1) {
 
 
@@ -23,7 +27,7 @@ if ($type == 1) {
         <div class="modal-dialog modal-lg">
             <div class="modal-content" style="height: 500px;">
                 <div class="modal-body text-center">
-                    <img style=" margin: 0px;padding: 0px;width:100%;height:100%;" src='http://192.168.55.11/speedway.v2/media/tmp/<?php echo  $msg; ?>'></img>
+                    <img style=" margin: 0px;padding: 0px;width:100%;height:100%;" src='/speedway.v2/media/tmp/<?php echo  $msg; ?>'></img>
                     </iframe>
                 </div>
             </div>
@@ -35,7 +39,7 @@ if ($type == 1) {
             <div class="modal-content" style="height: 500px;">
                 <div class="modal-body text-center">
                     <video width="960" height="384" controls>
-                        <source src="http://192.168.55.11/speedway.v2/media/tmp/<?php echo  $msg; ?>" type="video/mp4">
+                        <source src="/speedway.v2/media/tmp/<?php echo  $msg; ?>" type="video/mp4">
                     </video>
                     </iframe>
                 </div>

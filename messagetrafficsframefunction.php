@@ -1,3 +1,10 @@
+<style>
+     #dt-search-1{
+        width: 235px;
+        font-size: .9rem;
+    }
+</style>
+
 <?php
 ob_start();
 session_start();
@@ -358,7 +365,7 @@ function SaveFrame3( $XVMsfCode){
    }
    function showsmssel(){
          include "lib/DatabaseManage.php";
-         $data='<table id="VMSTable" class="table" style="width:100%;">
+         $data='<table id="VMSTable2" class="table" style="width:100%;">
          <thead>
              <tr style="font-size: 10pt">
                  <th class="th-sm">รหัสข้อความ
@@ -371,7 +378,6 @@ function SaveFrame3( $XVMsfCode){
                  </th>
                  <th class="th-sm" style="text-align: center">ประเภท
                  </th>
-                 <th class="th-sm" style="text-align: center"></th>
                  <th class="th-sm" style="text-align: center"></th>
              </tr>
          </thead>
@@ -425,3 +431,26 @@ function SaveFrame3( $XVMsfCode){
    }
   
 ?>
+
+<script>
+    $(document).ready(function() {
+new DataTable('#VMSTable2', {
+    order: [[0, 'desc']],
+    
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
+             
+});
+});
+</script>

@@ -1,3 +1,22 @@
+<style>
+
+.dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0rem 0.3rem 0rem;
+    }
+
+    #dt-search-1{
+        width: 235px;
+        font-size: .9rem;
+    }
+
+</style>
+
 <?php
 ob_start();
 session_start();
@@ -358,7 +377,7 @@ function SaveFrame3( $XVMsfCode){
    }
    function showsmssel(){
          include "lib/DatabaseManage.php";
-         $data='<table id="VMSTable" class="table" style="width:100%;">
+         $data='<table id="VMSTable2" class="table table-striped table-hover" style="width:100%;">
          <thead>
              <tr style="font-size: 10pt">
                  <th class="th-sm">รหัสข้อความ
@@ -372,7 +391,6 @@ function SaveFrame3( $XVMsfCode){
                  <th class="th-sm" style="text-align: center">ประเภท
                  </th>
                  <th class="th-sm" style="text-align: center"></th>
-                 <th class="th-sm" style="text-align: center"></th>
              </tr>
          </thead>
          <tbody>';
@@ -385,7 +403,7 @@ function SaveFrame3( $XVMsfCode){
         
         while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
         {
-              
+                
                 if($result['XVMsgType']==1){
                     $XVMsgType='<i class="fa fa-text-width" aria-hidden="true" title="ข้อความ"></i>';
                 }elseif($result['XVMsgType']==2){
@@ -420,8 +438,33 @@ function SaveFrame3( $XVMsfCode){
         </table>
         ';
         sqlsrv_close( $conn );
+        
         return $data;    
 
    }
-  
+
 ?>
+
+<script>
+  $(document).ready(function() {
+new DataTable('#VMSTable2', {
+    order: [[0, 'desc']],
+    
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
+             
+});
+});
+</script>
+

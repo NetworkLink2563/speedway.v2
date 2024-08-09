@@ -948,7 +948,7 @@ background-image: url('img/icon/mag.png');
                     
 
   <!-- The Modal -->
-<div class="modal " id="myModal">
+<div class="modal modal-fullscreen" id="myModal">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
 
@@ -981,7 +981,7 @@ background-image: url('img/icon/mag.png');
     <div class="modal-content">
 
       <!-- Modal Header -->
-      <div class="modal-header" style="display: flex;">
+      <div class="modal-header" style="display: flex; background-color: #dee2e6;">
       <div class="col-11" style="text-align: center;">
       <h5 id="Example_Title" class="modal-title"></h5>
                                                 </div>
@@ -1213,7 +1213,7 @@ function SelSms(XVMsgTyp,XVMsgCode){
   
     var framenumber=$('#framenumber').val();
     var framesmsid=$('#framesmsid').val();
-    var url='ifarme.php?msg='+btoa(XVMsgCode);
+    var url='ifarmeimg.php?msg='+btoa(XVMsgCode);
     if(framenumber==1){ 
        document.getElementById("frame1_section3_show").src = url;
        $('#frame1_section3_XVMsgCode').val(XVMsgCode);
@@ -1262,11 +1262,10 @@ function addsms(smsid){
             'showsmssel': 'showsmssel'
         },
         success: function(result) {     
+            $('#myModal').modal('show');
             $('#ShowSel').html(result);
         }
     });
-    
-    $('#myModal').modal('show');
 }  
 $("#btn_saveframe1").click(function(){
     var XVMsfCode= $('#XVMsfCodeF1').val();
@@ -1697,34 +1696,48 @@ function SearchEdit(XVMsfCode,w,h){
 
 
 
-$(document).ready(function() {
-
-//  new DataTable('#UserTable');
-// new DataTable('#VMSTable');
-
+// $(document).ready(function() {
 // new DataTable('#VMSTable', {
-//     ordering: false,
-//     "search": {
-//             "placeholder": 'Search here'
-        
-//     }
+//     order: [[0, 'desc']],
     
+//     layout: {
+//          topEnd: {
+//              search: {
+//                  placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+//              }
+//          }
+//      },
+//      language: {
+//         zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+//         info: 'แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ',
+//         infoFiltered: 'จาก _MAX_ รายการ',
+//         infoEmpty: 'ไม่พบรายการ'
+//     }
+             
+// });
 // });
 
+$(document).ready(function() {
 new DataTable('#VMSTable', {
     order: [[0, 'desc']],
+    
     layout: {
          topEnd: {
              search: {
                  placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
              }
          }
-        
-     }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
              
 });
-
 });
+
 </script>
 
 <script>

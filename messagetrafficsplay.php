@@ -775,34 +775,25 @@ function sendmessageToVMS() {
 </script>
 
 <script>
-
 $(document).ready(function() {
-
-//  new DataTable('#UserTable');
-// new DataTable('#VMSTable');
-
-// new DataTable('#VMSTable', {
-//     ordering: false,
-//     "search": {
-//             "placeholder": 'Search here'
-        
-//     }
-    
-// });
-
 new DataTable('#VMSTable', {
     order: [[0, 'desc']],
+    
     layout: {
          topEnd: {
              search: {
                  placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
              }
          }
-        
-     }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
              
 });
-
 });
     </script>
 
