@@ -376,15 +376,51 @@ table {
     box-sizing: border-box;
 }
 
-.dt-search{
-        display: none;
+.dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0rem 0.3rem 0rem;
     }
 
-    .flex-table{
+    .dt-search input::after{
+       content: "asdadsa";
+    
+    }
+
+
+    #dt-search-0{
+        width: 255px;
+        font-size: .9rem;
+    }
+
+    /* .dt-search input:focus{
+        background-image: none;
+
+    } */
+
+    
+
+    /* .dt-search input::after{
+        content: "dasdasdas";
+        z-index: 99;
+    } */
+
+     /* .dt-search label{
+        position: relative;
+        top: 35;
+        left: 35;
+        z-index: 99;
+    } */
+
+    /* .flex-table{
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-    }
+    } */
 
     input.btnsearch{
  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
@@ -415,15 +451,23 @@ table th{
     li{
         list-style: none;
     }
+    
+    table tr th {
+        border: 1px solid #cccc;
+    }
+
+    table tr td {
+        border: 1px solid #cccc;
+    }
 </style>
-<script src="dist/js/jquery-3.7.1.js"></script>
-<script src="dist/js/popper.min.js"></script>
-<script src="dist/js/main_speed.js"></script>
-<script src="dist/js/bootstrap.min.js"></script>
-<script src="dist/js/dataTables.js"></script>
-<script src="dist/js/dataTables.bootstrap4.js"></script>
-<script type="text/javascript" src="Ckeditor/ckeditor/ckeditor.js"></script>
-<div class="container" style="position: relative; top: 75;">
+<script src="./dist/js/jquery-3.7.1.js"></script>
+<script src="./dist/js/popper.min.js"></script>
+<script src="./dist/js/main_speed.js"></script>
+<script src="./dist/js/bootstrap.min.js"></script>
+<script src="./dist/js/dataTables.js"></script>
+<script src="./dist/js/dataTables.bootstrap4.js"></script>
+<script type="text/javascript" src="./Ckeditor/ckeditor/ckeditor.js"></script>
+<div class="container" style="position: relative; top: 75; padding-bottom: 3rem;">
 
 
         <input type="hidden" id="XVMssCode">
@@ -432,11 +476,11 @@ table th{
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex; ">
 
             <div class="col-7" style="text-align: right;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
+            <img src="./img/icon/edit.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
             </div>
 
             <div class="next-btn col"  style="text-align: right; padding: 0; ">
-            <button onclick="location.href='/speedway/messagepublicrelationsframe.php'" class="btn btn-success btn-hover shadow" style="">>> Step2 จัดรูปแบบข้อความ</button>
+            <a href='./messagepublicrelationsframe.php' class="btn btn-success btn-hover shadow" style="">>> Step2 จัดรูปแบบข้อความ</a>
             </div>
 
         </div>
@@ -447,7 +491,7 @@ table th{
     <div class="flex-header">
 
     
-            <div class="flex-btn col-2" id="message" id="container" style="border-right: 3px double #cccc; background-color: #f8f7f7cc; padding: 0;">
+            <div class="flex-btn col-2" id="message" id="container" style="margin-right: .5rem; border-right: 3px double #cccc; background-color: #f8f7f7cc; padding: 0;">
                    
                                 <?php if($pri_w != 0){ ?>
                                 <div class="col-12" style="margin: .5rem 0rem; padding: 0rem 0.6rem;">
@@ -470,13 +514,13 @@ table th{
 
                             
                    
-                    <div class="flex-table col" style="padding: 0;">
+                    <div class="flex-table " style="width: 100%;">
 
-                    <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px;">
+                    <!-- <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px;"> -->
 
                     <!-- <img style="margin: 0 0.5rem; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s" width="15" alt=""> -->
-                    <input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" for="dt-search-0" aria-controls="VMSTable" value=""></input>
-                    </div>
+                    <!-- <input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" for="dt-search-0" aria-controls="VMSTable" value=""></input>
+                    </div> -->
 
                     
                         <div class="table-content col">
@@ -493,7 +537,7 @@ table th{
                                     </th>
                                     <th style="text-align: center">ประเภท
                                     </th>
-                                    <th style="text-align: center"></th>
+                                    <!-- <th style="text-align: center"></th> -->
                                     <th style="text-align: center">ลบ</th>
                                     <th style="text-align: center">แก้ไข</th>
                                 </tr>
@@ -551,8 +595,8 @@ table th{
                                         <?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel']; ?></td>
                                     <td style="text-align: center;">
                                         <div style=" margin-top: 5px"><?php echo $XVMsgType; ?></div>
-                                    </td>
-                                    <td>
+                                    <!-- </td>
+                                    <td> -->
            
                     <td>
                     <?php
@@ -615,9 +659,9 @@ table th{
   <h5 class="modal-title" style="text-align: center;"><i style="margin-left: 10px;color:#034672 ;font-size: 30px;" class="fa fa-file-text"></i> สร้างข้อความตัวอักษร</h5>
   </div>
 
-  <div class="col-1">
-  <button id="close-addtext" type="button" class="close" data-dismiss="modal" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
+  <div class="col-1" style="text-align: center;">
+  <button id="close-addtext" type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true"></span>
   </button>
 </div>
 </div>
@@ -631,14 +675,18 @@ table th{
               
                <input type="hidden" id="idmsgSize" value="<?php echo $result_row['XVMssCode'];?>">
                
-               <div class="row" style="align-items: center; justify-content:center;">
+               <div class="row col-md-12" style="align-items: center; justify-content:center;">
                    
                    
                    
 
                            <div class="form-inline col-8">
+                            <div style="display: inline-block;">
                                <label for="TxtXVMsgCode" style="padding-right:12px;">รหัสข้อความ:</label>
+                               </div>
+                               <div style="display: inline-block;">
                                <input type="text" id="TxtXVMsgCode"  class="form-control" value="" readonly>
+                               </div>
                            </div>
 
                            <div class="form-inline col-8" style="padding-top:5px;">
@@ -647,15 +695,19 @@ table th{
                            </div>
 
                            <div class="form-inline col-8" style="">
-                               <p style="font-size: 1rem; margin-right: 33px;">สีพื้นหลัง:</p><br><br>
+                                <div style="display: inline-block;">
+                               <p style="font-size: 1rem; margin: 10px 33px 0px 0px;">สีพื้นหลัง:</p>
+                               </div>
+
+                               <div style="display: inline-block;">
                                <?php
                                //กำหนดโค้ดสีที่ต้องการลงใน array
                                $color= array("#0a0a0a", "maroon", "#F60310", "#E76E14", "#E7C514", "#1DDC12", "#148CE7", "#6C1CEA");
                                for ($i = 0; $i < count($color); $i++) {
-                                   echo "<li><span id=\"color$i\" title=\"$color[$i]\" class=\"button\"><font class=\"btncolor\" style=\"background-color:$color[$i];color:$color[$i]; \" >Yy</font></span></li>";
+                                   echo "<div style=\"display: inline-block;\"><li><span id=\"color$i\" title=\"$color[$i]\" class=\"button\"><font class=\"btncolor\" style=\"background-color:$color[$i];color:$color[$i]; \" >Yy</font></span></li></div>";
                                }
                                ?>
-                         
+                         </div>
                            
 
                    
@@ -716,9 +768,9 @@ table th{
         <div class="col-11" style="text-align: center;">
         <h5 class="modal-title"><i style="margin-left: 10px;color:#034672;font-size: 30px; " class="fa fa-image"></i> สร้างข้อความรูปภาพ</h5>
         </div>
-        <div class="col-1">
-        <button type="button" id="close-addimage" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <div class="col-1" style="text-align: center;">
+        <button type="button" id="close-addimage" class="btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
         </button>
         </div>
       </div>
@@ -793,9 +845,9 @@ table th{
         <div class="col-11" style="text-align: center;">
         <h5 class="modal-title"><i style="margin-left: 10px;color:red;font-size: 30px;" class="fa fa-youtube"></i> สร้างข้อความวีดีโอ</h5>
         </div>
-        <div class="col-1">
-        <button id="close-addvdo" type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <div class="col-1" style="text-align: center;">
+        <button id="close-addvdo" type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
         </button>
         </div>
       </div>
@@ -932,7 +984,7 @@ table th{
 </div>
 </div>
 
-
+<?php include "footer.php"; ?>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -1277,20 +1329,25 @@ function checktx(val){
 
 // Basic example
 $(document).ready(function() {
-
-    //  new DataTable('#UserTable');
-    // new DataTable('#VMSTable');
-
-    new DataTable('#VMSTable', {
-        ordering: false,
-        "oLanguage": {
-            "sSearch": "กรอกข้อความที่ต้องการค้นหา"
-        }
-    });
+new DataTable('#VMSTable', {
+    order: [[0, 'desc']],
+    
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
+             
 });
-
-
-
+});
 
 
 
@@ -1298,39 +1355,89 @@ $(document).ready(function() {
 function deleteMSG(MSGCode) {
    
     Swal.fire({
-        title: "",
-        text: "ต้องการลบ " + MSGCode + " ใช่หรือไม่?",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "ใช่",
-        cancelButtonText: "ไม่",
-    }).then((result) => {
-        if (result.isConfirmed) {
-            $.ajax({
-                type: "POST",
-                url: "lib/delMessage.php",
-                data: {
-                    'msgCODE': MSGCode
-                },
-                success: function(result) {
-                 
-                    const obj = JSON.parse(result);
-                   
-                    if (obj.RETURN != "True") {
-                        Swal.fire("ไม่สามรถลบได้ มีการใช้ข้อความที่ข้อความประชาสัมพันธ์แสดงบนป้าย "+obj.XVVmsName, "", "warnning");
+                            title: "คุณต้องการลบข้อมูลหรือไม่?<br>",
+                            text: MSGCode,
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#198754",
+                            cancelButtonColor: "#d33",
+                            cancelButtonText:"ยกเลิก",
+                            confirmButtonText: "ใช่"
+                            }).then((result) => {
+                            if (result.isConfirmed) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "lib/delMessage.php",
+                                    data: {
+                                        'msgCODE': MSGCode
+                                    },
+                                    success: function(result) {
+                                    
+                                        const obj = JSON.parse(result);
+                                    
+                                        if (obj.RETURN == "True") {
+                                Swal.fire({
+                                title: "ลบสำเร็จ!",
+                                text: "ข้อความของคุณถูกลบแล้ว",
+                                icon: "success",
+                                confirmButtonText: "ตกลง"
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        window.location.href = 'messagepublicrelations.php';
+                                    }
+                                })
+                            }else{
+                                Swal.fire({
+                                icon: "error",
+                                title: "ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย<br>" +obj.XVVmsName,
+                                confirmButtonText: "ตกลง"
+                                // text: "Something went wrong!",
+                                // footer: '<a href="#">Why do I have this issue?</a>'
+                                });
+                            //  Swal.fire("ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย "+Return, "", "warning");
+                            }
+                            }
+                            });
                         
-                        //window.location.href = 'mainMessage.php';
-                    } else {
+            
+                        }
+                                                    
+             });
 
-                        window.location.href = 'messagepublicrelations.php';
-                    }
+    // Swal.fire({
+    //     title: "",
+    //     text: "ต้องการลบ " + MSGCode + " ใช่หรือไม่?",
+    //     icon: "warning",
+    //     showCancelButton: true,
+    //     confirmButtonColor: "#3085d6",
+    //     cancelButtonColor: "#d33",
+    //     confirmButtonText: "ใช่",
+    //     cancelButtonText: "ไม่",
+    // }).then((result) => {
+    //     if (result.isConfirmed) {
+    //         $.ajax({
+    //             type: "POST",
+    //             url: "lib/delMessage.php",
+    //             data: {
+    //                 'msgCODE': MSGCode
+    //             },
+    //             success: function(result) {
+                 
+    //                 const obj = JSON.parse(result);
+                   
+    //                 if (obj.RETURN != "True") {
+    //                     Swal.fire("ไม่สามรถลบได้ มีการใช้ข้อความที่ข้อความประชาสัมพันธ์แสดงบนป้าย "+obj.XVVmsName, "", "warnning");
+                        
+    //                     //window.location.href = 'mainMessage.php';
+    //                 } else {
 
-                }
-            });
-        }
-    });
+    //                     window.location.href = 'messagepublicrelations.php';
+    //                 }
+
+    //             }
+    //         });
+    //     }
+    // });
     
 }
 
@@ -1387,7 +1494,6 @@ function deleteMSG(MSGCode) {
     $("#modal-addvdo").modal("hide")
     })
 </script>
-
 
 
 </body>

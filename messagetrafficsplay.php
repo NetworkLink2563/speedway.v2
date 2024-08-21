@@ -373,21 +373,47 @@ table td{
 font-size: 1rem;
 text-align: center;
 }
+
+.dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0.1rem 0.3rem 0rem;
+    }
+
+
+
+
+    #dt-search-0{
+        width: 255px;
+        font-size: .9rem;
+    }
+    
+    table tr td {
+        border: 1px solid #cccc;
+    }
+
+    table tr th {
+        border: 1px solid #cccc;
+    }
 </style>
 
 
-<div class="container" style="position: relative; top: 75;">
+<div class="container" style="position: relative; top: 75; padding-bottom: 3rem;">
 
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex;">
 
 
 <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-            <button onclick="location.href='/speedway/messagetrafficsframegroup.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 สร้างชุดป้ายจราจร <<</button>
+            <a href='./messagetrafficsframegroup.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 สร้างชุดป้ายจราจร <<</a>
             </div>
 
 
     <div class="col-4" style="text-align: center;">
-    <img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image">Step 4 ข้อความป้ายจราจร
+    <img src="./img/icon/edit.png" height="25" alt="Responsive image">Step 4 ข้อความป้ายจราจร
         </div>
 
 
@@ -406,14 +432,14 @@ text-align: center;
 
 
             <div class="col-5" style="padding: 0;">
-            <div class="flex-table-left" style="border-right: 3px double #cccc;e">
-                <div class="col" style="padding: 0; " >
+            <div class="flex" style="border-right: 3px double #cccc;e">
+                <div class="col" style="" >
                     <table id="VMSTable" class="table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th>รหัสป้าย
                                     </th>
-                                    <th>ชื่อป้าย
+                                    <th style="text-align: left;">ชื่อป้าย
                                     </th>
                                   
                                     <th>ขนาด
@@ -436,7 +462,7 @@ text-align: center;
                         ?>
                                 <tr  style="font-size: 10pt">
                                     <td><?php echo $result['XVVmsCode']; ?></td>
-                                    <td><?php echo $result['XVVmsName']; ?></td>
+                                    <td style="text-align: left;"><?php echo $result['XVVmsName']; ?></td>
                                    
                                     <td style="text-align: center"><?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel'];?>PX</td>
                                    
@@ -454,27 +480,27 @@ text-align: center;
                 </div>
                 </div>
 
-                <div class="col-7" style="">
+                <div class="col-7" style="padding: 0;">
                     <div id="smsdetail">
                            <input type="hidden" id="XVVmsCode">
                            
-                           <div class="row">
+                           <div class="row" style="margin: .5rem;">
                            <h5 style="text-align: center;">รหัสป้าย</h5>
                            <div id="vmsdetail" class="text-center" style=" font-size: 1.2rem; border-bottom: 1px solid #cccc; margin-bottom: .5rem; font-weight: 300; background-color: #efefefcc;"></div>
 
                               <div class="col-12" style="display: flex;">
 
-                              <div class="col-4">
+                              <div class="col-4" style="text-align:center;">
                                 <?php if($pri_w != 0){ ?>
-                                <button type="button" onclick="ShowSms()" style=" float: left;margin-right: 10px" class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                                <button type="button" onclick="ShowSms()" style=" margin-right: 10px" class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
                                 <?php } ?>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-4" style="text-align:center;">
                                 <?php if($pri_w != 0){ ?>
-                                <button type="button" onclick="CancelSms()" style=" float: left;margin-right: 10px" class="btn btn-danger shadow">ยกเลิกข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                                <button type="button" onclick="CancelSms()" style=" margin-right: 10px" class="btn btn-danger shadow">ยกเลิกข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
                                 <?php } ?>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-4" style="text-align:center;">
                                     <?php if($pri_w != 0){ ?>
                                   <button type="button" onclick="sendmessageToVMS()"  class="btn btn-success shadow">ส่งข้อความขึ้นป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;color:white" class="fa fa-cloud-upload"></i></button>
                                   <?php } ?>
@@ -511,7 +537,7 @@ text-align: center;
         <h4 class="modal-title">เลือกข้อความป้าย</h4>
         </div>
         <div class="col-1">
-        <button type="button" id="close-sms" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" id="close-sms" class="btn-close" data-dismiss="modal"></button>
         </div>
       </div>
 
@@ -529,6 +555,8 @@ text-align: center;
     </div>
   </div>
 </div>
+
+<?php include('footer.php'); ?>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -754,6 +782,29 @@ function sendmessageToVMS() {
     $("#modal-ShowSms").modal("hide")
     })
 </script>
+
+<script>
+$(document).ready(function() {
+new DataTable('#VMSTable', {
+    order: [[0, 'desc']],
+    
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
+             
+});
+});
+    </script>
 
 </body>
 

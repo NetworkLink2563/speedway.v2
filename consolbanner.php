@@ -12,7 +12,6 @@ $pri=pri_($_SESSION['user'],$menucode);
 $pri_w=$pri[0]['pri_w'];  // สิทธิ์การเขียน
 $pri_r=$pri[0]['pri_r'];  // สิทธิ์การอ่าน
 $pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
-$pri_contr=$pri[0]['pri_contr'];  // สิทธิ์การควบคุม
 
 
 
@@ -302,8 +301,6 @@ table {
     box-shadow: 3px 3px 3px #aaaaaa
 }
 
-
-    
 table  td {
     border: 1px solid #cccc;
 }
@@ -324,7 +321,7 @@ if($pri_r == 0){
 
 
     <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
-        <img src="img/icon/setting.png" height="25" alt="Responsive image"> การควบคุมป้าย
+        <img src="./img/icon/setting.png" height="25" alt="Responsive image"> การควบคุมป้าย
     </div>
 
     <div class="modal py-5" id="myModal" role="dialog">
@@ -332,13 +329,17 @@ if($pri_r == 0){
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"></h5>
+		    <div class="col" style="text-align: center;">
                     <span class="" style="text-align: center; font-size: 1.3rem;">
                         <div id="nameVMS">
+			</div>
                         </div>
                     </span>
-                    <button type="button" onclick="CloseModal()" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+			<div class="" style="text-align: center;">
+                    <button type="button" onclick="CloseModal()" class="btn-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
                     </button>
+		</div>
                 </div>
                 <div class="modal-body">
                     <input id="bannerID" class="input" style="width: 40px;text-align: center;" type="hidden" value="">
@@ -556,18 +557,18 @@ if($pri_r == 0){
 
 
 
-    <div class="col-12" style="margin: 1rem 0rem;">
+    <div class="col-12" style="">
         <div class="shadow"
             style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i>
+            <a class="tablinks2 active " style="cursor: context-menu; color: white; text-decoration: none;"><i class="fa fa-list-alt" aria-hidden="true"></i>
                 รายการคำสั่งในป้าย</a>
         </div>
         <table class="table table-striped table-hover" style="text-align: center;">
             <thead>
                 <tr>
                     <th width="100" scope="col">รหัสป้าย</th>
-                    <th style="text-align:left;" width="120" scope="col">ชื่อป้าย</th>
-                    <th style="text-align:left;" width="320" scope="col">จุดติดตั้ง</th>
+                    <th width="120" scope="col">ชื่อป้าย</th>
+                    <th width="320" scope="col">จุดติดตั้ง</th>
                     <th width="50" scope="col">Option</th>
                     <th width="250" scope="col">คำสั่งที่ส่ง</th>
                 </tr>
@@ -612,13 +613,13 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
     <td>
         <div style="font-size: 10p"><?php echo $result_banner['XVVmsCode'];?></div>
     </td>
-    <td style="text-align:left;" ><?php echo $result_banner['XVVmsName'];?></td>
-    <td style="text-align:left;" > <?php echo $result_banner['XVSdtName'];?> <?php echo $result_banner['XVDstName'];?>
+    <td><?php echo $result_banner['XVVmsName'];?></td>
+    <td><?php echo $result_banner['XVSdtName'];?> <?php echo $result_banner['XVDstName'];?>
         <?php echo $result_banner['XVPvnName'];?></td>
     <td>
         <div align="center" style="margin-top: 0">
 
-            <?php if($pri_contr != 0){ 
+            <?php if($pri_w != 0){ 
                 
                 ?>
 
@@ -657,7 +658,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
                     <h5 id="ShowList_Title" class="modal-title"></h5>
                 </div>
                 <div class="col2">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="btn-close" data-dismiss="modal"></button>
                 </div>
             </div>
             <div class="modal-body text-center" id="ShowList">
@@ -1228,7 +1229,7 @@ function toggleCheckboxOnlineOfflinevms() {
                 url: "consolbannerfunction.php",
                 data: {
                     'vmscode': vmscode,
-                    'onoffpowervms': 'onoffpowervms',
+                    'OnlineOfflinevms': 'OnlineOfflinevms',
                     'value': value
                 },
                 success: function(result) {

@@ -379,15 +379,11 @@ table th{
         height: 100vh;
     }
 
-.dt-search{
-    display: none;
-}
-
-.flex-table{
+/* .flex-table{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-}
+} */
 
 input .btnsearch{
  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
@@ -432,7 +428,7 @@ body {
 }
 
 input.btnsearch{
- background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+ background-image: url('img/icon/mag.png');
  background-repeat: no-repeat;
  background-size: 15px;
  background-position: left 12px top 10px;
@@ -440,6 +436,38 @@ input.btnsearch{
  opacity: 0.7;
 }
 
+#iframe{
+    height: 550px!important;
+}
+
+.dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0rem 0.3rem 0rem;
+    }
+
+    #dt-search-0{
+        width: 255px;
+        font-size: .9rem;
+    }
+     .search{
+        display: none;
+     }
+
+     table tr td {
+        border: 1px solid #cccc;
+    }
+
+    table tr th {
+        border: 1px solid #cccc;
+    }
+     /* #myModal .modal-backdrop{
+        display: none;
+     } */
 </style>
 
 
@@ -450,16 +478,16 @@ input.btnsearch{
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem; display: flex;">
 
             <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-            <button onclick="location.href='/speedway/messagepublicrelations.php'" class="btn btn-warning btn-hover shadow" style="">กลับ Step1 ข้อความพื้นฐาน <<</button>
+            <a href='./messagepublicrelations.php' class="btn btn-warning btn-hover shadow" style="">กลับ Step1 ข้อความพื้นฐาน <<</a>
             </div>
             
             <div class="col-4" style="text-align: center;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image"> Step 2 จัดรูปแบบข้อความ
+            <img src="./img/icon/edit.png" height="25" alt="Responsive image"> Step 2 จัดรูปแบบข้อความ
             </div>
 
             
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
-            <button onclick="location.href='/speedway/messagepublicrelationsframegroup.php'" class="btn btn-success btn-hover shadow" style="">>> Step3 ชุดข้อความ</button>
+            <a href='./messagepublicrelationsframegroup.php' class="btn btn-success btn-hover shadow" style="">>> Step3 ชุดข้อความ</a>
             </div>
 
         </div>
@@ -476,7 +504,7 @@ input.btnsearch{
 <div class="flex-header" style="">
 
 
-            <div class="col-3" style="padding: 0;">
+            <div class="col-3" style="padding: 0; margin-right: .5rem;">
             <div class="flex-btn" style="border: 5px double #DCDCDC; ">
 
                         
@@ -520,7 +548,7 @@ input.btnsearch{
 
                 <div class="flex-table">
                     
-                    <div class="col-12" style="padding: 0;">
+                    <div class="col-12" style="width: 100%;">
                 <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px;">
 
 <!-- <img style="margin: 0 0.5rem; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s" width="15" alt=""> -->
@@ -618,11 +646,11 @@ input.btnsearch{
          
         <div class="col-12" style="display: flex; justify-content: center; text-align: center; padding: .5rem;" >
                       <div class="col-11 ">
-                      <img src="img/icon/computer.png" height="25" alt="Responsive image"> <span style="font-size: 1.2rem;" >สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/รูปแบบข้อความเดี่ยว</span>
+                      <img src="img/icon/edit.png" height="25" alt="Responsive image"> <span style="font-size: 1.2rem;" >สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/รูปแบบข้อความเดี่ยว</span>
                       </div>
                       <div class="col-1">
-                      <button id="closef1" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
+                      <button id="closef1" type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true"></span>
                       </button>
                       </div>
         </div>
@@ -657,7 +685,7 @@ input.btnsearch{
                          
                          <div class="col-12" id="frame1_section3" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
                             
-                                     <button  style="position: absolute;left: 20px;top:5px;z-index:1000;" onclick="addsms(1)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                                     <button  style="position: absolute; left: 92px;top: 90px;z-index:1000;" onclick="addsms(1)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                                     
                                      <iframe id="frame1_section3_show" src="" style="border:none;"></iframe>
                                     
@@ -697,8 +725,8 @@ input.btnsearch{
                     <img src="img/icon/computer.png" height="25" alt="Responsive image"> <span style="font-size: 1.2rem;" >สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/แบบ 2 ข้อความ 3 ช่อง</span>
                     </div>
                     <div class="col-1">
-                    <button id="closef2" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <button id="closef2" type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
                     </button>
                     </div>
                     
@@ -755,7 +783,7 @@ input.btnsearch{
 
                     <div class="row">
 
-                        <div id="frame2_section3" class="" style="border-style: solid;border-color:#DCDCDC;  margin-top: .2rem;  padding: 0px;">
+                        <div id="frame2_section3" class="" style="border-style: solid;border-color:#DCDCDC;    padding: 0px;">
                     
                             <button style="position: absolute; z-index:1000;" onclick="addsms(3)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame2_section3_show" src="" style="border:none;"></iframe>
@@ -764,7 +792,7 @@ input.btnsearch{
                        
 
                        
-                        <div id="frame2_section4" class="float-left" style="border-style: solid;border-color:#DCDCDC;  margin-top: .2rem; height: 249px!important;  padding: 0px;">
+                        <div id="frame2_section4" class="float-left" style="border-style: solid;border-color:#DCDCDC;   height: 249px!important;  padding: 0px;">
                     
                             <button style="position: absolute; z-index:1000;"  onclick="addsms(4)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame2_section4_show" src="" style="border:none;"></iframe>
@@ -773,7 +801,7 @@ input.btnsearch{
                        
 
                         
-                        <div id="frame2_section5" class="float-left" style="border-style: solid;border-color:#DCDCDC; margin-top: .2rem; height: 249px!important;  padding: 0px;">
+                        <div id="frame2_section5" class="float-left" style="border-style: solid;border-color:#DCDCDC;  height: 249px!important;  padding: 0px;">
                             <button style="position: absolute; z-index:1000;" onclick="addsms(5)"  class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe  id="frame2_section5_show" src="" style="border:none;"></iframe>
                         </div>
@@ -781,7 +809,7 @@ input.btnsearch{
                    
 
                     
-                        <div id="frame2_section2" style="border-style: solid;border-color:#DCDCDC;margin:0px; margin-top: .2rem; padding: 0px;">
+                        <div id="frame2_section2" style="border-style: solid;border-color:#DCDCDC;margin:0px;  padding: 0px;">
                    
                     
                                 <button  style="position: absolute; z-index:1000;"  onclick="addsms(2)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
@@ -830,12 +858,12 @@ input.btnsearch{
       <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
 
                     <div class="col-11" style="text-align: center;">
-                    <img src="img/icon/computer.png" height="25" alt="Responsive image"><span style="font-size: 1.2rem;" > สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/แบบ 1 ข้อความ 2 ช่อง</span>
+                    <img src="./img/icon/computer.png" height="25" alt="Responsive image"><span style="font-size: 1.2rem;" > สร้างข้อความประชาสัมพันธ์แสดงบนป้าย/แบบ 1 ข้อความ 2 ช่อง</span>
                     </div>
 
-                    <div class="col-1">
-                    <button id="close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <div class="col-1" style="text-align: center;">
+                    <button id="close-modal" type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
                     </button>
                     </div>
                     </div>
@@ -876,23 +904,23 @@ input.btnsearch{
                                     <div class="col-12" style="padding: 0;">
                         <div id="frame3_section1" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
                             
-                                    <button onclick="addsms(1)"  style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                                    <button onclick="addsms(1)"  style="position: absolute;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                                     <iframe id="frame3_section1_show" src="" style="border:none;"></iframe>
                                    
                             </div>
                         </div>
  
-                   <div class="col-12" style="padding: 0;">
-                        <div id="frame3_section3" class="float-left"  style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px; ">
+                   <div class="col-12" style="padding: 0; ">
+                        <div id="frame3_section3" class="float-left"  style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px; display: inline-block;">
 
-                            <button  onclick="addsms(3)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                            <button  onclick="addsms(3)" style="position: absolute;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame3_section3_show" src="" style="border:none;"></iframe>
                            
                         </div>
                     
-                        <div id="frame3_section4"  class="float-left col-12" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
+                        <div id="frame3_section4"  class="float-left col-12" style="display: inline-block; border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px; position: relative; left: -4px;">
 
-                            <button  onclick="addsms(4)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                            <button  onclick="addsms(4)" style="position: absolute;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame3_section4_show" src="" style="border:none;"></iframe>
                            
                         </div>
@@ -927,7 +955,7 @@ input.btnsearch{
                     
 
   <!-- The Modal -->
-<div class="modal " id="myModal">
+<div class="modal modal-fullscreen" id="myModal">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
 
@@ -936,8 +964,8 @@ input.btnsearch{
         <div class="col-11" style="text-align: center;">
         <h4 class="modal-title">เลือกข้อความ</h4>
         </div>
-        <div class="col-1">
-        <button type="button" id="closemymodal" class="close" data-dismiss="modal">&times;</button>
+        <div class="col-1" style="text-align: center;">
+        <button type="button" id="closemymodal" class="btn-close" data-dismiss="modal"></button>
         </div>
       </div>
 
@@ -954,21 +982,52 @@ input.btnsearch{
     </div>
   </div>
 </div>
-<div class="modal py-5" id="ModalExample" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="background-color: rgb(3, 84, 138);color:white;">
+
+<div class="modal " id="ModalExample">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style="display: flex; background-color: #dee2e6;">
+      <div class="col-11" style="text-align: center;">
+      <h5 id="Example_Title" class="modal-title"></h5>
+                                                </div>
+        <div class="col-1">
+        <button type="button" id="hidemodalex" class="btn-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <div style="text-align: center;">                                  
+                <iframe id="iframe" style="border: 0;" src=""></iframe>
+                </div>  
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" id="closemodalex" class="btn btn-danger" data-dismiss="modal">ปิด</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal py-5" id="ModalExample" role="dialog">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="">
             <div class="modal-header">
                 <h5 id="Example_Title" class="modal-title"></h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" id="hidemodalex" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body text-center">
-
+                 <div>                                    
                 <iframe id="iframe" style="border: 0;" src=""></iframe>
-
+                </div>       
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="modal " id="modal-MsgSize" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -979,8 +1038,8 @@ input.btnsearch{
         </div>
 <!-- ** -->
         <div calss="col">
-        <button type="button" id="hidemodal" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" id="hidemodal" class="btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
         </button>
         </div>
 
@@ -1071,15 +1130,19 @@ $("#btn_next").click(function(){
     $('#framewidth').val(w);
     $('#frameheight').val(h);
     if(framenumber==1){
+        
+        $('#modal-MsgSize').modal('hide');
+        $('#modal-frame1').modal('show');
         document.getElementById("frame1_section3_show").src = "";
         document.getElementById("frame1_section3").style.width = w+"px";
         document.getElementById("frame1_section3").style.height = h+"px";
         document.getElementById("frame1_section3_show").style.width = w+"px";
         document.getElementById("frame1_section3_show").style.height = h+"px";    
-        $('#modal-MsgSize').modal('hide');
-        $('#modal-frame1').modal('show');
+        
     }else if(framenumber==2){
       
+        $('#modal-MsgSize').modal('hide');
+        $('#modal-frame2').modal('show');
         document.getElementById("frame2_section1_show").src = "";
         document.getElementById("frame2_section2_show").src = "";
         document.getElementById("frame2_section3_show").src = "";
@@ -1100,23 +1163,22 @@ $("#btn_next").click(function(){
         document.getElementById("frame2_section3").style.width = "322px";
         document.getElementById("frame2_section3").style.height = (h-135)+"px";
      
-        document.getElementById("frame2_section3_show").style.width =  ((w/3)-5)+"px";
+        document.getElementById("frame2_section3_show").style.width =  ((w/3)-2)+"px";
         document.getElementById("frame2_section3_show").style.height = ((h-110)-30)+"px";
 
         // document.getElementById("frame2_section4").style.width = (w/3)+"px";
         document.getElementById("frame2_section4").style.width = "322px";
         document.getElementById("frame2_section4").style.height = (h-135)+"px";
-        document.getElementById("frame2_section4_show").style.width =  ((w/3)-5)+"px";
+        document.getElementById("frame2_section4_show").style.width =  ((w/3)-2)+"px";
         document.getElementById("frame2_section4_show").style.height = ((h-110)-30)+"px";
 
         // document.getElementById("frame2_section5").style.width = (w/3)+"px";
         document.getElementById("frame2_section5").style.width = "322px";
         document.getElementById("frame2_section5").style.height = (h-135)+"px";
-        document.getElementById("frame2_section5_show").style.width =  ((w/3)-5)+"px";
+        document.getElementById("frame2_section5_show").style.width =  ((w/3)-2)+"px";
         document.getElementById("frame2_section5_show").style.height = ((h-110)-30)+"px";
 
-        $('#modal-MsgSize').modal('hide');
-        $('#modal-frame2').modal('show');
+        
     }else if(framenumber==3){
         document.getElementById("frame3_section1_show").src = "";
         document.getElementById("frame3_section3_show").src = "";
@@ -1147,21 +1209,23 @@ $("#btn_next").click(function(){
 
 function examplesms(url, h, w, vmsmame) {
   
+    $('#ModalExample').modal('show');
     document.getElementById("Example_Title").innerText = vmsmame + " ขนาด กว้าง=" + w + " สูง=" + h;
-
     document.getElementById("iframe").width = parseInt(w);
     document.getElementById("iframe").height = parseInt(h);
     document.getElementById("iframe").src = url;
 
 
-    $('#ModalExample').modal('show');
+   
 }   
  
 function SelSms(XVMsgTyp,XVMsgCode){
   
     var framenumber=$('#framenumber').val();
     var framesmsid=$('#framesmsid').val();
-    var url='ifarme.php?msg='+btoa(XVMsgCode);
+    var url='ifarmeimg.php?msg='+XVMsgCode+'&type='+XVMsgTyp;
+
+
     if(framenumber==1){ 
        document.getElementById("frame1_section3_show").src = url;
        $('#frame1_section3_XVMsgCode').val(XVMsgCode);
@@ -1210,11 +1274,10 @@ function addsms(smsid){
             'showsmssel': 'showsmssel'
         },
         success: function(result) {     
+            $('#myModal').modal('show');
             $('#ShowSel').html(result);
         }
     });
-    
-    $('#myModal').modal('show');
 }  
 $("#btn_saveframe1").click(function(){
     var XVMsfCode= $('#XVMsfCodeF1').val();
@@ -1420,61 +1483,114 @@ $("#btn_saveframe3").click(function(){
 
 });
 function deleteMSG(XVMsfCode) {
-   
-   Swal.fire({
-       title: "",
-       text: "ต้องการลบ " + XVMsfCode + " ใช่หรือไม่?",
-       icon: "warning",
-       showCancelButton: true,
-       confirmButtonColor: "#3085d6",
-       cancelButtonColor: "#d33",
-       confirmButtonText: "ใช่",
-       cancelButtonText: "ไม่",
-   }).then((result) => {
-       if (result.isConfirmed) {
-           $.ajax({
-               type: "POST",
-               url: "messagepublicrelationsframefunction.php",
-               data: {
-                   'Delete': 'Delete',
-                   'XVMsfCode': XVMsfCode
-               },
-               success: function(result) {
-                    console.log(result);
-                    const obj = JSON.parse(result);
-                    var Return=obj.Return;
-                   
-                    if(Return=='DeleteSuccess'){
-                        Swal.fire({
-                                icon: "success",
-                                title: "",
 
-                                text: "ลบสำเร็จ",
-                                showDenyButton: false,
-                                showCancelButton: false,
-                                confirmButtonText: "Save",
-                                denyButtonText: `Don't save`
+    Swal.fire({
+                            title: "คุณต้องการลบข้อมูลหรือไม่?<br>",
+                            text: XVMsfCode,
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#198754",
+                            cancelButtonColor: "#d33",
+                            cancelButtonText:"ยกเลิก",
+                            confirmButtonText: "ใช่"
+                            }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "POST",
+                url: "messagepublicrelationsframefunction.php",
+               data: {
+                    'Delete': 'Delete',
+                    'XVMsfCode': XVMsfCode
+                },
+                success: function(result) {
+                     console.log(result);
+                     const obj = JSON.parse(result);
+                     var Return=obj.Return;
+                   
+                     if(Return=='DeleteSuccess'){
+                                Swal.fire({
+                                title: "ลบสำเร็จ!",
+                                text: "ข้อความของคุณถูกลบแล้ว",
+                                icon: "success",
+                                confirmButtonText: "ตกลง"
                                 }).then((result) => {
-                            
                                     if (result.isConfirmed) {
-                                    
                                         window.location.href = 'messagepublicrelationsframe.php';
                                     }
+                                })
+                            }else{
+                                Swal.fire({
+                                icon: "error",
+                                title: "ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย<br>" +Return,
+                                confirmButtonText: "ตกลง"
+                                // text: "Something went wrong!",
+                                // footer: '<a href="#">Why do I have this issue?</a>'
                                 });
-                    
-                    }else{
-                        if(Return=='DeleteError'){
-                           Swal.fire("ไม่สามรถลบได้", "", "warning");
-                        }else{
-                            Swal.fire("ไม่สามรถลบได้มีการใช้อยู่ที่ชุดการแสดงป้าย "+Return, "", "warning"); 
+                            //  Swal.fire("ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย "+Return, "", "warning");
+                            }
+                            }
+                            });
+                        
+            
                         }
-                    }
-               }
-           });
-       }
-   });
+                                                    
+             });
+   
+//    Swal.fire({
+//        title: "",
+//        text: "ต้องการลบ " + XVMsfCode + " ใช่หรือไม่?",
+//        icon: "warning",
+//        showCancelButton: true,
+//        confirmButtonColor: "#3085d6",
+//        cancelButtonColor: "#d33",
+//        confirmButtonText: "ใช่",
+//        cancelButtonText: "ไม่",
+//    }).then((result) => {
+//        if (result.isConfirmed) {
+//            $.ajax({
+//                type: "POST",
+//                url: "messagepublicrelationsframefunction.php",
+//                data: {
+//                    'Delete': 'Delete',
+//                    'XVMsfCode': XVMsfCode
+//                },
+//                success: function(result) {
+//                     console.log(result);
+//                     const obj = JSON.parse(result);
+//                     var Return=obj.Return;
+                   
+//                     if(Return=='DeleteSuccess'){
+//                         Swal.fire({
+//                                 icon: "success",
+//                                 title: "",
+
+//                                 text: "ลบสำเร็จ",
+//                                 showDenyButton: false,
+//                                 showCancelButton: false,
+//                                 confirmButtonText: "Save",
+//                                 denyButtonText: `Don't save`
+//                                 }).then((result) => {
+                            
+//                                     if (result.isConfirmed) {
+                                    
+//                                         window.location.href = 'messagepublicrelationsframe.php';
+//                                     }
+//                                 });
+                    
+//                     }else{
+//                         if(Return=='DeleteError'){
+//                            Swal.fire("ไม่สามรถลบได้", "", "warning");
+//                         }else{
+//                             Swal.fire("ไม่สามรถลบได้มีการใช้อยู่ที่ชุดการแสดงป้าย "+Return, "", "warning"); 
+//                         }
+//                     }
+//                }
+//            });
+//        }
+//    });
    
 }
+
 function SearchEdit(XVMsfCode,w,h){
     $.ajax({
         type: "POST",
@@ -1589,19 +1705,51 @@ function SearchEdit(XVMsfCode,w,h){
          }
     });
 }
-// Basic example
+
+
+
+// $(document).ready(function() {
+// new DataTable('#VMSTable', {
+//     order: [[0, 'desc']],
+    
+//     layout: {
+//          topEnd: {
+//              search: {
+//                  placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+//              }
+//          }
+//      },
+//      language: {
+//         zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+//         info: 'แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ',
+//         infoFiltered: 'จาก _MAX_ รายการ',
+//         infoEmpty: 'ไม่พบรายการ'
+//     }
+             
+// });
+// });
+
 $(document).ready(function() {
-
-    //  new DataTable('#UserTable');
-    // new DataTable('#VMSTable');
-
-    new DataTable('#VMSTable', {
-        ordering: false,
-        "oLanguage": {
-            "sSearch": "กรอกข้อความที่ต้องการค้นหา"
-        }
-    });
+new DataTable('#VMSTable', {
+    order: [[0, 'desc']],
+    
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
+             
 });
+});
+
 </script>
 
 <script>
@@ -1635,8 +1783,21 @@ $(document).ready(function() {
     $("#closef2").click(function(){
         $("#modal-frame2").modal("hide")
     })
+    $("#hidemodalex").click(function(){
+    $("#ModalExample").modal("hide")
+    })
+    $("#closemodalex").click(function(){
+    $("#ModalExample").modal("hide")
+    })
 </script>
+ 
+
+<script>
+    
+    </script>
 
 </body>
 
 </html>
+
+<script src="./dist/js/jquery-3.7.1.js"></script>

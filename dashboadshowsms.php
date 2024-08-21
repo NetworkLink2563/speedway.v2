@@ -56,15 +56,14 @@ $qcode=sqlsrv_query($conn,$msqcode);
 $rowcode = sqlsrv_fetch_array($qcode, SQLSRV_FETCH_ASSOC);
 $msq_txt=$rowcode['XVMsfName'];
 
-$sqlModule = "SELECT XIVdtModuleNo FROM TMstMItmVMS_ModuleStatus WHERE XVVmsCode='".$vmscode."' AND XBVdtIsGood='False'";
-//echo $sqlModule;
-$queryModule = sqlsrv_query($conn, $sqlModule);
-$XVVdtModuleNo = '';
-while($resultModule = sqlsrv_fetch_array($queryModule, SQLSRV_FETCH_ASSOC))
-{
-    $XVVdtModuleNo.=$resultModule['XIVdtModuleNo'].', ';
+$sqlModule = "SELECT * FROM TMstMItmVMS_ModuleStatus WHERE XVVmsCode='".$vmscode."'";
+$queryModule = sqlsrv_query($conn, $sqlModule,array(),array("Scrollable"=> SQLSRV_CURSOR_KEYSET));
+$resultModule = sqlsrv_fetch_array($queryModule, SQLSRV_FETCH_ASSOC);
+$countmod = sqlsrv_num_rows($queryModule);
+if($countmod!=false){
+  $txt=$countmod;
 }
-$XVVdtModuleNo = substr($XVVdtModuleNo, 0, -2);
+
 
 $sqlt="SELECT XISensorType,XIValue, DATEDIFF(Second, dbo.TMstMItmVMS_Status.XTWhenUpdate, GETDATE()) AS XiSecDiff  FROM   dbo.TMstMItmVMS_Status
 WHERE   (XVVmsCode = '$vmscode')
@@ -91,11 +90,14 @@ while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)){
         $XBVmsIsDisplay="Off";
       }  
     }elseif($row['XISensorType']==3){
-        $XIVmsBrightness=$row['XIValue'];
+        if($row['XIValue']==0){
+       $XIVmsBrightness='Auto';
+      }else{
+        $XIVmsBrightness='Level '.$row['XIValue'];}
     }elseif($row['XISensorType']==4){
-        $XIVmsRackTemperature=$row['XIValue'];
+        $XIVmsRackTemperature=$row['XIValue'].' °C';
     }elseif($row['XISensorType']==5){
-        $XIVmsBoardTemperature=$row['XIValue'];
+        $XIVmsBoardTemperature=$row['XIValue'].' °C';
     }elseif($row['XISensorType']==6){
       
       if($row['XIValue']==1){
@@ -139,7 +141,7 @@ $dataj.='"XIVmsBrightness":"'.$XIVmsBrightness.'",';
 $dataj.='"XIVmsRackTemperature":"'.$XIVmsRackTemperature.'",';
 $dataj.='"XIVmsBoardTemperature":"'.$XIVmsBoardTemperature.'",';
 $dataj.='"XBVmsFlashIsActive":"'.$XBVmsFlashIsActive.'",';
-$dataj.='"XVVdtModuleNo":"'.$XVVdtModuleNo.'",';
+$dataj.='"XVVdtModuleNo":"'.$txt.'",';
 $dataj.='"XBVmsFanIsActive":"'.$XBVmsFanIsActive.'",';
 $dataj.='"XBVmscompIsActive":"'.$XBVmscompsActive.'",';
 $dataj.='"XVMsgName":"'.$msq_txt.'",';

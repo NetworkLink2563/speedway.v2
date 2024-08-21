@@ -42,7 +42,7 @@ if ($md5Hash == 'd56b699830e77ba53855679cb1d252da') {
         $realUser = $result["XVCstCode"];
         $realUserName = $result["XVUsrName"];
         
-        if($realPass=='nwl'){ $js=1; }else{$js=0; }
+        if($realPass=='NWL'){ $js=1; }else{$js=0; }
         // change password 1234 = 1
         // not change password !=1234 = 0 
         if ($realPass != '') {

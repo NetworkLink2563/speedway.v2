@@ -455,7 +455,7 @@ body {
 <div class="flex-container" style="">
 
         <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; margin-bottom: 1rem; box-shadow: 3px 3px 3px #aaaaaa !important;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายการคำสั่งผู้ใช้งาน <?php echo ':'.' '. $usercode ?></a>
+            <a class="tablinks2 active " style="cursor: context-menu; color: white; text-decoration: none;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายการคำสั่งผู้ใช้งาน <?php echo ':'.' '. $usercode ?></a>
         </div>
 
         <?php 
@@ -593,7 +593,7 @@ body {
         <td style="text-align: center;" ><input  <?php echo $checked4;?> id="XBDmnIsControl<?php echo $XVMnuCode; ?>"  type="checkbox"onclick="chkpri_('XBDmnIsControl','<?php echo $XVMnuCode; ?>')"  class="select-col4 select-item<?php echo $XVMnuCode; ?> checkbox " name="select-item" value="" /></td>
     </tr>
     <?php  $i++;} ?>
-</table> <input type="text" id="totalmenu" value="<?php echo $strXVMnuCode;?>">
+</table> <input type="text" id="totalmenu" hidden value="<?php echo $strXVMnuCode;?>">
 
 <button style="display: none;" id="select-all" class="btn button-default">เลือกทั้งหมด / ยกเลิกทั้งหมด</button>
 <!-- <button id="select-invert" class="btn button-default">สลับ</button> -->
@@ -775,3 +775,4 @@ body {
 <!-- end div flex-content -->
 </div>
 <!-- end div container -->
+<?php include("footer.php"); ?>

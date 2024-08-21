@@ -104,7 +104,8 @@ include "service/privilege.php";
 <script src="dist/js/popper.min.js"></script>
 <script src="dist/js/main_speed.js"></script>
 <script src="dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" href="./dist/css/all.min.css">
+
 
 
 
@@ -156,30 +157,15 @@ include "service/privilege.php";
         }
     }
 
-
-
-
-    const togglePassword = document.querySelector('#togglePassword');
-    const password = document.querySelector('#passwordInput');
-    const password2 = document.querySelector('#confirm_password');
-
-    togglePassword.addEventListener('click', function(e) {
-        // toggle the type attribute
-        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-        password.setAttribute('type', type);
-        password2.setAttribute('type', type);
-        // toggle the eye slash icon
-        this.classList.toggle('fa-eye-slash');
-    });
 </script>
 
 <div class="container" style="position: relative; top: 75;">
     <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
-        <img src="../speedway/img/icon/setting.png" height="25" alt="Responsive image">
+        <img src="./img/icon/setting.png" height="25" alt="Responsive image">
     </div>
     <div class="flex-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> เปลี่ยรหัสผ่าน</a>
+            <a class="tablinks2 active " style="cursor: context-menu; color: white;"><i class="fa fa-list-alt" aria-hidden="true"></i> เปลี่ยรหัสผ่าน</a>
         </div>
         <h style="text-align: left;width:100%; padding-top: 1%;">
             
@@ -197,7 +183,7 @@ include "service/privilege.php";
                 <span>รหัสผ่านใหม่</span>
             </div>
             <div class="col-6">
-                <input placeholder="NewPassword" value="" class="form-control input" style="width: 100%;" name="passwordInput" id="passwordInput" type="password" onkeyup='check();' /><i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 203px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
+                <input placeholder="NewPassword" value="" class="form-control input" style="width: 100%;" name="passwordInput" id="passwordInput" type="password" onkeyup='check();' /><i style="display_: none; text-align: right; cursor: pointer; position: relative; left: -26px;" class="fa-regular fa-eye-slash" id="togglePassword"></i>
             </div>
         </div>
         <div  class="row col-12" style="padding-top:10px">
@@ -207,7 +193,7 @@ include "service/privilege.php";
             <div class="col-6">
                 <input placeholder="Confirm NewPassword" class="form-control input" style="width: 100%;" value="" name="confirm_password" id="confirm_password" type="password" onkeyup='check();' />
                 <!-- <i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 203px;" class="far fa-eye fa-eye-slash" id="togglePassword2"></i>  -->
-                <span id="message"></span>
+                <span id="message" style="margin-left: 5px;"></span>
             </div>
         </div>
         <div class="row col-12" style="padding-top:10px; justify-content: center; align-items: center;">
@@ -251,4 +237,20 @@ include "service/privilege.php";
 </div>
 </body>
 
+<?php include("footer.php"); ?>
 </html>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#passwordInput');
+    const password2 = document.querySelector('#confirm_password');
+
+    togglePassword.addEventListener('click', function(e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        password2.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye');
+    });
+</script>

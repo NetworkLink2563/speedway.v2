@@ -371,7 +371,7 @@ new DataTable('#tabuser', {
 
         </div>
 <div class=" shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
-            <a class="tablinks2 active " style="cursor: context-menu;"> <img src="/speedway/img/icon/report.png" height="25" alt="Responsive image">รายงานการปฏิบัติงาน</a>
+            <a class="tablinks2 active " style="cursor: context-menu; color: white;"> <img src="./img/icon/report.png" height="25" alt="Responsive image">รายงานการปฏิบัติงาน</a>
         </div>
 
 
@@ -542,7 +542,7 @@ new DataTable('#tabuser', {
                 </div>
 
 
-
+<?php include "footer.php"; ?>
           
 
   

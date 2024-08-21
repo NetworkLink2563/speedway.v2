@@ -19,6 +19,8 @@ $sql="SELECT XVMssCode, XIMssWPixel, XIMssHPixel
   $query = sqlsrv_query($conn, $sql);
   $row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC);
 
+//echo $sql;
+
 $XIMssWPixel=$row['XIMssWPixel'];    
 $XIMssHPixel=$row['XIMssHPixel'];
 
@@ -39,8 +41,10 @@ $filelocation = "media/tmp/".$filename;
 $extension = pathinfo($filelocation, PATHINFO_EXTENSION);
 //if($XVMsgType==2){
 	$filelocation="media/tmp/".$XVMsgCode.'.'.$extension;
-	
+	//echo $filelocation;
 //}
+
+//print_r($_FILES);
 
 if(move_uploaded_file($_FILES['file']['tmp_name'],$filelocation)){
 
@@ -55,14 +59,14 @@ if(move_uploaded_file($_FILES['file']['tmp_name'],$filelocation)){
 
 		if(strtoupper($extension)!='WEBM'){
 
-			$cmd1='C:\\inetpub\\wwwroot\\speedway\\ffmpeg\bin\\ffmpeg -i '.$filelocation .' -c:v libvpx -crf 10 -b:v 8M -c:a libvorbis C:\\inetpub\wwwroot\\speedway\\media\\tmp\\'.$XVMsgCode.'.webm';
+			$cmd1='C:\\inetpub\\wwwroot\\speedway.v2\\ffmpeg\bin\\ffmpeg -i '.$filelocation .' -c:v libvpx -crf 10 -b:v 8M -c:a libvorbis C:\\inetpub\wwwroot\\speedway.v2\\media\\tmp\\'.$XVMsgCode.'.webm';
 			shell_exec($cmd1);
 			unlink($filelocation);
 			
 		}
-		if(file_exists('C:\\inetpub\wwwroot\\speedway\\media\\tmp\\'.$XVMsgCode.'.webm')){
+		if(file_exists('C:\\inetpub\wwwroot\\speedway.v2\\media\\tmp\\'.$XVMsgCode.'.webm')){
 			$dur =0;
-			$cmd2='C:\\inetpub\\wwwroot\\speedway\\ffmpeg\bin\\ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 C:\\inetpub\wwwroot\\speedway\\media\\tmp\\'.$XVMsgCode.'.webm';
+			$cmd2='C:\\inetpub\\wwwroot\\speedway.v2\\ffmpeg\bin\\ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 C:\\inetpub\wwwroot\\speedway.v2\\media\\tmp\\'.$XVMsgCode.'.webm';
 			$dur = shell_exec($cmd2);
 			if($dur>0){
 				$filename=$XVMsgCode.'.webm';
@@ -94,6 +98,7 @@ if(move_uploaded_file($_FILES['file']['tmp_name'],$filelocation)){
 				'$XTWhenCreate'
 				)";
 				$stmt = sqlsrv_query($conn, $stmt2Insert);
+//echo $stmt2Insert.'/'.'1';
 				if( $stmt === false ) {
 					die( print_r( sqlsrv_errors(), true));
 					$ret ='{'.'"Return":"False","XVMsgCode":""'.'}';
@@ -139,6 +144,7 @@ if(move_uploaded_file($_FILES['file']['tmp_name'],$filelocation)){
 			)";
 		
 		$stmt  = sqlsrv_query($conn, $stmt2Insert);
+//echo $stmt2Insert.'/'.'2';
 		if( $stmt === false ) {
 			 die( print_r( sqlsrv_errors(), true));
 			 $ret ='{'.'"Return":"False","XVMsgCode":""'.'}';
@@ -155,6 +161,7 @@ if(move_uploaded_file($_FILES['file']['tmp_name'],$filelocation)){
 }else{
 	
 }
+
 echo $ret;
 exit;
 ?>

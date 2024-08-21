@@ -68,14 +68,14 @@ $pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
 <?php if($pri_r != 0){ ?>
 
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
-            <!-- <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ตัวช่วย -->
+            <!-- <img src="./img/icon/setting.png" height="25" alt="Responsive image"> ตัวช่วย -->
         </div>
 
 
 <div class="flex-container" style="">
 
         <div class="col-12" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; box-shadow: 3px 3px 3px #aaaaaa !important;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><img src="/speedway/img/icon/help.png" height="25" alt="Responsive image"> ตัวช่วยสร้างข้อความสภาพจราจร</a>
+            <a class="tablinks2 active " style="cursor: context-menu; color: white; text-decoration: none;"><img src="./img/icon/help.png" height="25" alt="Responsive image"> ตัวช่วยสร้างข้อความสภาพจราจร</a>
         </div>
 
 
@@ -154,7 +154,7 @@ $pri_contr=$pri[0]['pri_del'];  // สิทธิ์การควบคุม
 <?php }else{ echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';} ?>
 </div>
 <!-- end div container-->
-
+ <?php include "footer.php"; ?>
 
 </body>
 </html>

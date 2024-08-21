@@ -372,12 +372,12 @@ function SaveFrame3( $XVMsfCode){
                  <th class="th-sm" style="text-align: center">ประเภท
                  </th>
                  <th class="th-sm" style="text-align: center"></th>
-                 <th class="th-sm" style="text-align: center"></th>
+                 
              </tr>
          </thead>
          <tbody>';
          
-        $stmt = "SELECT TMstMMessage.XVMsgCode,TMstMMessage.XVMsgName,TMstMMessage.XVWhoCreate,TMstMMsgSize.XIMssWPixel,TMstMMsgSize.XIMssHPixel,TMstMMessage.XVMsgType FROM TMstMMessage 
+        $stmt = "SELECT TMstMMessage.XVMsgCode,TMstMMessage.XVMsgName,TMstMMessage.XVWhoCreate,TMstMMsgSize.XIMssWPixel,TMstMMsgSize.XIMssHPixel,XVMsgFileName,TMstMMessage.XVMsgType FROM TMstMMessage 
               INNER JOIN TMstMMsgSize ON TMstMMsgSize.XVMssCode=TMstMMessage.XVMssCode
               
             ORDER BY TMstMMessage.XTWhenCreate DESC";
@@ -387,16 +387,18 @@ function SaveFrame3( $XVMsfCode){
         {
               
                 if($result['XVMsgType']==1){
-                    $XVMsgType='<i class="fa fa-text-width" aria-hidden="true" title="ข้อความ"></i>';
+                    $icot='<i class="fa fa-text-width" aria-hidden="true" title="ข้อความ"></i>';
                 }elseif($result['XVMsgType']==2){
-                    $XVMsgType='<i class="fa fa-picture-o" aria-hidden="true" title="รูปภาพ"></i>';
+                    $icot='<i class="fa fa-picture-o" aria-hidden="true" title="รูปภาพ"></i>';
                 }elseif($result['XVMsgType']==3){
-                    $XVMsgType='<i class="fa fa-video-camera" aria-hidden="true" title="ภาพเคลื่อนไหว"></i>';
+                    $icot='<i class="fa fa-video-camera" aria-hidden="true" title="ภาพเคลื่อนไหว"></i>';
                 }
                 
+                $XVMsgFileName = $result['XVMsgFileName'];
+                $XVMsgType = $result['XVMsgType'];
                 $XIMssWPixel=$result['XIMssWPixel'];
                 $XIMssHPixel=$result['XIMssHPixel'];
-                $url="ifarme.php?msg=".base64_encode($result['XVMsgCode']);
+                $url="ifarmeimg.php?msg=$XVMsgFileName&type=$XVMsgType";
                 $url."&wp=".base64_encode($result['XIMssWPixel']);
                 $url."&hp=".base64_encode($result['XIMssHPixel']);
                 $XVMsgName=$result['XVMsgName'];
@@ -410,8 +412,8 @@ function SaveFrame3( $XVMsfCode){
                     onclick="examplesms(\''.$url.'\','.$result['XIMssHPixel'].','.$result['XIMssWPixel'].',\''.$XVMsgName.'\');"></i></td>';
 
                 $data.='<td style="text-align: center">'.$result['XIMssWPixel'].'x'.$result['XIMssHPixel'].'</td>
-                    <td style="text-align: center;"><div style=" margin-top: 5px">'.$XVMsgType.'</div></td>
-                    <td><button onclick="SelSms(\''.$result['XVMsgType'].'\',\''.$result['XVMsgCode'].'\')" type="button" class="btn btn-success btn-sm">เลือก</button></td>';
+                    <td style="text-align: center;"><div style=" margin-top: 5px">'.$icot.'</div></td>
+                    <td><button onclick="SelSms(\''.$result['XVMsgType'].'\',\''.$result['XVMsgFileName'].'\')" type="button" class="btn btn-success btn-sm">เลือก</button></td>';
                 $data.='</tr>';
             
         }            

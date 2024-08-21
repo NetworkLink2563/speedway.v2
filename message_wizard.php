@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="http://www.centrecities.com/speedway/img/favicon.png" />
+    <link rel="icon" type="image/png" href="./img/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- bootstrap wizard -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/1.35.0/iconfont/tabler-icons.min.css'>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel='stylesheet' href='./dist/css/all.min.css'>
+<link rel='stylesheet' href='./dist/css/tabler-icons.min.css'>
+<link rel='stylesheet' href="./dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <title>ตัวช่วยสร้างข้อความ</title>
 </head>
@@ -67,7 +67,7 @@ $pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
 <div class="flex-container" style="">
 
         <div class="col-12" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; box-shadow: 3px 3px 3px #aaaaaa !important;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><img src="/speedway/img/icon/help.png" height="25" alt="Responsive image"> ตัวช่วยสร้างข้อความ</a>
+            <a class="tablinks2 active " style="cursor: context-menu; color: white; text-decoration: none;"><img src="./img/icon/help.png" height="25" alt="Responsive image"> ตัวช่วยสร้างข้อความ</a>
         </div>
 
 
@@ -162,7 +162,7 @@ echo '<div style="text-align:center;padding: 10%;"">ไม่มีสิทธ�
 </div>
 <!-- end div container-->
 
-
+<?php include('footer.php'); ?>
 </body>
 </html>
 
