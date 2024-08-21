@@ -732,7 +732,7 @@ function row($idrow, $user)
                                 <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 415px;">
 
                                     <!--<button onclick="addsms(1)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
-                                  <iframe id="live" src="http://192.168.55.11/stream/Vdo1/" style="border: none; width:1200px; height:400px;"></iframe>
+                                  <iframe id="live" src="/stream/Vdo1/" style="border: none; width:1200px; height:400px;"></iframe>
 
                                 </div>
                             </div>
@@ -772,7 +772,7 @@ function row($idrow, $user)
                                 <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 415px;">
 
                                     <!--<button onclick="addsms(1)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
-                                  <iframe id="live" src="http://192.168.55.11/stream/Vdo2/" style="border: none; width:1200px; height:400px;"></iframe>
+                                  <iframe id="live" src="/stream/Vdo2/" style="border: none; width:1200px; height:400px;"></iframe>
 
                                 </div>
                             </div>
