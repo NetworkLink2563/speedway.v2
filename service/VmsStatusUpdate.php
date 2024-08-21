@@ -3,7 +3,7 @@
 $XVVmsCode = $_REQUEST['XVVmsCode'];
 $XISensorType = $_REQUEST['XISensorType'];
 $XIValue= $_REQUEST['XIValue'];
- $serverName = "192.168.55.14";
+ $serverName = "10.12.12.205";
       $userName = 'DevNwl';
       $userPassword = 'Nwl!2563';
       $dbName = "NWL_SpeedWayTest2";
