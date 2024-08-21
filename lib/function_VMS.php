@@ -32,7 +32,7 @@ function callAPICOM($vmscode){
     $api_key = "kOK24RIo625gOSCzPFK5cg==";
     $password = "ymfqgoZg6BmJatEcSO7bNw==";
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "http://43.229.151.102/speedway/service/centerservice.php");
+    curl_setopt($ch, CURLOPT_URL, "/service/centerservice.php");
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 20);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POST, true);
@@ -63,7 +63,7 @@ function callAPIDisplay($vmscode){
     $api_key = "kOK24RIo625gOSCzPFK5cg==";
     $password = "ymfqgoZg6BmJatEcSO7bNw==";
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "http://43.229.151.102/speedway/service/centerdisplay.php");
+    curl_setopt($ch, CURLOPT_URL, "/service/centerdisplay.php");
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 20);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POST, true);

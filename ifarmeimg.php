@@ -23,7 +23,7 @@ if ($type == 1) {
         <div class="modal-dialog modal-lg">
             <div class="modal-content" style="height: 500px;">
                 <div class="modal-body text-center">
-                    <img style=" margin: 0px;padding: 0px;width:100%;height:100%;" src='/speedway.v2/media/tmp/<?php echo  $msg; ?>'></img>
+                    <img style=" margin: 0px;padding: 0px;width:100%;height:100%;" src='/media/tmp/<?php echo  $msg; ?>'></img>
                     </iframe>
                 </div>
             </div>
@@ -35,7 +35,7 @@ if ($type == 1) {
             <div class="modal-content" style="height: 500px;">
                 <div class="modal-body text-center">
                     <video width="960" height="520" controls>
-                        <source src="/speedway.v2/media/tmp/<?php echo  $msg; ?>" type="video/mp4">
+                        <source src="/media/tmp/<?php echo  $msg; ?>" type="video/mp4">
                     </video>
                     </iframe>
                 </div>

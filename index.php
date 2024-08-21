@@ -1,5 +1,4 @@
-echo "OK";
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" href="dist/css/all.min.css">
 
 <?php
 session_start();
@@ -433,7 +432,7 @@ function ThDate()
                         <div class="col-sm-12 passdiv" style="margin-bottom: .5rem;">
                             <label for="inputPassword" class="sr-only">Password</label>
                             <input type="password" id="inputPassword" name="inputPassword" class="form-control" autocomplete="off" placeholder="Password" required>
-                            <i style="clear: right; text-align: right; cursor: pointer; position: relative; top: -28px; left: 178px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
+                            <i style="clear: right; text-align: right; cursor: pointer; position: relative; top: -28px; left: 178px;" class="fa-regular fa-eye-slash" id="togglePassword"></i>
                             <a id="forgetpass" href="#" onclick="">ลืมรหัสผ่าน</a>
                         </div>
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
@@ -504,7 +503,7 @@ function ThDate()
     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
     password.setAttribute('type', type);
     // toggle the eye slash icon
-    this.classList.toggle('fa-eye-slash'); 
+    this.classList.toggle('fa-eye'); 
 });
 </script>
 

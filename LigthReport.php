@@ -216,7 +216,7 @@ if(checkmenu($user,'011')==0){
 
 
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
-            <img src="http://43.229.151.103/speedway/img/icon/computer.png" height="25" alt="Responsive image"> รายงาน
+            <img src="/img/icon/computer.png" height="25" alt="Responsive image"> รายงาน
         </div>
 
 

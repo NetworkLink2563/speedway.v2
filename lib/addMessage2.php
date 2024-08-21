@@ -3,7 +3,7 @@ include "DatabaseManage.php";
 $XVMsgName=$_POST['XVMsgName'];
 $XVMssCode=$_POST['XVMssCode'];
 $XVMsgStatus=$_POST['XVMsgStatus'];
-$XVMsgHtml="http://www.centrecities.com/speedway/media/tmp";
+$XVMsgHtml="/media/tmp";
 $explode=explode("<div>",$_POST['data']);
 $data='<div style="width: 300px; height:300px; background: #0a0a0a;">'.$explode[1];
 $stmt = "SELECT TOP 1 XVMsgOrder FROM TMstMMessage ORDER BY XVMsgOrder DESC";

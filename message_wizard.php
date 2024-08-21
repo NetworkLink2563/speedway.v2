@@ -60,7 +60,7 @@ $pri_del=$pri[0]['pri_del'];  // สิทธิ์การลบ
 
 <?php if($pri_r != 0){ ?>
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
-            <!-- <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ตัวช่วย -->
+            <!-- <img src="/img/icon/setting.png" height="25" alt="Responsive image"> ตัวช่วย -->
         </div>
 
 

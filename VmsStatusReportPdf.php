@@ -179,7 +179,7 @@ $data='<table width="99%" border="1" cellpadding="3" cellspacing="0" style="font
                 $resultLive = sqlsrv_fetch_array($queryLive, SQLSRV_FETCH_ASSOC);
                 if($resultLive['XBLiveIsActive']==1){
                     $urlLive=$resultLive['XBLiveIsActive'];
-                    $tdTable='<td><div align="center" style="margin-left: 2;margin-right: 2"><a href="http://127.0.0.1/speedway/liveviews.php?livecode='.$urlLive.'" onclick="return show_modal(this);" style="color: #0a0a0a"><span style="color: #00CC00;"><i class="fa fa-video-camera" aria-hidden="true"></i></div></td>';
+                    $tdTable='<td><div align="center" style="margin-left: 2;margin-right: 2"><a href="/liveviews.php?livecode='.$urlLive.'" onclick="return show_modal(this);" style="color: #0a0a0a"><span style="color: #00CC00;"><i class="fa fa-video-camera" aria-hidden="true"></i></div></td>';
                 }else{
                     $urlLive='';
                     $tdTable='<td><div align="center" style="margin-left: 2;margin-right: 2"><span style="color:#CCCCCC;"><i class="fa fa-video-camera" aria-hidden="true" ></i></span></div></td>';

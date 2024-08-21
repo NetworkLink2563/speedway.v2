@@ -2,9 +2,9 @@
 
 $data_string = '{
     "VmsCode":"VMS001",
-    "PdfFileName":"C:\\inetpub\\wwwroot\\speedway\\TMPPDF\\Presentation1.pdf",
+    "PdfFileName":"C:\\inetpub\\wwwroot\\VMS\\TMPPDF\\Presentation1.pdf",
     "PngFileName":"001.png",
-    "DestinationPath":"C:\\inetpub\\wwwroot\\speedway\\VMSIMG",
+    "DestinationPath":"C:\\inetpub\\wwwroot\\VMS\\VMSIMG",
      "Width":482,
      "Height":320
 }';

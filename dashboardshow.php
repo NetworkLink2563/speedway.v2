@@ -322,7 +322,7 @@ while ($resultSQL = sqlsrv_fetch_array($querySQL, SQLSRV_FETCH_ASSOC)) {
     $resultLive = sqlsrv_fetch_array($queryLive, SQLSRV_FETCH_ASSOC);
     if ($resultLive['XBLiveIsActive'] == 1) {
         $urlLive = $resultLive['XBLiveIsActive'];
-        $thTable = '<th><div align="center""><a href="http://127.0.0.1/speedway/liveviews.php?livecode=' . $urlLive . '" onclick="return show_modal(this);" style="color: #0a0a0a"><span style="color: #00CC00;"><i class="fa fa-video-camera" aria-hidden="true"></i></div></th>';
+        $thTable = '<th><div align="center""><a href="/liveviews.php?livecode=' . $urlLive . '" onclick="return show_modal(this);" style="color: #0a0a0a"><span style="color: #00CC00;"><i class="fa fa-video-camera" aria-hidden="true"></i></div></th>';
     } else {
         $urlLive = '';
         $thTable = '<th><div align="center""><span style="color:#CCCCCC;"><i class="fa fa-video-camera" aria-hidden="true" ></i></span></div></th>';

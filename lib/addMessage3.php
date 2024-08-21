@@ -5,7 +5,7 @@ $XVMsgName=$_POST['XVMsgName'];
 $XVMsgStatus=$_POST['XVMsgStatus'];
 $idmsgSize=$_POST['idmsgSize'];
 $XVMsgBg=$_POST['msgBG'];
-$XVMsgHtml="http://www.centrecities.com/speedway/media/tmp";
+$XVMsgHtml="/media/tmp";
 $explode=explode("<div>",$_POST['data']);
 $data='<div style="width: 300px; height:300px; background: '.$XVMsgBg.';">'.$_POST['data']."</div>";
 $stmt = "SELECT TOP 1 XVMsgOrder FROM TMstMMessage ORDER BY XVMsgOrder DESC";

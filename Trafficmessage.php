@@ -41,7 +41,7 @@ include 'header.php';
                             <tr>
                                 <td scope="row"><input id="inputitem1" class="inputitem" type="checkbox" name="checkbox" value="checkbox" /></td>
                                 <td>69+380L</td>
-                                <td><div align="center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/speedway/textview.php?id=1';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                <td><div align="center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/textview.php?id=1';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a>
                                     </div></td>
                                 <td>2024/01/24 10:23</td>
                                 <td>2024/03/06 11:18</td>
@@ -87,14 +87,14 @@ include 'header.php';
                         </thead>
                         <tbody>
                         <tr>
-                            <td><div align="center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/speedway/textview.php?id=1';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <td><div align="center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/textview.php?id=1';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a>
                                 </div></td>
                             <td>2024/01/24 10:23</td>
                             <td>2024/03/06 11:18</td>
                             <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
                         </tr>
                         <tr>
-                            <td><div align="center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/speedway/textview.php?id=2';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <td><div align="center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/textview.php?id=2';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a>
                                 </div></td>
                             <td>2024/01/24 10:23</td>
                             <td>2024/03/06 11:18</td>

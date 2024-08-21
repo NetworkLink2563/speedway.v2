@@ -28,14 +28,14 @@ if(move_uploaded_file($tmp,$filelocation)){
   
     if(strtoupper($extension)!='WEBM'){
 
-        $cmd1='C:\\inetpub\\wwwroot\\speedway\\ffmpeg\bin\\ffmpeg -i '.$filelocation .' -c:v libvpx -crf 10 -b:v 8M -c:a libvorbis C:\\inetpub\wwwroot\\speedway\\media\\tmp\\'.$XVMsgCode.'.webm';
+        $cmd1='C:\\inetpub\\wwwroot\\VMS\\ffmpeg\bin\\ffmpeg -i '.$filelocation .' -c:v libvpx -crf 10 -b:v 8M -c:a libvorbis C:\\inetpub\wwwroot\\VMS\\media\\tmp\\'.$XVMsgCode.'.webm';
         shell_exec($cmd1);
         unlink($filelocation);
         
     }
-    if(file_exists('C:\\inetpub\wwwroot\\speedway\\media\\tmp\\'.$XVMsgCode.'.webm')){
+    if(file_exists('C:\\inetpub\wwwroot\\VMS\\media\\tmp\\'.$XVMsgCode.'.webm')){
         $dur=0;
-        $cmd2='C:\\inetpub\\wwwroot\\speedway\\ffmpeg\bin\\ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 C:\\inetpub\wwwroot\\speedway\\media\\tmp\\'.$XVMsgCode.'.webm';
+        $cmd2='C:\\inetpub\\wwwroot\\VMS\\ffmpeg\bin\\ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 C:\\inetpub\wwwroot\\VMS\\media\\tmp\\'.$XVMsgCode.'.webm';
         
         $dur = shell_exec($cmd2);
        

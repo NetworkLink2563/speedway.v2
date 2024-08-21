@@ -1,5 +1,5 @@
 <?php
-$images = "http://127.0.0.1/speedway/media/VMS240313/test1.jpg";
+$images = "/media/VMS240313/test1.jpg";
 $new_images = "media/VMS240313/mygirl.jpg";
 $images = $images;
 $new_images = $new_images;

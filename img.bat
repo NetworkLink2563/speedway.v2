@@ -1,1 +1,1 @@
-convert C:\inetpub\wwwroot\speedway\TMPPDF\Presentation1.pdf -crop 480x320 C:\inetpub\wwwroot\speedway\TMPIMG\OUT.png
+convert C:\inetpub\wwwroot\VMS\TMPPDF\Presentation1.pdf -crop 480x320 C:\inetpub\wwwroot\VMS\TMPIMG\OUT.png

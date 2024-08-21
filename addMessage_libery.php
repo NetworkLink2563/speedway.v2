@@ -90,9 +90,9 @@ $path = "media/tmp/".$resultProcedSQL['ptCode'].".pdf";
 $mpdf->Output($path, "F");
 
 $jdata = array("VmsCode" => "VMS2403-0001",
-    "PdfFileName" => "C:\\inetpub\\wwwroot\\speedway\\media\\tmp\\".$ptcode.".pdf",
+    "PdfFileName" => "C:\\inetpub\\wwwroot\\VMS\\media\\tmp\\".$ptcode.".pdf",
     "PngFileName" => $ptcode.".png",
-    "DestinationPath" => "C:\\inetpub\\wwwroot\\speedway\\media\\tmp",
+    "DestinationPath" => "C:\\inetpub\\wwwroot\\VMS\\media\\tmp",
     "Width" => $sizeW,
     "Height" => $sizeH
 );

@@ -112,7 +112,7 @@ table th{
 
 
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem;">
-            <img src="http://43.229.151.103/speedway/img/icon/setting.png" height="25" alt="Responsive image"> จัดการข้อความหลัก
+            <img src="/img/icon/setting.png" height="25" alt="Responsive image"> จัดการข้อความหลัก
         </div>
 
 

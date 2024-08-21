@@ -421,7 +421,7 @@ background-image: url('img/icon/mag.png');
             </div>
 
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
-            <!-- <button onclick="location.href='/speedway/messagepublicrelationsplay.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">>> Step4 ข้อความป้ายประชาสัมพันธ์</button> -->
+            <!-- <button onclick="location.href='/messagepublicrelationsplay.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">>> Step4 ข้อความป้ายประชาสัมพันธ์</button> -->
             </div>
 
 

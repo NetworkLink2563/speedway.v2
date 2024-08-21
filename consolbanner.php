@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="/speedway/dist/css/bootstrap5-toggle.css">
-<link rel="stylesheet" href="/speedway/dist/css/bootstrap5-toggle.min.css">
+<link rel="stylesheet" href="/dist/css/bootstrap5-toggle.css">
+<link rel="stylesheet" href="/dist/css/bootstrap5-toggle.min.css">
 <?php
 include 'header.php';
 include "lib/DatabaseManage.php";

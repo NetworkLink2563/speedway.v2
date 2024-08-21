@@ -15,7 +15,7 @@ function  PdfToImg($VmsCode,$SourcePath,$DestinationPath,$PdfFileName){
 	 
 	  //echo shell_exec( $cmd );
 	  //echo dirname(__DIR__);
-      system('cmd /c "'.dirname(__DIR__) . '\\Speedway\\img.bat"');
+      system('cmd /c "'.dirname(__DIR__) . '\\VMS\\img.bat"');
 	 
       $arrFiles = array();
       $files = scandir($TmpImgPath);

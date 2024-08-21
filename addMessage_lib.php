@@ -81,11 +81,11 @@ if($messageCheckboxManual==1){
 
 
 $query = sqlsrv_query($conn, $stmtInsert);
-$Fname= "C:\\inetpub\\wwwroot\\speedway\\media\\tmp\\".$ptcode.".pdf";
+$Fname= "C:\\inetpub\\wwwroot\\VMS\\media\\tmp\\".$ptcode.".pdf";
 $jdata = array("VmsCode" => $XVVmsCode,
     "PdfFileName" =>$Fname,
     "PngFileName" => $ptcode.".png",
-    "DestinationPath" => "C:\\inetpub\\wwwroot\\speedway\\media\\tmp",
+    "DestinationPath" => "C:\\inetpub\\wwwroot\\VMS\\media\\tmp",
     "Width" => $sizeW,
     "Height" => $sizeH
 );

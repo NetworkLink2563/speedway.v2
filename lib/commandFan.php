@@ -48,7 +48,7 @@ SELECT '".$vmscode."','6',NULL,NULL,NULL,NULL,NULL,0,NULL,'".$_SESSION['userName
 $api_key = "kOK24RIo625gOSCzPFK5cg==";
 $password = "ymfqgoZg6BmJatEcSO7bNw==";
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "http://43.229.151.102/speedway/service/poweronoff.php");
+curl_setopt($ch, CURLOPT_URL, "/service/poweronoff.php");
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 20);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 curl_setopt($ch, CURLOPT_POST, true);

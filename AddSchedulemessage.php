@@ -181,17 +181,17 @@ include 'header.php';
                         <tbody>
                         <tr>
                             <td>69+380L</td>
-                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/speedway/textview.php?id=1';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
+                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/textview.php?id=1';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
                             <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
                         </tr>
                         <tr>
                             <td>69+381L</td>
-                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/speedway/textview.php?id=2';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
+                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/textview.php?id=2';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
                             <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
                         </tr>
                         <tr>
                             <td>69+380R</td>
-                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/speedway/textview.php?id=3';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
+                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/textview.php?id=3';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
                             <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
                         </tr>
                         </tbody>
@@ -218,24 +218,24 @@ include 'header.php';
                         <tbody>
                         <tr>
                             <td>69+380L</td>
-                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/speedway/textview.php?id=4';?>" onclick="return show_modalImg(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
+                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/textview.php?id=4';?>" onclick="return show_modalImg(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
                             <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
                         </tr>
                         <tr>
                             <td>69+381L</td>
-                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/speedway/textview.php?id=5';?>" onclick="return show_modalImg(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
+                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/textview.php?id=5';?>" onclick="return show_modalImg(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
                             <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
 
                         </tr>
                         <tr>
                             <td>69+380R</td>
-                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/speedway/textview.php?id=6';?>" onclick="return show_modalImg(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
+                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/textview.php?id=6';?>" onclick="return show_modalImg(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
                             <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
 
                         </tr>
                         <tr>
                             <td>69+380R</td>
-                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/speedway/textview.php?id=7';?>" onclick="return show_modalImg(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
+                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/textview.php?id=7';?>" onclick="return show_modalImg(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
                             <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
 
                         </tr>
@@ -263,7 +263,7 @@ include 'header.php';
                         <tbody>
                         <tr>
                             <td>69+380L</td>
-                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/speedway/textview.php?id=8';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
+                            <td><div style="text-align: center"><a href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/textview.php?id=8';?>" onclick="return show_modal(this);" style="color: #0a0a0a"><i class="fa fa-search" aria-hidden="true"></i></a></div></td>
                             <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
                         </tr>
 
