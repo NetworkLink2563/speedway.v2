@@ -351,6 +351,18 @@ function ThDate()
     box-shadow: 3px 3px 3px #aaaaaa !important;
 }
 
+#forgetpass{
+    float: right;
+}
+
+.passdiv a{
+    text-decoration: none;
+}
+
+.passdiv a:hover{
+    text-decoration: underline;
+}
+
     </style>
 </head>
 
@@ -418,10 +430,11 @@ function ThDate()
                             <input type="email" id="username" name="username" class="form-control" placeholder="Username" autocomplete="off" required autofocus>
                         </div>
                         <!-- <div id="resultDiv" style="margin-left: 14px;"><p id="result" ></p></div> -->
-                        <div class="col-sm-12" style="margin-bottom: .5rem;">
+                        <div class="col-sm-12 passdiv" style="margin-bottom: .5rem;">
                             <label for="inputPassword" class="sr-only">Password</label>
                             <input type="password" id="inputPassword" name="inputPassword" class="form-control" autocomplete="off" placeholder="Password" required>
-                            <i style="display_: none; text-align: right; cursor: pointer; position: relative; top: -28px; left: 143px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
+                            <i style="clear: right; text-align: right; cursor: pointer; position: relative; top: -28px; left: 178px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
+                            <a id="forgetpass" href="#" onclick="">ลืมรหัสผ่าน</a>
                         </div>
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                           
