@@ -939,12 +939,18 @@ function row($idrow, $user)
         ShowSms();
 
     }
+<<<<<<< HEAD
 
     function newSrc(val){
         document.getElementById("moduletitel").innerText = 'รายการโมดูลเสีย';
         document.getElementById("iframed").src = 'iframemodule.php?XVVmsCode='+val;
         $('#modalmo').modal('show');
      }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
    function ShowSample(XVVmsCode, XVVmsName, w, h) {
         var id = XVVmsCode;
         if(id=='VMS2403-0001'){

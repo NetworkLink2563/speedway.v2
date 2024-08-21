@@ -419,6 +419,10 @@ background-image: url('img/icon/mag.png');
         font-size: .9rem;
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
     table tr td {
         border: 1px solid #cccc;
     }
@@ -426,6 +430,11 @@ background-image: url('img/icon/mag.png');
     table tr th {
         border: 1px solid #cccc;
     }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
 </style>
 
 
@@ -434,16 +443,38 @@ background-image: url('img/icon/mag.png');
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem; display: flex;">
 
 <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
             <a href='./messagetrafficsframe.php'" class="btn btn-warning btn-hover shadow" style=""> กลับ Step2 สร้างข้อความจราจรแสดงบนป้าย <<</a>
             </div>
 
 <div class="col-4" style="text-align: center;">
 <img src="./img/icon/edit.png" height="25" alt="Responsive image"> Step 3 ชุดข้อความสภาพจราจร
+<<<<<<< HEAD
+=======
+=======
+            <a href='http://192.168.55.11/speedway.v2/messagetrafficsframe.php'" class="btn btn-warning btn-hover shadow" style=""> กลับ Step2 สร้างข้อความจราจรแสดงบนป้าย <<</a>
+            </div>
+
+<div class="col-4" style="text-align: center;">
+<img src="/speedway/img/icon/edit.png" height="25" alt="Responsive image"> Step 3 ชุดข้อความสภาพจราจร
+>>>>>>> origin/main
+>>>>>>> origin/main
         </div>
 
 
         <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
+<<<<<<< HEAD
             <a href='./messagetrafficsplay.php'" class="btn btn-success btn-hover shadow" style="">>> Step4 ข้อความป้ายประชาสัมพันธ์</a>
+=======
+<<<<<<< HEAD
+            <a href='./messagetrafficsplay.php'" class="btn btn-success btn-hover shadow" style="">>> Step4 ข้อความป้ายประชาสัมพันธ์</a>
+=======
+            <a href='http://192.168.55.11/speedway.v2/messagetrafficsplay.php'" class="btn btn-success btn-hover shadow" style="">>> Step4 ข้อความป้ายประชาสัมพันธ์</a>
+>>>>>>> origin/main
+>>>>>>> origin/main
             </div>
 
 
