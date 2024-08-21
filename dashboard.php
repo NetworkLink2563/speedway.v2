@@ -107,7 +107,10 @@ function row($idrow, $user)
     }
 </style>
 
-
+<script src="dist/js/jquery-3.7.1.js"></script>
+<script src="dist/js/popper.min.js"></script>
+<script src="dist/js/main_speed.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
 
 
 
@@ -459,7 +462,7 @@ function row($idrow, $user)
 <div class="container" style="position: relative; top: 70;">
     <?php if ($pri_r != 0) { ?>
         <div style="margin: 1rem; text-align: center; margin-bottom: 1rem; border-bottom: 3px double #cccc; padding: 1rem;">
-            <img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image">&nbsp;หน้าแดชบอร์ด
+            <img src="./img/icon/setting.png" height="25" alt="Responsive image">หน้าแดชบอร์ด
         </div>
 
 
@@ -474,7 +477,7 @@ function row($idrow, $user)
                 <h5 class="tablinks2 active " style="cursor: context-menu; padding: .5rem; margin: 0;"><i class="fa fa-list-alt" aria-hidden="true"></i> การแสดงผล</h5>
             </div>
 
-            <div class="col-4 fs-6 form-check form-switch" style="padding: .5rem; text-align: center; text-align: right;"><input onclick="hideConfig()" class="form-check-input" id="hideconfig" name="radiobutton" type="checkbox" value="0" /> ปิด-เปิด การตั้งค่าการแสดงผล
+            <div class="col-4 fs-6 form-check form-switch" style="padding: .5rem; text-align: center; text-align: right;"><input onclick="hideConfig()" class="form-check-input" id="hideconfig" name="radiobutton" type="checkbox" value="0" style="position: absolute;"/> ปิด-เปิด การตั้งค่าการแสดงผล
             </div>
 
         </div>
@@ -604,6 +607,7 @@ function row($idrow, $user)
 </div>
 
 
+            <?php include "footer.php"; ?>
 
 
 
@@ -706,7 +710,7 @@ function row($idrow, $user)
         <div class="modal-content">
             <div class="modal-header" style="display: flex; background-color: #f7f7f7;">
                 <div class="col-11">
-                    <h5 class="modal-title" id="exampleModalLabel">Live view</h5>
+                    <h5 class="modal-title" style="padding-left: 13%;" id="exampleModalLabel">Live view</h5>
                 </div>
                 <div class="col-1">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -723,12 +727,12 @@ function row($idrow, $user)
                     <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
 
 
-                        <div class="row">
+                        <div class="row" style="text-align:center;">
                             <div class="col-md-12" style="padding: 0;">
-                                <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 100px;">
+                                <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 415px;">
 
                                     <!--<button onclick="addsms(1)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
-                                  <iframe id="live" src="" style="border: none; width: 956px; height: 100px;"></iframe>
+                                  <iframe id="live" src="http://192.168.55.11/stream/Vdo1/" style="border: none; width:1200px; height:400px;"></iframe>
 
                                 </div>
                             </div>
@@ -737,9 +741,48 @@ function row($idrow, $user)
                         </div>
                         </div>
                         </div>
-                        </div>
-                        </div>
+          </div>
+       </div>
 
+
+<div class="modal fade " id="modaliframe2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header" style="display: flex; background-color: #f7f7f7;">
+                <div class="col-11">
+                    <h5 class="modal-title" style="padding-left: 13%;" id="exampleModalLabel">Live view</h5>
+                </div>
+                <div class="col-1">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body" style="padding: 1rem 0rem 1rem 0rem;">
+
+
+
+
+                <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center ; background-color: white;">
+
+
+                    <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+
+                        <div class="row" style="text-align:center;">
+                            <div class="col-md-12" style="padding: 0;">
+                                <div id="frame3_section1" style="border-style: solid; border-color: rgb(220, 220, 220); margin: 0px; padding: 0px; border-width: 2px; width: 960px; height: 415px;">
+
+                                    <!--<button onclick="addsms(1)" style="position: absolute;left: 20px;top:5px;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button> -->
+                                  <iframe id="live" src="http://192.168.55.11/stream/Vdo2/" style="border: none; width:1200px; height:400px;"></iframe>
+
+                                </div>
+                            </div>
+                        </div> 
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+          </div>
+       </div>
 
 
 
@@ -759,16 +802,34 @@ function row($idrow, $user)
         </div>
     </div>
 </div>
+
+
+<div class="modal py-5" id="modalmo" role="dialog">
+    <div class="modal-dialog modal-sm" style="max-width: 36%;">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <h5 style="font-size: 14px;" id="moduletitel" class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+            </div>
+            <div class="modal-body text-center">
+
+                <iframe id="iframed"style="border: 0;width: 100%;" src="">
+
+                </iframe>
+
+            </div>
+        </div>
+
+</div>
+</div>
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 
 
 
-<script src="dist/js/jquery-3.7.1.js"></script>
-<script src="dist/js/popper.min.js"></script>
-<script src="dist/js/main_speed.js"></script>
-<script src="dist/js/bootstrap.min.js"></script>
+
 
 <script>
     var hidebtn = document.getElementById("hideconfig");
@@ -821,26 +882,46 @@ function row($idrow, $user)
                     $('#C0' + obj.XVVmsCode).css("color", "red");
                 }else if(obj.statusXiSecDiff == 2){  // on
                     $('#C0' + obj.XVVmsCode).css("color", "green");
-                }else if(obj.statusXiSecDiff == 0){ // not working or null data / sensor off
-                    $('#C0' + obj.XVVmsCode).css(); 
+                }
+
+                if(obj.XVVdtModuleNo==0){
+                    document.getElementById('link'+obj.XVVmsCode).style.display='none';
                 }
 
 
-               // if (obj.XiSecDiff > 600 || obj.XiSecDiff!=null) {
-                //    $('#C0' + obj.XVVmsCode).css("color", "red");
-             //   } else if(obj.XiSecDiff < 600 )  {
-              //      $('#C0' + obj.XVVmsCode).css("color", "green");
-             //   }
-            
+      
+
+                  if(obj.XBVmsIsDisplay=='On'){
+                     $('#C4' + obj.XVVmsCode).css("color", "green");
+                  }else if(obj.XBVmsIsDisplay=='Off'){
+                  $('#C4' + obj.XVVmsCode).css("color", "red");
+                  }
+
+                  if(obj.XBVmsIsOn=='On'){
+                     $('#C3' + obj.XVVmsCode).css("color", "green");
+                  }else if(obj.XBVmsIsOn=='Off'){
+                  $('#C3' + obj.XVVmsCode).css("color", "red");
+                  }
+                  if(obj.XBVmsFanIsActive=='On'){
+                     $('#C9' + obj.XVVmsCode).css("color", "green");
+                  }else if(obj.XBVmsFanIsActive=='Off'){
+                  $('#C9' + obj.XVVmsCode).css("color", "red");
+                  }
+                 if(obj.XBVmsFlashIsActive=='On'){
+                     $('#C8' + obj.XVVmsCode).css("color", "green");
+                  }else if(obj.XBVmsFlashIsActive=='Off'){
+                  $('#C8' + obj.XVVmsCode).css("color", "red");
+                  }
+
                 $('#C3' + obj.XVVmsCode).text(obj.XBVmsIsOn);
                 $('#C4' + obj.XVVmsCode).text(obj.XBVmsIsDisplay);
                 $('#C5' + obj.XVVmsCode).text(obj.XIVmsBrightness);
                 $('#C6' + obj.XVVmsCode).text(obj.XIVmsRackTemperature);
                 $('#C7' + obj.XVVmsCode).text(obj.XIVmsBoardTemperature);
-                $('#C8' + obj.XVVmsCode).text(obj.XBVmsFanIsActive);
+                $('#C8' + obj.XVVmsCode).text(obj.XBVmsFlashIsActive);
                 $('#C9' + obj.XVVmsCode).text(obj.XBVmsFanIsActive);
                 $('#C15' + obj.XVVmsCode).text(obj.XBVmscompIsActive);
-                $('#C10' + obj.XVVmsCode).text(obj.XVVdtModuleNo);
+                $('#C10' + obj.XVVmsCode).text();
                 $('#C12' + obj.XVVmsCode).text(obj.XVMsgName);
                 $('#C11' + obj.XVVmsCode).text(obj.XVMsfType);
                 if (obj.XVVmsCode == $("#XVVmsCode").val()) {
@@ -859,20 +940,18 @@ function row($idrow, $user)
 
     }
 
-    function ShowSample(XVVmsCode, XVVmsName, w, h) {
-        var t1 = 1;
-        var t2 = 2;
-        var t3 = 3;
-        var t4 = 4;
-        var t5 = 5;
-        $("#XVVmsCode").val(XVVmsCode);
-        $("#Example_Title").text(XVVmsName);
-        $("#frame1_section1_show").attr("src", 'ifarme.php?v=1&msg=' + btoa(XVVmsCode));
-        $("#frame2_section2_show").attr("src", 'ifarme.php?v=2&msg=' + btoa(XVVmsCode));
-        $("#frame3_section3_show").attr("src", 'ifarme.php?v=3&msg=' + btoa(XVVmsCode));
-        $("#frame4_section4_show").attr("src", 'ifarme.php?v=5&msg=' + btoa(XVVmsCode));
-        $("#frame5_section5_show").attr("src", 'ifarme.php?v=5&msg=' + btoa(XVVmsCode));
+    function newSrc(val){
+        document.getElementById("moduletitel").innerText = 'รายการโมดูลเสีย';
+        document.getElementById("iframed").src = 'iframemodule.php?XVVmsCode='+val;
+        $('#modalmo').modal('show');
+     }
+   function ShowSample(XVVmsCode, XVVmsName, w, h) {
+        var id = XVVmsCode;
+        if(id=='VMS2403-0001'){
         $('#modaliframe').modal('show');
+        }else if(id=='VMS2403-0002'){
+            $('#modaliframe2').modal('show');   
+        }
     }
     $(document).ready(async function() {
         ShowSms();

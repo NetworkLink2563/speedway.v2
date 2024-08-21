@@ -327,7 +327,7 @@ body {
         </div>
 
        <div class=" shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><img src="/speedway/img/icon/report.png" height="25" alt="Responsive image"> รายงานข้อความป้าย
+            <a class="tablinks2 active " style="cursor: context-menu; color: white;"><img src="./img/icon/report.png" height="25" alt="Responsive image"> รายงานข้อความป้าย
         </div>
 
         
@@ -461,6 +461,7 @@ while($arr=sqlsrv_fetch_array($uq, SQLSRV_FETCH_ASSOC)){ ?>
 
  <?php }else{echo'<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';}  ?>
 </div>
+<?php include "footer.php"; ?>
 
 <div id="myModalOpen" class="modal" id="myModal" role="dialog" a>
     <div class="modal-fullscreen">

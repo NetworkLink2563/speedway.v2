@@ -159,14 +159,14 @@ include "service/privilege.php";
 
 
     <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem;">
-        <img src="../speedway/img/icon/setting.png" height="25" alt="Responsive image">
+        <img src="./img/icon/setting.png" height="25" alt="Responsive image">
     </div>
 
 
     <div class="flex-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
 
         <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</a>
+            <a class="tablinks2 active " style="cursor: context-menu; color: white; text-decoration: none;"><i class="fa fa-list-alt" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</a>
         </div>
 
         <div class="row col-12" style="margin-top: 2rem;">
@@ -267,6 +267,8 @@ include "service/privilege.php";
         </div>
     </div>
 </div>
+
+<?php include("footer.php"); ?>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
