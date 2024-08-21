@@ -395,13 +395,6 @@ background-image: url('img/icon/mag.png');
         width: 255px;
         font-size: .9rem;
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/main
->>>>>>> origin/main
 
     table tr th {
         border: 1px solid #cccc;
@@ -410,14 +403,6 @@ background-image: url('img/icon/mag.png');
     table tr td {
         border: 1px solid #cccc;
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/main
->>>>>>> origin/main
->>>>>>> origin/main
 </style>
 
 
@@ -428,19 +413,7 @@ background-image: url('img/icon/mag.png');
 
 
             <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-<<<<<<< HEAD
             <a href="./messagepublicrelationsframegroup.php" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 ชุดข้อความ <<</a>
-=======
-<<<<<<< HEAD
-            <a href="./messagepublicrelationsframegroup.php" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 ชุดข้อความ <<</a>
-=======
-<<<<<<< HEAD
-            <a href="./messagepublicrelationsframegroup.php" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 ชุดข้อความ <<</a>
-=======
-            <a href="http://192.168.55.11/speedway.v2/messagepublicrelationsframegroup.php" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 ชุดข้อความ <<</a>
->>>>>>> origin/main
->>>>>>> origin/main
->>>>>>> origin/main
             </div>
 
             <div class="col-4" style="text-align: center;">

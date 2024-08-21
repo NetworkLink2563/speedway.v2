@@ -416,19 +416,7 @@ background-image: url('img/icon/mag.png');
         z-index: 99;
     } */
 
-<<<<<<< HEAD
     /* .flex-table{
-=======
-<<<<<<< HEAD
-    /* .flex-table{
-=======
-<<<<<<< HEAD
-    /* .flex-table{
-=======
-    .flex-table{
->>>>>>> origin/main
->>>>>>> origin/main
->>>>>>> origin/main
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -488,31 +476,11 @@ table th{
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex; ">
 
             <div class="col-7" style="text-align: right;">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/main
->>>>>>> origin/main
             <img src="./img/icon/edit.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
             </div>
 
             <div class="next-btn col"  style="text-align: right; padding: 0; ">
             <a href='./messagepublicrelationsframe.php' class="btn btn-success btn-hover shadow" style="">>> Step2 จัดรูปแบบข้อความ</a>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-            <img src="img/icon/edit.png" height="25" alt="Responsive image"> Step 1 สร้างข้อความ
-            </div>
-
-            <div class="next-btn col"  style="text-align: right; padding: 0; ">
-            <a href='http://192.168.55.11/speedway.v2/messagepublicrelationsframe.php' class="btn btn-success btn-hover shadow" style="">>> Step2 จัดรูปแบบข้อความ</a>
->>>>>>> origin/main
->>>>>>> origin/main
->>>>>>> origin/main
             </div>
 
         </div>

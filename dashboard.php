@@ -945,7 +945,6 @@ function row($idrow, $user)
         document.getElementById("iframed").src = 'iframemodule.php?XVVmsCode='+val;
         $('#modalmo').modal('show');
      }
-
    function ShowSample(XVVmsCode, XVVmsName, w, h) {
         var id = XVVmsCode;
         if(id=='VMS2403-0001'){
