@@ -34,7 +34,7 @@ if ($type == 1) {
         <div class="modal-dialog modal-lg">
             <div class="modal-content" style="height: 500px;">
                 <div class="modal-body text-center">
-                    <video width="960" height="384" controls>
+                    <video width="960" height="520" controls>
                         <source src="http://192.168.55.11/speedway.v2/media/tmp/<?php echo  $msg; ?>" type="video/mp4">
                     </video>
                     </iframe>

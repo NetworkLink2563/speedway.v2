@@ -968,11 +968,15 @@ table th{
 
 
 <div class="modal py-5" id="ModalExample" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="  height: 500px;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="  height: 620px;">
             <div class="modal-header">
+		<div class="col" >
                 <h5 id="Example_Title" class="modal-title"></h5>
+		</div>
+		<div col-1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+		</div>
             </div>
             <div class="modal-body text-center">
 

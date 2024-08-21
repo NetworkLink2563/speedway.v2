@@ -109,7 +109,7 @@ function insert($XVVmsCode,$XVPltCode){
           $user="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUser] JOIN [NWL_SpeedWayTest2].[dbo].[TMstMShift] 
           ON [NWL_SpeedWayTest2].[dbo].[TMstMUser].XVShfCode = [NWL_SpeedWayTest2].[dbo].[TMstMShift].XVShfCode 
           WHERE [NWL_SpeedWayTest2].[dbo].[TMstMUser].XVUsrCode ='$XVWhoCreate'";
-      echo $user;
+    //  echo $user;
 
         $q=sqlsrv_query($conn, $user);
         $d1=sqlsrv_fetch_array($q, SQLSRV_FETCH_ASSOC);
@@ -123,7 +123,7 @@ function insert($XVVmsCode,$XVPltCode){
    //     $datestr = date('Y-m-d'.$TmStr_conH.$TmStr_conM);
       //  $dateend = date('Y-m-d'.$TmEd_conH.$TmEd_conM);
  
-        $hour = $d1['XIShfStartHour']; echo $hour.'test';
+        $hour = $d1['XIShfStartHour']; //echo $hour.'test';
         $minute = $d1['XIShfStartMin'];
         
         // ตั้งค่าวันที่ที่ต้องการ
@@ -164,7 +164,7 @@ function insert($XVVmsCode,$XVPltCode){
                                               ,'$XVWhoCreate'
                                               ,GETDATE()
                                               );";
-         echo $sql;
+       -//  echo $sql;
          $stmt = sqlsrv_query( $conn, $sql);
          if( $stmt === false ) {
                  $ret='{"Return":"InsertError"}';
