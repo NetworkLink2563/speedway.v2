@@ -63,7 +63,7 @@ echo ThDate(); // แสดงวันที่
     <link href="dist/css/starter-template.css" rel="stylesheet">
 
     <link href="Select2/css/select2.css" rel="stylesheet">
-   
+    <link rel="stylesheet" href="./dist/css/bootstrap5-toggle.min.css">
     <style>
         body {
             background: #e1f0fa;

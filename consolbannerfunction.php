@@ -29,6 +29,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               
               echo onoffpowervms($vmscode,$value);
        }
+       if(isset($_POST["OnlineOfflinevms"])){
+              $vmscode=$_POST["vmscode"];
+              $value=$_POST["value"];
+              
+              echo OnlineOfflinevms($vmscode,$value);
+       }
+      
        if(isset($_POST["onoffflashvms"])){
               $vmscode=$_POST["vmscode"];
               $value=$_POST["value"];
@@ -81,6 +88,32 @@ function  onoffpowervms($vmscode,$value){
            return mqttsend($topic,$data);
            
 }
+function  OnlineOfflinevms ($vmscode,$value){
+       include "lib/DatabaseManage.php";
+       $XVSccValue=$value;
+       if($value==1){
+          $sms="ส่งคำสั่งเปิดระบบไฟฟ้า";
+       }else{
+          $sms="ส่งคำสั่งปิดระบบไฟฟ้า";
+       }
+       $sql = "DECLARE @tCode nvarchar(100)
+       EXEC dbo. STP_NWLtGetMaxCode 'TDocTCmdSchedule', @tCode OUTPUT
+       PRINT 'TDocTCmdSchedule' + '-->' + @tCode";
+           $query = sqlsrv_query($conn, $sql);
+           $result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC);
+           $runcode = $result['ptCode'];
+          
+           $sqlInsert = "INSERT INTO TDocTCmdSchedule (XVSccDocNo,XDSccDocDate,XTSccDocTime,XVVmsCode,XVCmdCode,XBSccIsSchedule,XTSccStart,XTSccEnd,XBSccIsDone,XBSccIsActive,XVSccValue,XTSccDocDoneTime,XBSccIsSun,XBSccIsMon,XBSccIsTue,XBSccIsWed,XBSccIsThu,XBSccIsFri,XBSccIsSat,XVWhoCreate,XVWhoEdit,XTWhenCreate,XTWhenEdit)
+       SELECT '".$runcode."','".date('Y-m-d')."','".date('Y-m-d H:i:s')."','".$vmscode."','003',0,NULL,NULL,0,1,$XVSccValue,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'".$_SESSION['userName']."',NULL,'".date('Y-m-d H:i:s')."','".date('Y-m-d H:i:s')."'";
+           
+           sqlsrv_query($conn, $sqlInsert);
+           sqlsrv_close( $conn );
+
+           insertLogVMS($vmscode,$_SESSION['userName'], '003', $sms, $runcode);
+           $topic='Center/Service/'.$vmscode;
+           $data='{"cmd":"01"}';
+           return mqttsend($topic,$data);
+}
 function  onoffflashvms($vmscode,$value){
       
        include "lib/DatabaseManage.php";
@@ -113,58 +146,7 @@ function  onoffflashvms($vmscode,$value){
 function brightvms($vmscode,$value){
       
        include "lib/DatabaseManage.php";
-       if($value==0){
-              $sms="ส่งคำสั่งปรับความสว่างอัตโนมัติ";
-              
-       }else{
-              $sql="SELECT 
-              XIVbnLevel01
-             ,XIVbnLevel02
-             ,XIVbnLevel03
-             ,XIVbnLevel04
-             ,XIVbnLevel05
-             ,XIVbnLevel06
-             ,XIVbnLevel07
-             ,XIVbnLevel08
-             ,XIVbnLevel09
-             ,XIVbnLevel10
-             ,XIVbnLevel011
-             ,XIVbnLevel012
-              FROM  TMstMItmVMS_Bright where XVVmsCode='$vmscode'";
-            
-               $query = sqlsrv_query($conn, $sql);
-               $result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC);
-               if($value==1){
-                     $value = $result['XIVbnLevel01'];
-               }elseif($value==2){
-                     $value = $result['XIVbnLevel02'];
-               }elseif($value==3){
-                     $value = $result['XIVbnLevel03'];
-              }elseif($value==4){
-                     $value = $result['XIVbnLevel04'];
-              }elseif($value==5){
-                     $value = $result['XIVbnLevel05'];
-              }elseif($value==6){
-                     $value = $result['XIVbnLevel06'];
-              }elseif($value==7){
-                     $value = $result['XIVbnLevel07'];
-              }elseif($value==8){
-                     $value = $result['XIVbnLevel08'];
-              }elseif($value==9){
-                     $value = $result['XIVbnLevel09'];
-              }elseif($value==10){
-                     $value = $result['XIVbnLevel10'];
-              }elseif($value==11){
-                     $value = $result['XIVbnLevel11'];
-              }elseif($value==12){
-                     $value = $result['XIVbnLevel12'];
-              }
-              $sms="ส่งคำสั่งปรับความสว่างกำหนดเองระดับ ".$value;
-       }
-       
      
-     
-
 
        $sql = "DECLARE @tCode nvarchar(100)
   EXEC dbo. STP_NWLtGetMaxCode 'TDocTCmdSchedule', @tCode OUTPUT

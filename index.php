@@ -1,3 +1,4 @@
+echo "OK";
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
 <?php
@@ -37,7 +38,7 @@ function ThDate()
 		พ.ศ. $years";
 }
 
-echo ThDate(); // แสดงวันที่
+//echo ThDate(); // แสดงวันที่
 
 ?>
 <!doctype html>
@@ -420,7 +421,7 @@ echo ThDate(); // แสดงวันที่
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                             <label for="inputPassword" class="sr-only">Password</label>
                             <input type="password" id="inputPassword" name="inputPassword" class="form-control" autocomplete="off" placeholder="Password" required>
-                            <i style="display_: none; text-align: right; cursor: pointer; position: absolute; top: 12px; left: 305px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
+                            <i style="display_: none; text-align: right; cursor: pointer; position: relative; top: -28px; left: 143px;" class="far fa-eye fa-eye-slash" id="togglePassword"></i>
                         </div>
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                           
@@ -463,6 +464,7 @@ echo ThDate(); // แสดงวันที่
         </div>
     </div>
 </main><!-- /.container -->
+<?php include "footer.php"; ?>
 <div class="modal" id="myModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

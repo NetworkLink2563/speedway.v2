@@ -62,12 +62,6 @@ justify-content: right;
 .flex-head{
 display: flex;
 justify-content: center;
-
-
-}
-
-.dt-search{
-    display: none;
 }
 
 #dt-search-0{
@@ -99,24 +93,38 @@ table th{
         transition: 0.5s;
     }
 
-input .btnsearch{
- background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
+.dt-search input{
+background-image: url('img/icon/mag.png');
  background-repeat: no-repeat;
- background-size: 15px;
- background-position: left 12px top 10px;
- text-indent: 20px;
-}
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0.1rem 0.3rem 0rem;
+    }
+
+
+
+
+    #dt-search-0{
+        width: 255px;
+        font-size: .9rem;
+    }
+
+    .dt-empty{
+        text-align: center;
+    }
 </style>
 
-<div class="container" style="position: relative; top: 80; ">
+<div class="container" style="position: relative; top: 80; padding-bottom: 3rem;">
 
 <div style=" text-align: center; margin-bottom: 1rem; border-bottom: 3px double #cccc; padding: 1rem; font-size: 1.3rem;">
-            <img src="/speedway/img/icon/setting2.png" height="25" alt="Responsive image" style="">ตั้งค่า
+            <img src="./img/icon/cog.png" height="25" alt="Responsive image" style=""> ตั้งค่า
         </div>
 
         
-        <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; margin: 0rem 0rem 1rem 0rem;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><img style="margin-right: .4rem;" src="img/person.png" width="20" alt=""> ผู้ใช้งาน</a>
+        <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px; margin: 0rem 0rem 1rem 0rem; ">
+            <a class="tablinks2 active " style="cursor: context-menu; color: white; text-decoration: none;"><img style="margin-right: .4rem; " src="img/person.png" width="20" alt=""> ผู้ใช้งาน</a>
         </div>
 
 
@@ -147,11 +155,11 @@ input .btnsearch{
          
                     
 
-                    <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px;">
+                    <!-- <div  class="search"  style="width: 255px; padding: 0; float: right; padding-right: 15px;padding-left: 15px;"> -->
 
 <!-- <img style="margin: 0 0.5rem; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s" width="15" alt=""> -->
-<input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" aria-controls="VMSTable"></input>
-</div>
+<!-- <input type="text" class="form-control btnsearch" name="" style="width: 100%; font-size: 0.9rem;" placeholder="กรอกข้อความที่ต้องการค้นหา..." id="dt-search-0" aria-controls="VMSTable"></input>
+</div> -->
 
 
 
@@ -337,15 +345,16 @@ input .btnsearch{
     </div>
 </div>
 
+<?php include('footer.php'); ?>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="dist/js/jquery-3.7.1.js"></script>
-<script src="dist/js/popper.min.js"></script>
-<script src="dist/js/main_speed.js"></script>
-<script src="dist/js/bootstrap.min.js"></script>
-<script src="dist/js/dataTables.js"></script>
-<script src="dist/js/dataTables.bootstrap4.js"></script>
+<script src="./dist/js/jquery-3.7.1.js"></script>
+<script src="./dist/js/popper.min.js"></script>
+<script src="./dist/js/main_speed.js"></script>
+<script src="./dist/js/bootstrap.min.js"></script>
+<script src="./dist/js/dataTables.js"></script>
+<script src="./dist/js/dataTables.bootstrap4.js"></script>
 
 <script>
     function show_modal(e)
@@ -421,11 +430,11 @@ input .btnsearch{
         evt.currentTarget.className += " active";
     }
     // Basic example
-    $(document).ready(function () {
+    // $(document).ready(function () {
 
-        new DataTable('#UserTable');
-        new DataTable('#VMSTable');
-    });
+    //     new DataTable('#UserTable');
+    //     new DataTable('#VMSTable');
+    // });
 
     function disableUser(userCodeInput){
         var hashEncode='76605981da8c7170dd309c591438288b';
@@ -560,5 +569,30 @@ function isactive(XVUsrCode){
         });
 }
 </script>
+
+<script>
+$(document).ready(function() {
+new DataTable('#UserTable', {
+    order: [[0, 'desc']],
+    
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
+             
+});
+});
+</script>
+
+
 </body>
 </html>

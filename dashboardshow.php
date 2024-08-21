@@ -167,16 +167,17 @@ $data = '<table class="table table-striped table-hover">
             ';
 
 
-$firstSQL = "SELECT  vms.XVVmsCode, vms.XVVmsName, vms.XVSupCode, vms.XBVmsIsActive, vms.XIVmsPixelW, vms.XIVmsPixelH, vms.XIVmsSizeW, vms.XIVmsSizeH, vms.XVVmsSta, vms.XVVmsType, dbo.TMstMCustomer.XVCstCode, 
-            dbo.TMstMMsgSize.XIMssWPixel, dbo.TMstMMsgSize.XIMssHPixel, dbo.TMstMUser.XVUsrCode
-            FROM            dbo.TMstMItmVMS AS vms INNER JOIN
+
+$firstSQL = "  SELECT  vms.XVVmsCode, vms.XVVmsName, vms.XVSupCode, vms.XBVmsIsActive, vms.XIVmsPixelW, vms.XIVmsPixelH, vms.XIVmsSizeW, vms.XIVmsSizeH, vms.XVVmsSta, vms.XVVmsType, dbo.TMstMCustomer.XVCstCode, 
+            dbo.TMstMMsgSize.XIMssWPixel, dbo.TMstMMsgSize.XIMssHPixel
+            FROM     dbo.TMstMItmVMS AS vms INNER JOIN
             dbo.TMstMSetupPoint ON dbo.TMstMSetupPoint.XVSupCode = vms.XVSupCode INNER JOIN
             dbo.TMstMProject ON dbo.TMstMProject.XVPrjCode = dbo.TMstMSetupPoint.XVPrjCode INNER JOIN
             dbo.TMstMSubDistrict ON dbo.TMstMSubDistrict.XVSdtCode = dbo.TMstMSetupPoint.XVSdtCode INNER JOIN
             dbo.TMstMCustomer ON dbo.TMstMCustomer.XVCstCode = dbo.TMstMProject.XVCstCode INNER JOIN
-            dbo.TMstMUser ON dbo.TMstMUser.XVCstCode = dbo.TMstMCustomer.XVCstCode INNER JOIN
-            dbo.TMstMMsgSize ON dbo.TMstMMsgSize.XVMssCode = vms.XVMssCode
-            WHERE        (dbo.TMstMUser.XVUsrCode = '" . $_SESSION['user'] . "')";
+            
+            dbo.TMstMMsgSize ON dbo.TMstMMsgSize.XVMssCode = vms.XVMssCode   GROUP BY vms.XVVmsCode, vms.XVVmsName, vms.XVSupCode, vms.XBVmsIsActive, vms.XIVmsPixelW, vms.XIVmsPixelH, vms.XIVmsSizeW, vms.XIVmsSizeH, vms.XVVmsSta, vms.XVVmsType, dbo.TMstMCustomer.XVCstCode, 
+            dbo.TMstMMsgSize.XIMssWPixel, dbo.TMstMMsgSize.XIMssHPixel";
 $querySQL = sqlsrv_query($conn, $firstSQL);
 $vmscodearray = "";
 $i = 1;
@@ -385,7 +386,7 @@ while ($resultSQL = sqlsrv_fetch_array($querySQL, SQLSRV_FETCH_ASSOC)) {
     $data .= '<td ' . $tx8 . '  id="C7' . $XVVmsCode . '"></td>';
     $data .= '<td ' . $tx9 . '  id="C8' . $XVVmsCode . '"></td>';
     $data .= '<td ' . $tx10 . ' id="C9' . $XVVmsCode . '"></td>';
-    $data .= '<td ' . $tx11 . ' id="C10' . $XVVmsCode . '"></td>';
+    $data .= '<td ' . $tx11 . ' id="C10' . $XVVmsCode . '"><a style="color:red;" id="link'.$XVVmsCode.'" disabled onclick="newSrc(\'' . $XVVmsCode . '\');">เรียกดู</a></td>';
     $data .= '<td ' . $tx15 . ' id="C15' . $XVVmsCode . '"></td>';
     $data .= '<td ' . $tx12 . ' id="C11' . $XVVmsCode . '"></th>';
     $data .= '<td ' . $tx13 . ' id="C12' . $XVVmsCode . '"></td>';

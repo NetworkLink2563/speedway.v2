@@ -326,7 +326,7 @@ hr {
 
 
     <div class="col-12 shadow" style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem; border-radius: 5px;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><img src="/speedway/img/icon/report.png" height="25" alt="Responsive image"> รายงานสถานะป้าย</a>
+            <a class="tablinks2 active " style="cursor: context-menu; color: white;"><img src="./img/icon/report.png" height="25" alt="Responsive image"> รายงานสถานะป้าย</a>
     </div>
 
     <?php if($pri_r != 0){?>
@@ -383,7 +383,7 @@ while($arr=sqlsrv_fetch_array($uq, SQLSRV_FETCH_ASSOC)){ ?>
 
     <?php }else{echo'<div style="text-align:center;padding: 10%;"">ไม่มีสิทธิ์การเข้าถึงข้อมูล หรือติดต่อเจ้าหน้าที่เพื่อขอสิทธิ์</div>';} ?>
     </div>
-    
+    <?php include "footer.php"; ?>
 <?php
 $conditions1 = [];
 $WHERE1="";

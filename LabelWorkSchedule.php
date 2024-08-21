@@ -177,6 +177,10 @@ table td {
 table  th {
     border: 1px solid #cccc;
 }
+
+.tb table td{
+border: none;
+}
 </style>
 
 <div class="container" style="position: relative; top: 75;">
@@ -184,14 +188,14 @@ table  th {
 
 
 <div style="margin: .4rem; text-align: center; border-bottom: 3px double #cccc; padding: 1rem;">
-            <img src="/speedway/img/icon/setting.png" height="25" alt="Responsive image"> ตารางการทำงานของป้าย
+            <img src="./img/icon/setting.png" height="25" alt="Responsive image"> ตารางการทำงานของป้าย
         </div>
 
         <?php if($pri_r != 0){ ?>
     <div class="flex-container" >
 
     <div class="col-12 " style="border-radius: 5px; display: flex; flex-direction: column; align-items: center; padding: 0.5rem; background-color: #034672; color: white; font-size: 1.2rem;">
-            <a class="tablinks2 active " style="cursor: context-menu;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายการVMS</a>
+            <a class="tablinks2 active " style="cursor: context-menu; color: white; text-decoration: none;"><i class="fa fa-list-alt" aria-hidden="true"></i> รายการVMS</a>
         </div>
 
     <!-- <div class="tab col-12" style="text-align: center;">
@@ -229,10 +233,10 @@ table  th {
                         <td>
 
                             <?php
-                               $Disable="pointer-events: none;";
-                               if($_SESSION["XBDmnIsControl"]==1){
-                                  $Disable="";
-                               }
+                               $Disable="";
+                              // if($_SESSION["XBDmnIsControl"]==1){
+                              //  $Disable="";
+                              // }
                             ?>
                             <div align="center" class="menu">
                                 <?php if($pri_w != 0){ ?>
@@ -356,12 +360,12 @@ table  th {
         <div class="modal-content">
             <div class="modal-header" style="display: flex; align-items: center; justify-content: center; background-color: #ffffff;">
 
-            <div class="col-11">
+            <div class="col">
                 <h5 style="text-align: center;" class="modal-title">ความสว่างการแสดงผล</h5>
                 </div>
 
-                <div class="col">
-                <button type="button" style="padding: 0;" class="close" data-dismiss="modal">&times;</button>
+                <div class="col-1" style="text-align: center;">
+                <button type="button" style="padding: 0;" class="btn-close" data-dismiss="modal"></button>
                 </div>
             </div>
 
@@ -381,7 +385,7 @@ table  th {
                     <div class="col-sm-3">
                     </div>
                     <div class="col-sm-2" style="margin-top: 5">วันที่ดำเนินการ</div>
-                    <div class="col-sm-6" style="margin-top:7px;margin-left:-20px">
+                    <div class="col-sm-6 tb" style="margin-top:7px;margin-left:-20px">
                         <table width="101%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td><input id="checkboxBrightnessMon" type="checkbox" name="checkboxBrightnessMon" class="checkboxBrightnessMon" value="checkbox" />
@@ -444,12 +448,12 @@ table  th {
         <div class="modal-content" >
             <div class="modal-header" style="display: flex; align-items: center; justify-content: center; background-color: #ffffff;">
 
-            <div class="col-11">
+            <div class="col">
                 <h5 style="text-align: center;" class="modal-title">ระบบไฟฟ้าป้าย</h5>
                 </div>
 
-                <div class="col">
-                <button type="button" style="padding: 0;" class="close" data-dismiss="modal">&times;</button>
+                <div class="col-1" style="text-align: center;">
+                <button type="button" style="padding: 0;" class="btn-close" data-dismiss="modal"></button>
                 </div>
                 
             </div>
@@ -467,7 +471,7 @@ table  th {
                     <div class="col-sm-3">
                     </div>
                     <div class="col-sm-2" style="margin-top: 5">วันที่ดำเนินการ</div>
-                    <div class="col-sm-6" style="margin-top:7px;margin-left:-20px">
+                    <div class="col-sm-6 tb" style="margin-top:7px;margin-left:-20px">
                         <table width="101%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td><input id="checkboxElectricalMon" type="checkbox" name="checkboxElectricalMon" class="checkboxElectricalMon" value="checkbox" />
@@ -512,12 +516,12 @@ table  th {
         <div class="modal-content">
         <div class="modal-header" style="display: flex; align-items: center; justify-content: center; background-color: #ffffff;">
 
-                <div class="col-11">
+                <div class="col">
                 <h5 style="text-align: center;">การแสดงผล</h5>
                 </div>
 
-                <div class="col">
-                <button type="button" style="padding: 0;" class="close" data-dismiss="modal">&times;</button>
+                <div class="col-1" style="text-align: center;">
+                <button type="button" style="padding: 0;" class="btn-close" data-dismiss="modal"></button>
                 </div>
             </div>
             <div class="modal-body" style="background-color: #f5f5f5;">
@@ -534,7 +538,7 @@ table  th {
                     <div class="col-sm-3">
                     </div>
                     <div class="col-sm-2" style="margin-top: 5">วันที่ดำเนินการ</div>
-                    <div class="col-sm-6" style="margin-top:7px;margin-left:-20px">
+                    <div class="col-sm-6 tb" style="margin-top:7px;margin-left:-20px">
                         <table width="101%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td><input id="checkboxMornitorMon" type="checkbox" name="checkboxMornitorMon" class="checkboxMornitorMon" value="checkbox" />
@@ -573,7 +577,7 @@ table  th {
     </div>
 </div>
 
-
+ <?php include "footer.php"; ?>
 
 <div class="modal py-5"  id="myModalShowData" >
     <div class="modal-dialog modal-lg"  >

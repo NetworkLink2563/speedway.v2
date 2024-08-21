@@ -389,26 +389,49 @@ table th{
         transition: 0.5s;
     }
 
+    .dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0rem 0.3rem 0rem;
+    }
+
+
+    #dt-search-0{
+        width: 255px;
+        font-size: .9rem;
+    }
+
+    table tr td {
+        border: 1px solid #cccc;
+    }
+
+    table tr th {
+        border: 1px solid #cccc;
+    }
 </style>
 
 
 
 
-<div class="container" style="position: relative; top: 75;">
+<div class="container" style="position: relative; top: 75; padding-bottom: 3rem;">
 
 
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex;">
 
             <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-            <button onclick="location.href='/speedway/messagepublicrelationsframe.php'" class="btn btn-warning btn-hover shadow" style=""> กลับ Step2 จัดรูปแบบข้อความ <<</button>
+            <a href="./messagepublicrelationsframe.php" class="btn btn-warning btn-hover shadow" style=""> กลับ Step2 จัดรูปแบบข้อความ <<</a>
             </div>
 
             <div class="col-4" style="text-align: center;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image"> step3 ชุดข้อความ
+            <img src="./img/icon/edit.png" height="25" alt="Responsive image"> step3 ชุดข้อความ
             </div>
 
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
-            <button onclick="location.href='/speedway/messagepublicrelationsplay.php'" class="btn btn-success btn-hover shadow" style="">>> Step4 ข้อความป้ายประชาสัมพันธ์</button>
+            <a href="./messagepublicrelationsplay.php" class="btn btn-success btn-hover shadow" style="">>> Step4 ข้อความป้ายประชาสัมพันธ์</a>
             </div>
 
         </div>
@@ -418,7 +441,7 @@ table th{
     <div class="flex-header">
 
 
-        <div class="col-2"  id="message" id="container" style="padding: 0; border-right: 3px double #cccc;">
+        <div class="col-2"  id="message" id="container" style="padding: 0; border-right: 3px double #cccc; margin-right: .5rem;">
             <div class="flex-btn" style="">
             
                     <div class="col-12"  style="padding: .5rem .5rem;">
@@ -446,7 +469,7 @@ table th{
                                     <th>ขนาด
                                     </th>
                                    
-                                    <th ></th>
+                                    <!-- <th ></th> -->
                                     <th >ลบ</th>
                                     <th >แก้ไข</th>
                                     
@@ -473,7 +496,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                                     <td style="">
                                         <?php echo $result['XIMssWPixel']; ?>x<?php echo $result['XIMssHPixel']; ?></td>
                                     
-                                    <td></td>
+                                    <!-- <td></td> -->
                 
                     <td>
 
@@ -486,7 +509,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                         <div style="margin-top: 5px">
                             
                         <?php if($pri_del != 0){ ?>
-                                <a href="#" class="del-item" style="color: #8d9499;<?php echo $Disable;?>"
+                                <a href="#" class="del-item" style="color: #8d9499;"
                                 onclick="deleteMSG('<?php echo $result['XVPltCode']; ?>');" ><i class="fa fa-trash-o"
                                     aria-hidden="true"></i></a>
                                 <?php } ?>
@@ -521,12 +544,12 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
       <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
 
       <div class="col-11" style="text-align: center; padding: 0;">
-                    <img src="img/icon/computer.png" height="25" alt="Responsive image"><span style="font-size: 1.2rem;"> ชุดการแสดงป้าย/สร้างชุดการแสดงป้าย</span>
+                    <img src="./img/icon/computer.png" height="25" alt="Responsive image"><span style="font-size: 1.2rem;"> ชุดการแสดงป้าย/สร้างชุดการแสดงป้าย</span>
                     </div>
 
-                    <div class="col-1" style="">
-                    <button type="button" class="close" id="close-add" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <div class="col-1" style="text-align: center;">
+                    <button type="button" class="btn-close" id="close-add" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
                     </button>
                 </div>
       
@@ -544,8 +567,12 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                     </div>
 
                     <div class="form-group form-inline col-5" style="justify-content: start;">
+                        <div>
                         <label style="margin-right: 15px;" for="XVPltName">ชื่อชุดแสดงป้าย:</label>
-                        <input style="width:50%" type="text" class="form-control" id="XVPltName">
+                        </div>
+                        <div style="display: inline-block; width:100%;">
+                        <input style="" type="text" class="form-control" id="XVPltName">
+                        </div>
                     </div>
 
                     <div class="col-2 text-center" >
@@ -613,7 +640,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                     <div class="col-8" style="padding: 0;">
                        
                        <div  style="border-style: solid;border-color:#DCDCDC;margin:5px;padding:5px;border-width: 2px;text-align: right;">
-                       <div class="table-responsive">
+                       <div class="table table-responsive">
                            <table id="myTable" class="table" >
                            <thead>
                                 <tr style="font-size: 10pt">
@@ -670,10 +697,14 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
+        <div class="col-11" style="text-align: center;">
         <h5 class="modal-title">เลือกขนาดป้าย</h5>
-        <button type="button" id="closemodal" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        </div>
+        <div class="col-1">
+        <button type="button" id="closemodal" class="btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
         </button>
+        </div>
       </div>
       <div class="modal-body text-center">
      
@@ -718,7 +749,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
 
 
 
-
+<?php include('footer.php'); ?>
 
   
 
@@ -740,44 +771,89 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
 function deleteMSG(XVPltCode) {
   
  
-            $.ajax({
-                type: "POST",
-                url: "messagepublicrelationsframegroupfunction.php",
-                data: {
-                    'deletesms':'deletesms',
-                    'XVPltCode': XVPltCode
-                },
-                success: function(result) {
-                   
-                    const obj = JSON.parse(result);
-                    var Return=obj.Return;
-                    if(Return=='DeleteSuccess'){
-                        
                         Swal.fire({
-                            icon: "success",
-                            title: "",
-
-                            text: "ลบสำเร็จ",
-                            showDenyButton: false,
-                            showCancelButton: false,
-                            confirmButtonText: "Save",
-                            denyButtonText: `Don't save`
+                            title: "คุณต้องการลบข้อมูลหรือไม่?",
+                            text: XVPltCode,
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#198754",
+                            cancelButtonColor: "#d33",
+                            cancelButtonText:"ยกเลิก",
+                            confirmButtonText: "ใช่"
                             }).then((result) => {
-                        
-                                if (result.isConfirmed) {
-                                
-                                    window.location.href = 'messagepublicrelationsframegroup.php';
-                                }
+                            if (result.isConfirmed) {
+
+                                $.ajax({
+                                type: "POST",
+                                url: "messagepublicrelationsframegroupfunction.php",
+                                data: {
+                                    'deletesms':'deletesms',
+                                    'XVPltCode': XVPltCode
+                                },
+                                success: function(result) {
+                                    
+                                const obj = JSON.parse(result);
+                                var Return=obj.Return;
+        
+                                 if(Return =='DeleteSuccess'){
+                                Swal.fire({
+                                title: "ลบสำเร็จ!",
+                                text: "ข้อความของคุณถูกลบแล้ว",
+                                icon: "success",
+                                confirmButtonText: "ตกลง"
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        window.location.href = 'messagepublicrelationsframegroup.php';
+                                    }
+                                })
+                            }else{
+                                 Swal.fire({
+                                 icon: "error",
+                                 title: "ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย<br>" +Return,
+                                 confirmButtonText: "ตกลง",
+                                 text: "Something went wrong!",
+                                 footer: '<a href="#">Why do I have this issue?</a>'
+                                });
+                            //  Swal.fire("ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย "+Return, "", "warning");
+                            }
+                            }
                             });
-                    }else{
-                             Swal.fire("ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย "+Return, "", "warning");
-                    }
+                            
+
+
+                        // Swal.fire({
+                        //     icon: "success",
+                        //     title: "",
+
+                        //     text: "ลบสำเร็จ",
+                        //     showDenyButton: false,
+                        //     showCancelButton: false,
+                        //     confirmButtonText: "Save",
+                        //     denyButtonText: `Don't save`
+                        //     }).then((result) => {
+                        
+                                // if (result.isConfirmed) {
+                                //     Swal.fire({
+                                // title: "Deleted!",
+                                // text: "Your file has been deleted.",
+                                // icon: "success"
+                                //     window.location.href = 'messagepublicrelationsframegroup.php';
+                                // }
+                            //});
+            //         }else{
+            //                  Swal.fire("ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย "+Return, "", "warning");
+            //         }
                     
-                }
-            });
+            //     }
+            
+                        }
+                                                    
+             });
        
+
     
 }
+
 function AutoId(){
         let input = document.getElementsByName('idarray[]');
         let inputbtnup= document.getElementsByName('btnup[]');
@@ -881,7 +957,7 @@ function AddRight(XVMsfCode,XVMsfName){
   cell1.innerHTML='<div> <input   type="text"  name="idarray[]" size="4" style="border-radius: 5px;border-color:#DCDCDC;background-color:rgb(220, 220, 220);" readonly></div>'; 
   cell2.innerHTML='<div> <input type="text"  name="codearray[]" size="14" style="border-radius: 5px;border-color:#DCDCDC;background-color:rgb(220, 220, 220);" value="'+XVMsfCode+'" readonly></div>';
   cell3.innerHTML='<div> <input type="text"  name="ckarray"style="border-radius: 5px;border-color:#DCDCDC;background-color:rgb(220, 220, 220);" value="'+XVMsfName+'" title="'+XVMsfName+'" readonly></div>';
-  cell4.innerHTML='<div style="padding-left:12px;padding-top:8px;"><input type="checkbox" id="'+CK+'" onclick="CheckBox('+tablerow+')"><input type="text" id="'+incheckarray+'" name="incheckarray[]" value="0" hidden></div>';
+  cell4.innerHTML='<div style=""><input type="checkbox" id="'+CK+'" onclick="CheckBox('+tablerow+')"><input type="text" id="'+incheckarray+'" name="incheckarray[]" value="0" hidden></div>';
   cell5.innerHTML='<div> <input type="text" id="'+DS+'" class="datetimepicker" size="18" style="border-radius: 5px;border-color:#DCDCDC;background-color:rgb(220, 220, 220);" name="sdatearray[]"></div>';
   cell6.innerHTML='<div> <input type="text" id="'+DE+'"class="datetimepicker"  size="18" style="border-radius: 5px;border-color:#DCDCDC;background-color:rgb(220, 220, 220);" name="edatearray[]"></div>';
   cell7.innerHTML='<div><input type="number"  id="playtime" min="1" max="1000" value="5" style="border-radius: 5px;border-color:#DCDCDC;" name="durationarray[]"></div>';
@@ -1087,6 +1163,29 @@ $(document).ready(function() {
     $("#modal-add").modal("hide")
     })
 </script>
+
+<script>
+$(document).ready(function() {
+new DataTable('#VMSTable', {
+    order: [[0, 'desc']],
+    
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
+             
+});
+});
+    </script>
 
 </body>
 

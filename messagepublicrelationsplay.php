@@ -377,21 +377,47 @@ table td{
 font-size: 1rem;
 text-align: center;
 }
+
+.dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0.1rem 0.3rem 0rem;
+    }
+
+
+
+
+    #dt-search-0{
+        width: 255px;
+        font-size: .9rem;
+    }
+
+    table tr th {
+        border: 1px solid #cccc;
+    }
+
+    table tr td {
+        border: 1px solid #cccc;
+    }
 </style>
 
 
 
-<div class="container" style="position: relative; top: 75;">
+<div class="container" style="position: relative; top: 75; padding-bottom: 3rem;">
 
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex;">
 
 
             <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
-            <button onclick="location.href='/speedway/messagepublicrelationsframegroup.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 ชุดข้อความ <<</button>
+            <a href="./messagepublicrelationsframegroup.php" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 ชุดข้อความ <<</a>
             </div>
 
             <div class="col-4" style="text-align: center;">
-            <img src="img/icon/computer.png" height="25" alt="Responsive image"> step4 ข้อความป้ายประชาสัมพันธ์
+            <img src="img/icon/edit.png" height="25" alt="Responsive image"> step4 ข้อความป้ายประชาสัมพันธ์
             </div>
 
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
@@ -413,7 +439,7 @@ text-align: center;
 
         <div  id="message"  style="" id="container">
       
-            <div class="col-12" style=" padding: 0; border-right: 3px double #cccc;e" >
+            <div class="col-12" style=" padding: 0; border-right: 3px double #cccc; padding-right: .5rem;" >
                     <table id="VMSTable" class="table table-striped table-hover">
                             <thead>
                                 <tr >
@@ -465,21 +491,26 @@ text-align: center;
 
 
                 </div>
-                <div class="col-7" style="">
+                <div class="col-7" style="padding: 0;">
                     <div id="smsdetail">
                            <input type="hidden" id="XVVmsCode">
                            
-                           <div class="row">
+                           <div class="row" style="margin: .5rem;">
                             <h5 style="text-align: center;">รหัสป้าย</h5>
-                           <div id="vmsdetail" class="text-center" style="background-color: #efefefcc; font-size: 1.2rem; border-bottom: 1px solid #cccc; margin-bottom: .5rem; font-weight: 300;"></div>
+                           <div id="vmsdetail" class="text-center" style="padding: .5rem; background-color: #efefefcc; font-size: 1.2rem; border-bottom: 1px solid #cccc; margin-bottom: .5rem; font-weight: 300;"></div>
                            
 
-                              <div class="col-6" >
+                              <div class="col-4" style="text-align: center;" >
                                 <?php if($pri_w != 0){?>
-                                <button type="button" onclick="ShowSms()" style=" float: left;" class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                                <button type="button" onclick="ShowSms()" style=" " class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
                                 <?php } ?>
                               </div>
-                              <div class="col-6 text-right" >
+                              <div class="col-4" style="text-align:center;">
+                                <?php if($pri_w != 0){ ?>
+                                <button type="button" onclick="CancelSms()" style=" margin-right: 10px" class="btn btn-danger shadow">ยกเลิกข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                                <?php } ?>
+                                </div>
+                              <div class="col-4 " style="text-align: center;">
                               <?php if($pri_w != 0){?>
                                   <button type="button" onclick="sendmessageToVMS()"  class="btn btn-success shadow">ส่งข้อความขึ้นป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;color:white" class="fa fa-cloud-upload"></i></button>
                                   <?php } ?>
@@ -513,7 +544,7 @@ text-align: center;
         <h4 class="modal-title">เลือกข้อความป้าย</h4>
         </div>
         <div class="col-1">
-        <button type="button" id="close-sms" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" id="close-sms" class="btn-close" data-dismiss="modal"></button>
         </div>
       </div>
       <div class="modal-body text-center">
@@ -529,6 +560,8 @@ text-align: center;
     </div>
   </div>
 </div>
+
+<?php include('footer.php'); ?>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -755,6 +788,31 @@ function sendmessageToVMS() {
     })
 
 </script>
+
+<script>
+
+$(document).ready(function() {
+new DataTable('#VMSTable', {
+    order: [[0, 'desc']],
+    
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
+             
+});
+});
+    </script>
+
 </body>
 
 </html>
