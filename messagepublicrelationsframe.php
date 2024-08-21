@@ -379,7 +379,11 @@ table th{
         height: 100vh;
     }
 
+<<<<<<< HEAD
 /* .flex-table{
+=======
+.flex-table{
+>>>>>>> origin/main
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -458,6 +462,7 @@ background-image: url('img/icon/mag.png');
         display: none;
      }
 
+<<<<<<< HEAD
      table tr td {
         border: 1px solid #cccc;
     }
@@ -465,6 +470,8 @@ background-image: url('img/icon/mag.png');
     table tr th {
         border: 1px solid #cccc;
     }
+=======
+>>>>>>> origin/main
      /* #myModal .modal-backdrop{
         display: none;
      } */
@@ -482,7 +489,11 @@ background-image: url('img/icon/mag.png');
             </div>
             
             <div class="col-4" style="text-align: center;">
+<<<<<<< HEAD
             <img src="./img/icon/edit.png" height="25" alt="Responsive image"> Step 2 จัดรูปแบบข้อความ
+=======
+            <img src="img/icon/edit.png" height="25" alt="Responsive image"> Step 2 จัดรูปแบบข้อความ
+>>>>>>> origin/main
             </div>
 
             
@@ -993,7 +1004,11 @@ background-image: url('img/icon/mag.png');
       <h5 id="Example_Title" class="modal-title"></h5>
                                                 </div>
         <div class="col-1">
+<<<<<<< HEAD
         <button type="button" id="hidemodalex" class="btn-close" data-dismiss="modal"></button>
+=======
+        <button type="button" id="hidemodalex" class="close" data-dismiss="modal">&times;</button>
+>>>>>>> origin/main
         </div>
       </div>
 
@@ -1223,9 +1238,13 @@ function SelSms(XVMsgTyp,XVMsgCode){
   
     var framenumber=$('#framenumber').val();
     var framesmsid=$('#framesmsid').val();
+<<<<<<< HEAD
     var url='ifarmeimg.php?msg='+XVMsgCode+'&type='+XVMsgTyp;
 
 
+=======
+    var url='ifarmeimg.php?msg='+btoa(XVMsgCode);
+>>>>>>> origin/main
     if(framenumber==1){ 
        document.getElementById("frame1_section3_show").src = url;
        $('#frame1_section3_XVMsgCode').val(XVMsgCode);

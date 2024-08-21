@@ -119,7 +119,11 @@ background-image: url('img/icon/mag.png');
 <div class="container" style="position: relative; top: 80; padding-bottom: 3rem;">
 
 <div style=" text-align: center; margin-bottom: 1rem; border-bottom: 3px double #cccc; padding: 1rem; font-size: 1.3rem;">
+<<<<<<< HEAD
             <img src="./img/icon/cog.png" height="25" alt="Responsive image" style=""> ตั้งค่า
+=======
+            <img src="/speedway/img/icon/cog.png" height="25" alt="Responsive image" style=""> ตั้งค่า
+>>>>>>> origin/main
         </div>
 
         

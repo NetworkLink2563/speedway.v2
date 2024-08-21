@@ -392,6 +392,7 @@ background-image: url('img/icon/mag.png');
         font-size: .9rem;
     }
     
+<<<<<<< HEAD
     table tr td {
         border: 1px solid #cccc;
     }
@@ -399,6 +400,8 @@ background-image: url('img/icon/mag.png');
     table tr th {
         border: 1px solid #cccc;
     }
+=======
+>>>>>>> origin/main
 </style>
 
 
@@ -408,12 +411,20 @@ background-image: url('img/icon/mag.png');
 
 
 <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
+<<<<<<< HEAD
             <a href='./messagetrafficsframegroup.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 สร้างชุดป้ายจราจร <<</a>
+=======
+            <a href='http://192.168.55.11/speedway.v2/messagetrafficsframegroup.php'" class="btn btn-primary btn-hover shadow" style="background-color: #006eb4;">กลับ Step3 สร้างชุดป้ายจราจร <<</a>
+>>>>>>> origin/main
             </div>
 
 
     <div class="col-4" style="text-align: center;">
+<<<<<<< HEAD
     <img src="./img/icon/edit.png" height="25" alt="Responsive image">Step 4 ข้อความป้ายจราจร
+=======
+    <img src="/speedway/img/icon/edit.png" height="25" alt="Responsive image">Step 4 ข้อความป้ายจราจร
+>>>>>>> origin/main
         </div>
 
 
