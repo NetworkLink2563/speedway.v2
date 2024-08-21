@@ -445,7 +445,19 @@ background-image: url('img/icon/mag.png');
             </div>
 
             <div class="next-btn col"  style="text-align: right; padding: 0; ">
+<<<<<<< HEAD
            <a href='./messagetrafficsframe.php'" class="btn btn-success btn-hover shadow" style="">>> Step2 จัดรูปแบบข้อความจราจร</a>
+=======
+<<<<<<< HEAD
+           <a href='./messagetrafficsframe.php'" class="btn btn-success btn-hover shadow" style="">>> Step2 จัดรูปแบบข้อความจราจร</a>
+=======
+<<<<<<< HEAD
+           <a href='./messagetrafficsframe.php'" class="btn btn-success btn-hover shadow" style="">>> Step2 จัดรูปแบบข้อความจราจร</a>
+=======
+           <a href='http://192.168.55.11/speedway.v2/messagetrafficsframe.php'" class="btn btn-success btn-hover shadow" style="">>> Step2 จัดรูปแบบข้อความจราจร</a>
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
             </div>
 
         </div>

@@ -1,3 +1,10 @@
+<style>
+     #dt-search-1{
+        width: 235px;
+        font-size: .9rem;
+    }
+</style>
+
 <?php
 ob_start();
 session_start();
@@ -358,20 +365,19 @@ function SaveFrame3( $XVMsfCode){
    }
    function showsmssel(){
          include "lib/DatabaseManage.php";
-         $data='<table id="VMSTable" class="table" style="width:100%;">
+         $data='<table id="VMSTable2" class="table" style="width:100%;">
          <thead>
              <tr style="font-size: 10pt">
                  <th class="th-sm">รหัสข้อความ
                  </th>
                  <th class="th-sm">ชื่อข้อความ
                  </th>
-                 <th class="th-sm" style="text-align: left">ตัวอย่าง
+                 <th class="th-sm" style="text-align: center">ตัวอย่าง
                  </th>
                  <th class="th-sm" style="text-align: center">ขนาด
                  </th>
                  <th class="th-sm" style="text-align: center">ประเภท
                  </th>
-                 <th class="th-sm" style="text-align: center"></th>
                  <th class="th-sm" style="text-align: center"></th>
              </tr>
          </thead>
@@ -399,7 +405,19 @@ function SaveFrame3( $XVMsfCode){
 		$XVMsgFileName=$result['XVMsgFileName'];
                 $XIMssWPixel=$result['XIMssWPixel'];
                 $XIMssHPixel=$result['XIMssHPixel'];
+<<<<<<< HEAD
                 $url="ifarmeimg.php?msg=$XVMsgFileName&type=$XVMsgType";
+=======
+<<<<<<< HEAD
+                $url="ifarmeimg.php?msg=$XVMsgFileName&type=$XVMsgType";
+=======
+<<<<<<< HEAD
+                $url="ifarmeimg.php?msg=$XVMsgFileName&type=$XVMsgType";
+=======
+                $url="ifarmeimg.php?msg=$id&type=2";
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
                 $url."&wp=".base64_encode($result['XIMssWPixel']);
                 $url."&hp=".base64_encode($result['XIMssHPixel']);
                 $XVMsgName=$result['XVMsgName'];
@@ -428,3 +446,26 @@ function SaveFrame3( $XVMsfCode){
    }
   
 ?>
+
+<script>
+    $(document).ready(function() {
+new DataTable('#VMSTable2', {
+    order: [[0, 'desc']],
+    
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
+             
+});
+});
+</script>

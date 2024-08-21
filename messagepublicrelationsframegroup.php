@@ -404,6 +404,13 @@ background-image: url('img/icon/mag.png');
         width: 255px;
         font-size: .9rem;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+>>>>>>> origin/main
 
     table tr td {
         border: 1px solid #cccc;
@@ -412,6 +419,14 @@ background-image: url('img/icon/mag.png');
     table tr th {
         border: 1px solid #cccc;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
 </style>
 
 
@@ -423,6 +438,13 @@ background-image: url('img/icon/mag.png');
 <div style=" text-align: center;  border-bottom: 3px double #cccc; padding: 1rem; margin: .4rem; display: flex;">
 
             <div class="next-btn col-4"  style="text-align: left; padding: 0; ">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+>>>>>>> origin/main
             <a href="./messagepublicrelationsframe.php" class="btn btn-warning btn-hover shadow" style=""> กลับ Step2 จัดรูปแบบข้อความ <<</a>
             </div>
 
@@ -432,6 +454,23 @@ background-image: url('img/icon/mag.png');
 
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
             <a href="./messagepublicrelationsplay.php" class="btn btn-success btn-hover shadow" style="">>> Step4 ข้อความป้ายประชาสัมพันธ์</a>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+            <a href="http://192.168.55.11/speedway.v2/messagepublicrelationsframe.php" class="btn btn-warning btn-hover shadow" style=""> กลับ Step2 จัดรูปแบบข้อความ <<</a>
+            </div>
+
+            <div class="col-4" style="text-align: center;">
+            <img src="img/icon/edit.png" height="25" alt="Responsive image"> step3 ชุดข้อความ
+            </div>
+
+            <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
+            <a href="http://192.168.55.11/speedway.v2/messagepublicrelationsplay.php" class="btn btn-success btn-hover shadow" style="">>> Step4 ข้อความป้ายประชาสัมพันธ์</a>
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
             </div>
 
         </div>
@@ -807,12 +846,33 @@ function deleteMSG(XVPltCode) {
                                     }
                                 })
                             }else{
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+>>>>>>> origin/main
                                  Swal.fire({
                                  icon: "error",
                                  title: "ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย<br>" +Return,
                                  confirmButtonText: "ตกลง",
                                  text: "Something went wrong!",
                                  footer: '<a href="#">Why do I have this issue?</a>'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                                Swal.fire({
+                                icon: "error",
+                                title: "ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย<br>" +Return,
+                                confirmButtonText: "ตกลง"
+                                // text: "Something went wrong!",
+                                // footer: '<a href="#">Why do I have this issue?</a>'
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
                                 });
                             //  Swal.fire("ไม่สามรถลบได้มีการใช้อยู่ที่ป้าย "+Return, "", "warning");
                             }

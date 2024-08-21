@@ -1,3 +1,22 @@
+<style>
+
+.dt-search input{
+background-image: url('img/icon/mag.png');
+ background-repeat: no-repeat;
+ background-size: 18px;
+ background-position: left 12px top 5px;
+ text-indent: 30px;
+ opacity: 0.7;
+ margin: 0rem 0rem 0.3rem 0rem;
+    }
+
+    #dt-search-1{
+        width: 235px;
+        font-size: .9rem;
+    }
+
+</style>
+
 <?php
 ob_start();
 session_start();
@@ -358,21 +377,32 @@ function SaveFrame3( $XVMsfCode){
    }
    function showsmssel(){
          include "lib/DatabaseManage.php";
-         $data='<table id="VMSTable" class="table" style="width:100%;">
+         $data='<table id="VMSTable2" class="table table-striped table-hover" style="width:100%;">
          <thead>
              <tr style="font-size: 10pt">
                  <th class="th-sm">รหัสข้อความ
                  </th>
                  <th class="th-sm">ชื่อข้อความ
                  </th>
-                 <th class="th-sm" style="text-align: left">ตัวอย่าง
+                 <th class="th-sm" style="text-align: center">ตัวอย่าง
                  </th>
                  <th class="th-sm" style="text-align: center">ขนาด
                  </th>
                  <th class="th-sm" style="text-align: center">ประเภท
                  </th>
                  <th class="th-sm" style="text-align: center"></th>
+<<<<<<< HEAD
                  
+=======
+<<<<<<< HEAD
+                 
+=======
+<<<<<<< HEAD
+                 
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
              </tr>
          </thead>
          <tbody>';
@@ -385,7 +415,7 @@ function SaveFrame3( $XVMsfCode){
         
         while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
         {
-              
+                
                 if($result['XVMsgType']==1){
                     $icot='<i class="fa fa-text-width" aria-hidden="true" title="ข้อความ"></i>';
                 }elseif($result['XVMsgType']==2){
@@ -398,7 +428,19 @@ function SaveFrame3( $XVMsfCode){
                 $XVMsgType = $result['XVMsgType'];
                 $XIMssWPixel=$result['XIMssWPixel'];
                 $XIMssHPixel=$result['XIMssHPixel'];
+<<<<<<< HEAD
                 $url="ifarmeimg.php?msg=$XVMsgFileName&type=$XVMsgType";
+=======
+<<<<<<< HEAD
+                $url="ifarmeimg.php?msg=$XVMsgFileName&type=$XVMsgType";
+=======
+<<<<<<< HEAD
+                $url="ifarmeimg.php?msg=$XVMsgFileName&type=$XVMsgType";
+=======
+                $url="ifarmeimg.php?msg=$id&type=2";
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
                 $url."&wp=".base64_encode($result['XIMssWPixel']);
                 $url."&hp=".base64_encode($result['XIMssHPixel']);
                 $XVMsgName=$result['XVMsgName'];
@@ -422,8 +464,33 @@ function SaveFrame3( $XVMsfCode){
         </table>
         ';
         sqlsrv_close( $conn );
+        
         return $data;    
 
    }
-  
+
 ?>
+
+<script>
+  $(document).ready(function() {
+new DataTable('#VMSTable2', {
+    order: [[0, 'desc']],
+    
+    layout: {
+         topEnd: {
+             search: {
+                 placeholder: 'กรอกข้อความที่ต้องการค้นหา...'
+             }
+         }
+     },
+     language: {
+        zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
+        info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
+        infoFiltered: '',
+        infoEmpty: 'ไม่พบรายการ'
+    }
+             
+});
+});
+</script>
+

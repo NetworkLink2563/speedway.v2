@@ -386,7 +386,19 @@ table th{
         height: 100vh;
     }
 
+<<<<<<< HEAD
 /* .flex-table{
+=======
+<<<<<<< HEAD
+/* .flex-table{
+=======
+<<<<<<< HEAD
+/* .flex-table{
+=======
+.flex-table{
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -444,6 +456,13 @@ background-image: url('img/icon/mag.png');
      .search{
         display:none;
      }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+>>>>>>> origin/main
 
      table tr td {
         border: 1px solid #cccc;
@@ -452,6 +471,14 @@ background-image: url('img/icon/mag.png');
     table tr th {
         border: 1px solid #cccc;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
 </style>
 
 
@@ -465,7 +492,19 @@ background-image: url('img/icon/mag.png');
             </div>
 
         <div class="col-4" style="text-align: center;">
+<<<<<<< HEAD
         <img src="./img/icon/edit.png" height="25" alt="Responsive image"> step 2 จัดรูปแบบข้อความสภาพจราจร
+=======
+<<<<<<< HEAD
+        <img src="./img/icon/edit.png" height="25" alt="Responsive image"> step 2 จัดรูปแบบข้อความสภาพจราจร
+=======
+<<<<<<< HEAD
+        <img src="./img/icon/edit.png" height="25" alt="Responsive image"> step 2 จัดรูปแบบข้อความสภาพจราจร
+=======
+        <img src="/speedway/img/icon/edit.png" height="25" alt="Responsive image"> step 2 จัดรูปแบบข้อความสภาพจราจร
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
         </div>
 
         <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
@@ -974,8 +1013,23 @@ background-image: url('img/icon/mag.png');
         <div class="col-11" style="text-align: center;">
       <h5 id="Example_Title" class="modal-title"></h5>
       </div>
+<<<<<<< HEAD
         <div class="col-1" style="text-align: center;">
         <button type="button" id="hidemodalex" class="btn-close" data-dismiss="modal"></button>
+=======
+<<<<<<< HEAD
+        <div class="col-1" style="text-align: center;">
+        <button type="button" id="hidemodalex" class="btn-close" data-dismiss="modal"></button>
+=======
+<<<<<<< HEAD
+        <div class="col-1" style="text-align: center;">
+        <button type="button" id="hidemodalex" class="btn-close" data-dismiss="modal"></button>
+=======
+        <div class="col-1">
+        <button type="button" id="hidemodalex" class="close" data-dismiss="modal">&times;</button>
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
         </div>
       </div>
 
