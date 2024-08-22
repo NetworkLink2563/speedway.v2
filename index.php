@@ -386,32 +386,7 @@ function ThDate()
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-<?php if($_SESSION['user']!=''){?>
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto f10pt">
-            <li class="nav-item ">
-                <a class="nav-link " href="#">เข้าสู่โปรแกรม</a>
-            </li>
-            <li class="nav-item ">
-                <div class="nav-link disabled" href="#">กำหนดสิทธิ์</div>
-            </li>
-            <li class="nav-item ">
-                <div class="nav-link disabled" href="#">ค่าเริ่มต้น</div>
-            </li>
-            <li class="nav-item ">
-                <div class="nav-link disabled" href="#">การควบคุม</div>
-            </li>
-            <li class="nav-item ">
-                <div class="nav-link disabled" href="#">การแสดงข้อความ</div>
-            </li>
-            <li class="nav-item ">
-                <div class="nav-link disabled" href="#">รายงาน</div>
-            </li>
 
-        </ul>
-
-    </div>
-    <?php }?>
 </div>
 
 <main role="main" class="container" style="margin-top: 30;">
@@ -504,7 +479,7 @@ function ThDate()
                             <div>
                             <label for="inputPassword" class="sr-only">Password</label>
                             <input onkeyup='check();' type="password" id="inputPassword2" name="inputPassword" class="form-control" autocomplete="off" placeholder="Password" required>
-                            <i style="clear: right; text-align: right; cursor: pointer; position: relative; top: -28px; left: 143px;" class="fa-regular fa-eye-slash" id="togglePassword2"></i>
+                            <i style="clear: right; text-align: right; cursor: pointer; position: relative; top: -30px; left: 151px;" class="fa-regular fa-eye-slash" id="togglePassword2"></i>
                             <span id="message" style="position: relative; top: 31px; left: 165px;"></span>
                             </div>
                             <div>
