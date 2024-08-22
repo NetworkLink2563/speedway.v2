@@ -1,5 +1,8 @@
 <?php 
-  $commitVer = trim(exec('git rev-parse HEAD')); 
+  $gitPath = "C:\\Program Files\\Git\\bin\\git.exe";
+  $commitVer = trim(exec($gitPath.' rev-parse HEAD')); 
+  var_dump($gitPath);
+  echo $commitVer;
 ?>
 <html>
 <head>

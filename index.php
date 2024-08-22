@@ -471,14 +471,14 @@ function ThDate()
                 <div class="col-sm-12" style="margin-top: 20px">
                     
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
-                            <input type="email" id="username" name="username" class="form-control" placeholder="Username" autocomplete="off" required autofocus>
+                            <input type="email" id="username2" name="username2" class="form-control" placeholder="Username" autocomplete="off" required autofocus>
                         </div>
                         
                         <!-- <div id="resultDiv" style="margin-left: 14px;"><p id="result" ></p></div> -->
                         <div class="col-sm-12 passdiv" style="margin-bottom: .5rem;">
                             <div>
-                            <label for="inputPassword" class="sr-only">Password</label>
-                            <input onkeyup='check();' type="password" id="inputPassword2" name="inputPassword" class="form-control" autocomplete="off" placeholder="Password" required>
+                            <label for="inputPassword2" class="sr-only">Password</label>
+                            <input onkeyup='check();' type="password" id="inputPassword2" name="inputPassword2" class="form-control" autocomplete="off" placeholder="Password" required>
                             <i style="clear: right; text-align: right; cursor: pointer; position: relative; top: -30px; left: 151px;" class="fa-regular fa-eye-slash" id="togglePassword2"></i>
                             <span id="message" style="position: relative; top: 31px; left: 165px;"></span>
                             </div>
@@ -566,8 +566,8 @@ function forgetpass(){
 function chgpwd() {
         var conf = confirm('คุณต้องการเปลี่ยนรหัสผ่านหรือไม่');
         if(conf==true) {
-        var password = document.getElementById("passwordInput").value;
-        var userchk = '<?php echo $_SESSION['userName']; ?>';
+        var password = document.getElementById("inputPassword2").value;
+        var userchk = document.getElementById("username2").value;;
         $.ajax({
             type: "POST",
             url: "processUser.php",
