@@ -418,7 +418,7 @@ function ThDate()
                         </div>
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                           
-                            <select id="XVShfCode" class="form-control">
+                            <select id="XVShfCode" class="form-control ">
                                 <option value="">เลือกกะทำงาน</option>
                                 <?php
                                         function twodigit($number){
