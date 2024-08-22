@@ -1,8 +1,8 @@
 <?php 
-  $gitPath = "C:\\Program Files\\Git\\bin\\git.exe";
-  $commitVer = trim(exec($gitPath.' rev-parse HEAD')); 
-  var_dump($gitPath);
-  echo $commitVer;
+  // $gitPath = "C:\\Program Files\\Git\\bin\\git.exe";
+  // $commitVer = trim(exec($gitPath.' rev-parse HEAD')); 
+  // var_dump($gitPath);
+  // echo $commitVer;
 ?>
 <html>
 <head>
@@ -21,7 +21,7 @@
 }
 </style>
 <div class="footer">
-  <p style="padding: 0.5%;">City Motorway Division Department of Hightways Copyright © 2024; Designed by <a style="color:#979fd4;"target="_blank" href="https://www.networklink.co.th/">Networklink</a><span style="color: #cccc;">&nbsp;<?php echo $commitVer; ?></span></p>
+  <p style="padding: 0.5%;">City Motorway Division Department of Hightways Copyright © 2024; Designed by <a style="color:#979fd4;"target="_blank" href="https://www.networklink.co.th/">Networklink</a><span style="color: #cccc;">&nbsp;<?php echo "ver.1"; ?></span></p>
   
 </div>
 </head>
