@@ -47,14 +47,15 @@ echo ThDate(); // แสดงวันที่
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link rel="icon" type="./image/png" href="/img/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>City Motorway Division</title>
-    <link rel="stylesheet" href="/dist/css/all.min.css">
+    <link rel="stylesheet" href="./dist/css/all.min.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
-    <link rel="canonical" href="/dist/css/dataTables.bootstrap4.css">
+    <link rel="canonical" href="./dist/css/dataTables.bootstrap4.css">
+    <script src="./dist/js/main_speed.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -276,12 +277,12 @@ echo ThDate(); // แสดงวันที่
         }
         
     </style>
-    <link rel="stylesheet" href="dist/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="dist/css/jquery.datetimepicker.css">
-    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
-    <link href="sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
-    <script src="Jquery/jquery-3.6.0.js"></script>
-    <link href="b4modalfullscreen/bootstrap4-modal-fullscreen.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/jquery.datetimepicker.css">
+    <script src="./sweetalert2/dist/sweetalert2.min.js"></script>
+    <link href="./sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="./Jquery/jquery-3.6.0.js"></script>
+    <link href="./b4modalfullscreen/bootstrap4-modal-fullscreen.min.css" rel="stylesheet">
 </head>
 <body class="kanit-light">
 

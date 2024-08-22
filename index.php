@@ -56,14 +56,14 @@ function ThDate()
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 
     <!-- Bootstrap core CSS -->
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="dist/js/jquery-3.7.1.js"></script>
-    <script src="dist/js/popper.min.js"></script>
-    <script src="dist/js/main_speed.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./dist/js/jquery-3.7.1.js"></script>
+    <script src="./dist/js/popper.min.js"></script>
+    <script src="./dist/js/main_speed.js"></script>
+    <script src="./dist/js/bootstrap.min.js"></script>
 
     <!-- Custom styles for this template -->
-    <link href="dist/css/starter-template.css" rel="stylesheet">
+    <link href="./dist/css/starter-template.css" rel="stylesheet">
 
 
 <!-- Bootstrap core JavaScript
@@ -157,17 +157,17 @@ function ThDate()
     $('#username').on('input', validate);
 </script>
 
-<script>
+<!-- <script>
     togglePassword.addEventListener('click', function (e) {
-    // toggle the type attribute
+    toggle the type attribute
     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
     password.setAttribute('type', type);
-    // toggle the eye slash icon
+    toggle the eye slash icon
     this.classList.toggle('fa-eye-slash'); 
 });
 
 
-</script>
+</script> -->
 
 
 
@@ -414,11 +414,17 @@ function ThDate()
     <?php }?>
 </div>
 
-<main role="main" class="container" style="margin-top: 30">
+<main role="main" class="container" style="margin-top: 30;">
 
     <div class="centered">
-        <div class="box" align="center">
-            <div class="row" style="margin-top: 20px; margin-bottom: 30px; width: 350px;">
+        <div class="box" align="center" style="padding: 2rem ; ">
+
+            <!-- login start -->
+            
+            <div  class="row" style="width: 350px;">
+
+
+            <div id="logindiv" class="">
                 <div class="col-sm-12" style="font-size: 1rem; font-weight: 500;">
                     <span >CITY MOTORWAY DIVISION</span><br>
                     <span >กองการทางพิเศษระหว่างเมือง กรมทางหลวง</span>
@@ -433,7 +439,7 @@ function ThDate()
                             <label for="inputPassword" class="sr-only">Password</label>
                             <input type="password" id="inputPassword" name="inputPassword" class="form-control" autocomplete="off" placeholder="Password" required>
                             <i style="clear: right; text-align: right; cursor: pointer; position: relative; top: -28px; left: 178px;" class="fa-regular fa-eye-slash" id="togglePassword"></i>
-                            <a id="forgetpass" href="#" onclick="">ลืมรหัสผ่าน</a>
+                            <a id="forgetpass" href="#" onclick="forgetpass()">ลืมรหัสผ่าน</a>
                         </div>
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                           
@@ -463,11 +469,63 @@ function ThDate()
                            
                             </select>
                         </div>
+                        
                         <div class="col-sm-12" style="margin-top: 20px;">
                             <button id="myButton" class="btn btn-primary btn button shadow" style="font-size: 1rem; background-color: #4976BA; opacity: .8; width: 100%;" type="submit" onclick="loginSystem()"><span>เข้าสู่ระบบ  </span></button>
                         </div>
+
+
+                        </div>
+                    </div>
+                    </div>
                     </div>
 
+                   
+                    <!-- login end -->
+
+                    <!-- forgetpass start -->
+                    
+                    
+                    
+                    <div  class="row" style="width: 350px;">
+                    <div id="forgetpassdiv" class="">
+                <div class="col-sm-12" style="font-size: 1rem; font-weight: 500; padding-top: 20px;">
+                    <span >CITY MOTORWAY DIVISION</span><br>
+                    <span >กองการทางพิเศษระหว่างเมือง กรมทางหลวง</span>
+                </div>
+                <div class="col-sm-12" style="margin-top: 20px">
+                    
+                        <div class="col-sm-12" style="margin-bottom: .5rem;">
+                            <input type="email" id="username" name="username" class="form-control" placeholder="Username" autocomplete="off" required autofocus>
+                        </div>
+                        
+                        <!-- <div id="resultDiv" style="margin-left: 14px;"><p id="result" ></p></div> -->
+                        <div class="col-sm-12 passdiv" style="margin-bottom: .5rem;">
+                            <div>
+                            <label for="inputPassword" class="sr-only">Password</label>
+                            <input onkeyup='check();' type="password" id="inputPassword2" name="inputPassword" class="form-control" autocomplete="off" placeholder="Password" required>
+                            <i style="clear: right; text-align: right; cursor: pointer; position: relative; top: -28px; left: 143px;" class="fa-regular fa-eye-slash" id="togglePassword2"></i>
+                            <span id="message" style="position: relative; top: 31px; left: 165px;"></span>
+                            </div>
+                            <div>
+                            <input onkeyup='check();' style="position: relative; top: -8px;" type="password" id="confirmpass" name="inputPassword" class="form-control" autocomplete="off" placeholder="Confirm Password" required>
+                            </div>
+                            <div>
+                            <a style="margin-bottom: 1rem;" id="forgetpass" href="#" onclick="forgetpass()">กลับหน้าหลัก</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-12" style="margin-top: 20px;">
+                            <button id="forgetpass" class="btn btn-success btn button shadow" style="font-size: 1rem;  opacity: .8; width: 100%;" type="button" onclick="chgpwd()"><span>เปลี่ยนรหัสผ่าน  </span></button>
+                        </div>
+
+
+
+                        </div>
+                    
+                    
+ 
+                    <!-- forgetpass end -->
                     <div align="center">
 
                     </div>
@@ -505,6 +563,67 @@ function ThDate()
     // toggle the eye slash icon
     this.classList.toggle('fa-eye'); 
 });
+
+
+const togglePassword2 = document.querySelector('#togglePassword2');
+    const password2 = document.querySelector('#inputPassword2');
+    const password3 = document.querySelector('#confirmpass');
+
+  togglePassword2.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type2 = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+    password2.setAttribute('type', type2);
+    password3.setAttribute('type', type2);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye'); 
+});
+
+
+$("#forgetpassdiv").hide();
+function forgetpass(){
+
+    $("#logindiv").toggle(
+    function(){$("#forgetpassdiv").toggle("slow");}
+    );
+
+}
+
+function chgpwd() {
+        var conf = confirm('คุณต้องการเปลี่ยนรหัสผ่านหรือไม่');
+        if(conf==true) {
+        var password = document.getElementById("passwordInput").value;
+        var userchk = '<?php echo $_SESSION['userName']; ?>';
+        $.ajax({
+            type: "POST",
+            url: "processUser.php",
+            data: {'Type': 2,'password': password, 'uname' : userchk},
+            success: function(result) {
+               if(result==1){
+               alert('เปลี่ยนรหัสผ่านสำเร็จ');
+               window.location.href = "dashboard.php";
+               }else if(result==2){
+                alert('รหัสผ่านซ้ำกับรหัสผ่านเดิม');
+               }else{
+                alert('กรุณาติดต่อเจ้าหน้าที่ดูแลระบบ');
+               }
+            }
+        });
+        }
+    }
+
+
+    var check = function() {
+        if (document.getElementById('inputPassword2').value ==
+            document.getElementById('confirmpass').value) {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = '<i class="fa-solid fa-check"></i>';
+        } else {
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        }
+    }
+
+
 </script>
 
 </body>
