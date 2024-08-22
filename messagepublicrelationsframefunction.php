@@ -416,7 +416,7 @@ function SaveFrame3( $XVMsfCode){
 
                 $data.='<td style="text-align: center">'.$result['XIMssWPixel'].'x'.$result['XIMssHPixel'].'</td>
                     <td style="text-align: center;"><div style=" margin-top: 5px">'.$icot.'</div></td>
-                    <td><button onclick="SelSms(\''.$result['XVMsgType'].'\',\''.$result['XVMsgFileName'].'\')" type="button" class="btn btn-success btn-sm">เลือก</button></td>';
+                    <td><button onclick="SelSms(\''.$result['XVMsgType'].'\',\''.$XVMsgFileName.'\')" type="button" class="btn btn-success btn-sm">เลือก</button></td>';
                 $data.='</tr>';
             
         }            
