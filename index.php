@@ -464,7 +464,7 @@ function ThDate()
                     
                     <div  class="row" style="width: 350px;">
                     <div id="forgetpassdiv" class="">
-                <div class="col-sm-12" style="font-size: 1rem; font-weight: 500; padding-top: 20px;">
+                <div class="col-sm-12" style="font-size: 1rem; font-weight: 500; ">
                     <span >CITY MOTORWAY DIVISION</span><br>
                     <span >กองการทางพิเศษระหว่างเมือง กรมทางหลวง</span>
                 </div>
@@ -478,11 +478,14 @@ function ThDate()
                         </div>
                         <!-- <div id="resultDiv" style="margin-left: 14px;"><p id="result" ></p></div> -->
                         <div class="col-sm-12 passdiv" style="margin-bottom: .5rem;">
+                            <div style="margin-top: 1rem;">
+                            <span>ตั้งรหัสผ่านใหม่</span>
+                            </div>
                             <div>
                             <label for="inputPassword2" class="sr-only">Password</label>
                             <input onkeyup='check();' type="password" id="inputPassword2" name="inputPassword2" class="form-control" autocomplete="off" placeholder="Password" required>
                             <i style="clear: right; text-align: right; cursor: pointer; position: relative; top: -27px; left: 142px;" class="fa-regular fa-eye-slash" id="togglePassword2"></i>
-                            <span id="message" style="position: absolute; top: 278px; left: 367px;"></span>
+                            <span id="message" style="position: absolute; top: 291px; left: 369px;"></span>
                             </div>
                             <div>
                             <input onkeyup='check();' style="position: relative; top: -8px;" type="password" id="confirmpass" name="inputPassword" class="form-control" autocomplete="off" placeholder="Confirm Password" required>
@@ -575,7 +578,7 @@ function chgpwd() {
         var confirmpass = document.getElementById('confirmpass').value;
 
         if(inputPassword2 != confirmpass){
-                alert('รหัสผ่านไม่ตรงกัน ไม่สามารถเปลี่ยนรหัสผ่านได้');
+                alert('ตั้งรหัสผ่านไม่ตรงกัน ไม่สามารถเปลี่ยนรหัสผ่านได้');
                 die();
                }
 
