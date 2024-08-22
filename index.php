@@ -471,16 +471,18 @@ function ThDate()
                 <div class="col-sm-12" style="margin-top: 20px">
                     
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
-                            <input type="email" id="username2" name="username2" class="form-control" placeholder="Username" autocomplete="off" required autofocus>
+                            <input type="text" id="username2" name="username2" class="form-control" placeholder="Username" autocomplete="off" required autofocus>
                         </div>
-                        
+                        <div class="col-sm-12" style="margin-bottom: .5rem;">
+                            <input type="text" id="telephonenum" name="telephone" class="form-control" placeholder="Telephone Number" autocomplete="off" required autofocus>
+                        </div>
                         <!-- <div id="resultDiv" style="margin-left: 14px;"><p id="result" ></p></div> -->
                         <div class="col-sm-12 passdiv" style="margin-bottom: .5rem;">
                             <div>
                             <label for="inputPassword2" class="sr-only">Password</label>
                             <input onkeyup='check();' type="password" id="inputPassword2" name="inputPassword2" class="form-control" autocomplete="off" placeholder="Password" required>
-                            <i style="clear: right; text-align: right; cursor: pointer; position: relative; top: -30px; left: 151px;" class="fa-regular fa-eye-slash" id="togglePassword2"></i>
-                            <span id="message" style="position: relative; top: 31px; left: 165px;"></span>
+                            <i style="clear: right; text-align: right; cursor: pointer; position: relative; top: -27px; left: 142px;" class="fa-regular fa-eye-slash" id="togglePassword2"></i>
+                            <span id="message" style="position: absolute; top: 278px; left: 367px;"></span>
                             </div>
                             <div>
                             <input onkeyup='check();' style="position: relative; top: -8px;" type="password" id="confirmpass" name="inputPassword" class="form-control" autocomplete="off" placeholder="Confirm Password" required>
@@ -567,17 +569,30 @@ function chgpwd() {
         var conf = confirm('คุณต้องการเปลี่ยนรหัสผ่านหรือไม่');
         if(conf==true) {
         var password = document.getElementById("inputPassword2").value;
-        var userchk = document.getElementById("username2").value;;
+        var userchk = document.getElementById("username2").value;
+        var telephonenum = document.getElementById("telephonenum").value;
+        var inputPassword2 = document.getElementById('inputPassword2').value;
+        var confirmpass = document.getElementById('confirmpass').value;
+
+        if(inputPassword2 != confirmpass){
+                alert('รหัสผ่านไม่ตรงกัน ไม่สามารถเปลี่ยนรหัสผ่านได้');
+                die();
+               }
+
         $.ajax({
             type: "POST",
             url: "processUser.php",
-            data: {'Type': 2,'password': password, 'uname' : userchk},
+            data: {'Type': 2,'password': password, 'uname' : userchk, 'telephonenum' : telephonenum},
             success: function(result) {
                if(result==1){
                alert('เปลี่ยนรหัสผ่านสำเร็จ');
                window.location.href = "dashboard.php";
                }else if(result==2){
                 alert('รหัสผ่านซ้ำกับรหัสผ่านเดิม');
+               }else if(result==3){
+                alert('เบอร์โทรศัพท์ไม่ถูกต้อง ไม่สามารถเปลี่ยนรหัสผ่านได้');
+               }else if(result==4){
+                alert('ชื่อผู้ใช้งานไม่ถูกต้อง ไม่สามารถเปลี่ยนรหัสผ่านได้');
                }else{
                 alert('กรุณาติดต่อเจ้าหน้าที่ดูแลระบบ');
                }

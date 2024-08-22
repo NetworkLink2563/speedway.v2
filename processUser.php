@@ -59,13 +59,19 @@ if ($Type == 1) {
 // Change Password Create By Sivadol.J
 if ($Type == 2) {
     $uname = $_POST['uname'];
+    $telephonenum = $_POST['telephonenum'];
+
     $pwdnow = md5(base64_encode(md5(base64_encode($_POST['password']))));
 
-    $qpwd="SELECT * FROM TMstMUser WHERE XVUsrName='$uname'";
+    $qpwd="SELECT * FROM TMstMUser WHERE XVUsrName='$uname',XVUsrPhone='$telephonenum'";
     $qc=sqlsrv_query($conn, $qpwd);
     $resultSQL = sqlsrv_fetch_array($qc, SQLSRV_FETCH_ASSOC);
     if($pwdnow==$resultSQL['XVUsrPwdDef']){
         echo '2';
+    }else if($telephonenum != $resultSQL['XVUsrPhone']){
+        echo '3';
+    }else if($uname != $resultSQL['XVUsrName']){
+        echo '4';
     }else{
 
     $uppwd = "UPDATE TMstMUser SET  
