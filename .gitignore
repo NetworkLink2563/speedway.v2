@@ -1,0 +1,11 @@
+
+
+# Uploads
+/media/
+
+# Log files
+*.log
+
+# htaccess
+/.htaccess
+
