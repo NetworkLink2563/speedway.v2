@@ -634,7 +634,7 @@ background-image: url('img/icon/mag.png');
             <!-- div flex header -->
 
 
-
+<?php include 'footer.php' ?>
 
 
             <div class="modal " id="modal-frame1" tabindex="-1" role="dialog" aria-hidden="true">
