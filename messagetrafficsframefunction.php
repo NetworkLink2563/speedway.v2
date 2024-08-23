@@ -388,15 +388,17 @@ function SaveFrame3( $XVMsfCode){
               
                 if($result['XVMsgType']==1){
                     $icot='<i class="fa fa-text-width" aria-hidden="true" title="ข้อความ"></i>';
+                    $XVMsgFileName = $result['XVMsgCode'];
                 }elseif($result['XVMsgType']==2){
                     $icot='<i class="fa fa-picture-o" aria-hidden="true" title="รูปภาพ"></i>';
+                    $XVMsgFileName = $result['XVMsgFileName'];
                 }elseif($result['XVMsgType']==3){
                     $icot='<i class="fa fa-video-camera" aria-hidden="true" title="ภาพเคลื่อนไหว"></i>';
+                    $XVMsgFileName = $result['XVMsgFileName'];
                 }
                 
 
-		$XVMsgType=$result['XVMsgType'];
-		$XVMsgFileName=$result['XVMsgFileName'];
+		        $XVMsgType=$result['XVMsgType'];
                 $XIMssWPixel=$result['XIMssWPixel'];
                 $XIMssHPixel=$result['XIMssHPixel'];
                 $url="ifarmeimg.php?msg=$XVMsgFileName&type=$XVMsgType";
@@ -414,7 +416,7 @@ function SaveFrame3( $XVMsfCode){
 
                 $data.='<td style="text-align: center">'.$result['XIMssWPixel'].'x'.$result['XIMssHPixel'].'</td>
                     <td style="text-align: center;"><div style=" margin-top: 5px">'.$icot.'</div></td>
-                    <td><button onclick="SelSms(\''.$result['XVMsgType'].'\',\''.$result['XVMsgFileName'].'\')" type="button" class="btn btn-success btn-sm">เลือก</button></td>';
+                    <td><button onclick="SelSms(\''.$result['XVMsgType'].'\',\''.$XVMsgFileName.'\')" type="button" class="btn btn-success btn-sm">เลือก</button></td>';
                 $data.='</tr>';
             
         }            
