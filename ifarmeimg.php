@@ -21,9 +21,8 @@ if ($type == 1) {
     <div class="modal py-5 show" id="ModalExample" style="display: block;" aria-modal="true" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content" style="height: 500px;">
-                <div class="modal-body text-center">
-                    <img style=" margin: 0px;padding: 0px;width:100%;height:100%;" src='./media/tmp/<?php echo  $msg; ?>'></img>
-                    </iframe>
+                <div class="modal-body text-center stretch">
+                    <img style=" margin: 0px;padding: 0px;width:100%;height:100%;" src='./media/tmp/<?php echo  $msg; ?>' ></img>
                 </div>
             </div>
         </div>
@@ -36,7 +35,6 @@ if ($type == 1) {
                     <video width="960" height="520" controls>
                         <source src="./media/tmp/<?php echo  $msg; ?>" type="video/mp4">
                     </video>
-                    </iframe>
                 </div>
             </div>
         </div>

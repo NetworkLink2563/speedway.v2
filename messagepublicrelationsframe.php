@@ -1212,7 +1212,7 @@ function examplesms(url, h, w, vmsmame) {
     $('#ModalExample').modal('show');
     document.getElementById("Example_Title").innerText = vmsmame + " ขนาด กว้าง=" + w + " สูง=" + h;
     document.getElementById("iframe").width = parseInt(980);
-    document.getElementById("iframe").height = parseInt(520);
+    document.getElementById("iframe").height = parseInt(530);
     document.getElementById("iframe").src = url;
 
 

@@ -459,6 +459,7 @@ table th{
     table tr td {
         border: 1px solid #cccc;
     }
+
 </style>
 <script src="./dist/js/jquery-3.7.1.js"></script>
 <script src="./dist/js/popper.min.js"></script>
@@ -979,9 +980,10 @@ table th{
 		</div>
             </div>
             <div class="modal-body text-center">
-
-                <iframe id="iframe" style="border: 0;" src=""></iframe>
-
+                
+            <div class="wrap" >
+                <iframe frameborder='0' scrolling='no' id="iframe"   style="border: 1px solid #cccc; overflow: hidden;" src=""></iframe>
+                </div>
             </div>
         </div>
 
@@ -1287,8 +1289,8 @@ function examplesms(url, h, w, vmsmame) {
 
     document.getElementById("Example_Title").innerText = vmsmame + " ขนาด กว้าง=" + w + " สูง=" + h;
 
-    document.getElementById("iframe").width = parseInt(980);
-    document.getElementById("iframe").height = parseInt(520);
+    document.getElementById("iframe").width = parseInt(w);
+    document.getElementById("iframe").height = parseInt(h);
     document.getElementById("iframe").src = url;
 
 
