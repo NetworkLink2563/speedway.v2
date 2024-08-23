@@ -73,8 +73,6 @@ if(checkmenu($user,'006')==0){
 html {
   display: flex;
   height: 100%;
-  padding: 0;
-  margin: 0;
 }
 
 body {

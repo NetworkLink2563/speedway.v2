@@ -1,3 +1,8 @@
+<style>
+    body{
+        margin: 0;
+    }
+</style>
 <?php
 $msg = $_GET['msg'];
 $type = $_GET['type'];
