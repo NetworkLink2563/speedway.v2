@@ -1653,13 +1653,13 @@ function SearchEdit(XVMsfCode,w,h){
                 var url='ifarmeimg.php?msg='+obj.XVMsgCodeF1;
                 console.log(url);
                 document.getElementById("frame2_section1_show").src = url;
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF2;
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF2+'&type='+obj.XVMsfType;
                 document.getElementById("frame2_section2_show").src = url;
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3;
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3+'&type='+obj.XVMsfType;
                 document.getElementById("frame2_section3_show").src = url;
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF4;
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF4+'&type='+obj.XVMsfType;
                 document.getElementById("frame2_section4_show").src = url;
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF5;
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF5+'&type='+obj.XVMsfType;
                 document.getElementById("frame2_section5_show").src = url;
                 $('#framenumber').val(2);
                 $('#XVMsfCodeF2').val(XVMsfCode);
