@@ -806,7 +806,8 @@ new DataTable('#VMSTable', {
         zeroRecords: '" ไม่พบข้อมูลที่ค้นหา "',
         info: 'แสดง _END_ รายการ จากทั้งหมด _MAX_ รายการ',
         infoFiltered: '',
-        infoEmpty: 'ไม่พบรายการ'
+        infoEmpty: 'ไม่พบรายการ',
+        emptyTable: '" ไม่มีข้อมูลในตาราง "'
     }
              
 });
