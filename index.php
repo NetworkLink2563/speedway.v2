@@ -1,4 +1,7 @@
-<link rel="stylesheet" href="dist/css/all.min.css">
+<link rel="stylesheet" href="./dist/css/all.min.css">
+<link rel="stylesheet" href="./dist/css/sweetalert2.min.css">
+
+
 
 <?php
 session_start();
@@ -61,6 +64,7 @@ function ThDate()
     <script src="./dist/js/popper.min.js"></script>
     <script src="./dist/js/main_speed.js"></script>
     <script src="./dist/js/bootstrap.min.js"></script>
+    <script src="./dist/js/sweetalert2.all.min.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="./dist/css/starter-template.css" rel="stylesheet">
@@ -569,6 +573,13 @@ function forgetpass(){
 }
 
 function chgpwd() {
+
+    Swal.fire({
+                title: "The Internet?",
+                text: "That thing is still around?",
+                icon: "question"
+                });
+
         var conf = confirm('คุณต้องการเปลี่ยนรหัสผ่านหรือไม่');
         if(conf==true) {
         var password = document.getElementById("inputPassword2").value;
@@ -578,6 +589,7 @@ function chgpwd() {
         var confirmpass = document.getElementById('confirmpass').value;
 
         if(inputPassword2 != confirmpass){
+            
                 alert('ตั้งรหัสผ่านไม่ตรงกัน ไม่สามารถเปลี่ยนรหัสผ่านได้');
                 die();
                }
@@ -585,7 +597,7 @@ function chgpwd() {
         $.ajax({
             type: "POST",
             url: "processUser.php",
-            data: {'Type': 2,'password': password, 'uname' : userchk, 'telephonenum' : telephonenum},
+            data: {'Type': 3,'password': password, 'uname' : userchk, 'telephonenum' : telephonenum},
             success: function(result) {
                if(result==1){
                alert('เปลี่ยนรหัสผ่านสำเร็จ');
