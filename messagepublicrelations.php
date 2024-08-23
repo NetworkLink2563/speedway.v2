@@ -972,7 +972,7 @@ table th{
         <div class="modal-content" style="  height: 620px;">
             <div class="modal-header">
 		<div class="col" >
-                <h5 id="Example_Title" class="modal-title"></h5>
+                <h5 style="text-align: center;" id="Example_Title" class="modal-title"></h5>
 		</div>
 		<div col-1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
