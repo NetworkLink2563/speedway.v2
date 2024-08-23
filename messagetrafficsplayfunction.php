@@ -47,7 +47,7 @@ function showsms(){
         ORDER BY dbo.TMstMPlaylist.XVPltCode DESC
     ";
     $data='
-        <table id="TableSms" class="table table-striped table-hover" style="width:100%;">
+        <table id="TableSms" class="table" style="width:100%;">
             <thead>
                     <tr style="font-size: 10pt">
                         <th class="th-sm">รหัสชุดการแสดงป้าย
@@ -55,10 +55,6 @@ function showsms(){
                         <th class="th-sm">ชื่อชุดการแสดงป้าย
                         </th>
                         <th class="th-sm">ขนาด
-                        </th>
-                        <th class="th-sm">
-                        </th>
-                        <th class="th-sm">
                         </th>
                     </tr>
             </thead>

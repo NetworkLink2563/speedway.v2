@@ -1605,11 +1605,14 @@ function SearchEdit(XVMsfCode,w,h){
             var XVMsfFormat=obj.XVMsfFormat;
             if(XVMsfFormat=='001'){
                 
+                $('#modal-frame1').modal('show');
                 document.getElementById("frame1_section3").style.width = w+"px";
                 document.getElementById("frame1_section3").style.height = h+"px";
                 document.getElementById("frame1_section3_show").style.width = w+"px";
                 document.getElementById("frame1_section3_show").style.height = h+"px";
-                var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF3);
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3+'&type='+obj.XVMsgType;
+
+                alert(url);
     
                 document.getElementById("frame1_section3_show").src = url;
                 $('#framenumber').val(1);
@@ -1618,7 +1621,7 @@ function SearchEdit(XVMsfCode,w,h){
                 $('#frame1_section3_XVMsgCode').val(obj.XVMsgCodeF3);
                 
             
-                $('#modal-frame1').modal('show');
+                
             }else if(XVMsfFormat=='002'){
 
                 
