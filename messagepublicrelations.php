@@ -1287,7 +1287,7 @@ function examplesms(url, h, w, vmsmame) {
 
     document.getElementById("Example_Title").innerText = vmsmame + " ขนาด กว้าง=" + w + " สูง=" + h;
 
-    document.getElementById("iframe").width = parseInt(w);
+    document.getElementById("iframe").width = parseInt(980);
     document.getElementById("iframe").height = parseInt(520);
     document.getElementById("iframe").src = url;
 
