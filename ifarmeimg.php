@@ -22,7 +22,7 @@ if ($type == 1) {
         <div class="modal-dialog modal-lg">
             <div class="modal-content" style="height: 500px;">
                 <div class="modal-body text-center ">
-                    <img style=" margin: 0px;padding: 0px;width:100%;height:auto;" src='./media/tmp/<?php echo  $msg; ?>' ></img>
+                    <img style=" margin: 0px;padding: 0px;width:100%;height:100%;" src='./media/tmp/<?php echo  $msg; ?>' ></img>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@ if ($type == 1) {
         <div class="modal-dialog modal-lg">
             <div class="modal-content" style="height: 500px;">
                 <div class="modal-body text-center">
-                    <video style=" margin: 0px;padding: 0px;width:100%;height:auto;" controls>
+                    <video style=" margin: 0px;padding: 0px;width:100%;height:100%;" controls>
                         <source  src="./media/tmp/<?php echo  $msg; ?>" type="video/mp4">
                     </video>
                 </div>
