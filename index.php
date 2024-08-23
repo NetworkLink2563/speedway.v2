@@ -574,12 +574,6 @@ function forgetpass(){
 
 function chgpwd() {
 
-    Swal.fire({
-                title: "The Internet?",
-                text: "That thing is still around?",
-                icon: "question"
-                });
-
         var conf = confirm('คุณต้องการเปลี่ยนรหัสผ่านหรือไม่');
         if(conf==true) {
         var password = document.getElementById("inputPassword2").value;

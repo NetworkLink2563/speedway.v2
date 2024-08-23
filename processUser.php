@@ -62,7 +62,7 @@ if ($Type == 2) {
 
     $pwdnow = md5(base64_encode(md5(base64_encode($_POST['password']))));
 
-    $qpwd="SELECT * FROM TMstMUser WHERE XVUsrName='$uname'";
+    $qpwd="SELECT * FROM TMstMUser WHERE XVUsrCode='$uname'";
     $qc=sqlsrv_query($conn, $qpwd);
     $resultSQL = sqlsrv_fetch_array($qc, SQLSRV_FETCH_ASSOC);
     if($pwdnow==$resultSQL['XVUsrPwdDef']){
@@ -72,7 +72,7 @@ if ($Type == 2) {
     $uppwd = "UPDATE TMstMUser SET  
     XVUsrPwd='" . $pwdnow . "', 
     XVUsrPwdDef='" . $pwdnow . "'
-    WHERE XVUsrName='$uname' ";
+    WHERE XVUsrCode='$uname' ";
     $d=sqlsrv_query($conn, $uppwd);
     if($d==true){
          echo '1';
@@ -90,21 +90,16 @@ if ($Type == 3) {
 
     $pwdnow = md5(base64_encode(md5(base64_encode($_POST['password']))));
 
-    $qpwd="SELECT * FROM TMstMUser WHERE XVUsrName='$uname',XVUsrPhone='$telephonenum'";
+    $qpwd="SELECT * FROM TMstMUser WHERE XVUsrCode='$uname' AND XVUsrPhone='$telephonenum'";
+    // echo $qpwd;
     $qc=sqlsrv_query($conn, $qpwd);
     $resultSQL = sqlsrv_fetch_array($qc, SQLSRV_FETCH_ASSOC);
-    if($pwdnow==$resultSQL['XVUsrPwdDef']){
-        echo '2';
-    }else if($telephonenum != $resultSQL['XVUsrPhone']){
-        echo '3';
-    }else if($uname != $resultSQL['XVUsrName']){
-        echo '4';
-    }else{
 
-    $uppwd = "UPDATE TMstMUser SET  
+    if($resultSQL){
+        $uppwd = "UPDATE TMstMUser SET  
     XVUsrPwd='" . $pwdnow . "', 
     XVUsrPwdDef='" . $pwdnow . "'
-    WHERE XVUsrName='$uname' ";
+    WHERE XVUsrCode='$uname' ";
     $d=sqlsrv_query($conn, $uppwd);
     if($d==true){
          echo '1';
@@ -112,9 +107,10 @@ if ($Type == 3) {
         }else{ 
          echo 'error';
         }
-    sqlsrv_close($conn);
+        sqlsrv_close($conn);
     }
 }
+
 /*
 if($Type==2){
     $stmt = "UPDATE TMstMUser SET XBUsrIsActive = '0', XBUsrIsActive2 = '0',XVWhoEdit='".$usercode."',XTWhenEdit='".date('Y-m-d H:i:s')."' WHERE XVUsrCode='".$usercode."';";
