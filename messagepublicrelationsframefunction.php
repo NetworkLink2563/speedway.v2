@@ -48,12 +48,10 @@ session_start();
             FROM     dbo.TMstMMessageFrame
             WHERE   (XVMsfCode = '$XVMsfCode')";
     $query = sqlsrv_query($conn, $stmt);
-
     
     while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC))
     {
          $XVMsfName=$result["XVMsfName"];
-         $XVMsfType=$result["XVMsfType"];
          $XVMsfFormat=$result["XVMsfFormat"];
          $XVMsgCodeF1=$result["XVMsgCodeF1"];
          $XVMsgCodeF2=$result["XVMsgCodeF2"];
@@ -64,8 +62,6 @@ session_start();
     sqlsrv_close( $conn );
     $data='{';
     $data.='"XVMsfName":"'.$XVMsfName.'",';
-    $data.='"XVMsfType":"'.$XVMsfType.'",';
-    $data.='"XVMsgType":"'.$XVMsgType.'",';
     $data.='"XVMsfFormat":"'.$XVMsfFormat.'",';
     $data.='"XVMsgCodeF1":"'.$XVMsgCodeF1.'",';
     $data.='"XVMsgCodeF2":"'.$XVMsgCodeF2.'",';
