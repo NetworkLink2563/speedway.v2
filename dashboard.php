@@ -83,7 +83,7 @@ function row($idrow, $user)
     }
 
     .config {
-        transform: 5sec;
+        transition: 5s;
     }
 
     .modal-title {
