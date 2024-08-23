@@ -783,7 +783,7 @@ background-image: url('img/icon/mag.png');
 
                     <div class="row">
 
-                        <div id="frame2_section3" class="" style="border-style: solid;border-color:#DCDCDC;    padding: 0px;">
+                        <div id="frame2_section3" class="" style="border-style: solid;border-color:#DCDCDC;  padding: 0px;">
                     
                             <button style="position: absolute; z-index:1000;" onclick="addsms(3)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame2_section3_show" src="" style="border:none;"></iframe>
