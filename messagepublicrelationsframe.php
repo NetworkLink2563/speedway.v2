@@ -1650,7 +1650,7 @@ function SearchEdit(XVMsfCode,w,h){
                 document.getElementById("frame2_section5_show").style.width =  ((w/3)-5)+"px";
                 document.getElementById("frame2_section5_show").style.height = ((h-110)-30)+"px";
                 
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF1;
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF1+'&type='+obj.XVMsfType;
                 console.log(url);
                 document.getElementById("frame2_section1_show").src = url;
                 var url='ifarmeimg.php?msg='+obj.XVMsgCodeF2+'&type='+obj.XVMsfType;
