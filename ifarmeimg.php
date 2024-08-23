@@ -8,7 +8,7 @@ if ($type == 1) {
     $qd = sqlsrv_fetch_array($qr, SQLSRV_FETCH_ASSOC); ?>
     <div class="modal py-5 show" id="ModalExample" style="display: block;" aria-modal="true" role="dialog">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content" style="height: 500px;">
+            <div class="modal-content" style="">
                 <div class="modal-body text-center">
                     <?php echo $qd['XVMsgHtml']; ?>
                 </div>
@@ -20,7 +20,7 @@ if ($type == 1) {
 
     <div class="modal py-5 show" id="ModalExample" style="display: block; " aria-modal="true" role="dialog">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content" style="height: 500px;">
+            <div class="modal-content" style="">
                 <div class="modal-body text-center ">
                     <img style=" margin: 0px;padding: 0px;width:100%;height:100%;" src='./media/tmp/<?php echo  $msg; ?>' ></img>
                 </div>
@@ -30,7 +30,7 @@ if ($type == 1) {
 <?php } elseif ($type == 3) { ?>
     <div class="modal py-5 show" id="ModalExample" style="display: block;" aria-modal="true" role="dialog">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content" style="height: 500px;">
+            <div class="modal-content" style="">
                 <div class="modal-body text-center">
                     <video style=" margin: 0px;padding: 0px;width:100%;height:100%;" controls>
                         <source  src="./media/tmp/<?php echo  $msg; ?>" type="video/mp4">
