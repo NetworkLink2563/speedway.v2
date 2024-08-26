@@ -464,22 +464,22 @@ text-align: center;
 
                               <div class="col-12" style="display: flex;">
 
-                              <div class="col-4">
+                              <div class="col-4" style="text-align: center;" >
+                                <?php if($pri_w != 0){?>
+                                <button type="button" onclick="ShowSms()" style=" " class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                                <?php } ?>
+                              </div>
+                              <div class="col-4" style="text-align:center;">
                                 <?php if($pri_w != 0){ ?>
-                                <button type="button" onclick="ShowSms()" style=" float: left;margin-right: 10px" class="btn btn-warning shadow">เปลี่ยนข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
+                                <button type="button" onclick="CancelSms()" style=" margin-right: 10px" class="btn btn-danger shadow">ยกเลิกข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
                                 <?php } ?>
                                 </div>
-                                <div class="col-4">
-                                <?php if($pri_w != 0){ ?>
-                                <button type="button" onclick="CancelSms()" style=" float: left;margin-right: 10px" class="btn btn-danger shadow">ยกเลิกข้อความป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;color:white" class="fa fa-file-text"></i></button>
-                                <?php } ?>
-                                </div>
-                                <div class="col-4">
-                                    <?php if($pri_w != 0){ ?>
+                              <div class="col-4 " style="text-align: center;">
+                              <?php if($pri_w != 0){?>
                                   <button type="button" onclick="sendmessageToVMS()"  class="btn btn-success shadow">ส่งข้อความขึ้นป้าย<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;color:white" class="fa fa-cloud-upload"></i></button>
                                   <?php } ?>
                               </div>
-                              </div>
+                           </div>
                               
                            </div>
                            <div id="ShowPlayList" style="padding: 1rem; margin-top: .5rem;"></div>
