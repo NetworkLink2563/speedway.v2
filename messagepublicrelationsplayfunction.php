@@ -44,7 +44,9 @@ function showsms(){
                                 dbo.TMstMMsgSize ON dbo.TMstMPlaylist.XVMssCode = dbo.TMstMMsgSize.XVMssCode
         WHERE        (dbo.TMstMPlaylist.XVPltType = N'1')
         ORDER BY dbo.TMstMPlaylist.XVPltCode DESC
+
     ";
+  //  echo  $stmt  ;
     $data='
         <table id="TableSms" class="table table-striped table-hover" style="width:100%;">
             <thead>
@@ -110,7 +112,7 @@ function insert($XVVmsCode,$XVPltCode){
                                               ,'$XVWhoCreate'
                                               ,GETDATE()
                                               );";
-       
+      // echo $sql ;
          $stmt = sqlsrv_query( $conn, $sql);
          if( $stmt === false ) {
                  $ret='{"Return":"InsertError"}';
@@ -128,7 +130,7 @@ function ShowPlayList($XVVmsCode){
           FROM  dbo.TMstMPlaylist INNER JOIN
                          dbo.TMstMItmVMSPlayList ON dbo.TMstMPlaylist.XVPltCode = dbo.TMstMItmVMSPlayList.XVPltCode
            WHERE        (dbo.TMstMItmVMSPlayList.XVVmsCode = '$XVVmsCode') and  (dbo.TMstMPlaylist.XVPltType = N'1')";
-  
+    echo  $sql ;
     $query = sqlsrv_query($conn,  $sql);
     $XVPltCode='';
     $data='';
