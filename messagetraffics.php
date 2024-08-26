@@ -619,7 +619,7 @@ background-image: url('img/icon/mag.png');
     <div class="modal-header" style="display: flex; background-color: #c6e9ff;">
 
       <div class="col-11">
-        <h5 class="modal-title" style="text-align: center;"><i style="margin-left: 10px;color:#034672 ;font-size: 30px;" class="fa fa-file-text"></i> สร้างข้อความตัวอักษร</h5>
+        <h5 class="modal-title" style="text-align: center;"><i style="margin-left: 10px;color:#034672 ;font-size: 25px;" class="fa fa-file-text"></i> สร้างข้อความตัวอักษร</h5>
         </div>
 
         <div class="col-1" style="text-align: center;">
