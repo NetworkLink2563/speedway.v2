@@ -1606,12 +1606,12 @@ function SearchEdit(XVMsfCode,w,h){
             if(XVMsfFormat=='001'){
                 
                 $('#modal-frame1').modal('show');
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3;
                 document.getElementById("frame1_section3").style.width = w+"px";
                 document.getElementById("frame1_section3").style.height = h+"px";
                 document.getElementById("frame1_section3_show").style.width = w+"px";
                 document.getElementById("frame1_section3_show").style.height = h+"px";
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3;
-    
+            
                 document.getElementById("frame1_section3_show").src = url;
                 $('#framenumber').val(1);
                 $('#XVMsfCodeF1').val(XVMsfCode);
