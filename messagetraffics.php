@@ -498,7 +498,7 @@ background-image: url('img/icon/mag.png');
                                     </th>
                                     <th class="th-sm" style="text-align: center">ประเภท
                                     </th>
-                                    <th class="th-sm" style="text-align: center"></th>
+                                    <!-- <th class="th-sm" style="text-align: center"></th> -->
                                     <th class="th-sm" style="text-align: center">ลบ</th>
                                     <th class="th-sm" style="text-align: center">แก้ไข</th>
                                 </tr>
@@ -558,7 +558,7 @@ background-image: url('img/icon/mag.png');
                                     <td style="text-align: center;">
                                         <div style=" margin-top: 5px"><?php echo $XVMsgType; ?></div>
                                     </td>
-                                    <td>
+                                    
                     </div>
                     <td>
                     <?php
