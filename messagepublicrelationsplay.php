@@ -703,7 +703,7 @@ function SelectSms(XVPltCode){
     });
 }
 function ShowPlayListDetail(XVVmsCode){
-     alert(XVVmsCode);
+    // alert(XVVmsCode);
     $('#ShowPlayList').empty();
     $.ajax({
         type: "POST",

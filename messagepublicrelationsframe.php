@@ -1278,10 +1278,10 @@ function addsms(smsid){
         }
     });
 }  
-$("#btn_saveframe1").click(function(){
+$("#btn_saveframe1").click(function(){ 
     var XVMsfCode= $('#XVMsfCodeF1').val();
     var XVMssCode=$('#XVMssCode').val();
-    var XVMsfNameF1= $('#XVMsfNameF1').val();
+    var XVMsfNameF1= $('#XVMsfNameF1').val(); 
     var frame1_section3_XVMsgCode= $('#frame1_section3_XVMsgCode').val();
 
     if(XVMsfNameF1==''){
@@ -1292,7 +1292,7 @@ $("#btn_saveframe1").click(function(){
             Swal.fire("กรุณาเลือกข้อความ", "", "warning");
             return false;
     }
-    $.ajax({
+    $.ajax({ 
         type: "POST",
         url: "messagepublicrelationsframefunction.php",
         data: {

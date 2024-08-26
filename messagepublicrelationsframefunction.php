@@ -5,7 +5,7 @@ session_start();
        if(isset($_POST["showsmssel"])){
           echo showsmssel();
        }
-       if(isset($_POST["f1_sel_sms1"])){
+       if(isset($_POST["f1_sel_sms1"])){ 
          $XVMsgCode=$_POST["XVMsgCode"];
          echo getsms($XVMsgCode);
        }
@@ -170,6 +170,7 @@ session_start();
             $XVMssCode=$_POST["XVMssCode"];
             $XVMsfName=$_POST["XVMsfName"];
             $XVMsgCodeF3=$_POST['XVMsgCodeF3'];
+            $TF3 = explode('.', $XVMsgCodeF3);
             $XVMsfFormat='001';
             $XVMsfType='1';
             $XVWhoCreate=$_SESSION['userName'];
@@ -183,7 +184,7 @@ session_start();
                             '$XVMsfFormat', 
                             '$XVMsgCodeF1',
                             '$XVMsgCodeF2',
-                            '$XVMsgCodeF3',
+                            '".$TF3[0]."',
                             '$XVMsgCodeF4',
                             '$XVMsgCodeF5',
                             '$XVMsfType',
@@ -197,7 +198,7 @@ session_start();
                 SET XVMsfName='$XVMsfName',
                     XVMsgCodeF1='$XVMsgCodeF1',
                     XVMsgCodeF2='$XVMsgCodeF2',
-                    XVMsgCodeF3='$XVMsgCodeF3',
+                    XVMsgCodeF3='".$TF3[0]."',
                     XVMsgCodeF4='$XVMsgCodeF4',
                     XVMsgCodeF5='$XVMsgCodeF5',
                     XVWhoEdit='$XVWhoEdit'
@@ -240,6 +241,12 @@ session_start();
         $XVMsgCodeF3=$_POST['XVMsgCodeF3'];
         $XVMsgCodeF4=$_POST['XVMsgCodeF4'];
         $XVMsgCodeF5=$_POST['XVMsgCodeF5'];
+        $TF1 = explode('.', $XVMsgCodeF1);
+        $TF2 = explode('.', $XVMsgCodeF2);
+        $TF3 = explode('.', $XVMsgCodeF3);
+        $TF4 = explode('.', $XVMsgCodeF4);
+        $TF5 = explode('.', $XVMsgCodeF5);
+
         $XVMsfFormat='002';
         $XVMsfType='1';
         $XVWhoCreate=$_SESSION['userName'];
@@ -251,11 +258,11 @@ session_start();
                         '$XVMsfName',
                         '$XVMssCode',
                         '$XVMsfFormat', 
-                        '$XVMsgCodeF1',
-                        '$XVMsgCodeF2',
-                        '$XVMsgCodeF3',
-                        '$XVMsgCodeF4',
-                        '$XVMsgCodeF5',
+                        '".$TF1[0]."',
+                        '".$TF2[0]."',
+                        '".$TF3[0]."',
+                        '".$TF4[0]."',
+                        '".$TF5[0]."',
                         '$XVMsfType',
                         '$XVWhoCreate',
                         GETDATE()
@@ -265,11 +272,11 @@ session_start();
         }else{
             $sql=" UPDATE TMstMMessageFrame
             SET XVMsfName='$XVMsfName',
-                XVMsgCodeF1='$XVMsgCodeF1',
-                XVMsgCodeF2='$XVMsgCodeF2',
-                XVMsgCodeF3='$XVMsgCodeF3',
-                XVMsgCodeF4='$XVMsgCodeF4',
-                XVMsgCodeF5='$XVMsgCodeF5',
+                XVMsgCodeF1='".$TF1[0]."',
+                XVMsgCodeF2='".$TF2[0]."',
+                XVMsgCodeF3='".$TF3[0]."',
+                XVMsgCodeF4='".$TF4[0]."',
+                XVMsgCodeF5='".$TF5[0]."',
                 XVWhoEdit='$XVWhoEdit'
                 WHERE XVMsfCode='$XVMsfCode';";
         }
@@ -309,6 +316,12 @@ function SaveFrame3( $XVMsfCode){
         $XVMsgCodeF1=$_POST['XVMsgCodeF1'];
         $XVMsgCodeF3=$_POST['XVMsgCodeF3'];
         $XVMsgCodeF4=$_POST['XVMsgCodeF4'];
+        
+        $TF1 = explode('.', $XVMsgCodeF1);
+        $TF3 = explode('.', $XVMsgCodeF3);
+        $TF4 = explode('.', $XVMsgCodeF4);
+
+
         $XVMsfFormat='003';
         $XVMsfType='1';
         $XVWhoCreate=$_SESSION['userName'];
@@ -320,10 +333,10 @@ function SaveFrame3( $XVMsfCode){
                         '$XVMsfName',
                         '$XVMssCode',
                         '$XVMsfFormat', 
-                        '$XVMsgCodeF1',
+                        '".$TF1[0]."',
                         '$XVMsgCodeF2',
-                        '$XVMsgCodeF3',
-                        '$XVMsgCodeF4',
+                        '".$TF3[0]."',
+                        '".$TF4[0]."',
                         '$XVMsgCodeF5',
                         '$XVMsfType',
                         '$XVWhoCreate',
@@ -334,10 +347,10 @@ function SaveFrame3( $XVMsfCode){
         }else{
             $sql=" UPDATE TMstMMessageFrame
             SET XVMsfName='$XVMsfName',
-                XVMsgCodeF1='$XVMsgCodeF1',
+                XVMsgCodeF1='".$TF1[0]."',
                 XVMsgCodeF2='$XVMsgCodeF2',
-                XVMsgCodeF3='$XVMsgCodeF3',
-                XVMsgCodeF4='$XVMsgCodeF4',
+                XVMsgCodeF3='".$TF3[0]."',
+                XVMsgCodeF4='".$TF4[0]."',
                 XVMsgCodeF5='$XVMsgCodeF5',
                 XVWhoEdit='$XVWhoEdit'
                 WHERE XVMsfCode='$XVMsfCode';";

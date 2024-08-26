@@ -130,7 +130,7 @@ function ShowPlayList($XVVmsCode){
           FROM  dbo.TMstMPlaylist INNER JOIN
                          dbo.TMstMItmVMSPlayList ON dbo.TMstMPlaylist.XVPltCode = dbo.TMstMItmVMSPlayList.XVPltCode
            WHERE        (dbo.TMstMItmVMSPlayList.XVVmsCode = '$XVVmsCode') and  (dbo.TMstMPlaylist.XVPltType = N'1')";
-    echo  $sql ;
+    //echo  $sql ;
     $query = sqlsrv_query($conn,  $sql);
     $XVPltCode='';
     $data='';
