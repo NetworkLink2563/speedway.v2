@@ -511,7 +511,7 @@ text-align: center;
         <h4 class="modal-title">เลือกข้อความป้าย</h4>
         </div>
         <div class="col-1">
-        <button type="button" id="close-sms" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" id="close-sms" class="btn-close" data-dismiss="modal"></button>
         </div>
       </div>
 

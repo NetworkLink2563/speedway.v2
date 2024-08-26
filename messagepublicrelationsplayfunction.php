@@ -48,7 +48,7 @@ function showsms(){
     ";
   //  echo  $stmt  ;
     $data='
-        <table id="TableSms" class="table table-striped table-hover" style="width:100%;">
+        <table id="TableSms" class="table table-striped table-hover table-bordered" style="width:100%;">
             <thead>
                     <tr style="font-size: 10pt">
                         <th class="th-sm">รหัสชุดการแสดงป้าย
@@ -57,9 +57,7 @@ function showsms(){
                         </th>
                         <th class="th-sm">ขนาด
                         </th>
-                        <th class="th-sm">
-                        </th>
-                        <th class="th-sm">
+                        <th class="th-sm">เลือกชุดข้อความ
                         </th>
                     </tr>
             </thead>
@@ -72,7 +70,7 @@ function showsms(){
                        $data.='<td>'.$result["XVPltCode"].'</td>';
                        $data.='<td style="text-align:left;" >'.$result["XVPltName"].'</td>';
                        $data.='<td>'.$result["XIMssWPixel"].'x'.$result["XIMssHPixel"].'px</td>';
-                       $data.='<td>'.$result["XIMssWPixel"].'x'.$result["XIMssHPixel"].'px</td>';
+                    //    $data.='<td>'.$result["XIMssWPixel"].'x'.$result["XIMssHPixel"].'px</td>';
                        $data.='<td><button type="button"  onclick="SelectSms(\''.$result["XVPltCode"].'\')"   class="btn btn-primary btn-sm">ใช้ชุดข้อความนี้<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;" class="fa fa-file-text"></i></button>';
                        $data.='</tr>';
                       
