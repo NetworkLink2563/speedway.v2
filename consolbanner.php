@@ -671,6 +671,7 @@ INNER JOIN TMstMProvince ON TMstMProvince.XVPvnCode=TMstMDistrict.XVPvnCode";
 </div>
 <?php } ?>
 
+<?php include 'footer.php'; ?>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

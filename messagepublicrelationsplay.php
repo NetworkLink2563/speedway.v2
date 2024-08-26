@@ -417,7 +417,7 @@ background-image: url('img/icon/mag.png');
             </div>
 
             <div class="col-4" style="text-align: center;">
-            <img src="img/icon/edit.png" height="25" alt="Responsive image"> step4 ข้อความป้ายประชาสัมพันธ์
+            <img src="/img/icon/edit.png" height="25" alt="Responsive image"> step4 ข้อความป้ายประชาสัมพันธ์
             </div>
 
             <div class="next-btn col-4"  style="text-align: right; padding: 0; ">
