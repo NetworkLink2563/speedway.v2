@@ -485,7 +485,7 @@ background-image: url('img/icon/mag.png');
 
                     
                         <div class="table-content col">
-                        <table id="VMSTable" class="table table-striped table-hover" style="width:100%;">
+                        <table id="VMSTable" class="table table-striped table-hover table-bordered" style="width:100%;">
                             <thead>
                                 <tr style="font-size: 10pt">
                                     <th class="th-sm">รหัสข้อความ
