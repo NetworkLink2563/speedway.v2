@@ -137,9 +137,9 @@ function insert($XVVmsCode,$XVPltCode){
         $date->setTime($hour, $minute);
 
        // $hourend = $d1['XIShfEndHour'];  
-        $hourend ='19';
+        $hourend ='16';
         //$minuteend= $d1['XIShfEndMin'];
-        $minuteend ='00';
+        $minuteend ='42';
         $datec = new DateTime();
         $datec->setDate($year, $month, $day);
         $datec->setTime($hourend,$minuteend);
