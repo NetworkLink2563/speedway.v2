@@ -1601,7 +1601,7 @@ function SearchEdit(XVMsfCode,w,h){
 
                 $('#modal-frame2').modal('show');
 
-                document.getElementById("frame2_section1").style.width = "321px";
+                document.getElementById("frame2_section1").style.width = w+"px";
                 document.getElementById("frame2_section1").style.height = "100px";
                 document.getElementById("frame2_section1_show").style.width = w+"px";
                 document.getElementById("frame2_section1_show").style.height = "100px";
@@ -1617,24 +1617,16 @@ function SearchEdit(XVMsfCode,w,h){
                 document.getElementById("frame2_section3").style.width =  "321px";
                 document.getElementById("frame2_section3").style.height = ((h-110)-30)+"px";
      
-                document.getElementById("frame2_section3_show").style.width =  "321px";
+                document.getElementById("frame2_section3_show").style.width =  ((w/3)-5)+"px";
                 document.getElementById("frame2_section3_show").style.height = ((h-110)-30)+"px";
 
-                // document.getElementById("frame2_section4").style.width = (w/3)+"px";
-                // document.getElementById("frame2_section4").style.height = (h-100)+"px";
-
-                document.getElementById("frame2_section4").style.width =  "321px";
+                document.getElementById("frame2_section4").style.width = "321px";
                 document.getElementById("frame2_section4").style.height = ((h-110)-30)+"px";
-
                 document.getElementById("frame2_section4_show").style.width =  ((w/3)-5)+"px";
                 document.getElementById("frame2_section4_show").style.height = ((h-110)-30)+"px";
 
                 document.getElementById("frame2_section5").style.width = "321px";
-                document.getElementById("frame2_section5").style.height = (h-100)+"px";
-
-                document.getElementById("frame2_section5").style.width =  "321px";
                 document.getElementById("frame2_section5").style.height = ((h-110)-30)+"px";
-
                 document.getElementById("frame2_section5_show").style.width =  ((w/3)-5)+"px";
                 document.getElementById("frame2_section5_show").style.height = ((h-110)-30)+"px";
                 
