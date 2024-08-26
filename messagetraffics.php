@@ -933,7 +933,7 @@ background-image: url('img/icon/mag.png');
             </div>
             <div class="modal-body text-center">
 
-                <iframe id="iframe" style="border: 0;" src=""></iframe>
+            <iframe frameborder='0' scrolling='no' id="iframe"   style="border: 1px solid #cccc; overflow: hidden;" src=""></iframe>
 
             </div>
         </div>
@@ -1268,6 +1268,7 @@ function show_modal(e) {
 
 function examplesms(url, h, w, vmsmame) {
 
+    $('#ModalExample').modal('show');
     document.getElementById("Example_Title").innerText = vmsmame + " ขนาด กว้าง=" + w + " สูง=" + h;
 
     document.getElementById("iframe").width = parseInt(980);
@@ -1275,7 +1276,7 @@ function examplesms(url, h, w, vmsmame) {
     document.getElementById("iframe").src = url;
 
 
-    $('#ModalExample').modal('show');
+   
 }
 
 

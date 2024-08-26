@@ -787,7 +787,6 @@ background-image: url('img/icon/mag.png');
                     
                             <button style="position: absolute; z-index:1000;" onclick="addsms(3)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
                             <iframe id="frame2_section3_show" src="" style="border:none;"></iframe>
-                            
                        </div>
                        
 
@@ -1000,7 +999,7 @@ background-image: url('img/icon/mag.png');
       <!-- Modal body -->
       <div class="modal-body">
       <div style="text-align: center;">                                  
-                <iframe id="iframe" style="border: 0;" src=""></iframe>
+      <iframe frameborder='0' scrolling='no' id="iframe"   style="border: 1px solid #cccc; overflow: hidden;" src=""></iframe>
                 </div>  
       </div>
 
@@ -1624,7 +1623,7 @@ function SearchEdit(XVMsfCode,w,h){
 
                 $('#modal-frame2').modal('show');
 
-                document.getElementById("frame2_section1").style.width = w+"px";
+                document.getElementById("frame2_section1").style.width = "320px";
                 document.getElementById("frame2_section1").style.height = "100px";
                 document.getElementById("frame2_section1_show").style.width = w+"px";
                 document.getElementById("frame2_section1_show").style.height = "100px";
@@ -1634,19 +1633,30 @@ function SearchEdit(XVMsfCode,w,h){
                 document.getElementById("frame2_section2_show").style.width = w+"px";
                 document.getElementById("frame2_section2_show").style.height = "100px";
 
-                document.getElementById("frame2_section3").style.width = (w/3)+"px";
-                document.getElementById("frame2_section3").style.height = (h-100)+"px";
+                // document.getElementById("frame2_section3").style.width = (w/3)+"px";
+                // document.getElementById("frame2_section3").style.height = (h-100)+"px";
+
+                document.getElementById("frame2_section3").style.width =  "320px";
+                document.getElementById("frame2_section3").style.height = ((h-110)-30)+"px";
      
-                document.getElementById("frame2_section3_show").style.width =  ((w/3)-5)+"px";
+                document.getElementById("frame2_section3_show").style.width =  "320px";
                 document.getElementById("frame2_section3_show").style.height = ((h-110)-30)+"px";
 
-                document.getElementById("frame2_section4").style.width = (w/3)+"px";
-                document.getElementById("frame2_section4").style.height = (h-100)+"px";
+                // document.getElementById("frame2_section4").style.width = (w/3)+"px";
+                // document.getElementById("frame2_section4").style.height = (h-100)+"px";
+
+                document.getElementById("frame2_section4").style.width =  "320px";
+                document.getElementById("frame2_section4").style.height = ((h-110)-30)+"px";
+
                 document.getElementById("frame2_section4_show").style.width =  ((w/3)-5)+"px";
                 document.getElementById("frame2_section4_show").style.height = ((h-110)-30)+"px";
 
-                document.getElementById("frame2_section5").style.width = (w/3)+"px";
+                document.getElementById("frame2_section5").style.width = "320px";
                 document.getElementById("frame2_section5").style.height = (h-100)+"px";
+
+                document.getElementById("frame2_section5").style.width =  "320px";
+                document.getElementById("frame2_section5").style.height = ((h-110)-30)+"px";
+
                 document.getElementById("frame2_section5_show").style.width =  ((w/3)-5)+"px";
                 document.getElementById("frame2_section5_show").style.height = ((h-110)-30)+"px";
                 
@@ -1700,15 +1710,21 @@ function SearchEdit(XVMsfCode,w,h){
                document.getElementById("frame3_section1_show").style.height = "100px";
 
 
-               document.getElementById("frame3_section3").style.width = (w/2)+"px";
-               document.getElementById("frame3_section3").style.height = (h-100)+"px";
+            //    document.getElementById("frame3_section3").style.width = (w/2)+"px";
+            //    document.getElementById("frame3_section3").style.height = (h-100)+"px";
      
+               document.getElementById("frame3_section3").style.width =  ((w/2)-5)+"px";
+               document.getElementById("frame3_section3").style.height = ((h-110)-30)+"px";
+
                document.getElementById("frame3_section3_show").style.width =  ((w/2)-5)+"px";
                document.getElementById("frame3_section3_show").style.height = ((h-110)-30)+"px";
 
-               document.getElementById("frame3_section4").style.width = (w/2)+"px";
-               document.getElementById("frame3_section4").style.height = (h-100)+"px";
+            //    document.getElementById("frame3_section4").style.width = (w/2)+"px";
+            //    document.getElementById("frame3_section4").style.height = (h-100)+"px";
      
+               document.getElementById("frame3_section4").style.width =  ((w/2)-5)+"px";
+               document.getElementById("frame3_section4").style.height = ((h-110)-30)+"px";
+
                document.getElementById("frame3_section4_show").style.width =  ((w/2)-5)+"px";
                document.getElementById("frame3_section4_show").style.height = ((h-110)-30)+"px";
                $('#framenumber').val(3);

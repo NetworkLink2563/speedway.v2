@@ -1286,7 +1286,7 @@ function show_modal(e) {
 }
 
 function examplesms(url, h, w, vmsmame) {
-
+    $('#ModalExample').modal('show');
     document.getElementById("Example_Title").innerText = vmsmame + " ขนาด กว้าง=" + w + " สูง=" + h;
 
     document.getElementById("iframe").width = parseInt(w);
@@ -1294,7 +1294,7 @@ function examplesms(url, h, w, vmsmame) {
     document.getElementById("iframe").src = url;
 
 
-    $('#ModalExample').modal('show');
+   
 }
 
 
