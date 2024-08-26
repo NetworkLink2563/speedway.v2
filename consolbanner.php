@@ -519,7 +519,7 @@ if($pri_r == 0){
 
                                 <div class="col-4" style="text-align: center;">
                                     <button id="btnbrightnessManual" class="btn btn-success shadow"
-                                        style="margin: 1rem 0rem;width: 100%;">บันทีก</button>
+                                        style="margin: 1rem 0rem;width: 100%;">บันทึก</button>
                                 </div>
 
                                 </div>
