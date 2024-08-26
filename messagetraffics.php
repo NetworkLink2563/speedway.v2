@@ -925,19 +925,25 @@ background-image: url('img/icon/mag.png');
 </div>
 
 <div class="modal py-5" id="ModalExample" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="  height: 500px;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="  height: 620px;">
             <div class="modal-header">
-                <h5 id="Example_Title" class="modal-title"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		<div class="col" >
+                <h5 style="text-align: center;" id="Example_Title" class="modal-title"></h5>
+		</div>
+		<div col-1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+		</div>
             </div>
             <div class="modal-body text-center">
-
-            <iframe frameborder='0' scrolling='no' id="iframe"   style="border: 1px solid #cccc; overflow: hidden;" src=""></iframe>
-
+                
+            <div class="wrap" >
+                <iframe frameborder='0' scrolling='no' id="iframe"   style="border: 1px solid #cccc; overflow: hidden;" src=""></iframe>
+                </div>
             </div>
         </div>
-    </div>
+
+</div>
 </div>
 
 
@@ -1271,8 +1277,8 @@ function examplesms(url, h, w, vmsmame) {
     $('#ModalExample').modal('show');
     document.getElementById("Example_Title").innerText = vmsmame + " ขนาด กว้าง=" + w + " สูง=" + h;
 
-    document.getElementById("iframe").width = parseInt(980);
-    document.getElementById("iframe").height = parseInt(530);
+    document.getElementById("iframe").width = parseInt(w);
+    document.getElementById("iframe").height = parseInt(h);
     document.getElementById("iframe").src = url;
 
 
