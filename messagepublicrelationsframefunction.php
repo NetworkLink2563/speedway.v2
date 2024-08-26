@@ -55,39 +55,48 @@ session_start();
          $XVMsfFormat=$result["XVMsfFormat"];
          
          $XVMsgCodeF1=$result["XVMsgCodeF1"];
+
          $typeCode = explode(".", $XVMsgCodeF1);
          $tF1 = $typeCode[1];
-         if($tF1==''){ $k='1';}elseif($tf1=='png'){  $k="2";}elseif($tf1=='jpg'){$k=='2';}
-         elseif($tF1=='jpeg'){$k=='2';}elseif($tF1=='gif'){$k=='2';}elseif($tF1=='bmp'){$k=='2';}elseif($tF1=='tif'){$k=='2';}
-         elseif($tF1=='psd'){$k=='2';}elseif($tF1=='eps'){$k=='2';}elseif($tF1=='pdf'){$k=='2';}elseif($tF1=='svg'){$k=='2';}elseif($tF1=='raw'){$k=='2';}elseif($tF1=='webm'){$k=='3';}
+         if($tF1==''){ $k='1';}elseif($tf1=='png'){  $k="2";}elseif($tf1=='jpg'){$k='2';}
+         elseif($tF1=='jpeg'){$k='2';}elseif($tF1=='gif'){$k='2';}elseif($tF1=='bmp'){$k='2';}elseif($tF1=='tif'){$k='2';}
+         elseif($tF1=='psd'){$k='2';}elseif($tF1=='eps'){$k='2';}elseif($tF1=='pdf'){$k='2';}elseif($tF1=='svg'){$k='2';}
+         elseif($tF1=='raw'){$k='2';}elseif($tF1=='webm'){$k='3';}
     
          $XVMsgCodeF2=$result["XVMsgCodeF2"];
          $typeCode2 = explode(".", $XVMsgCodeF2);
          $tF2 = $typeCode2[1];
-         if($tF2==''){ $k2='1';}elseif($tF2=='png'){  $k2="2";}elseif($tF2=='jpg'){$k2=='2';}
-         elseif($tF2=='jpeg'){$k2=='2';}elseif($tF2=='gif'){$k2=='2';}elseif($tF2=='bmp'){$k2=='2';}elseif($tF2=='tif'){$k2=='2';}
-         elseif($tF2=='psd'){$k2=='2';}elseif($tF2=='eps'){$k2=='2';}elseif($tF2=='pdf'){$k2=='2';}elseif($tF2=='svg'){$k2=='2';}elseif($tF2=='raw'){$k2=='2';}elseif($tF2=='webm'){$k2=='3';}
+         if($tF2==''){ $k2='1';}elseif($tF2=='png'){  $k2="2";}elseif($tF2=='jpg'){$k2='2';}
+         elseif($tF2=='jpeg'){$k2='2';}elseif($tF2=='gif'){$k2='2';}elseif($tF2=='bmp'){$k2='2';}elseif($tF2=='tif'){$k2='2';}
+         elseif($tF2=='psd'){$k2='2';}elseif($tF2=='eps'){$k2='2';}elseif($tF2=='pdf'){$k2='2';}elseif($tF2=='svg'){$k2='2';}
+         elseif($tF2=='raw'){$k2='2';}elseif($tF2=='webm'){$k2='3';}
 
          $XVMsgCodeF3=$result["XVMsgCodeF3"];
          $typeCode3 = explode(".", $XVMsgCodeF3);
          $tF3 = $typeCode3[1];
-         if($tF3==''){ $k3='1';}elseif($tF3=='png'){  $k3="2";}elseif($tF3=='jpg'){$k3=='2';}
-         elseif($tF3=='jpeg'){$k3=='2';}elseif($tF3=='gif'){$k3=='2';}elseif($tF3=='bmp'){$k3=='2';}elseif($tF3=='tif'){$k3=='2';}
-         elseif($tF3=='psd'){$k3=='2';}elseif($tF3=='eps'){$k3=='2';}elseif($tF3=='pdf'){$k3=='2';}elseif($tF3=='svg'){$k3=='2';}elseif($tF3=='raw'){$k3=='2';}elseif($tF3=='webm'){$k3=='3';}
+
+         if($tF3==''){ $k3='1';}elseif($tF3=='png'){  $k3="2";}elseif($tF3=='jpg'){$k3='2';}
+         elseif($tF3=='jpeg'){$k3='2';}elseif($tF3=='gif'){$k3='2';}elseif($tF3=='bmp'){$k3='2';}elseif($tF3=='tif'){$k3='2';}
+         elseif($tF3=='psd'){$k3='2';}elseif($tF3=='eps'){$k3='2';}elseif($tF3=='pdf'){$k3='2';}elseif($tF3=='svg'){$k3='2';}
+         elseif($tF3=='raw'){$k3='2';}elseif($tF3=='webm'){$k3='3';}
 
          $XVMsgCodeF4=$result["XVMsgCodeF4"];
+        
          $typeCode4 = explode(".", $XVMsgCodeF4);
          $tF4 = $typeCode4[1];
-         if($tF4==''){ $k4='1';}elseif($tF4=='png'){  $k4="2";}elseif($tF4=='jpg'){$k4=='2';}
-         elseif($tF4=='jpeg'){$k4=='2';}elseif($tF4=='gif'){$k4=='2';}elseif($tF4=='bmp'){$k4=='2';}elseif($tF4=='tif'){$k4=='2';}
-         elseif($tF4=='psd'){$k4=='2';}elseif($tF4=='eps'){$k4=='2';}elseif($tF4=='pdf'){$k4=='2';}elseif($tF4=='svg'){$k4=='2';}elseif($tF4=='raw'){$k4=='2';}elseif($tF4=='webm'){$k4=='3';}
+
+         if($tF4==''){ $k4='1';}elseif($tF4=="png"){  $k4="2";}elseif($tF4=="jpg"){$k4='2';}
+         elseif($tF4=="jpeg"){$k4='2';}elseif($tF4=="gif"){$k4='2';}elseif($tF4=="bmp"){$k4='2';}elseif($tF4=="tif"){$k4='2';}
+         elseif($tF4=="psd"){$k4='2';}elseif($tF4=="eps"){$k4='2';}elseif($tF4=="pdf"){$k4='2';}elseif($tF4=="svg"){$k4='2';}
+         elseif($tF4=="raw"){$k4='2';}elseif($tF4=="webm"){$k4='3';}
          
          $XVMsgCodeF5=$result["XVMsgCodeF5"];
          $typeCode5 = explode(".", $XVMsgCodeF5);
          $tF5 = $typeCode5[1];
-         if($tF5==''){ $k5='1';}elseif($tF5=='png'){  $k5="2";}elseif($tF5=='jpg'){$k5=='2';}
-         elseif($tF5=='jpeg'){$k5=='2';}elseif($tF5=='gif'){$k5=='2';}elseif($tF5=='bmp'){$k5=='2';}elseif($tF5=='tif'){$k5=='2';}
-         elseif($tF5=='psd'){$k5=='2';}elseif($tF5=='eps'){$k5=='2';}elseif($tF5=='pdf'){$k5=='2';}elseif($tF5=='svg'){$k5=='2';}elseif($tF5=='raw'){$k5=='2';}elseif($tF5=='webm'){$k5=='3';}
+         if($tF5==''){ $k5='1';}elseif($tF5=='png'){  $k5="2";}elseif($tF5=='jpg'){$k5='2';}
+         elseif($tF5=='jpeg'){$k5='2';}elseif($tF5=='gif'){$k5='2';}elseif($tF5=='bmp'){$k5='2';}elseif($tF5=='tif'){$k5='2';}
+         elseif($tF5=='psd'){$k5='2';}elseif($tF5=='eps'){$k5='2';}elseif($tF5=='pdf'){$k5='2';}elseif($tF5=='svg'){$k5='2';}
+         elseif($tF5=='raw'){$k5='2';}elseif($tF5=='webm'){$k5='3';}
     
     }
     sqlsrv_close( $conn );
