@@ -557,7 +557,7 @@ background-image: url('img/icon/mag.png');
 </div>
 
                         <div class="col" style="">
-                        <table id="VMSTable" class="table table-striped table-hover">
+                        <table id="VMSTable" class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
                                     <th class="th-sm">รหัส
