@@ -66,6 +66,7 @@ session_start();
          $XVMsgCodeF2=$result["XVMsgCodeF2"];
          $typeCode2 = explode(".", $XVMsgCodeF2);
          $tF2 = $typeCode2[1];
+         
          if($tF2==''){ $k2='1';}elseif($tF2=='png'){  $k2="2";}elseif($tF2=='jpg'){$k2='2';}
          elseif($tF2=='jpeg'){$k2='2';}elseif($tF2=='gif'){$k2='2';}elseif($tF2=='bmp'){$k2='2';}elseif($tF2=='tif'){$k2='2';}
          elseif($tF2=='psd'){$k2='2';}elseif($tF2=='eps'){$k2='2';}elseif($tF2=='pdf'){$k2='2';}elseif($tF2=='svg'){$k2='2';}
@@ -84,7 +85,7 @@ session_start();
         
          $typeCode4 = explode(".", $XVMsgCodeF4);
          $tF4 = $typeCode4[1];
-
+        //  echo $tF4;
          if($tF4==''){ $k4='1';}elseif($tF4=="png"){  $k4="2";}elseif($tF4=="jpg"){$k4='2';}
          elseif($tF4=="jpeg"){$k4='2';}elseif($tF4=="gif"){$k4='2';}elseif($tF4=="bmp"){$k4='2';}elseif($tF4=="tif"){$k4='2';}
          elseif($tF4=="psd"){$k4='2';}elseif($tF4=="eps"){$k4='2';}elseif($tF4=="pdf"){$k4='2';}elseif($tF4=="svg"){$k4='2';}

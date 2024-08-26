@@ -1623,15 +1623,15 @@ function SearchEdit(XVMsfCode,w,h){
                 document.getElementById("frame2_section5_show").style.width =  ((w/3)-5)+"px";
                 document.getElementById("frame2_section5_show").style.height = ((h-110)-30)+"px";
                 
-                var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF1);
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF1+'&type='+obj.Type1;
                 document.getElementById("frame2_section1_show").src = url;
-                var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF2);
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF2+'&type='+obj.Type2;
                 document.getElementById("frame2_section2_show").src = url;
-                var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF3);
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3+'&type='+obj.Type3;
                 document.getElementById("frame2_section3_show").src = url;
-                var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF4);
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF4+'&type='+obj.Type4;
                 document.getElementById("frame2_section4_show").src = url;
-                var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF5);
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF5+'&type='+obj.Type5;
                 document.getElementById("frame2_section5_show").src = url;
                 $('#framenumber').val(2);
                 $('#XVMsfCodeF2').val(XVMsfCode);
@@ -1641,6 +1641,25 @@ function SearchEdit(XVMsfCode,w,h){
                 $('#frame2_section3_XVMsgCode').val(obj.XVMsgCodeF3);
                 $('#frame2_section4_XVMsgCode').val(obj.XVMsgCodeF4);
                 $('#frame2_section5_XVMsgCode').val(obj.XVMsgCodeF5);
+
+                // var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF1);
+                // document.getElementById("frame2_section1_show").src = url;
+                // var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF2);
+                // document.getElementById("frame2_section2_show").src = url;
+                // var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF3);
+                // document.getElementById("frame2_section3_show").src = url;
+                // var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF4);
+                // document.getElementById("frame2_section4_show").src = url;
+                // var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF5);
+                // document.getElementById("frame2_section5_show").src = url;
+                // $('#framenumber').val(2);
+                // $('#XVMsfCodeF2').val(XVMsfCode);
+                // $('#XVMsfNameF2').val(obj.XVMsfName);
+                // $('#frame2_section1_XVMsgCode').val(obj.XVMsgCodeF1);          
+                // $('#frame2_section2_XVMsgCode').val(obj.XVMsgCodeF2);
+                // $('#frame2_section3_XVMsgCode').val(obj.XVMsgCodeF3);
+                // $('#frame2_section4_XVMsgCode').val(obj.XVMsgCodeF4);
+                // $('#frame2_section5_XVMsgCode').val(obj.XVMsgCodeF5);
                 
             
                 $('#modal-frame2').modal('show');
