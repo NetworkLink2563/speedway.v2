@@ -743,7 +743,7 @@ table th{
                 
                    <div class="col-sm-12 text-center" >
                    
-                       <button type="submit" style="background-color:#009933;color:white"  id= "btn_savetext" class="btn "  <?php echo $Disable;?>>บันทึก<i style="color:white;width: 20%;" class="fa fa-save"></i></button>
+                       <button type="submit" style="background-color:#009933;color:white"  id= "btn_savetext" class="btn "  <?php echo $Disable;?>>บันทึก<i style="margin-left: 4px;color:white;font-size: 20px;" class="fa fa-save"></i></button>
                    </div>
                </div>
                <br>
