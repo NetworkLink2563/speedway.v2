@@ -1670,16 +1670,15 @@ function SearchEdit(XVMsfCode,w,h){
                 // $('#frame2_section5_XVMsgCode').val(obj.XVMsgCodeF5);
                 
             
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF1+'&type='+obj.XVMsfType;
-                alert(url);
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF1+'&type='+obj.Type1;
                 document.getElementById("frame2_section1_show").src = url;
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF2+'&type='+obj.XVMsfType;
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF2+'&type='+obj.Type2;
                 document.getElementById("frame2_section2_show").src = url;
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3+'&type='+obj.XVMsfType;
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3+'&type='+obj.Type3;
                 document.getElementById("frame2_section3_show").src = url;
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF4+'&type='+obj.XVMsfType;
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF4+'&type='+obj.Type4;
                 document.getElementById("frame2_section4_show").src = url;
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF5+'&type='+obj.XVMsfType;
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF5+'&type='+obj.Type5;
                 document.getElementById("frame2_section5_show").src = url;
                 $('#framenumber').val(2);
                 $('#XVMsfCodeF2').val(XVMsfCode);
