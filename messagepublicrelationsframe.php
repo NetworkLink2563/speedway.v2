@@ -696,7 +696,7 @@ background-image: url('img/icon/mag.png');
                   
                   
                       <div class="col-12 text-center" style="margin: 1rem;">
-                         <button type="button"  id="btn_saveframe1" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
+                         <button type="button"  id="btn_saveframe1" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 4px;color:white;font-size: 20px;" class="fa fa-save"></i></button>
                          
                       </div>
                   </div>
@@ -1606,7 +1606,7 @@ function SearchEdit(XVMsfCode,w,h){
             if(XVMsfFormat=='001'){
                 
                 $('#modal-frame1').modal('show');
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3+'&type='+obj.Type1;
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3+'&type='+obj.Type3;
                 document.getElementById("frame1_section3").style.width = w+"px";
                 document.getElementById("frame1_section3").style.height = h+"px";
                 document.getElementById("frame1_section3_show").style.width = w+"px";
@@ -1717,9 +1717,9 @@ function SearchEdit(XVMsfCode,w,h){
                
                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF1+'&type='+obj.Type1;
                document.getElementById("frame3_section1_show").src = url;
-               var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3+'&type='+obj.Type1;
+               var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3+'&type='+obj.Type3;
                document.getElementById("frame3_section3_show").src = url;
-               var url='ifarmeimg.php?msg='+obj.XVMsgCodeF4+'&type='+obj.Type1;
+               var url='ifarmeimg.php?msg='+obj.XVMsgCodeF4+'&type='+obj.Type4;
                document.getElementById("frame3_section4_show").src = url;
 
             //    var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF1);
