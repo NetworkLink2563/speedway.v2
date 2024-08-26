@@ -1606,7 +1606,7 @@ function SearchEdit(XVMsfCode,w,h){
             if(XVMsfFormat=='001'){
                 
                 $('#modal-frame1').modal('show');
-                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3;
+                var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3+'&type='+obj.Type1;
                 document.getElementById("frame1_section3").style.width = w+"px";
                 document.getElementById("frame1_section3").style.height = h+"px";
                 document.getElementById("frame1_section3_show").style.width = w+"px";
@@ -1715,11 +1715,11 @@ function SearchEdit(XVMsfCode,w,h){
                $('#XVMsfCodeF3').val(XVMsfCode);
                $('#XVMsfNameF3').val(obj.XVMsfName);
                
-               var url='ifarmeimg.php?msg='+obj.XVMsgCodeF1;
+               var url='ifarmeimg.php?msg='+obj.XVMsgCodeF1+'&type='+obj.Type1;
                document.getElementById("frame3_section1_show").src = url;
-               var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3;
+               var url='ifarmeimg.php?msg='+obj.XVMsgCodeF3+'&type='+obj.Type1;
                document.getElementById("frame3_section3_show").src = url;
-               var url='ifarmeimg.php?msg='+obj.XVMsgCodeF4;
+               var url='ifarmeimg.php?msg='+obj.XVMsgCodeF4+'&type='+obj.Type1;
                document.getElementById("frame3_section4_show").src = url;
 
             //    var url='ifarme.php?msg='+btoa(obj.XVMsgCodeF1);
