@@ -52,7 +52,7 @@ function showsms(){
                     <tr style="font-size: 10pt">
                         <th class="th-sm">รหัสชุดการแสดงป้าย
                         </th>
-                        <th class="th-sm">ชื่อชุดการแสดงป้าย
+                        <th class="th-sm" style="text-align: left;">ชื่อชุดการแสดงป้าย
                         </th>
                         <th class="th-sm">ขนาด
                         </th>
@@ -69,7 +69,7 @@ function showsms(){
                     {
                        $data.='<tr>';
                        $data.='<td>'.$result["XVPltCode"].'</td>';
-                       $data.='<td>'.$result["XVPltName"].'</td>';
+                       $data.='<td style="text-align: left;">'.$result["XVPltName"].'</td>';
                        $data.='<td>'.$result["XIMssWPixel"].'x'.$result["XIMssHPixel"].'px</td>';
                        $data.='<td>'.$result["XIMssWPixel"].'x'.$result["XIMssHPixel"].'px</td>';
                        $data.='<td><button type="button"  onclick="SelectSms(\''.$result["XVPltCode"].'\')"   class="btn btn-primary btn-sm">ใช้ชุดข้อความนี้<i style="margin-left: 10px;color:#09C703;font-size: 18px;float: ritht;" class="fa fa-file-text"></i></button>';
@@ -87,8 +87,10 @@ function showsms(){
 }
 function insert($XVVmsCode,$XVPltCode){
         $XVPltType='2';
-        $XVWhoCreate=$_SESSION['userName'];
+        session_start();
+        $XVWhoCreate=$_SESSION['user'];
         $XVWhoEdit=$_SESSION['userName'];
+        $dnow=date('Y-m-d H:i:s');
         include "lib/DatabaseManage.php";
         $sql="DELETE FROM TMstMItmVMSPlayList WHERE XVVmsCode='$XVVmsCode' and XVPltType=2";
         
@@ -99,20 +101,70 @@ function insert($XVVmsCode,$XVPltCode){
                 
                 exit();
         }
+        
+       
+
+
+
+          $user="SELECT * FROM [NWL_SpeedWayTest2].[dbo].[TMstMUser] JOIN [NWL_SpeedWayTest2].[dbo].[TMstMShift] 
+          ON [NWL_SpeedWayTest2].[dbo].[TMstMUser].XVShfCode = [NWL_SpeedWayTest2].[dbo].[TMstMShift].XVShfCode 
+          WHERE [NWL_SpeedWayTest2].[dbo].[TMstMUser].XVUsrCode ='$XVWhoCreate'";
+     /// echo $user;
+
+        $q=sqlsrv_query($conn, $user);
+        $d1=sqlsrv_fetch_array($q, SQLSRV_FETCH_ASSOC);
+
+       // $TmStr_conH = date('H',strtotime($shf1['XIShfStartHour']));
+       // $TmStr_conM = date('i',strtotime($shf1['XIShfStartMin']));
+        
+       // $TmEd_conH = date('H',strtotime($shf1['XIShfEndHour']));
+       // $TmEd_conM = date('i',strtotime($shf1['XIShfEndMin']));
+        
+   //     $datestr = date('Y-m-d'.$TmStr_conH.$TmStr_conM);
+      //  $dateend = date('Y-m-d'.$TmEd_conH.$TmEd_conM);
+ 
+        $hour = $d1['XIShfStartHour'];// echo $hour.'test';
+        $minute = $d1['XIShfStartMin'];
+        
+        // ตั้งค่าวันที่ที่ต้องการ
+        $year = date('Y');
+        $month = date('m');
+        $day = date('d');;
+        
+        // สร้าง DateTime object
+        $date = new DateTime();
+        $date->setDate($year, $month, $day);
+        $date->setTime($hour, $minute);
+
+        $hourend = $d1['XIShfEndHour'];
+        $minuteend= $d1['XIShfEndMin'];
+
+        $datec = new DateTime();
+        $datec->setDate($year, $month, $day);
+        $datec->setTime($hourend,$minuteend);
+        
+        // แปลง DateTime object เป็น string
+        $dateString_end = $datec->format('Y-m-d H:i:s');
+        $dateString_str = $date->format('Y-m-d H:i:s');
+
         $sql="INSERT INTO TMstMItmVMSPlayList ( 
                                                XVVmsCode
                                               ,XVPltType
                                               ,XVPltCode
+                                              ,XTVmpStart
+                                              ,XTVmpEnd
                                               ,XVWhoCreate
                                               ,XTWhenCreate
                                               )
                                               VALUES ('$XVVmsCode'
                                               ,'$XVPltType'
                                               ,'$XVPltCode'
+                                              ,'$dateString_str'
+                                              ,'$dateString_end'
                                               ,'$XVWhoCreate'
                                               ,GETDATE()
                                               );";
-       
+        // echo $sql;
          $stmt = sqlsrv_query( $conn, $sql);
          if( $stmt === false ) {
                  $ret='{"Return":"InsertError"}';
@@ -149,7 +201,7 @@ function ShowPlayList($XVVmsCode){
                     <tr style="font-size: 10pt">
                         <th class="th-sm">รหัสชุดการแสดงป้าย
                         </th>
-                        <th class="th-sm">ชื่อชุดการแสดงป้าย
+                        <th class="th-sm" style="text-align: left;">ชื่อชุดการแสดงป้าย
                         </th>
                         <th class="th-sm">ขนาด
                         </th>
@@ -171,7 +223,7 @@ FROM            dbo.TMstMPlaylistDT INNER JOIN
                     {
                        $data.='<tr it="'.$result["XVPltCode"].$result["XIPltSeqNo"].'">';
                        $data.='<td>'.$result["XVMsfCode"].'</td>';
-                       $data.='<td>'.$result["XVMsfName"].'</td>';
+                       $data.='<td  style="text-align: left;">'.$result["XVMsfName"].'</td>';
                        $data.='<td>'.$result["XIMssWPixel"].'x'.$result["XIMssHPixel"].'px</td>';
                       
                        
