@@ -63,8 +63,8 @@ session_start();
                                ,XTWhenCreate
                )
                VALUES (
-               '$XVPltCode'
-               ,'$XVPltName'
+                                '$XVPltCode'
+                                ,'$XVPltName'
                                 ,'$XVMssCode'
                                 ,'2'
                                 ,'$XVWhoCreate'
