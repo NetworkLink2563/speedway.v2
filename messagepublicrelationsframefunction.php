@@ -62,7 +62,6 @@ session_start();
          $k = $qc1['XVMsgType'];
          if($k==1){
             $XVMsgCodeF1=$XVMsgCodeF1c;
-            
          }else{
             $XVMsgCodeF1=$qc1["XVMsgFileName"];
          }
@@ -72,29 +71,43 @@ session_start();
          $q2=sqlsrv_query($conn,  $qchk2);
          $qc2=sqlsrv_fetch_array($q2, SQLSRV_FETCH_ASSOC);
          $k2 = $qc2['XVMsgType'];
-         $XVMsgCodeF2=$qc2["XVMsgFileName"];
+         if($k2==1){
+            $XVMsgCodeF2=$XVMsgCodeF2c;
+         }else{
+            $XVMsgCodeF2=$qc2["XVMsgFileName"];
+         }
 
          $XVMsgCodeF3c=$result["XVMsgCodeF3"];
          $qchk3 = "SELECT * FROM TMstMMessage WHERE XVMsgCode ='$XVMsgCodeF3c'";
          $q3=sqlsrv_query($conn,  $qchk3);
-         $qc3=sqlsrv_fetch_array($q2, SQLSRV_FETCH_ASSOC);
+         $qc3=sqlsrv_fetch_array($q3 ,SQLSRV_FETCH_ASSOC);
          $k3 = $qc3['XVMsgType'];
-         $XVMsgCodeF3=$qc3["XVMsgFileName"];
-
+         if($k3==1){
+            $XVMsgCodeF3=$XVMsgCodeF3c;
+         }else{
+            $XVMsgCodeF3=$qc3["XVMsgFileName"];
+         }
          $XVMsgCodeF4c=$result["XVMsgCodeF4"];
          $qchk4 = "SELECT * FROM TMstMMessage WHERE XVMsgCode ='$XVMsgCodeF4c'";
          $q4=sqlsrv_query($conn,  $qchk4);
          $qc4=sqlsrv_fetch_array($q4, SQLSRV_FETCH_ASSOC);
          $k4 = $qc4['XVMsgType'];
-         $XVMsgCodeF4=$qc4["XVMsgFileName"];
-         
+         if($k4==1){
+            $XVMsgCodeF4=$XVMsgCodeF4c;
+         }else{
+            $XVMsgCodeF4=$qc4["XVMsgFileName"];
+         }
          $XVMsgCodeF5c=$result["XVMsgCodeF5"];
          $qchk5 = "SELECT * FROM TMstMMessage WHERE XVMsgCode ='$XVMsgCodeF5c'";
          $q5=sqlsrv_query($conn,  $qchk5);
          $qc5=sqlsrv_fetch_array($q5, SQLSRV_FETCH_ASSOC);
          $k5 = $qc5['XVMsgType'];
-         $XVMsgCodeF5=$qc5["XVMsgFileName"];
-    
+       
+         if($k5==1){
+            $XVMsgCodeF5=$XVMsgCodeF5c;
+         }else{
+            $XVMsgCodeF5=$qc5["XVMsgFileName"];
+         }
     }
     sqlsrv_close( $conn );
     $data='{';
