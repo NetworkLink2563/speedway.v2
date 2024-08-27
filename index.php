@@ -426,7 +426,7 @@ function ThDate()
                         </div>
                         <div class="col-sm-12" style="margin-bottom: .5rem;">
                           
-                            <select id="XVShfCode" class="form-control ">
+                            <select id="XVShfCode" class="btn btn-primary dropdown-toggle" style="margin-top: .5rem; width: 100%; border: 1px solid #cccc; padding: .5rem; background-color: #4976BA;">
                                 <option value="">เลือกกะทำงาน</option>
                                 <?php
                                         function twodigit($number){
@@ -454,7 +454,7 @@ function ThDate()
                         </div>
                         
                         <div class="col-sm-12" style="margin-top: 20px;">
-                            <button id="myButton" class="btn btn-primary btn button shadow" style="font-size: 1rem; background-color: #4976BA; opacity: .8; width: 100%;" type="submit" onclick="loginSystem()"><span>เข้าสู่ระบบ  </span></button>
+                            <button id="myButton" class="btn btn-success btn button shadow" style="font-size: 1rem; opacity: .8; width: 40%;" type="submit" onclick="loginSystem()"><span>เข้าสู่ระบบ  </span></button>
                         </div>
 
 
@@ -503,12 +503,12 @@ function ThDate()
                             </div>
                         </div>
                         
-                        <div class="col-sm-12" style="margin-top: 20px;">
-                            <button id="forgetpass" class="btn btn-success btn button shadow" style="font-size: 1rem;  opacity: .8; width: 100%;" type="button" onclick="chgpwd()"><span>เปลี่ยนรหัสผ่าน  </span></button>
+                    
+
                         </div>
 
-
-
+                        <div class="col-sm-12" style="margin-top: 20px;">
+                            <button id="forgetpass" class="btn btn-success btn button shadow" style="font-size: 1rem;  opacity: .8; width: 50%; margin-top: 1rem;" type="button" onclick="chgpwd()"><span>เปลี่ยนรหัสผ่าน  </span></button>
                         </div>
                     
                     
