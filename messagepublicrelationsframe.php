@@ -1754,13 +1754,13 @@ function SearchEdit(XVMsfCode,w,h){
             //    document.getElementById("frame3_section3").style.height = (h-100)+"px";
      
                document.getElementById("frame3_section3").style.width =  ((w/2))+"px";
-               document.getElementById("frame3_section3").style.height = ((h-110)-28)+"px";
+               document.getElementById("frame3_section3").style.height = ((h-110)-26)+"px";
 
                document.getElementById("frame3_section3_show").style.width =  ((w/2)-1)+"px";
                document.getElementById("frame3_section3_show").style.height = ((h-110)-30)+"px";
 
                document.getElementById("frame3_section4").style.width = ((w/2))+"px";
-               document.getElementById("frame3_section4").style.height = ((h-110)-28)+"px";
+               document.getElementById("frame3_section4").style.height = ((h-110)-26)+"px";
      
             
                document.getElementById("frame3_section4_show").style.width =  ((w/2)-1)+"px";
