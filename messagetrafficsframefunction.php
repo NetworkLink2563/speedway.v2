@@ -53,46 +53,61 @@ session_start();
     {
          $XVMsfName=$result["XVMsfName"];
          $XVMsfFormat=$result["XVMsfFormat"];
-         $XVMsgCodeF1=$result["XVMsgCodeF1"];
-         $typeCode = explode(".", $XVMsgCodeF1);
-         $tF1 = $typeCode[1];
-         if($tF1==''){ $k='1';}elseif($tf1=='png'){  $k="2";}elseif($tf1=='jpg'){$k='2';}
-         elseif($tF1=='jpeg'){$k='2';}elseif($tF1=='gif'){$k='2';}elseif($tF1=='bmp'){$k='2';}elseif($tF1=='tif'){$k='2';}
-         elseif($tF1=='psd'){$k='2';}elseif($tF1=='eps'){$k='2';}elseif($tF1=='pdf'){$k='2';}elseif($tF1=='svg'){$k='2';}
-         elseif($tF1=='raw'){$k='2';}elseif($tF1=='webm'){$k='3';}
-
-         $XVMsgCodeF2=$result["XVMsgCodeF2"];
-         $typeCode2 = explode(".", $XVMsgCodeF2);
-         $tF2 = $typeCode2[1];
-         if($tF2==''){ $k2='1';}elseif($tF2=='png'){  $k2="2";}elseif($tF2=='jpg'){$k2='2';}
-         elseif($tF2=='jpeg'){$k2='2';}elseif($tF2=='gif'){$k2='2';}elseif($tF2=='bmp'){$k2='2';}elseif($tF2=='tif'){$k2='2';}
-         elseif($tF2=='psd'){$k2='2';}elseif($tF2=='eps'){$k2='2';}elseif($tF2=='pdf'){$k2='2';}elseif($tF2=='svg'){$k2='2';}
-         elseif($tF2=='raw'){$k2='2';}elseif($tF2=='webm'){$k2='3';}
-
-         $XVMsgCodeF3=$result["XVMsgCodeF3"];
-         $typeCode3 = explode(".", $XVMsgCodeF3);
-         $tF3 = $typeCode3[1];
-         if($tF3==''){ $k3='1';}elseif($tF3=='png'){  $k3="2";}elseif($tF3=='jpg'){$k3='2';}
-         elseif($tF3=='jpeg'){$k3='2';}elseif($tF3=='gif'){$k3='2';}elseif($tF3=='bmp'){$k3='2';}elseif($tF3=='tif'){$k3='2';}
-         elseif($tF3=='psd'){$k3='2';}elseif($tF3=='eps'){$k3='2';}elseif($tF3=='pdf'){$k3='2';}elseif($tF3=='svg'){$k3='2';}
-         elseif($tF3=='raw'){$k3='2';}elseif($tF3=='webm'){$k3='3';}
-
-         $XVMsgCodeF4=$result["XVMsgCodeF4"];
-         $typeCode4 = explode(".", $XVMsgCodeF4);
-         $tF4 = $typeCode4[1];
-         if($tF4==''){ $k4='1';}elseif($tF4=="png"){  $k4="2";}elseif($tF4=="jpg"){$k4='2';}
-         elseif($tF4=="jpeg"){$k4='2';}elseif($tF4=="gif"){$k4='2';}elseif($tF4=="bmp"){$k4='2';}elseif($tF4=="tif"){$k4='2';}
-         elseif($tF4=="psd"){$k4='2';}elseif($tF4=="eps"){$k4='2';}elseif($tF4=="pdf"){$k4='2';}elseif($tF4=="svg"){$k4='2';}
-         elseif($tF4=="raw"){$k4='2';}elseif($tF4=="webm"){$k4='3';}
          
-         $XVMsgCodeF5=$result["XVMsgCodeF5"];
-         $typeCode5 = explode(".", $XVMsgCodeF5);
-         $tF5 = $typeCode5[1];
-         if($tF5==''){ $k5='1';}elseif($tF5=='png'){  $k5="2";}elseif($tF5=='jpg'){$k5='2';}
-         elseif($tF5=='jpeg'){$k5='2';}elseif($tF5=='gif'){$k5='2';}elseif($tF5=='bmp'){$k5='2';}elseif($tF5=='tif'){$k5='2';}
-         elseif($tF5=='psd'){$k5='2';}elseif($tF5=='eps'){$k5='2';}elseif($tF5=='pdf'){$k5='2';}elseif($tF5=='svg'){$k5='2';}
-         elseif($tF5=='raw'){$k5='2';}elseif($tF5=='webm'){$k5='3';}
+         $XVMsgCodeF1c=$result["XVMsgCodeF1"];
          
+         $qchk1 = "SELECT * FROM TMstMMessage WHERE XVMsgCode ='$XVMsgCodeF1c'";
+         $q1=sqlsrv_query($conn,  $qchk1);
+         $qc1=sqlsrv_fetch_array($q1, SQLSRV_FETCH_ASSOC);
+         $k = $qc1['XVMsgType'];
+         if($k==1){
+            $XVMsgCodeF1=$XVMsgCodeF1c;
+         }else{
+            $XVMsgCodeF1=$qc1["XVMsgFileName"];
+         }
+    
+         $XVMsgCodeF2c=$result["XVMsgCodeF2"];
+         $qchk2 = "SELECT * FROM TMstMMessage WHERE XVMsgCode ='$XVMsgCodeF2c'";
+         $q2=sqlsrv_query($conn,  $qchk2);
+         $qc2=sqlsrv_fetch_array($q2, SQLSRV_FETCH_ASSOC);
+         $k2 = $qc2['XVMsgType'];
+         if($k2==1){
+            $XVMsgCodeF2=$XVMsgCodeF2c;
+         }else{
+            $XVMsgCodeF2=$qc2["XVMsgFileName"];
+         }
+
+         $XVMsgCodeF3c=$result["XVMsgCodeF3"];
+         $qchk3 = "SELECT * FROM TMstMMessage WHERE XVMsgCode ='$XVMsgCodeF3c'";
+         $q3=sqlsrv_query($conn,  $qchk3);
+         $qc3=sqlsrv_fetch_array($q3 ,SQLSRV_FETCH_ASSOC);
+         $k3 = $qc3['XVMsgType'];
+         if($k3==1){
+            $XVMsgCodeF3=$XVMsgCodeF3c;
+         }else{
+            $XVMsgCodeF3=$qc3["XVMsgFileName"];
+         }
+         $XVMsgCodeF4c=$result["XVMsgCodeF4"];
+         $qchk4 = "SELECT * FROM TMstMMessage WHERE XVMsgCode ='$XVMsgCodeF4c'";
+         $q4=sqlsrv_query($conn,  $qchk4);
+         $qc4=sqlsrv_fetch_array($q4, SQLSRV_FETCH_ASSOC);
+         $k4 = $qc4['XVMsgType'];
+         if($k4==1){
+            $XVMsgCodeF4=$XVMsgCodeF4c;
+         }else{
+            $XVMsgCodeF4=$qc4["XVMsgFileName"];
+         }
+         $XVMsgCodeF5c=$result["XVMsgCodeF5"];
+         $qchk5 = "SELECT * FROM TMstMMessage WHERE XVMsgCode ='$XVMsgCodeF5c'";
+         $q5=sqlsrv_query($conn,  $qchk5);
+         $qc5=sqlsrv_fetch_array($q5, SQLSRV_FETCH_ASSOC);
+         $k5 = $qc5['XVMsgType'];
+       
+         if($k5==1){
+            $XVMsgCodeF5=$XVMsgCodeF5c;
+         }else{
+            $XVMsgCodeF5=$qc5["XVMsgFileName"];
+         }
     }
     sqlsrv_close( $conn );
     $data='{';
@@ -102,7 +117,12 @@ session_start();
     $data.='"XVMsgCodeF2":"'.$XVMsgCodeF2.'",';
     $data.='"XVMsgCodeF3":"'.$XVMsgCodeF3.'",';
     $data.='"XVMsgCodeF4":"'.$XVMsgCodeF4.'",';
-    $data.='"XVMsgCodeF5":"'.$XVMsgCodeF5.'"';
+    $data.='"XVMsgCodeF5":"'.$XVMsgCodeF5.'",';
+    $data.='"Type1":"'.$k.'",';
+    $data.='"Type2":"'.$k2.'",';
+    $data.='"Type3":"'.$k3.'",';
+    $data.='"Type4":"'.$k4.'",';
+    $data.='"Type5":"'.$k5.'"';
     $data.='}';
     return $data;
    }
