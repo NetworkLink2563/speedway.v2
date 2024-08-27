@@ -684,10 +684,13 @@ background-image: url('img/icon/mag.png');
                       <div class="col-12" style="margin: 10px; display: flex; justify-content: center;">
                          
                          <div class="col-12" id="frame1_section3" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
-                            
+                                    <div>
                                      <button  style="position: absolute; left: 92px;top: 90px;z-index:1000;" onclick="addsms(1)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
-                                    
+                                     </div>
+
+                                     <div>
                                      <iframe id="frame1_section3_show" src="" style="border:none;"></iframe>
+                                     </div>
                                     
                                     
                                     
@@ -776,8 +779,15 @@ background-image: url('img/icon/mag.png');
 
                     <div class="col" style="">
                         <div id="frame2_section1" style="border-style: solid;border-color:#DCDCDC;">
+
+                                <div>
                                 <button  style="position: absolute; z-index:1000;" onclick="addsms(1)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                                </div>
+
+                                <div>
                                 <iframe id="frame2_section1_show" src="" style="border:none;"></iframe>  
+                                </div>
+
                         </div>
                     </div>
 
@@ -785,24 +795,42 @@ background-image: url('img/icon/mag.png');
 
                         <div id="frame2_section3" class="" style="border-style: solid;border-color:#DCDCDC;    padding: 0px;">
                     
+                        <div>
                             <button style="position: absolute; z-index:1000;" onclick="addsms(3)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                            </div>
+
+                            <div>
                             <iframe id="frame2_section3_show" src="" style="border:none;"></iframe>
+                            </div>
                        </div>
                        
 
                        
                         <div id="frame2_section4" class="float-left" style="border-style: solid;border-color:#DCDCDC;   height: 249px!important;  padding: 0px;">
                     
+                        <div>
                             <button style="position: absolute; z-index:1000;"  onclick="addsms(4)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                            </div>
+
+                            <div>
                             <iframe id="frame2_section4_show" src="" style="border:none;"></iframe>
-                            
+                            </div>
+
                         </div>
                        
 
                         
                         <div id="frame2_section5" class="float-left" style="border-style: solid;border-color:#DCDCDC;  height: 249px!important;  padding: 0px;">
+
+                            <div>
                             <button style="position: absolute; z-index:1000;" onclick="addsms(5)"  class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                            </div>
+
+                            <div>
                             <iframe  id="frame2_section5_show" src="" style="border:none;"></iframe>
+                            </div>
+
+
                         </div>
                    
                    
@@ -810,11 +838,14 @@ background-image: url('img/icon/mag.png');
                     
                         <div id="frame2_section2" style="border-style: solid;border-color:#DCDCDC;margin:0px;  padding: 0px;">
                    
-                    
+                                <div>
                                 <button  style="position: absolute; z-index:1000;"  onclick="addsms(2)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
-                                  
+                                </div>
+
+                                <div>
                                 <iframe id="frame2_section2_show" src="" style="border:none;"></iframe>
-                             
+                                </div>
+
                         </div>
                     
                 
@@ -903,25 +934,42 @@ background-image: url('img/icon/mag.png');
                                     <div class="col-12" style="padding: 0;">
                         <div id="frame3_section1" style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px;">
                             
+                                    <div>
                                     <button onclick="addsms(1)"  style="position: absolute;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                                    </div>
+
+                                    <div>
                                     <iframe id="frame3_section1_show" src="" style="border:none;"></iframe>
+                                    </div>
                                    
                             </div>
                         </div>
  
-                   <div class="col-12" style="padding: 0; ">
-                        <div id="frame3_section3" class="float-left"  style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px; display: inline-block;">
+                   <div class="col-12 row" style="padding: 0; flex-wrap: nowrap;">
+                        <div id="frame3_section3" class=""  style="border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px; display: inline-block;">
 
+
+                            <div>
                             <button  onclick="addsms(3)" style="position: absolute;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                            </div>
+
+                            <div>
                             <iframe id="frame3_section3_show" src="" style="border:none;"></iframe>
-                           
+                            </div>
+
                         </div>
                     
-                        <div id="frame3_section4"  class="float-left col-12" style="display: inline-block; border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px; position: relative; left: -4px;">
+                        <div id="frame3_section4"  class="" style="display: inline-block; border-style: solid;border-color:#DCDCDC;margin:0px;padding:0px;border-width: 2px; ">
 
+                            <div>
                             <button  onclick="addsms(4)" style="position: absolute;z-index:1000;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-frame1-add">เลือกข้อความ</button>
+                            </div>
+
+                            <div>
                             <iframe id="frame3_section4_show" src="" style="border:none;"></iframe>
-                           
+                            </div>
+
+                            
                         </div>
                     </div>
                     </div>
@@ -1705,17 +1753,17 @@ function SearchEdit(XVMsfCode,w,h){
             //    document.getElementById("frame3_section3").style.width = (w/2)+"px";
             //    document.getElementById("frame3_section3").style.height = (h-100)+"px";
      
-               document.getElementById("frame3_section3").style.width =  ((w/2)-5)+"px";
-               document.getElementById("frame3_section3").style.height = ((h-110)-30)+"px";
+               document.getElementById("frame3_section3").style.width =  ((w/2))+"px";
+               document.getElementById("frame3_section3").style.height = ((h-110)-28)+"px";
 
-               document.getElementById("frame3_section3_show").style.width =  ((w/2)-5)+"px";
+               document.getElementById("frame3_section3_show").style.width =  ((w/2)-1)+"px";
                document.getElementById("frame3_section3_show").style.height = ((h-110)-30)+"px";
 
-            //    document.getElementById("frame3_section4").style.width = (w/2)+"px";
-            //    document.getElementById("frame3_section4").style.height = (h-100)+"px";
+               document.getElementById("frame3_section4").style.width = ((w/2))+"px";
+               document.getElementById("frame3_section4").style.height = ((h-110)-28)+"px";
      
             
-               document.getElementById("frame3_section4_show").style.width =  ((w/2)-5)+"px";
+               document.getElementById("frame3_section4_show").style.width =  ((w/2)-1)+"px";
                document.getElementById("frame3_section4_show").style.height = ((h-110)-30)+"px";
                $('#framenumber').val(3);
                $('#XVMsfCodeF3').val(XVMsfCode);
