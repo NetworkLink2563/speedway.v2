@@ -472,7 +472,7 @@ background-image: url('img/icon/mag.png');
 
 
 
-<div class="container" style="position: relative; top: 75; height: auto;">
+<div class="container" style="position: relative; top: 75; height: auto; padding-bottom: 3rem;">
 
 
 <div style=" text-align: center; padding: 1rem; border-bottom: 3px double #cccc; margin: .4rem; display: flex;">
