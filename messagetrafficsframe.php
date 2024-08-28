@@ -679,7 +679,7 @@ background-image: url('img/icon/mag.png');
                 
                 
                     <div class="col-12 text-center" style="margin: 1rem;">
-                       <button type="button"  id="btn_saveframe1" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 4px;color:white;font-size: 20px;" class="fa fa-save"></i></button>
+                       <button type="button"  id="btn_saveframe1" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 4px;color:white;font-size: 16px;" class="fa fa-save"></i></button>
                        
                     </div>
                 </div>
@@ -808,7 +808,7 @@ background-image: url('img/icon/mag.png');
                 <div class="row col-10" style="margin: 1rem;">
                    
                     <div class="col-sm-12 text-center pt-1" >
-                      <button type="button"  id="btn_saveframe2" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>
+                      <button type="button"  id="btn_saveframe2" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 4px;color:white;font-size: 16px;" class="fa fa-save"></i></button>
                        
                     </div>
                 </div>
@@ -912,7 +912,7 @@ background-image: url('img/icon/mag.png');
                    
 
                     <div class="col-8 text-center" style="margin: 1rem;">
-                      <button type="button"  id="btn_saveframe3" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 5px;color:white;font-size: 15px;" class="fa fa-save"></i></button>
+                      <button type="button"  id="btn_saveframe3" class="btn" style="background-color:#009933;color:white" >บันทึก<i style="margin-left: 4px;color:white;font-size: 16px;" class="fa fa-save"></i></button>
                       <!-- <button type="button"  id="btn_saveframe3" class="btn btn-danger" style="color:white" >ล้าง<i style="margin-left: 5px;color:white;font-size: 15px;" class="fa fa-delete"></i></button> -->
                     </div>
 

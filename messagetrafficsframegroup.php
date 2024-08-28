@@ -583,7 +583,7 @@ ORDER BY dbo.TMstMPlaylist.XVPltCode DESC";
                     </div>
 
                     <div class="col-2 text-center" >
-                        <button type="button" id="btn_save" class="btn" style="background-color:#009933;color:white">บันทึก<i style="margin-left: 10px;color:white;font-size: 30px;" class="fa fa-save"></i></button>  
+                        <button type="button" id="btn_save" class="btn" style="background-color:#009933;color:white">บันทึก<i style="margin-left: 4px;color:white;font-size: 16px;" class="fa fa-save"></i></button>  
                     </div>
 
                 </div>
