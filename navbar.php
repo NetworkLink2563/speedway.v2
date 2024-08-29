@@ -168,12 +168,14 @@ Department of Hightways <?php //echo $_SESSION['chgPwd']; ?></p>
      
     <div class="collapse navbar-collapse justify-content-center align-item-center" id="navbarNavDarkDropdown">
     <?php if($_SESSION['chgPwd'] =='0'){ 
-      $menu="SELECT * FROM  [NWL_SpeedWayTest2].[dbo].[TSysSMenu] WHERE  XVMnuheader ='item' ORDER BY XCMnuPriority";
+      $menu="SELECT * FROM  [NWL_SpeedWayTest2].[dbo].[TSysSMenu] WHERE  XVMnuheader ='item' AND XVMnuCode NOT LIKE ('006') ORDER BY XCMnuPriority";
       $Qmenu=sqlsrv_query($conn, $menu);
       while($q1=sqlsrv_fetch_array($Qmenu ,SQLSRV_FETCH_ASSOC)){ ?>
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
         <button  class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+
+        
           <?php echo $q1['XVMnuName']; ?> 
           </button>
           <ul class="dropdown-menu dropdown-menu-dark"> 
