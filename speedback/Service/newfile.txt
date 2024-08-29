@@ -1,0 +1,5 @@
+SELECT  dbo.TMstMMediaSetVms.XVVmsCode, dbo.TMstMMediaSetVmsLabel.XVLabelPosition_Y, dbo.TMstMMediaSetVmsLabel.XIID,dbo.TMstMMediaSetVmsLabel.XVTime,dbo.TMstMMediaSetVmsLabel.XILineNumber,dbo.TMstMMediaSetVmsLabel.XBLineShow
+    FROM        dbo.TMstMMediaSetVms INNER JOIN
+                      dbo.TMstMMediaSetVmsLabel ON dbo.TMstMMediaSetVms.XVMediaVmsCode = dbo.TMstMMediaSetVmsLabel.XVMediaVmsCode
+    WHERE     (dbo.TMstMMediaSetVms.XVVmsCode = 'VMS23-00003')
+    ORDER BY dbo.TMstMMediaSetVmsLabel.XILineNumber

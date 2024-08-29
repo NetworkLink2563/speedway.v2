@@ -1,0 +1,34 @@
+[
+    {
+        "XVVmsCode": "VMS23-00003",
+        "XVLabelPosition_Y": 20,
+        "XIID": 1,
+        "XVTime": "1026",
+        "XILineNumber": 1,
+        "XBLineShow": 1
+    },
+    {
+        "XVVmsCode": "VMS23-00003",
+        "XVLabelPosition_Y": 80,
+        "XIID": 2,
+        "XVTime": "4119",
+        "XILineNumber": 2,
+        "XBLineShow": 1
+    },
+    {
+        "XVVmsCode": "VMS23-00003",
+        "XVLabelPosition_Y": 140,
+        "XIID": 3,
+        "XVTime": "730",
+        "XILineNumber": 3,
+        "XBLineShow": 1
+    },
+    {
+        "XVVmsCode": "VMS23-00003",
+        "XVLabelPosition_Y": 200,
+        "XIID": 4,
+        "XVTime": "2439",
+        "XILineNumber": 4,
+        "XBLineShow": 1
+    }
+]

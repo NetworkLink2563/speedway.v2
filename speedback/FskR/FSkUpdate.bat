@@ -1,0 +1,1 @@
+cd C:\php-7.4.32-Win32-vc15-x64\php.exe -f C:\inetpub\wwwroot\EVA\FskR\FSKUPDATE.php 

@@ -1,0 +1,13 @@
+{ 
+    "UrlTF":"http://43.229.151.102/EVA/Service/Controller.php", 
+    "UrlMedia":"http://43.229.151.102/EVA/VmsDirectM", 
+    "UrlMediaRoute":"http://43.229.151.102/EVA/VmsDirectRouteM", 
+    "UrlTfUserName":"kOK24RIo625gOSCzPFK5cg==",
+    "UrlTfPassWord":"ymfqgoZg6BmJatEcSO7bNw==", 
+    "MQttServerIP":"43.229.151.102", 
+    "MQttServerPort":"1883",  
+    "MQttServerUserName":"user", 
+    "MQttServerUserPassword":"!NWLmqttuser",
+    "VmsCode":"VMS23-00007",    
+    "WssCode":"WSS22-00001" 
+}

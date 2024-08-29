@@ -1,0 +1,13 @@
+{ 
+    "UrlTF":"http://dorrayongcenter.dyndns.org:11080/EVA/Service/Controller.php", 
+    "UrlMedia":"http://dorrayongcenter.dyndns.org:11080/EVA/VmsDirectM", 
+    "UrlMediaRoute":"http://dorrayongcenter.dyndns.org:11080/EVA/VmsDirectRouteM", 
+    "UrlTfUserName":"kOK24RIo625gOSCzPFK5cg==",
+    "UrlTfPassWord":"ymfqgoZg6BmJatEcSO7bNw==", 
+    "MQttServerIP":"dorrayongcenter.dyndns.org", 
+    "MQttServerPort":"11883",  
+    "MQttServerUserName":"user", 
+    "MQttServerUserPassword":"NetWork_2020",
+    "VmsCode":"VMS23-00010",    
+    "WssCode":"WSS22-00001" 
+}

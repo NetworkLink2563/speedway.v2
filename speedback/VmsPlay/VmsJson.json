@@ -1,0 +1,24 @@
+{"Rout": [{"RoadPoint": [{
+            "Slatitude":"1",
+            "Slongtitude":"1",
+            "Elatitude":1,
+            "Elongtitude":,
+            "PointX": [190,190],
+            "PointY": [142,75]
+        },{
+            "Slatitude":"1",
+            "Slongtitude":"1",
+            "Elatitude":1,
+            "Elongtitude":,
+            "PointX": [118,186],
+            "PointY": [71,75]
+        }],"ImagePoint": [{
+        "Image": [],
+        "PointX": [],
+        "PointY": []
+    }],"ImagePlay": [{
+        "Image": ["1684203131.bmp","20230517173341.png"]
+     }],"GoogleMap":1,"WeatherSensor":0,"GMapPoint":[{
+        "PointX": [],
+        "PointY": []
+    }]}]}
