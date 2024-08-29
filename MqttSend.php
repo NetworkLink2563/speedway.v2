@@ -4,8 +4,9 @@ function mqttsend($topic,$data){
   
   
     $ret="";
-       $server = '10.12.12.205';   
+      // $server = '10.12.12.205';   
        //$server = 'www.networklink.co.th';   
+       $server = '10.140.12.11';
        $port = 1883;                     
        $username = 'user';                  
        $password = '!NWLmqttuser';                  

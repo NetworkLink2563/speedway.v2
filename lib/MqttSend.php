@@ -5,7 +5,7 @@ function mqttsend($topic,$data){
   
     $ret="";
      //  $server = '10.12.12.205';   
-       $server = '10.12.12.205';   
+       $server = '10.140.12.11:1883';   
 
        $port = 1883;                     
        $username = 'user';                  
